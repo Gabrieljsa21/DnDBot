@@ -2,6 +2,7 @@
 using DnDBot.Application.Models;
 using DnDBot.Application.Services;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace DnDBot.Bot.Commands
@@ -26,58 +27,59 @@ namespace DnDBot.Bot.Commands
             _rolagemService = servico;
             _formatador = formatador;
         }
-
-        /// <summary>
-        /// Comando slash "/roll" para realizar uma rolagem de dados simples.
-        /// Exemplo de expressão: "2d6+3".
-        /// </summary>
-        /// <param name="expressao">Expressão da rolagem no formato NdX+Y.</param>
-        [SlashCommand("roll", "Rola dados no formato NdX+Y")]
-        public async Task RollAsync([Summary("expressao", "Expressão de dados para rolar, ex: 2d6+3")] string expressao)
+        [SlashCommand("roll", "Rola uma ou mais expressões de dados separadas por vírgula, ex: 2d20+3, 1d6")]
+        public async Task RollAsync([Summary("expressao", "Uma ou mais expressões separadas por vírgula")] string expressoes)
         {
-            await ProcessarRolagemAsync(_rolagemService.Rolar, expressao);
+            await ProcessarMultiplaRolagemAsync(_rolagemService.Rolar, expressoes);
+        }
+
+        [SlashCommand("roll_vantagem", "Rola uma ou mais expressões com vantagem (duas rolagens, pega o maior), separadas por vírgula")]
+        public async Task RollComVantagemAsync([Summary("expressao", "Uma ou mais expressões separadas por vírgula")] string expressoes)
+        {
+            await ProcessarMultiplaRolagemAsync(_rolagemService.RolarVantagem, expressoes);
+        }
+
+        [SlashCommand("roll_desvantagem", "Rola uma ou mais expressões com desvantagem (duas rolagens, pega o menor), separadas por vírgula")]
+        public async Task RollComDesvantagemAsync([Summary("expressao", "Uma ou mais expressões separadas por vírgula")] string expressoes)
+        {
+            await ProcessarMultiplaRolagemAsync(_rolagemService.RolarDesvantagem, expressoes);
         }
 
         /// <summary>
-        /// Comando slash "/roll_vantagem" para realizar uma rolagem com vantagem.
-        /// O resultado será o maior entre duas rolagens.
-        /// </summary>
-        /// <param name="expressao">Expressão da rolagem no formato NdX+Y.</param>
-        [SlashCommand("roll_vantagem", "Rola com vantagem (dois dados, pega o maior)")]
-        public async Task RollComVantagemAsync([Summary("expressao", "Expressão de dados, ex: 1d20+3")] string expressao)
-        {
-            await ProcessarRolagemAsync(_rolagemService.RolarVantagem, expressao);
-        }
-
-        /// <summary>
-        /// Comando slash "/roll_desvantagem" para realizar uma rolagem com desvantagem.
-        /// O resultado será o menor entre duas rolagens.
-        /// </summary>
-        /// <param name="expressao">Expressão da rolagem no formato NdX+Y.</param>
-        [SlashCommand("roll_desvantagem", "Rola com desvantagem (dois dados, pega o menor)")]
-        public async Task RollComDesvantagemAsync([Summary("expressao", "Expressão de dados, ex: 1d20+3")] string expressao)
-        {
-            await ProcessarRolagemAsync(_rolagemService.RolarDesvantagem, expressao);
-        }
-
-        /// <summary>
-        /// Método auxiliar que processa a rolagem de dados utilizando a função de rolagem
-        /// passada como parâmetro, valida o resultado e responde no Discord.
+        /// Método que processa múltiplas expressões separadas por vírgula,
+        /// usando a função de rolagem passada, e envia uma única resposta com os resultados.
         /// </summary>
         /// <param name="funcRolagem">Função que executa a rolagem (simples, vantagem ou desvantagem).</param>
-        /// <param name="expressao">Expressão de dados para rolar, ex: "1d20+3".</param>
-        private async Task ProcessarRolagemAsync(Func<string, ResultadoRolagem?> funcRolagem, string expressao)
+        /// <param name="expressoes">String com uma ou mais expressões separadas por vírgula.</param>
+        private async Task ProcessarMultiplaRolagemAsync(Func<string, ResultadoRolagem?> funcRolagem, string expressoes)
         {
-            var resultado = funcRolagem(expressao);
-
-            if (resultado == null)
+            if (string.IsNullOrWhiteSpace(expressoes))
             {
-                await RespondAsync("Expressão inválida! Use um formato como 1d20+3", ephemeral: true);
+                await RespondAsync("Por favor, informe pelo menos uma expressão de rolagem válida.", ephemeral: true);
                 return;
             }
 
-            string mensagem = _formatador.FormatarMensagem(resultado);
-            await RespondAsync(mensagem);
+            var listaExpressoes = expressoes.Split(',', StringSplitOptions.RemoveEmptyEntries);
+            var mensagens = new List<string>();
+
+            foreach (var expressao in listaExpressoes)
+            {
+                var exprTrim = expressao.Trim();
+                var resultado = funcRolagem(exprTrim);
+
+                if (resultado == null)
+                {
+                    mensagens.Add($"❌ Expressão inválida: `{exprTrim}`");
+                    continue;
+                }
+
+                string msg = _formatador.FormatarMensagem(resultado);
+                mensagens.Add(msg);
+            }
+
+            string respostaFinal = string.Join("\n\n", mensagens);
+            await RespondAsync(respostaFinal);
         }
+
     }
 }
