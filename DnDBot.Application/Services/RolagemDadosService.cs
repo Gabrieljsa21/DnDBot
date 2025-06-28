@@ -2,59 +2,98 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using DnDBot.Application.Models;
 
 namespace DnDBot.Application.Services
 {
     /// <summary>
-    /// Serviço responsável por realizar rolagens de dados no formato NdX+Y, 
-    /// onde N é a quantidade de dados, X é o número de lados, e Y é o modificador opcional.
+    /// Serviço responsável por realizar rolagens de dados no formato NdX+Y,
+    /// onde N é a quantidade de dados, X é o número de lados e Y é um modificador opcional.
     /// </summary>
     public class RolagemDadosService
     {
-        // Expressão regular que valida expressões como "2d6+3", "d20", "4d8-1"
-        private static readonly Regex padraoExpressao = new(@"^(\d*)d(\d+)([+-]\d+)?$", RegexOptions.IgnoreCase);
+        private static readonly Regex padraoExpressao = new(@"^(\d*)d(\d+)(\s*[+-]\s*\d+)?$", RegexOptions.IgnoreCase);
 
         /// <summary>
-        /// Realiza a rolagem de dados conforme a expressão informada.
+        /// Realiza uma rolagem normal.
         /// </summary>
-        /// <param name="expressao">Expressão da rolagem no formato NdX+Y (exemplo: "2d6+3").</param>
-        /// <returns>
-        /// Tupla contendo o total da rolagem e o detalhamento dos dados rolados,
-        /// ou null caso a expressão seja inválida.
-        /// </returns>
-        public (int total, string detalhes)? Rolar(string expressao)
+        public ResultadoRolagem? Rolar(string expressao)
         {
-            var correspondencia = padraoExpressao.Match(expressao.Trim());
+            var match = padraoExpressao.Match(expressao.Trim());
 
-            if (!correspondencia.Success) // Expressão inválida
+            if (!match.Success)
                 return null;
 
-            // Quantidade de dados a rolar; se não especificado, assume 1
-            int quantidade = string.IsNullOrEmpty(correspondencia.Groups[1].Value)
-                ? 1
-                : int.Parse(correspondencia.Groups[1].Value);
-
-            // Número de lados de cada dado
-            int lados = int.Parse(correspondencia.Groups[2].Value);
-
-            // Modificador que será somado ao resultado total (pode ser positivo ou negativo)
-            int modificador = correspondencia.Groups[3].Success
-                ? int.Parse(correspondencia.Groups[3].Value)
+            int quantidade = string.IsNullOrEmpty(match.Groups[1].Value) ? 1 : int.Parse(match.Groups[1].Value);
+            int lados = int.Parse(match.Groups[2].Value);
+            int modificador = match.Groups[3].Success
+                ? int.Parse(match.Groups[3].Value.Replace(" ", ""))
                 : 0;
 
-            var resultados = new List<int>();
-            var aleatorio = new Random();
+            var rng = new Random();
+            var valores = Enumerable.Range(0, quantidade).Select(_ => rng.Next(1, lados + 1)).ToList();
+            int total = valores.Sum() + modificador;
 
-            // Rola os dados e armazena cada resultado
-            for (int i = 0; i < quantidade; i++)
-                resultados.Add(aleatorio.Next(1, lados + 1));
+            return new ResultadoRolagem
+            {
+                Expressao = expressao,
+                ValoresPrimeiraRolagem = valores,
+                ValoresSegundaRolagem = null,
+                Modificador = modificador,
+                Total = total,
+                Tipo = TipoRolagem.Normal,
+                Detalhes = $"({string.Join(", ", valores)})"
+            };
+        }
 
-            int total = resultados.Sum() + modificador;
+        /// <summary>
+        /// Realiza uma rolagem com vantagem.
+        /// </summary>
+        public ResultadoRolagem? RolarVantagem(string expressao)
+        {
+            return RolarComComparacao(expressao, (a, b) => a >= b, TipoRolagem.Vantagem);
+        }
 
-            // Cria uma string detalhando as rolagens e o modificador aplicado
-            string detalhes = $"[{string.Join(" + ", resultados)}] {(modificador >= 0 ? "+" : "-")} {Math.Abs(modificador)}";
+        /// <summary>
+        /// Realiza uma rolagem com desvantagem.
+        /// </summary>
+        public ResultadoRolagem? RolarDesvantagem(string expressao)
+        {
+            return RolarComComparacao(expressao, (a, b) => a <= b, TipoRolagem.Desvantagem);
+        }
 
-            return (total, detalhes);
+        /// <summary>
+        /// Rola duas vezes e seleciona o melhor ou pior resultado.
+        /// </summary>
+        private ResultadoRolagem? RolarComComparacao(string expressao, Func<int, int, bool> comparador, TipoRolagem tipo)
+        {
+            var r1 = Rolar(expressao);
+            var r2 = Rolar(expressao);
+
+            if (r1 == null || r2 == null)
+                return null;
+
+            int total1 = r1.Total;
+            int total2 = r2.Total;
+
+            var melhor = comparador(total1, total2) ? r1 : r2;
+            var pior = comparador(total1, total2) ? r2 : r1;
+
+            string valoresMelhor = $"({string.Join(", ", melhor.ValoresPrimeiraRolagem)})";
+            string valoresPior = $"~~({string.Join(", ", pior.ValoresPrimeiraRolagem)})~~";
+
+            string detalhes = $"{valoresMelhor} {valoresPior}";
+
+            return new ResultadoRolagem
+            {
+                Expressao = expressao,
+                ValoresPrimeiraRolagem = melhor.ValoresPrimeiraRolagem,
+                ValoresSegundaRolagem = pior.ValoresPrimeiraRolagem,
+                Modificador = melhor.Modificador,
+                Total = melhor.Total,
+                Tipo = tipo,
+                Detalhes = detalhes
+            };
         }
     }
 }
