@@ -2,122 +2,114 @@ using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
 using DnDBot.Application.Services;
-using Microsoft.Extensions.DependencyInjection; // Para Injeção de Dependência (DI)
+using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Reflection;
 using System.Threading.Tasks;
 
+/// <summary>
+/// Classe principal que inicia e configura o bot do Discord.
+/// </summary>
 class Program
 {
-    private static DiscordSocketClient _cliente;                   // Cliente do Discord para conexão e eventos
-    private static InteractionService _interactionService;         // Gerencia comandos slash e interações
-    private static IServiceProvider _services;                      // Container para DI
-    private static string _token = Environment.GetEnvironmentVariable("DISCORD_TOKEN"); // Token do bot
-    private static readonly ulong GUILD_ID = 1388541192806989834;      // ID do Discord para registrar comandos
+    private static DiscordSocketClient _cliente;
+    private static InteractionService _interactionService;
+    private static IServiceProvider _services;
+    private static string _token = Environment.GetEnvironmentVariable("DISCORD_TOKEN");
 
+    // Substitua pelo ID do servidor de testes onde os comandos slash serão registrados
+    private static readonly ulong GUILD_ID = 1388541192806989834;
 
+    /// <summary>
+    /// Ponto de entrada principal do programa.
+    /// </summary>
     public static Task Main(string[] args) => new Program().IniciarAsync();
 
+    /// <summary>
+    /// Inicializa o bot, configura serviços, eventos e registra comandos.
+    /// </summary>
     public async Task IniciarAsync()
     {
         var config = new DiscordSocketConfig
         {
-            GatewayIntents = GatewayIntents.Guilds                 // Permite acesso aos servidores
-                            | GatewayIntents.GuildMessages          // Receber mensagens dos canais
-                            | GatewayIntents.MessageContent         // Ler o conteúdo das mensagens
+            GatewayIntents = GatewayIntents.Guilds
+                            | GatewayIntents.GuildMessages
+                            | GatewayIntents.MessageContent
         };
 
-        _cliente = new DiscordSocketClient(config);                // Inicializa o cliente Discord
-        _interactionService = new InteractionService(_cliente.Rest); // Inicializa serviço de interações (slash commands)
+        _cliente = new DiscordSocketClient(config);
+        _interactionService = new InteractionService(_cliente.Rest);
 
-        // Registra serviços para Injeção de Dependência (aqui só o RolagemDadosService)
+        _cliente.Log += LogAsync;
+        _interactionService.Log += LogAsync;
 
+        // Registro de serviços utilizados no bot
         _services = new ServiceCollection()
             .AddSingleton<RolagemDadosService>()
-            .AddSingleton<FormatadorMensagemService>() 
+            .AddSingleton<FormatadorMensagemService>()
+            .AddSingleton<RacasService>()
+            .AddSingleton<ClassesService>()
+            .AddSingleton<AntecedentesService>()
+            .AddSingleton<AlinhamentosService>()
+            .AddSingleton<FichaService>()
             .BuildServiceProvider();
 
+        RegistrarEventos();
 
-        RegistrarEventos(); // Agrupamento limpo dos Eventos do bot
-
-        if (string.IsNullOrWhiteSpace(_token))                    // Valida se token está configurado
+        if (string.IsNullOrWhiteSpace(_token))
         {
-            Console.WriteLine("Token não encontrado. Configure a variável de ambiente DISCORD_TOKEN.");
+            Console.WriteLine("❌ Token não encontrado. Configure a variável de ambiente DISCORD_TOKEN.");
             return;
         }
 
-        await _cliente.LoginAsync(TokenType.Bot, _token);          // Login do bot no Discord
-        await _cliente.StartAsync();                                // Inicia a conexão
+        await _cliente.LoginAsync(TokenType.Bot, _token);
+        await _cliente.StartAsync();
 
-        await _interactionService.AddModulesAsync(typeof(Program).Assembly, _services); // Carrega os comandos
+        // Carrega e registra os módulos de comando
+        await _interactionService.AddModulesAsync(Assembly.GetExecutingAssembly(), _services);
 
-
-
-        await Task.Delay(-1);                                       // Mantém o programa rodando indefinidamente
+        // Mantém o bot em execução indefinidamente
+        await Task.Delay(-1);
     }
 
     /// <summary>
-    /// Agrupa os eventos e handlers do bot.
+    /// Registra eventos como Ready e InteractionCreated.
     /// </summary>
     private void RegistrarEventos()
     {
-        _cliente.Log += LogAsync;                                  // Evento para logs no console
-        _cliente.Ready += ReadyAsync;                              // Evento disparado quando o bot conecta
+        _cliente.Ready += async () =>
+        {
+            Console.WriteLine($"✅ Bot conectado como {_cliente.CurrentUser}");
 
-        // Evento para processar comandos slash (interações)
+            try
+            {
+                await _interactionService.RegisterCommandsToGuildAsync(GUILD_ID);
+                Console.WriteLine("📦 Comandos slash registrados no servidor.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ Erro ao registrar comandos: {ex.Message}");
+            }
+        };
+
         _cliente.InteractionCreated += async interaction =>
         {
             var contexto = new SocketInteractionContext(_cliente, interaction);
-            await _interactionService.ExecuteCommandAsync(contexto, _services);
+            var result = await _interactionService.ExecuteCommandAsync(contexto, _services);
+
+            if (!result.IsSuccess)
+                Console.WriteLine($"⚠️ Erro ao executar comando: {result.ErrorReason}");
         };
     }
-    /// <summary>
-    /// Evento disparado quando o bot está pronto.
-    /// </summary>
-    private static async Task ReadyAsync()
-    {
-        Console.WriteLine($"✅ Bot conectado como {_cliente.CurrentUser}");
-
-        // Registra os comandos imediatamente no servidor
-        await _interactionService.RegisterCommandsToGuildAsync(GUILD_ID);
-
-        Console.WriteLine("📦 Comandos registrados no servidor.");
-    }
 
     /// <summary>
-    /// Exibe logs do bot no console.
+    /// Loga mensagens no console com severidade e origem.
     /// </summary>
     private static Task LogAsync(LogMessage log)
     {
-        Console.WriteLine(log);
+        Console.WriteLine($"[{log.Severity}] {log.Source}: {log.Message}");
+        if (log.Exception != null)
+            Console.WriteLine($"❗ Exceção: {log.Exception}");
         return Task.CompletedTask;
     }
-
-    // Código legado de comandos por texto — mantido para referência
-    /*
-    private static async Task MessageReceivedAsync(SocketMessage mensagem)
-    {
-        if (mensagem.Author.IsBot) return;
-
-        if (mensagem.Content.StartsWith("/roll"))
-        {
-            string[] partes = mensagem.Content.Split(' ', 2);
-            if (partes.Length < 2)
-            {
-                await mensagem.Channel.SendMessageAsync("Uso correto: `/roll 1d20+5`");
-                return;
-            }
-
-            var resultado = _servicoRolagemDados.Rolar(partes[1]);
-
-            if (resultado == null)
-            {
-                await mensagem.Channel.SendMessageAsync("Formato inválido. Exemplo válido: `2d6+1`");
-                return;
-            }
-
-            var (total, detalhes) = resultado.Value;
-            await mensagem.Channel.SendMessageAsync($"🎲 Você rolou `{partes[1]}`: **{detalhes} = {total}**");
-        }
-    }
-    */
 }

@@ -5,14 +5,15 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Discord.Net" Version="3.17.4" />
+    <PackageReference Include="Discord.Net.Interactions" Version="3.17.4" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.6" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DnDBot.Application\DnDBot.Application.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Utils\" />
     <Folder Include="Models\" />
+    <Folder Include="Utils\" />
     <Folder Include="Services\" />
   </ItemGroup>
 </Project>
