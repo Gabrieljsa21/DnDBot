@@ -1,4 +1,5 @@
-﻿using DnDBot.Application.Models;
+﻿using DnDBot.Application.Helpers;
+using DnDBot.Application.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
@@ -17,7 +18,7 @@ namespace DnDBot.Application.Services
         /// </summary>
         public RacasService()
         {
-            var path = Path.Combine("Data", "racas.json");
+            var path = PathHelper.GetDataPath("racas.json");
 
             if (File.Exists(path))
             {

@@ -6,6 +6,14 @@ O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0
 
 ---
 
+## [1.1.1] - 2025-06-30
+
+### Adicionado
+- Redefinição do modelo de dados para raças e sub-raças:
+- A classe Raca agora contém uma lista de objetos SubRaca, ao invés de apenas strings com os IDs.
+- A classe SubRaca foi expandida para incluir todos os atributos relevantes: bônus de atributos, tendências, tamanho, deslocamento, idiomas, proficiências, visão no escuro, resistências, características, magias raciais e URLs de ícone/imagem.
+- Estrutura JSON de raças atualizada para conter os dados completos das sub-raças dentro do campo subRacas.
+
 ## [1.1.0] - 2025-06-30
 
 ### Adicionado

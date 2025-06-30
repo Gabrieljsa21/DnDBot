@@ -1,6 +1,10 @@
-﻿using DnDBot.Application.Models;
+﻿using DnDBot.Application.Helpers;
+using DnDBot.Application.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
 
 namespace DnDBot.Application.Services
 {
@@ -9,7 +13,23 @@ namespace DnDBot.Application.Services
     /// </summary>
     public class FichaService
     {
-        private readonly List<FichaPersonagem> _fichas = new();
+        private List<FichaPersonagem> _fichas = new();
+        private readonly string CaminhoArquivo = PathHelper.GetDataPath("fichas.json");
+
+        public FichaService()
+        {
+            if (File.Exists(CaminhoArquivo))
+            {
+                Console.WriteLine("Carregando fichas do arquivo...");
+                var json = File.ReadAllText(CaminhoArquivo);
+                _fichas = JsonSerializer.Deserialize<List<FichaPersonagem>>(json) ?? new List<FichaPersonagem>();
+            }
+            else
+            {
+                Console.WriteLine("Nenhum arquivo de fichas encontrado.");
+                _fichas = new List<FichaPersonagem>();
+            }
+        }
 
         /// <summary>
         /// Cria uma nova ficha básica com nome e valores padrão.
@@ -37,7 +57,9 @@ namespace DnDBot.Application.Services
         /// <param name="ficha">Ficha a ser adicionada.</param>
         public void AdicionarFicha(FichaPersonagem ficha)
         {
+            Console.WriteLine($"Adicionando ficha do jogador {ficha.JogadorId}");
             _fichas.Add(ficha);
+            SalvarFichas();
         }
 
         /// <summary>
@@ -48,6 +70,22 @@ namespace DnDBot.Application.Services
         public List<FichaPersonagem> ObterFichasPorJogador(ulong jogadorId)
         {
             return _fichas.Where(f => f.JogadorId == jogadorId).ToList();
+        }
+
+        private void SalvarFichas()
+        {
+            try
+            {
+                Console.WriteLine($"📁 Salvando {_fichas.Count} fichas em: {Path.GetFullPath(CaminhoArquivo)}");
+                var json = JsonSerializer.Serialize(_fichas, new JsonSerializerOptions { WriteIndented = true });
+                Directory.CreateDirectory(Path.GetDirectoryName(CaminhoArquivo));
+                File.WriteAllText(CaminhoArquivo, json);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("❌ Erro ao salvar fichas: " + ex.Message);
+            }
+
         }
 
         // Método para remover ou atualizar fichas pode ser adicionado futuramente.

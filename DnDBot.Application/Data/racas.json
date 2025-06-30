@@ -1,51 +1,2532 @@
 [
-  { "Nome": "Aasimar", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Anão", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Bugbear", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Changeling", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Draconato", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Elfo", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Firbolg", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Gith", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Gnomo", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Goblin", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Halfling", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Hobgoblin", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Humano", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Kalashtar", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Kenku", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Kobold", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Lizardfolk", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Meio-Elfo", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Meio-Orc", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Minotaur", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Tabaxi", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Tiefling", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Tortle", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Triton", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Warforged", "Descricao": "", "SubRacas": [] },
-
-  { "Nome": "Orc", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Yuan-ti Pureblood", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Eladrin", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Centaur", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Loxodon", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Simic Hybrid", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Vedalken", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Shifter", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Pallid Elf", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Lotusden Halfling", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Draconblood Dragonborn", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Ravenite Dragonborn", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Leonin", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Satyr", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Owlin", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Dragonborn Draconne", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Faerzress Dwarf", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Gem Dragonborn", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Autognome", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Giff", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Hadozee", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Plasmoid", "Descricao": "", "SubRacas": [] },
-  { "Nome": "Thri-kreen", "Descricao": "", "SubRacas": [] }
+  {
+    "Id": "aasimar",
+    "Fonte": "Livro Guia dos Aasimar",
+    "Nome": "Aasimar",
+    "Descricao": "Seres tocados pela luz celestial, os aasimar possuem herança divina e habilidades curativas.",
+    "SubRacas": [
+      {
+        "Id": "aasimar-protetor",
+        "Nome": "Protetor",
+        "Descricao": "Aasimars protetores canalizam luz radiante para proteger e curar.",
+        "BonusAtributos": {
+          "Carisma": 2,
+          "Sabedoria": 1
+        },
+        "TendenciasComuns": "Tendem ao bem e à ordem.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Celestial"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "aasimar-flagelador",
+        "Nome": "Flagelador",
+        "Descricao": "Aasimars flageladores emanam energia radiante destrutiva.",
+        "BonusAtributos": {
+          "Carisma": 2,
+          "Constituicao": 1
+        },
+        "TendenciasComuns": "Tendem ao bem.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Celestial"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "aasimar-caido",
+        "Nome": "Caído",
+        "Descricao": "Aasimars caídos perderam parte de sua luz divina, adotando um aspecto mais sombrio.",
+        "BonusAtributos": {
+          "Carisma": 2,
+          "Forca": 1
+        },
+        "TendenciasComuns": "Tendem ao mal ou neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Celestial"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "anao",
+    "Fonte": "Livro do Jogador",
+    "Nome": "Anão",
+    "Descricao": "Anões são robustos e duráveis, conhecidos por sua lealdade, resistência e habilidades com mineração e forja.",
+    "SubRacas": [
+      {
+        "Id": "anao-da-colina",
+        "Nome": "Anão da Colina",
+        "Descricao": "Anões resistentes, com forte constituição e afinidade com a terra.",
+        "BonusAtributos": {
+          "Constituicao": 2,
+          "Sabedoria": 1
+        },
+        "TendenciasComuns": "Tendem ao bem e à ordem.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Anão"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "anao-da-montanha",
+        "Nome": "Anão da Montanha",
+        "Descricao": "Anões fortes e robustos, acostumados a ambientes hostis e batalhas.",
+        "BonusAtributos": {
+          "Constituicao": 2,
+          "Forca": 2
+        },
+        "TendenciasComuns": "Tendem ao bem e à ordem.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Anão"
+        ],
+        "Proficiencias": [
+          "Armas Simples",
+          "Armas Marciais"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "marka-da-protecao",
+        "Nome": "Marca da Proteção",
+        "Descricao": "Anões da Casa Kundarak com habilidades mágicas de proteção e guarda.",
+        "BonusAtributos": {
+          "Inteligencia": 1,
+          "Constituicao": 2
+        },
+        "TendenciasComuns": "Tendem à ordem e neutralidade.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Anão"
+        ],
+        "Proficiencias": [
+          "Intuição",
+          "Percepção"
+        ],
+        "MagiasRaciais": [
+          "Armadura Arcana",
+          "Selo Arcano",
+          "Alarme"
+        ],
+        "Caracteristicas": [
+          "Marca da Proteção"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "bugbear",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Nome": "Bugbear",
+    "Descricao": "Bugbears são goblinoides grandes e peludos conhecidos por sua força e furtividade surpreendente.",
+    "SubRacas": [
+      {
+        "Id": "bugbear-padrao",
+        "Nome": "Bugbear",
+        "Descricao": "Bugbears são goblinoides grandes e peludos conhecidos por sua força e furtividade surpreendente.",
+        "BonusAtributos": {},
+        "TendenciasComuns": "Variada.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "changeling",
+    "Fonte": "Eberron: Rising from the Last War",
+    "Nome": "Changeling",
+    "Descricao": "Changelings são metamorfos capazes de alterar sua aparência à vontade.",
+    "SubRacas": [
+      {
+        "Id": "changeling-padrao",
+        "Nome": "Changeling",
+        "Descricao": "Changelings são metamorfos capazes de alterar sua aparência à vontade.",
+        "BonusAtributos": {},
+        "TendenciasComuns": "Variada.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "draconato",
+    "Fonte": "Livro do Jogador",
+    "Nome": "Draconato",
+    "Descricao": "Draconatos são descendentes de dragões, com aparência imponente e fôlego elemental.",
+    "SubRacas": [
+      {
+        "Id": "draconato-chamas",
+        "Nome": "Draconato de Chamas",
+        "Descricao": "Draconatos ligados ao fogo, capazes de exalar fogo ardente.",
+        "BonusAtributos": {
+          "Forca": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade e à honra.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Dracônico"
+        ],
+        "Proficiencias": [],
+        "CaracteristicasEspeciais": [
+          {
+            "Nome": "Sopro de Fogo",
+            "Descricao": "Exala um cone de fogo causando dano a inimigos.",
+            "EfeitoMecanico": {
+              "Tipo": "AtaqueSopro",
+              "Parametros": {
+                "Dano": "2d6",
+                "TipoDano": "Fogo",
+                "Forma": "Cone",
+                "AlcanceMetros": 4.5
+              }
+            }
+          }
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "draconato-gelo",
+        "Nome": "Draconato de Gelo",
+        "Descricao": "Draconatos com afinidade a gelo e frio, exalando um sopro congelante.",
+        "BonusAtributos": {
+          "Forca": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade fria e calculista.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Dracônico"
+        ],
+        "Proficiencias": [],
+        "CaracteristicasEspeciais": [
+          {
+            "Nome": "Sopro de Gelo",
+            "Descricao": "Exala um cone de frio que congela inimigos.",
+            "EfeitoMecanico": {
+              "Tipo": "AtaqueSopro",
+              "Parametros": {
+                "Dano": "2d6",
+                "TipoDano": "Frio",
+                "Forma": "Cone",
+                "AlcanceMetros": 4.5
+              }
+            }
+          }
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "draconato-eletrico",
+        "Nome": "Draconato Elétrico",
+        "Descricao": "Draconatos com conexão ao trovão, liberando descargas elétricas.",
+        "BonusAtributos": {
+          "Forca": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem a agir com rapidez e energia, às vezes impetuosos.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Dracônico"
+        ],
+        "Proficiencias": [],
+        "CaracteristicasEspeciais": [
+          {
+            "Nome": "Sopro Elétrico",
+            "Descricao": "Exala um cone de eletricidade que paralisa inimigos.",
+            "EfeitoMecanico": {
+              "Tipo": "AtaqueSopro",
+              "Parametros": {
+                "Dano": "2d6",
+                "TipoDano": "Elétrico",
+                "Forma": "Cone",
+                "AlcanceMetros": 4.5
+              }
+            }
+          }
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "dragonborn-draconne",
+    "Fonte": "Homebrew",
+    "Nome": "Dragonborn Draconne",
+    "Descricao": "Dragonborn femininos com linhagem dracônica poderosa, combinando força e graça.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Draconne",
+        "Descricao": "Dragonborn femininas que manifestam uma aura imponente e habilidades dracônicas aprimoradas.",
+        "BonusAtributos": {
+          "Forca": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem à lei e ao bem.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Dracônico"
+        ],
+        "Proficiencias": [
+          "Intimidação"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "elfo",
+    "Fonte": "Livro do Jogador",
+    "Nome": "Elfo",
+    "Descricao": "Elfos são graciosos e longevos, com afinidade natural com magia e natureza.",
+    "SubRacas": [
+      {
+        "Id": "elfo-alto",
+        "Nome": "Elfo Alto",
+        "Descricao": "Elfos com grande conexão mágica e intelecto aguçado.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Inteligencia": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade e à busca por conhecimento.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Élfico"
+        ],
+        "Proficiencias": [
+          "Magia Arcana"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "elfo-da-floresta",
+        "Nome": "Elfo da Floresta",
+        "Descricao": "Elfos adaptados à vida na floresta, ágeis e furtivos.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Sabedoria": 1
+        },
+        "TendenciasComuns": "Tendem ao bem e à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Élfico"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "drow",
+        "Nome": "Drow",
+        "Descricao": "Elfos das profundezas, com afinidade para magia sombria e astúcia.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem ao mal e à astúcia.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Élfico",
+          "Infernal"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "marka-da-deteccao",
+        "Nome": "Marca da Detecção",
+        "Descricao": "Elfos da Casa Medani com talentos mágicos para revelação e vigilância.",
+        "BonusAtributos": {
+          "Sabedoria": 2,
+          "Inteligencia": 1
+        },
+        "TendenciasComuns": "Tendem ao bem e à vigilância.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Élfico"
+        ],
+        "Proficiencias": [
+          "Investigação",
+          "Percepção"
+        ],
+        "MagiasRaciais": [
+          "Detectar Magia",
+          "Detectar Veneno e Doença"
+        ],
+        "Caracteristicas": [
+          "Marca da Detecção"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "firbolg",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Nome": "Firbolg",
+    "Descricao": "Firbolgs são gentis guardiões das florestas, com uma conexão profunda com a natureza.",
+    "SubRacas": [
+      {
+        "Id": "firbolg-padrao",
+        "Nome": "Firbolg",
+        "Descricao": "Firbolgs são gentis guardiões das florestas, com uma conexão profunda com a natureza.",
+        "BonusAtributos": {},
+        "TendenciasComuns": "Variada.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "gith",
+    "Fonte": "Mordenkainen’s Tome of Foes",
+    "Nome": "Gith",
+    "Descricao": "Os Gith são antigos escravos dos illithids, divididos entre os belicosos Githyanki e os sábios Githzerai.",
+    "SubRacas": [
+      {
+        "Id": "githyanki",
+        "Nome": "Githyanki",
+        "Descricao": "Guerreiros ferozes e saqueadores do plano astral.",
+        "BonusAtributos": {
+          "Forca": 2,
+          "Inteligencia": 1
+        },
+        "TendenciasComuns": "Tendem ao caos e à guerra.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Gith",
+          "Infernal"
+        ],
+        "Proficiencias": [
+          "Espada Longa",
+          "Magia Psíquica"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "githzerai",
+        "Nome": "Githzerai",
+        "Descricao": "Místicos contemplativos com domínio psíquico e mental.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Sabedoria": 1
+        },
+        "TendenciasComuns": "Tendem à ordem e ao equilíbrio mental.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Gith"
+        ],
+        "Proficiencias": [
+          "Meditação",
+          "Magia Psíquica"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "gnomo",
+    "Fonte": "Livro do Jogador",
+    "Nome": "Gnomo",
+    "Descricao": "Gnomos são inventivos, curiosos e dotados de grande inteligência natural.",
+    "SubRacas": [
+      {
+        "Id": "gnomo-da-floresta",
+        "Nome": "Gnomo da Floresta",
+        "Descricao": "Gnomos ligados à natureza e magia fey.",
+        "BonusAtributos": {
+          "Inteligencia": 2,
+          "Destreza": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade e à curiosidade.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Gnomo"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "gnomo-das-rochas",
+        "Nome": "Gnomo das Rochas",
+        "Descricao": "Gnomos ligados à tecnologia e resistência física.",
+        "BonusAtributos": {
+          "Inteligencia": 2,
+          "Constituicao": 1
+        },
+        "TendenciasComuns": "Tendem ao bem e à perseverança.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Gnomo"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "marka-da-escrita",
+        "Nome": "Marca da Escrita",
+        "Descricao": "Gnomos da Casa Sivis com habilidades de comunicação e linguagem.",
+        "BonusAtributos": {
+          "Inteligencia": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem à ordem e à lógica.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Gnomo",
+          "Um idioma adicional"
+        ],
+        "Proficiencias": [
+          "Caligrafia",
+          "Linguística"
+        ],
+        "MagiasRaciais": [
+          "Mensagem",
+          "Compreender Idiomas"
+        ],
+        "Caracteristicas": [
+          "Marca da Escrita"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "goblin",
+    "Fonte": "Livro do Jogador",
+    "Nome": "Goblin",
+    "Descricao": "Pequenos goblinoides astutos e sorrateiros, conhecidos por sua rapidez e agressividade.",
+    "SubRacas": [
+      {
+        "Id": "goblin-padrao",
+        "Nome": "Goblin",
+        "Descricao": "Pequenos goblinoides astutos e sorrateiros, conhecidos por sua rapidez e agressividade.",
+        "BonusAtributos": {},
+        "TendenciasComuns": "Variada.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "halfling",
+    "Fonte": "Livro do Jogador",
+    "Nome": "Halfling",
+    "Descricao": "Os halflings são pequenos humanoides conhecidos por sua sorte, discrição e espírito alegre.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Pés-Leves",
+        "Descricao": "Halflings pés-leves são sorrateiros e têm uma sorte excepcional.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem ao bem e são amigáveis.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Halfling"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "",
+        "Nome": "Robusto",
+        "Descricao": "Halflings robustos são resistentes e dificilmente se abalam.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Constituicao": 1
+        },
+        "TendenciasComuns": "Tendem ao bem e são resilientes.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Halfling"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "marka-da-hospitalidade",
+        "Nome": "Marca da Hospitalidade",
+        "Descricao": "Halflings da Casa Ghallanda que dominam magias de conforto e abrigo.",
+        "BonusAtributos": {
+          "Carisma": 1,
+          "Sabedoria": 2
+        },
+        "TendenciasComuns": "Tendem ao bem.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Halfling"
+        ],
+        "Proficiencias": [
+          "Prestidigitação",
+          "Persuasão"
+        ],
+        "MagiasRaciais": [
+          "Purificar Alimento e Bebida",
+          "Abençoar",
+          "Criar Comida e Água"
+        ],
+        "Caracteristicas": [
+          "Marca da Hospitalidade"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "marka-da-curandeira",
+        "Nome": "Marca da Cura",
+        "Descricao": "Halflings da Casa Jorasco com afinidade para curar e restaurar.",
+        "BonusAtributos": {
+          "Sabedoria": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem ao bem.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Halfling"
+        ],
+        "Proficiencias": [
+          "Medicina",
+          "Herbalismo"
+        ],
+        "MagiasRaciais": [
+          "Curar Ferimentos",
+          "Diagnosticar Doença"
+        ],
+        "Caracteristicas": [
+          "Marca da Cura"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "hobgoblin",
+    "Fonte": "Mordenkainen's Monsters of the Multiverse",
+    "Nome": "Hobgoblin",
+    "Descricao": "Hobgoblins são estrategistas e disciplinados, valorizando honra e hierarquia.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Hobgoblin de Guerra",
+        "Descricao": "Hobgoblins focados em táticas e apoio a aliados.",
+        "BonusAtributos": {
+          "Constituicao": 2,
+          "Inteligencia": 1
+        },
+        "TendenciasComuns": "Tendem à lei, com foco em ordem e estrutura.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Goblin"
+        ],
+        "Proficiencias": [
+          "Armas Marciais",
+          "Armaduras Leves",
+          "Armaduras Médias"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "humano",
+    "Fonte": "Livro do Jogador",
+    "Nome": "Humano",
+    "Descricao": "Versáteis e ambiciosos, os humanos se adaptam facilmente a qualquer papel.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Padrão",
+        "Descricao": "Humanos comuns com habilidades variadas.",
+        "BonusAtributos": {
+          "Forca": 1,
+          "Destreza": 1,
+          "Constituicao": 1,
+          "Inteligencia": 1,
+          "Sabedoria": 1,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "De todas as tendências.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Outro à escolha"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "",
+        "Nome": "Variante",
+        "Descricao": "Humanos com talento adicional e maior personalização.",
+        "BonusAtributos": {
+          "Escolha1": 1,
+          "Escolha2": 1
+        },
+        "TendenciasComuns": "De todas as tendências.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Outro à escolha"
+        ],
+        "Proficiencias": [
+          "Uma perícia à escolha"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "marka-da-passagem",
+        "Nome": "Marca da Passagem",
+        "Descricao": "Humanos da Casa Orien com talento para teletransporte e locomoção mágica.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Outro à escolha"
+        ],
+        "Proficiencias": [
+          "Acrobacia",
+          "Veículos Terrestres"
+        ],
+        "MagiasRaciais": [
+          "Passo Nebuloso",
+          "Caminhar na Água"
+        ],
+        "Caracteristicas": [
+          "Marca da Passagem"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "marka-da-sentinela",
+        "Nome": "Marca da Sentinela",
+        "Descricao": "Humanos da Casa Deneith, protetores com habilidades de guarda e vigilância.",
+        "BonusAtributos": {
+          "Forca": 2,
+          "Sabedoria": 1
+        },
+        "TendenciasComuns": "Tendem à ordem.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Outro à escolha"
+        ],
+        "Proficiencias": [
+          "Armadura",
+          "Intimidação"
+        ],
+        "MagiasRaciais": [
+          "Escudo da Fé",
+          "Proteção contra o Mal e o Bem"
+        ],
+        "Caracteristicas": [
+          "Marca da Sentinela"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "marka-da-manipulacao",
+        "Nome": "Marca da Manipulação",
+        "Descricao": "Humanos da Casa Cannith, com domínio sobre criação e conserto de objetos mágicos.",
+        "BonusAtributos": {
+          "Inteligencia": 2,
+          "Destreza": 1
+        },
+        "TendenciasComuns": "Tendem à ordem e engenhosidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Outro à escolha"
+        ],
+        "Proficiencias": [
+          "Ferramentas de Artífice",
+          "Arcanismo"
+        ],
+        "MagiasRaciais": [
+          "Consertar",
+          "Arma Mágica"
+        ],
+        "Caracteristicas": [
+          "Marca da Manipulação"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "marka-da-domesticacao",
+        "Nome": "Marca da Domesticação",
+        "Descricao": "Humanos da Casa Vadalis, domadores com habilidades ligadas a bestas e montarias.",
+        "BonusAtributos": {
+          "Sabedoria": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem ao equilíbrio com a natureza.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Outro à escolha"
+        ],
+        "Proficiencias": [
+          "Adestrar Animais"
+        ],
+        "MagiasRaciais": [
+          "Falar com Animais",
+          "Acalmar Emoções"
+        ],
+        "Caracteristicas": [
+          "Marca da Domesticação"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "kalashtar",
+    "Fonte": "Eberron: Rising from the Last War",
+    "Nome": "Kalashtar",
+    "Descricao": "Os kalashtar são unidos com espíritos quori, possuindo mente poderosa e calma interior.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Kalashtar",
+        "Descricao": "Unem força física e mental com sabedoria vinda dos quori.",
+        "BonusAtributos": {
+          "Sabedoria": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem ao bem e à ordem.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Quori",
+          "Telepático"
+        ],
+        "Proficiencias": [
+          "Intuição"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "kenku",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Nome": "Kenku",
+    "Descricao": "Kenku são humanoides com aparência de corvo, dotados de memória sonora perfeita.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Kenku",
+        "Descricao": "Mestres da imitação e astúcia, sem voz própria, mas capazes de replicar qualquer som.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Sabedoria": 1
+        },
+        "TendenciasComuns": "Tendem ao caos ou neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Kenku (somente por imitação)"
+        ],
+        "Proficiencias": [
+          "Enganação",
+          "Furtividade"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "lizardfolk",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Nome": "Lizardfolk",
+    "Descricao": "Os lizardfolk são seres reptilianos que pensam de maneira diferente dos humanoides, guiados pela lógica e sobrevivência.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Lizardfolk",
+        "Descricao": "Reptilianos resilientes e pragmáticos, com corpos adaptados à sobrevivência.",
+        "BonusAtributos": {
+          "Constituicao": 2,
+          "Sabedoria": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Dracônico"
+        ],
+        "Proficiencias": [
+          "Sobrevivência",
+          "Armas Naturais"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "meio-elfo",
+    "Fonte": "Livro do Jogador",
+    "Nome": "Meio-Elfo",
+    "Descricao": "Descendentes de humanos e elfos, os meio-elfos combinam a adaptabilidade dos humanos com a graça dos elfos.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Meio-Elfo",
+        "Descricao": "Com herança dupla, meio-elfos são versáteis, carismáticos e resilientes.",
+        "BonusAtributos": {
+          "Carisma": 2,
+          "Escolha1": 1,
+          "Escolha2": 1
+        },
+        "TendenciasComuns": "Tendem ao caos e à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Élfico",
+          "Um idioma adicional à escolha"
+        ],
+        "Proficiencias": [
+          "Duas perícias à escolha"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "marka-das-sombras",
+        "Nome": "Marca das Sombras",
+        "Descricao": "Meio-elfos ligados à espionagem, ilusão e atuação da Casa Phiarlan/Thuranni.",
+        "BonusAtributos": {
+          "Carisma": 2,
+          "Destreza": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade ou caos.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Élfico"
+        ],
+        "Proficiencias": [
+          "Atuação",
+          "Furtividade"
+        ],
+        "MagiasRaciais": [
+          "Imagem Silenciosa",
+          "Escuridão"
+        ],
+        "Caracteristicas": [
+          "Marca das Sombras"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "meio-orc",
+    "Fonte": "Livro do Jogador",
+    "Nome": "Meio-Orc",
+    "Descricao": "Criados entre duas culturas, meio-orcs são fortes, determinados e com grande resistência física.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Meio-Orc",
+        "Descricao": "Filhos de humanos e orcs, esses guerreiros possuem força brutal e fúria interior.",
+        "BonusAtributos": {
+          "Forca": 2,
+          "Constituicao": 1
+        },
+        "TendenciasComuns": "Tendem ao caos e à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Orc"
+        ],
+        "Proficiencias": [
+          "Intimidação"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "marka-da-procura",
+        "Nome": "Marca da Procura",
+        "Descricao": "Meio-orcs da Casa Tharashk, com talento para rastrear e investigar.",
+        "BonusAtributos": {
+          "Sabedoria": 2,
+          "Constituicao": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Orc"
+        ],
+        "Proficiencias": [
+          "Investigação",
+          "Sobrevivência"
+        ],
+        "MagiasRaciais": [
+          "Detectar Magia",
+          "Rastrear Criatura"
+        ],
+        "Caracteristicas": [
+          "Marca da Procura"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "orc",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Nome": "Orc",
+    "Descricao": "Orcs são ferozes e impulsivos, conhecidos por sua força bruta e cultura guerreira.",
+    "SubRacas": [
+      {
+        "Id": "orc-padrao",
+        "Nome": "Orc",
+        "Descricao": "Orcs são ferozes e impulsivos, conhecidos por sua força bruta e cultura guerreira.",
+        "BonusAtributos": {},
+        "TendenciasComuns": "Variada.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "shifter",
+    "Fonte": "Eberron: Rising from the Last War",
+    "Nome": "Shifter",
+    "Descricao": "Também conhecidos como filhos da lua, os shifters possuem traços bestiais que se manifestam durante o combate.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Beasthide",
+        "Descricao": "Focados em defesa, com pele resistente e robusta.",
+        "BonusAtributos": {
+          "Constituicao": 2,
+          "Forca": 1
+        },
+        "TendenciasComuns": "Tendem ao caos e à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "",
+        "Nome": "Longtooth",
+        "Descricao": "Agressivos e ferozes, com mordidas potentes.",
+        "BonusAtributos": {
+          "Forca": 2,
+          "Destreza": 1
+        },
+        "TendenciasComuns": "Tendem ao caos.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "",
+        "Nome": "Swiftstride",
+        "Descricao": "Ágeis e evasivos, ótimos para mobilidade.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem ao caos.",
+        "Tamanho": "Médio",
+        "Deslocamento": 10,
+        "Idiomas": [
+          "Comum"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "",
+        "Nome": "Wildhunt",
+        "Descricao": "Caçadores com sentidos aguçados e instintos afiados.",
+        "BonusAtributos": {
+          "Sabedoria": 2,
+          "Destreza": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum"
+        ],
+        "Proficiencias": [
+          "Percepção"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "tabaxi",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Nome": "Tabaxi",
+    "Descricao": "Felinos humanoides curiosos e ágeis, conhecidos por sua paixão por histórias, artefatos e aventuras.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Tabaxi",
+        "Descricao": "Felinos nômades com grande agilidade e olhos atentos para tudo ao redor.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem ao caos e à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Felídeo"
+        ],
+        "Proficiencias": [
+          "Percepção",
+          "Furtividade"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "tiefling",
+    "Fonte": "Mordenkainen’s Tome of Foes",
+    "Nome": "Tiefling",
+    "Descricao": "Seres com sangue infernal que carregam um legado sombrio em sua aparência e poderes mágicos.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Asmodeus",
+        "Descricao": "Tieflings descendentes de Asmodeus, o Senhor dos Nove Infernos, com poderes infernais clássicos.",
+        "BonusAtributos": {
+          "Carisma": 2,
+          "Inteligencia": 1
+        },
+        "TendenciasComuns": "Tendem ao caos e à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Infernal"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "",
+        "Nome": "Baalzebul",
+        "Descricao": "Corruptos e enganadores, com foco em magia ilusória.",
+        "BonusAtributos": {
+          "Carisma": 2,
+          "Inteligencia": 1
+        },
+        "TendenciasComuns": "Tendem ao mal e à astúcia.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Infernal"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "",
+        "Nome": "Zariel",
+        "Descricao": "Guerreiros impulsivos e determinados, com dons de combate sagrado.",
+        "BonusAtributos": {
+          "Carisma": 2,
+          "Forca": 1
+        },
+        "TendenciasComuns": "Tendem ao caos e ao bem.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Infernal"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "triton",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Nome": "Triton",
+    "Descricao": "Tritões são seres aquáticos nobres, oriundos das profundezas do oceano, com poderes ligados à água.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Triton",
+        "Descricao": "Defensores dos mares, com dons mágicos aquáticos e presença imponente.",
+        "BonusAtributos": {
+          "Forca": 1,
+          "Constituicao": 1,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem ao bem e à ordem.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Primordial"
+        ],
+        "Proficiencias": [
+          "Atlético",
+          "Armas de Tridente"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "warforged",
+    "Fonte": "Eberron: Rising from the Last War",
+    "Nome": "Warforged",
+    "Descricao": "Criaturas artificiais com corpos metálicos, originalmente criadas para guerra, mas buscando novos propósitos.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Warforged",
+        "Descricao": "Forjados para a batalha, esses construtos são resistentes e eficientes.",
+        "BonusAtributos": {
+          "Constituicao": 2,
+          "Escolha": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum"
+        ],
+        "Proficiencias": [
+          "Ferramentas de Artífice"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "kobold",
+    "Fonte": "Mordenkainen’s Monsters of the Multiverse",
+    "Nome": "Kobold",
+    "Descricao": "Pequenas criaturas reptilianas que vivem em comunidades subterrâneas e são conhecidas por sua engenhosidade e covardia estratégica.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Kobold",
+        "Descricao": "Kobolds são engenhosos e cooperativos, apesar de fisicamente fracos.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Constituicao": 1
+        },
+        "TendenciasComuns": "Tendem ao mal ou neutralidade.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Dracônico"
+        ],
+        "Proficiencias": [
+          "Engenharia (Ofício)"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "minotauro",
+    "Fonte": "Guildmaster’s Guide to Ravnica",
+    "Nome": "Minotauro",
+    "Descricao": "Minotauros são humanoides com traços de touro, conhecidos por sua força e ferocidade em combate.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Minotauro",
+        "Descricao": "Criaturas poderosas, ferozes e resistentes, com chifres imponentes.",
+        "BonusAtributos": {
+          "Forca": 2,
+          "Constituicao": 1
+        },
+        "TendenciasComuns": "Tendem ao caos ou à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Abissal"
+        ],
+        "Proficiencias": [
+          "Intimidação",
+          "Armas Marciais"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "tortle",
+    "Fonte": "Tortle Package",
+    "Nome": "Tortle",
+    "Descricao": "Criaturas semelhantes a tartarugas que valorizam a vida tranquila, mas não hesitam em agir com coragem.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Tortle",
+        "Descricao": "Tortles possuem carapaças resistentes e uma visão simples da vida.",
+        "BonusAtributos": {
+          "Forca": 2,
+          "Sabedoria": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Aquan"
+        ],
+        "Proficiencias": [
+          "Sobrevivência"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "yuan-ti",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Nome": "Yuan-ti Pureblood",
+    "Descricao": "Descendentes de humanos e serpentes, os yuan-ti são astutos, frios e mágicos por natureza.",
+    "SubRacas": [
+      {
+        "Id": "yuan-ti-padrao",
+        "Nome": "Yuan-ti Pureblood",
+        "Descricao": "Descendentes de humanos e serpentes, os yuan-ti são astutos, frios e mágicos por natureza.",
+        "BonusAtributos": {},
+        "TendenciasComuns": "Variada.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "eladrin",
+    "Fonte": "Mordenkainen’s Tome of Foes",
+    "Nome": "Eladrin",
+    "Descricao": "Eladrins são elfos élficos ligados aos ciclos das estações, com magia emocional e beleza sobrenatural.",
+    "SubRacas": [
+      {
+        "Id": "eladrin-padrao",
+        "Nome": "Eladrin",
+        "Descricao": "Eladrins são elfos élficos ligados aos ciclos das estações, com magia emocional e beleza sobrenatural.",
+        "BonusAtributos": {},
+        "TendenciasComuns": "Variada.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "centauro",
+    "Fonte": "Guildmasters’ Guide to Ravnica",
+    "Nome": "Centauro",
+    "Descricao": "Centauros combinam o torso humano com o corpo de um cavalo, sendo velozes e sintonizados com a natureza.",
+    "SubRacas": [
+      {
+        "Id": "centauro-padrao",
+        "Nome": "Centauro",
+        "Descricao": "Centauros combinam o torso humano com o corpo de um cavalo, sendo velozes e sintonizados com a natureza.",
+        "BonusAtributos": {},
+        "TendenciasComuns": "Variada.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "loxodon",
+    "Fonte": "Guildmasters’ Guide to Ravnica",
+    "Nome": "Loxodon",
+    "Descricao": "Loxodons são elefantoides sábios e calmos, com força formidável e lealdade profunda.",
+    "SubRacas": [
+      {
+        "Id": "loxodon-padrao",
+        "Nome": "Loxodon",
+        "Descricao": "Loxodons são elefantoides sábios e calmos, com força formidável e lealdade profunda.",
+        "BonusAtributos": {},
+        "TendenciasComuns": "Variada.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum"
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "simic-hybrid",
+    "Fonte": "Guildmaster’s Guide to Ravnica",
+    "Nome": "Simic Hybrid",
+    "Descricao": "Resultado de experimentos mágicos, os Simic Hybrids são modificados biologicamente com traços de diversas criaturas.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Simic Hybrid",
+        "Descricao": "Criaturas adaptativas com modificações físicas como carapaças ou nadadeiras.",
+        "BonusAtributos": {
+          "Constituicao": 2,
+          "Escolha": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum"
+        ],
+        "Proficiencias": [
+          "Natureza"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "vedalken",
+    "Fonte": "Guildmaster’s Guide to Ravnica",
+    "Nome": "Vedalken",
+    "Descricao": "Altos, de pele azulada e incrivelmente lógicos, os vedalken se destacam em raciocínio, engenharia e diplomacia.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Vedalken",
+        "Descricao": "Analíticos e meticulosos, vedalkens evitam emoções em prol da lógica.",
+        "BonusAtributos": {
+          "Inteligencia": 2,
+          "Sabedoria": 1
+        },
+        "TendenciasComuns": "Tendem à ordem e neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Vedalken"
+        ],
+        "Proficiencias": [
+          "Investigação"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "pallid-elf",
+    "Fonte": "Explorer’s Guide to Wildemount",
+    "Nome": "Pallid Elf",
+    "Descricao": "Elfos pálidos que vivem à margem da luz, atentos às emoções e sombras dos outros.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Elfo Pálido",
+        "Descricao": "Sensíveis à emoção e à luz, esses elfos são intuitivos e furtivos.",
+        "BonusAtributos": {
+          "Sabedoria": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem ao bem e à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Élfico"
+        ],
+        "Proficiencias": [
+          "Intuição",
+          "Furtividade"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "lotusden-halfling",
+    "Fonte": "Explorer’s Guide to Wildemount",
+    "Nome": "Lotusden Halfling",
+    "Descricao": "Halflings das florestas densas que cresceram em harmonia com a natureza e seus ciclos.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Halfling Lotusden",
+        "Descricao": "Com afinidade natural pelas florestas, esses halflings são furtivos e místicos.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Sabedoria": 1
+        },
+        "TendenciasComuns": "Tendem ao bem e à neutralidade.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Halfling"
+        ],
+        "Proficiencias": [
+          "Natureza"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "draconblood-dragonborn",
+    "Fonte": "Explorer’s Guide to Wildemount",
+    "Nome": "Draconblood Dragonborn",
+    "Descricao": "Dragonborn com sangue de dragão vermelho, orgulhosos e ferozes em batalha.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Draconblood",
+        "Descricao": "Orgulhosos e determinados, canalizam a força dos dragões vermelhos.",
+        "BonusAtributos": {
+          "Carisma": 2,
+          "Forca": 1
+        },
+        "TendenciasComuns": "Tendem à lei e ao caos.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Dracônico"
+        ],
+        "Proficiencias": [
+          "Intimidação"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "ravenite-dragonborn",
+    "Fonte": "Explorer’s Guide to Wildemount",
+    "Nome": "Ravenite Dragonborn",
+    "Descricao": "Dragonborn com sangue de dragão negro, ágeis e furtivos, com afinidade por sombras.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Ravenite",
+        "Descricao": "Furtivos e silenciosos, têm ligação com as sombras e a escuridão.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade e ao caos.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Dracônico"
+        ],
+        "Proficiencias": [
+          "Furtividade"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "leonin",
+    "Fonte": "Mythic Odysseys of Theros",
+    "Nome": "Leonin",
+    "Descricao": "Felinos humanoides orgulhosos e guerreiros, conhecidos por sua coragem e força física.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Leonin",
+        "Descricao": "Guerreiros ferozes com garras poderosas e espírito indomável.",
+        "BonusAtributos": {
+          "Forca": 2,
+          "Constituicao": 1
+        },
+        "TendenciasComuns": "Tendem ao bem e à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Leonin"
+        ],
+        "Proficiencias": [
+          "Atletismo"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "satyr",
+    "Fonte": "Mythic Odysseys of Theros",
+    "Nome": "Satyr",
+    "Descricao": "Seres místicos das florestas, com espírito livre, alegria e habilidades musicais naturais.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Satyr",
+        "Descricao": "Divertidos e carismáticos, conhecidos por sua agilidade e magia natural.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Carisma": 1
+        },
+        "TendenciasComuns": "Tendem ao caos e à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Sylvan"
+        ],
+        "Proficiencias": [
+          "Performance"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "owlin",
+    "Fonte": "Strixhaven: A Curriculum of Chaos",
+    "Nome": "Owlin",
+    "Descricao": "Humanóides com características de coruja, silenciosos e atentos, com grande capacidade de voo e percepção aguçada.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Owlin",
+        "Descricao": "Seres noturnos com voo silencioso e visão aguçada.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Sabedoria": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Aviar"
+        ],
+        "Proficiencias": [
+          "Percepção"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "faerzress-dwarf",
+    "Fonte": "Homebrew",
+    "Nome": "Faerzress Dwarf",
+    "Descricao": "Anões ligados às forças mágicas da Faerzress, conhecidos por sua resistência a magias e habilidades especiais.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Faerzress",
+        "Descricao": "Anões que vivem em regiões de energia mágica densa, com resistência à magia.",
+        "BonusAtributos": {
+          "Constituicao": 2,
+          "Sabedoria": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Anão"
+        ],
+        "Proficiencias": [
+          "Resistência a Magia"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "gem-dragonborn",
+    "Fonte": "Homebrew",
+    "Nome": "Gem Dragonborn",
+    "Descricao": "Dragonborn com herança de dragões gemas, possuindo poderes psíquicos e afinidade com energia mental.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Gem Dragonborn",
+        "Descricao": "Possuem resistência psíquica e habilidades mágicas ligadas a poderes mentais.",
+        "BonusAtributos": {
+          "Carisma": 2,
+          "Inteligencia": 1
+        },
+        "TendenciasComuns": "Tendem ao bem e à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Dracônico"
+        ],
+        "Proficiencias": [
+          "Arcanismo"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "autognome",
+    "Fonte": "Homebrew",
+    "Nome": "Autognome",
+    "Descricao": "Pequenos construtos inteligentes que buscam compreensão do mundo e evolução tecnológica.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Autognome",
+        "Descricao": "Construtos mecânicos com curiosidade insaciável e habilidade técnica.",
+        "BonusAtributos": {
+          "Inteligencia": 2,
+          "Constituicao": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade e à curiosidade.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Gnomo"
+        ],
+        "Proficiencias": [
+          "Ferramentas de Artífice"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "giff",
+    "Fonte": "Homebrew",
+    "Nome": "Giff",
+    "Descricao": "Gigantescos humanoides hipopótamo, conhecidos por seu amor a armas pesadas e disciplina militar.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Giff",
+        "Descricao": "Fortes e disciplinados, especialistas em armas de fogo e táticas militares.",
+        "BonusAtributos": {
+          "Forca": 2,
+          "Constituicao": 1
+        },
+        "TendenciasComuns": "Tendem à lei e à ordem.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Giff"
+        ],
+        "Proficiencias": [
+          "Armas de Fogo"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "hadozee",
+    "Fonte": "Homebrew",
+    "Nome": "Hadozee",
+    "Descricao": "Primatas alados conhecidos por suas habilidades acrobáticas e voo limitado.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Hadozee",
+        "Descricao": "Ágeis e curiosos, excelentes em escalada e voo breve.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Sabedoria": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Primata"
+        ],
+        "Proficiencias": [
+          "Acrobacia"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "plasmoid",
+    "Fonte": "Homebrew",
+    "Nome": "Plasmoid",
+    "Descricao": "Seres amorfos feitos de plasma, capazes de moldar seus corpos e resistir a muitos tipos de dano.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Plasmoid",
+        "Descricao": "Adaptáveis e resilientes, podem alterar sua forma para evitar danos.",
+        "BonusAtributos": {
+          "Constituicao": 2,
+          "Destreza": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Elemental"
+        ],
+        "Proficiencias": [
+          "Resistência a Contusão"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "thri-kreen",
+    "Fonte": "Homebrew",
+    "Nome": "Thri-kreen",
+    "Descricao": "Insectóides exóticos conhecidos por suas múltiplas armas naturais e velocidade impressionante.",
+    "SubRacas": [
+      {
+        "Id": "",
+        "Nome": "Thri-kreen",
+        "Descricao": "Predadores rápidos e eficientes, com habilidades naturais de combate.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Forca": 1
+        },
+        "TendenciasComuns": "Tendem ao caos e à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 12,
+        "Idiomas": [
+          "Comum",
+          "Thri-kreen"
+        ],
+        "Proficiencias": [
+          "Percepção"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      }
+    ]
+  },
+  {
+    "Id": "sea-elf",
+    "Nome": "Sea Elf",
+    "Descricao": "Elfos adaptados à vida submarina, com habilidades aquáticas.",
+    "Fonte": "Mordenkainen’s Tome of Foes",
+    "SubRacas": [
+      {
+        "Id": "sea-elf-padrao",
+        "Nome": "Sea Elf",
+        "Descricao": "Elfos que vivem nos oceanos, adaptados à vida subaquática.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Constituicao": 1
+        },
+        "TendenciasComuns": "Tendem ao bem e à ordem.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Élfico",
+          "Aquan"
+        ],
+        "Proficiencias": [
+          "Armas de Tridente",
+          "Natação"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://www.dndbeyond.com/avatars/thumbnails/30802/206/1000/1000/638063702769359218.png",
+        "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30802/206/1000/1000/638063702769359218.png"
+      }
+    ]
+  },
+  {
+    "Id": "shadar-kai",
+    "Nome": "Shadar-kai",
+    "Descricao": "Elfos sombrios ligados ao Shadowfell, com resistência sobrenatural.",
+    "Fonte": "Mordenkainen’s Tome of Foes",
+    "SubRacas": [
+      {
+        "Id": "shadar-kai-padrao",
+        "Nome": "Shadar-kai",
+        "Descricao": "Elfos do Shadowfell com habilidades sombrias e resistência mágica.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Constituicao": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Élfico"
+        ],
+        "Proficiencias": [
+          "Resistência a Necrose"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://www.dndbeyond.com/avatars/thumbnails/30802/193/1000/1000/638063702705927901.png",
+        "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30802/193/1000/1000/638063702705927901.png"
+      }
+    ]
+  },
+  {
+    "Id": "duergar",
+    "Nome": "Duergar",
+    "Descricao": "Anões do Subterrâneo, resistentes à magia e com poderes psíquicos.",
+    "Fonte": "Mordenkainen’s Tome of Foes",
+    "SubRacas": [
+      {
+        "Id": "duergar-padrao",
+        "Nome": "Duergar",
+        "Descricao": "Anões endurecidos pela vida no Subterrâneo, com resistência e habilidades mágicas.",
+        "BonusAtributos": {
+          "Constituicao": 2,
+          "Forca": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade ou ao mal.",
+        "Tamanho": "Médio",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Anão",
+          "Subterrâneo"
+        ],
+        "Proficiencias": [
+          "Resistência a Encantamento"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://www.dndbeyond.com/avatars/thumbnails/30802/211/1000/1000/638063702797756683.png",
+        "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30802/211/1000/1000/638063702797756683.png"
+      }
+    ]
+  },
+  {
+    "Id": "deep-gnome",
+    "Nome": "Deep Gnome (Svirfneblin)",
+    "Descricao": "Gnomos reclusos das profundezas com resistência e furtividade excepcionais.",
+    "Fonte": "Sword Coast Adventurer’s Guide",
+    "SubRacas": [
+      {
+        "Id": "deep-gnome-padrao",
+        "Nome": "Svirfneblin",
+        "Descricao": "Gnomos que vivem nas profundezas da terra, conhecidos como Svirfneblin.",
+        "BonusAtributos": {
+          "Inteligencia": 2,
+          "Destreza": 1
+        },
+        "TendenciasComuns": "Tendem à neutralidade.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Gnomo",
+          "Terran"
+        ],
+        "Proficiencias": [
+          "Furtividade"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://www.dndbeyond.com/avatars/thumbnails/30802/210/1000/1000/638063702797756683.png",
+        "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30802/210/1000/1000/638063702797756683.png"
+      }
+    ]
+  },
+  {
+    "Id": "grung",
+    "Nome": "Grung",
+    "Descricao": "Anfíbios venenosos e ágeis, nativos de selvas tropicais.",
+    "Fonte": "One Grung Above",
+    "SubRacas": [
+      {
+        "Id": "grung-padrao",
+        "Nome": "Grung",
+        "Descricao": "Pequenos humanoides rãs com pele venenosa.",
+        "BonusAtributos": {
+          "Destreza": 2,
+          "Constituicao": 1
+        },
+        "TendenciasComuns": "Tendem à ordem rígida.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Grung"
+        ],
+        "Proficiencias": [
+          "Acrobacia",
+          "Resistência a Veneno"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://www.dndbeyond.com/avatars/thumbnails/30802/267/1000/1000/638063703228476734.png",
+        "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30802/267/1000/1000/638063703228476734.png"
+      }
+    ]
+  },
+  {
+    "Id": "locathah",
+    "Nome": "Locathah",
+    "Descricao": "Humanoides peixes resilientes, adaptados ao mar.",
+    "Fonte": "Locathah Rising",
+    "SubRacas": [
+      {
+        "Id": "locathah-padrao",
+        "Nome": "Locathah",
+        "Descricao": "Criaturas marinhas orgulhosas e adaptadas à vida aquática.",
+        "BonusAtributos": {
+          "Forca": 1,
+          "Sabedoria": 2
+        },
+        "TendenciasComuns": "Tendem à neutralidade.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Aquan"
+        ],
+        "Proficiencias": [
+          "Armas de Tridente",
+          "Atlético"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://www.dndbeyond.com/avatars/thumbnails/30802/270/1000/1000/638063703242559433.png",
+        "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30802/270/1000/1000/638063703242559433.png"
+      }
+    ]
+  },
+  {
+    "Id": "verdan",
+    "Nome": "Verdan",
+    "Descricao": "Mutáveis e carismáticos, os verdan se adaptam rapidamente.",
+    "Fonte": "Acquisitions Incorporated",
+    "SubRacas": [
+      {
+        "Id": "verdan-padrao",
+        "Nome": "Verdan",
+        "Descricao": "Humanóides goblinoides que mudam de aparência com o tempo.",
+        "BonusAtributos": {
+          "Carisma": 2,
+          "Constituicao": 1
+        },
+        "TendenciasComuns": "Tendem ao caos.",
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          "Comum",
+          "Goblin"
+        ],
+        "Proficiencias": [
+          "Persuasão"
+        ],
+        "VisaoNoEscuro": null,
+        "Resistencias": [],
+        "Caracteristicas": [],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://www.dndbeyond.com/avatars/thumbnails/30802/276/1000/1000/638063703283527716.png",
+        "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30802/276/1000/1000/638063703283527716.png"
+      }
+    ]
+  }
 ]

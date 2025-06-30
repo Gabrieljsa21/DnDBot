@@ -7,6 +7,8 @@ namespace DnDBot.Application.Models
     /// </summary>
     public class Raca
     {
+        public string Id { get; set; }
+
         /// <summary>
         /// Nome da raça (ex: Elfo, Anão).
         /// </summary>
@@ -18,24 +20,23 @@ namespace DnDBot.Application.Models
         public string Descricao { get; set; }
 
         /// <summary>
-        /// Lista de sub-raças pertencentes a essa raça.
+        /// Fonte da raça (ex: Livro do Jogador).
         /// </summary>
-        public List<string> SubRacas { get; set; } = new();
-    }
-
-    /// <summary>
-    /// Representa uma sub-raça específica com descrição (uso futuro).
-    /// </summary>
-    public class SubRaca
-    {
-        /// <summary>
-        /// Nome da sub-raça (ex: Alto Elfo, Anão da Montanha).
-        /// </summary>
-        public string Nome { get; set; }
+        public string Fonte { get; set; }
 
         /// <summary>
-        /// Descrição da sub-raça.
+        /// Lista de sub-raças completas pertencentes a essa raça.
         /// </summary>
-        public string Descricao { get; set; }
+        public List<SubRaca> SubRacas { get; set; } = new();
+
+        /// <summary>
+        /// URL do ícone da raça.
+        /// </summary>
+        public string IconeUrl { get; set; }
+
+        /// <summary>
+        /// URL da imagem principal da raça.
+        /// </summary>
+        public string ImagemUrl { get; set; }
     }
 }

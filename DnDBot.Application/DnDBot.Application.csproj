@@ -3,9 +3,13 @@
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Data\fichas.json" />
     <None Remove="Data\racas.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\fichas.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\racas.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
