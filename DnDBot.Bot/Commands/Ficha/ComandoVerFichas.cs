@@ -43,7 +43,7 @@ namespace DnDBot.Bot.Commands.Ficha
             {
                 embedBuilder.AddField(
                     ficha.Nome,
-                    $"Raça: {ficha.Raca}\nClasse: {ficha.Classe}\nAntecedente: {ficha.Antecedente}\nAlinhamento: {ficha.Alinhamento}",
+                    $"Raça: {ficha.Raca}\nSub-Raça: {ficha.Subraca}\nClasse: {ficha.Classe}\nAntecedente: {ficha.Antecedente}\nAlinhamento: {ficha.Alinhamento}",
                     false);
             }
 

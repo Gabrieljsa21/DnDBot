@@ -2,6 +2,7 @@
 using DnDBot.Application.Models;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 
 namespace DnDBot.Application.Services
@@ -36,5 +37,17 @@ namespace DnDBot.Application.Services
         /// </summary>
         /// <returns>Lista somente leitura de <see cref="Raca"/>.</returns>
         public IReadOnlyList<Raca> ObterRacas() => _racas.AsReadOnly();
+
+        /// <summary>
+        /// Retorna uma raça com base no nome informado.
+        /// </summary>
+        /// <param name="nome">Nome da raça a ser buscada.</param>
+        /// <returns>Objeto <see cref="Raca"/> correspondente ao nome, ou <c>null</c> se não encontrada.</returns>
+        public Raca ObterRacaPorNome(string nome)
+        {
+            return _racas.FirstOrDefault(r => r.Nome == nome);
+        }
+
+
     }
 }

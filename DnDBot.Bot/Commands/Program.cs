@@ -2,6 +2,7 @@ using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
 using DnDBot.Application.Services;
+using DnDBot.Bot.Commands.Ficha;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Reflection;
@@ -52,6 +53,8 @@ class Program
             .AddSingleton<AntecedentesService>()
             .AddSingleton<AlinhamentosService>()
             .AddSingleton<FichaService>()
+            .AddSingleton<DistribuicaoAtributosService>()
+            .AddSingleton<DistribuicaoAtributosHandler>()
             .BuildServiceProvider();
 
         RegistrarEventos();

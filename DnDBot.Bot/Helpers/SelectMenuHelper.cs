@@ -91,5 +91,30 @@ namespace DnDBot.Bot.Helpers
 
             return select;
         }
+
+        /// <summary>
+        /// Cria um menu de seleção de sub-raças para interação com o usuário no Discord.
+        /// Cada opção do menu corresponde a uma sub-raça disponível para a raça selecionada.
+        /// </summary>
+        /// <param name="subRacas">Coleção de sub-raças disponíveis para escolha.</param>
+        /// <returns>
+        /// Um <see cref="SelectMenuBuilder"/> configurado com até 25 opções de sub-raças.
+        /// </returns>
+        public static SelectMenuBuilder CriarSelectSubraca(IEnumerable<SubRaca> subRacas)
+        {
+            var select = new SelectMenuBuilder()
+                .WithCustomId("select_subraca")
+                .WithPlaceholder("Escolha a sub-raça");
+
+            foreach (var subRaca in subRacas.Take(25))
+            {
+                string value = subRaca.Nome.Length > 25 ? subRaca.Nome.Substring(0, 25) : subRaca.Nome;
+                select.AddOption(subRaca.Nome, value);
+            }
+
+            return select;
+        }
+
+
     }
 }

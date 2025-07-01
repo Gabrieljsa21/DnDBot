@@ -5,6 +5,24 @@ Todas as alterações significativas neste projeto serão documentadas neste arquiv
 O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e o versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ---
+## [1.1.2] - 2025-07-01
+
+### Adicionado
+- Sistema completo de distribuição de atributos baseado no método Point Buy (27 pontos) integrado ao Discord.
+- Comando `/ficha_atributos` com menu suspenso para seleção de ficha.
+- Exibição interativa dos atributos via embed, com botões para aumentar ou reduzir valores.
+- Persistência dos pontos de atributos na ficha ao concluir a distribuição.
+- Validações para impedir valores inválidos (abaixo de 8 ou acima de 15) ou ultrapassar o total de pontos disponíveis.
+- Classe `DistribuicaoAtributosHandler` para gerenciar a lógica de distribuição e renderização dos botões e embed.
+- Suporte a botões dinâmicos (`atributo_mais_x`, `atributo_menos_x`) com uso de `ComponentInteraction("atributo_*_*")`.
+- Atualização automática da ficha com os atributos definidos após clicar em "? Concluir".
+
+### Corrigido
+- Problemas de consistência nos nomes dos atributos (remoção de acentos e padronização de chaves como "forca", "destreza" etc.).
+- Correção de erros de conversão ao configurar botões (`WithButton`), uso correto de `customId` e `row`.
+
+### Removido
+- Mapas auxiliares desnecessários como `AtributosMap` e `NomeAcentuado`, substituídos por chaves diretas e padronizadas.
 
 ## [1.1.1] - 2025-06-30
 

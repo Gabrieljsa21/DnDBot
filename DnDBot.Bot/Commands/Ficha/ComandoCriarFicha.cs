@@ -1,39 +1,42 @@
 ﻿using Discord;
 using Discord.Interactions;
+using Discord.WebSocket;
 using DnDBot.Application.Models;
 using DnDBot.Application.Services;
 using DnDBot.Bot.Helpers;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace DnDBot.Bot.Commands.Ficha
 {
-    /// <summary>
-    /// Módulo responsável pelo comando /ficha_criar e etapas interativas da criação de personagem.
-    /// </summary>
     public class ComandoCriarFicha : InteractionModuleBase<SocketInteractionContext>
     {
+
         private readonly FichaService _fichaService;
         private readonly RacasService _racasService;
         private readonly ClassesService _classesService;
         private readonly AntecedentesService _antecedentesService;
         private readonly AlinhamentosService _alinhamentosService;
+        private readonly DistribuicaoAtributosHandler _atributosHandler;
 
-        /// <summary>
-        /// Construtor com injeção dos serviços necessários.
-        /// </summary>
         public ComandoCriarFicha(
             FichaService fichaService,
             RacasService racasService,
             ClassesService classesService,
             AntecedentesService antecedentesService,
-            AlinhamentosService alinhamentosService)
+            AlinhamentosService alinhamentosService,
+            DistribuicaoAtributosHandler atributosHandler)
         {
             _fichaService = fichaService;
             _racasService = racasService;
             _classesService = classesService;
             _antecedentesService = antecedentesService;
             _alinhamentosService = alinhamentosService;
+            _atributosHandler = atributosHandler;
+
         }
 
         /// <summary>
@@ -72,10 +75,6 @@ namespace DnDBot.Bot.Commands.Ficha
 
             await RespondAsync("Agora escolha os demais detalhes do personagem:", components: componentesBuilder.Build(), ephemeral: true);
         }
-
-        /// <summary>
-        /// Verifica se a ficha está completa e válida.
-        /// </summary>
         private bool FichaCompletaValida(FichaPersonagem ficha)
         {
             if (ficha == null) return false;
@@ -92,8 +91,12 @@ namespace DnDBot.Bot.Commands.Ficha
         }
 
         /// <summary>
-        /// Finaliza o processo de criação da ficha, persistindo-a se estiver válida.
+        /// Finaliza o processo de criação da ficha, salvando-a se todos os campos obrigatórios estiverem preenchidos.
+        /// Também remove a ficha temporária da memória e solicita a escolha da sub-raça, caso a raça selecionada possua.
         /// </summary>
+        /// <returns>
+        /// <c>true</c> se a ficha foi considerada válida e finalizada com sucesso; <c>false</c> caso contrário.
+        /// </returns>
         private async Task<bool> TentarFinalizarFichaAsync()
         {
             var ficha = FichaTempStore.GetFicha(Context.User.Id);
@@ -111,8 +114,18 @@ namespace DnDBot.Bot.Commands.Ficha
                     $"**Alinhamento:** {ficha.Alinhamento}";
 
                 await RespondAsync($"✅ Ficha do personagem criada com sucesso!\n\n{resumo}", ephemeral: true);
+
+                // Se a raça possuir sub-raças, solicita a seleção ao usuário
+                var racaObj = _racasService.ObterRacaPorNome(ficha.Raca);
+                if (racaObj?.SubRacas != null && racaObj.SubRacas.Any())
+                {
+                    var selectSubraca = SelectMenuHelper.CriarSelectSubraca(racaObj.SubRacas);
+                    await FollowupAsync("Escolha a sub-raça do seu personagem:", components: new ComponentBuilder().WithSelectMenu(selectSubraca).Build(), ephemeral: true);
+                }
+
                 return true;
             }
+
             return false;
         }
 
@@ -162,6 +175,44 @@ namespace DnDBot.Bot.Commands.Ficha
 
             if (!await TentarFinalizarFichaAsync())
                 await DeferAsync(ephemeral: true);
+        }       
+
+
+        // Botão para concluir a distribuição
+        [ComponentInteraction("concluir_distribuicao")]
+        public async Task ConcluirDistribuicao()
+        {
+            var fichas = _fichaService.ObterFichasPorJogador(Context.User.Id);
+            var ficha = fichas.OrderByDescending(f => f.DataAlteracao).FirstOrDefault();
+
+            if (ficha == null)
+            {
+                await RespondAsync("❌ Ficha não encontrada para salvar atributos.", ephemeral: true);
+                return;
+            }
+
+            var dist = _atributosHandler.ObterDistribuicao(Context.User.Id, ficha.Id);
+
+            if (dist.PontosUsados > dist.PontosDisponiveis)
+            {
+                await RespondAsync("❌ Você usou mais pontos do que o permitido.", ephemeral: true);
+                return;
+            }
+
+            ficha.Forca = dist.Atributos["Forca"];
+            ficha.Destreza = dist.Atributos["Destreza"];
+            ficha.Constituicao = dist.Atributos["Constituicao"];
+            ficha.Inteligencia = dist.Atributos["Inteligencia"];
+            ficha.Sabedoria = dist.Atributos["Sabedoria"];
+            ficha.Carisma = dist.Atributos["Carisma"];
+
+            _fichaService.AtualizarFicha(ficha);
+
+            _atributosHandler.RemoverDistribuicao(Context.User.Id, ficha.Id);
+
+            await RespondAsync("✅ Distribuição de atributos concluída com sucesso!", ephemeral: true);
         }
+
+        
     }
 }

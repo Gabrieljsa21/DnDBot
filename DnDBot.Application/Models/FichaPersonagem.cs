@@ -79,5 +79,14 @@ namespace DnDBot.Application.Models
         /// Lista de proficiências adquiridas pelo personagem.
         /// </summary>
         public List<string> Proficiencias { get; set; } = new();
+
+        /// <summary>
+        /// Sub-raça do personagem, definida com base na raça escolhida.
+        /// </summary>
+        public string Subraca { get; set; } = "Não definida";
+
+        public DateTime DataCriacao { get; set; }
+        public DateTime DataAlteracao { get; set; }
+        public bool EstaAtivo { get; set; } = true;
     }
 }
