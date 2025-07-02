@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: dndbot
+    env: dotnet
+    plan: free
+    buildCommand: dotnet build
+    startCommand: dotnet run --project DnDBot.Bot
+    envVars:
+      - key: DISCORD_TOKEN
+        value: your_token_here
