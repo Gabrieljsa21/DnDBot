@@ -1,22 +1,834 @@
 [
   {
-    "Id": "0f372b61-2984-4921-9a41-302562b9c333",
-    "JogadorId": 304469035607916545,
-    "Nome": "a",
-    "Raca": "Aasimar",
-    "Classe": "Art\u00EDfice",
-    "Antecedente": "Arque\u00F3logo",
-    "Alinhamento": "Neutro Puro (N)",
+    "Id": "eab19b8a-3e78-4505-a83e-96f67c4dbba8",
+    "IdJogador": 0,
+    "Nome": "aq",
+    "IdRaca": "N\u00E3o definida",
+    "IdSubraca": "N\u00E3o definida",
+    "IdClasse": "N\u00E3o definida",
+    "IdAntecedente": "N\u00E3o definido",
+    "IdAlinhamento": "N\u00E3o definido",
+    "Forca": 11,
+    "Destreza": 8,
+    "Constituicao": 8,
+    "Inteligencia": 8,
+    "Sabedoria": 8,
+    "Carisma": 8,
+    "BonusAtributos": [
+      {
+        "Id": null,
+        "Atributo": "Carisma",
+        "Valor": 2,
+        "Origem": "Ra\u00E7a"
+      },
+      {
+        "Id": null,
+        "Atributo": "Forca",
+        "Valor": 1,
+        "Origem": "Ra\u00E7a"
+      }
+    ],
+    "IdProficiencias": [],
+    "IdIdiomas": [],
+    "IdResistencias": [],
+    "IdCaracteristicas": [],
+    "IdMagiasRaciais": [],
+    "Tamanho": "M\u00E9dio",
+    "Deslocamento": 9,
+    "VisaoNoEscuro": 0,
+    "DataCriacao": "2025-07-01T13:00:00-03:00",
+    "DataAlteracao": "2025-07-01T16:05:52-03:00",
+    "EstaAtivo": true,
+    "Tesouro": {
+      "Moedas": [
+        {
+          "Tipo": 0,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 1,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 2,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 3,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 4,
+          "Quantidade": 0
+        }
+      ]
+    },
+    "HistoricoFinanceiro": []
+  },
+  {
+    "Id": "79bd75d6-5bc4-47e5-87d1-6259352892a9",
+    "IdJogador": 0,
+    "Nome": "Zal",
+    "IdRaca": "N\u00E3o definida",
+    "IdSubraca": "N\u00E3o definida",
+    "IdClasse": "N\u00E3o definida",
+    "IdAntecedente": "N\u00E3o definido",
+    "IdAlinhamento": "N\u00E3o definido",
     "Forca": 15,
     "Destreza": 15,
     "Constituicao": 15,
     "Inteligencia": 8,
     "Sabedoria": 8,
     "Carisma": 8,
-    "Proficiencias": [],
-    "Subraca": "Flagelador",
-    "DataCriacao": "0001-01-01T00:00:00",
-    "DataAlteracao": "2025-07-01T05:40:28.9988796Z",
-    "EstaAtivo": true
+    "BonusAtributos": [
+      {
+        "Id": null,
+        "Atributo": "Carisma",
+        "Valor": 2,
+        "Origem": "Sub-Ra\u00E7a"
+      },
+      {
+        "Id": null,
+        "Atributo": "Constituicao",
+        "Valor": 1,
+        "Origem": "Sub-Ra\u00E7a"
+      }
+    ],
+    "IdProficiencias": [],
+    "IdIdiomas": [],
+    "IdResistencias": [],
+    "IdCaracteristicas": [],
+    "IdMagiasRaciais": [],
+    "Tamanho": "M\u00E9dio",
+    "Deslocamento": 9,
+    "VisaoNoEscuro": 0,
+    "DataCriacao": "2025-07-01T15:02:39.1794352",
+    "DataAlteracao": "2025-07-01T18:13:04.9489135Z",
+    "EstaAtivo": true,
+    "Tesouro": {
+      "Moedas": [
+        {
+          "Tipo": 0,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 1,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 2,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 3,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 4,
+          "Quantidade": 0
+        }
+      ]
+    },
+    "HistoricoFinanceiro": []
+  },
+  {
+    "Id": "6c998a2a-d8de-4835-9fb5-1c095510adb7",
+    "IdJogador": 0,
+    "Nome": "ww",
+    "IdRaca": "N\u00E3o definida",
+    "IdSubraca": "N\u00E3o definida",
+    "IdClasse": "N\u00E3o definida",
+    "IdAntecedente": "N\u00E3o definido",
+    "IdAlinhamento": "N\u00E3o definido",
+    "Forca": 0,
+    "Destreza": 0,
+    "Constituicao": 0,
+    "Inteligencia": 0,
+    "Sabedoria": 0,
+    "Carisma": 0,
+    "BonusAtributos": [
+      {
+        "Id": null,
+        "Atributo": "Carisma",
+        "Valor": 2,
+        "Origem": "Sub-Ra\u00E7a"
+      },
+      {
+        "Id": null,
+        "Atributo": "Constituicao",
+        "Valor": 1,
+        "Origem": "Sub-Ra\u00E7a"
+      }
+    ],
+    "IdProficiencias": [],
+    "IdIdiomas": [],
+    "IdResistencias": [],
+    "IdCaracteristicas": [],
+    "IdMagiasRaciais": [],
+    "Tamanho": "M\u00E9dio",
+    "Deslocamento": 9,
+    "VisaoNoEscuro": 0,
+    "DataCriacao": "2025-07-01T15:13:41.0830956",
+    "DataAlteracao": "2025-07-01T18:13:52.2275159Z",
+    "EstaAtivo": true,
+    "Tesouro": {
+      "Moedas": [
+        {
+          "Tipo": 0,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 1,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 2,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 3,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 4,
+          "Quantidade": 0
+        }
+      ]
+    },
+    "HistoricoFinanceiro": []
+  },
+  {
+    "Id": "52c71b12-94a2-4c7a-980e-464d2f2efa4a",
+    "IdJogador": 0,
+    "Nome": "a",
+    "IdRaca": "N\u00E3o definida",
+    "IdSubraca": "N\u00E3o definida",
+    "IdClasse": "N\u00E3o definida",
+    "IdAntecedente": "N\u00E3o definido",
+    "IdAlinhamento": "N\u00E3o definido",
+    "Forca": 15,
+    "Destreza": 12,
+    "Constituicao": 8,
+    "Inteligencia": 8,
+    "Sabedoria": 8,
+    "Carisma": 8,
+    "BonusAtributos": [
+      {
+        "Id": null,
+        "Atributo": "Inteligencia",
+        "Valor": 1,
+        "Origem": "Sub-Ra\u00E7a"
+      },
+      {
+        "Id": null,
+        "Atributo": "Constituicao",
+        "Valor": 2,
+        "Origem": "Sub-Ra\u00E7a"
+      }
+    ],
+    "IdProficiencias": [],
+    "IdIdiomas": [],
+    "IdResistencias": [],
+    "IdCaracteristicas": [],
+    "IdMagiasRaciais": [],
+    "Tamanho": "Pequeno",
+    "Deslocamento": 7,
+    "VisaoNoEscuro": 18,
+    "DataCriacao": "2025-07-01T15:35:20.9895538",
+    "DataAlteracao": "2025-07-01T18:38:28.263336Z",
+    "EstaAtivo": true,
+    "Tesouro": {
+      "Moedas": [
+        {
+          "Tipo": 0,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 1,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 2,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 3,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 4,
+          "Quantidade": 0
+        }
+      ]
+    },
+    "HistoricoFinanceiro": []
+  },
+  {
+    "Id": "a12a1607-6760-4132-a3fe-f38c0c98bfe6",
+    "IdJogador": 0,
+    "Nome": "a",
+    "IdRaca": "N\u00E3o definida",
+    "IdSubraca": "N\u00E3o definida",
+    "IdClasse": "N\u00E3o definida",
+    "IdAntecedente": "N\u00E3o definido",
+    "IdAlinhamento": "N\u00E3o definido",
+    "Forca": 0,
+    "Destreza": 0,
+    "Constituicao": 0,
+    "Inteligencia": 0,
+    "Sabedoria": 0,
+    "Carisma": 0,
+    "BonusAtributos": [],
+    "IdProficiencias": [],
+    "IdIdiomas": [],
+    "IdResistencias": [],
+    "IdCaracteristicas": [],
+    "IdMagiasRaciais": [],
+    "Tamanho": null,
+    "Deslocamento": 0,
+    "VisaoNoEscuro": null,
+    "DataCriacao": "2025-07-02T01:19:15.2025063",
+    "DataAlteracao": "2025-07-02T01:19:15.2025219",
+    "EstaAtivo": true,
+    "Tesouro": {
+      "Moedas": [
+        {
+          "Tipo": 0,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 1,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 2,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 3,
+          "Quantidade": 10
+        },
+        {
+          "Tipo": 4,
+          "Quantidade": 0
+        }
+      ]
+    },
+    "HistoricoFinanceiro": []
+  },
+  {
+    "Id": "f2d7b72f-df8d-4080-bfb9-7ee53b557d43",
+    "IdJogador": 304469035607916545,
+    "Nome": "az",
+    "IdRaca": "Draconato",
+    "IdSubraca": "N\u00E3o definida",
+    "IdClasse": "bruxo",
+    "IdAntecedente": "antropologo",
+    "IdAlinhamento": "lg",
+    "Forca": 0,
+    "Destreza": 0,
+    "Constituicao": 0,
+    "Inteligencia": 0,
+    "Sabedoria": 0,
+    "Carisma": 0,
+    "BonusAtributos": [],
+    "IdProficiencias": [],
+    "IdIdiomas": [],
+    "IdResistencias": [],
+    "IdCaracteristicas": [],
+    "IdMagiasRaciais": [],
+    "Tamanho": null,
+    "Deslocamento": 0,
+    "VisaoNoEscuro": null,
+    "DataCriacao": "2025-07-02T02:18:31.252386",
+    "DataAlteracao": "2025-07-02T02:18:31.2523985",
+    "EstaAtivo": true,
+    "Tesouro": {
+      "Moedas": [
+        {
+          "Tipo": 0,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 1,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 2,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 3,
+          "Quantidade": 10
+        },
+        {
+          "Tipo": 4,
+          "Quantidade": 0
+        }
+      ]
+    },
+    "HistoricoFinanceiro": []
+  },
+  {
+    "Id": "c8677f8e-9ecd-4298-b04d-f0752fb879ff",
+    "IdJogador": 304469035607916545,
+    "Nome": "qwe",
+    "IdRaca": "Aasimar",
+    "IdSubraca": "N\u00E3o definida",
+    "IdClasse": "bardo",
+    "IdAntecedente": "artesao_de_guilda",
+    "IdAlinhamento": "n",
+    "Forca": 0,
+    "Destreza": 0,
+    "Constituicao": 0,
+    "Inteligencia": 0,
+    "Sabedoria": 0,
+    "Carisma": 0,
+    "BonusAtributos": [],
+    "IdProficiencias": [],
+    "IdIdiomas": [],
+    "IdResistencias": [],
+    "IdCaracteristicas": [],
+    "IdMagiasRaciais": [],
+    "Tamanho": null,
+    "Deslocamento": 0,
+    "VisaoNoEscuro": null,
+    "DataCriacao": "2025-07-02T02:27:27.7304581",
+    "DataAlteracao": "2025-07-02T02:27:27.7304897",
+    "EstaAtivo": true,
+    "Tesouro": {
+      "Moedas": [
+        {
+          "Tipo": 0,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 1,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 2,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 3,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 4,
+          "Quantidade": 0
+        }
+      ]
+    },
+    "HistoricoFinanceiro": []
+  },
+  {
+    "Id": "c1af38af-4f28-4c30-87d7-1e7284cfa5f7",
+    "IdJogador": 304469035607916545,
+    "Nome": "a",
+    "IdRaca": "Draconato",
+    "IdSubraca": "N\u00E3o definida",
+    "IdClasse": "bruxo",
+    "IdAntecedente": "artesao_de_guilda",
+    "IdAlinhamento": "lg",
+    "Forca": 0,
+    "Destreza": 0,
+    "Constituicao": 0,
+    "Inteligencia": 0,
+    "Sabedoria": 0,
+    "Carisma": 0,
+    "BonusAtributos": [],
+    "IdProficiencias": [],
+    "IdIdiomas": [],
+    "IdResistencias": [],
+    "IdCaracteristicas": [],
+    "IdMagiasRaciais": [],
+    "Tamanho": null,
+    "Deslocamento": 0,
+    "VisaoNoEscuro": null,
+    "DataCriacao": "2025-07-02T02:51:03.4393567",
+    "DataAlteracao": "2025-07-02T02:51:03.4393683",
+    "EstaAtivo": true,
+    "Tesouro": {
+      "Moedas": [
+        {
+          "Tipo": 0,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 1,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 2,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 3,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 4,
+          "Quantidade": 0
+        }
+      ]
+    },
+    "HistoricoFinanceiro": []
+  },
+  {
+    "Id": "09cd6d6a-4c5d-4899-bfc2-38c69e909311",
+    "IdJogador": 304469035607916545,
+    "Nome": "q",
+    "IdRaca": "Changeling",
+    "IdSubraca": "N\u00E3o definida",
+    "IdClasse": "cacador-de-sangue",
+    "IdAntecedente": "artesao_de_guilda",
+    "IdAlinhamento": "ln",
+    "Forca": 0,
+    "Destreza": 0,
+    "Constituicao": 0,
+    "Inteligencia": 0,
+    "Sabedoria": 0,
+    "Carisma": 0,
+    "BonusAtributos": [],
+    "IdProficiencias": [],
+    "IdIdiomas": [],
+    "IdResistencias": [],
+    "IdCaracteristicas": [],
+    "IdMagiasRaciais": [],
+    "Tamanho": null,
+    "Deslocamento": 0,
+    "VisaoNoEscuro": null,
+    "DataCriacao": "2025-07-02T02:52:57.6410219",
+    "DataAlteracao": "2025-07-02T02:52:57.641042",
+    "EstaAtivo": true,
+    "Tesouro": {
+      "Moedas": [
+        {
+          "Tipo": 0,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 1,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 2,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 3,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 4,
+          "Quantidade": 0
+        }
+      ]
+    },
+    "HistoricoFinanceiro": []
+  },
+  {
+    "Id": "d7e32f2e-2c6b-4823-b0cf-0fe801bb5895",
+    "IdJogador": 304469035607916545,
+    "Nome": "Protetor",
+    "IdRaca": "Aasimar",
+    "IdSubraca": "N\u00E3o definida",
+    "IdClasse": "bardo",
+    "IdAntecedente": "artesao_de_guilda",
+    "IdAlinhamento": "n",
+    "Forca": 0,
+    "Destreza": 0,
+    "Constituicao": 0,
+    "Inteligencia": 0,
+    "Sabedoria": 0,
+    "Carisma": 0,
+    "BonusAtributos": [
+      {
+        "Id": null,
+        "Atributo": "Carisma",
+        "Valor": 2,
+        "Origem": "Sub-Ra\u00E7a"
+      },
+      {
+        "Id": null,
+        "Atributo": "Sabedoria",
+        "Valor": 1,
+        "Origem": "Sub-Ra\u00E7a"
+      }
+    ],
+    "IdProficiencias": [],
+    "IdIdiomas": [
+      "Comum",
+      "Celestial"
+    ],
+    "IdResistencias": [
+      "dano-necrotico",
+      "dano-radiante"
+    ],
+    "IdCaracteristicas": [
+      "curar-toque"
+    ],
+    "IdMagiasRaciais": [
+      "Nv1-Luz",
+      "Nv3-CurarFerimentos",
+      "Nv5-Ajuda"
+    ],
+    "Tamanho": "M\u00E9dio",
+    "Deslocamento": 9,
+    "VisaoNoEscuro": 0,
+    "DataCriacao": "2025-07-02T02:54:41.1082846",
+    "DataAlteracao": "2025-07-02T06:01:43.0319236Z",
+    "EstaAtivo": true,
+    "Tesouro": {
+      "Moedas": [
+        {
+          "Tipo": 0,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 1,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 2,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 3,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 4,
+          "Quantidade": 0
+        }
+      ]
+    },
+    "HistoricoFinanceiro": []
+  },
+  {
+    "Id": "2c7898ec-d661-44dd-a0c8-9441199ce8b0",
+    "IdJogador": 304469035607916545,
+    "Nome": "Ca\u00EDdo",
+    "IdRaca": "Aasimar",
+    "IdSubraca": "N\u00E3o definida",
+    "IdClasse": "cacador-de-sangue",
+    "IdAntecedente": "apostador",
+    "IdAlinhamento": "ln",
+    "Forca": 10,
+    "Destreza": 8,
+    "Constituicao": 8,
+    "Inteligencia": 8,
+    "Sabedoria": 8,
+    "Carisma": 8,
+    "BonusAtributos": [
+      {
+        "Id": null,
+        "Atributo": "Carisma",
+        "Valor": 2,
+        "Origem": "Sub-Ra\u00E7a"
+      },
+      {
+        "Id": null,
+        "Atributo": "Forca",
+        "Valor": 1,
+        "Origem": "Sub-Ra\u00E7a"
+      }
+    ],
+    "IdProficiencias": [],
+    "IdIdiomas": [
+      "Comum",
+      "Celestial"
+    ],
+    "IdResistencias": [
+      "dano-necrotico",
+      "dano-radiante"
+    ],
+    "IdCaracteristicas": [
+      "curar-toque"
+    ],
+    "IdMagiasRaciais": [
+      "Nv1-Luz",
+      "Nv3-CurarFerimentos",
+      "Nv5-Terror"
+    ],
+    "Tamanho": "M\u00E9dio",
+    "Deslocamento": 9,
+    "VisaoNoEscuro": 0,
+    "DataCriacao": "2025-07-02T03:02:42.7432927",
+    "DataAlteracao": "2025-07-02T06:04:10.3311661Z",
+    "EstaAtivo": true,
+    "Tesouro": {
+      "Moedas": [
+        {
+          "Tipo": 0,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 1,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 2,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 3,
+          "Quantidade": 15
+        },
+        {
+          "Tipo": 4,
+          "Quantidade": 0
+        }
+      ]
+    },
+    "HistoricoFinanceiro": []
+  },
+  {
+    "Id": "0eab6480-5a6b-4081-888e-38a3918937cd",
+    "IdJogador": 304469035607916545,
+    "Nome": "zzz",
+    "IdRaca": "Draconato",
+    "IdSubraca": "draconato-gelo",
+    "IdClasse": "cacador-de-sangue",
+    "IdAntecedente": "artesao_de_guilda",
+    "IdAlinhamento": "cg",
+    "Forca": 0,
+    "Destreza": 0,
+    "Constituicao": 0,
+    "Inteligencia": 0,
+    "Sabedoria": 0,
+    "Carisma": 0,
+    "BonusAtributos": [
+      {
+        "Id": null,
+        "Atributo": "Forca",
+        "Valor": 2,
+        "Origem": "Sub-Ra\u00E7a"
+      },
+      {
+        "Id": null,
+        "Atributo": "Carisma",
+        "Valor": 1,
+        "Origem": "Sub-Ra\u00E7a"
+      }
+    ],
+    "IdProficiencias": [],
+    "IdIdiomas": [
+      "Comum",
+      "Drac\u00F4nico"
+    ],
+    "IdResistencias": [],
+    "IdCaracteristicas": [],
+    "IdMagiasRaciais": [],
+    "Tamanho": "M\u00E9dio",
+    "Deslocamento": 9,
+    "VisaoNoEscuro": 0,
+    "DataCriacao": "2025-07-02T03:06:47.2235263",
+    "DataAlteracao": "2025-07-02T06:07:14.655646Z",
+    "EstaAtivo": true,
+    "Tesouro": {
+      "Moedas": [
+        {
+          "Tipo": 0,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 1,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 2,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 3,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 4,
+          "Quantidade": 0
+        }
+      ]
+    },
+    "HistoricoFinanceiro": []
+  },
+  {
+    "Id": "e9888cb3-2bab-4275-a7af-0bd1980a1027",
+    "IdJogador": 304469035607916545,
+    "Nome": "a",
+    "IdRaca": "Aasimar",
+    "IdSubraca": "aasimar-flagelador",
+    "IdClasse": "barbaro",
+    "IdAntecedente": "artesao_de_guilda",
+    "IdAlinhamento": "n",
+    "Forca": 0,
+    "Destreza": 0,
+    "Constituicao": 0,
+    "Inteligencia": 0,
+    "Sabedoria": 0,
+    "Carisma": 0,
+    "BonusAtributos": [
+      {
+        "Id": null,
+        "Atributo": "Carisma",
+        "Valor": 2,
+        "Origem": "Sub-Ra\u00E7a"
+      },
+      {
+        "Id": null,
+        "Atributo": "Constituicao",
+        "Valor": 1,
+        "Origem": "Sub-Ra\u00E7a"
+      }
+    ],
+    "IdProficiencias": [],
+    "IdIdiomas": [
+      "Comum",
+      "Celestial"
+    ],
+    "IdResistencias": [
+      "dano-necrotico",
+      "dano-radiante"
+    ],
+    "IdCaracteristicas": [
+      "curar-toque"
+    ],
+    "IdMagiasRaciais": [
+      "Nv1-Luz",
+      "Nv3-CurarFerimentos",
+      "Nv5-ZonaDaVerdade"
+    ],
+    "Tamanho": "M\u00E9dio",
+    "Deslocamento": 9,
+    "VisaoNoEscuro": 0,
+    "DataCriacao": "2025-07-02T03:31:55.8007734",
+    "DataAlteracao": "2025-07-02T06:32:52.8119266Z",
+    "EstaAtivo": true,
+    "Tesouro": {
+      "Moedas": [
+        {
+          "Tipo": 0,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 1,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 2,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 3,
+          "Quantidade": 0
+        },
+        {
+          "Tipo": 4,
+          "Quantidade": 0
+        }
+      ]
+    },
+    "HistoricoFinanceiro": []
   }
 ]

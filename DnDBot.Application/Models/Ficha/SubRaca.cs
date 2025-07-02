@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DnDBot.Application.Models
+namespace DnDBot.Application.Models.Ficha
 {
     /// <summary>
     /// Representa uma sub-raça jogável com todos os seus atributos.
@@ -25,7 +25,7 @@ namespace DnDBot.Application.Models
         /// <summary>
         /// Atributos que recebem bônus ao escolher essa sub-raça (ex: Carisma +2).
         /// </summary>
-        public Dictionary<string, int> BonusAtributos { get; set; }
+        public List<BonusAtributo> BonusAtributos { get; set; } = new();
 
         /// <summary>
         /// Tendências de alinhamento mais comuns entre os membros da sub-raça.
@@ -45,32 +45,32 @@ namespace DnDBot.Application.Models
         /// <summary>
         /// Idiomas que a sub-raça conhece por padrão.
         /// </summary>
-        public List<string> Idiomas { get; set; }
+        public List<string> Idiomas { get; set; } = new();
 
         /// <summary>
         /// Proficiências concedidas pela sub-raça (ex: armas, ferramentas, perícias).
         /// </summary>
-        public List<string> Proficiencias { get; set; }
+        public List<string> Proficiencias { get; set; } = new();
 
         /// <summary>
-        /// Alcance da visão no escuro, se disponível (ex: "18 metros") ou null se não possuir.
+        /// Alcance da visão no escuro em metros. Use 0 para indicar que a sub-raça não possui visão no escuro.
         /// </summary>
-        public string VisaoNoEscuro { get; set; }
+        public int VisaoNoEscuro { get; set; }
 
         /// <summary>
         /// Tipos de resistência concedidas (ex: resistência a dano radiante).
         /// </summary>
-        public List<string> Resistencias { get; set; }
+        public List<string> Resistencias { get; set; } = new();
 
         /// <summary>
         /// Características especiais únicas da sub-raça.
         /// </summary>
-        public List<string> Caracteristicas { get; set; }
+        public List<string> Caracteristicas { get; set; } = new();
 
         /// <summary>
         /// Lista de magias raciais que o personagem pode conjurar.
         /// </summary>
-        public List<string> MagiasRaciais { get; set; }
+        public List<string> MagiasRaciais { get; set; } = new();
 
         /// <summary>
         /// URL do ícone representando visualmente a sub-raça.
@@ -82,4 +82,5 @@ namespace DnDBot.Application.Models
         /// </summary>
         public string ImagemUrl { get; set; }
     }
+
 }

@@ -2,29 +2,28 @@
 
 namespace DnDBot.Application.Data
 {
-    /// <summary>
-    /// Contém a lista fixa de classes de personagem disponíveis no D&D 5e.
-    /// </summary>
     public static class ClassesData
     {
         /// <summary>
-        /// Lista estática com as classes jogáveis usadas no sistema.
+        /// Lista dos IDs das classes jogáveis disponíveis no sistema.
+        /// Esses IDs devem corresponder aos arquivos de dados JSON.
         /// </summary>
         public static readonly List<string> Classes = new()
         {
-            "Artífice",
-            "Bárbaro",
-            "Bardo",
-            "Bruxo",
-            "Clérigo",
-            "Druida",
-            "Feiticeiro",
-            "Guerreiro",
-            "Ladino",
-            "Mago",
-            "Monge",
-            "Paladino",
-            "Patrulheiro"
+            "artifice",
+            "barbaro",
+            "bardo",
+            "bruxo",
+            "clerigo",
+            "druida",
+            "feiticeiro",
+            "guerreiro",
+            "ladino",
+            "mago",
+            "monge",
+            "paladino",
+            "patrulheiro",
+            "cacador-de-sangue"
         };
     }
 }

@@ -9,10 +9,18 @@
         "Id": "aasimar-protetor",
         "Nome": "Protetor",
         "Descricao": "Aasimars protetores canalizam luz radiante para proteger e curar.",
-        "BonusAtributos": {
-          "Carisma": 2,
-          "Sabedoria": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Carisma",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem e à ordem.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -21,10 +29,19 @@
           "Celestial"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
-        "Resistencias": [],
-        "Caracteristicas": [],
-        "MagiasRaciais": [],
+        "VisaoNoEscuro": 0,
+        "Resistencias": [
+          "dano-necrotico",
+          "dano-radiante"
+        ],
+        "Caracteristicas": [
+          "curar-toque"
+        ],
+        "MagiasRaciais": [
+          "Nv1-Luz",
+          "Nv3-CurarFerimentos",
+          "Nv5-Ajuda"
+        ],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
       },
@@ -32,10 +49,18 @@
         "Id": "aasimar-flagelador",
         "Nome": "Flagelador",
         "Descricao": "Aasimars flageladores emanam energia radiante destrutiva.",
-        "BonusAtributos": {
-          "Carisma": 2,
-          "Constituicao": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Carisma",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -44,10 +69,19 @@
           "Celestial"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
-        "Resistencias": [],
-        "Caracteristicas": [],
-        "MagiasRaciais": [],
+        "VisaoNoEscuro": 0,
+        "Resistencias": [
+          "dano-necrotico",
+          "dano-radiante"
+        ],
+        "Caracteristicas": [
+          "curar-toque"
+        ],
+        "MagiasRaciais": [
+          "Nv1-Luz",
+          "Nv3-CurarFerimentos",
+          "Nv5-ZonaDaVerdade"
+        ],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
       },
@@ -55,10 +89,18 @@
         "Id": "aasimar-caido",
         "Nome": "Caído",
         "Descricao": "Aasimars caídos perderam parte de sua luz divina, adotando um aspecto mais sombrio.",
-        "BonusAtributos": {
-          "Carisma": 2,
-          "Forca": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Carisma",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Forca",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao mal ou neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -67,10 +109,19 @@
           "Celestial"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
-        "Resistencias": [],
-        "Caracteristicas": [],
-        "MagiasRaciais": [],
+        "VisaoNoEscuro": 0,
+        "Resistencias": [
+          "dano-necrotico",
+          "dano-radiante"
+        ],
+        "Caracteristicas": [
+          "curar-toque"
+        ],
+        "MagiasRaciais": [
+          "Nv1-Luz",
+          "Nv3-CurarFerimentos",
+          "Nv5-Terror"
+        ],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
       }
@@ -86,33 +137,18 @@
         "Id": "anao-da-colina",
         "Nome": "Anão da Colina",
         "Descricao": "Anões resistentes, com forte constituição e afinidade com a terra.",
-        "BonusAtributos": {
-          "Constituicao": 2,
-          "Sabedoria": 1
-        },
-        "TendenciasComuns": "Tendem ao bem e à ordem.",
-        "Tamanho": "Pequeno",
-        "Deslocamento": 7,
-        "Idiomas": [
-          "Comum",
-          "Anão"
+        "BonusAtributos": [
+          {
+            "Atributo": "Constituicao",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
         ],
-        "Proficiencias": [],
-        "VisaoNoEscuro": null,
-        "Resistencias": [],
-        "Caracteristicas": [],
-        "MagiasRaciais": [],
-        "IconeUrl": "https://placehold.co/64x64?text=Sub",
-        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
-      },
-      {
-        "Id": "anao-da-montanha",
-        "Nome": "Anão da Montanha",
-        "Descricao": "Anões fortes e robustos, acostumados a ambientes hostis e batalhas.",
-        "BonusAtributos": {
-          "Constituicao": 2,
-          "Forca": 2
-        },
         "TendenciasComuns": "Tendem ao bem e à ordem.",
         "Tamanho": "Pequeno",
         "Deslocamento": 7,
@@ -121,12 +157,56 @@
           "Anão"
         ],
         "Proficiencias": [
-          "Armas Simples",
-          "Armas Marciais"
+          "machado-batalha",
+          "martelo-guerra",
+          "historia"
         ],
-        "VisaoNoEscuro": null,
-        "Resistencias": [],
-        "Caracteristicas": [],
+        "VisaoNoEscuro": 18,
+        "Resistencias": [
+          "veneno"
+        ],
+        "Caracteristicas": [
+          "resiliencia-anao"
+        ],
+        "MagiasRaciais": [],
+        "IconeUrl": "https://placehold.co/64x64?text=Sub",
+        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+      },
+      {
+        "Id": "anao-da-montanha",
+        "Nome": "Anão da Montanha",
+        "Descricao": "Anões fortes e robustos, acostumados a ambientes hostis e batalhas.",
+        "BonusAtributos": [
+          {
+            "Atributo": "Constituicao",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Forca",
+            "Valor": 2,
+            "Origem": "Raça"
+          }
+        ],
+        "TendenciasComuns": "Tendem ao bem e à ordem.",
+        "Tamanho": "Pequeno",
+        "Deslocamento": 7,
+        "Idiomas": [
+          "Comum",
+          "Anão"
+        ],
+        "Proficiencias": [
+          "armaduras-medias",
+          "machado-batalha",
+          "martelo-guerra"
+        ],
+        "VisaoNoEscuro": 18,
+        "Resistencias": [
+          "veneno"
+        ],
+        "Caracteristicas": [
+          "resiliencia-anao"
+        ],
         "MagiasRaciais": [],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
@@ -135,10 +215,18 @@
         "Id": "marka-da-protecao",
         "Nome": "Marca da Proteção",
         "Descricao": "Anões da Casa Kundarak com habilidades mágicas de proteção e guarda.",
-        "BonusAtributos": {
-          "Inteligencia": 1,
-          "Constituicao": 2
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 1,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 2,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à ordem e neutralidade.",
         "Tamanho": "Pequeno",
         "Deslocamento": 7,
@@ -158,7 +246,7 @@
         "Caracteristicas": [
           "Marca da Proteção"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 18,
         "Resistencias": [],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
@@ -175,7 +263,7 @@
         "Id": "bugbear-padrao",
         "Nome": "Bugbear",
         "Descricao": "Bugbears são goblinoides grandes e peludos conhecidos por sua força e furtividade surpreendente.",
-        "BonusAtributos": {},
+        "BonusAtributos": [],
         "TendenciasComuns": "Variada.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -183,7 +271,7 @@
           "Comum"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 18,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -202,7 +290,7 @@
         "Id": "changeling-padrao",
         "Nome": "Changeling",
         "Descricao": "Changelings são metamorfos capazes de alterar sua aparência à vontade.",
-        "BonusAtributos": {},
+        "BonusAtributos": [],
         "TendenciasComuns": "Variada.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -210,7 +298,7 @@
           "Comum"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -229,10 +317,18 @@
         "Id": "draconato-chamas",
         "Nome": "Draconato de Chamas",
         "Descricao": "Draconatos ligados ao fogo, capazes de exalar fogo ardente.",
-        "BonusAtributos": {
-          "Forca": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Forca",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade e à honra.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -256,7 +352,7 @@
             }
           }
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -267,10 +363,18 @@
         "Id": "draconato-gelo",
         "Nome": "Draconato de Gelo",
         "Descricao": "Draconatos com afinidade a gelo e frio, exalando um sopro congelante.",
-        "BonusAtributos": {
-          "Forca": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Forca",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade fria e calculista.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -294,7 +398,7 @@
             }
           }
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -305,10 +409,18 @@
         "Id": "draconato-eletrico",
         "Nome": "Draconato Elétrico",
         "Descricao": "Draconatos com conexão ao trovão, liberando descargas elétricas.",
-        "BonusAtributos": {
-          "Forca": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Forca",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem a agir com rapidez e energia, às vezes impetuosos.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -332,7 +444,7 @@
             }
           }
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -351,10 +463,18 @@
         "Id": "",
         "Nome": "Draconne",
         "Descricao": "Dragonborn femininas que manifestam uma aura imponente e habilidades dracônicas aprimoradas.",
-        "BonusAtributos": {
-          "Forca": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Forca",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à lei e ao bem.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -365,7 +485,7 @@
         "Proficiencias": [
           "Intimidação"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -384,10 +504,18 @@
         "Id": "elfo-alto",
         "Nome": "Elfo Alto",
         "Descricao": "Elfos com grande conexão mágica e intelecto aguçado.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Inteligencia": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade e à busca por conhecimento.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -398,7 +526,7 @@
         "Proficiencias": [
           "Magia Arcana"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 18,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -409,10 +537,18 @@
         "Id": "elfo-da-floresta",
         "Nome": "Elfo da Floresta",
         "Descricao": "Elfos adaptados à vida na floresta, ágeis e furtivos.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Sabedoria": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem e à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -421,7 +557,7 @@
           "Élfico"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 18,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -432,10 +568,18 @@
         "Id": "drow",
         "Nome": "Drow",
         "Descricao": "Elfos das profundezas, com afinidade para magia sombria e astúcia.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao mal e à astúcia.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -444,11 +588,21 @@
           "Élfico",
           "Infernal"
         ],
-        "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "Proficiencias": [
+          "espada-curta",
+          "rapieira",
+          "bestas-leves"
+        ],
+        "VisaoNoEscuro": 36,
         "Resistencias": [],
-        "Caracteristicas": [],
-        "MagiasRaciais": [],
+        "Caracteristicas": [
+          "sensibilidade-luz"
+        ],
+        "MagiasRaciais": [
+          "Nv1-Luz",
+          "Nv3-GloboEscuridão",
+          "Nv5-LuzFaérica"
+        ],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
       },
@@ -456,10 +610,18 @@
         "Id": "marka-da-deteccao",
         "Nome": "Marca da Detecção",
         "Descricao": "Elfos da Casa Medani com talentos mágicos para revelação e vigilância.",
-        "BonusAtributos": {
-          "Sabedoria": 2,
-          "Inteligencia": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem e à vigilância.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -478,7 +640,7 @@
         "Caracteristicas": [
           "Marca da Detecção"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 18,
         "Resistencias": [],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
@@ -495,7 +657,7 @@
         "Id": "firbolg-padrao",
         "Nome": "Firbolg",
         "Descricao": "Firbolgs são gentis guardiões das florestas, com uma conexão profunda com a natureza.",
-        "BonusAtributos": {},
+        "BonusAtributos": [],
         "TendenciasComuns": "Variada.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -503,7 +665,7 @@
           "Comum"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -522,10 +684,18 @@
         "Id": "githyanki",
         "Nome": "Githyanki",
         "Descricao": "Guerreiros ferozes e saqueadores do plano astral.",
-        "BonusAtributos": {
-          "Forca": 2,
-          "Inteligencia": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Forca",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao caos e à guerra.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -538,7 +708,7 @@
           "Espada Longa",
           "Magia Psíquica"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -549,10 +719,18 @@
         "Id": "githzerai",
         "Nome": "Githzerai",
         "Descricao": "Místicos contemplativos com domínio psíquico e mental.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Sabedoria": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à ordem e ao equilíbrio mental.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -564,7 +742,7 @@
           "Meditação",
           "Magia Psíquica"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -583,10 +761,18 @@
         "Id": "gnomo-da-floresta",
         "Nome": "Gnomo da Floresta",
         "Descricao": "Gnomos ligados à natureza e magia fey.",
-        "BonusAtributos": {
-          "Inteligencia": 2,
-          "Destreza": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Destreza",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade e à curiosidade.",
         "Tamanho": "Pequeno",
         "Deslocamento": 7,
@@ -595,7 +781,7 @@
           "Gnomo"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 18,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -606,10 +792,18 @@
         "Id": "gnomo-das-rochas",
         "Nome": "Gnomo das Rochas",
         "Descricao": "Gnomos ligados à tecnologia e resistência física.",
-        "BonusAtributos": {
-          "Inteligencia": 2,
-          "Constituicao": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem e à perseverança.",
         "Tamanho": "Pequeno",
         "Deslocamento": 7,
@@ -618,7 +812,7 @@
           "Gnomo"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 18,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -629,10 +823,18 @@
         "Id": "marka-da-escrita",
         "Nome": "Marca da Escrita",
         "Descricao": "Gnomos da Casa Sivis com habilidades de comunicação e linguagem.",
-        "BonusAtributos": {
-          "Inteligencia": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à ordem e à lógica.",
         "Tamanho": "Pequeno",
         "Deslocamento": 7,
@@ -652,7 +854,7 @@
         "Caracteristicas": [
           "Marca da Escrita"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 18,
         "Resistencias": [],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
@@ -669,7 +871,7 @@
         "Id": "goblin-padrao",
         "Nome": "Goblin",
         "Descricao": "Pequenos goblinoides astutos e sorrateiros, conhecidos por sua rapidez e agressividade.",
-        "BonusAtributos": {},
+        "BonusAtributos": [],
         "TendenciasComuns": "Variada.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -677,7 +879,7 @@
           "Comum"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 18,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -696,10 +898,18 @@
         "Id": "",
         "Nome": "Pés-Leves",
         "Descricao": "Halflings pés-leves são sorrateiros e têm uma sorte excepcional.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem e são amigáveis.",
         "Tamanho": "Pequeno",
         "Deslocamento": 7,
@@ -708,7 +918,7 @@
           "Halfling"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -719,10 +929,18 @@
         "Id": "",
         "Nome": "Robusto",
         "Descricao": "Halflings robustos são resistentes e dificilmente se abalam.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Constituicao": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem e são resilientes.",
         "Tamanho": "Pequeno",
         "Deslocamento": 7,
@@ -731,7 +949,7 @@
           "Halfling"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -742,10 +960,18 @@
         "Id": "marka-da-hospitalidade",
         "Nome": "Marca da Hospitalidade",
         "Descricao": "Halflings da Casa Ghallanda que dominam magias de conforto e abrigo.",
-        "BonusAtributos": {
-          "Carisma": 1,
-          "Sabedoria": 2
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 2,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem.",
         "Tamanho": "Pequeno",
         "Deslocamento": 7,
@@ -765,7 +991,7 @@
         "Caracteristicas": [
           "Marca da Hospitalidade"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
@@ -774,10 +1000,18 @@
         "Id": "marka-da-curandeira",
         "Nome": "Marca da Cura",
         "Descricao": "Halflings da Casa Jorasco com afinidade para curar e restaurar.",
-        "BonusAtributos": {
-          "Sabedoria": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem.",
         "Tamanho": "Pequeno",
         "Deslocamento": 7,
@@ -796,7 +1030,7 @@
         "Caracteristicas": [
           "Marca da Cura"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
@@ -813,10 +1047,18 @@
         "Id": "",
         "Nome": "Hobgoblin de Guerra",
         "Descricao": "Hobgoblins focados em táticas e apoio a aliados.",
-        "BonusAtributos": {
-          "Constituicao": 2,
-          "Inteligencia": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Constituicao",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à lei, com foco em ordem e estrutura.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -829,7 +1071,7 @@
           "Armaduras Leves",
           "Armaduras Médias"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -848,14 +1090,38 @@
         "Id": "",
         "Nome": "Padrão",
         "Descricao": "Humanos comuns com habilidades variadas.",
-        "BonusAtributos": {
-          "Forca": 1,
-          "Destreza": 1,
-          "Constituicao": 1,
-          "Inteligencia": 1,
-          "Sabedoria": 1,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Forca",
+            "Valor": 1,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Destreza",
+            "Valor": 1,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 1,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 1,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "De todas as tendências.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -864,7 +1130,7 @@
           "Outro à escolha"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -875,10 +1141,18 @@
         "Id": "",
         "Nome": "Variante",
         "Descricao": "Humanos com talento adicional e maior personalização.",
-        "BonusAtributos": {
-          "Escolha1": 1,
-          "Escolha2": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Escolha1",
+            "Valor": 1,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Escolha2",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "De todas as tendências.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -889,7 +1163,7 @@
         "Proficiencias": [
           "Uma perícia à escolha"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -900,10 +1174,18 @@
         "Id": "marka-da-passagem",
         "Nome": "Marca da Passagem",
         "Descricao": "Humanos da Casa Orien com talento para teletransporte e locomoção mágica.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -922,7 +1204,7 @@
         "Caracteristicas": [
           "Marca da Passagem"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
@@ -931,10 +1213,18 @@
         "Id": "marka-da-sentinela",
         "Nome": "Marca da Sentinela",
         "Descricao": "Humanos da Casa Deneith, protetores com habilidades de guarda e vigilância.",
-        "BonusAtributos": {
-          "Forca": 2,
-          "Sabedoria": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Forca",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à ordem.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -953,7 +1243,7 @@
         "Caracteristicas": [
           "Marca da Sentinela"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
@@ -962,10 +1252,18 @@
         "Id": "marka-da-manipulacao",
         "Nome": "Marca da Manipulação",
         "Descricao": "Humanos da Casa Cannith, com domínio sobre criação e conserto de objetos mágicos.",
-        "BonusAtributos": {
-          "Inteligencia": 2,
-          "Destreza": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Destreza",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à ordem e engenhosidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -984,7 +1282,7 @@
         "Caracteristicas": [
           "Marca da Manipulação"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
@@ -993,10 +1291,18 @@
         "Id": "marka-da-domesticacao",
         "Nome": "Marca da Domesticação",
         "Descricao": "Humanos da Casa Vadalis, domadores com habilidades ligadas a bestas e montarias.",
-        "BonusAtributos": {
-          "Sabedoria": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao equilíbrio com a natureza.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1014,7 +1320,7 @@
         "Caracteristicas": [
           "Marca da Domesticação"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
@@ -1031,10 +1337,18 @@
         "Id": "",
         "Nome": "Kalashtar",
         "Descricao": "Unem força física e mental com sabedoria vinda dos quori.",
-        "BonusAtributos": {
-          "Sabedoria": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem e à ordem.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1046,7 +1360,7 @@
         "Proficiencias": [
           "Intuição"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1065,10 +1379,18 @@
         "Id": "",
         "Nome": "Kenku",
         "Descricao": "Mestres da imitação e astúcia, sem voz própria, mas capazes de replicar qualquer som.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Sabedoria": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao caos ou neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1080,7 +1402,7 @@
           "Enganação",
           "Furtividade"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1099,10 +1421,18 @@
         "Id": "",
         "Nome": "Lizardfolk",
         "Descricao": "Reptilianos resilientes e pragmáticos, com corpos adaptados à sobrevivência.",
-        "BonusAtributos": {
-          "Constituicao": 2,
-          "Sabedoria": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Constituicao",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1114,7 +1444,7 @@
           "Sobrevivência",
           "Armas Naturais"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1133,11 +1463,23 @@
         "Id": "",
         "Nome": "Meio-Elfo",
         "Descricao": "Com herança dupla, meio-elfos são versáteis, carismáticos e resilientes.",
-        "BonusAtributos": {
-          "Carisma": 2,
-          "Escolha1": 1,
-          "Escolha2": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Carisma",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Escolha1",
+            "Valor": 1,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Escolha2",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao caos e à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1149,7 +1491,7 @@
         "Proficiencias": [
           "Duas perícias à escolha"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1160,10 +1502,18 @@
         "Id": "marka-das-sombras",
         "Nome": "Marca das Sombras",
         "Descricao": "Meio-elfos ligados à espionagem, ilusão e atuação da Casa Phiarlan/Thuranni.",
-        "BonusAtributos": {
-          "Carisma": 2,
-          "Destreza": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Carisma",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Destreza",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade ou caos.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1182,7 +1532,7 @@
         "Caracteristicas": [
           "Marca das Sombras"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
@@ -1199,10 +1549,18 @@
         "Id": "",
         "Nome": "Meio-Orc",
         "Descricao": "Filhos de humanos e orcs, esses guerreiros possuem força brutal e fúria interior.",
-        "BonusAtributos": {
-          "Forca": 2,
-          "Constituicao": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Forca",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao caos e à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1213,7 +1571,7 @@
         "Proficiencias": [
           "Intimidação"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1224,10 +1582,18 @@
         "Id": "marka-da-procura",
         "Nome": "Marca da Procura",
         "Descricao": "Meio-orcs da Casa Tharashk, com talento para rastrear e investigar.",
-        "BonusAtributos": {
-          "Sabedoria": 2,
-          "Constituicao": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1246,7 +1612,7 @@
         "Caracteristicas": [
           "Marca da Procura"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 18,
         "Resistencias": [],
         "IconeUrl": "https://placehold.co/64x64?text=Sub",
         "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
@@ -1263,7 +1629,7 @@
         "Id": "orc-padrao",
         "Nome": "Orc",
         "Descricao": "Orcs são ferozes e impulsivos, conhecidos por sua força bruta e cultura guerreira.",
-        "BonusAtributos": {},
+        "BonusAtributos": [],
         "TendenciasComuns": "Variada.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1271,7 +1637,7 @@
           "Comum"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 18,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1290,10 +1656,18 @@
         "Id": "",
         "Nome": "Beasthide",
         "Descricao": "Focados em defesa, com pele resistente e robusta.",
-        "BonusAtributos": {
-          "Constituicao": 2,
-          "Forca": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Constituicao",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Forca",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao caos e à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1301,7 +1675,7 @@
           "Comum"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1312,10 +1686,18 @@
         "Id": "",
         "Nome": "Longtooth",
         "Descricao": "Agressivos e ferozes, com mordidas potentes.",
-        "BonusAtributos": {
-          "Forca": 2,
-          "Destreza": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Forca",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Destreza",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao caos.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1323,7 +1705,7 @@
           "Comum"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1334,10 +1716,18 @@
         "Id": "",
         "Nome": "Swiftstride",
         "Descricao": "Ágeis e evasivos, ótimos para mobilidade.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao caos.",
         "Tamanho": "Médio",
         "Deslocamento": 10,
@@ -1345,7 +1735,7 @@
           "Comum"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1356,10 +1746,18 @@
         "Id": "",
         "Nome": "Wildhunt",
         "Descricao": "Caçadores com sentidos aguçados e instintos afiados.",
-        "BonusAtributos": {
-          "Sabedoria": 2,
-          "Destreza": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Destreza",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1369,7 +1767,7 @@
         "Proficiencias": [
           "Percepção"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1388,10 +1786,18 @@
         "Id": "",
         "Nome": "Tabaxi",
         "Descricao": "Felinos nômades com grande agilidade e olhos atentos para tudo ao redor.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao caos e à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1403,7 +1809,7 @@
           "Percepção",
           "Furtividade"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1422,10 +1828,18 @@
         "Id": "",
         "Nome": "Asmodeus",
         "Descricao": "Tieflings descendentes de Asmodeus, o Senhor dos Nove Infernos, com poderes infernais clássicos.",
-        "BonusAtributos": {
-          "Carisma": 2,
-          "Inteligencia": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Carisma",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao caos e à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1434,7 +1848,7 @@
           "Infernal"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1445,10 +1859,18 @@
         "Id": "",
         "Nome": "Baalzebul",
         "Descricao": "Corruptos e enganadores, com foco em magia ilusória.",
-        "BonusAtributos": {
-          "Carisma": 2,
-          "Inteligencia": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Carisma",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao mal e à astúcia.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1457,7 +1879,7 @@
           "Infernal"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1468,10 +1890,18 @@
         "Id": "",
         "Nome": "Zariel",
         "Descricao": "Guerreiros impulsivos e determinados, com dons de combate sagrado.",
-        "BonusAtributos": {
-          "Carisma": 2,
-          "Forca": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Carisma",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Forca",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao caos e ao bem.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1480,7 +1910,7 @@
           "Infernal"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1499,11 +1929,23 @@
         "Id": "",
         "Nome": "Triton",
         "Descricao": "Defensores dos mares, com dons mágicos aquáticos e presença imponente.",
-        "BonusAtributos": {
-          "Forca": 1,
-          "Constituicao": 1,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Forca",
+            "Valor": 1,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem e à ordem.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1515,7 +1957,7 @@
           "Atlético",
           "Armas de Tridente"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1534,10 +1976,18 @@
         "Id": "",
         "Nome": "Warforged",
         "Descricao": "Forjados para a batalha, esses construtos são resistentes e eficientes.",
-        "BonusAtributos": {
-          "Constituicao": 2,
-          "Escolha": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Constituicao",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Escolha",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1547,7 +1997,7 @@
         "Proficiencias": [
           "Ferramentas de Artífice"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1566,10 +2016,18 @@
         "Id": "",
         "Nome": "Kobold",
         "Descricao": "Kobolds são engenhosos e cooperativos, apesar de fisicamente fracos.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Constituicao": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao mal ou neutralidade.",
         "Tamanho": "Pequeno",
         "Deslocamento": 9,
@@ -1580,7 +2038,7 @@
         "Proficiencias": [
           "Engenharia (Ofício)"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1599,10 +2057,18 @@
         "Id": "",
         "Nome": "Minotauro",
         "Descricao": "Criaturas poderosas, ferozes e resistentes, com chifres imponentes.",
-        "BonusAtributos": {
-          "Forca": 2,
-          "Constituicao": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Forca",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao caos ou à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1614,7 +2080,7 @@
           "Intimidação",
           "Armas Marciais"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1633,10 +2099,18 @@
         "Id": "",
         "Nome": "Tortle",
         "Descricao": "Tortles possuem carapaças resistentes e uma visão simples da vida.",
-        "BonusAtributos": {
-          "Forca": 2,
-          "Sabedoria": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Forca",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1647,7 +2121,7 @@
         "Proficiencias": [
           "Sobrevivência"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1666,7 +2140,7 @@
         "Id": "yuan-ti-padrao",
         "Nome": "Yuan-ti Pureblood",
         "Descricao": "Descendentes de humanos e serpentes, os yuan-ti são astutos, frios e mágicos por natureza.",
-        "BonusAtributos": {},
+        "BonusAtributos": [],
         "TendenciasComuns": "Variada.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1674,7 +2148,7 @@
           "Comum"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 18,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1693,7 +2167,7 @@
         "Id": "eladrin-padrao",
         "Nome": "Eladrin",
         "Descricao": "Eladrins são elfos élficos ligados aos ciclos das estações, com magia emocional e beleza sobrenatural.",
-        "BonusAtributos": {},
+        "BonusAtributos": [],
         "TendenciasComuns": "Variada.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1701,7 +2175,7 @@
           "Comum"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1720,7 +2194,7 @@
         "Id": "centauro-padrao",
         "Nome": "Centauro",
         "Descricao": "Centauros combinam o torso humano com o corpo de um cavalo, sendo velozes e sintonizados com a natureza.",
-        "BonusAtributos": {},
+        "BonusAtributos": [],
         "TendenciasComuns": "Variada.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1728,7 +2202,7 @@
           "Comum"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1747,7 +2221,7 @@
         "Id": "loxodon-padrao",
         "Nome": "Loxodon",
         "Descricao": "Loxodons são elefantoides sábios e calmos, com força formidável e lealdade profunda.",
-        "BonusAtributos": {},
+        "BonusAtributos": [],
         "TendenciasComuns": "Variada.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1755,7 +2229,7 @@
           "Comum"
         ],
         "Proficiencias": [],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1774,10 +2248,18 @@
         "Id": "",
         "Nome": "Simic Hybrid",
         "Descricao": "Criaturas adaptativas com modificações físicas como carapaças ou nadadeiras.",
-        "BonusAtributos": {
-          "Constituicao": 2,
-          "Escolha": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Constituicao",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Escolha",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1787,7 +2269,7 @@
         "Proficiencias": [
           "Natureza"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1806,10 +2288,18 @@
         "Id": "",
         "Nome": "Vedalken",
         "Descricao": "Analíticos e meticulosos, vedalkens evitam emoções em prol da lógica.",
-        "BonusAtributos": {
-          "Inteligencia": 2,
-          "Sabedoria": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à ordem e neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1820,7 +2310,7 @@
         "Proficiencias": [
           "Investigação"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1839,10 +2329,18 @@
         "Id": "",
         "Nome": "Elfo Pálido",
         "Descricao": "Sensíveis à emoção e à luz, esses elfos são intuitivos e furtivos.",
-        "BonusAtributos": {
-          "Sabedoria": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem e à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1854,7 +2352,7 @@
           "Intuição",
           "Furtividade"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1873,10 +2371,18 @@
         "Id": "",
         "Nome": "Halfling Lotusden",
         "Descricao": "Com afinidade natural pelas florestas, esses halflings são furtivos e místicos.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Sabedoria": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem e à neutralidade.",
         "Tamanho": "Pequeno",
         "Deslocamento": 7,
@@ -1887,7 +2393,7 @@
         "Proficiencias": [
           "Natureza"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1906,10 +2412,18 @@
         "Id": "",
         "Nome": "Draconblood",
         "Descricao": "Orgulhosos e determinados, canalizam a força dos dragões vermelhos.",
-        "BonusAtributos": {
-          "Carisma": 2,
-          "Forca": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Carisma",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Forca",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à lei e ao caos.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1920,7 +2434,7 @@
         "Proficiencias": [
           "Intimidação"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1939,10 +2453,18 @@
         "Id": "",
         "Nome": "Ravenite",
         "Descricao": "Furtivos e silenciosos, têm ligação com as sombras e a escuridão.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade e ao caos.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1953,7 +2475,7 @@
         "Proficiencias": [
           "Furtividade"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -1972,10 +2494,18 @@
         "Id": "",
         "Nome": "Leonin",
         "Descricao": "Guerreiros ferozes com garras poderosas e espírito indomável.",
-        "BonusAtributos": {
-          "Forca": 2,
-          "Constituicao": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Forca",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem e à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -1986,7 +2516,7 @@
         "Proficiencias": [
           "Atletismo"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2005,10 +2535,18 @@
         "Id": "",
         "Nome": "Satyr",
         "Descricao": "Divertidos e carismáticos, conhecidos por sua agilidade e magia natural.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Carisma": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Carisma",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao caos e à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -2019,7 +2557,7 @@
         "Proficiencias": [
           "Performance"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2038,10 +2576,18 @@
         "Id": "",
         "Nome": "Owlin",
         "Descricao": "Seres noturnos com voo silencioso e visão aguçada.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Sabedoria": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -2052,7 +2598,7 @@
         "Proficiencias": [
           "Percepção"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2071,10 +2617,18 @@
         "Id": "",
         "Nome": "Faerzress",
         "Descricao": "Anões que vivem em regiões de energia mágica densa, com resistência à magia.",
-        "BonusAtributos": {
-          "Constituicao": 2,
-          "Sabedoria": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Constituicao",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade.",
         "Tamanho": "Pequeno",
         "Deslocamento": 7,
@@ -2085,7 +2639,7 @@
         "Proficiencias": [
           "Resistência a Magia"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2104,10 +2658,18 @@
         "Id": "",
         "Nome": "Gem Dragonborn",
         "Descricao": "Possuem resistência psíquica e habilidades mágicas ligadas a poderes mentais.",
-        "BonusAtributos": {
-          "Carisma": 2,
-          "Inteligencia": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Carisma",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem e à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -2118,7 +2680,7 @@
         "Proficiencias": [
           "Arcanismo"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2137,10 +2699,18 @@
         "Id": "",
         "Nome": "Autognome",
         "Descricao": "Construtos mecânicos com curiosidade insaciável e habilidade técnica.",
-        "BonusAtributos": {
-          "Inteligencia": 2,
-          "Constituicao": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade e à curiosidade.",
         "Tamanho": "Pequeno",
         "Deslocamento": 7,
@@ -2151,7 +2721,7 @@
         "Proficiencias": [
           "Ferramentas de Artífice"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2170,10 +2740,18 @@
         "Id": "",
         "Nome": "Giff",
         "Descricao": "Fortes e disciplinados, especialistas em armas de fogo e táticas militares.",
-        "BonusAtributos": {
-          "Forca": 2,
-          "Constituicao": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Forca",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à lei e à ordem.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -2184,7 +2762,7 @@
         "Proficiencias": [
           "Armas de Fogo"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2203,10 +2781,18 @@
         "Id": "",
         "Nome": "Hadozee",
         "Descricao": "Ágeis e curiosos, excelentes em escalada e voo breve.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Sabedoria": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -2217,7 +2803,7 @@
         "Proficiencias": [
           "Acrobacia"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2236,10 +2822,18 @@
         "Id": "",
         "Nome": "Plasmoid",
         "Descricao": "Adaptáveis e resilientes, podem alterar sua forma para evitar danos.",
-        "BonusAtributos": {
-          "Constituicao": 2,
-          "Destreza": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Constituicao",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Destreza",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -2250,7 +2844,7 @@
         "Proficiencias": [
           "Resistência a Contusão"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2269,10 +2863,18 @@
         "Id": "",
         "Nome": "Thri-kreen",
         "Descricao": "Predadores rápidos e eficientes, com habilidades naturais de combate.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Forca": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Forca",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao caos e à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 12,
@@ -2283,7 +2885,7 @@
         "Proficiencias": [
           "Percepção"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2302,10 +2904,18 @@
         "Id": "sea-elf-padrao",
         "Nome": "Sea Elf",
         "Descricao": "Elfos que vivem nos oceanos, adaptados à vida subaquática.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Constituicao": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao bem e à ordem.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -2318,7 +2928,7 @@
           "Armas de Tridente",
           "Natação"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2337,10 +2947,18 @@
         "Id": "shadar-kai-padrao",
         "Nome": "Shadar-kai",
         "Descricao": "Elfos do Shadowfell com habilidades sombrias e resistência mágica.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Constituicao": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -2351,7 +2969,7 @@
         "Proficiencias": [
           "Resistência a Necrose"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2370,10 +2988,18 @@
         "Id": "duergar-padrao",
         "Nome": "Duergar",
         "Descricao": "Anões endurecidos pela vida no Subterrâneo, com resistência e habilidades mágicas.",
-        "BonusAtributos": {
-          "Constituicao": 2,
-          "Forca": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Constituicao",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Forca",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade ou ao mal.",
         "Tamanho": "Médio",
         "Deslocamento": 7,
@@ -2385,7 +3011,7 @@
         "Proficiencias": [
           "Resistência a Encantamento"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2404,10 +3030,18 @@
         "Id": "deep-gnome-padrao",
         "Nome": "Svirfneblin",
         "Descricao": "Gnomos que vivem nas profundezas da terra, conhecidos como Svirfneblin.",
-        "BonusAtributos": {
-          "Inteligencia": 2,
-          "Destreza": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Inteligencia",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Destreza",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade.",
         "Tamanho": "Pequeno",
         "Deslocamento": 7,
@@ -2419,7 +3053,7 @@
         "Proficiencias": [
           "Furtividade"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2438,10 +3072,18 @@
         "Id": "grung-padrao",
         "Nome": "Grung",
         "Descricao": "Pequenos humanoides rãs com pele venenosa.",
-        "BonusAtributos": {
-          "Destreza": 2,
-          "Constituicao": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Destreza",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à ordem rígida.",
         "Tamanho": "Pequeno",
         "Deslocamento": 9,
@@ -2453,7 +3095,7 @@
           "Acrobacia",
           "Resistência a Veneno"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2472,10 +3114,18 @@
         "Id": "locathah-padrao",
         "Nome": "Locathah",
         "Descricao": "Criaturas marinhas orgulhosas e adaptadas à vida aquática.",
-        "BonusAtributos": {
-          "Forca": 1,
-          "Sabedoria": 2
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Forca",
+            "Valor": 1,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Sabedoria",
+            "Valor": 2,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem à neutralidade.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -2487,7 +3137,7 @@
           "Armas de Tridente",
           "Atlético"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],
@@ -2506,10 +3156,18 @@
         "Id": "verdan-padrao",
         "Nome": "Verdan",
         "Descricao": "Humanóides goblinoides que mudam de aparência com o tempo.",
-        "BonusAtributos": {
-          "Carisma": 2,
-          "Constituicao": 1
-        },
+        "BonusAtributos": [
+          {
+            "Atributo": "Carisma",
+            "Valor": 2,
+            "Origem": "Raça"
+          },
+          {
+            "Atributo": "Constituicao",
+            "Valor": 1,
+            "Origem": "Raça"
+          }
+        ],
         "TendenciasComuns": "Tendem ao caos.",
         "Tamanho": "Médio",
         "Deslocamento": 9,
@@ -2520,7 +3178,7 @@
         "Proficiencias": [
           "Persuasão"
         ],
-        "VisaoNoEscuro": null,
+        "VisaoNoEscuro": 0,
         "Resistencias": [],
         "Caracteristicas": [],
         "MagiasRaciais": [],

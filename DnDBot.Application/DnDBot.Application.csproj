@@ -8,6 +8,8 @@
   <ItemGroup>
     <None Remove="Data\fichas.json" />
     <None Remove="Data\racas.json" />
+    <None Remove="Data\classes.json" />
+    <None Remove="Data\antecedentes.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\fichas.json">
@@ -16,6 +18,12 @@
     <Content Include="Data\racas.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+	  <Content Include="Data\classes.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Data\antecedentes.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Discord.Net" Version="3.17.4" />

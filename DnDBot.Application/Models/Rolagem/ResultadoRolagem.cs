@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DnDBot.Application.Models
+namespace DnDBot.Application.Models.Rolagem
 {
     /// <summary>
     /// Representa o resultado detalhado de uma rolagem de dados.

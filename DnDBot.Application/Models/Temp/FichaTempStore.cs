@@ -1,4 +1,4 @@
-﻿using DnDBot.Application.Models;
+﻿using DnDBot.Application.Models.Ficha;
 using System.Collections.Concurrent;
 
 public static class FichaTempStore
@@ -37,12 +37,12 @@ public static class FichaTempStore
     {
         var ficha = new FichaPersonagem
         {
-            JogadorId = jogadorId,
+            IdJogador = jogadorId,
             Nome = nome,
-            Raca = "Não definida",
-            Classe = "Não definida",
-            Antecedente = "Não definido",
-            Alinhamento = "Não definido"
+            IdRaca = "Não definida",
+            IdClasse = "Não definida",
+            IdAntecedente = "Não definido",
+            IdAlinhamento = "Não definido"
         };
 
         SaveFicha(jogadorId, ficha);
@@ -51,26 +51,26 @@ public static class FichaTempStore
     /// <summary>
     /// Atualiza campos específicos da ficha temporária, se fornecidos.
     /// </summary>
-    public static void UpdateFicha(ulong jogadorId,
-        string raca = null,
-        string classe = null,
-        string antecedente = null,
-        string alinhamento = null,
-        string subraca = null)
+    public static void UpdateFicha(ulong idJogador,
+        string idRaca = null,
+        string idClasse = null,
+        string idAntecedente = null,
+        string idAlinhamento = null,
+        string idSubraca = null)
     {
-        if (!_fichasTemporarias.TryGetValue(jogadorId, out var ficha))
+        if (!_fichasTemporarias.TryGetValue(idJogador, out var ficha))
             return;
 
-        if (raca != null)
-            ficha.Raca = raca;
-        if (classe != null)
-            ficha.Classe = classe;
-        if (antecedente != null)
-            ficha.Antecedente = antecedente;
-        if (alinhamento != null)
-            ficha.Alinhamento = alinhamento;
-        if (subraca != null)
-            ficha.Subraca = subraca;
+        if (idRaca != null)
+            ficha.IdRaca = idRaca;
+        if (idClasse != null)
+            ficha.IdClasse = idClasse;
+        if (idAntecedente != null)
+            ficha.IdAntecedente = idAntecedente;
+        if (idAlinhamento != null)
+            ficha.IdAlinhamento = idAlinhamento;
+        if (idSubraca != null)
+            ficha.IdSubraca = idSubraca;
     }
 
     /// <summary>

@@ -1,23 +1,16 @@
 ﻿using Discord;
 using Discord.Interactions;
-using DnDBot.Application.Models;
+using DnDBot.Application.Models.Ficha;
 using DnDBot.Application.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace DnDBot.Bot.Helpers
 {
-    /// <summary>
-    /// Classe auxiliar responsável por gerar os menus suspensos (select menus) usados durante a criação de fichas.
-    /// </summary>
     public static class SelectMenuHelper
     {
-        /// <summary>
-        /// Cria o menu de seleção para Raças.
-        /// </summary>
-        /// <param name="racas">Lista de raças disponíveis.</param>
-        /// <returns>Menu de seleção configurado com até 25 raças.</returns>
-        public static SelectMenuBuilder CriarSelectRaca(IEnumerable<Raca> racas)
+        public static SelectMenuBuilder CriarSelectRaca(IEnumerable<Raca> racas, string selecionado = null)
         {
             var select = new SelectMenuBuilder()
                 .WithCustomId("select_raca")
@@ -25,19 +18,13 @@ namespace DnDBot.Bot.Helpers
 
             foreach (var raca in racas.Take(25))
             {
-                string value = raca.Nome.Length > 25 ? raca.Nome.Substring(0, 25) : raca.Nome;
-                select.AddOption(raca.Nome, value);
+                AdicionarOpcaoSafe(select, raca.Nome, raca.Nome, raca.Nome == selecionado, raca.Descricao);
             }
 
             return select;
         }
 
-        /// <summary>
-        /// Cria o menu de seleção para Classes.
-        /// </summary>
-        /// <param name="classes">Lista de classes disponíveis.</param>
-        /// <returns>Menu de seleção configurado com até 25 classes.</returns>
-        public static SelectMenuBuilder CriarSelectClasse(IEnumerable<string> classes)
+        public static SelectMenuBuilder CriarSelectClasse(IEnumerable<Classe> classes, string selecionado = null)
         {
             var select = new SelectMenuBuilder()
                 .WithCustomId("select_classe")
@@ -45,19 +32,13 @@ namespace DnDBot.Bot.Helpers
 
             foreach (var classe in classes.Take(25))
             {
-                string value = classe.Length > 25 ? classe.Substring(0, 25) : classe;
-                select.AddOption(classe, value);
+                AdicionarOpcaoSafe(select, classe.Nome, classe.Id, classe.Id == selecionado, classe.Descricao);
             }
 
             return select;
         }
 
-        /// <summary>
-        /// Cria o menu de seleção para Antecedentes.
-        /// </summary>
-        /// <param name="antecedentes">Lista de antecedentes disponíveis.</param>
-        /// <returns>Menu de seleção configurado com até 25 antecedentes.</returns>
-        public static SelectMenuBuilder CriarSelectAntecedente(IEnumerable<string> antecedentes)
+        public static SelectMenuBuilder CriarSelectAntecedente(IEnumerable<Antecedente> antecedentes, string selecionado = null)
         {
             var select = new SelectMenuBuilder()
                 .WithCustomId("select_antecedente")
@@ -65,42 +46,27 @@ namespace DnDBot.Bot.Helpers
 
             foreach (var ant in antecedentes.Take(25))
             {
-                string value = ant.Length > 25 ? ant.Substring(0, 25) : ant;
-                select.AddOption(ant, value);
+                AdicionarOpcaoSafe(select, ant.Nome, ant.Id, ant.Id == selecionado, ant.Descricao);
             }
 
             return select;
         }
 
-        /// <summary>
-        /// Cria o menu de seleção para Alinhamentos.
-        /// </summary>
-        /// <param name="alinhamentos">Lista de alinhamentos disponíveis.</param>
-        /// <returns>Menu de seleção configurado com até 25 alinhamentos.</returns>
-        public static SelectMenuBuilder CriarSelectAlinhamento(IEnumerable<string> alinhamentos)
+        public static SelectMenuBuilder CriarSelectAlinhamento(IEnumerable<Alinhamento> alinhamentos, string selecionado = null)
         {
             var select = new SelectMenuBuilder()
                 .WithCustomId("select_alinhamento")
                 .WithPlaceholder("Escolha o alinhamento");
 
-            foreach (var ali in alinhamentos.Take(25))
+            foreach (var alinhamento in alinhamentos.Take(25))
             {
-                string value = ali.Length > 25 ? ali.Substring(0, 25) : ali;
-                select.AddOption(ali, value);
+                AdicionarOpcaoSafe(select, alinhamento.Nome, alinhamento.Id, alinhamento.Id == selecionado, alinhamento.Descricao);
             }
 
             return select;
         }
 
-        /// <summary>
-        /// Cria um menu de seleção de sub-raças para interação com o usuário no Discord.
-        /// Cada opção do menu corresponde a uma sub-raça disponível para a raça selecionada.
-        /// </summary>
-        /// <param name="subRacas">Coleção de sub-raças disponíveis para escolha.</param>
-        /// <returns>
-        /// Um <see cref="SelectMenuBuilder"/> configurado com até 25 opções de sub-raças.
-        /// </returns>
-        public static SelectMenuBuilder CriarSelectSubraca(IEnumerable<SubRaca> subRacas)
+        public static SelectMenuBuilder CriarSelectSubraca(IEnumerable<SubRaca> subRacas, string selecionado = null)
         {
             var select = new SelectMenuBuilder()
                 .WithCustomId("select_subraca")
@@ -108,13 +74,42 @@ namespace DnDBot.Bot.Helpers
 
             foreach (var subRaca in subRacas.Take(25))
             {
-                string value = subRaca.Nome.Length > 25 ? subRaca.Nome.Substring(0, 25) : subRaca.Nome;
-                select.AddOption(subRaca.Nome, value);
+                AdicionarOpcaoSafe(select, subRaca.Nome, subRaca.Id, subRaca.Id == selecionado, subRaca.Descricao);
             }
 
             return select;
         }
 
+        private static void AdicionarOpcaoSafe(
+            SelectMenuBuilder select,
+            string label,
+            string value,
+            bool selecionado = false,
+            string descricao = null)
+        {
+            if (string.IsNullOrWhiteSpace(label) || string.IsNullOrWhiteSpace(value))
+                return;
+
+            label = label.Trim();
+            value = value.Trim();
+
+            if (label.Length < 1 || value.Length < 1)
+                return;
+
+            label = label.Length > 100 ? label.Substring(0, 100) : label;
+            value = value.Length > 25 ? value.Substring(0, 25) : value;
+            descricao = descricao?.Length > 100 ? descricao.Substring(0, 100) : descricao;
+
+            var option = new SelectMenuOptionBuilder()
+                .WithLabel(label)
+                .WithValue(value)
+                .WithDefault(selecionado);
+
+            if (!string.IsNullOrWhiteSpace(descricao))
+                option.WithDescription(descricao);
+
+            select.AddOption(option);
+        }
 
     }
 }

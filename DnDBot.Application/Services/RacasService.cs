@@ -1,5 +1,5 @@
 ﻿using DnDBot.Application.Helpers;
-using DnDBot.Application.Models;
+using DnDBot.Application.Models.Ficha;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -39,6 +39,16 @@ namespace DnDBot.Application.Services
         public IReadOnlyList<Raca> ObterRacas() => _racas.AsReadOnly();
 
         /// <summary>
+        /// Retorna uma raça com base no ID informado.
+        /// </summary>
+        /// <param name="id">ID da raça a ser buscada.</param>
+        /// <returns>Objeto <see cref="Raca"/> correspondente ao ID, ou <c>null</c> se não encontrada.</returns>
+        public Raca ObterRacaPorId(string id)
+        {
+            return _racas.FirstOrDefault(r => r.Id.Equals(id, System.StringComparison.OrdinalIgnoreCase));
+        }
+
+        /// <summary>
         /// Retorna uma raça com base no nome informado.
         /// </summary>
         /// <param name="nome">Nome da raça a ser buscada.</param>
@@ -46,6 +56,22 @@ namespace DnDBot.Application.Services
         public Raca ObterRacaPorNome(string nome)
         {
             return _racas.FirstOrDefault(r => r.Nome == nome);
+        }
+        public List<SubRaca> ObterTodasSubracas()
+        {
+            return _racas.SelectMany(r => r.SubRacas).ToList();
+        }
+
+        /// <summary>
+        /// Retorna uma sub-raça com base no ID informado.
+        /// </summary>
+        /// <param name="id">ID da sub-raça a ser buscada.</param>
+        /// <returns>Objeto <see cref="SubRaca"/> correspondente ao ID, ou <c>null</c> se não encontrada.</returns>
+        public SubRaca ObterSubRacaPorId(string idSubRaca)
+        {
+            return _racas
+                .SelectMany(r => r.SubRacas)
+                .FirstOrDefault(sr => sr.Id.Equals(idSubRaca, System.StringComparison.OrdinalIgnoreCase));
         }
 
 

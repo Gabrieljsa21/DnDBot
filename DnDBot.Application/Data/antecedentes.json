@@ -1,0 +1,1050 @@
+[
+  {
+    "Id": "acolito",
+    "Nome": "Acólito",
+    "Descricao": "Você passou sua vida em servio a um templo de uma divindade especfica. Realizava rituais sagrados, oferecia sacrifcios e lia escrituras. Entre os fiis, voc  respeitado, e conhece bem a estrutura e os costumes religiosos.",
+    "IdPericias": [
+      "intuicao",
+      "religiao"
+    ],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [
+      "abrigo_dos_fieis"
+    ],
+    "IdiomasAdicionais": 2,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [
+        "arcanismo",
+        "historia",
+        "investigacao",
+        "natureza",
+        "religiao",
+        "intuicao",
+        "medicina",
+        "percepcao",
+        "sobrevivencia",
+        "trato_com_animais",
+        "atuacao",
+        "enganacao",
+        "intimidacao",
+        "persuasao"
+      ],
+      "QuantidadeEscolhas": 1
+    },
+    "EquipamentosDetalhados": [
+      {
+        "Nome": "Smbolo sagrado",
+        "Quantidade": 1
+      },
+      {
+        "Nome": "Livro de oraes ou rolo de preces",
+        "Quantidade": 1
+      },
+      {
+        "Nome": "Incenso",
+        "Quantidade": 5
+      },
+      {
+        "Nome": "Vestes",
+        "Quantidade": 1
+      },
+      {
+        "Nome": "Roupas comuns",
+        "Quantidade": 1
+      }
+    ],
+    "IdIdeais": [
+      "acolito_ideal_tradicao",
+      "acolito_ideal_caridade",
+      "acolito_ideal_mudanca",
+      "acolito_ideal_poder",
+      "acolito_ideal_fe",
+      "acolito_ideal_aspiracao"
+    ],
+    "IdVinculos": [
+      "acolito_vinculo_templo",
+      "acolito_vinculo_familia",
+      "acolito_vinculo_redencao",
+      "acolito_vinculo_fe",
+      "acolito_vinculo_protecao",
+      "acolito_vinculo_sacramento"
+    ],
+    "IdDefeitos": [
+      "acolito_defeito_dogmatico",
+      "acolito_defeito_arrogante",
+      "acolito_defeito_preconceituoso",
+      "acolito_defeito_segredo",
+      "acolito_defeito_autopiedade",
+      "acolito_defeito_missionario"
+    ],
+    "Requisitos": null,
+    "Tags": [
+      "religioso",
+      "social",
+      "devocional"
+    ],
+    "Fonte": "Livro do Jogador",
+    "Pagina": "PHB p.125",
+    "Versao": "Original",
+    "RiquezaInicial": [
+      {
+        "Tipo": "PO",
+        "Quantidade": 15
+      }
+    ]
+  },
+  {
+    "Id": "antropologo",
+    "Nome": "Antroplogo",
+    "Descricao": "Voc estudou culturas e civilizaes ao longo da histria. Aprendeu a observar sociedades, entender suas regras, linguagem e hbitos, e a se adaptar para interagir com diferentes povos.",
+    "IdPericias": [
+      "intuicao",
+      "religiao"
+    ],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [
+      "adequacao_cultural"
+    ],
+    "IdiomasAdicionais": 2,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [
+      {
+        "Nome": "Dirio de campo",
+        "Quantidade": 1
+      },
+      {
+        "Nome": "Kit de escrita",
+        "Quantidade": 1
+      },
+      {
+        "Nome": "Roupas de viajante",
+        "Quantidade": 1
+      },
+      {
+        "Nome": "Moeda tribal extica",
+        "Quantidade": 1
+      }
+    ],
+    "IdIdeais": [
+      "antropologo_ideal_abrangencia",
+      "antropologo_ideal_ajuda",
+      "antropologo_ideal_objetividade",
+      "antropologo_ideal_conhecimento",
+      "antropologo_ideal_preservacao",
+      "antropologo_ideal_experiencia"
+    ],
+    "IdVinculos": [
+      "antropologo_vinculo_tribo",
+      "antropologo_vinculo_estudo",
+      "antropologo_vinculo_reliquia",
+      "antropologo_vinculo_familia",
+      "antropologo_vinculo_civilizacao",
+      "antropologo_vinculo_mestre"
+    ],
+    "IdDefeitos": [
+      "antropologo_defeito_preceituoso",
+      "antropologo_defeito_disperso",
+      "antropologo_defeito_dogmatico",
+      "antropologo_defeito_frio",
+      "antropologo_defeito_hipocrisia",
+      "antropologo_defeito_fascinado"
+    ],
+    "Requisitos": null,
+    "Tags": [
+      "intelectual",
+      "explorador",
+      "civilizacao"
+    ],
+    "Fonte": "Tomb of Annihilation",
+    "Pagina": "ToA p.33",
+    "Versao": "Suplemento",
+    "RiquezaInicial": [
+      {
+        "Tipo": "PO",
+        "Quantidade": 10
+      }
+    ]
+  },
+  {
+    "Id": "apostador",
+    "Nome": "Apostador",
+    "Descricao": "Voc viveu apostando seu destino nos dados, cartas ou corridas clandestinas. A vida o ensinou a blefar, manter a calma sob presso e confiar em sua sorte  ou em uma mo escondida.",
+    "IdPericias": [
+      "enganacao",
+      "percepcao",
+      "ferramentas_de_jogo"
+    ],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [
+      "leitor_de_jogo"
+    ],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [
+      {
+        "Nome": "Conjunto de ferramentas de jogo ( sua escolha)",
+        "Quantidade": 1
+      },
+      {
+        "Nome": "Bolsa com moedas falsas",
+        "Quantidade": 1
+      },
+      {
+        "Nome": "Roupas elegantes",
+        "Quantidade": 1
+      }
+    ],
+    "IdIdeais": [
+      "apostador_ideal_chance",
+      "apostador_ideal_esperteza",
+      "apostador_ideal_liberdade",
+      "apostador_ideal_risco",
+      "apostador_ideal_sorte",
+      "apostador_ideal_recompensa"
+    ],
+    "IdVinculos": [
+      "apostador_vinculo_divida",
+      "apostador_vinculo_parceiro",
+      "apostador_vinculo_vinganca",
+      "apostador_vinculo_codigo",
+      "apostador_vinculo_jogo_perfeito",
+      "apostador_vinculo_fama"
+    ],
+    "IdDefeitos": [
+      "apostador_defeito_apostador_compulsivo",
+      "apostador_defeito_trapaca",
+      "apostador_defeito_egocentrico",
+      "apostador_defeito_paranoico",
+      "apostador_defeito_ousado",
+      "apostador_defeito_traidor"
+    ],
+    "Requisitos": null,
+    "Tags": [
+      "jogo",
+      "blefe",
+      "furtividade",
+      "vida_dura"
+    ],
+    "Fonte": "Acquisitions Incorporated",
+    "Pagina": "p.180",
+    "Versao": "Suplemento",
+    "RiquezaInicial": [
+      {
+        "Tipo": "PO",
+        "Quantidade": 15
+      }
+    ]
+  },
+  {
+    "Id": "arqueologo",
+    "Nome": "Arquelogo",
+    "Descricao": "Voc explorou runas antigas, desvendou mistrios esquecidos e estudou artefatos perdidos no tempo. Sua paixo pelo passado  refletida em sua sagacidade e conhecimento.",
+    "IdPericias": [
+      "historia",
+      "investigacao"
+    ],
+    "IdFerramentas": [
+      "kit_de_escavacao"
+    ],
+    "IdLinguas": [],
+    "IdFeature": [
+      "conhecimento_da_terra"
+    ],
+    "IdiomasAdicionais": 2,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 1
+    },
+    "EquipamentosDetalhados": [
+      {
+        "Nome": "P de cabra",
+        "Quantidade": 1
+      },
+      {
+        "Nome": "Pincis para escavao",
+        "Quantidade": 1
+      },
+      {
+        "Nome": "Kit de escavao",
+        "Quantidade": 1
+      },
+      {
+        "Nome": "Bolsa para artefatos",
+        "Quantidade": 1
+      },
+      {
+        "Nome": "Roupas de viajante",
+        "Quantidade": 1
+      }
+    ],
+    "IdIdeais": [
+      "arqueologo_ideal_conhecimento",
+      "arqueologo_ideal_preservacao",
+      "arqueologo_ideal_verdade",
+      "arqueologo_ideal_descoberta",
+      "arqueologo_ideal_aventura",
+      "arqueologo_ideal_respeito"
+    ],
+    "IdVinculos": [
+      "arqueologo_vinculo_antigos",
+      "arqueologo_vinculo_professor",
+      "arqueologo_vinculo_museu",
+      "arqueologo_vinculo_grupo_de_pesquisa",
+      "arqueologo_vinculo_tesouro",
+      "arqueologo_vinculo_cidade"
+    ],
+    "IdDefeitos": [
+      "arqueologo_defeito_obcecado",
+      "arqueologo_defeito_impaciente",
+      "arqueologo_defeito_recluso",
+      "arqueologo_defeito_ceticismo",
+      "arqueologo_defeito_teimoso",
+      "arqueologo_defeito_curioso_demais"
+    ],
+    "Requisitos": null,
+    "Tags": [
+      "explorador",
+      "academico",
+      "aventura"
+    ],
+    "Fonte": "Tomb of Annihilation",
+    "Pagina": "ToA p.33",
+    "Versao": "Suplemento",
+    "RiquezaInicial": [
+      {
+        "Tipo": "PO",
+        "Quantidade": 10
+      }
+    ]
+  },
+  {
+    "Id": "artesao_de_guilda",
+    "Nome": "Arteso de Guilda",
+    "Descricao": "Voc pertence a uma guilda de artesos e tem acesso aos seus recursos e conexes.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "guilda", "artesanato" ],
+    "Fonte": "Livro do Jogador",
+    "Pagina": "PHB p.128",
+    "Versao": "Core",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "assombrado",
+    "Nome": "Assombrado",
+    "Descricao": "Voc carrega uma maldio ou um passado sombrio que o persegue.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "sombrio", "maldio" ],
+    "Fonte": "Suplemento",
+    "Pagina": "",
+    "Versao": "Suplemento",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "cacador_de_recompensas_urbano",
+    "Nome": "Caador de Recompensas Urbano",
+    "Descricao": "Voc caa criminosos nas cidades, ganhando sua vida com a captura e entrega deles.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "caador", "urbano", "justia" ],
+    "Fonte": "Suplemento",
+    "Pagina": "",
+    "Versao": "Suplemento",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "cavaleiro_feudo_livre",
+    "Nome": "Cavaleiro Feudo Livre",
+    "Descricao": "Voc  um cavaleiro sem terras fixas, viajando pelo mundo buscando causas justas ou seu prprio destino.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "nobreza", "cavaleiro", "viajante" ],
+    "Fonte": "Suplemento",
+    "Pagina": "",
+    "Versao": "Suplemento",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "charlatao",
+    "Nome": "Charlato",
+    "Descricao": "Voc  mestre em enganar e persuadir, usando truques e falsas promessas para se dar bem.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "enganacao", "blefe", "trapaca" ],
+    "Fonte": "Livro do Jogador",
+    "Pagina": "PHB p.128",
+    "Versao": "Core",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "comerciante_fracassado",
+    "Nome": "Comerciante Fracassado",
+    "Descricao": "Voc tentou a vida dos negcios, mas as coisas no deram certo e agora est  merc da sorte.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "comercio", "fracasso", "sorte" ],
+    "Fonte": "Suplemento",
+    "Pagina": "",
+    "Versao": "Suplemento",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "contrabandista",
+    "Nome": "Contrabandista",
+    "Descricao": "Voc trafica mercadorias ilegais e conhece os atalhos do submundo para sobreviver.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "contrabando", "submundo" ],
+    "Fonte": "Suplemento",
+    "Pagina": "",
+    "Versao": "Suplemento",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "criminoso",
+    "Nome": "Criminoso",
+    "Descricao": "Voc viveu  margem da lei, especializado em furtos, golpes e esquemas ilegais.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "furtividade", "ilegalidade" ],
+    "Fonte": "Livro do Jogador",
+    "Pagina": "PHB p.128",
+    "Versao": "Core",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "eremita",
+    "Nome": "Eremita",
+    "Descricao": "Voc viveu isolado da sociedade, meditando e buscando iluminao ou respostas em sua solido.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 1,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "isolamento", "espiritualidade" ],
+    "Fonte": "Livro do Jogador",
+    "Pagina": "PHB p.128",
+    "Versao": "Core",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "estudioso_recluso",
+    "Nome": "Estudioso Recluso",
+    "Descricao": "Voc passou anos isolado em estudos, acumulando conhecimento enquanto se afastava da vida social.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 2,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "isolamento", "conhecimento" ],
+    "Fonte": "Suplemento",
+    "Pagina": "",
+    "Versao": "Suplemento",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "forasteiro",
+    "Nome": "Forasteiro",
+    "Descricao": "Voc cresceu em uma regio remota, acostumado a sobreviver na natureza e a se afastar da civilizao.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 1,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "natureza", "sobrevivncia" ],
+    "Fonte": "Livro do Jogador",
+    "Pagina": "PHB p.128",
+    "Versao": "Core",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "fuzileiro_marinha",
+    "Nome": "Fuzileiro (Marinha)",
+    "Descricao": "Voc serviu como fuzileiro naval, treinado para enfrentar perigos martimos e manter a disciplina.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "marinha", "militar" ],
+    "Fonte": "Suplemento",
+    "Pagina": "",
+    "Versao": "Suplemento",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "heroi_do_povo",
+    "Nome": "Heri do Povo",
+    "Descricao": "Voc  uma figura inspiradora, algum que defende e luta pelos oprimidos.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "heri", "inspirao" ],
+    "Fonte": "Suplemento",
+    "Pagina": "",
+    "Versao": "Suplemento",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "marinheiro",
+    "Nome": "Marinheiro",
+    "Descricao": "Voc passou a vida em alto-mar, acostumado com o balano das ondas e a disciplina naval.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "mar", "naval" ],
+    "Fonte": "Livro do Jogador",
+    "Pagina": "PHB p.128",
+    "Versao": "Core",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "mercenario_veterano",
+    "Nome": "Mercenrio Veterano",
+    "Descricao": "Voc lutou em muitas batalhas como soldado de fortuna, conhecendo o custo da guerra.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "soldado", "guerra" ],
+    "Fonte": "Suplemento",
+    "Pagina": "",
+    "Versao": "Suplemento",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "nobre",
+    "Nome": "Nobre",
+    "Descricao": "Voc nasceu em uma famlia influente e tem acesso a privilgios e contatos da alta sociedade.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 1,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "nobreza", "influncia" ],
+    "Fonte": "Livro do Jogador",
+    "Pagina": "PHB p.128",
+    "Versao": "Core",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "orfao",
+    "Nome": "rfo",
+    "Descricao": "Voc cresceu sem uma famlia, aprendendo a sobreviver por conta prpria nas ruas ou em instituies.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "sobrevivncia", "ruas" ],
+    "Fonte": "Suplemento",
+    "Pagina": "",
+    "Versao": "Suplemento",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "sabio",
+    "Nome": "Sbio",
+    "Descricao": "Voc passou anos estudando e pesquisando, acumulando vasto conhecimento e sabedoria.",
+    "IdPericias": [
+      "arcanismo",
+      "historia"
+    ],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [
+      "biblioteca_do_sabio"
+    ],
+    "IdiomasAdicionais": 2,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [
+        "arcanismo",
+        "historia",
+        "investigacao",
+        "natureza",
+        "religiao"
+      ],
+      "QuantidadeEscolhas": 1
+    },
+    "EquipamentosDetalhados": [
+      {
+        "Nome": "Livro de notas",
+        "Quantidade": 1
+      },
+      {
+        "Nome": "Caneta e tinta",
+        "Quantidade": 1
+      },
+      {
+        "Nome": "culos",
+        "Quantidade": 1
+      }
+    ],
+    "IdIdeais": [
+      "sabio_ideal_conhecimento",
+      "sabio_ideal_verdade",
+      "sabio_ideal_busca",
+      "sabio_ideal_equilibrio"
+    ],
+    "IdVinculos": [
+      "sabio_vinculo_professor",
+      "sabio_vinculo_biblioteca",
+      "sabio_vinculo_aluno",
+      "sabio_vinculo_descoberta"
+    ],
+    "IdDefeitos": [
+      "sabio_defeito_obcecacao",
+      "sabio_defeito_distracao",
+      "sabio_defeito_teimosia",
+      "sabio_defeito_orgulho"
+    ],
+    "Requisitos": null,
+    "Tags": [ "conhecimento", "estudo", "pesquisa" ],
+    "Fonte": "Livro do Jogador",
+    "Pagina": "PHB p.128",
+    "Versao": "Core",
+    "RiquezaInicial": [
+      {
+        "Tipo": "PO",
+        "Quantidade": 10
+      }
+    ]
+  },
+  {
+    "Id": "soldado",
+    "Nome": "Soldado",
+    "Descricao": "Voc serviu em um exrcito, aprendendo disciplina, estratgia e combate.",
+    "IdPericias": [],
+    "IdFerramentas": [
+      "kit_de_jogos_de_guerra",
+      "kit_de_veiculos_de_terra"
+    ],
+    "IdLinguas": [],
+    "IdFeature": [
+      "disciplinado"
+    ],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "militar", "combate" ],
+    "Fonte": "Livro do Jogador",
+    "Pagina": "PHB p.128",
+    "Versao": "Core",
+    "RiquezaInicial": []
+  },
+  {
+    "Id": "viajante_distante",
+    "Nome": "Viajante Distante",
+    "Descricao": "Voc percorreu terras distantes e exticas, adquirindo experincia e histrias para contar.",
+    "IdPericias": [],
+    "IdFerramentas": [],
+    "IdLinguas": [],
+    "IdFeature": [],
+    "IdiomasAdicionais": 0,
+    "OpcoesLinguas": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesEquipamentos": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "OpcoesPericias": {
+      "Opcoes": [],
+      "QuantidadeEscolhas": 0
+    },
+    "EquipamentosDetalhados": [],
+    "IdIdeais": [],
+    "IdVinculos": [],
+    "IdDefeitos": [],
+    "Requisitos": null,
+    "Tags": [ "aventura", "viagem" ],
+    "Fonte": "Suplemento",
+    "Pagina": "",
+    "Versao": "Suplemento",
+    "RiquezaInicial": []
+  }
+]

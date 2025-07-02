@@ -1,11 +1,11 @@
 ﻿using Discord.Interactions;
-using DnDBot.Application.Models;
+using DnDBot.Application.Models.Rolagem;
 using DnDBot.Application.Services;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DnDBot.Bot.Commands
+namespace DnDBot.Bot.Commands.Rolagem
 {
     /// <summary>
     /// Módulo de comandos slash do Discord relacionados a rolagens de dados.
@@ -51,7 +51,7 @@ namespace DnDBot.Bot.Commands
         /// </summary>
         /// <param name="funcRolagem">Função que executa a rolagem (simples, vantagem ou desvantagem).</param>
         /// <param name="expressoes">String com uma ou mais expressões separadas por vírgula.</param>
-        private async Task ProcessarMultiplaRolagemAsync(Func<string, ResultadoRolagem?> funcRolagem, string expressoes)
+        private async Task ProcessarMultiplaRolagemAsync(Func<string, ResultadoRolagem> funcRolagem, string expressoes)
         {
             if (string.IsNullOrWhiteSpace(expressoes))
             {

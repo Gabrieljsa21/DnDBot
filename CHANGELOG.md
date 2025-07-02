@@ -5,6 +5,27 @@ Todas as alterações significativas neste projeto serão documentadas neste arquiv
 O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e o versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ---
+
+## [1.1.3] - 2025-07-02
+
+### Adicionado
+- Serviços para gerenciamento detalhado de perícias e antecedentes, incluindo:
+  - Classe `Pericia` com propriedades para tipo, atributo base, proficiência, bônus e descrição.
+  - `AntecedentesService` para carregar e consultar antecedentes a partir de JSON, com cache interno e métodos para buscar por ID e nome.
+- Implementação do sistema de moedas e tesouro, com métodos para manipular moedas (PC, PP, PO, PL, DA) e registrar histórico financeiro do personagem.
+- Métodos `ObterRacaPorId` e `ObterSubRacaPorId` adicionados ao `RacasService` com validações para ignorar IDs não definidos.
+- Método `ObterAlinhamentoPorId` adicionado ao `AlinhamentosService`.
+- Ajustes no comando `/ficha_ver` para tratar IDs não definidos, exibindo o ID diretamente quando o nome não estiver disponível, prevenindo erros e melhorando a robustez da exibição da ficha.
+- Correção de timeout em interações Discord, garantindo que todas as respostas sejam enviadas dentro do limite de 3 segundos.
+- Uso consistente de buscas case-insensitive para IDs e nomes em todos os serviços.
+
+### Corrigido
+- Erro ao tentar obter nomes para IDs `"NãoDefinido"` ou vazios que causavam exceções durante a visualização da ficha.
+- Timeout de interação no Discord em handlers de seleção (sub-raça, classe) corrigido.
+- Melhoria no tratamento de exceções em interações, garantindo feedback ao usuário e evitando falhas silenciosas.
+
+---
+
 ## [1.1.2] - 2025-07-01
 
 ### Adicionado
@@ -24,6 +45,8 @@ O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0
 ### Removido
 - Mapas auxiliares desnecessários como `AtributosMap` e `NomeAcentuado`, substituídos por chaves diretas e padronizadas.
 
+---
+
 ## [1.1.1] - 2025-06-30
 
 ### Adicionado
@@ -31,6 +54,8 @@ O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0
 - A classe Raca agora contém uma lista de objetos SubRaca, ao invés de apenas strings com os IDs.
 - A classe SubRaca foi expandida para incluir todos os atributos relevantes: bônus de atributos, tendências, tamanho, deslocamento, idiomas, proficiências, visão no escuro, resistências, características, magias raciais e URLs de ícone/imagem.
 - Estrutura JSON de raças atualizada para conter os dados completos das sub-raças dentro do campo subRacas.
+
+---
 
 ## [1.1.0] - 2025-06-30
 

@@ -1,0 +1,202 @@
+[
+  {
+    "Id": "atletismo",
+    "Nome": "Atletismo",
+    "AtributoBase": "Forca",
+    "Tipo": "Habilidade",
+    "Descricao": "Capacidade de correr, escalar, nadar ou realizar feitos físicos exigentes.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_atletismo.png"
+  },
+  {
+    "Id": "acrobacia",
+    "Nome": "Acrobacia",
+    "AtributoBase": "Destreza",
+    "Tipo": "Habilidade",
+    "Descricao": "Capacidade de manter o equilíbrio, realizar cambalhotas ou saltos.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_acrobacia.png"
+  },
+  {
+    "Id": "furtividade",
+    "Nome": "Furtividade",
+    "AtributoBase": "Destreza",
+    "Tipo": "Habilidade",
+    "Descricao": "Capacidade de se mover silenciosamente e evitar ser detectado.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_furtividade.png"
+  },
+  {
+    "Id": "prestidigitacao",
+    "Nome": "Prestidigitação",
+    "AtributoBase": "Destreza",
+    "Tipo": "Habilidade",
+    "Descricao": "Habilidade de realizar truques de mãos rápidos, como batedores de carteira.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_prestidigitacao.png"
+  },
+  {
+    "Id": "arcanismo",
+    "Nome": "Arcanismo",
+    "AtributoBase": "Inteligencia",
+    "Tipo": "Habilidade",
+    "Descricao": "Conhecimento sobre magia, símbolos, planos e tradições místicas.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_arcanismo.png"
+  },
+  {
+    "Id": "historia",
+    "Nome": "História",
+    "AtributoBase": "Inteligencia",
+    "Tipo": "Habilidade",
+    "Descricao": "Conhecimento sobre eventos históricos, reinos, guerras e figuras importantes.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_historia.png"
+  },
+  {
+    "Id": "investigacao",
+    "Nome": "Investigação",
+    "AtributoBase": "Inteligencia",
+    "Tipo": "Habilidade",
+    "Descricao": "Habilidade de examinar pistas, analisar lógica e encontrar detalhes ocultos.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_investigacao.png"
+  },
+  {
+    "Id": "natureza",
+    "Nome": "Natureza",
+    "AtributoBase": "Inteligencia",
+    "Tipo": "Habilidade",
+    "Descricao": "Conhecimento sobre terreno, clima, plantas, animais e ecossistemas.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_natureza.png"
+  },
+  {
+    "Id": "religiao",
+    "Nome": "Religião",
+    "AtributoBase": "Inteligencia",
+    "Tipo": "Habilidade",
+    "Descricao": "Conhecimento sobre divindades, doutrinas, símbolos e rituais religiosos.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_religiao.png"
+  },
+  {
+    "Id": "intuicao",
+    "Nome": "Intuição",
+    "AtributoBase": "Sabedoria",
+    "Tipo": "Habilidade",
+    "Descricao": "Capacidade de perceber emoções, mentiras e intenções ocultas.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_intuicao.png"
+  },
+  {
+    "Id": "medicina",
+    "Nome": "Medicina",
+    "AtributoBase": "Sabedoria",
+    "Tipo": "Habilidade",
+    "Descricao": "Capacidade de estabilizar feridos, diagnosticar doenças e aplicar tratamentos.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_medicina.png"
+  },
+  {
+    "Id": "percepcao",
+    "Nome": "Percepção",
+    "AtributoBase": "Sabedoria",
+    "Tipo": "Habilidade",
+    "Descricao": "Capacidade de notar sons, cheiros, movimentos e mudanças ao redor.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_percepcao.png"
+  },
+  {
+    "Id": "sobrevivencia",
+    "Nome": "Sobrevivência",
+    "AtributoBase": "Sabedoria",
+    "Tipo": "Habilidade",
+    "Descricao": "Habilidade para rastrear, caçar, encontrar comida ou sobreviver na natureza.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_sobrevivencia.png"
+  },
+  {
+    "Id": "trato_com_animais",
+    "Nome": "Trato com Animais",
+    "AtributoBase": "Sabedoria",
+    "Tipo": "Habilidade",
+    "Descricao": "Capacidade de interagir, acalmar ou treinar animais.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_trato_com_animais.png"
+  },
+  {
+    "Id": "atuacao",
+    "Nome": "Atuação",
+    "AtributoBase": "Carisma",
+    "Tipo": "Habilidade",
+    "Descricao": "Habilidade de se apresentar com canto, dança, atuação ou contação de histórias.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_atuacao.png"
+  },
+  {
+    "Id": "enganacao",
+    "Nome": "Enganação",
+    "AtributoBase": "Carisma",
+    "Tipo": "Habilidade",
+    "Descricao": "Habilidade de mentir, omitir ou enganar com palavras ou comportamento.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_enganacao.png"
+  },
+  {
+    "Id": "intimidacao",
+    "Nome": "Intimidação",
+    "AtributoBase": "Carisma",
+    "Tipo": "Habilidade",
+    "Descricao": "Capacidade de influenciar outros por ameaça, força ou imposição.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_intimidacao.png"
+  },
+  {
+    "Id": "persuasao",
+    "Nome": "Persuasão",
+    "AtributoBase": "Carisma",
+    "Tipo": "Habilidade",
+    "Descricao": "Capacidade de influenciar outros de forma educada, encantadora ou diplomática.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_persuasao.png"
+  },
+  {
+    "Id": "ferramenta_artesao",
+    "Nome": "Ferramentas de Artesão",
+    "AtributoBase": "Inteligencia",
+    "Tipo": "Ferramenta",
+    "Descricao": "Habilidade para usar ferramentas específicas de artesão.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_ferramenta_artesao.png"
+  },
+  {
+    "Id": "pericia_espada_longa",
+    "Nome": "Perícia com Espada Longa",
+    "AtributoBase": "Forca",
+    "Tipo": "PericiaDeArma",
+    "Descricao": "Habilidade para usar espadas longas com proficiência.",
+    "EhProficiente": false,
+    "BonusBase": 0,
+    "Icone": "icone_espada_longa.png"
+  }
+]

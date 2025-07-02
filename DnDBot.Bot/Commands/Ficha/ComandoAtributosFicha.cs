@@ -3,6 +3,7 @@ using Discord.Interactions;
 using Discord.WebSocket;
 using DnDBot.Application.Models;
 using DnDBot.Application.Services;
+using DnDBot.Application.Services.Distribuicao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +11,21 @@ using System.Threading.Tasks;
 
 namespace DnDBot.Bot.Commands.Ficha
 {
+    /// <summary>
+    /// Módulo de comandos para gerenciar a distribuição de atributos em fichas de personagem.
+    /// </summary>
     public class ComandoAtributosFicha : InteractionModuleBase<SocketInteractionContext>
     {
         private readonly FichaService _fichaService;
         private readonly DistribuicaoAtributosService _atributosService;
         private readonly DistribuicaoAtributosHandler _atributosHandler;
 
+        /// <summary>
+        /// Construtor que recebe os serviços necessários via injeção de dependência.
+        /// </summary>
+        /// <param name="fichaService">Serviço para manipulação de fichas.</param>
+        /// <param name="atributosService">Serviço para lógica de atributos (não usado diretamente aqui, mas disponível).</param>
+        /// <param name="atributosHandler">Manipulador da distribuição de atributos temporária.</param>
         public ComandoAtributosFicha(
             FichaService fichaService,
             DistribuicaoAtributosService atributosService,
@@ -26,7 +36,9 @@ namespace DnDBot.Bot.Commands.Ficha
             _atributosHandler = atributosHandler;
         }
 
-        // /ficha_atributos - lista as fichas e permite escolher
+        /// <summary>
+        /// Comando Slash que lista as fichas do usuário para que ele escolha uma para distribuir atributos.
+        /// </summary>
         [SlashCommand("ficha_atributos", "Escolha uma ficha para distribuir os atributos")]
         public async Task FichaAtributosCommand()
         {
@@ -54,7 +66,11 @@ namespace DnDBot.Bot.Commands.Ficha
             await RespondAsync("Selecione a ficha para distribuir atributos:", components: builder.Build(), ephemeral: true);
         }
 
-        // Quando o jogador escolhe a ficha
+        /// <summary>
+        /// Handler chamado quando o usuário seleciona uma ficha para distribuição de atributos.
+        /// Inicializa a distribuição e exibe a interface para ajuste.
+        /// </summary>
+        /// <param name="fichaIdStr">ID da ficha selecionada, como string.</param>
         [ComponentInteraction("select_ficha_atributo")]
         public async Task SelectFichaAtributoHandler(string fichaIdStr)
         {
@@ -82,13 +98,18 @@ namespace DnDBot.Bot.Commands.Ficha
             await RespondAsync($"Distribua seus pontos de atributo na ficha **{ficha.Nome}**:", embed: embed, components: components, ephemeral: true);
         }
 
-        // Handler genérico para os botões + e -
+        /// <summary>
+        /// Handler genérico para os botões de ajuste de atributos (incrementar/decrementar).
+        /// Espera um customId no formato "atributo_direcao_atributo" (ex: atributo_mais_Forca).
+        /// </summary>
+        /// <param name="direcao">"mais" para aumentar, outro valor para diminuir.</param>
+        /// <param name="atributo">Nome do atributo a ser ajustado.</param>
         [ComponentInteraction("atributo_*_*")]
         public async Task AtributoHandler(string direcao, string atributo)
         {
             Console.WriteLine($"Botão clicado: {direcao} {atributo}");
 
-            await DeferAsync(ephemeral: true);  // Deferir a resposta (evita erro de timeout/expiração)
+            await DeferAsync(ephemeral: true);  // Evita timeout da interação
 
             var fichas = _fichaService.ObterFichasPorJogador(Context.User.Id);
             var ficha = fichas.OrderByDescending(f => f.DataAlteracao).FirstOrDefault();
@@ -112,13 +133,12 @@ namespace DnDBot.Bot.Commands.Ficha
             var embed = _atributosHandler.ConstruirEmbedDistribuicao(dist);
             var components = _atributosHandler.ConstruirComponentesDistribuicao(dist);
 
-            // Agora modifique a resposta original deferida
+            // Atualiza a mensagem original com o embed e componentes atualizados
             await Context.Interaction.ModifyOriginalResponseAsync(msg =>
             {
                 msg.Embed = embed;
                 msg.Components = components;
             });
         }
-
     }
 }

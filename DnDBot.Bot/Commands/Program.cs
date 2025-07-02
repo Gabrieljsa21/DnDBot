@@ -2,6 +2,8 @@ using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
 using DnDBot.Application.Services;
+using DnDBot.Application.Services.Antecedentes;
+using DnDBot.Application.Services.Distribuicao;
 using DnDBot.Bot.Commands.Ficha;
 using Microsoft.Extensions.DependencyInjection;
 using System;

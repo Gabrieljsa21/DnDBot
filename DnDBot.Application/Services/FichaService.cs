@@ -1,5 +1,5 @@
 ﻿using DnDBot.Application.Helpers;
-using DnDBot.Application.Models;
+using DnDBot.Application.Models.Ficha;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -41,10 +41,10 @@ namespace DnDBot.Application.Services
             var ficha = new FichaPersonagem
             {
                 Nome = nome,
-                Raca = "Não definida",
-                Classe = "Não definida",
-                Antecedente = "Não definido",
-                Alinhamento = "Não definido",
+                IdRaca = "Não definida",
+                IdClasse = "Não definida",
+                IdAntecedente = "Não definido",
+                IdAlinhamento = "Não definido",
                 DataCriacao = DateTime.UtcNow,
                 DataAlteracao = DateTime.UtcNow
             };
@@ -61,7 +61,7 @@ namespace DnDBot.Application.Services
         /// <param name="ficha">Ficha a ser adicionada.</param>
         public void AdicionarFicha(FichaPersonagem ficha)
         {
-            Console.WriteLine($"Adicionando ficha do jogador {ficha.JogadorId}");
+            Console.WriteLine($"Adicionando ficha do jogador {ficha.IdJogador}");
             _fichas.Add(ficha);
             SalvarFichas();
         }
@@ -69,11 +69,11 @@ namespace DnDBot.Application.Services
         /// <summary>
         /// Retorna todas as fichas associadas a um jogador específico.
         /// </summary>
-        /// <param name="jogadorId">ID do jogador no Discord.</param>
+        /// <param name="idJogador">ID do jogador no Discord.</param>
         /// <returns>Lista de fichas do jogador.</returns>
-        public List<FichaPersonagem> ObterFichasPorJogador(ulong jogadorId)
+        public List<FichaPersonagem> ObterFichasPorJogador(ulong idJogador)
         {
-            return _fichas.Where(f => f.JogadorId == jogadorId).ToList();
+            return _fichas.Where(f => f.IdJogador == idJogador).ToList();
         }
 
         /// <summary>
@@ -131,13 +131,13 @@ namespace DnDBot.Application.Services
         /// <summary>
         /// Recupera uma ficha de personagem com base no ID do jogador e no nome do personagem.
         /// </summary>
-        /// <param name="jogadorId">ID do jogador (usuário Discord).</param>
+        /// <param name="idJogador">ID do jogador (usuário Discord).</param>
         /// <param name="nome">Nome do personagem.</param>
         /// <returns>A ficha correspondente, ou null se não encontrada.</returns>
-        public FichaPersonagem ObterFichaPorJogadorENome(ulong jogadorId, string nome)
+        public FichaPersonagem ObterFichaPorJogadorENome(ulong idJogador, string nome)
         {
             var fichas = CarregarFichas();
-            return fichas.FirstOrDefault(f => f.JogadorId == jogadorId && f.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase));
+            return fichas.FirstOrDefault(f => f.IdJogador == idJogador && f.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase));
         }
 
         /// <summary>
@@ -160,12 +160,12 @@ namespace DnDBot.Application.Services
         /// <summary>
         /// Recupera a última ficha criada por um jogador específico.
         /// </summary>
-        /// <param name="jogadorId">ID do jogador (usuário Discord).</param>
+        /// <param name="idJogador">ID do jogador (usuário Discord).</param>
         /// <returns>Última ficha criada pelo jogador, ou null se nenhuma existir.</returns>
-        public FichaPersonagem ObterUltimaFichaDoJogador(ulong jogadorId)
+        public FichaPersonagem ObterUltimaFichaDoJogador(ulong idJogador)
         {
             return _fichas
-                .Where(f => f.JogadorId == jogadorId)
+                .Where(f => f.IdJogador == idJogador)
                 .LastOrDefault();
         }
 

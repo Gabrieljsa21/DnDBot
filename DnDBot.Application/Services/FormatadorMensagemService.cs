@@ -1,4 +1,4 @@
-﻿using DnDBot.Application.Models;
+﻿using DnDBot.Application.Models.Rolagem;
 using System;
 
 namespace DnDBot.Application.Services
