@@ -105,7 +105,6 @@ namespace DnDBot.Application.Services.DatabaseSetup
                     insertCmd.Parameters.AddWithValue("$temEspecializacao", pericia.TemEspecializacao ? 1 : 0);
                     insertCmd.Parameters.AddWithValue("$bonusBase", pericia.BonusBase);
                     insertCmd.Parameters.AddWithValue("$bonusAdicional", pericia.BonusAdicional);
-                    insertCmd.Parameters.AddWithValue("$icone", pericia.Icone ?? string.Empty);
 
                     await insertCmd.ExecuteNonQueryAsync();
                 }

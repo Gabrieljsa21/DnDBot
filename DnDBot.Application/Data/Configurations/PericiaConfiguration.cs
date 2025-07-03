@@ -43,10 +43,6 @@ namespace DnDBot.Application.Data.Configurations
             entity.Property(p => p.Descricao)
                   .HasMaxLength(2000);
 
-            // Configura a propriedade Icone com tamanho máximo de 255 caracteres (pode ser nula)
-            entity.Property(p => p.Icone)
-                  .HasMaxLength(255);
-
             // Ignora as propriedades calculadas ou não persistidas no banco
             entity.Ignore(p => p.DificuldadeSugerida);
             entity.Ignore(p => p.ValorTotal);

@@ -154,9 +154,6 @@ namespace DnDBot.Application.Services.DatabaseSetup
                     insertCmd.Parameters.AddWithValue("$foco", magia.FocoNecessario ?? "");
                     insertCmd.Parameters.AddWithValue("$limite", magia.LimiteUso ?? "");
                     insertCmd.Parameters.AddWithValue("$porTurno", magia.EfeitoPorTurno ?? "");
-                    insertCmd.Parameters.AddWithValue("$fonteLivro", magia.FonteLivro ?? "");
-                    insertCmd.Parameters.AddWithValue("$paginaLivro", magia.PaginaLivro ?? (object)DBNull.Value);
-                    insertCmd.Parameters.AddWithValue("$notas", magia.NotasInternas ?? "");
                     insertCmd.Parameters.AddWithValue("$usos", magia.NumeroDeUsos);
 
                     await insertCmd.ExecuteNonQueryAsync();

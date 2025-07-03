@@ -42,10 +42,6 @@ public class FerramentaConfiguration : IEntityTypeConfiguration<Ferramenta>
         // Configura a propriedade RequerProficiencia (indica se requer proficiência para uso)
         builder.Property(f => f.RequerProficiencia);
 
-        // Configura a propriedade Icone com tamanho máximo de 250 caracteres (pode ser URL ou nome do ícone)
-        builder.Property(f => f.Icone)
-            .HasMaxLength(250);
-
         // Configura relacionamento muitos-para-muitos entre Ferramenta e Pericia,
         // usando tabela intermediária "FerramentaPericia"
         builder.HasMany(f => f.PericiasAssociadas)

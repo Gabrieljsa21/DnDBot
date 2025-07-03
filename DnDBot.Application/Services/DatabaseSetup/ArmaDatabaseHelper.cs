@@ -167,7 +167,6 @@ namespace DnDBot.Application.Services.DatabaseSetup
                     insertCmd.Parameters.AddWithValue("$bonusMagico", arma.BonusMagico);
                     insertCmd.Parameters.AddWithValue("$durabilidadeAtual", arma.DurabilidadeAtual);
                     insertCmd.Parameters.AddWithValue("$durabilidadeMaxima", arma.DurabilidadeMaxima);
-                    insertCmd.Parameters.AddWithValue("$icone", arma.Icone ?? string.Empty);
                     insertCmd.Parameters.AddWithValue("$raridade", arma.Raridade ?? string.Empty);
                     insertCmd.Parameters.AddWithValue("$fabricante", arma.Fabricante ?? string.Empty);
                     await insertCmd.ExecuteNonQueryAsync();

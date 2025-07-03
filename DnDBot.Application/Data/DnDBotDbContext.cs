@@ -66,6 +66,7 @@ namespace DnDBot.Application.Data
             modelBuilder.Entity<OpcaoEscolha<Equipamento>>().HasNoKey();
             modelBuilder.Entity<OpcaoEscolha<Idioma>>().HasNoKey();
             modelBuilder.Entity<OpcaoEscolha<Pericia>>().HasNoKey();
+
         }
     }
 }
