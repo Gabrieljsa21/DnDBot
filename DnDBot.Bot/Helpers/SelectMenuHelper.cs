@@ -18,7 +18,7 @@ namespace DnDBot.Bot.Helpers
 
             foreach (var raca in racas.Take(25))
             {
-                AdicionarOpcaoSafe(select, raca.Nome, raca.Nome, raca.Nome == selecionado, raca.Descricao);
+                AdicionarOpcaoSafe(select, raca.Nome, raca.Id, raca.Id == selecionado, raca.Descricao);
             }
 
             return select;

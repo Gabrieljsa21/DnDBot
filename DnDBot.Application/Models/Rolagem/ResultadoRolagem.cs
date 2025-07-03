@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using DnDBot.Application.Models.Enums;
+using System.Collections.Generic;
 
 namespace DnDBot.Application.Models.Rolagem
 {
@@ -8,7 +9,7 @@ namespace DnDBot.Application.Models.Rolagem
     public class ResultadoRolagem
     {
         /// <summary>
-        /// Expressão utilizada na rolagem, ex: "2d20+1".
+        /// Expressão utilizada na rolagem (ex: "2d20+1").
         /// </summary>
         public string Expressao { get; set; }
 
@@ -18,7 +19,7 @@ namespace DnDBot.Application.Models.Rolagem
         public List<int> ValoresPrimeiraRolagem { get; set; }
 
         /// <summary>
-        /// Valores da segunda rolagem (somente em vantagem ou desvantagem; nulo em rolagens normais).
+        /// Valores da segunda rolagem (somente em casos de vantagem ou desvantagem; nulo em rolagens normais).
         /// </summary>
         public List<int> ValoresSegundaRolagem { get; set; }
 
@@ -28,17 +29,17 @@ namespace DnDBot.Application.Models.Rolagem
         public int Modificador { get; set; }
 
         /// <summary>
-        /// Resultado total da rolagem, somando os dados e o modificador.
+        /// Resultado total da rolagem, incluindo o modificador.
         /// </summary>
         public int Total { get; set; }
 
         /// <summary>
-        /// Tipo da rolagem (normal, vantagem ou desvantagem).
+        /// Tipo da rolagem (Normal, Vantagem ou Desvantagem).
         /// </summary>
         public TipoRolagem Tipo { get; set; }
 
         /// <summary>
-        /// Texto detalhado que pode conter formatação especial (ex: valores tachados na desvantagem).
+        /// Texto detalhado que pode conter formatação especial (ex: valores tachados em desvantagem).
         /// </summary>
         public string Detalhes { get; set; }
     }

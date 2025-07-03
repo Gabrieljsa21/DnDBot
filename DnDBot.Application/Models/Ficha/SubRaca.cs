@@ -45,12 +45,12 @@ namespace DnDBot.Application.Models.Ficha
         /// <summary>
         /// Idiomas que a sub-raça conhece por padrão.
         /// </summary>
-        public List<string> Idiomas { get; set; } = new();
+        public List<Idioma> Idiomas { get; set; } = new();
 
         /// <summary>
         /// Proficiências concedidas pela sub-raça (ex: armas, ferramentas, perícias).
         /// </summary>
-        public List<string> Proficiencias { get; set; } = new();
+        public List<Proficiencia> Proficiencias { get; set; } = new();
 
         /// <summary>
         /// Alcance da visão no escuro em metros. Use 0 para indicar que a sub-raça não possui visão no escuro.
@@ -60,17 +60,17 @@ namespace DnDBot.Application.Models.Ficha
         /// <summary>
         /// Tipos de resistência concedidas (ex: resistência a dano radiante).
         /// </summary>
-        public List<string> Resistencias { get; set; } = new();
+        public List<Resistencia> Resistencias { get; set; } = new();
 
         /// <summary>
         /// Características especiais únicas da sub-raça.
         /// </summary>
-        public List<string> Caracteristicas { get; set; } = new();
+        public List<Caracteristica> Caracteristicas { get; set; } = new();
 
         /// <summary>
         /// Lista de magias raciais que o personagem pode conjurar.
         /// </summary>
-        public List<string> MagiasRaciais { get; set; } = new();
+        public List<Magia> MagiasRaciais { get; set; } = new();
 
         /// <summary>
         /// URL do ícone representando visualmente a sub-raça.
@@ -81,6 +81,15 @@ namespace DnDBot.Application.Models.Ficha
         /// URL da imagem ilustrativa principal da sub-raça.
         /// </summary>
         public string ImagemUrl { get; set; }
-    }
 
+        /// <summary>
+        /// ID da raça à qual a sub-raça pertence.
+        /// </summary>
+        public string IdRaca { get; set; }
+
+        /// <summary>
+        /// Referência para a raça principal da qual esta sub-raça deriva.
+        /// </summary>
+        public Raca Raca { get; set; }
+    }
 }

@@ -1,46 +1,41 @@
-﻿using DnDBot.Application.Helpers;
+﻿using DnDBot.Application.Data;
 using DnDBot.Application.Models.Ficha;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace DnDBot.Application.Services
 {
     /// <summary>
-    /// Serviço responsável por gerenciar fichas de personagem.
+    /// Serviço para gerenciamento das fichas de personagens dos jogadores.
     /// </summary>
     public class FichaService
     {
-        private List<FichaPersonagem> _fichas = new();
-        private readonly string CaminhoArquivo = PathHelper.GetDataPath("fichas.json");
+        private readonly DnDBotDbContext _dbContext;
 
-        public FichaService()
+        /// <summary>
+        /// Construtor que recebe o contexto do banco de dados via injeção de dependência.
+        /// </summary>
+        /// <param name="dbContext">Contexto do banco de dados DnDBotDbContext.</param>
+        public FichaService(DnDBotDbContext dbContext)
         {
-            if (File.Exists(CaminhoArquivo))
-            {
-                Console.WriteLine("Carregando fichas do arquivo...");
-                var json = File.ReadAllText(CaminhoArquivo);
-                _fichas = JsonSerializer.Deserialize<List<FichaPersonagem>>(json) ?? new List<FichaPersonagem>();
-            }
-            else
-            {
-                Console.WriteLine("Nenhum arquivo de fichas encontrado.");
-                _fichas = new List<FichaPersonagem>();
-            }
+            _dbContext = dbContext;
         }
 
         /// <summary>
-        /// Cria uma nova ficha básica com nome e valores padrão.
+        /// Cria uma ficha básica com dados iniciais padrão.
         /// </summary>
-        /// <param name="nome">Nome do personagem.</param>
-        /// <returns>Instância de <see cref="FichaPersonagem"/> com dados padrão.</returns>
-        public FichaPersonagem CriarFichaBasica(string nome)
+        /// <param name="nome">Nome da ficha/personagem.</param>
+        /// <param name="idJogador">ID do jogador dono da ficha.</param>
+        /// <returns>A ficha criada.</returns>
+        public async Task<FichaPersonagem> CriarFichaBasicaAsync(string nome, ulong idJogador)
         {
             var ficha = new FichaPersonagem
             {
                 Nome = nome,
+                IdJogador = idJogador,
                 IdRaca = "Não definida",
                 IdClasse = "Não definida",
                 IdAntecedente = "Não definido",
@@ -49,128 +44,68 @@ namespace DnDBot.Application.Services
                 DataAlteracao = DateTime.UtcNow
             };
 
-            _fichas.Add(ficha);
-            SalvarFichas();
+            _dbContext.FichaPersonagem.Add(ficha);
+            await _dbContext.SaveChangesAsync();
             return ficha;
         }
 
-
         /// <summary>
-        /// Adiciona uma ficha totalmente definida à lista.
+        /// Adiciona uma ficha já criada ao banco de dados.
         /// </summary>
         /// <param name="ficha">Ficha a ser adicionada.</param>
-        public void AdicionarFicha(FichaPersonagem ficha)
+        public async Task AdicionarFichaAsync(FichaPersonagem ficha)
         {
-            Console.WriteLine($"Adicionando ficha do jogador {ficha.IdJogador}");
-            _fichas.Add(ficha);
-            SalvarFichas();
+            _dbContext.FichaPersonagem.Add(ficha);
+            await _dbContext.SaveChangesAsync();
         }
 
         /// <summary>
-        /// Retorna todas as fichas associadas a um jogador específico.
+        /// Obtém todas as fichas associadas a um jogador pelo seu ID.
         /// </summary>
-        /// <param name="idJogador">ID do jogador no Discord.</param>
+        /// <param name="idJogador">ID do jogador.</param>
         /// <returns>Lista de fichas do jogador.</returns>
-        public List<FichaPersonagem> ObterFichasPorJogador(ulong idJogador)
+        public async Task<List<FichaPersonagem>> ObterFichasPorJogadorAsync(ulong idJogador)
         {
-            return _fichas.Where(f => f.IdJogador == idJogador).ToList();
-        }
-
-        /// <summary>
-        /// Salva a lista atual de fichas em disco no arquivo JSON padrão.
-        /// </summary>
-        private void SalvarFichas()
-        {
-            try
-            {
-                Console.WriteLine($"📁 Salvando {_fichas.Count} fichas em: {Path.GetFullPath(CaminhoArquivo)}");
-                var json = JsonSerializer.Serialize(_fichas, new JsonSerializerOptions { WriteIndented = true });
-                Directory.CreateDirectory(Path.GetDirectoryName(CaminhoArquivo));
-                File.WriteAllText(CaminhoArquivo, json);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("❌ Erro ao salvar fichas: " + ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// Carrega todas as fichas salvas do arquivo JSON.
-        /// </summary>
-        /// <returns>Lista de fichas carregadas do arquivo. Retorna uma lista vazia se o arquivo não existir.</returns>
-        private List<FichaPersonagem> CarregarFichas()
-        {
-            if (File.Exists(CaminhoArquivo))
-            {
-                var json = File.ReadAllText(CaminhoArquivo);
-                return JsonSerializer.Deserialize<List<FichaPersonagem>>(json) ?? new List<FichaPersonagem>();
-            }
-
-            return new List<FichaPersonagem>();
-        }
-
-        /// <summary>
-        /// Salva uma lista específica de fichas no arquivo JSON.
-        /// </summary>
-        /// <param name="fichas">Lista de fichas a serem salvas.</param>
-        private void SalvarFichas(List<FichaPersonagem> fichas)
-        {
-            try
-            {
-                Console.WriteLine($"📁 Salvando {fichas.Count} fichas em: {Path.GetFullPath(CaminhoArquivo)}");
-                var json = JsonSerializer.Serialize(fichas, new JsonSerializerOptions { WriteIndented = true });
-                Directory.CreateDirectory(Path.GetDirectoryName(CaminhoArquivo));
-                File.WriteAllText(CaminhoArquivo, json);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("❌ Erro ao salvar fichas: " + ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// Recupera uma ficha de personagem com base no ID do jogador e no nome do personagem.
-        /// </summary>
-        /// <param name="idJogador">ID do jogador (usuário Discord).</param>
-        /// <param name="nome">Nome do personagem.</param>
-        /// <returns>A ficha correspondente, ou null se não encontrada.</returns>
-        public FichaPersonagem ObterFichaPorJogadorENome(ulong idJogador, string nome)
-        {
-            var fichas = CarregarFichas();
-            return fichas.FirstOrDefault(f => f.IdJogador == idJogador && f.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase));
-        }
-
-        /// <summary>
-        /// Atualiza uma ficha existente no armazenamento, sobrescrevendo seus dados.
-        /// </summary>
-        /// <param name="fichaAtualizada">Ficha atualizada a ser salva.</param>
-        public void AtualizarFicha(FichaPersonagem fichaAtualizada)
-        {
-            var fichas = CarregarFichas();
-
-            var index = fichas.FindIndex(f => f.Id == fichaAtualizada.Id);
-            if (index >= 0)
-            {
-                fichaAtualizada.DataAlteracao = DateTime.UtcNow;
-                fichas[index] = fichaAtualizada;
-                SalvarFichas(fichas);
-            }
-        }
-
-        /// <summary>
-        /// Recupera a última ficha criada por um jogador específico.
-        /// </summary>
-        /// <param name="idJogador">ID do jogador (usuário Discord).</param>
-        /// <returns>Última ficha criada pelo jogador, ou null se nenhuma existir.</returns>
-        public FichaPersonagem ObterUltimaFichaDoJogador(ulong idJogador)
-        {
-            return _fichas
+            return await _dbContext.FichaPersonagem
                 .Where(f => f.IdJogador == idJogador)
-                .LastOrDefault();
+                .ToListAsync();
         }
 
+        /// <summary>
+        /// Busca uma ficha específica pelo jogador e nome da ficha.
+        /// </summary>
+        /// <param name="idJogador">ID do jogador.</param>
+        /// <param name="nome">Nome da ficha.</param>
+        /// <returns>A ficha encontrada ou null se não existir.</returns>
+        public async Task<FichaPersonagem?> ObterFichaPorJogadorENomeAsync(ulong idJogador, string nome)
+        {
+            return await _dbContext.FichaPersonagem
+                .FirstOrDefaultAsync(f => f.IdJogador == idJogador && f.Nome.ToLower() == nome.ToLower());
+        }
 
+        /// <summary>
+        /// Atualiza os dados de uma ficha existente no banco.
+        /// Atualiza também a data da última alteração para o momento atual.
+        /// </summary>
+        /// <param name="fichaAtualizada">Ficha com dados atualizados.</param>
+        public async Task AtualizarFichaAsync(FichaPersonagem fichaAtualizada)
+        {
+            fichaAtualizada.DataAlteracao = DateTime.UtcNow;
+            _dbContext.FichaPersonagem.Update(fichaAtualizada);
+            await _dbContext.SaveChangesAsync();
+        }
 
-        // Método para remover ou atualizar fichas pode ser adicionado futuramente.
+        /// <summary>
+        /// Obtém a ficha mais recentemente criada por um jogador.
+        /// </summary>
+        /// <param name="idJogador">ID do jogador.</param>
+        /// <returns>A ficha mais nova do jogador, ou null se nenhuma existir.</returns>
+        public async Task<FichaPersonagem?> ObterUltimaFichaDoJogadorAsync(ulong idJogador)
+        {
+            return await _dbContext.FichaPersonagem
+                .Where(f => f.IdJogador == idJogador)
+                .OrderByDescending(f => f.DataCriacao)
+                .FirstOrDefaultAsync();
+        }
     }
 }

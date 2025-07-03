@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using DnDBot.Application.Models.Enums;
 using DnDBot.Application.Models.Rolagem;
 
 namespace DnDBot.Application.Services
@@ -12,11 +13,14 @@ namespace DnDBot.Application.Services
     /// </summary>
     public class RolagemDadosService
     {
+        // Expressão regular que representa o formato NdX+Y
         private static readonly Regex padraoExpressao = new(@"^(\d*)d(\d+)(\s*[+-]\s*\d+)?$", RegexOptions.IgnoreCase);
 
         /// <summary>
-        /// Realiza uma rolagem normal.
+        /// Realiza uma rolagem normal de dados.
         /// </summary>
+        /// <param name="expressao">Expressão no formato NdX+Y (ex: 2d6+3).</param>
+        /// <returns>Resultado da rolagem ou null se a expressão for inválida.</returns>
         public ResultadoRolagem? Rolar(string expressao)
         {
             var match = padraoExpressao.Match(expressao.Trim());
@@ -47,24 +51,32 @@ namespace DnDBot.Application.Services
         }
 
         /// <summary>
-        /// Realiza uma rolagem com vantagem.
+        /// Realiza uma rolagem com vantagem, mantendo o maior dos dois resultados.
         /// </summary>
+        /// <param name="expressao">Expressão de rolagem.</param>
+        /// <returns>Resultado da rolagem com vantagem.</returns>
         public ResultadoRolagem? RolarVantagem(string expressao)
         {
             return RolarComComparacao(expressao, (a, b) => a >= b, TipoRolagem.Vantagem);
         }
 
         /// <summary>
-        /// Realiza uma rolagem com desvantagem.
+        /// Realiza uma rolagem com desvantagem, mantendo o menor dos dois resultados.
         /// </summary>
+        /// <param name="expressao">Expressão de rolagem.</param>
+        /// <returns>Resultado da rolagem com desvantagem.</returns>
         public ResultadoRolagem? RolarDesvantagem(string expressao)
         {
             return RolarComComparacao(expressao, (a, b) => a <= b, TipoRolagem.Desvantagem);
         }
 
         /// <summary>
-        /// Rola duas vezes e seleciona o melhor ou pior resultado.
+        /// Rola duas vezes e seleciona o melhor ou o pior resultado, conforme o tipo de rolagem.
         /// </summary>
+        /// <param name="expressao">Expressão de rolagem.</param>
+        /// <param name="comparador">Função que determina se um resultado é melhor que o outro.</param>
+        /// <param name="tipo">Tipo de rolagem (vantagem ou desvantagem).</param>
+        /// <returns>Resultado formatado com detalhes das duas rolagens.</returns>
         private ResultadoRolagem? RolarComComparacao(string expressao, Func<int, int, bool> comparador, TipoRolagem tipo)
         {
             var r1 = Rolar(expressao);

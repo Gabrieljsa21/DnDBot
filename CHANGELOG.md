@@ -4,6 +4,51 @@ Todas as alterações significativas neste projeto serão documentadas neste arquiv
 
 O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e o versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.2.1] - 2025-07-03
+
+### Adicionado
+- Novos modelos detalhados para armas e armaduras com suporte a propriedades como durabilidade, bônus mágicos, categorias, tipos de dano, propriedades especiais, raridade e fabricante.
+- Métodos auxiliares para manipulação de durabilidade (aplicar dano, reparar), cálculo de dano total e máximo para armas, verificação de requisitos de atributos para uso de armas, controle de munição e recarga.
+- Implementação da classe `Pericia` com suporte a múltiplos atributos base e alternativos, tipos variados, níveis de dificuldade, especialização e vínculo com classes relacionadas.
+- Expansão do modelo `SubRaca` para incluir características complexas como bônus de atributo, resistências, magias raciais, idiomas, visão no escuro, tamanhos e deslocamento.
+- Criação da classe `Equipamento` simples para representação de itens com quantidade.
+- Implementação do armazenamento temporário `FichaTempStore` para manipulação e atualização parcial das fichas de personagem durante a criação.
+- Métodos utilitários nas classes para facilitar operações comuns, como verificação de propriedades, manipulação de magias associadas e cálculo de atributos derivados.
+- Inclusão de documentação detalhada (XML) para todas as novas classes e métodos.
+
+### Atualizado
+- Ampliação dos serviços para suportar os novos atributos e estruturas de dados, preparando para integração com UI/UX e persistência futura.
+- Padronização da nomenclatura e documentação do código para melhor manutenção e entendimento.
+
+### Corrigido
+- Ajustes nas propriedades e métodos para prevenir inconsistências em valores nulos e listas vazias.
+- Correções de lógica em métodos de verificação de requisitos para uso correto dos atributos do personagem.
+
+---
+
+## [1.2.0] - 2025-07-02
+
+### Adicionado
+- Integração com banco de dados SQLite para persistência local dos dados.
+- Criação automatizada da base `dndbot.db` e execução dos comandos SQL de criação de tabelas.
+- Tabelas de entidades principais:
+  - `FichaPersonagem`
+  - `Tesouro`
+- Tabelas auxiliares para listas da ficha:
+  - `Ficha_Proficiencia`
+  - `Ficha_Idioma`
+  - `Ficha_Resistencia`
+  - `Ficha_Caracteristica`
+  - `Ficha_MagiaRacial`
+  - `HistoricoFinanceiro`
+- Tabelas de catálogo adicionadas:
+  - `Raca`, `SubRaca`, `Classe`, `Antecedente`, `Alinhamento`, `Proficiencia`, `Idioma`, `Resistencia`, `Caracteristica`, `Magia`
+- Novo serviço para conexão SQLite com `SQLiteConnection` configurado com `Data Source`.
+
+### Atualizado
+- Documentação expandida no `README.md`, incluindo seção de banco de dados e estrutura das tabelas.
+- Atualização do modelo `FichaPersonagem` para refletir novas propriedades persistidas.
+
 ---
 
 ## [1.1.3] - 2025-07-02

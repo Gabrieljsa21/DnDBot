@@ -23,9 +23,9 @@ namespace DnDBot.Bot.Commands.Ficha
         /// <summary>
         /// Construtor que recebe os serviços necessários via injeção de dependência.
         /// </summary>
-        /// <param name="fichaService">Serviço para manipulação de fichas.</param>
-        /// <param name="atributosService">Serviço para lógica de atributos (não usado diretamente aqui, mas disponível).</param>
-        /// <param name="atributosHandler">Manipulador da distribuição de atributos temporária.</param>
+        /// <param name="fichaService">Serviço para manipulação das fichas.</param>
+        /// <param name="atributosService">Serviço para manipulação da distribuição de atributos.</param>
+        /// <param name="atributosHandler">Handler para gerenciamento da UI e lógica de distribuição de atributos.</param>
         public ComandoAtributosFicha(
             FichaService fichaService,
             DistribuicaoAtributosService atributosService,
@@ -42,7 +42,7 @@ namespace DnDBot.Bot.Commands.Ficha
         [SlashCommand("ficha_atributos", "Escolha uma ficha para distribuir os atributos")]
         public async Task FichaAtributosCommand()
         {
-            var fichas = _fichaService.ObterFichasPorJogador(Context.User.Id);
+            var fichas = await _fichaService.ObterFichasPorJogadorAsync(Context.User.Id);
 
             if (fichas == null || !fichas.Any())
             {
@@ -80,8 +80,8 @@ namespace DnDBot.Bot.Commands.Ficha
                 return;
             }
 
-            var ficha = _fichaService.ObterFichasPorJogador(Context.User.Id)
-                .FirstOrDefault(f => f.Id == fichaId);
+            var fichas = await _fichaService.ObterFichasPorJogadorAsync(Context.User.Id);
+            var ficha = fichas.FirstOrDefault(f => f.Id == fichaId);
 
             if (ficha == null)
             {
@@ -102,7 +102,7 @@ namespace DnDBot.Bot.Commands.Ficha
         /// Handler genérico para os botões de ajuste de atributos (incrementar/decrementar).
         /// Espera um customId no formato "atributo_direcao_atributo" (ex: atributo_mais_Forca).
         /// </summary>
-        /// <param name="direcao">"mais" para aumentar, outro valor para diminuir.</param>
+        /// <param name="direcao">Direção do ajuste: "mais" ou "menos".</param>
         /// <param name="atributo">Nome do atributo a ser ajustado.</param>
         [ComponentInteraction("atributo_*_*")]
         public async Task AtributoHandler(string direcao, string atributo)
@@ -111,7 +111,7 @@ namespace DnDBot.Bot.Commands.Ficha
 
             await DeferAsync(ephemeral: true);  // Evita timeout da interação
 
-            var fichas = _fichaService.ObterFichasPorJogador(Context.User.Id);
+            var fichas = await _fichaService.ObterFichasPorJogadorAsync(Context.User.Id);
             var ficha = fichas.OrderByDescending(f => f.DataAlteracao).FirstOrDefault();
 
             if (ficha == null)

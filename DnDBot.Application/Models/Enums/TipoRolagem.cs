@@ -1,4 +1,4 @@
-﻿namespace DnDBot.Application.Models.Rolagem
+﻿namespace DnDBot.Application.Models.Enums
 {
     /// <summary>
     /// Representa os tipos de rolagem de dados possíveis.

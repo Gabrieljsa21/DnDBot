@@ -1,96 +1,62 @@
-﻿using DnDBot.Application.Models.Antecedente;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using DnDBot.Application.Data;
+using DnDBot.Application.Models.Antecedente;
 
 namespace DnDBot.Application.Services.Antecedentes
 {
+    /// <summary>
+    /// Serviço responsável pelo gerenciamento e acesso aos antecedentes.
+    /// </summary>
     public class AntecedentesService
     {
-        private const string CaminhoArquivo = "Data/antecedentes.json";
-        private readonly Dictionary<string, Antecedente> _cache = new();
+        private readonly DnDBotDbContext _context;
 
-        public AntecedentesService()
+        /// <summary>
+        /// Inicializa uma nova instância do serviço com o contexto do banco.
+        /// </summary>
+        /// <param name="context">Contexto do banco de dados DnDBotDbContext.</param>
+        public AntecedentesService(DnDBotDbContext context)
         {
-            CarregarAntecedentes();
-        }
-
-        private void CarregarAntecedentes()
-        {
-            Console.WriteLine($"📂 Verificando arquivo antecedentes.json em: {Path.GetFullPath(CaminhoArquivo)}");
-
-            if (!File.Exists(CaminhoArquivo))
-            {
-                Console.WriteLine("❌ Arquivo antecedentes.json NÃO encontrado.");
-                return;
-            }
-
-            Console.WriteLine("✅ Arquivo antecedentes.json encontrado, lendo conteúdo...");
-
-            var json = File.ReadAllText(CaminhoArquivo, Encoding.UTF8);
-
-            var lista = JsonSerializer.Deserialize<List<Antecedente>>(json, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-                Converters = { new JsonStringEnumConverter() }
-            });
-
-            if (lista == null)
-                return;
-
-            foreach (var antecedente in lista)
-            {
-                if (!string.IsNullOrWhiteSpace(antecedente.Id))
-                {
-                    _cache[antecedente.Id.ToLower()] = antecedente;
-                }
-            }
+            _context = context;
         }
 
         /// <summary>
-        /// Retorna todos os antecedentes disponíveis.
+        /// Obtém a lista completa de antecedentes cadastrados.
         /// </summary>
-        public IReadOnlyList<Antecedente> ObterAntecedentes()
+        /// <returns>Lista somente leitura de antecedentes.</returns>
+        public async Task<IReadOnlyList<Antecedente>> ObterAntecedentesAsync()
         {
-            return _cache.Values.ToList();
+            return await _context.Antecedente
+                .AsNoTracking()
+                .ToListAsync();
         }
 
         /// <summary>
-        /// Retorna um antecedente pelo ID.
+        /// Busca um antecedente pelo seu identificador (ID).
+        /// A busca ignora diferenças entre maiúsculas e minúsculas.
         /// </summary>
-        public Antecedente ObterAntecedentePorId(string id)
+        /// <param name="id">ID do antecedente a ser buscado.</param>
+        /// <returns>Objeto Antecedente encontrado ou null se não existir.</returns>
+        public async Task<Antecedente?> ObterAntecedentePorIdAsync(string id)
         {
-            if (string.IsNullOrWhiteSpace(id)) return null;
-            _cache.TryGetValue(id.ToLower(), out var antecedente);
-            return antecedente;
+            return await _context.Antecedente
+                .AsNoTracking()
+                .FirstOrDefaultAsync(a => a.Id.ToLower() == id.ToLower());
         }
 
         /// <summary>
-        /// Retorna apenas os nomes dos antecedentes.
+        /// Busca um antecedente pelo nome exato.
+        /// A busca ignora diferenças entre maiúsculas e minúsculas.
         /// </summary>
-        public IReadOnlyList<string> ObterNomes()
+        /// <param name="nome">Nome do antecedente a ser buscado.</param>
+        /// <returns>Objeto Antecedente encontrado ou null se não existir.</returns>
+        public async Task<Antecedente?> ObterAntecedentePorNomeAsync(string nome)
         {
-            return _cache.Values.Select(a => a.Nome).ToList();
-        }
-
-        /// <summary>
-        /// Retorna os IDs dos antecedentes.
-        /// </summary>
-        public IReadOnlyList<string> ObterIds()
-        {
-            return _cache.Keys.ToList();
-        }
-
-        /// <summary>
-        /// Retorna um antecedente pelo nome (caso sensível a maiúsculas/minúsculas).
-        /// </summary>
-        public Antecedente ObterAntecedentePorNome(string nome)
-        {
-            return _cache.Values.FirstOrDefault(a => a.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase));
+            return await _context.Antecedente
+                .AsNoTracking()
+                .FirstOrDefaultAsync(a => a.Nome.ToLower() == nome.ToLower());
         }
     }
 }

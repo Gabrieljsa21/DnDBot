@@ -1,79 +1,88 @@
-﻿using DnDBot.Application.Helpers;
+﻿using DnDBot.Application.Data;
 using DnDBot.Application.Models.Ficha;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.Json;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Data.Sqlite;
 
 namespace DnDBot.Application.Services
 {
     /// <summary>
-    /// Serviço responsável por carregar e fornecer dados de raças a partir do arquivo JSON.
+    /// Serviço responsável por acessar as raças e sub-raças do banco de dados.
     /// </summary>
     public class RacasService
     {
-        private readonly List<Raca> _racas;
+        private readonly DnDBotDbContext _db;
 
         /// <summary>
-        /// Construtor que carrega os dados do arquivo <c>Data/racas.json</c>.
+        /// Construtor do serviço de raças.
         /// </summary>
-        public RacasService()
+        /// <param name="db">Contexto do banco de dados.</param>
+        public RacasService(DnDBotDbContext db)
         {
-            var path = PathHelper.GetDataPath("racas.json");
-
-            if (File.Exists(path))
-            {
-                var json = File.ReadAllText(path);
-                _racas = JsonSerializer.Deserialize<List<Raca>>(json) ?? new List<Raca>();
-            }
-            else
-            {
-                _racas = new List<Raca>();
-            }
+            _db = db;
+            var connection = _db.Database.GetDbConnection();
+            var path = new SqliteConnectionStringBuilder(connection.ConnectionString).DataSource;
+            Console.WriteLine("Banco SQLite usado: " + Path.GetFullPath(path));
         }
 
         /// <summary>
-        /// Retorna a lista de raças disponíveis.
+        /// Retorna todas as raças cadastradas, incluindo suas sub-raças.
         /// </summary>
-        /// <returns>Lista somente leitura de <see cref="Raca"/>.</returns>
-        public IReadOnlyList<Raca> ObterRacas() => _racas.AsReadOnly();
-
-        /// <summary>
-        /// Retorna uma raça com base no ID informado.
-        /// </summary>
-        /// <param name="id">ID da raça a ser buscada.</param>
-        /// <returns>Objeto <see cref="Raca"/> correspondente ao ID, ou <c>null</c> se não encontrada.</returns>
-        public Raca ObterRacaPorId(string id)
+        /// <returns>Lista de raças com sub-raças.</returns>
+        public async Task<IReadOnlyList<Raca>> ObterRacasAsync()
         {
-            return _racas.FirstOrDefault(r => r.Id.Equals(id, System.StringComparison.OrdinalIgnoreCase));
+            return await _db.Raca
+                .Include(r => r.SubRaca)
+                .ToListAsync();
         }
 
         /// <summary>
-        /// Retorna uma raça com base no nome informado.
+        /// Retorna uma raça específica com base no ID fornecido.
         /// </summary>
-        /// <param name="nome">Nome da raça a ser buscada.</param>
-        /// <returns>Objeto <see cref="Raca"/> correspondente ao nome, ou <c>null</c> se não encontrada.</returns>
-        public Raca ObterRacaPorNome(string nome)
+        /// <param name="id">ID da raça.</param>
+        /// <returns>Objeto da raça correspondente ou null se não encontrada.</returns>
+        public async Task<Raca> ObterRacaPorIdAsync(string id)
         {
-            return _racas.FirstOrDefault(r => r.Nome == nome);
-        }
-        public List<SubRaca> ObterTodasSubracas()
-        {
-            return _racas.SelectMany(r => r.SubRacas).ToList();
+            return await _db.Raca
+                .Include(r => r.SubRaca)
+                .FirstOrDefaultAsync(r => r.Id.ToLower() == id.ToLower());
         }
 
         /// <summary>
-        /// Retorna uma sub-raça com base no ID informado.
+        /// Retorna uma raça específica com base no nome fornecido.
         /// </summary>
-        /// <param name="id">ID da sub-raça a ser buscada.</param>
-        /// <returns>Objeto <see cref="SubRaca"/> correspondente ao ID, ou <c>null</c> se não encontrada.</returns>
-        public SubRaca ObterSubRacaPorId(string idSubRaca)
+        /// <param name="nome">Nome da raça.</param>
+        /// <returns>Objeto da raça correspondente ou null se não encontrada.</returns>
+        public async Task<Raca> ObterRacaPorNomeAsync(string nome)
         {
-            return _racas
-                .SelectMany(r => r.SubRacas)
-                .FirstOrDefault(sr => sr.Id.Equals(idSubRaca, System.StringComparison.OrdinalIgnoreCase));
+            return await _db.Raca
+                .Include(r => r.SubRaca)
+                .FirstOrDefaultAsync(r => r.Nome.ToLower() == nome.ToLower());
         }
 
+        /// <summary>
+        /// Retorna todas as sub-raças disponíveis no banco de dados.
+        /// </summary>
+        /// <returns>Lista de sub-raças.</returns>
+        public async Task<List<SubRaca>> ObterTodasSubracasAsync()
+        {
+            return await _db.SubRaca.ToListAsync();
+        }
 
+        /// <summary>
+        /// Retorna uma sub-raça específica com base no ID fornecido.
+        /// </summary>
+        /// <param name="idSubRaca">ID da sub-raça.</param>
+        /// <returns>Objeto da sub-raça correspondente ou null se não encontrada.</returns>
+        public async Task<SubRaca> ObterSubRacaPorIdAsync(string idSubRaca)
+        {
+            return await _db.SubRaca
+                .FirstOrDefaultAsync(sr => sr.Id.ToLower() == idSubRaca.ToLower());
+        }
     }
 }

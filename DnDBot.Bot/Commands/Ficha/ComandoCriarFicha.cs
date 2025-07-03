@@ -43,7 +43,6 @@ namespace DnDBot.Bot.Commands.Ficha
 
         }
 
-
         /// <summary>
         /// Comando inicial que exibe o modal para inserir o nome do personagem.
         /// </summary>
@@ -72,11 +71,16 @@ namespace DnDBot.Bot.Commands.Ficha
 
             FichaTempStore.SavePartialFicha(Context.User.Id, input.Nome);
 
+            var racas = await _racasService.ObterRacasAsync();
+            var classes = await _classesService.ObterClassesAsync();
+            var antecedentes = await _antecedentesService.ObterAntecedentesAsync();
+            var alinhamentos = await _alinhamentosService.ObterAlinhamentosAsync();
+
             var componentesBuilder = new ComponentBuilder()
-                .WithSelectMenu(SelectMenuHelper.CriarSelectRaca(_racasService.ObterRacas()))
-                .WithSelectMenu(SelectMenuHelper.CriarSelectClasse(_classesService.ObterClasses()))
-                .WithSelectMenu(SelectMenuHelper.CriarSelectAntecedente(_antecedentesService.ObterAntecedentes()))
-                .WithSelectMenu(SelectMenuHelper.CriarSelectAlinhamento(_alinhamentosService.ObterAlinhamentos()));
+                .WithSelectMenu(SelectMenuHelper.CriarSelectRaca(racas))
+                .WithSelectMenu(SelectMenuHelper.CriarSelectClasse(classes))
+                .WithSelectMenu(SelectMenuHelper.CriarSelectAntecedente(antecedentes))
+                .WithSelectMenu(SelectMenuHelper.CriarSelectAlinhamento(alinhamentos));
 
             await RespondAsync("Agora escolha os demais detalhes do personagem:", components: componentesBuilder.Build(), ephemeral: true);
         }
@@ -87,12 +91,12 @@ namespace DnDBot.Bot.Commands.Ficha
         [ComponentInteraction("select_raca")]
         public async Task SelectRacaHandler(string valor)
         {
-            await DeferAsync(ephemeral: true); // evita timeout da interação
-
-            FichaTempStore.UpdateFicha(Context.User.Id, idRaca: valor);
-            var ficha = FichaTempStore.GetFicha(Context.User.Id);
-
-            await TentarFinalizarFichaAsync();
+            await AtualizarFichaCampoEFinalizar(
+                valor,
+                "Raça",
+                _racasService.ObterRacaPorIdAsync,
+                (ficha, id) => ficha.IdRaca = id
+            );
         }
 
         /// <summary>
@@ -101,68 +105,49 @@ namespace DnDBot.Bot.Commands.Ficha
         [ComponentInteraction("select_classe")]
         public async Task SelectClasseHandler(string valor)
         {
-            FichaTempStore.UpdateFicha(Context.User.Id, idClasse: valor);
-
-            var classe = _classesService.ObterClassePorId(valor);
-            if (classe == null)
-            {
-                await RespondAsync("❌ Antecedente não encontrado.", ephemeral: true);
-                return;
-            }
-
-            var ficha = FichaTempStore.GetFicha(Context.User.Id);
-            if (ficha == null)
-            {
-                ficha = new FichaPersonagem();
-                FichaTempStore.SaveFicha(Context.User.Id, ficha);
-            }
-
-            if (!await TentarFinalizarFichaAsync())
-                await DeferAsync(ephemeral: true);
+            await AtualizarFichaCampoEFinalizar(
+                valor,
+                "Classe",
+                _classesService.ObterClassePorIdAsync,
+                (ficha, id) => ficha.IdClasse = id
+            );
         }
 
         [ComponentInteraction("select_antecedente")]
         public async Task SelectAntecedenteHandler(string valor)
         {
-            FichaTempStore.UpdateFicha(Context.User.Id, idAntecedente: valor);
-
-            var antecedente = _antecedentesService.ObterAntecedentePorId(valor);
+            var antecedente = await _antecedentesService.ObterAntecedentePorIdAsync(valor);
             if (antecedente == null)
             {
                 await RespondAsync("❌ Antecedente não encontrado.", ephemeral: true);
                 return;
             }
 
-            var ficha = FichaTempStore.GetFicha(Context.User.Id);
-            if (ficha == null)
-            {
-                ficha = new FichaPersonagem();
-                FichaTempStore.SaveFicha(Context.User.Id, ficha);
-            }
+            var ficha = FichaTempStore.GetOrCreateFicha(Context.User.Id);
+            ficha.IdAntecedente = valor;
 
             if (antecedente.RiquezaInicial != null)
             {
                 foreach (var moeda in antecedente.RiquezaInicial)
-                    ficha.Tesouro.Adicionar(moeda);
+                    ficha.BolsaDeMoedas.Adicionar(moeda);
             }
 
-            if (!await TentarFinalizarFichaAsync())
+            if (!await TentarFinalizarFichaAsync(ficha))
                 await DeferAsync(ephemeral: true);
         }
-
 
         /// <summary>
         /// Evento disparado quando o usuário seleciona um alinhamento.
         /// </summary>
-        [ComponentInteraction("select_alinhamento")]
         public async Task SelectAlinhamentoHandler(string valor)
         {
-            FichaTempStore.UpdateFicha(Context.User.Id, idAlinhamento: valor);
-
-            if (!await TentarFinalizarFichaAsync())
-                await DeferAsync(ephemeral: true);
+            await AtualizarFichaCampoEFinalizar(
+                valor,
+                "Alinhamento",
+                _alinhamentosService.ObterAlinhamentoPorIdAsync,
+                (ficha, id) => ficha.IdAlinhamento = id
+            );
         }
-
 
         /// <summary>
         /// Finaliza o processo de criação da ficha, salvando-a se todos os campos obrigatórios estiverem preenchidos.
@@ -171,43 +156,39 @@ namespace DnDBot.Bot.Commands.Ficha
         /// <returns>
         /// <c>true</c> se a ficha foi considerada válida e finalizada com sucesso; <c>false</c> caso contrário.
         /// </returns>
-        private async Task<bool> TentarFinalizarFichaAsync()
+        private async Task<bool> TentarFinalizarFichaAsync(FichaPersonagem ficha)
         {
-            var ficha = FichaTempStore.GetFicha(Context.User.Id);
+            if (!FichaCompletaValida(ficha))
+                return false;
 
-            if (FichaCompletaValida(ficha))
+            await _fichaService.AdicionarFichaAsync(ficha);
+            FichaTempStore.RemoveFicha(Context.User.Id);
+
+            string nomeRaca = (await _racasService.ObterRacaPorIdAsync(ficha.IdRaca))?.Nome ?? ficha.IdRaca;
+            string nomeClasse = (await _classesService.ObterClassePorIdAsync(ficha.IdClasse))?.Nome ?? ficha.IdClasse;
+            string nomeAntecedente = (await _antecedentesService.ObterAntecedentePorIdAsync(ficha.IdAntecedente))?.Nome ?? ficha.IdAntecedente;
+            string nomeAlinhamento = (await _alinhamentosService.ObterAlinhamentoPorIdAsync(ficha.IdAlinhamento))?.Nome ?? ficha.IdAlinhamento;
+
+            string resumo =
+                $"**Nome:** {ficha.Nome}\n" +
+                $"**Raça:** {nomeRaca}\n" +
+                $"**Classe:** {nomeClasse}\n" +
+                $"**Antecedente:** {nomeAntecedente}\n" +
+                $"**Alinhamento:** {nomeAlinhamento}";
+
+            await RespondAsync($"✅ Ficha do personagem criada com sucesso!\n\n{resumo}", ephemeral: true);
+
+            var racaObj = await _racasService.ObterRacaPorIdAsync(ficha.IdRaca);
+            if (racaObj?.SubRaca?.Any() == true)
             {
-                _fichaService.AdicionarFicha(ficha);
-                FichaTempStore.RemoveFicha(Context.User.Id);
-
-                string raca = _racasService.ObterRacaPorId(ficha.IdRaca).Nome;
-                string classe = _classesService.ObterClassePorId(ficha.IdClasse).Nome;
-                string antecedente = _antecedentesService.ObterAntecedentePorId(ficha.IdAntecedente).Nome;
-                string alinhamento = _alinhamentosService.ObterAlinhamentoPorId(ficha.IdAlinhamento).Nome;
-
-                string resumo =
-                    $"**Nome:** {ficha.Nome}\n" +
-                    $"**Raça:** {raca}\n" +
-                    $"**Classe:** {classe}\n" +
-                    $"**Antecedente:** {antecedente}\n" +
-                    $"**Alinhamento:** {alinhamento}";
-
-                await RespondAsync($"✅ Ficha do personagem criada com sucesso!\n\n{resumo}", ephemeral: true);
-
-                // Se a raça possuir sub-raças, solicita a seleção ao usuário
-                var racaObj = _racasService.ObterRacaPorNome(ficha.IdRaca);
-                if (racaObj?.SubRacas != null && racaObj.SubRacas.Any())
-                {
-                    var selectSubraca = SelectMenuHelper.CriarSelectSubraca(racaObj.SubRacas);
-                    await FollowupAsync("Escolha a sub-raça do seu personagem:", components: new ComponentBuilder().WithSelectMenu(selectSubraca).Build(), ephemeral: true);
-                }
-
-                return true;
+                var selectSubraca = SelectMenuHelper.CriarSelectSubraca(racaObj.SubRaca);
+                await FollowupAsync("Escolha a sub-raça do seu personagem:",
+                    components: new ComponentBuilder().WithSelectMenu(selectSubraca).Build(),
+                    ephemeral: true);
             }
 
-            return false;
+            return true;
         }
-
 
         private bool FichaCompletaValida(FichaPersonagem ficha)
         {
@@ -228,7 +209,7 @@ namespace DnDBot.Bot.Commands.Ficha
         [ComponentInteraction("concluir_distribuicao")]
         public async Task ConcluirDistribuicao()
         {
-            var fichas = _fichaService.ObterFichasPorJogador(Context.User.Id);
+            var fichas = await _fichaService.ObterFichasPorJogadorAsync(Context.User.Id);
             var ficha = fichas.OrderByDescending(f => f.DataAlteracao).FirstOrDefault();
 
             if (ficha == null)
@@ -252,13 +233,34 @@ namespace DnDBot.Bot.Commands.Ficha
             ficha.Sabedoria = dist.Atributos["Sabedoria"];
             ficha.Carisma = dist.Atributos["Carisma"];
 
-            _fichaService.AtualizarFicha(ficha);
+            await _fichaService.AtualizarFichaAsync(ficha);
 
             _atributosHandler.RemoverDistribuicao(Context.User.Id, ficha.Id);
 
             await RespondAsync("✅ Distribuição de atributos concluída com sucesso!", ephemeral: true);
         }
 
-        
+        private async Task<bool> AtualizarFichaCampoEFinalizar<T>(
+    string valor,
+    string nomeEntidade,
+    Func<string, Task<T>> buscarEntidadeAsync,
+    Action<FichaPersonagem, string> atualizarCampo)
+        {
+            var entidade = await buscarEntidadeAsync(valor);
+            if (entidade == null)
+            {
+                await RespondAsync($"❌ {nomeEntidade} não encontrada.", ephemeral: true);
+                return false;
+            }
+
+            var ficha = FichaTempStore.GetOrCreateFicha(Context.User.Id);
+            atualizarCampo(ficha, valor);
+
+            if (!await TentarFinalizarFichaAsync(ficha))
+                await DeferAsync(ephemeral: true);
+
+            return true;
+        }
+
     }
 }

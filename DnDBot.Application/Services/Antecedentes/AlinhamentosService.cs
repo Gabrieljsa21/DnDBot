@@ -1,43 +1,59 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using DnDBot.Application.Data;
 using DnDBot.Application.Models.Ficha;
 
 namespace DnDBot.Application.Services.Antecedentes
 {
     /// <summary>
-    /// Serviço responsável por gerenciar operações relacionadas aos alinhamentos dos personagens.
+    /// Serviço para gerenciamento dos alinhamentos no sistema.
     /// </summary>
     public class AlinhamentosService
     {
+        private readonly DnDBotDbContext _context;
+
         /// <summary>
-        /// Obtém a lista completa de alinhamentos disponíveis.
+        /// Inicializa uma nova instância do serviço com o contexto do banco.
         /// </summary>
-        /// <returns>Lista somente leitura contendo todos os alinhamentos.</returns>
-        public IReadOnlyList<Alinhamento> ObterAlinhamentos()
+        /// <param name="context">Contexto do banco de dados DnDBotDbContext.</param>
+        public AlinhamentosService(DnDBotDbContext context)
         {
-            return AlinhamentosData.Alinhamentos.AsReadOnly();
+            _context = context;
         }
 
         /// <summary>
-        /// Busca um alinhamento pelo seu ID.
+        /// Obtém a lista completa de alinhamentos cadastrados.
+        /// </summary>
+        /// <returns>Lista somente leitura de alinhamentos.</returns>
+        public async Task<IReadOnlyList<Alinhamento>> ObterAlinhamentosAsync()
+        {
+            return await _context.Alinhamento.AsNoTracking().ToListAsync();
+        }
+
+        /// <summary>
+        /// Busca um alinhamento pelo seu identificador (ID).
+        /// A busca ignora diferenças entre maiúsculas e minúsculas.
         /// </summary>
         /// <param name="id">ID do alinhamento a ser buscado.</param>
-        /// <returns>O alinhamento correspondente ao ID, ou <c>null</c> se não encontrado.</returns>
-        public Alinhamento ObterAlinhamentoPorId(string id)
+        /// <returns>Objeto Alinhamento encontrado ou null se não existir.</returns>
+        public async Task<Alinhamento?> ObterAlinhamentoPorIdAsync(string id)
         {
-            return AlinhamentosData.Alinhamentos
-                .FirstOrDefault(a => a.Id.Equals(id, System.StringComparison.OrdinalIgnoreCase));
+            return await _context.Alinhamento
+                .AsNoTracking()
+                .FirstOrDefaultAsync(a => a.Id.ToLower() == id.ToLower());
         }
 
         /// <summary>
-        /// Busca um alinhamento pelo seu nome exato.
+        /// Busca um alinhamento pelo nome exato.
         /// </summary>
         /// <param name="nome">Nome do alinhamento a ser buscado.</param>
-        /// <returns>O alinhamento correspondente ao nome, ou <c>null</c> se não encontrado.</returns>
-        public Alinhamento ObterAlinhamentoPorNome(string nome)
+        /// <returns>Objeto Alinhamento encontrado ou null se não existir.</returns>
+        public async Task<Alinhamento?> ObterAlinhamentoPorNomeAsync(string nome)
         {
-            return AlinhamentosData.Alinhamentos.FirstOrDefault(a => a.Nome == nome);
+            return await _context.Alinhamento
+                .AsNoTracking()
+                .FirstOrDefaultAsync(a => a.Nome == nome);
         }
     }
 }

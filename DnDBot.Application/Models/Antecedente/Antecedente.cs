@@ -1,114 +1,124 @@
 ﻿using DnDBot.Application.Models;
+using DnDBot.Application.Models.Antecedente.Antecedente;
+using DnDBot.Application.Models.Enums;
+using DnDBot.Application.Models.Ficha;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 /// <summary>
-/// Representa um antecedente (background) de personagem em D&D, contendo características, perícias,
-/// equipamentos, ideais, vínculos, defeitos e outras informações relacionadas.
+/// Representa um antecedente (background) de personagem em Dungeons & Dragons,
+/// contendo informações sobre habilidades, equipamentos, características, e outras propriedades relacionadas.
 /// </summary>
 public class Antecedente
 {
     /// <summary>
-    /// Identificador único do antecedente.
+    /// Identificador único do antecedente (ex: "soldado", "nobre", etc).
     /// </summary>
     public string Id { get; set; } = string.Empty;
 
     /// <summary>
-    /// Nome do antecedente.
+    /// Nome legível do antecedente para exibição.
     /// </summary>
     public string Nome { get; set; } = string.Empty;
 
     /// <summary>
-    /// Descrição detalhada do antecedente.
+    /// Descrição detalhada que explica a história ou características do antecedente.
     /// </summary>
     public string Descricao { get; set; } = string.Empty;
 
     /// <summary>
-    /// Lista dos IDs das perícias concedidas por este antecedente.
+    /// Lista das perícias concedidas por este antecedente.
     /// </summary>
-    public List<string> IdPericias { get; set; } = new();
+    public List<Pericia> Pericias { get; set; } = new();
 
     /// <summary>
-    /// Lista dos IDs das ferramentas concedidas por este antecedente.
+    /// Lista das ferramentas concedidas por este antecedente.
     /// </summary>
-    public List<string> IdFerramentas { get; set; } = new();
+    public List<Ferramenta> Ferramentas { get; set; } = new();
 
     /// <summary>
-    /// Lista dos IDs das línguas concedidas por este antecedente.
+    /// Lista das línguas que o personagem aprende com este antecedente.
     /// </summary>
-    public List<string> IdLinguas { get; set; } = new();
+    public List<Idioma> Idiomas { get; set; } = new();
 
     /// <summary>
-    /// Lista dos IDs das features (características especiais) deste antecedente.
+    /// Características especiais (features) concedidas por este antecedente.
     /// </summary>
-    public List<string> IdFeature { get; set; } = new();
+    public List<Caracteristica> IdFeature { get; set; } = new();
 
     /// <summary>
-    /// Quantidade adicional de idiomas que o personagem recebe com este antecedente.
+    /// Quantidade adicional de idiomas que o personagem pode escolher com este antecedente.
     /// </summary>
     public int IdiomasAdicionais { get; set; } = 0;
 
     /// <summary>
-    /// Opções de escolha de línguas adicionais que o jogador pode selecionar.
+    /// Opções de escolha para idiomas adicionais — permite que o jogador selecione idiomas extras.
+    /// Esta propriedade não é mapeada no banco de dados.
     /// </summary>
-    public OpcaoEscolha<string> OpcoesLinguas { get; set; } = new();
+    [NotMapped]
+    public OpcaoEscolha<Idioma> OpcoesLinguas { get; set; } = new();
 
     /// <summary>
-    /// Opções de escolha de equipamentos que o jogador pode selecionar.
+    /// Opções de escolha para equipamentos adicionais — permite seleção de equipamentos.
+    /// Esta propriedade não é mapeada no banco de dados.
     /// </summary>
-    public OpcaoEscolha<string> OpcoesEquipamentos { get; set; } = new();
+    [NotMapped]
+    public OpcaoEscolha<Equipamento> OpcoesEquipamentos { get; set; } = new();
 
     /// <summary>
-    /// Opções de escolha de perícias adicionais que o jogador pode selecionar.
+    /// Opções de escolha para perícias adicionais — permite seleção de perícias extras.
+    /// Esta propriedade não é mapeada no banco de dados.
     /// </summary>
-    public OpcaoEscolha<string> OpcoesPericias { get; set; } = new();
+    [NotMapped]
+    public OpcaoEscolha<Pericia> OpcoesPericias { get; set; } = new();
 
     /// <summary>
-    /// Equipamentos detalhados (com propriedades específicas) concedidos por este antecedente.
+    /// Equipamentos detalhados que este antecedente concede ao personagem.
     /// </summary>
     public List<Equipamento> EquipamentosDetalhados { get; set; } = new();
 
     /// <summary>
-    /// Lista dos IDs dos ideais associados a este antecedente.
+    /// Ideais associados ao antecedente, que ajudam a moldar a personalidade do personagem.
     /// </summary>
-    public List<string> IdIdeais { get; set; } = new();
+    public List<Ideal> Ideais { get; set; } = new();
 
     /// <summary>
-    /// Lista dos IDs dos vínculos (connections) relacionados a este antecedente.
+    /// Vínculos do personagem com pessoas, lugares ou eventos ligados a este antecedente.
     /// </summary>
-    public List<string> IdVinculos { get; set; } = new();
+    public List<Vinculo> Vinculos { get; set; } = new();
 
     /// <summary>
-    /// Lista dos IDs dos defeitos associados a este antecedente.
+    /// Defeitos ou fraquezas típicas associadas ao antecedente.
     /// </summary>
-    public List<string> IdDefeitos { get; set; } = new();
+    public List<Defeito> Defeitos { get; set; } = new();
 
     /// <summary>
-    /// Requisitos para utilizar este antecedente (restrições ou pré-condições).
+    /// Requisitos para que o personagem possa ter este antecedente (pode ser usado para restrições).
     /// </summary>
     public string Requisitos { get; set; } = string.Empty;
 
     /// <summary>
-    /// Tags para categorização ou filtragem do antecedente.
+    /// Tags para categorizar e facilitar filtros ou buscas pelo antecedente.
     /// </summary>
     public List<string> Tags { get; set; } = new();
 
     /// <summary>
-    /// Fonte oficial de onde o antecedente foi extraído (livro, suplemento, etc).
+    /// Fonte oficial de onde o antecedente foi retirado (nome do livro, suplemento, etc).
     /// </summary>
     public string Fonte { get; set; } = string.Empty;
 
     /// <summary>
-    /// Página da fonte oficial onde o antecedente aparece.
+    /// Página da fonte oficial onde o antecedente é descrito.
     /// </summary>
     public string Pagina { get; set; } = string.Empty;
 
     /// <summary>
-    /// Versão do conteúdo do antecedente (por exemplo, edição do livro ou atualização).
+    /// Versão do conteúdo do antecedente (pode ser usado para controle de edições).
     /// </summary>
     public string Versao { get; set; } = string.Empty;
 
     /// <summary>
-    /// Lista de moedas iniciais (riqueza) que o personagem começa com este antecedente.
+    /// Riqueza inicial representada pela lista de moedas que o personagem recebe ao escolher este antecedente.
     /// </summary>
     public List<Moeda> RiquezaInicial { get; set; } = new();
 }

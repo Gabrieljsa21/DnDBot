@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using DnDBot.Application.Models.Enums;
+using DnDBot.Application.Models.Ficha.ClasseAuxiliares;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace DnDBot.Application.Models.Ficha
 {
@@ -9,7 +13,7 @@ namespace DnDBot.Application.Models.Ficha
     public class Classe
     {
         /// <summary>
-        /// Identificador único da classe (exemplo: "barbaro", "cacador-de-sangue").
+        /// Identificador único da classe (exemplo: "barbaro", "mago").
         /// </summary>
         public string Id { get; set; }
 
@@ -29,37 +33,41 @@ namespace DnDBot.Application.Models.Ficha
         public string DadoVida { get; set; }
 
         /// <summary>
-        /// Lista de IDs das proficiências em armaduras concedidas pela classe.
+        /// Lista de proficiências em armaduras concedidas pela classe.
         /// </summary>
-        public List<string> IdProficienciasArmadura { get; set; } = new();
+        [NotMapped]
+        public List<Proficiencia> ProficienciasArmadura { get; set; } = new();
 
         /// <summary>
-        /// Lista de IDs das proficiências em armas concedidas pela classe.
+        /// Lista de proficiências em armas concedidas pela classe.
         /// </summary>
-        public List<string> IdProficienciasArmas { get; set; } = new();
+        [NotMapped]
+        public List<Proficiencia> ProficienciasArmas { get; set; } = new();
 
         /// <summary>
-        /// Lista de IDs das proficiências para multiclasse.
+        /// Lista de proficiências específicas de multiclasse.
         /// </summary>
-        public List<string> IdProficienciasMulticlasse { get; set; } = new();
+        [NotMapped]
+        public List<Proficiencia> ProficienciasMulticlasse { get; set; } = new();
 
         /// <summary>
-        /// Requisitos mínimos para multiclasse, onde a chave é o atributo e o valor é o mínimo exigido.
+        /// Requisitos mínimos para multiclassing (atributo e valor mínimo).
         /// </summary>
-        public Dictionary<string, int> RequisitosParaMulticlasse { get; set; } = new();
+        [NotMapped]
+        public List<RequisitoMulticlasse> RequisitosParaMulticlasseEntities { get; set; }
 
         /// <summary>
-        /// Lista de IDs das perícias associadas à classe.
+        /// Perícias associadas à classe.
         /// </summary>
-        public List<string> IdPericias { get; set; } = new();
+        public virtual ICollection<Pericia> PericiasRelacionadas { get; set; } = new List<Pericia>();
 
         /// <summary>
-        /// Lista de IDs das salvaguardas (saving throws) da classe.
+        /// Lista de identificadores das salvaguardas da classe.
         /// </summary>
         public List<string> IdSalvaguardas { get; set; } = new();
 
         /// <summary>
-        /// Fonte de onde a classe foi retirada (ex: Livro do Jogador).
+        /// Fonte oficial de onde a classe foi retirada (ex: Livro do Jogador).
         /// </summary>
         public string Fonte { get; set; }
 
@@ -79,7 +87,7 @@ namespace DnDBot.Application.Models.Ficha
         public string PapelTatico { get; set; }
 
         /// <summary>
-        /// ID da habilidade usada para conjuração (ex: Inteligência, Sabedoria).
+        /// ID da habilidade usada como atributo chave para conjuração (ex: Inteligência).
         /// </summary>
         public string IdHabilidadeConjuracao { get; set; }
 
@@ -89,57 +97,71 @@ namespace DnDBot.Application.Models.Ficha
         public bool UsaMagiaPreparada { get; set; }
 
         /// <summary>
-        /// IDs das magias disponíveis para a classe.
+        /// Lista de magias disponíveis para a classe.
         /// </summary>
-        public List<string> IdMagiasDisponiveis { get; set; } = new();
+        [NotMapped]
+        public List<Magia> MagiasDisponiveis { get; set; } = new();
 
         /// <summary>
-        /// Número de truques conhecidos por nível da classe.
+        /// Número de truques conhecidos por nível.
         /// </summary>
-        public Dictionary<int, int> TruquesConhecidosPorNivel { get; set; } = new();
+        public List<QuantidadePorNivel> TruquesConhecidosPorNivelList { get; set; } = new();
 
         /// <summary>
-        /// Número de magias conhecidas por nível da classe.
+        /// Número de magias conhecidas por nível.
         /// </summary>
-        public Dictionary<int, int> MagiasConhecidasPorNivel { get; set; } = new();
+        public List<QuantidadePorNivel> MagiasConhecidasPorNivelList { get; set; } = new();
 
         /// <summary>
-        /// Espaços de magia por nível e nível do espaço (ex: nível 1 -> 4 espaços).
+        /// Quantidade de espaços de magia disponíveis por nível.
         /// </summary>
-        public Dictionary<int, Dictionary<string, int>> EspacosMagiaPorNivel { get; set; } = new();
+        public List<EspacoMagiaPorNivel> EspacosMagia { get; set; }
 
         /// <summary>
-        /// Nível no qual a subclasse é escolhida (ex: 3).
+        /// Nível em que o personagem escolhe sua subclasse.
         /// </summary>
         public int? SubclassePorNivel { get; set; }
 
         /// <summary>
-        /// Lista de subclasses disponíveis para a classe.
+        /// Subclasses associadas à classe.
         /// </summary>
         public List<Subclasse> Subclasses { get; set; } = new();
 
         /// <summary>
-        /// Características da classe organizadas por nível.
+        /// Lista de características concedidas por nível.
         /// </summary>
-        public Dictionary<int, List<Caracteristica>> CaracteristicasPorNivel { get; set; } = new();
+        public List<CaracteristicaPorNivel> CaracteristicasPorNivelList { get; set; } = new();
 
         /// <summary>
-        /// Progressão da classe por nível, onde o dicionário interno pode armazenar dados variados.
+        /// Mapeamento de características por nível.
         /// </summary>
+        [NotMapped]
+        public Dictionary<int, List<Caracteristica>> CaracteristicasPorNivel =>
+            CaracteristicasPorNivelList
+                .GroupBy(x => x.Nivel)
+                .ToDictionary(
+                    g => g.Key,
+                    g => g.Select(cn => cn.Caracteristica).ToList()
+                );
+
+        /// <summary>
+        /// Informações adicionais sobre a progressão da classe por nível.
+        /// </summary>
+        [NotMapped]
         public Dictionary<int, Dictionary<string, object>> ProgressaoPorNivel { get; set; } = new();
 
         /// <summary>
-        /// IDs dos itens iniciais que a classe possui.
+        /// Lista dos IDs dos itens iniciais da classe.
         /// </summary>
         public List<string> IdItensIniciais { get; set; } = new();
 
         /// <summary>
-        /// Riqueza inicial em moedas para a classe.
+        /// Riqueza inicial da classe, em moedas.
         /// </summary>
         public List<Moeda> RiquezaInicial { get; set; } = new();
 
         /// <summary>
-        /// Notas adicionais relacionadas à classe.
+        /// Notas informativas ou complementares sobre a classe.
         /// </summary>
         public List<string> Notas { get; set; } = new();
     }
@@ -165,44 +187,30 @@ namespace DnDBot.Application.Models.Ficha
         public string Descricao { get; set; }
 
         /// <summary>
-        /// Fonte de onde a subclasse foi retirada.
+        /// Fonte oficial da subclasse (ex: suplemento ou livro).
         /// </summary>
         public string Fonte { get; set; }
 
         /// <summary>
-        /// URL da imagem representativa da subclasse.
+        /// URL da imagem da subclasse.
         /// </summary>
         public string ImagemUrl { get; set; }
 
         /// <summary>
-        /// Características específicas da subclasse organizadas por nível.
+        /// Lista de características obtidas por nível.
         /// </summary>
-        public Dictionary<int, List<Caracteristica>> CaracteristicasPorNivel { get; set; } = new();
-    }
-
-    /// <summary>
-    /// Representa uma característica (feature) de uma classe ou subclasse.
-    /// </summary>
-    public class Caracteristica
-    {
-        /// <summary>
-        /// Identificador único da característica.
-        /// </summary>
-        public string Id { get; set; }
+        public List<CaracteristicaPorNivel> CaracteristicasPorNivelList { get; set; } = new();
 
         /// <summary>
-        /// Nome da característica.
+        /// Mapeamento das características da subclasse por nível.
         /// </summary>
-        public string Nome { get; set; }
-
-        /// <summary>
-        /// Descrição detalhada da característica.
-        /// </summary>
-        public string Descricao { get; set; }
-
-        /// <summary>
-        /// Fonte de onde a característica foi retirada.
-        /// </summary>
-        public string Fonte { get; set; }
+        [NotMapped]
+        public Dictionary<int, List<Caracteristica>> CaracteristicasPorNivel =>
+            CaracteristicasPorNivelList
+                .GroupBy(x => x.Nivel)
+                .ToDictionary(
+                    g => g.Key,
+                    g => g.Select(cn => cn.Caracteristica).ToList()
+                );
     }
 }

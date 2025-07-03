@@ -1,8 +1,9 @@
-﻿using System;
+﻿using DnDBot.Application.Models.Enums;
+using DnDBot.Application.Models.Ficha;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace DnDBot.Application.Models
 {
@@ -28,7 +29,12 @@ namespace DnDBot.Application.Models
         public Atributo AtributoBase { get; set; }
 
         /// <summary>
-        /// Tipo da perícia, que pode ser uma habilidade, ferramenta ou perícia de arma.
+        /// Lista de atributos alternativos que podem ser usados para testes.
+        /// </summary>
+        public List<Atributo> AtributosAlternativos { get; set; }
+
+        /// <summary>
+        /// Tipo da perícia (habilidade, ferramenta, perícia de arma).
         /// </summary>
         public TipoPericia Tipo { get; set; } = TipoPericia.Habilidade;
 
@@ -40,12 +46,44 @@ namespace DnDBot.Application.Models
         /// <summary>
         /// Indica se o personagem é proficiente nessa perícia.
         /// </summary>
-        public bool EhProficiente { get; set; }
+        public bool EhProficiente { get; set; } = false;
+
+        /// <summary>
+        /// Indica se o personagem possui especialização (dobro do bônus de proficiência).
+        /// </summary>
+        public bool TemEspecializacao { get; set; } = false;
 
         /// <summary>
         /// Bônus base aplicado na perícia (ex: bônus de proficiência).
         /// </summary>
-        public int BonusBase { get; set; }
+        public int BonusBase { get; set; } = 0;
+
+        /// <summary>
+        /// Bônus adicional, podendo vir de talentos, magias ou itens.
+        /// </summary>
+        public int BonusAdicional { get; set; } = 0;
+
+        /// <summary>
+        /// Coleção de classes que podem estar relacionadas a essa perícia.
+        /// </summary>
+        public virtual ICollection<Classe> ClassesRelacionadas { get; set; } = new List<Classe>();
+
+        /// <summary>
+        /// Tags para categorização e filtros (ex: "exploração", "combate").
+        /// </summary>
+        public List<string> Tags { get; set; }
+
+        /// <summary>
+        /// Níveis de dificuldade sugeridos para testes dessa perícia.
+        /// </summary>
+        public List<DificuldadePericia> Dificuldades { get; set; } = new();
+
+        /// <summary>
+        /// Dicionário derivado das dificuldades para acesso rápido por tipo.
+        /// </summary>
+        [NotMapped]
+        public Dictionary<string, int> DificuldadeSugerida =>
+            Dificuldades.ToDictionary(d => d.Tipo, d => d.Valor);
 
         /// <summary>
         /// URL ou caminho do ícone representativo da perícia.
@@ -53,60 +91,19 @@ namespace DnDBot.Application.Models
         public string Icone { get; set; }
 
         /// <summary>
-        /// Construtor que inicializa uma nova instância da perícia.
+        /// Valor total calculado para essa perícia (atributo + bônus + proficiência).
         /// </summary>
-        /// <param name="id">Identificador único da perícia.</param>
-        /// <param name="nome">Nome da perícia.</param>
-        /// <param name="atributoBase">Atributo base para testes.</param>
-        /// <param name="descricao">Descrição detalhada (opcional).</param>
-        /// <param name="tipo">Tipo da perícia (padrão: Habilidade).</param>
-        /// <param name="ehProficiente">Indica se o personagem é proficiente (padrão: false).</param>
-        /// <param name="bonusBase">Bônus base aplicado (padrão: 0).</param>
-        /// <param name="icone">Ícone da perícia (opcional).</param>
-        public Pericia(string id, string nome, Atributo atributoBase, string descricao = "", TipoPericia tipo = TipoPericia.Habilidade, bool ehProficiente = false, int bonusBase = 0, string icone = "")
-        {
-            Id = id;
-            Nome = nome;
-            AtributoBase = atributoBase;
-            Descricao = descricao;
-            Tipo = tipo;
-            EhProficiente = ehProficiente;
-            BonusBase = bonusBase;
-            Icone = icone;
-        }
+        [JsonIgnore]
+        public int ValorTotal { get; set; }
 
         /// <summary>
         /// Enumeração dos tipos possíveis de perícia.
         /// </summary>
         public enum TipoPericia
         {
-            /// <summary>
-            /// Perícia relacionada a uma habilidade.
-            /// </summary>
             Habilidade,
-
-            /// <summary>
-            /// Perícia relacionada a uma ferramenta.
-            /// </summary>
             Ferramenta,
-
-            /// <summary>
-            /// Perícia relacionada a uma arma.
-            /// </summary>
             PericiaDeArma
-        }
-
-        /// <summary>
-        /// Enumeração dos atributos base do personagem.
-        /// </summary>
-        public enum Atributo
-        {
-            Forca,
-            Destreza,
-            Constituicao,
-            Inteligencia,
-            Sabedoria,
-            Carisma
         }
     }
 }

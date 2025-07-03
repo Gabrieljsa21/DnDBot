@@ -3,15 +3,20 @@
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Data\Configurations\MoedaConfiguration.cs" />
     <Compile Remove="Services\FileName.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Data\pericias.json" />
     <None Remove="Data\fichas.json" />
     <None Remove="Data\racas.json" />
     <None Remove="Data\classes.json" />
     <None Remove="Data\antecedentes.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\pericias.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\fichas.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -27,6 +32,18 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Discord.Net" Version="3.17.4" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.6" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="9.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.6">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.6" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.119" />
+    <PackageReference Include="System.Data.SQLite.EF6" Version="1.0.119" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\Interfaces\" />

@@ -1,104 +1,85 @@
 ﻿using DnDBot.Application.Data;
 using DnDBot.Application.Models.Ficha;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
 namespace DnDBot.Application.Services
 {
     /// <summary>
-    /// Serviço responsável por carregar, armazenar em cache e fornecer acesso às classes de personagens.
+    /// Serviço responsável por acessar e consultar as classes de personagens armazenadas no banco de dados.
     /// </summary>
     public class ClassesService
     {
-        private const string CaminhoArquivo = "Data/classes.json";
-        private readonly Dictionary<string, Classe> _cache = new();
+        private readonly DnDBotDbContext _db;
 
         /// <summary>
-        /// Inicializa uma nova instância do serviço e carrega as classes do arquivo JSON.
+        /// Construtor que recebe o contexto do banco de dados e exibe o caminho do arquivo SQLite usado.
         /// </summary>
-        public ClassesService()
+        /// <param name="db">Contexto do banco de dados DnDBotDbContext.</param>
+        public ClassesService(DnDBotDbContext db)
         {
-            CarregarClasses();
+            _db = db;
+            var connection = _db.Database.GetDbConnection();
+            var path = new SqliteConnectionStringBuilder(connection.ConnectionString).DataSource;
+            Console.WriteLine("Banco SQLite usado: " + Path.GetFullPath(path));
         }
 
         /// <summary>
-        /// Lê o arquivo JSON contendo as classes e popula o cache interno.
+        /// Retorna a lista completa de classes disponíveis no banco.
         /// </summary>
-        private void CarregarClasses()
+        /// <returns>Lista de objetos <see cref="Classe"/>.</returns>
+        public async Task<List<Classe>> ObterClassesAsync()
         {
-            Console.WriteLine($"📂 Verificando arquivo classes.json em: {Path.GetFullPath(CaminhoArquivo)}");
-
-            if (!File.Exists(CaminhoArquivo))
-            {
-                Console.WriteLine("❌ Arquivo classes.json NÃO encontrado.");
-                return;
-            }
-
-            Console.WriteLine("✅ Arquivo classes.json encontrado, lendo conteúdo...");
-
-            var json = File.ReadAllText(CaminhoArquivo);
-
-            var lista = JsonSerializer.Deserialize<List<Classe>>(json, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-                Converters = { new JsonStringEnumConverter() }
-            });
-
-            if (lista == null)
-                return;
-
-            foreach (var classe in lista)
-            {
-                if (!string.IsNullOrWhiteSpace(classe.Id))
-                {
-                    _cache[classe.Id.ToLower()] = classe;
-                }
-            }
+            return await _db.Classe.ToListAsync();
         }
 
         /// <summary>
-        /// Obtém todas as classes disponíveis no sistema.
+        /// Obtém uma classe pelo seu identificador único (ID).
         /// </summary>
-        /// <returns>Lista de todas as classes carregadas.</returns>
-        public IReadOnlyList<Classe> ObterClasses()
+        /// <param name="id">ID da classe a ser buscada.</param>
+        /// <returns>Objeto <see cref="Classe"/> ou null se não encontrado.</returns>
+        public async Task<Classe> ObterClassePorIdAsync(string id)
         {
-            return _cache.Values.ToList();
+            return await _db.Classe
+                .FirstOrDefaultAsync(c => c.Id.ToLower() == id.ToLower());
         }
 
         /// <summary>
-        /// Obtém uma classe específica pelo seu identificador único (ID).
+        /// Obtém uma classe pelo seu nome.
         /// </summary>
-        /// <param name="id">ID da classe (case-insensitive).</param>
-        /// <returns>A classe correspondente ao ID, ou null se não encontrada.</returns>
-        public Classe ObterClassePorId(string id)
+        /// <param name="nome">Nome da classe a ser buscada.</param>
+        /// <returns>Objeto <see cref="Classe"/> ou null se não encontrado.</returns>
+        public async Task<Classe> ObterClassePorNomeAsync(string nome)
         {
-            if (string.IsNullOrWhiteSpace(id))
-                return null;
-
-            _cache.TryGetValue(id.ToLower(), out var classe);
-            return classe;
+            return await _db.Classe
+                .FirstOrDefaultAsync(c => c.Nome.ToLower() == nome.ToLower());
         }
 
         /// <summary>
-        /// Obtém somente os nomes das classes disponíveis.
+        /// Retorna uma lista contendo apenas os nomes de todas as classes cadastradas.
         /// </summary>
-        /// <returns>Lista contendo os nomes das classes.</returns>
-        public IReadOnlyList<string> ObterNomes()
+        /// <returns>Lista de nomes de classes.</returns>
+        public async Task<List<string>> ObterNomesAsync()
         {
-            return _cache.Values.Select(c => c.Nome).ToList();
+            return await _db.Classe
+                .Select(c => c.Nome)
+                .ToListAsync();
         }
 
         /// <summary>
-        /// Obtém os IDs das classes carregadas no sistema.
+        /// Retorna uma lista contendo os IDs de todas as classes cadastradas.
         /// </summary>
-        /// <returns>Lista contendo os IDs das classes.</returns>
-        public IReadOnlyList<string> ObterIds()
+        /// <returns>Lista de IDs de classes.</returns>
+        public async Task<List<string>> ObterIdsAsync()
         {
-            return _cache.Keys.ToList();
+            return await _db.Classe
+                .Select(c => c.Id)
+                .ToListAsync();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using DnDBot.Application.Models.Rolagem;
+﻿using DnDBot.Application.Models.Enums;
+using DnDBot.Application.Models.Rolagem;
 using System;
 
 namespace DnDBot.Application.Services
@@ -12,8 +13,8 @@ namespace DnDBot.Application.Services
         /// Gera uma mensagem formatada para exibir o resultado da rolagem,
         /// baseada no tipo de rolagem (normal, vantagem ou desvantagem).
         /// </summary>
-        /// <param name="resultado">Objeto contendo dados da rolagem.</param>
-        /// <returns>Mensagem formatada para exibição.</returns>
+        /// <param name="resultado">Objeto <see cref="ResultadoRolagem"/> contendo os dados da rolagem.</param>
+        /// <returns>Uma string formatada representando o resultado da rolagem.</returns>
         public string FormatarMensagem(ResultadoRolagem resultado)
         {
             if (resultado == null)
@@ -36,7 +37,7 @@ namespace DnDBot.Application.Services
             };
 
             string mensagem = $"{emoji} {resultado.Expressao}\n{prefixo} {resultado.Detalhes}";
-            
+
             // Adiciona linha do modificador apenas se diferente de zero
             if (resultado.Modificador != 0)
             {

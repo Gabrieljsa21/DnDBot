@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DnDBot.Application.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,11 +8,11 @@ namespace DnDBot.Application.Models.Ficha
     /// <summary>
     /// Representa o conjunto de moedas carregadas por um personagem.
     /// </summary>
-    public class Tesouro
+    public class BolsaDeMoedas
     {
         public List<Moeda> Moedas { get; set; } = new();
 
-        public Tesouro()
+        public BolsaDeMoedas()
         {
             // Inicializa com zero em todas as moedas
             foreach (TipoMoeda tipo in Enum.GetValues(typeof(TipoMoeda)))
@@ -21,7 +22,7 @@ namespace DnDBot.Application.Models.Ficha
         }
 
         /// <summary>
-        /// Retorna o valor total do tesouro em uma moeda específica.
+        /// Retorna o valor total da bolsa de moedas em uma moeda específica.
         /// </summary>
         public decimal ValorTotalEm(TipoMoeda destino)
         {
@@ -37,7 +38,7 @@ namespace DnDBot.Application.Models.Ficha
         }
 
         /// <summary>
-        /// Adiciona moedas ao tesouro.
+        /// Adiciona moedas a bolsa de moedas.
         /// </summary>
         public void Adicionar(Moeda moeda)
         {

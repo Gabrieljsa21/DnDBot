@@ -46,7 +46,7 @@ namespace DnDBot.Bot.Commands.Ficha
         [SlashCommand("ficha_ver", "Mostra suas fichas de personagem")]
         public async Task VerFichasAsync()
         {
-            var fichas = _fichaService.ObterFichasPorJogador(Context.User.Id);
+            var fichas = await _fichaService.ObterFichasPorJogadorAsync(Context.User.Id);
 
             if (fichas == null || fichas.Count == 0)
             {
@@ -74,31 +74,32 @@ namespace DnDBot.Bot.Commands.Ficha
                 if (string.IsNullOrWhiteSpace(ficha.IdRaca) || ficha.IdRaca.Equals("NãoDefinido", StringComparison.OrdinalIgnoreCase) || ficha.IdRaca.Equals("Não definida", StringComparison.OrdinalIgnoreCase))
                     raca = ficha.IdRaca;
                 else
-                    raca = _racasService.ObterRacaPorId(ficha.IdRaca)?.Nome ?? ficha.IdRaca;
+                    raca = (await _racasService.ObterRacaPorIdAsync(ficha.IdRaca))?.Nome ?? ficha.IdRaca;
 
                 string subRaca;
                 if (string.IsNullOrWhiteSpace(ficha.IdSubraca) || ficha.IdSubraca.Equals("NãoDefinido", StringComparison.OrdinalIgnoreCase) || ficha.IdSubraca.Equals("Não definida", StringComparison.OrdinalIgnoreCase))
                     subRaca = ficha.IdSubraca;
                 else
-                    subRaca = _racasService.ObterSubRacaPorId(ficha.IdSubraca)?.Nome ?? ficha.IdSubraca;
+                    subRaca = (await _racasService.ObterSubRacaPorIdAsync(ficha.IdSubraca))?.Nome ?? ficha.IdSubraca;
 
                 string classe;
                 if (string.IsNullOrWhiteSpace(ficha.IdClasse) || ficha.IdClasse.Equals("NãoDefinido", StringComparison.OrdinalIgnoreCase) || ficha.IdClasse.Equals("Não definida", StringComparison.OrdinalIgnoreCase))
                     classe = ficha.IdClasse;
                 else
-                    classe = _classesService.ObterClassePorId(ficha.IdClasse)?.Nome ?? ficha.IdClasse;
+                    classe = (await _classesService.ObterClassePorIdAsync(ficha.IdClasse))?.Nome ?? ficha.IdClasse;
 
                 string antecedente;
                 if (string.IsNullOrWhiteSpace(ficha.IdAntecedente) || ficha.IdAntecedente.Equals("NãoDefinido", StringComparison.OrdinalIgnoreCase) || ficha.IdAntecedente.Equals("Não definida", StringComparison.OrdinalIgnoreCase))
                     antecedente = ficha.IdAntecedente;
                 else
-                    antecedente = _antecedentesService.ObterAntecedentePorId(ficha.IdAntecedente)?.Nome ?? ficha.IdAntecedente;
+                    antecedente = (await _antecedentesService.ObterAntecedentePorIdAsync(ficha.IdAntecedente))?.Nome ?? ficha.IdAntecedente;
 
                 string alinhamento;
                 if (string.IsNullOrWhiteSpace(ficha.IdAlinhamento) || ficha.IdAlinhamento.Equals("NãoDefinido", StringComparison.OrdinalIgnoreCase) || ficha.IdAlinhamento.Equals("Não definida", StringComparison.OrdinalIgnoreCase))
                     alinhamento = ficha.IdAlinhamento;
                 else
-                    alinhamento = _alinhamentosService.ObterAlinhamentoPorId(ficha.IdAlinhamento)?.Nome ?? ficha.IdAlinhamento;
+                    alinhamento = "";
+                    //alinhamento = _alinhamentosService.ObterAlinhamentoPorId(ficha.IdAlinhamento)?.Nome ?? ficha.IdAlinhamento;
 
                 embedBuilder.AddField(
                     ficha.Nome,

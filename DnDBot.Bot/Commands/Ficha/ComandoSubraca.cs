@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace DnDBot.Bot.Commands.Ficha
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace DnDBot.Bot.Commands.Ficha
         [ComponentInteraction("select_subraca")]
         public async Task SelectSubracaHandler(string valor)
         {
-            var ficha = _fichaService.ObterUltimaFichaDoJogador(Context.User.Id);
+            var ficha = await _fichaService.ObterUltimaFichaDoJogadorAsync(Context.User.Id);
 
             if (ficha == null)
             {
@@ -45,7 +46,7 @@ namespace DnDBot.Bot.Commands.Ficha
                 return;
             }
 
-            var subraca = _racasService.ObterTodasSubracas().FirstOrDefault(sr => sr.Id == valor);
+            var subraca = (await _racasService.ObterTodasSubracasAsync()).FirstOrDefault(sr => sr.Id == valor);
 
             if (subraca == null)
             {
@@ -64,14 +65,15 @@ namespace DnDBot.Bot.Commands.Ficha
                 }).ToList();
             ficha.Tamanho = subraca.Tamanho;
             ficha.Deslocamento = subraca.Deslocamento;
-            ficha.IdIdiomas = subraca.Idiomas;
-            ficha.IdProficiencias = subraca.Proficiencias;
+            ficha.Idiomas = subraca.Idiomas;
+            ficha.Proficiencias = subraca.Proficiencias;
             ficha.VisaoNoEscuro = subraca.VisaoNoEscuro;
-            ficha.IdResistencias = subraca.Resistencias;
-            ficha.IdCaracteristicas = subraca.Caracteristicas;
-            ficha.IdMagiasRaciais = subraca.MagiasRaciais;
+            ficha.Resistencias = subraca.Resistencias.ToList();
+            ficha.Caracteristicas = subraca.Caracteristicas.ToList();
+            ficha.MagiasRaciais = subraca.MagiasRaciais.ToList();
 
-            _fichaService.AtualizarFicha(ficha);
+
+            await _fichaService.AtualizarFichaAsync(ficha);
 
             // Cria o estado temporário para distribuição (exemplo inicial)
             var distTemp = new DistribuicaoAtributosTemp

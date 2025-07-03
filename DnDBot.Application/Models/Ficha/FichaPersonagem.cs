@@ -11,12 +11,12 @@ namespace DnDBot.Application.Models.Ficha
     public class FichaPersonagem
     {
         /// <summary>
-        /// Identificador único da ficha.
+        /// Identificador único da ficha (GUID).
         /// </summary>
         public Guid Id { get; set; } = Guid.NewGuid();
 
         /// <summary>
-        /// ID do jogador no Discord.
+        /// Identificador do jogador dono da ficha (ex: Discord User ID).
         /// </summary>
         public ulong IdJogador { get; set; }
 
@@ -26,67 +26,89 @@ namespace DnDBot.Application.Models.Ficha
         public string Nome { get; set; } = string.Empty;
 
         /// <summary>
-        /// Identificador da raça selecionada.
+        /// ID da raça do personagem.
         /// </summary>
         public string IdRaca { get; set; } = "Não definida";
 
         /// <summary>
-        /// Identificador da sub-raça selecionada.
+        /// ID da sub-raça do personagem.
         /// </summary>
         public string IdSubraca { get; set; } = "Não definida";
 
         /// <summary>
-        /// Identificador da classe selecionada.
+        /// ID da classe do personagem.
         /// </summary>
         public string IdClasse { get; set; } = "Não definida";
 
         /// <summary>
-        /// Identificador do antecedente selecionado.
+        /// ID do antecedente (background) do personagem.
         /// </summary>
         public string IdAntecedente { get; set; } = "Não definido";
 
         /// <summary>
-        /// Identificador do alinhamento selecionado.
+        /// ID do alinhamento do personagem.
         /// </summary>
         public string IdAlinhamento { get; set; } = "Não definido";
 
-        // Atributos base do personagem
+        /// <summary>
+        /// Valor base do atributo Força.
+        /// </summary>
         public int Forca { get; set; }
+
+        /// <summary>
+        /// Valor base do atributo Destreza.
+        /// </summary>
         public int Destreza { get; set; }
+
+        /// <summary>
+        /// Valor base do atributo Constituição.
+        /// </summary>
         public int Constituicao { get; set; }
+
+        /// <summary>
+        /// Valor base do atributo Inteligência.
+        /// </summary>
         public int Inteligencia { get; set; }
+
+        /// <summary>
+        /// Valor base do atributo Sabedoria.
+        /// </summary>
         public int Sabedoria { get; set; }
+
+        /// <summary>
+        /// Valor base do atributo Carisma.
+        /// </summary>
         public int Carisma { get; set; }
 
         /// <summary>
-        /// Lista de bônus de atributos adicionais (ex: por raça, itens).
+        /// Lista de bônus aplicados aos atributos do personagem, com origem e valor.
         /// </summary>
         public List<BonusAtributo> BonusAtributos { get; set; } = new();
 
         /// <summary>
-        /// Lista de IDs de proficiências do personagem.
+        /// Lista de proficiências do personagem.
         /// </summary>
-        public List<string> IdProficiencias { get; set; } = new();
+        public List<Proficiencia> Proficiencias { get; set; } = new();
 
         /// <summary>
-        /// Lista de IDs de idiomas conhecidos pelo personagem.
+        /// Lista de idiomas conhecidos pelo personagem.
         /// </summary>
-        public List<string> IdIdiomas { get; set; } = new();
+        public List<Idioma> Idiomas { get; set; } = new();
 
         /// <summary>
-        /// Lista de IDs de resistências que o personagem possui.
+        /// Lista de resistências do personagem.
         /// </summary>
-        public List<string> IdResistencias { get; set; } = new();
+        public List<Resistencia> Resistencias { get; set; } = new();
 
         /// <summary>
-        /// Lista de IDs das características especiais do personagem.
+        /// Lista de características especiais do personagem.
         /// </summary>
-        public List<string> IdCaracteristicas { get; set; } = new();
+        public List<Caracteristica> Caracteristicas { get; set; } = new();
 
         /// <summary>
-        /// Lista de IDs de magias raciais disponíveis ao personagem.
+        /// Lista de magias raciais que o personagem possui.
         /// </summary>
-        public List<string> IdMagiasRaciais { get; set; } = new();
+        public List<Magia> MagiasRaciais { get; set; } = new();
 
         /// <summary>
         /// Tamanho do personagem (ex: Pequeno, Médio).
@@ -94,22 +116,22 @@ namespace DnDBot.Application.Models.Ficha
         public string Tamanho { get; set; }
 
         /// <summary>
-        /// Valor do deslocamento do personagem em metros.
+        /// Deslocamento em pés do personagem.
         /// </summary>
         public int Deslocamento { get; set; }
 
         /// <summary>
-        /// Alcance da visão no escuro, em metros. Zero indica ausência dessa visão.
+        /// Valor do alcance de visão no escuro em pés, se aplicável.
         /// </summary>
         public int? VisaoNoEscuro { get; set; }
 
         /// <summary>
-        /// Data e hora da criação da ficha, ajustada para o fuso horário de Brasília (UTC-3).
+        /// Data de criação da ficha, ajustada para fuso horário "E. South America Standard Time".
         /// </summary>
         public DateTime DataCriacao { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.UtcNow, "E. South America Standard Time");
 
         /// <summary>
-        /// Data e hora da última alteração na ficha.
+        /// Data da última alteração da ficha, ajustada para fuso horário "E. South America Standard Time".
         /// </summary>
         public DateTime DataAlteracao { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.UtcNow, "E. South America Standard Time");
 
@@ -119,20 +141,20 @@ namespace DnDBot.Application.Models.Ficha
         public bool EstaAtivo { get; set; } = true;
 
         /// <summary>
-        /// Tesouro atual do personagem, contendo moedas e outros valores.
+        /// Bolsa de moedas do personagem, contendo quantidades de cada tipo de moeda.
         /// </summary>
-        public Tesouro Tesouro { get; set; } = new();
+        public BolsaDeMoedas BolsaDeMoedas { get; set; } = new();
 
         /// <summary>
-        /// Histórico financeiro do personagem, para registro de transações ou eventos econômicos.
+        /// Histórico financeiro detalhado do personagem.
         /// </summary>
-        public List<string> HistoricoFinanceiro { get; set; } = new();
+        public List<HistoricoFinanceiroItem> HistoricoFinanceiro { get; set; } = new();
 
         /// <summary>
-        /// Calcula a soma total dos bônus para o atributo informado.
+        /// Obtém o valor total dos bônus aplicados a um determinado atributo (por nome).
         /// </summary>
-        /// <param name="atributo">Nome do atributo (ex: "Forca")</param>
-        /// <returns>Soma dos valores de bônus para o atributo.</returns>
+        /// <param name="atributo">Nome do atributo (ex: "Forca").</param>
+        /// <returns>Soma dos valores dos bônus.</returns>
         public int ObterBonusTotal(string atributo)
         {
             return BonusAtributos
@@ -141,10 +163,10 @@ namespace DnDBot.Application.Models.Ficha
         }
 
         /// <summary>
-        /// Obtém o valor total do atributo incluindo o valor base e os bônus.
+        /// Obtém o valor total do atributo, somando o valor base com os bônus.
         /// </summary>
         /// <param name="atributo">Nome do atributo.</param>
-        /// <returns>Valor total do atributo com bônus aplicados.</returns>
+        /// <returns>Valor total do atributo.</returns>
         public int ObterTotalComBonus(string atributo)
         {
             int baseValor = atributo switch
@@ -162,10 +184,10 @@ namespace DnDBot.Application.Models.Ficha
         }
 
         /// <summary>
-        /// Calcula o modificador do atributo baseado no valor total (base + bônus), conforme regras do D&D 5e.
+        /// Calcula o modificador do atributo conforme as regras de D&D ((valor - 10) / 2).
         /// </summary>
         /// <param name="atributo">Nome do atributo.</param>
-        /// <returns>Valor do modificador.</returns>
+        /// <returns>Modificador do atributo.</returns>
         public int ObterModificador(string atributo)
         {
             int total = ObterTotalComBonus(atributo);
@@ -184,18 +206,28 @@ namespace DnDBot.Application.Models.Ficha
         public string Id { get; set; }
 
         /// <summary>
-        /// Nome do atributo ao qual o bônus se aplica (ex: "Forca").
+        /// Nome do atributo que recebe o bônus (ex: "Forca").
         /// </summary>
         public string Atributo { get; set; } = string.Empty;
 
         /// <summary>
-        /// Valor do bônus (ex: +2).
+        /// Valor do bônus aplicado.
         /// </summary>
         public int Valor { get; set; }
 
         /// <summary>
-        /// Origem do bônus (ex: "Raça", "Item", "Sub-Raça").
+        /// Origem do bônus (ex: item, efeito, magia).
         /// </summary>
         public string Origem { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Tipo do dono do bônus (ex: "FichaPersonagem", "Raca", "Equipamento").
+        /// </summary>
+        public string OwnerType { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Identificador do dono do bônus.
+        /// </summary>
+        public Guid OwnerId { get; set; }
     }
 }

@@ -10,29 +10,31 @@ using System;
 using System.Reflection;
 using System.Threading.Tasks;
 
-/// <summary>
-/// Classe principal que inicia e configura o bot do Discord.
-/// </summary>
+using DnDBot.Application.Data; // Namespace onde está o DbContext
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 class Program
 {
     private static DiscordSocketClient _cliente;
     private static InteractionService _interactionService;
     private static IServiceProvider _services;
-    private static string _token = Environment.GetEnvironmentVariable("DISCORD_TOKEN");
+    private static string _token;
 
-    // Substitua pelo ID do servidor de testes onde os comandos slash serão registrados
     private static readonly ulong GUILD_ID = 1388541192806989834;
 
-    /// <summary>
-    /// Ponto de entrada principal do programa.
-    /// </summary>
     public static Task Main(string[] args) => new Program().IniciarAsync();
 
-    /// <summary>
-    /// Inicializa o bot, configura serviços, eventos e registra comandos.
-    /// </summary>
     public async Task IniciarAsync()
     {
+        var configuration = new ConfigurationBuilder()
+            .SetBasePath(AppContext.BaseDirectory)
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .AddEnvironmentVariables()
+            .Build();
+
+        _token = Environment.GetEnvironmentVariable("DISCORD_TOKEN");
+
         var config = new DiscordSocketConfig
         {
             GatewayIntents = GatewayIntents.Guilds
@@ -46,18 +48,33 @@ class Program
         _cliente.Log += LogAsync;
         _interactionService.Log += LogAsync;
 
-        // Registro de serviços utilizados no bot
-        _services = new ServiceCollection()
-            .AddSingleton<RolagemDadosService>()
-            .AddSingleton<FormatadorMensagemService>()
-            .AddSingleton<RacasService>()
-            .AddSingleton<ClassesService>()
-            .AddSingleton<AntecedentesService>()
-            .AddSingleton<AlinhamentosService>()
-            .AddSingleton<FichaService>()
-            .AddSingleton<DistribuicaoAtributosService>()
-            .AddSingleton<DistribuicaoAtributosHandler>()
-            .BuildServiceProvider();
+        // Registrar serviços com injeção de dependência
+        var services = new ServiceCollection()
+
+        .AddDbContext<DnDBotDbContext>(options =>
+            options.UseSqlite(configuration.GetConnectionString("DnDBotDatabase")))
+
+        .AddScoped<FichaService>()
+        .AddScoped<RacasService>()
+        .AddScoped<ClassesService>()
+        .AddScoped<AntecedentesService>()
+        .AddScoped<AlinhamentosService>()
+        .AddScoped<DistribuicaoAtributosService>()
+        .AddScoped<DistribuicaoAtributosHandler>()
+        .AddSingleton<RolagemDadosService>()
+        .AddSingleton<FormatadorMensagemService>()
+
+        // Adicione GeracaoDeDadosService aqui
+        .AddScoped<GeracaoDeDadosService>()
+
+        .AddSingleton(_cliente)
+        .AddSingleton(_interactionService)
+
+        .AddSingleton<IConfiguration>(configuration)
+
+        .BuildServiceProvider();
+
+        _services = services;
 
         RegistrarEventos();
 
@@ -67,19 +84,39 @@ class Program
             return;
         }
 
+        // Executa criação de tabelas e população de dados base antes de iniciar o bot
+        await CriarBancoEDadosBaseAsync();
+
         await _cliente.LoginAsync(TokenType.Bot, _token);
         await _cliente.StartAsync();
 
-        // Carrega e registra os módulos de comando
         await _interactionService.AddModulesAsync(Assembly.GetExecutingAssembly(), _services);
 
-        // Mantém o bot em execução indefinidamente
         await Task.Delay(-1);
     }
 
-    /// <summary>
-    /// Registra eventos como Ready e InteractionCreated.
-    /// </summary>
+    private async Task CriarBancoEDadosBaseAsync()
+    {
+        try
+        {
+            using var scope = _services.CreateScope();
+            var geracaoService = scope.ServiceProvider.GetRequiredService<GeracaoDeDadosService>();
+
+            Console.WriteLine("⏳ Criando tabelas no banco (se necessário)...");
+            await geracaoService.CriarTabelasAsync();
+
+            Console.WriteLine("⏳ Populando dados base...");
+            await geracaoService.PopularDadosBaseAsync();
+
+            Console.WriteLine("✅ Banco preparado com sucesso.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"❌ Erro ao preparar banco de dados: {ex.Message}");
+            throw;
+        }
+    }
+
     private void RegistrarEventos()
     {
         _cliente.Ready += async () =>
@@ -107,9 +144,6 @@ class Program
         };
     }
 
-    /// <summary>
-    /// Loga mensagens no console com severidade e origem.
-    /// </summary>
     private static Task LogAsync(LogMessage log)
     {
         Console.WriteLine($"[{log.Severity}] {log.Source}: {log.Message}");

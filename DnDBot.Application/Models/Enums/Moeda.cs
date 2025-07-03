@@ -1,18 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DnDBot.Application.Models
+namespace DnDBot.Application.Models.Enums
 {
     /// <summary>
-    /// Representa os tipos de moedas usadas em D&D.
+    /// Representa os tipos de moedas usadas em Dungeons & Dragons.
     /// </summary>
     public enum TipoMoeda
     {
-        PC, // Peça de Cobre
-        PP, // Peça de Prata
-        PE, // Peça de Electrum
-        PO, // Peça de Ouro
-        PL  // Peça de Platina
+        /// <summary>Peça de Cobre, a unidade base.</summary>
+        PC,
+
+        /// <summary>Peça de Prata.</summary>
+        PP,
+
+        /// <summary>Peça de Electrum.</summary>
+        PE,
+
+        /// <summary>Peça de Ouro.</summary>
+        PO,
+
+        /// <summary>Peça de Platina.</summary>
+        PL
     }
 
     /// <summary>
@@ -20,11 +29,23 @@ namespace DnDBot.Application.Models
     /// </summary>
     public class Moeda
     {
+        /// <summary>
+        /// Identificador único da moeda (requisito do Entity Framework).
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
+        /// Tipo da moeda (ex: PC, PP, PE, PO, PL).
+        /// </summary>
         public TipoMoeda Tipo { get; set; }
+
+        /// <summary>
+        /// Quantidade dessa moeda.
+        /// </summary>
         public int Quantidade { get; set; }
 
         /// <summary>
-        /// Taxas de câmbio relativas à peça de cobre.
+        /// Taxas de câmbio relativas à peça de cobre (unidade base para conversão).
         /// </summary>
         private static readonly Dictionary<TipoMoeda, decimal> ValorEmCobre = new()
         {
@@ -35,6 +56,11 @@ namespace DnDBot.Application.Models
             { TipoMoeda.PL, 1000m }
         };
 
+        /// <summary>
+        /// Inicializa uma nova instância da moeda com o tipo e quantidade especificados.
+        /// </summary>
+        /// <param name="tipo">Tipo da moeda.</param>
+        /// <param name="quantidade">Quantidade da moeda.</param>
         public Moeda(TipoMoeda tipo, int quantidade)
         {
             Tipo = tipo;
