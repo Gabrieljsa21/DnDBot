@@ -5,22 +5,8 @@ namespace DnDBot.Application.Models.Ficha
     /// <summary>
     /// Representa uma sub-raça jogável com todos os seus atributos.
     /// </summary>
-    public class SubRaca
+    public class SubRaca : EntidadeBase
     {
-        /// <summary>
-        /// Identificador único da sub-raça (usado internamente).
-        /// </summary>
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Nome da sub-raça (ex: Protetor, Caído, Alto Elfo).
-        /// </summary>
-        public string Nome { get; set; }
-
-        /// <summary>
-        /// Descrição da sub-raça, explicando suas origens ou estilo.
-        /// </summary>
-        public string Descricao { get; set; }
 
         /// <summary>
         /// Atributos que recebem bônus ao escolher essa sub-raça (ex: Carisma +2).
@@ -71,16 +57,6 @@ namespace DnDBot.Application.Models.Ficha
         /// Lista de magias raciais que o personagem pode conjurar.
         /// </summary>
         public List<Magia> MagiasRaciais { get; set; } = new();
-
-        /// <summary>
-        /// URL do ícone representando visualmente a sub-raça.
-        /// </summary>
-        public string IconeUrl { get; set; }
-
-        /// <summary>
-        /// URL da imagem ilustrativa principal da sub-raça.
-        /// </summary>
-        public string ImagemUrl { get; set; }
 
         /// <summary>
         /// ID da raça à qual a sub-raça pertence.

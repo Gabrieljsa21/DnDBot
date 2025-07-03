@@ -4,6 +4,18 @@ Todas as alterações significativas neste projeto serão documentadas neste arquiv
 
 O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e o versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.2.2] - 2025-07-03
+
+### Adicionado
+- Criação da classe abstrata `EntidadeBase`, contendo propriedades comuns entre entidades como `Id`, `Nome`, `Descricao`, `Fonte`, `Pagina`, `Versao`, `ImagemUrl`, `IconeUrl`, `CriadoPor`, `CriadoEm`, `ModificadoPor`, `ModificadoEm` e `Tags`, além de métodos utilitários para manipulação de tags.
+- Documentação XML completa da `EntidadeBase`, padronizando explicações e intenções de uso de cada campo e método.
+
+### Atualizado
+- Refatoração das classes que compartilham atributos semelhantes (`Classe`, `Antecedente`, `Raca`, etc.) para herdar de `EntidadeBase`, reduzindo duplicação de código e melhorando a manutenção.
+- Ajuste nos serviços e comandos impactados para funcionar com a nova estrutura base comum.
+
+---
+
 ## [1.2.1] - 2025-07-03
 
 ### Adicionado

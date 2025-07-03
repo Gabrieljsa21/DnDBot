@@ -6,19 +6,8 @@ namespace DnDBot.Application.Models
     /// Representa uma magia do universo D&D, contendo informações sobre sua conjuração,
     /// efeitos, componentes, restrições, e outras propriedades relevantes.
     /// </summary>
-    public class Magia
+    public class Magia : EntidadeBase
     {
-        // Identificação básica
-        /// <summary>
-        /// Identificador único da magia (ex: "bola-de-fogo").
-        /// </summary>
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Nome da magia.
-        /// </summary>
-        public string Nome { get; set; }
-
         /// <summary>
         /// Nível da magia (ex: "Truque", "1º nível").
         /// </summary>
@@ -136,25 +125,9 @@ namespace DnDBot.Application.Models
         public List<string> ClassesPermitidas { get; set; }
 
         /// <summary>
-        /// Lista das fontes (livros, suplementos) onde a magia aparece.
-        /// </summary>
-        public List<string> Fontes { get; set; }
-
-        // Detalhes adicionais
-        /// <summary>
-        /// Descrição detalhada da magia.
-        /// </summary>
-        public string Descricao { get; set; }
-
-        /// <summary>
         /// Informações de recarga ou recarregamento da magia.
         /// </summary>
         public string Recarga { get; set; }
-
-        /// <summary>
-        /// Tags para categorização ou filtro.
-        /// </summary>
-        public List<string> Tags { get; set; }
 
         /// <summary>
         /// Tipo de uso da magia (ex: "Ação", "Bônus").
@@ -196,23 +169,6 @@ namespace DnDBot.Application.Models
         /// Efeito que ocorre a cada turno enquanto a magia estiver ativa.
         /// </summary>
         public string EfeitoPorTurno { get; set; }
-
-        // Fonte oficial
-        /// <summary>
-        /// Nome do livro ou suplemento onde a magia está publicada.
-        /// </summary>
-        public string FonteLivro { get; set; }
-
-        /// <summary>
-        /// Número da página no livro da fonte oficial.
-        /// </summary>
-        public int? PaginaLivro { get; set; }
-
-        // Notas internas
-        /// <summary>
-        /// Notas internas para uso em desenvolvimento, marcações ou debug.
-        /// </summary>
-        public string NotasInternas { get; set; }
 
         // Métrica de uso
         /// <summary>

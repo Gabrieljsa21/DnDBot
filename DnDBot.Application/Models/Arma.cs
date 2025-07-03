@@ -8,13 +8,8 @@ namespace DnDBot.Application.Models
     /// <summary>
     /// Representa uma arma no sistema D&D 5e, incluindo atributos físicos, mágicos, requisitos e comportamentos.
     /// </summary>
-    public class Arma
+    public class Arma : EntidadeBase
     {
-        /// <summary>Identificador único da arma.</summary>
-        public string Id { get; set; }
-
-        /// <summary>Nome da arma (ex: Espada Longa).</summary>
-        public string Nome { get; set; }
 
         /// <summary>Tipo da arma (corpo-a-corpo ou à distância).</summary>
         public TipoArma Tipo { get; set; }
@@ -61,12 +56,6 @@ namespace DnDBot.Application.Models
         /// <summary>Requisitos específicos para uso (ex: proficiência ou raça).</summary>
         public List<string> Requisitos { get; set; }
 
-        /// <summary>Descrição narrativa ou mecânica da arma.</summary>
-        public string Descricao { get; set; }
-
-        /// <summary>Tags úteis para filtros ou categorizações (ex: "sagrada").</summary>
-        public List<string> Tags { get; set; }
-
         /// <summary>Lista de propriedades especiais que a arma possui.</summary>
         public List<string> PropriedadesEspeciais { get; set; }
 
@@ -105,9 +94,6 @@ namespace DnDBot.Application.Models
 
         /// <summary>Quantidade de turnos necessários para recarregar.</summary>
         public int TempoRecargaTurnos { get; set; }
-
-        /// <summary>URL ou caminho do ícone da arma.</summary>
-        public string Icone { get; set; }
 
         /// <summary>Lista de ataques especiais que a arma permite (ex: empurrar, cortar corda).</summary>
         public List<string> AtaquesEspeciais { get; set; }

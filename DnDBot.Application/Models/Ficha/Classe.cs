@@ -10,22 +10,8 @@ namespace DnDBot.Application.Models.Ficha
     /// Representa uma classe de personagem no jogo, contendo informações sobre proficiências,
     /// magias, subclasses, características, requisitos e itens iniciais.
     /// </summary>
-    public class Classe
+    public class Classe : EntidadeBase
     {
-        /// <summary>
-        /// Identificador único da classe (exemplo: "barbaro", "mago").
-        /// </summary>
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Nome da classe (ex: Bárbaro, Mago).
-        /// </summary>
-        public string Nome { get; set; }
-
-        /// <summary>
-        /// Descrição geral da classe.
-        /// </summary>
-        public string Descricao { get; set; }
 
         /// <summary>
         /// Dado de vida da classe (ex: "1d12").
@@ -66,20 +52,6 @@ namespace DnDBot.Application.Models.Ficha
         /// </summary>
         public List<string> IdSalvaguardas { get; set; } = new();
 
-        /// <summary>
-        /// Fonte oficial de onde a classe foi retirada (ex: Livro do Jogador).
-        /// </summary>
-        public string Fonte { get; set; }
-
-        /// <summary>
-        /// URL da imagem representativa da classe.
-        /// </summary>
-        public string ImagemUrl { get; set; }
-
-        /// <summary>
-        /// URL do ícone da classe.
-        /// </summary>
-        public string IconeUrl { get; set; }
 
         /// <summary>
         /// Papel tático da classe (ex: Tanque, Suporte, Dano).
@@ -160,41 +132,13 @@ namespace DnDBot.Application.Models.Ficha
         /// </summary>
         public List<Moeda> RiquezaInicial { get; set; } = new();
 
-        /// <summary>
-        /// Notas informativas ou complementares sobre a classe.
-        /// </summary>
-        public List<string> Notas { get; set; } = new();
     }
 
     /// <summary>
     /// Representa uma subclasse de uma classe, incluindo características específicas por nível.
     /// </summary>
-    public class Subclasse
+    public class Subclasse : EntidadeBase
     {
-        /// <summary>
-        /// Identificador único da subclasse.
-        /// </summary>
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Nome da subclasse.
-        /// </summary>
-        public string Nome { get; set; }
-
-        /// <summary>
-        /// Descrição da subclasse.
-        /// </summary>
-        public string Descricao { get; set; }
-
-        /// <summary>
-        /// Fonte oficial da subclasse (ex: suplemento ou livro).
-        /// </summary>
-        public string Fonte { get; set; }
-
-        /// <summary>
-        /// URL da imagem da subclasse.
-        /// </summary>
-        public string ImagemUrl { get; set; }
 
         /// <summary>
         /// Lista de características obtidas por nível.

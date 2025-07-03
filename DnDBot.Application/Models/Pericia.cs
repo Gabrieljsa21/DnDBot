@@ -11,17 +11,8 @@ namespace DnDBot.Application.Models
     /// Representa uma perícia ou habilidade que um personagem pode possuir,
     /// vinculada a um atributo base e que pode ter diferentes tipos.
     /// </summary>
-    public class Pericia
+    public class Pericia : EntidadeBase
     {
-        /// <summary>
-        /// Identificador único da perícia.
-        /// </summary>
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Nome da perícia (ex: "Acrobacia", "Furtividade").
-        /// </summary>
-        public string Nome { get; set; }
 
         /// <summary>
         /// Atributo base usado para testes da perícia.
@@ -37,11 +28,6 @@ namespace DnDBot.Application.Models
         /// Tipo da perícia (habilidade, ferramenta, perícia de arma).
         /// </summary>
         public TipoPericia Tipo { get; set; } = TipoPericia.Habilidade;
-
-        /// <summary>
-        /// Descrição detalhada da perícia.
-        /// </summary>
-        public string Descricao { get; set; }
 
         /// <summary>
         /// Indica se o personagem é proficiente nessa perícia.
@@ -69,11 +55,6 @@ namespace DnDBot.Application.Models
         public virtual ICollection<Classe> ClassesRelacionadas { get; set; } = new List<Classe>();
 
         /// <summary>
-        /// Tags para categorização e filtros (ex: "exploração", "combate").
-        /// </summary>
-        public List<string> Tags { get; set; }
-
-        /// <summary>
         /// Níveis de dificuldade sugeridos para testes dessa perícia.
         /// </summary>
         public List<DificuldadePericia> Dificuldades { get; set; } = new();
@@ -85,10 +66,6 @@ namespace DnDBot.Application.Models
         public Dictionary<string, int> DificuldadeSugerida =>
             Dificuldades.ToDictionary(d => d.Tipo, d => d.Valor);
 
-        /// <summary>
-        /// URL ou caminho do ícone representativo da perícia.
-        /// </summary>
-        public string Icone { get; set; }
 
         /// <summary>
         /// Valor total calculado para essa perícia (atributo + bônus + proficiência).

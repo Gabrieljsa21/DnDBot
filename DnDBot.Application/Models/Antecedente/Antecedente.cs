@@ -9,22 +9,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 /// Representa um antecedente (background) de personagem em Dungeons & Dragons,
 /// contendo informações sobre habilidades, equipamentos, características, e outras propriedades relacionadas.
 /// </summary>
-public class Antecedente
+public class Antecedente : EntidadeBase
 {
-    /// <summary>
-    /// Identificador único do antecedente (ex: "soldado", "nobre", etc).
-    /// </summary>
-    public string Id { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Nome legível do antecedente para exibição.
-    /// </summary>
-    public string Nome { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Descrição detalhada que explica a história ou características do antecedente.
-    /// </summary>
-    public string Descricao { get; set; } = string.Empty;
 
     /// <summary>
     /// Lista das perícias concedidas por este antecedente.
@@ -96,26 +82,6 @@ public class Antecedente
     /// Requisitos para que o personagem possa ter este antecedente (pode ser usado para restrições).
     /// </summary>
     public string Requisitos { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Tags para categorizar e facilitar filtros ou buscas pelo antecedente.
-    /// </summary>
-    public List<string> Tags { get; set; } = new();
-
-    /// <summary>
-    /// Fonte oficial de onde o antecedente foi retirado (nome do livro, suplemento, etc).
-    /// </summary>
-    public string Fonte { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Página da fonte oficial onde o antecedente é descrito.
-    /// </summary>
-    public string Pagina { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Versão do conteúdo do antecedente (pode ser usado para controle de edições).
-    /// </summary>
-    public string Versao { get; set; } = string.Empty;
 
     /// <summary>
     /// Riqueza inicial representada pela lista de moedas que o personagem recebe ao escolher este antecedente.
