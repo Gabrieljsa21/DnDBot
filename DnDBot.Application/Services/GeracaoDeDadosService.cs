@@ -74,6 +74,7 @@ namespace DnDBot.Application.Services
             await AntecedenteDatabaseHelper.PopularAsync(connection, transaction);
 
             transaction.Commit();
+            Console.WriteLine("Commit feito!");
         }
 
         /// <summary>

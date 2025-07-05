@@ -1,363 +1,930 @@
 [
   {
     "Id": "aasimar",
-    "Fonte": "Livro Guia dos Aasimar",
     "Nome": "Aasimar",
-    "Descricao": "Seres tocados pela luz celestial, os aasimar possuem herança divina e habilidades curativas.",
+    "Descricao": "Aasimares são descendentes de celestiais, carregando uma centelha de luz divina em seu sangue. Guiados por um senso de propósito elevado, eles lutam contra o mal e promovem a justiça. Dotados de aparência marcante e habilidades sobrenaturais, aasimares brilham — às vezes literalmente — como campeões da luz.",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Pagina": "104",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30741/520/1000/1000/636639193451728572.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/716/aasimar_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
     "SubRaca": [
       {
-        "Id": "aasimar-protetor",
-        "Nome": "Protetor",
-        "Descricao": "Aasimars protetores canalizam luz radiante para proteger e curar.",
+        "Id": "aasimar_protetor",
+        "Nome": "Aasimar Protetor",
+        "Descricao": "Aasimares Protetores são guiados por um senso de justiça e compaixão. Eles buscam proteger os inocentes, purificar o mal e trazer luz aos cantos sombrios do mundo. São inspirados por entidades celestiais que os orientam a trilhar o caminho do bem.",
+        "Fonte": "Xanathar's Guide to Everything",
+        "Pagina": "62",
+        "Versao": "1.0",
+        "ImagemUrl": "",
+        "IconeUrl": "",
+        "CriadoPor": "sistema",
+        "CriadoEm": null,
+        "ModificadoPor": "",
+        "ModificadoEm": null,
         "BonusAtributos": [
           {
+            "Id": "carisma_aasimar_protetor",
             "Atributo": "Carisma",
             "Valor": 2,
-            "Origem": "Raça"
+            "Origem": "Sub-raça"
           },
           {
+            "Id": "sabedoria_aasimar_protetor",
             "Atributo": "Sabedoria",
             "Valor": 1,
-            "Origem": "Raça"
+            "Origem": "Sub-raça"
           }
         ],
-        "TendenciasComuns": "Tendem ao bem e à ordem.",
+        "AlinhamentosComuns": [
+        ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
         "Idiomas": [
-        ],
-        "Proficiencias": [],
-        "VisaoNoEscuro": 0,
-        "Resistencias": [
-        ],
-        "Caracteristicas": [
-        ],
-        "MagiasRaciais": [
-        ],
-        "IconeUrl": "https://placehold.co/64x64?text=Sub",
-        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
-      },
-      {
-        "Id": "aasimar-flagelador",
-        "Nome": "Flagelador",
-        "Descricao": "Aasimars flageladores emanam energia radiante destrutiva.",
-        "BonusAtributos": [
           {
-            "Atributo": "Carisma",
-            "Valor": 2,
-            "Origem": "Raça"
+            "Id": "idioma_comum",
+            "Nome": "Comum"
           },
           {
-            "Atributo": "Constituicao",
-            "Valor": 1,
-            "Origem": "Raça"
+            "Id": "idioma_celestial",
+            "Nome": "Celestial"
           }
         ],
-        "TendenciasComuns": "Tendem ao bem.",
-        "Tamanho": "Médio",
-        "Deslocamento": 9,
-        "Idiomas": [
-        ],
         "Proficiencias": [],
-        "VisaoNoEscuro": 0,
+        "VisaoNoEscuro": 18,
         "Resistencias": [
-        ],
-        "Caracteristicas": [
-        ],
-        "MagiasRaciais": [
-        ],
-        "IconeUrl": "https://placehold.co/64x64?text=Sub",
-        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
-      },
-      {
-        "Id": "aasimar-caido",
-        "Nome": "Caído",
-        "Descricao": "Aasimars caídos perderam parte de sua luz divina, adotando um aspecto mais sombrio.",
-        "BonusAtributos": [
           {
-            "Atributo": "Carisma",
-            "Valor": 2,
-            "Origem": "Raça"
+            "Id": "resistencia_radiante",
+            "Nome": "Resistência Radiante",
+            "TipoDano": "radiante"
           },
           {
-            "Atributo": "Forca",
-            "Valor": 1,
-            "Origem": "Raça"
+            "Id": "resistencia_necrótico",
+            "Nome": "Resistência Necrótica",
+            "TipoDano": "necrótico"
           }
         ],
-        "TendenciasComuns": "Tendem ao mal ou neutralidade.",
-        "Tamanho": "Médio",
-        "Deslocamento": 9,
-        "Idiomas": [
-        ],
-        "Proficiencias": [],
-        "VisaoNoEscuro": 0,
-        "Resistencias": [
-        ],
         "Caracteristicas": [
+          {
+            "Id": "curar_maos",
+            "Nome": "Curar com as Mãos",
+            "Descricao": "Como uma ação, você pode tocar uma criatura e restaurar pontos de vida igual ao seu nível. Você pode usar essa habilidade uma vez por descanso longo.",
+            "Fonte": "Xanathar's Guide to Everything"
+          },
+          {
+            "Id": "ascensao_radiante",
+            "Nome": "Ascensão Radiante",
+            "Descricao": "A partir do 3º nível, você pode usar sua ação para invocar asas luminosas e irradiar energia divina. Por 1 minuto, você ganha deslocamento de voo igual ao seu deslocamento de caminhada e, ao causar dano com um ataque ou magia, causa dano radiante extra igual ao seu modificador de Carisma (mínimo 1). Usável 1 vez por descanso longo.",
+            "Fonte": "Xanathar's Guide to Everything"
+          }
         ],
-        "MagiasRaciais": [
+        "MagiasRaciais": [],
+        "RacaId": "aasimar",
+        "Raca": null,
+        "SubRacaTags": [
+          {
+            "SubRacaId": "aasimar_protetor",
+            "Tag": "celestial"
+          },
+          {
+            "SubRacaId": "aasimar_protetor",
+            "Tag": "bondoso"
+          },
+          {
+            "SubRacaId": "aasimar_protetor",
+            "Tag": "radiante"
+          }
         ],
-        "IconeUrl": "https://placehold.co/64x64?text=Sub",
-        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+        "Tags": [ "celestial", "bondoso", "radiante" ]
+      }
+    ],
+    "RacaTags": [
+      {
+        "RacaId": "aasimar",
+        "Tag": "planar"
+      },
+      {
+        "RacaId": "aasimar",
+        "Tag": "celestial"
+      },
+      {
+        "RacaId": "aasimar",
+        "Tag": "popular"
+      },
+      {
+        "RacaId": "aasimar",
+        "Tag": "exotica"
       }
     ]
   },
   {
     "Id": "anao",
-    "Fonte": "Livro do Jogador",
     "Nome": "Anão",
-    "Descricao": "Anões são robustos e duráveis, conhecidos por sua lealdade, resistência e habilidades com mineração e forja.",
-    "SubRaca": [
+    "Descricao": "Anões são conhecidos por sua robustez, determinação e tradições ancestrais. Eles vivem em fortalezas subterrâneas e são mestres artesãos, mineiros e guerreiros resilientes. A lealdade ao clã e aos deuses anões é um pilar de sua cultura, e seu orgulho é tão forte quanto suas barbas.",
+    "Fonte": "Livro do Jogador",
+    "Pagina": "18",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30741/406/1000/1000/636639193234159708.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/692/dwarf_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
       {
-        "Id": "anao-da-colina",
-        "Nome": "Anão da Colina",
-        "Descricao": "Anões resistentes, com forte constituição e afinidade com a terra.",
-        "BonusAtributos": [
-          {
-            "Atributo": "Constituicao",
-            "Valor": 2,
-            "Origem": "Raça"
-          },
-          {
-            "Atributo": "Sabedoria",
-            "Valor": 1,
-            "Origem": "Raça"
-          }
-        ],
-        "TendenciasComuns": "Tendem ao bem e à ordem.",
-        "Tamanho": "Pequeno",
-        "Deslocamento": 7,
-        "Idiomas": [
-        ],
-        "Proficiencias": [
-        ],
-        "VisaoNoEscuro": 18,
-        "Resistencias": [
-        ],
-        "Caracteristicas": [
-        ],
-        "MagiasRaciais": [],
-        "IconeUrl": "https://placehold.co/64x64?text=Sub",
-        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+        "RacaId": "anao",
+        "Tag": "clássica"
       },
       {
-        "Id": "anao-da-montanha",
-        "Nome": "Anão da Montanha",
-        "Descricao": "Anões fortes e robustos, acostumados a ambientes hostis e batalhas.",
-        "BonusAtributos": [
-          {
-            "Atributo": "Constituicao",
-            "Valor": 2,
-            "Origem": "Raça"
-          },
-          {
-            "Atributo": "Forca",
-            "Valor": 2,
-            "Origem": "Raça"
-          }
-        ],
-        "TendenciasComuns": "Tendem ao bem e à ordem.",
-        "Tamanho": "Pequeno",
-        "Deslocamento": 7,
-        "Idiomas": [
-        ],
-        "Proficiencias": [
-        ],
-        "VisaoNoEscuro": 18,
-        "Resistencias": [
-        ],
-        "Caracteristicas": [
-        ],
-        "MagiasRaciais": [],
-        "IconeUrl": "https://placehold.co/64x64?text=Sub",
-        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+        "RacaId": "anao",
+        "Tag": "subterranea"
       },
       {
-        "Id": "marka-da-protecao",
-        "Nome": "Marca da Proteção",
-        "Descricao": "Anões da Casa Kundarak com habilidades mágicas de proteção e guarda.",
-        "BonusAtributos": [
-          {
-            "Atributo": "Inteligencia",
-            "Valor": 1,
-            "Origem": "Raça"
-          },
-          {
-            "Atributo": "Constituicao",
-            "Valor": 2,
-            "Origem": "Raça"
-          }
-        ],
-        "TendenciasComuns": "Tendem à ordem e neutralidade.",
-        "Tamanho": "Pequeno",
-        "Deslocamento": 7,
-        "Idiomas": [
-        ],
-        "Proficiencias": [
-        ],
-        "MagiasRaciais": [
-        ],
-        "Caracteristicas": [
-        ],
-        "VisaoNoEscuro": 18,
-        "Resistencias": [],
-        "IconeUrl": "https://placehold.co/64x64?text=Sub",
-        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+        "RacaId": "anao",
+        "Tag": "resistente"
+      },
+      {
+        "RacaId": "anao",
+        "Tag": "popular"
       }
     ]
   },
   {
     "Id": "bugbear",
-    "Fonte": "Volo’s Guide to Monsters",
     "Nome": "Bugbear",
-    "Descricao": "Bugbears são goblinoides grandes e peludos conhecidos por sua força e furtividade surpreendente.",
-    "SubRaca": [
+    "Descricao": "Bugbears são goblinoides grandes e peludos, conhecidos por sua força brutal e surpreendente furtividade. Apesar de sua aparência ameaçadora, eles são mestres em emboscadas e ataques rápidos, utilizando sua força e alcance natural para dominar o campo de batalha.",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Pagina": "119",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30805/176/1000/1000/636643819479681072.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/705/bugbear_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
       {
-        "Id": "bugbear-padrao",
-        "Nome": "Bugbear",
-        "Descricao": "Bugbears são goblinoides grandes e peludos conhecidos por sua força e furtividade surpreendente.",
-        "BonusAtributos": [],
-        "TendenciasComuns": "Variada.",
-        "Tamanho": "Médio",
-        "Deslocamento": 9,
-        "Idiomas": [
-        ],
-        "Proficiencias": [],
-        "VisaoNoEscuro": 18,
-        "Resistencias": [],
-        "Caracteristicas": [],
-        "MagiasRaciais": [],
-        "IconeUrl": "https://placehold.co/64x64?text=Sub",
-        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+        "RacaId": "bugbear",
+        "Tag": "goblinoide"
+      },
+      {
+        "RacaId": "bugbear",
+        "Tag": "monstruosa"
+      },
+      {
+        "RacaId": "bugbear",
+        "Tag": "furtiva"
+      },
+      {
+        "RacaId": "bugbear",
+        "Tag": "força"
+      }
+    ]
+  },
+  {
+    "Id": "centauro",
+    "Nome": "Centauro",
+    "Descricao": "Centauros são criaturas com torso humano e corpo de cavalo, conhecidos por sua velocidade, força e conexão com a natureza. Em Ravnica, eles são membros da guilda Selesnya, agindo como guardiões da paz e da harmonia. São resistentes, rápidos e possuem habilidades naturais para se mover rapidamente pelo terreno e usar armas de alcance.",
+    "Fonte": "Guildmasters' Guide to Ravnica",
+    "Pagina": "45",
+    "Versao": "1.0",
+    "ImagemUrl": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/469/1000/1000/636258314088176183.jpeg",
+    "IconeUrl": "https://media-waterdeep.cursecdn.com/avatars/thumbnails/0/470/1000/1000/636258314088246220.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "centauro",
+        "Tag": "rápido"
+      },
+      {
+        "RacaId": "centauro",
+        "Tag": "forte"
+      },
+      {
+        "RacaId": "centauro",
+        "Tag": "naturalista"
+      },
+      {
+        "RacaId": "centauro",
+        "Tag": "guardiã"
       }
     ]
   },
   {
     "Id": "changeling",
-    "Fonte": "Eberron: Rising from the Last War",
     "Nome": "Changeling",
-    "Descricao": "Changelings são metamorfos capazes de alterar sua aparência à vontade.",
-    "SubRaca": [
+    "Descricao": "Changelings são seres capazes de alterar sua aparência à vontade. Descendentes de doppelgangers ou influenciados pela magia mutável, eles não possuem uma forma única fixa e muitas vezes vivem entre outras raças adotando múltiplas identidades. Sua habilidade inata de mudar de forma os torna mestres do disfarce e da adaptação social.",
+    "Fonte": "Eberron: Rising from the Last War",
+    "Pagina": "18",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30805/154/1000/1000/636643819387173978.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/731/changeling_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
       {
-        "Id": "changeling-padrao",
-        "Nome": "Changeling",
-        "Descricao": "Changelings são metamorfos capazes de alterar sua aparência à vontade.",
-        "BonusAtributos": [],
-        "TendenciasComuns": "Variada.",
-        "Tamanho": "Médio",
-        "Deslocamento": 9,
-        "Idiomas": [
-        ],
-        "Proficiencias": [],
-        "VisaoNoEscuro": 0,
-        "Resistencias": [],
-        "Caracteristicas": [],
-        "MagiasRaciais": [],
-        "IconeUrl": "https://placehold.co/64x64?text=Sub",
-        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+        "RacaId": "changeling",
+        "Tag": "mística"
+      },
+      {
+        "RacaId": "changeling",
+        "Tag": "mutável"
+      },
+      {
+        "RacaId": "changeling",
+        "Tag": "social"
+      },
+      {
+        "RacaId": "changeling",
+        "Tag": "exótica"
       }
     ]
   },
   {
     "Id": "draconato",
-    "Fonte": "Livro do Jogador",
     "Nome": "Draconato",
-    "Descricao": "Draconatos são descendentes de dragões, com aparência imponente e fôlego elemental.",
+    "Descricao": "Draconatos são humanoides com traços dracônicos, descendentes de dragões antigos ou criados por magia. Orgulhosos, honrados e imponentes, eles carregam o poder elemental de seu ancestral dracônico em seu sopro e aparência. Cada draconato possui um tipo de ancestralidade dracônica que define o elemento de sua baforada.",
+    "Fonte": "Livro do Jogador",
+    "Pagina": "32",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30741/405/1000/1000/636639193202470852.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/688/dragonborn_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "draconato",
+        "Tag": "draconico"
+      },
+      {
+        "RacaId": "draconato",
+        "Tag": "elemental"
+      },
+      {
+        "RacaId": "draconato",
+        "Tag": "orgulhoso"
+      },
+      {
+        "RacaId": "draconato",
+        "Tag": "popular"
+      }
+    ]
+  },
+  {
+    "Id": "elfo",
+    "Nome": "Elfo",
+    "Descricao": "Elfos são uma raça graciosa e longeva, profundamente conectada à magia e à natureza. Conhecidos por sua beleza, agilidade e sentidos aguçados, os elfos são divididos em diferentes sub-raças com culturas e habilidades distintas. Sua conexão com o mundo feérico e sua vida prolongada os tornam observadores cuidadosos do tempo e da história.",
+    "Fonte": "Livro do Jogador",
+    "Pagina": "21",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30741/407/1000/1000/636639193267055879.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/689/elf_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "elfo",
+        "Tag": "clássica"
+      },
+      {
+        "RacaId": "elfo",
+        "Tag": "agil"
+      },
+      {
+        "RacaId": "elfo",
+        "Tag": "mágica"
+      },
+      {
+        "RacaId": "elfo",
+        "Tag": "longenva"
+      },
+      {
+        "RacaId": "elfo",
+        "Tag": "popular"
+      }
+    ]
+  },
+  {
+    "Id": "firbolg",
+    "Nome": "Firbolg",
+    "Descricao": "Firbolgs são gigantes gentis que vivem em harmonia com a natureza. Reservados e discretos, eles usam sua conexão mágica com o mundo natural para proteger florestas e comunidades druidicamente alinhadas. Apesar de seu tamanho imponente, são pacíficos por natureza, evitando confrontos quando possível.",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Pagina": "106",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30805/171/1000/1000/636643819462792081.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/709/firbolg_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "firbolg",
+        "Tag": "gigante"
+      },
+      {
+        "RacaId": "firbolg",
+        "Tag": "natureza"
+      },
+      {
+        "RacaId": "firbolg",
+        "Tag": "pacífico"
+      },
+      {
+        "RacaId": "firbolg",
+        "Tag": "mágica"
+      }
+    ]
+  },
+  {
+    "Id": "genasi",
+    "Nome": "Genasi",
+    "Descricao": "Genasi são seres com sangue elemental correndo em suas veias, manifestando traços e poderes relacionados aos quatro elementos primordiais: ar, fogo, água e terra. Cada genasi reflete a natureza e as habilidades do elemento que herdaram, tornando-os versáteis e únicos entre as raças jogáveis.",
+    "Fonte": "Elemental Evil Player’s Companion",
+    "Pagina": "3",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30805/174/1000/1000/636643819474101166.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/715/genasi_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "genasi",
+        "Tag": "elemental"
+      },
+      {
+        "RacaId": "genasi",
+        "Tag": "exotica"
+      },
+      {
+        "RacaId": "genasi",
+        "Tag": "versatil"
+      },
+      {
+        "RacaId": "genasi",
+        "Tag": "magica"
+      }
+    ]
+  },
+  {
+    "Id": "goliath",
+    "Nome": "Goliath",
+    "Descricao": "Goliaths são gigantes robustos e competitivos que vivem em regiões montanhosas e desafiadoras. Conhecidos por sua força impressionante e resistência natural, eles são sobreviventes natos, valorizando a honra e a superação pessoal. Goliaths frequentemente competem entre si para demonstrar seu valor.",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Pagina": "112",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30805/178/1000/1000/636643819485253782.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/711/goliath_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "goliath",
+        "Tag": "gigante"
+      },
+      {
+        "RacaId": "goliath",
+        "Tag": "montanhês"
+      },
+      {
+        "RacaId": "goliath",
+        "Tag": "resistente"
+      },
+      {
+        "RacaId": "goliath",
+        "Tag": "competitivo"
+      }
+    ]
+  },
+  {
+    "Id": "gnomo",
+    "Nome": "Gnomo",
+    "Descricao": "Gnomos são pequenos humanoides conhecidos por sua curiosidade, inteligência e ligação com a magia e a invenção. Eles possuem grande afinidade com ilusões e a natureza, e suas personalidades vibrantes os tornam membros queridos de qualquer comunidade. Existem diferentes sub-raças de gnomos, cada uma com suas próprias características e talentos.",
+    "Fonte": "Livro do Jogador",
+    "Pagina": "37",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30741/403/1000/1000/636639193171926072.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/686/gnome_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "gnomo",
+        "Tag": "pequeno"
+      },
+      {
+        "RacaId": "gnomo",
+        "Tag": "mágico"
+      },
+      {
+        "RacaId": "gnomo",
+        "Tag": "curioso"
+      },
+      {
+        "RacaId": "gnomo",
+        "Tag": "artesão"
+      }
+    ]
+  },
+  {
+    "Id": "goblin",
+    "Nome": "Goblin",
+    "Descricao": "Goblins são criaturas pequenas, ágeis e astutas, frequentemente encontradas em tribos espalhadas por regiões selvagens e cavernas. Embora sejam muitas vezes considerados inimigos por sua natureza caótica e imprevisível, goblins são sobreviventes adaptáveis, capazes de usar truques e emboscadas para vencer seus oponentes.",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Pagina": "120",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30805/175/1000/1000/636643819480062168.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/704/goblin_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "goblin",
+        "Tag": "pequeno"
+      },
+      {
+        "RacaId": "goblin",
+        "Tag": "astuto"
+      },
+      {
+        "RacaId": "goblin",
+        "Tag": "sobrevivente"
+      },
+      {
+        "RacaId": "goblin",
+        "Tag": "tribal"
+      }
+    ]
+  },
+  {
+    "Id": "halfling",
+    "Nome": "Halfling",
+    "Descricao": "Halflings são pequenos humanoides conhecidos por sua sorte notável, natureza alegre e espírito aventureiro. Eles valorizam a família e a comunidade, e apesar de seu tamanho, possuem coragem e astúcia que os tornam ótimos companheiros e sobreviventes. Existem sub-raças distintas, como o Halfling Pés-Leves e o Halfling Robusto, cada um com suas próprias características.",
+    "Fonte": "Livro do Jogador",
+    "Pagina": "28",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30741/402/1000/1000/636639193151736753.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/685/halfling_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "halfling",
+        "Tag": "pequeno"
+      },
+      {
+        "RacaId": "halfling",
+        "Tag": "sortudo"
+      },
+      {
+        "RacaId": "halfling",
+        "Tag": "corajoso"
+      },
+      {
+        "RacaId": "halfling",
+        "Tag": "popular"
+      }
+    ]
+  },
+  {
+    "Id": "kenku",
+    "Nome": "Kenku",
+    "Descricao": "Kenku são humanoides corvídeos conhecidos por sua incapacidade de falar de forma original, mas excelentes imitadores de sons e vozes. Eles são astutos, furtivos e têm uma forte tendência para a espionagem e o roubo. Seu passado é marcado por uma maldição que os impede de criar ou inovar, dependendo de memórias e repetições.",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Pagina": "122",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30805/177/1000/1000/636643819488814380.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/710/kenku_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "kenku",
+        "Tag": "astuto"
+      },
+      {
+        "RacaId": "kenku",
+        "Tag": "furtivo"
+      },
+      {
+        "RacaId": "kenku",
+        "Tag": "imitador"
+      },
+      {
+        "RacaId": "kenku",
+        "Tag": "maldito"
+      }
+    ]
+  },
+  {
+    "Id": "kobold",
+    "Nome": "Kobold",
+    "Descricao": "Kobolds são pequenas criaturas reptilianas conhecidas por sua astúcia, habilidade em armadilhas e trabalho em grupo. Embora fisicamente frágeis, compensam com inteligência e táticas, vivendo geralmente em cavernas e túneis subterrâneos. São descendentes distantes de dragões, o que lhes confere algumas características dracônicas.",
+    "Fonte": "Livro do Jogador",
+    "Pagina": "195",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30805/180/1000/1000/636643819499108552.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/713/kobold_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "kobold",
+        "Tag": "pequeno"
+      },
+      {
+        "RacaId": "kobold",
+        "Tag": "astuto"
+      },
+      {
+        "RacaId": "kobold",
+        "Tag": "dracônico"
+      },
+      {
+        "RacaId": "kobold",
+        "Tag": "tribal"
+      }
+    ]
+  },
+  {
+    "Id": "leonin",
+    "Nome": "Leonin",
+    "Descricao": "Leonins são humanoides felinos orgulhosos e guerreiras, nativos do plano de Theros. Conhecidos por sua força, agilidade e espírito combativo, são frequentemente vistos como protetores ferozes e líderes naturais. Sua herança felina lhes confere sentidos aguçados e uma presença imponente.",
+    "Fonte": "Mythic Odysseys of Theros",
+    "Pagina": "20",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30805/183/1000/1000/636643819499073358.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/717/leonin_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "leonin",
+        "Tag": "felino"
+      },
+      {
+        "RacaId": "leonin",
+        "Tag": "guerreiro"
+      },
+      {
+        "RacaId": "leonin",
+        "Tag": "forte"
+      },
+      {
+        "RacaId": "leonin",
+        "Tag": "protetor"
+      }
+    ]
+  },
+  {
+    "Id": "meio-elfo",
+    "Nome": "Meio-Elfo",
+    "Descricao": "Meio-elfos são híbridos entre elfos e humanos, combinando o melhor de ambas as raças. Eles possuem a graça e os sentidos aguçados dos elfos, além da adaptabilidade e diversidade dos humanos. Meio-elfos são versáteis e sociais, frequentemente atuando como diplomatas e exploradores entre diferentes culturas.",
+    "Fonte": "Livro do Jogador",
+    "Pagina": "38",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30741/408/1000/1000/636639193272251260.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/690/half-elf_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "meio-elfo",
+        "Tag": "híbrido"
+      },
+      {
+        "RacaId": "meio-elfo",
+        "Tag": "versátil"
+      },
+      {
+        "RacaId": "meio-elfo",
+        "Tag": "social"
+      },
+      {
+        "RacaId": "meio-elfo",
+        "Tag": "popular"
+      }
+    ]
+  },
+  {
+    "Id": "meio-orc",
+    "Nome": "Meio-Orc",
+    "Descricao": "Meio-orcs são descendentes de orcs e humanos, conhecidos por sua força bruta, resistência e natureza feroz em batalha. Eles são guerreiros temidos e, apesar de muitas vezes enfrentarem preconceito, possuem um forte senso de honra e lealdade. Meio-orcs combinam a brutalidade dos orcs com a adaptabilidade humana.",
+    "Fonte": "Livro do Jogador",
+    "Pagina": "41",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30741/409/1000/1000/636639193276857933.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/691/half-orc_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "meio-orc",
+        "Tag": "bruto"
+      },
+      {
+        "RacaId": "meio-orc",
+        "Tag": "resistente"
+      },
+      {
+        "RacaId": "meio-orc",
+        "Tag": "guerreiro"
+      },
+      {
+        "RacaId": "meio-orc",
+        "Tag": "popular"
+      }
+    ]
+  },
+  {
+    "Id": "humano",
+    "Nome": "Humano",
+    "Descricao": "Humanos são a raça mais diversa e adaptável, conhecidos por sua ambição, versatilidade e rápida capacidade de aprendizado. Eles não possuem características físicas ou mágicas marcantes, mas compensam com determinação, coragem e criatividade. A variante humana oferece habilidades e talentos adicionais para personalização.",
+    "Fonte": "Livro do Jogador",
+    "Pagina": "31",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30741/401/1000/1000/636639193152233521.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/684/human_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
     "SubRaca": [
       {
-        "Id": "draconato-chamas",
-        "Nome": "Draconato de Chamas",
-        "Descricao": "Draconatos ligados ao fogo, capazes de exalar fogo ardente.",
-        "BonusAtributos": [
-          {
-            "Atributo": "Forca",
-            "Valor": 2,
-            "Origem": "Raça"
-          },
-          {
-            "Atributo": "Carisma",
-            "Valor": 1,
-            "Origem": "Raça"
-          }
-        ],
-        "TendenciasComuns": "Tendem à neutralidade e à honra.",
-        "Tamanho": "Médio",
-        "Deslocamento": 9,
-        "Idiomas": [
-        ],
-        "Proficiencias": [],
-        "CaracteristicasEspeciais": [
-        ],
-        "VisaoNoEscuro": 0,
-        "Resistencias": [],
-        "Caracteristicas": [],
-        "MagiasRaciais": [],
-        "IconeUrl": "https://placehold.co/64x64?text=Sub",
-        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+        "Id": "humano-variavel",
+        "Nome": "Humano Variante",
+        "Descricao": "Versão alternativa do humano que concede maior personalização, incluindo um talento extra e bônus em duas habilidades à escolha.",
+        "Fonte": "Livro do Jogador",
+        "Pagina": "31",
+        "Versao": "1.0"
+      }
+    ],
+    "RacaTags": [
+      {
+        "RacaId": "humano",
+        "Tag": "versátil"
       },
       {
-        "Id": "draconato-gelo",
-        "Nome": "Draconato de Gelo",
-        "Descricao": "Draconatos com afinidade a gelo e frio, exalando um sopro congelante.",
-        "BonusAtributos": [
-          {
-            "Atributo": "Forca",
-            "Valor": 2,
-            "Origem": "Raça"
-          },
-          {
-            "Atributo": "Carisma",
-            "Valor": 1,
-            "Origem": "Raça"
-          }
-        ],
-        "TendenciasComuns": "Tendem à neutralidade fria e calculista.",
-        "Tamanho": "Médio",
-        "Deslocamento": 9,
-        "Idiomas": [
-        ],
-        "Proficiencias": [],
-        "CaracteristicasEspeciais": [
-        ],
-        "VisaoNoEscuro": 0,
-        "Resistencias": [],
-        "Caracteristicas": [],
-        "MagiasRaciais": [],
-        "IconeUrl": "https://placehold.co/64x64?text=Sub",
-        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+        "RacaId": "humano",
+        "Tag": "popular"
       },
       {
-        "Id": "draconato-eletrico",
-        "Nome": "Draconato Elétrico",
-        "Descricao": "Draconatos com conexão ao trovão, liberando descargas elétricas.",
-        "BonusAtributos": [
-          {
-            "Atributo": "Forca",
-            "Valor": 2,
-            "Origem": "Raça"
-          },
-          {
-            "Atributo": "Carisma",
-            "Valor": 1,
-            "Origem": "Raça"
-          }
-        ],
-        "TendenciasComuns": "Tendem a agir com rapidez e energia, às vezes impetuosos.",
-        "Tamanho": "Médio",
-        "Deslocamento": 9,
-        "Idiomas": [
-        ],
-        "Proficiencias": [],
-        "CaracteristicasEspeciais": [
-        ],
-        "VisaoNoEscuro": 0,
-        "Resistencias": [],
-        "Caracteristicas": [],
-        "MagiasRaciais": [],
-        "IconeUrl": "https://placehold.co/64x64?text=Sub",
-        "ImagemUrl": "https://placehold.co/300x500?text=Subraca"
+        "RacaId": "humano",
+        "Tag": "adaptável"
+      },
+      {
+        "RacaId": "humano",
+        "Tag": "comum"
+      }
+    ]
+  },
+  {
+    "Id": "satyr",
+    "Nome": "Satyr",
+    "Descricao": "Sátiros são seres místicos das florestas, conhecidos por sua natureza alegre, musicalidade e ligação com a magia da natureza. Com chifres e cascos, eles são ágeis e carismáticos, capazes de encantar e confundir inimigos. Sátiros vivem em harmonia com o ambiente selvagem, celebrando a vida e a liberdade.",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Pagina": "111",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30805/179/1000/1000/636643819493454914.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/712/satyr_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "satyr",
+        "Tag": "místico"
+      },
+      {
+        "RacaId": "satyr",
+        "Tag": "florestal"
+      },
+      {
+        "RacaId": "satyr",
+        "Tag": "musical"
+      },
+      {
+        "RacaId": "satyr",
+        "Tag": "ágil"
+      }
+    ]
+  },
+  {
+    "Id": "tabaxi",
+    "Nome": "Tabaxi",
+    "Descricao": "Tabaxi são felinos humanoides curiosos e ágeis, conhecidos por sua velocidade, sentidos aguçados e espírito explorador. Originários de terras tropicais e florestas densas, eles adoram colecionar artefatos raros e histórias de aventuras. Sua natureza curiosa os torna exploradores e caçadores excepcionais.",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Pagina": "109",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30805/176/1000/1000/636643819481870546.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/706/tabaxi_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "tabaxi",
+        "Tag": "felino"
+      },
+      {
+        "RacaId": "tabaxi",
+        "Tag": "ágil"
+      },
+      {
+        "RacaId": "tabaxi",
+        "Tag": "explorador"
+      },
+      {
+        "RacaId": "tabaxi",
+        "Tag": "curioso"
+      }
+    ]
+  },
+  {
+    "Id": "tiefling",
+    "Nome": "Tiefling",
+    "Descricao": "Tieflings são descendentes de humanos que fizeram pacto ou possuem herança infernal, manifestando traços demoníacos como chifres, cauda e pele colorida. Eles são frequentemente mal compreendidos e possuem resistência a fogo, além de habilidades mágicas inatas ligadas ao inferno. Sua natureza os torna figuras misteriosas e poderosas.",
+    "Fonte": "Livro do Jogador",
+    "Pagina": "42",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30741/410/1000/1000/636639193277773207.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/692/tiefling_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "tiefling",
+        "Tag": "infernal"
+      },
+      {
+        "RacaId": "tiefling",
+        "Tag": "mágico"
+      },
+      {
+        "RacaId": "tiefling",
+        "Tag": "resistente"
+      },
+      {
+        "RacaId": "tiefling",
+        "Tag": "misterioso"
+      }
+    ]
+  },
+  {
+    "Id": "tritao",
+    "Nome": "Tritão",
+    "Descricao": "Tritões são seres anfíbios que habitam os oceanos e as águas profundas. Conhecidos por sua conexão com o mar e a habilidade de controlar aspectos da água e do gelo, são protetores naturais dos reinos aquáticos. Possuem resistência a frio e respiram tanto na água quanto fora dela.",
+    "Fonte": "Livro do Jogador",
+    "Pagina": "43",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30741/411/1000/1000/636639193278351667.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/693/triton_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "tritao",
+        "Tag": "anfíbio"
+      },
+      {
+        "RacaId": "tritao",
+        "Tag": "aquático"
+      },
+      {
+        "RacaId": "tritao",
+        "Tag": "resistente"
+      },
+      {
+        "RacaId": "tritao",
+        "Tag": "mágico"
+      }
+    ]
+  },
+  {
+    "Id": "warforged",
+    "Nome": "Warforged",
+    "Descricao": "Warforged são construtos vivos, criados para a guerra, combinando elementos mecânicos e mágicos. Eles possuem corpos de metal e madeira, mas têm consciência e emoções. Adaptáveis e resistentes, warforged são capazes de se integrar à sociedade, buscando um propósito além do combate.",
+    "Fonte": "Eberron: Rising from the Last War",
+    "Pagina": "35",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30805/182/1000/1000/636643819503949682.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/716/warforged_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "warforged",
+        "Tag": "construto"
+      },
+      {
+        "RacaId": "warforged",
+        "Tag": "mágico"
+      },
+      {
+        "RacaId": "warforged",
+        "Tag": "resistente"
+      },
+      {
+        "RacaId": "warforged",
+        "Tag": "adaptável"
+      }
+    ]
+  },
+  {
+    "Id": "yuan-ti",
+    "Nome": "Yuan-ti",
+    "Descricao": "Yuan-ti são descendentes serpentinos, conhecidos por sua inteligência astuta, habilidades mágicas e traços reptilianos. Muitas vezes associados a cultos e segredos antigos, eles são mestres em manipulação, furtividade e controle mental. Sua herança serpente lhes confere resistência e características físicas únicas.",
+    "Fonte": "Volo’s Guide to Monsters",
+    "Pagina": "120",
+    "Versao": "1.0",
+    "ImagemUrl": "https://www.dndbeyond.com/avatars/thumbnails/30805/183/1000/1000/636643819504808774.jpeg",
+    "IconeUrl": "https://www.dndbeyond.com/attachments/2/717/yuan-ti_icon.png",
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-05T00:00:00",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-05T00:00:00",
+    "SubRaca": [],
+    "RacaTags": [
+      {
+        "RacaId": "yuan-ti",
+        "Tag": "serpente"
+      },
+      {
+        "RacaId": "yuan-ti",
+        "Tag": "mágico"
+      },
+      {
+        "RacaId": "yuan-ti",
+        "Tag": "astuto"
+      },
+      {
+        "RacaId": "yuan-ti",
+        "Tag": "manipulador"
       }
     ]
   }
+
 ]

@@ -46,9 +46,9 @@ namespace DnDBot.Application.Helpers
                 ["imgUrl"] = entidade.ImagemUrl ?? "",
                 ["iconeUrl"] = entidade.IconeUrl ?? "",
                 ["criadoPor"] = entidade.CriadoPor ?? "",
-                ["criadoEm"] = entidade.CriadoEm.HasValue ? entidade.CriadoEm.Value.ToString("o") : DBNull.Value,
+                ["criadoEm"] = entidade.CriadoEm ?? DateTime.UtcNow,
                 ["modificadoPor"] = entidade.ModificadoPor ?? "",
-                ["modificadoEm"] = entidade.ModificadoEm.HasValue ? entidade.ModificadoEm.Value.ToString("o") : DBNull.Value
+                ["modificadoEm"] = entidade.ModificadoEm ?? DateTime.UtcNow
             };
         }
 

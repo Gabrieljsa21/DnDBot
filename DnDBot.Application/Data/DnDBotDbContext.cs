@@ -28,6 +28,7 @@ namespace DnDBot.Application.Data
         public DbSet<FichaPersonagem> FichaPersonagem { get; set; }
         public DbSet<Raca> Raca { get; set; }
         public DbSet<SubRaca> SubRaca { get; set; }
+        public DbSet<SubRacaAlinhamento> SubRacaAlinhamento { get; set; }
         public DbSet<Alinhamento> Alinhamento { get; set; }
         public DbSet<Antecedente> Antecedente { get; set; }
         public DbSet<Idioma> Idioma { get; set; }
@@ -82,6 +83,19 @@ namespace DnDBot.Application.Data
                 .HasOne(rt => rt.SubRaca)
                 .WithMany(r => r.SubRacaTags)
                 .HasForeignKey(rt => rt.SubRacaId);
+
+            modelBuilder.Entity<SubRacaAlinhamento>()
+    .HasKey(sa => new { sa.SubRacaId, sa.AlinhamentoId });
+
+            modelBuilder.Entity<SubRacaAlinhamento>()
+                .HasOne(sa => sa.SubRaca)
+                .WithMany(s => s.AlinhamentosComuns)
+                .HasForeignKey(sa => sa.SubRacaId);
+
+            modelBuilder.Entity<SubRacaAlinhamento>()
+                .HasOne(sa => sa.Alinhamento)
+                .WithMany()
+                .HasForeignKey(sa => sa.AlinhamentoId);
 
             modelBuilder.Entity<MagiaTag>()
     .HasKey(mt => new { mt.MagiaId, mt.Tag });

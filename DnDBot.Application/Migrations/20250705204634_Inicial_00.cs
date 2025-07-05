@@ -1145,8 +1145,7 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    TendenciasComuns = table.Column<string>(type: "TEXT", nullable: true),
-                    Tamanho = table.Column<string>(type: "TEXT", nullable: true),
+                    Tamanho = table.Column<int>(type: "INTEGER", nullable: false),
                     Deslocamento = table.Column<int>(type: "INTEGER", nullable: false),
                     VisaoNoEscuro = table.Column<int>(type: "INTEGER", nullable: false),
                     RacaId = table.Column<string>(type: "TEXT", nullable: true),
@@ -1341,7 +1340,7 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Atributo = table.Column<string>(type: "TEXT", nullable: false),
+                    Atributo = table.Column<int>(type: "INTEGER", nullable: false),
                     Valor = table.Column<int>(type: "INTEGER", nullable: false),
                     Origem = table.Column<string>(type: "TEXT", nullable: true),
                     OwnerType = table.Column<string>(type: "TEXT", nullable: true),
@@ -1478,6 +1477,30 @@ namespace DnDBot.Application.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_SubRaca_Resistencias_SubRaca_SubRacaId",
+                        column: x => x.SubRacaId,
+                        principalTable: "SubRaca",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SubRacaAlinhamento",
+                columns: table => new
+                {
+                    SubRacaId = table.Column<string>(type: "TEXT", nullable: false),
+                    AlinhamentoId = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SubRacaAlinhamento", x => new { x.SubRacaId, x.AlinhamentoId });
+                    table.ForeignKey(
+                        name: "FK_SubRacaAlinhamento_Alinhamento_AlinhamentoId",
+                        column: x => x.AlinhamentoId,
+                        principalTable: "Alinhamento",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SubRacaAlinhamento_SubRaca_SubRacaId",
                         column: x => x.SubRacaId,
                         principalTable: "SubRaca",
                         principalColumn: "Id",
@@ -1718,6 +1741,11 @@ namespace DnDBot.Application.Migrations
                 column: "SubRacaId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_SubRacaAlinhamento_AlinhamentoId",
+                table: "SubRacaAlinhamento",
+                column: "AlinhamentoId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Vinculo_AntecedenteId",
                 table: "Vinculo",
                 column: "AntecedenteId");
@@ -1850,13 +1878,13 @@ namespace DnDBot.Application.Migrations
                 name: "SubRaca_Resistencias");
 
             migrationBuilder.DropTable(
+                name: "SubRacaAlinhamento");
+
+            migrationBuilder.DropTable(
                 name: "SubRacaTag");
 
             migrationBuilder.DropTable(
                 name: "Vinculo");
-
-            migrationBuilder.DropTable(
-                name: "Alinhamento");
 
             migrationBuilder.DropTable(
                 name: "Subclasse");
@@ -1890,6 +1918,9 @@ namespace DnDBot.Application.Migrations
 
             migrationBuilder.DropTable(
                 name: "Resistencia");
+
+            migrationBuilder.DropTable(
+                name: "Alinhamento");
 
             migrationBuilder.DropTable(
                 name: "SubRaca");

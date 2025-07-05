@@ -1,4 +1,5 @@
-﻿using DnDBot.Application.Models.Ficha.Auxiliares;
+﻿using DnDBot.Application.Models.Enums;
+using DnDBot.Application.Models.Ficha.Auxiliares;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -174,10 +175,14 @@ namespace DnDBot.Application.Models.Ficha
         /// <returns>Soma dos valores dos bônus.</returns>
         public int ObterBonusTotal(string atributo)
         {
+            if (!Enum.TryParse<Atributo>(atributo, true, out var atributoEnum))
+                return 0;
+
             return BonusAtributos
-                .Where(b => b.Atributo.Equals(atributo, StringComparison.OrdinalIgnoreCase))
+                .Where(b => b.Atributo == atributoEnum)
                 .Sum(b => b.Valor);
         }
+
 
         /// <summary>
         /// Obtém o valor total do atributo, somando o valor base com os bônus.
@@ -225,7 +230,7 @@ namespace DnDBot.Application.Models.Ficha
         /// <summary>
         /// Nome do atributo que recebe o bônus (ex: "Forca").
         /// </summary>
-        public string Atributo { get; set; } = string.Empty;
+        public Atributo Atributo { get; set; }
 
         /// <summary>
         /// Valor do bônus aplicado.

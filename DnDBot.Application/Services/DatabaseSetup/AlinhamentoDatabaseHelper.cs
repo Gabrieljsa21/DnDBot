@@ -50,7 +50,17 @@ public static class AlinhamentoDatabaseHelper
                 )";
 
             var cmd = SqliteHelper.CriarInsertCommand(connection, transaction, sql, parametros);
-            await cmd.ExecuteNonQueryAsync();
+
+            try
+            {
+                await cmd.ExecuteNonQueryAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro inserindo alinhamento {alinhamento.Id}: {ex.Message}");
+                throw;
+            }
+
 
             await SqliteHelper.InserirTagsAsync(connection, transaction, "AlinhamentoTag", "AlinhamentoId", alinhamento.Id, alinhamento.Tags);
         }

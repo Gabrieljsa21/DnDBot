@@ -58,7 +58,7 @@ namespace DnDBot.Bot.Commands.Ficha
                     Valor = b.Valor,
                     Origem = "Sub-Raça"
                 }).ToList();
-            ficha.Tamanho = subraca.Tamanho;
+            ficha.Tamanho = subraca.Tamanho.ToString();
             ficha.Deslocamento = subraca.Deslocamento;
             ficha.Idiomas = subraca.Idiomas;
             ficha.Proficiencias = subraca.Proficiencias;
@@ -77,8 +77,8 @@ namespace DnDBot.Bot.Commands.Ficha
             // Aplica os bônus raciais da sub-raça
             foreach (var bonus in ficha.BonusAtributos)
             {
-                if (dist.BonusRacial.ContainsKey(bonus.Atributo))
-                    dist.BonusRacial[bonus.Atributo] = bonus.Valor;
+                if (dist.BonusRacial.ContainsKey(bonus.Atributo.ToString()))
+                    dist.BonusRacial[bonus.Atributo.ToString()] = bonus.Valor;
             }
 
             Console.WriteLine("[LOG] Distribuição de atributos inicializada:");

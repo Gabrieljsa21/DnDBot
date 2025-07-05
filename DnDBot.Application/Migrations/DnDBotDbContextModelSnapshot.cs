@@ -768,6 +768,21 @@ namespace DnDBot.Application.Migrations
                     b.ToTable("RacaTag");
                 });
 
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.SubRacaAlinhamento", b =>
+                {
+                    b.Property<string>("SubRacaId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("AlinhamentoId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("SubRacaId", "AlinhamentoId");
+
+                    b.HasIndex("AlinhamentoId");
+
+                    b.ToTable("SubRacaAlinhamento");
+                });
+
             modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.SubRacaTag", b =>
                 {
                     b.Property<string>("SubRacaId")
@@ -786,9 +801,8 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Atributo")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Atributo")
+                        .HasColumnType("INTEGER");
 
                     b.Property<Guid?>("FichaPersonagemId")
                         .HasColumnType("TEXT");
@@ -1651,11 +1665,8 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("RacaId")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Tamanho")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("TendenciasComuns")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Tamanho")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Versao")
                         .HasColumnType("TEXT");
@@ -2206,6 +2217,25 @@ namespace DnDBot.Application.Migrations
                     b.Navigation("Raca");
                 });
 
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.SubRacaAlinhamento", b =>
+                {
+                    b.HasOne("DnDBot.Application.Models.Ficha.Alinhamento", "Alinhamento")
+                        .WithMany()
+                        .HasForeignKey("AlinhamentoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DnDBot.Application.Models.Ficha.SubRaca", "SubRaca")
+                        .WithMany("AlinhamentosComuns")
+                        .HasForeignKey("SubRacaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Alinhamento");
+
+                    b.Navigation("SubRaca");
+                });
+
             modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.SubRacaTag", b =>
                 {
                     b.HasOne("DnDBot.Application.Models.Ficha.SubRaca", "SubRaca")
@@ -2731,6 +2761,8 @@ namespace DnDBot.Application.Migrations
 
             modelBuilder.Entity("DnDBot.Application.Models.Ficha.SubRaca", b =>
                 {
+                    b.Navigation("AlinhamentosComuns");
+
                     b.Navigation("BonusAtributos");
 
                     b.Navigation("SubRacaTags");

@@ -17,4 +17,13 @@ namespace DnDBot.Application.Models.Ficha.Auxiliares
 
         public SubRaca SubRaca { get; set; }
     }
+
+    public class SubRacaAlinhamento
+    {
+        public string SubRacaId { get; set; }
+        public SubRaca SubRaca { get; set; }
+
+        public string AlinhamentoId { get; set; }
+        public Alinhamento Alinhamento { get; set; }
+    }
 }

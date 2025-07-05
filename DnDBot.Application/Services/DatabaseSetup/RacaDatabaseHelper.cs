@@ -21,13 +21,22 @@ public static class RacaDatabaseHelper
         {
             "Id TEXT PRIMARY KEY",
             "RacaId TEXT NOT NULL",
-            "TendenciasComuns TEXT",
+            "AlinhamentosComuns TEXT",
             "Tamanho TEXT",
             "Deslocamento INTEGER",
             "VisaoNoEscuro INTEGER",
             SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim().TrimEnd(','),
             "FOREIGN KEY (RacaId) REFERENCES Raca(Id) ON DELETE CASCADE"
         });
+
+        var definicaoSubRacaAlinhamento = @"
+            SubRacaId TEXT NOT NULL,
+            AlinhamentoId TEXT NOT NULL,
+            PRIMARY KEY (SubRacaId, AlinhamentoId),
+            FOREIGN KEY (SubRacaId) REFERENCES SubRaca(Id) ON DELETE CASCADE,
+            FOREIGN KEY (AlinhamentoId) REFERENCES Alinhamento(Id) ON DELETE CASCADE
+        ";
+
 
         var definicoes = new Dictionary<string, string>
         {
@@ -37,7 +46,8 @@ public static class RacaDatabaseHelper
                 RacaId TEXT NOT NULL,
                 Tag TEXT NOT NULL,
                 PRIMARY KEY (RacaId, Tag),
-                FOREIGN KEY (RacaId) REFERENCES Raca(Id) ON DELETE CASCADE"
+                FOREIGN KEY (RacaId) REFERENCES Raca(Id) ON DELETE CASCADE",
+            ["SubRacaAlinhamento"] = definicaoSubRacaAlinhamento
         };
 
         foreach (var tabela in definicoes)
@@ -111,17 +121,36 @@ public static class RacaDatabaseHelper
             var parametros = SqliteHelper.GerarParametrosEntidadeBase(sub);
             parametros["id"] = sub.Id;
             parametros["racaId"] = racaId;
-            parametros["tend"] = sub.TendenciasComuns ?? "";
-            parametros["tam"] = sub.Tamanho ?? "";
+            parametros["tend"] = null;
+            parametros["tam"] = sub.Tamanho;
             parametros["desloc"] = sub.Deslocamento;
             parametros["visao"] = sub.VisaoNoEscuro;
 
+            foreach (var alinhamento in sub.AlinhamentosComuns)
+            {
+                var alinhamentoId = alinhamento.AlinhamentoId ?? alinhamento.Alinhamento?.Id;
+
+                if (string.IsNullOrWhiteSpace(alinhamentoId))
+                    throw new InvalidOperationException($"AlinhamentoId está nulo em SubRaca '{sub.Id}'.");
+
+                Console.WriteLine($"➡ Inserindo SubRacaAlinhamento: SubRacaId={sub.Id}, AlinhamentoId={alinhamentoId}");
+
+                var sqlAlinh = @"INSERT INTO SubRacaAlinhamento (SubRacaId, AlinhamentoId) VALUES ($subracaId, $alinhamentoId)";
+                var cmdAlinh = SqliteHelper.CriarInsertCommand(conn, tx, sqlAlinh, new Dictionary<string, object>
+                {
+                    ["subracaId"] = sub.Id,
+                    ["alinhamentoId"] = alinhamentoId
+                });
+                await cmdAlinh.ExecuteNonQueryAsync();
+            }
+
+
             var sql = $@"
         INSERT INTO SubRaca (
-            Id, RacaId, TendenciasComuns, Tamanho, Deslocamento, VisaoNoEscuro,
+            Id, RacaId, Tamanho, Deslocamento, VisaoNoEscuro,
             {SqliteEntidadeBaseHelper.CamposInsert.Replace("Id,", "")}
         ) VALUES (
-            $id, $racaId, $tend, $tam, $desloc, $visao, 
+            $id, $racaId, $tam, $desloc, $visao, 
             {SqliteEntidadeBaseHelper.ValoresInsert.Replace("$id,", "")}
         )";
 

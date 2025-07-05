@@ -1,4 +1,5 @@
-﻿using DnDBot.Application.Models.Ficha.Auxiliares;
+﻿using DnDBot.Application.Models.Enums;
+using DnDBot.Application.Models.Ficha.Auxiliares;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -19,12 +20,12 @@ namespace DnDBot.Application.Models.Ficha
         /// <summary>
         /// Tendências de alinhamento mais comuns entre os membros da sub-raça.
         /// </summary>
-        public string TendenciasComuns { get; set; }
+        public List<SubRacaAlinhamento> AlinhamentosComuns { get; set; } = new();
 
         /// <summary>
         /// Tamanho da criatura (geralmente Médio ou Pequeno).
         /// </summary>
-        public string Tamanho { get; set; }
+        public TamanhoCriatura Tamanho { get; set; }
 
         /// <summary>
         /// Deslocamento base em metros (ex: 9 metros).
