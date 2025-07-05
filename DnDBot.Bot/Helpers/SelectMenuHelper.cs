@@ -1,5 +1,6 @@
 ﻿using Discord;
 using Discord.Interactions;
+using DnDBot.Application.Models.AntecedenteModels;
 using DnDBot.Application.Models.Ficha;
 using DnDBot.Application.Services;
 using System;

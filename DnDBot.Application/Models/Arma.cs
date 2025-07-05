@@ -1,5 +1,5 @@
 ﻿using DnDBot.Application.Models.Enums;
-using DnDBot.Application.Models.Ficha.ArmaAuxiliares;
+using DnDBot.Application.Models.Ficha.Auxiliares;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 

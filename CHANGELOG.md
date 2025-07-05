@@ -4,6 +4,18 @@ Todas as alterações significativas neste projeto serão documentadas neste arquiv
 
 O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e o versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.2.3] - 2025-07-04
+
+### Adicionado
+- Helpers estáticos para criação e povoamento das tabelas SQLite de `Raca`, `Alinhamento` e `Pericia`.
+- Métodos para criação das tabelas com definição completa de colunas, chaves primárias e estrangeiras.
+- Funções para popular dados nas tabelas a partir de arquivos JSON (`racas.json`, `pericias.json`), incluindo tratamento de listas e enums.
+- Uso consistente de comandos SQLite parametrizados para inserções seguras.
+- Tratamento especial para campos herdados da `EntidadeBase` nas inserções.
+- Inclusão de métodos auxiliares para inserção de dados relacionados, como sub-raças, tags e dificuldades de perícias.
+- Comentários e documentação para facilitar manutenção e futuras implementações.
+
+
 ## [1.2.2] - 2025-07-03
 
 ### Adicionado

@@ -1,4 +1,4 @@
-﻿namespace DnDBot.Application.Models
+﻿namespace DnDBot.Application.Models.Ficha
 {
     /// <summary>
     /// Representa um idioma que pode ser conhecido ou falado por personagens no jogo.

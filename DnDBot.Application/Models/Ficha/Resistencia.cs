@@ -1,4 +1,4 @@
-﻿namespace DnDBot.Application.Models
+﻿namespace DnDBot.Application.Models.Ficha
 {
     /// <summary>
     /// Representa uma resistência a um tipo de dano, reduzindo ou anulando seus efeitos em um personagem.

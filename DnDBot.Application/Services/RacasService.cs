@@ -38,6 +38,7 @@ namespace DnDBot.Application.Services
         {
             return await _db.Raca
                 .Include(r => r.SubRaca)
+                .Include(r => r.RacaTags)
                 .ToListAsync();
         }
 
@@ -50,6 +51,7 @@ namespace DnDBot.Application.Services
         {
             return await _db.Raca
                 .Include(r => r.SubRaca)
+                .Include(r => r.RacaTags)
                 .FirstOrDefaultAsync(r => r.Id.ToLower() == id.ToLower());
         }
 
@@ -62,6 +64,7 @@ namespace DnDBot.Application.Services
         {
             return await _db.Raca
                 .Include(r => r.SubRaca)
+                .Include(r => r.RacaTags)
                 .FirstOrDefaultAsync(r => r.Nome.ToLower() == nome.ToLower());
         }
 

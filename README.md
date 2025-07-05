@@ -211,4 +211,17 @@ Para aplicar as migrações e atualizar o banco de dados:
 dotnet ef database update
 Caso execute os comandos de uma pasta diferente, especifique o caminho do projeto com a flag --project:
 dotnet ef migrations add Inicial_00 --project DnDBot.Application --startup-project DnDBot.Bot
-dotnet ef database update --project DnDBot.Application --startup-project D
+dotnet ef database update --project DnDBot.Application --startup-project DnDBot.Bot
+
+Passo a passo para gerar um token novo para seu bot no Discord:
+Acesse o Discord Developer Portal:
+https://discord.com/developers/applications
+
+Selecione sua aplicação/bot na lista.
+
+No menu lateral, clique em “Bot”.
+
+Na seção “Token”, clique em “Reset Token” ou “Regenerate”.
+Isso vai invalidar o token antigo e gerar um novo.
+
+Copie o novo token gerado.

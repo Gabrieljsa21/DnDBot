@@ -1,5 +1,4 @@
-﻿using DnDBot.Application.Models;
-using DnDBot.Application.Models.Ficha;
+﻿using DnDBot.Application.Models.Ficha;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Collections.Generic;

@@ -1,5 +1,4 @@
 ﻿using DnDBot.Application.Models.Enums;
-using DnDBot.Application.Models.Ficha.ClasseAuxiliares;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;

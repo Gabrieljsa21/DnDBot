@@ -1,4 +1,4 @@
-﻿namespace DnDBot.Application.Models
+﻿namespace DnDBot.Application.Models.Ficha
 {
     /// <summary>
     /// Representa uma proficiência que um personagem pode ter, como em armas, armaduras,

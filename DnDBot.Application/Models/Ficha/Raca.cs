@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using DnDBot.Application.Models.Ficha.Auxiliares;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace DnDBot.Application.Models.Ficha
 {
@@ -14,5 +17,20 @@ namespace DnDBot.Application.Models.Ficha
         /// </summary>
         public List<SubRaca> SubRaca { get; set; } = new();
 
+
+        /// <summary>
+        /// Relacionamento com as tags armazenadas na tabela Raca_Tag.
+        /// </summary>
+        public List<RacaTag> RacaTags { get; set; } = new();
+
+        /// <summary>
+        /// Tags derivadas da lista de RacaTags, útil para facilitar acesso.
+        /// </summary>
+        [NotMapped]
+        public List<string> Tags
+        {
+            get => RacaTags?.Select(rt => rt.Tag).ToList() ?? new();
+            set => RacaTags = value?.Select(tag => new RacaTag { Tag = tag, RacaId = this.Id }).ToList() ?? new();
+        }
     }
 }

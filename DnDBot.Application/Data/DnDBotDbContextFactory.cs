@@ -21,7 +21,7 @@ namespace DnDBot.Application.Data
 
             // Configura a string de conexão para banco SQLite.
             // Atenção: ajuste o caminho do arquivo para refletir o local correto do banco.
-            optionsBuilder.UseSqlite("Data Source=D:\\source\\repos\\DnDBot\\dndbot.db");
+            optionsBuilder.UseSqlite("Data Source=E:\\source\\repos\\DnDBot\\dndbot.db");
 
             // Retorna o contexto criado com as opções configuradas.
             return new DnDBotDbContext(optionsBuilder.Options);

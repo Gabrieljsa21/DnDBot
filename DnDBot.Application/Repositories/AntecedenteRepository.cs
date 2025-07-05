@@ -1,4 +1,4 @@
-﻿using DnDBot.Application.Models.Antecedente;
+﻿using DnDBot.Application.Models.AntecedenteModels;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;

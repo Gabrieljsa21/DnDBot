@@ -1,5 +1,4 @@
 ﻿using DnDBot.Application.Models.Ficha;
-using DnDBot.Application.Models.Ficha.ClasseAuxiliares;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;

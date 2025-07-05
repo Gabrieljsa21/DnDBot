@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text.Json.Serialization;
+using DnDBot.Application.Models;
+using DnDBot.Application.Models.AntecedenteModels;
 
 namespace DnDBot.Application.Models
 {
@@ -48,6 +50,8 @@ namespace DnDBot.Application.Models
         /// Bônus adicional, podendo vir de talentos, magias ou itens.
         /// </summary>
         public int BonusAdicional { get; set; } = 0;
+
+        public virtual ICollection<Antecedente> Antecedentes { get; set; } = new List<Antecedente>();
 
         /// <summary>
         /// Coleção de classes que podem estar relacionadas a essa perícia.

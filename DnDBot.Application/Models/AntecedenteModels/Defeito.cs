@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DnDBot.Application.Models.Antecedente.Antecedente
+namespace DnDBot.Application.Models.AntecedenteModels
 {
     /// <summary>
     /// Representa um defeito (flaw) associado a um antecedente de personagem.

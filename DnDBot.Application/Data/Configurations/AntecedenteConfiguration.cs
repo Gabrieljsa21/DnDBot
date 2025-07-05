@@ -1,7 +1,7 @@
-﻿using DnDBot.Application.Models.Antecedente;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using DnDBot.Application.Models.Enums;
+using DnDBot.Application.Models.AntecedenteModels;
 
 namespace DnDBot.Application.Data.Configurations
 {

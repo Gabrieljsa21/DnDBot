@@ -1,63 +1,60 @@
 ﻿using DnDBot.Application.Data;
-using DnDBot.Application.Models.Ficha;
+using DnDBot.Application.Helpers;
+using DnDBot.Application.Models;
 using Microsoft.Data.Sqlite;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using static DnDBot.Application.Helpers.SqliteHelper;
 
-namespace DnDBot.Application.Services.DatabaseSetup
+public static class AlinhamentoDatabaseHelper
 {
-    /// <summary>
-    /// Helper estático para criação e povoamento da tabela Alinhamento no banco SQLite.
-    /// </summary>
-    public static class AlinhamentoDatabaseHelper
+    private const string CaminhoJson = "Data/alinhamentos.json";
+
+    public static async Task CriarTabelaAsync(SqliteCommand cmd)
     {
-        /// <summary>
-        /// Cria a tabela Alinhamento no banco de dados se ela não existir.
-        /// </summary>
-        /// <param name="cmd">Comando SQLite já associado a uma conexão aberta.</param>
-        /// <returns>Tarefa assíncrona representando a operação.</returns>
-        public static async Task CriarTabelaAsync(SqliteCommand cmd)
+        var definicoes = new Dictionary<string, string>
         {
-            cmd.CommandText = @"
-                CREATE TABLE IF NOT EXISTS Alinhamento (
-                    Id TEXT PRIMARY KEY,
-                    Nome TEXT NOT NULL,
-                    Descricao TEXT NOT NULL
-                );";
+            ["Alinhamento"] = SqliteEntidadeBaseHelper.Campos,
+            ["AlinhamentoTag"] = @"
+                AlinhamentoId TEXT NOT NULL,
+                Tag TEXT NOT NULL,
+                PRIMARY KEY (AlinhamentoId, Tag),
+                FOREIGN KEY (AlinhamentoId) REFERENCES Alinhamento(Id) ON DELETE CASCADE"
+        };
+
+        foreach (var tabela in definicoes)
+            await SqliteHelper.CriarTabelaAsync(cmd, tabela.Key, tabela.Value);
+    }
+
+    public static async Task PopularAsync(SqliteConnection connection, SqliteTransaction transaction)
+    {
+        if (AlinhamentosData.Alinhamentos is not { Count: > 0 })
+        {
+            Console.WriteLine("❌ Nenhum alinhamento encontrado nos dados.");
+            return;
+        }
+
+        foreach (var alinhamento in AlinhamentosData.Alinhamentos)
+        {
+            if (await SqliteHelper.RegistroExisteAsync(connection, transaction, "Alinhamento", alinhamento.Id))
+                continue;
+
+            var parametros = SqliteHelper.GerarParametrosEntidadeBase(alinhamento);
+
+            var sql = $@"
+                INSERT INTO Alinhamento (
+                    {SqliteEntidadeBaseHelper.CamposInsert}
+                ) VALUES (
+                    {SqliteEntidadeBaseHelper.ValoresInsert}
+                )";
+
+            var cmd = SqliteHelper.CriarInsertCommand(connection, transaction, sql, parametros);
             await cmd.ExecuteNonQueryAsync();
+
+            await SqliteHelper.InserirTagsAsync(connection, transaction, "AlinhamentoTag", "AlinhamentoId", alinhamento.Id, alinhamento.Tags);
         }
 
-        /// <summary>
-        /// Insere os dados iniciais de alinhamentos na tabela, caso ainda não existam.
-        /// </summary>
-        /// <param name="connection">Conexão SQLite aberta.</param>
-        /// <param name="transaction">Transação SQLite para garantir atomicidade.</param>
-        /// <returns>Tarefa assíncrona representando a operação.</returns>
-        public static async Task PopularAsync(SqliteConnection connection, SqliteTransaction transaction)
-        {
-            foreach (var alinhamento in AlinhamentosData.Alinhamentos)
-            {
-                var existsCmd = connection.CreateCommand();
-                existsCmd.Transaction = transaction;
-                existsCmd.CommandText = "SELECT COUNT(*) FROM Alinhamento WHERE Id = $id";
-                existsCmd.Parameters.AddWithValue("$id", alinhamento.Id);
-
-                var count = Convert.ToInt32(await existsCmd.ExecuteScalarAsync());
-
-                if (count == 0)
-                {
-                    var insertCmd = connection.CreateCommand();
-                    insertCmd.Transaction = transaction;
-                    insertCmd.CommandText = @"
-                        INSERT INTO Alinhamento (Id, Nome, Descricao)
-                        VALUES ($id, $nome, $descricao)";
-                    insertCmd.Parameters.AddWithValue("$id", alinhamento.Id);
-                    insertCmd.Parameters.AddWithValue("$nome", alinhamento.Nome);
-                    insertCmd.Parameters.AddWithValue("$descricao", alinhamento.Descricao);
-
-                    await insertCmd.ExecuteNonQueryAsync();
-                }
-            }
-        }
+        Console.WriteLine("✅ Alinhamentos populados com sucesso.");
     }
 }

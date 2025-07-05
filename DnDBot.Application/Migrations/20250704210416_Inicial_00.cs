@@ -17,7 +17,17 @@ namespace DnDBot.Application.Migrations
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true)
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -29,14 +39,20 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
                     IdiomasAdicionais = table.Column<int>(type: "INTEGER", nullable: false),
                     Requisitos = table.Column<string>(type: "TEXT", nullable: true),
+                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
                     Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
-                    Versao = table.Column<string>(type: "TEXT", nullable: true)
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -48,7 +64,6 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Tipo = table.Column<int>(type: "INTEGER", nullable: false),
                     Categoria = table.Column<int>(type: "INTEGER", nullable: false),
                     DadoDano = table.Column<string>(type: "TEXT", nullable: true),
@@ -64,8 +79,6 @@ namespace DnDBot.Application.Migrations
                     PodeSerArremessada = table.Column<bool>(type: "INTEGER", nullable: false),
                     AlcanceArremesso = table.Column<int>(type: "INTEGER", nullable: true),
                     Requisitos = table.Column<string>(type: "TEXT", nullable: true),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     PropriedadesEspeciais = table.Column<string>(type: "TEXT", nullable: true),
                     BonusMagico = table.Column<int>(type: "INTEGER", nullable: false),
                     BonusContraTipos = table.Column<string>(type: "TEXT", nullable: true),
@@ -79,12 +92,23 @@ namespace DnDBot.Application.Migrations
                     MunicaoPorAtaque = table.Column<int>(type: "INTEGER", nullable: false),
                     RequerRecarga = table.Column<bool>(type: "INTEGER", nullable: false),
                     TempoRecargaTurnos = table.Column<int>(type: "INTEGER", nullable: false),
-                    Icone = table.Column<string>(type: "TEXT", nullable: true),
                     AtaquesEspeciais = table.Column<string>(type: "TEXT", nullable: true),
                     CustoReparo = table.Column<decimal>(type: "TEXT", nullable: false),
                     EMagica = table.Column<bool>(type: "INTEGER", nullable: false),
                     Raridade = table.Column<string>(type: "TEXT", nullable: true),
-                    Fabricante = table.Column<string>(type: "TEXT", nullable: true)
+                    Fabricante = table.Column<string>(type: "TEXT", nullable: true),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -96,7 +120,6 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Tipo = table.Column<int>(type: "INTEGER", nullable: false),
                     ClasseArmadura = table.Column<int>(type: "INTEGER", nullable: false),
                     PermiteFurtividade = table.Column<bool>(type: "INTEGER", nullable: false),
@@ -112,10 +135,20 @@ namespace DnDBot.Application.Migrations
                     Raridade = table.Column<string>(type: "TEXT", nullable: true),
                     Fabricante = table.Column<string>(type: "TEXT", nullable: true),
                     Material = table.Column<string>(type: "TEXT", nullable: true),
-                    DescricaoDetalhada = table.Column<string>(type: "TEXT", nullable: true),
                     ResistenciasDano = table.Column<string>(type: "TEXT", nullable: true),
                     ImunidadesDano = table.Column<string>(type: "TEXT", nullable: true),
-                    Icone = table.Column<string>(type: "TEXT", nullable: true)
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -127,19 +160,25 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
                     DadoVida = table.Column<string>(type: "TEXT", nullable: true),
                     IdSalvaguardas = table.Column<string>(type: "TEXT", nullable: true),
-                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
-                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
                     PapelTatico = table.Column<string>(type: "TEXT", nullable: true),
                     IdHabilidadeConjuracao = table.Column<string>(type: "TEXT", nullable: true),
                     UsaMagiaPreparada = table.Column<bool>(type: "INTEGER", nullable: false),
                     SubclassePorNivel = table.Column<int>(type: "INTEGER", nullable: true),
                     IdItensIniciais = table.Column<string>(type: "TEXT", nullable: true),
-                    Notas = table.Column<string>(type: "TEXT", nullable: true)
+                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -207,6 +246,36 @@ namespace DnDBot.Application.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Pericia",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    AtributoBase = table.Column<string>(type: "TEXT", nullable: false),
+                    AtributosAlternativos = table.Column<string>(type: "TEXT", nullable: true),
+                    Tipo = table.Column<string>(type: "TEXT", nullable: false),
+                    EhProficiente = table.Column<bool>(type: "INTEGER", nullable: false),
+                    TemEspecializacao = table.Column<bool>(type: "INTEGER", nullable: false),
+                    BonusBase = table.Column<int>(type: "INTEGER", nullable: false),
+                    BonusAdicional = table.Column<int>(type: "INTEGER", nullable: false),
+                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Descricao = table.Column<string>(type: "TEXT", maxLength: 2000, nullable: true),
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", maxLength: 20, nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", maxLength: 500, nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", maxLength: 500, nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Pericia", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Raca",
                 columns: table => new
                 {
@@ -214,8 +283,14 @@ namespace DnDBot.Application.Migrations
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
                     IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true)
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -248,10 +323,20 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
+                    IdAntecedente = table.Column<string>(type: "TEXT", nullable: true),
+                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    IdAntecedente = table.Column<string>(type: "TEXT", nullable: true),
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true)
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -287,15 +372,23 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Nome = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
-                    Descricao = table.Column<string>(type: "TEXT", maxLength: 1000, nullable: true),
                     Peso = table.Column<double>(type: "REAL", nullable: false),
                     Custo = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     EMagica = table.Column<bool>(type: "INTEGER", nullable: false),
                     RequerProficiencia = table.Column<bool>(type: "INTEGER", nullable: false),
+                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
+                    Nome = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
+                    Descricao = table.Column<string>(type: "TEXT", maxLength: 1000, nullable: true),
                     Tags = table.Column<string>(type: "TEXT", nullable: true),
-                    Icone = table.Column<string>(type: "TEXT", maxLength: 250, nullable: true),
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true)
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -312,10 +405,20 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
+                    IdAntecedente = table.Column<string>(type: "TEXT", nullable: true),
+                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    IdAntecedente = table.Column<string>(type: "TEXT", nullable: true),
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true)
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -328,42 +431,24 @@ namespace DnDBot.Application.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Pericia",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    AtributoBase = table.Column<string>(type: "TEXT", nullable: false),
-                    AtributosAlternativos = table.Column<string>(type: "TEXT", nullable: true),
-                    Tipo = table.Column<string>(type: "TEXT", nullable: false),
-                    Descricao = table.Column<string>(type: "TEXT", maxLength: 2000, nullable: true),
-                    EhProficiente = table.Column<bool>(type: "INTEGER", nullable: false),
-                    TemEspecializacao = table.Column<bool>(type: "INTEGER", nullable: false),
-                    BonusBase = table.Column<int>(type: "INTEGER", nullable: false),
-                    BonusAdicional = table.Column<int>(type: "INTEGER", nullable: false),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
-                    Icone = table.Column<string>(type: "TEXT", maxLength: 255, nullable: true),
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Pericia", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Pericia_Antecedente_AntecedenteId",
-                        column: x => x.AntecedenteId,
-                        principalTable: "Antecedente",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Vinculo",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
+                    IdAntecedente = table.Column<string>(type: "TEXT", nullable: true),
+                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    IdAntecedente = table.Column<string>(type: "TEXT", nullable: true),
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true)
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -570,11 +655,19 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
+                    ClasseId = table.Column<string>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
                     ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    ClasseId = table.Column<string>(type: "TEXT", nullable: true)
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -591,11 +684,20 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
+                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
+                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
-                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true)
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -637,21 +739,28 @@ namespace DnDBot.Application.Migrations
                 name: "HistoricoFinanceiroItem",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
                     FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: false),
                     Data = table.Column<DateTime>(type: "TEXT", nullable: false),
                     Tipo = table.Column<string>(type: "TEXT", nullable: true),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
                     Origem = table.Column<string>(type: "TEXT", nullable: true),
                     Categoria = table.Column<string>(type: "TEXT", nullable: true),
                     FoiAutomatico = table.Column<bool>(type: "INTEGER", nullable: false),
-                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
                     ItemRelacionadoId = table.Column<Guid>(type: "TEXT", nullable: true),
                     PersonagemDestinoId = table.Column<Guid>(type: "TEXT", nullable: true),
-                    FichaPersonagemId1 = table.Column<Guid>(type: "TEXT", nullable: true)
+                    FichaPersonagemId1 = table.Column<Guid>(type: "TEXT", nullable: true),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -674,10 +783,20 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
+                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
+                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
-                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true)
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -699,7 +818,6 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Nivel = table.Column<string>(type: "TEXT", nullable: true),
                     Escola = table.Column<string>(type: "TEXT", nullable: true),
                     TempoConjuracao = table.Column<string>(type: "TEXT", nullable: true),
@@ -722,10 +840,7 @@ namespace DnDBot.Application.Migrations
                     CondicoesAplicadas = table.Column<string>(type: "TEXT", nullable: true),
                     CondicoesRemovidas = table.Column<string>(type: "TEXT", nullable: true),
                     ClassesPermitidas = table.Column<string>(type: "TEXT", nullable: true),
-                    Fontes = table.Column<string>(type: "TEXT", nullable: true),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
                     Recarga = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     TipoUso = table.Column<string>(type: "TEXT", nullable: true),
                     RequerLinhaDeVisao = table.Column<bool>(type: "INTEGER", nullable: false),
                     RequerLinhaReta = table.Column<bool>(type: "INTEGER", nullable: false),
@@ -734,11 +849,20 @@ namespace DnDBot.Application.Migrations
                     FocoNecessario = table.Column<string>(type: "TEXT", nullable: true),
                     LimiteUso = table.Column<string>(type: "TEXT", nullable: true),
                     EfeitoPorTurno = table.Column<string>(type: "TEXT", nullable: true),
-                    FonteLivro = table.Column<string>(type: "TEXT", nullable: true),
-                    PaginaLivro = table.Column<int>(type: "INTEGER", nullable: true),
-                    NotasInternas = table.Column<string>(type: "TEXT", nullable: true),
                     NumeroDeUsos = table.Column<int>(type: "INTEGER", nullable: false),
-                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true)
+                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -755,10 +879,20 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Tipo = table.Column<string>(type: "TEXT", nullable: true),
+                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true)
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -775,10 +909,20 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
                     TipoDano = table.Column<string>(type: "TEXT", nullable: true),
+                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true)
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -791,29 +935,27 @@ namespace DnDBot.Application.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SubRaca",
+                name: "AntecedentePericia",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    TendenciasComuns = table.Column<string>(type: "TEXT", nullable: true),
-                    Tamanho = table.Column<string>(type: "TEXT", nullable: true),
-                    Deslocamento = table.Column<int>(type: "INTEGER", nullable: false),
-                    VisaoNoEscuro = table.Column<int>(type: "INTEGER", nullable: false),
-                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    IdRaca = table.Column<string>(type: "TEXT", nullable: true),
-                    RacaId = table.Column<string>(type: "TEXT", nullable: true)
+                    AntecedentesId = table.Column<string>(type: "TEXT", nullable: false),
+                    PericiasId = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SubRaca", x => x.Id);
+                    table.PrimaryKey("PK_AntecedentePericia", x => new { x.AntecedentesId, x.PericiasId });
                     table.ForeignKey(
-                        name: "FK_SubRaca_Raca_RacaId",
-                        column: x => x.RacaId,
-                        principalTable: "Raca",
-                        principalColumn: "Id");
+                        name: "FK_AntecedentePericia_Antecedente_AntecedentesId",
+                        column: x => x.AntecedentesId,
+                        principalTable: "Antecedente",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AntecedentePericia_Pericia_PericiasId",
+                        column: x => x.PericiasId,
+                        principalTable: "Pericia",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -892,6 +1034,58 @@ namespace DnDBot.Application.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "RacaTag",
+                columns: table => new
+                {
+                    RacaId = table.Column<string>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RacaTag", x => new { x.RacaId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_RacaTag_Raca_RacaId",
+                        column: x => x.RacaId,
+                        principalTable: "Raca",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SubRaca",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    TendenciasComuns = table.Column<string>(type: "TEXT", nullable: true),
+                    Tamanho = table.Column<string>(type: "TEXT", nullable: true),
+                    Deslocamento = table.Column<int>(type: "INTEGER", nullable: false),
+                    VisaoNoEscuro = table.Column<int>(type: "INTEGER", nullable: false),
+                    IdRaca = table.Column<string>(type: "TEXT", nullable: true),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SubRaca", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SubRaca_Raca_IdRaca",
+                        column: x => x.IdRaca,
+                        principalTable: "Raca",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "FerramentaPericia",
                 columns: table => new
                 {
@@ -960,14 +1154,14 @@ namespace DnDBot.Application.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Tipo = table.Column<string>(type: "TEXT", nullable: false),
                     Quantidade = table.Column<int>(type: "INTEGER", nullable: false),
-                    HistoricoFinanceiroItemId_Saldo = table.Column<int>(type: "INTEGER", nullable: false)
+                    BolsaDeMoedasHistoricoFinanceiroItemId = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_HistoricoFinanceiroItem_SaldoApos_Moedas", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_HistoricoFinanceiroItem_SaldoApos_Moedas_HistoricoFinanceiroItem_HistoricoFinanceiroItemId_Saldo",
-                        column: x => x.HistoricoFinanceiroItemId_Saldo,
+                        name: "FK_HistoricoFinanceiroItem_SaldoApos_Moedas_HistoricoFinanceiroItem_BolsaDeMoedasHistoricoFinanceiroItemId",
+                        column: x => x.BolsaDeMoedasHistoricoFinanceiroItemId,
                         principalTable: "HistoricoFinanceiroItem",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -981,14 +1175,14 @@ namespace DnDBot.Application.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Tipo = table.Column<string>(type: "TEXT", nullable: false),
                     Quantidade = table.Column<int>(type: "INTEGER", nullable: false),
-                    HistoricoFinanceiroItemId = table.Column<int>(type: "INTEGER", nullable: false)
+                    BolsaDeMoedasHistoricoFinanceiroItemId = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_HistoricoFinanceiroItem_Valor_Moedas", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_HistoricoFinanceiroItem_Valor_Moedas_HistoricoFinanceiroItem_HistoricoFinanceiroItemId",
-                        column: x => x.HistoricoFinanceiroItemId,
+                        name: "FK_HistoricoFinanceiroItem_Valor_Moedas_HistoricoFinanceiroItem_BolsaDeMoedasHistoricoFinanceiroItemId",
+                        column: x => x.BolsaDeMoedasHistoricoFinanceiroItemId,
                         principalTable: "HistoricoFinanceiroItem",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -1172,6 +1366,11 @@ namespace DnDBot.Application.Migrations
                 column: "AntecedenteId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_AntecedentePericia_PericiasId",
+                table: "AntecedentePericia",
+                column: "PericiasId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ArmaRequisitoAtributo_ArmaId",
                 table: "ArmaRequisitoAtributo",
                 column: "ArmaId");
@@ -1292,14 +1491,14 @@ namespace DnDBot.Application.Migrations
                 column: "FichaPersonagemId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_HistoricoFinanceiroItem_SaldoApos_Moedas_HistoricoFinanceiroItemId_Saldo",
+                name: "IX_HistoricoFinanceiroItem_SaldoApos_Moedas_BolsaDeMoedasHistoricoFinanceiroItemId",
                 table: "HistoricoFinanceiroItem_SaldoApos_Moedas",
-                column: "HistoricoFinanceiroItemId_Saldo");
+                column: "BolsaDeMoedasHistoricoFinanceiroItemId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_HistoricoFinanceiroItem_Valor_Moedas_HistoricoFinanceiroItemId",
+                name: "IX_HistoricoFinanceiroItem_Valor_Moedas_BolsaDeMoedasHistoricoFinanceiroItemId",
                 table: "HistoricoFinanceiroItem_Valor_Moedas",
-                column: "HistoricoFinanceiroItemId");
+                column: "BolsaDeMoedasHistoricoFinanceiroItemId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ideal_AntecedenteId",
@@ -1320,11 +1519,6 @@ namespace DnDBot.Application.Migrations
                 name: "IX_Magia_FichaPersonagemId",
                 table: "Magia",
                 column: "FichaPersonagemId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Pericia_AntecedenteId",
-                table: "Pericia",
-                column: "AntecedenteId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Proficiencia_FichaPersonagemId",
@@ -1352,9 +1546,9 @@ namespace DnDBot.Application.Migrations
                 column: "ClasseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SubRaca_RacaId",
+                name: "IX_SubRaca_IdRaca",
                 table: "SubRaca",
-                column: "RacaId");
+                column: "IdRaca");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SubRaca_Caracteristicas_SubRacaId",
@@ -1395,6 +1589,9 @@ namespace DnDBot.Application.Migrations
 
             migrationBuilder.DropTable(
                 name: "Antecedente_RiquezaInicial");
+
+            migrationBuilder.DropTable(
+                name: "AntecedentePericia");
 
             migrationBuilder.DropTable(
                 name: "ArmaRequisitoAtributo");
@@ -1467,6 +1664,9 @@ namespace DnDBot.Application.Migrations
 
             migrationBuilder.DropTable(
                 name: "QuantidadePorNivel");
+
+            migrationBuilder.DropTable(
+                name: "RacaTag");
 
             migrationBuilder.DropTable(
                 name: "RequisitoMulticlasse");

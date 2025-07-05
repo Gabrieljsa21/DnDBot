@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DnDBot.Application.Models.Ficha.ArmaAuxiliares
+namespace DnDBot.Application.Models.Ficha.Auxiliares
 {
     /// <summary>
     /// Representa um requisito mínimo de atributo para o uso de uma arma.

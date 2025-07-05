@@ -15,47 +15,48 @@ namespace DnDBot.Application.Data.Configurations
     /// </summary>
     public class PericiaConfiguration : IEntityTypeConfiguration<Pericia>
     {
-        /// <summary>
-        /// Configura a entidade Pericia.
-        /// </summary>
-        /// <param name="entity">Construtor para configuração da entidade Pericia.</param>
         public void Configure(EntityTypeBuilder<Pericia> entity)
         {
-            // Define a propriedade Id como chave primária da tabela Pericia
+
+            entity.ConfigureEntidadeBase();
+
+            // Chave primária
             entity.HasKey(p => p.Id);
 
-            // Configura a propriedade Nome como obrigatória e com tamanho máximo de 100 caracteres
+            // Propriedades básicas
             entity.Property(p => p.Nome)
                   .IsRequired()
                   .HasMaxLength(100);
 
-            // Converte a propriedade enum AtributoBase para string no banco, tornando obrigatória
+            entity.Property(p => p.Descricao)
+                  .HasMaxLength(2000);
+
             entity.Property(p => p.AtributoBase)
                   .HasConversion<string>()
                   .IsRequired();
 
-            // Converte a propriedade enum Tipo para string no banco, tornando obrigatória
             entity.Property(p => p.Tipo)
                   .HasConversion<string>()
                   .IsRequired();
 
-            // Configura a propriedade Descricao com tamanho máximo de 2000 caracteres (pode ser nula)
-            entity.Property(p => p.Descricao)
-                  .HasMaxLength(2000);
+            // Serialização de listas simples
+            entity.Property(p => p.Tags)
+                  .HasConversion(
+                      v => JsonSerializer.Serialize(v, (JsonSerializerOptions)null),
+                      v => JsonSerializer.Deserialize<List<string>>(v, (JsonSerializerOptions)null))
+                  .HasColumnType("TEXT");
 
-            // Ignora as propriedades calculadas ou não persistidas no banco
+            entity.Property(p => p.AtributosAlternativos)
+                  .HasConversion(
+                      v => JsonSerializer.Serialize(v, (JsonSerializerOptions)null),
+                      v => JsonSerializer.Deserialize<List<Atributo>>(v, (JsonSerializerOptions)null))
+                  .HasColumnType("TEXT");
+
+            // Ignora propriedades que não devem ser persistidas
             entity.Ignore(p => p.DificuldadeSugerida);
             entity.Ignore(p => p.ValorTotal);
 
-            // Serializa a lista de Tags para JSON na coluna TEXT e desserializa ao ler
-            entity.Property(p => p.Tags)
-                .HasConversion(
-                    v => JsonSerializer.Serialize(v, (JsonSerializerOptions)null),
-                    v => JsonSerializer.Deserialize<List<string>>(v, (JsonSerializerOptions)null))
-                .HasColumnType("TEXT");
-
-            // Configura relacionamento muitos-para-muitos entre Pericia e Classe,
-            // com tabela intermediária Classe_Pericia e chaves compostas
+            // Muitos-para-muitos: Pericia <-> Classe
             entity.HasMany(p => p.ClassesRelacionadas)
                   .WithMany(c => c.PericiasRelacionadas)
                   .UsingEntity<Dictionary<string, object>>(
@@ -74,14 +75,13 @@ namespace DnDBot.Application.Data.Configurations
                           j.ToTable("Classe_Pericia");
                       });
 
-            // Configura relacionamento 1:N para a coleção de dificuldades associadas à perícia,
-            // deletando em cascata ao remover a perícia
+            // Um-para-muitos: Pericia -> Dificuldades
             entity.HasMany(p => p.Dificuldades)
                   .WithOne()
                   .HasForeignKey("PericiaId")
                   .OnDelete(DeleteBehavior.Cascade);
 
-            // Propriedades obrigatórias do tipo bool e inteiros
+            // Bools e ints obrigatórios
             entity.Property(p => p.EhProficiente).IsRequired();
             entity.Property(p => p.TemEspecializacao).IsRequired();
             entity.Property(p => p.BonusBase).IsRequired();

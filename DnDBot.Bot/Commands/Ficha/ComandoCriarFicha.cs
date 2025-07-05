@@ -2,8 +2,8 @@
 using Discord.Interactions;
 using Discord.Net;
 using Discord.WebSocket;
-using DnDBot.Application.Models;
 using DnDBot.Application.Models.Ficha;
+using DnDBot.Application.Models.Inputs;
 using DnDBot.Application.Services;
 using DnDBot.Application.Services.Antecedentes;
 using DnDBot.Application.Services.Distribuicao;

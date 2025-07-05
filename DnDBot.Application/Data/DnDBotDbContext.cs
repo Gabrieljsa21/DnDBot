@@ -1,7 +1,7 @@
 ﻿using DnDBot.Application.Models;
+using DnDBot.Application.Models.AntecedenteModels;
 using DnDBot.Application.Models.Ficha;
-using DnDBot.Application.Models.Ficha.ArmaAuxiliares;
-using DnDBot.Application.Models.Ficha.ClasseAuxiliares;
+using DnDBot.Application.Models.Ficha.Auxiliares;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
@@ -66,6 +66,14 @@ namespace DnDBot.Application.Data
             modelBuilder.Entity<OpcaoEscolha<Equipamento>>().HasNoKey();
             modelBuilder.Entity<OpcaoEscolha<Idioma>>().HasNoKey();
             modelBuilder.Entity<OpcaoEscolha<Pericia>>().HasNoKey();
+
+            modelBuilder.Entity<RacaTag>()
+                .HasKey(rt => new { rt.RacaId, rt.Tag });
+
+            modelBuilder.Entity<RacaTag>()
+                .HasOne(rt => rt.Raca)
+                .WithMany(r => r.RacaTags)
+                .HasForeignKey(rt => rt.RacaId);
 
         }
     }

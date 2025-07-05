@@ -11,7 +11,7 @@ namespace DnDBot.Application.Repositories
         /// <summary>
         /// String de conexão para o banco SQLite.
         /// </summary>
-        private readonly string connectionString = @"Data Source=D:\source\repos\DnDBot\dndbot.db;";
+        private readonly string connectionString = @"Data Source=E:\source\repos\DnDBot\dndbot.db;";
 
         /// <summary>
         /// Insere uma nova ficha de personagem na tabela FichaPersonagem.

@@ -6,13 +6,8 @@ namespace DnDBot.Application.Models
     /// <summary>
     /// Representa uma armadura no sistema D&D 5e, contendo atributos de defesa, raridade, durabilidade, propriedades mágicas e restrições.
     /// </summary>
-    public class Armadura
+    public class Armadura : EntidadeBase
     {
-        /// <summary>Identificador único da armadura.</summary>
-        public string Id { get; set; }
-
-        /// <summary>Nome da armadura, como "Cota de Malha" ou "Couraça de Placas".</summary>
-        public string Nome { get; set; }
 
         /// <summary>Tipo da armadura: leve, média, pesada ou escudo.</summary>
         public TipoArmadura Tipo { get; set; }
@@ -59,17 +54,11 @@ namespace DnDBot.Application.Models
         /// <summary>Material predominante da armadura (ex: couro, aço, mithral).</summary>
         public string Material { get; set; }
 
-        /// <summary>Texto narrativo ou explicativo sobre a história e funcionamento da armadura.</summary>
-        public string DescricaoDetalhada { get; set; }
-
         /// <summary>Lista de tipos de dano contra os quais a armadura concede resistência.</summary>
         public List<TipoDano> ResistenciasDano { get; set; }
 
         /// <summary>Lista de tipos de dano contra os quais a armadura concede imunidade total.</summary>
         public List<TipoDano> ImunidadesDano { get; set; }
-
-        /// <summary>URL ou nome do arquivo que representa o ícone ou imagem da armadura.</summary>
-        public string Icone { get; set; }
 
         /// <summary>
         /// Construtor padrão que inicializa listas para evitar valores nulos.

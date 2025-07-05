@@ -1,4 +1,5 @@
-﻿using DnDBot.Application.Models.Ficha;
+﻿using DnDBot.Application.Helpers;
+using DnDBot.Application.Models.Ficha;
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
@@ -7,49 +8,37 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using static DnDBot.Application.Helpers.SqliteHelper;
 
 namespace DnDBot.Application.Services.DatabaseSetup
 {
-    /// <summary>
-    /// Helper estático para criação e povoamento da tabela Classe no banco SQLite.
-    /// </summary>
     public static class ClasseDatabaseHelper
     {
-        /// <summary>
-        /// Caminho do arquivo JSON com os dados das classes.
-        /// </summary>
         private const string CaminhoJson = "Data/classes.json";
 
-        /// <summary>
-        /// Cria a tabela Classe caso não exista, com seus campos básicos.
-        /// </summary>
-        /// <param name="cmd">Comando SQLite associado a uma conexão aberta.</param>
-        /// <returns>Tarefa assíncrona representando a criação da tabela.</returns>
         public static async Task CriarTabelaAsync(SqliteCommand cmd)
         {
-            cmd.CommandText = @"
-                CREATE TABLE IF NOT EXISTS Classe (
+            var definicoes = new Dictionary<string, string>
+            {
+                ["Classe"] = @"
                     Id TEXT PRIMARY KEY,
-                    Nome TEXT NOT NULL,
-                    Descricao TEXT,
                     DadoVida TEXT,
-                    Fonte TEXT,
-                    ImagemUrl TEXT,
-                    IconeUrl TEXT,
                     PapelTatico TEXT,
                     IdHabilidadeConjuracao TEXT,
-                    UsaMagiaPreparada INTEGER
-                );
-            ";
-            await cmd.ExecuteNonQueryAsync();
+                    UsaMagiaPreparada INTEGER,
+                    " + SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim(),
+
+                ["ClasseTag"] = @"
+                    ClasseId TEXT NOT NULL,
+                    Tag TEXT NOT NULL,
+                    PRIMARY KEY (ClasseId, Tag),
+                    FOREIGN KEY (ClasseId) REFERENCES Classe(Id) ON DELETE CASCADE"
+            };
+
+            foreach (var tabela in definicoes)
+                await SqliteHelper.CriarTabelaAsync(cmd, tabela.Key, tabela.Value);
         }
 
-        /// <summary>
-        /// Popula a tabela Classe com dados provenientes do arquivo JSON, evitando duplicações.
-        /// </summary>
-        /// <param name="connection">Conexão SQLite aberta.</param>
-        /// <param name="transaction">Transação SQLite para operações atômicas.</param>
-        /// <returns>Tarefa assíncrona que realiza o povoamento da tabela.</returns>
         public static async Task PopularAsync(SqliteConnection connection, SqliteTransaction transaction)
         {
             if (!File.Exists(CaminhoJson))
@@ -71,40 +60,31 @@ namespace DnDBot.Application.Services.DatabaseSetup
 
             foreach (var classe in classes)
             {
-                var existsCmd = connection.CreateCommand();
-                existsCmd.Transaction = transaction;
-                existsCmd.CommandText = "SELECT COUNT(*) FROM Classe WHERE Id = $id";
-                existsCmd.Parameters.AddWithValue("$id", classe.Id);
+                if (await RegistroExisteAsync(connection, transaction, "Classe", classe.Id))
+                    continue;
 
-                var count = Convert.ToInt32(await existsCmd.ExecuteScalarAsync());
+                var parametros = GerarParametrosEntidadeBase(classe);
+                parametros["dadoVida"] = classe.DadoVida ?? "";
+                parametros["papelTatico"] = classe.PapelTatico ?? "";
+                parametros["idHabilidadeConjuracao"] = classe.IdHabilidadeConjuracao ?? "";
+                parametros["usaMagiaPreparada"] = classe.UsaMagiaPreparada ? 1 : 0;
 
-                if (count == 0)
-                {
-                    var insertCmd = connection.CreateCommand();
-                    insertCmd.Transaction = transaction;
-                    insertCmd.CommandText = @"
-                        INSERT INTO Classe (
-                            Id, Nome, Descricao, DadoVida, Fonte, ImagemUrl,
-                            IconeUrl, PapelTatico, IdHabilidadeConjuracao, UsaMagiaPreparada)
-                        VALUES (
-                            $id, $nome, $descricao, $dadoVida, $fonte, $imagemUrl,
-                            $iconeUrl, $papelTatico, $habilidade, $usaMagia)";
-                    insertCmd.Parameters.AddWithValue("$id", classe.Id);
-                    insertCmd.Parameters.AddWithValue("$nome", classe.Nome ?? string.Empty);
-                    insertCmd.Parameters.AddWithValue("$descricao", classe.Descricao ?? string.Empty);
-                    insertCmd.Parameters.AddWithValue("$dadoVida", classe.DadoVida ?? string.Empty);
-                    insertCmd.Parameters.AddWithValue("$fonte", classe.Fonte ?? string.Empty);
-                    insertCmd.Parameters.AddWithValue("$imagemUrl", classe.ImagemUrl ?? string.Empty);
-                    insertCmd.Parameters.AddWithValue("$iconeUrl", classe.IconeUrl ?? string.Empty);
-                    insertCmd.Parameters.AddWithValue("$papelTatico", classe.PapelTatico ?? string.Empty);
-                    insertCmd.Parameters.AddWithValue("$habilidade", classe.IdHabilidadeConjuracao ?? string.Empty);
-                    insertCmd.Parameters.AddWithValue("$usaMagia", classe.UsaMagiaPreparada ? 1 : 0);
+                var sql = $@"
+                    INSERT INTO Classe (
+                        Id, DadoVida, PapelTatico, IdHabilidadeConjuracao, UsaMagiaPreparada,
+                        {SqliteEntidadeBaseHelper.CamposInsert.Replace("Id,", "").Trim()}
+                    ) VALUES (
+                        $id, $dadoVida, $papelTatico, $idHabilidadeConjuracao, $usaMagiaPreparada,
+                        {SqliteEntidadeBaseHelper.ValoresInsert.Replace("$id,", "").Trim()}
+                    )";
 
-                    await insertCmd.ExecuteNonQueryAsync();
-                }
+                var cmd = CriarInsertCommand(connection, transaction, sql, parametros);
+                await cmd.ExecuteNonQueryAsync();
+
+                await InserirTagsAsync(connection, transaction, "ClasseTag", "ClasseId", classe.Id, classe.Tags);
             }
 
-            Console.WriteLine("✅ Classes populadas.");
+            Console.WriteLine("✅ Classes populadas com sucesso.");
         }
     }
 }

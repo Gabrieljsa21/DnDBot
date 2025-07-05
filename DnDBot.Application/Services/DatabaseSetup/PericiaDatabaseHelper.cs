@@ -1,4 +1,5 @@
 ﻿using DnDBot.Application.Models;
+using DnDBot.Application.Models.Ficha;
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
@@ -7,110 +8,111 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using static DnDBot.Application.Helpers.SqliteHelper;
 
-namespace DnDBot.Application.Services.DatabaseSetup
+public static class PericiaDatabaseHelper
 {
-    /// <summary>
-    /// Helper estático para criar e popular a tabela Pericia no banco de dados SQLite.
-    /// </summary>
-    public static class PericiaDatabaseHelper
-    {
-        /// <summary>
-        /// Caminho do arquivo JSON contendo os dados das perícias.
-        /// </summary>
-        private const string CaminhoJsonPericias = "Data/pericias.json";
+    private const string CaminhoJson = "Data/pericias.json";
 
-        /// <summary>
-        /// Cria a tabela Pericia no banco SQLite, caso ainda não exista.
-        /// </summary>
-        /// <param name="cmd">Comando SQLite para execução do SQL.</param>
-        /// <returns>Tarefa assíncrona representando a operação.</returns>
-        public static async Task CriarTabelaAsync(SqliteCommand cmd)
+    public static async Task CriarTabelaAsync(SqliteCommand cmd)
+    {
+        var comandos = new[]
         {
-            cmd.CommandText = @"
-                CREATE TABLE IF NOT EXISTS Pericia (
-                    Id TEXT PRIMARY KEY,
-                    Nome TEXT NOT NULL,
-                    AtributoBase INTEGER NOT NULL,
-                    Tipo INTEGER NOT NULL,
-                    Descricao TEXT,
-                    EhProficiente INTEGER NOT NULL,
-                    TemEspecializacao INTEGER NOT NULL,
-                    BonusBase INTEGER NOT NULL,
-                    BonusAdicional INTEGER NOT NULL,
-                    Icone TEXT
-                );";
+            $@"
+            CREATE TABLE IF NOT EXISTS Pericia (
+                Id TEXT PRIMARY KEY,
+                AtributoBase TEXT NOT NULL,
+                Tipo TEXT NOT NULL,
+                EhProficiente INTEGER NOT NULL,
+                TemEspecializacao INTEGER NOT NULL,
+                BonusBase INTEGER NOT NULL,
+                BonusAdicional INTEGER NOT NULL,
+                {SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "")}
+            );",
+            @"
+            CREATE TABLE IF NOT EXISTS DificuldadePericia (
+                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                Tipo TEXT NOT NULL,
+                Valor INTEGER NOT NULL,
+                PericiaId TEXT NOT NULL,
+                FOREIGN KEY (PericiaId) REFERENCES Pericia(Id) ON DELETE CASCADE
+            );"
+        };
+
+        foreach (var sql in comandos)
+        {
+            cmd.CommandText = sql;
             await cmd.ExecuteNonQueryAsync();
         }
+    }
 
-        /// <summary>
-        /// Popula a tabela Pericia com dados lidos do arquivo JSON.
-        /// Verifica se cada perícia já existe para evitar duplicação.
-        /// </summary>
-        /// <param name="connection">Conexão SQLite aberta para o banco.</param>
-        /// <param name="transaction">Transação SQLite para operações atômicas.</param>
-        /// <returns>Tarefa assíncrona representando a operação de inserção.</returns>
-        public static async Task PopularAsync(SqliteConnection connection, SqliteTransaction transaction)
+    public static async Task PopularAsync(SqliteConnection connection, SqliteTransaction transaction)
+    {
+        if (!File.Exists(CaminhoJson))
         {
-            if (!File.Exists(CaminhoJsonPericias))
-            {
-                Console.WriteLine("❌ Arquivo pericias.json não encontrado.");
-                return;
-            }
+            Console.WriteLine("❌ Arquivo pericias.json não encontrado.");
+            return;
+        }
 
-            Console.WriteLine("📥 Lendo dados de pericias.json...");
+        Console.WriteLine("📥 Lendo dados de pericias.json...");
 
-            var json = await File.ReadAllTextAsync(CaminhoJsonPericias, Encoding.UTF8);
-            var pericias = JsonSerializer.Deserialize<List<Pericia>>(json, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-                Converters = { new JsonStringEnumConverter() }
-            });
+        var json = await File.ReadAllTextAsync(CaminhoJson, Encoding.UTF8);
+        var pericias = JsonSerializer.Deserialize<List<Pericia>>(json, new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            Converters = { new JsonStringEnumConverter() }
+        });
 
-            if (pericias == null)
-            {
-                Console.WriteLine("❌ Falha ao desserializar pericias.json.");
-                return;
-            }
+        if (pericias == null)
+        {
+            Console.WriteLine("❌ Falha ao desserializar pericias.json.");
+            return;
+        }
 
-            foreach (var pericia in pericias)
-            {
-                var existsCmd = connection.CreateCommand();
-                existsCmd.Transaction = transaction;
-                existsCmd.CommandText = "SELECT COUNT(*) FROM Pericia WHERE Id = $id";
-                existsCmd.Parameters.AddWithValue("$id", pericia.Id);
+        foreach (var pericia in pericias)
+        {
+            if (await RegistroExisteAsync(connection, transaction, "Pericia", pericia.Id))
+                continue;
 
-                var count = Convert.ToInt32(await existsCmd.ExecuteScalarAsync());
+            var parametros = GerarParametrosEntidadeBase(pericia);
+            parametros["atributoBase"] = pericia.AtributoBase.ToString();
+            parametros["tipo"] = pericia.Tipo.ToString();
+            parametros["ehProficiente"] = pericia.EhProficiente ? 1 : 0;
+            parametros["temEspecializacao"] = pericia.TemEspecializacao ? 1 : 0;
+            parametros["bonusBase"] = pericia.BonusBase;
+            parametros["bonusAdicional"] = pericia.BonusAdicional;
 
-                if (count == 0)
-                {
-                    var insertCmd = connection.CreateCommand();
-                    insertCmd.Transaction = transaction;
-                    insertCmd.CommandText = @"
-                        INSERT INTO Pericia (
-                            Id, Nome, AtributoBase, Tipo, Descricao,
-                            EhProficiente, TemEspecializacao, BonusBase,
-                            BonusAdicional,  Icone)
-                        VALUES (
-                            $id, $nome, $atributoBase, $tipo, $descricao,
-                            $ehProficiente, $temEspecializacao, $bonusBase,
-                            $bonusAdicional, $icone);";
+            var sql = $@"
+                INSERT INTO Pericia (
+                    Id, AtributoBase, Tipo, EhProficiente, TemEspecializacao, BonusBase, BonusAdicional,
+                    {SqliteEntidadeBaseHelper.CamposInsert.Replace("Id,", "")}
+                ) VALUES (
+                    $id, $atributoBase, $tipo, $ehProficiente, $temEspecializacao, $bonusBase, $bonusAdicional,
+                    {SqliteEntidadeBaseHelper.ValoresInsert.Replace("$id,", "")}
+                );";
 
-                    insertCmd.Parameters.AddWithValue("$id", pericia.Id);
-                    insertCmd.Parameters.AddWithValue("$nome", pericia.Nome);
-                    insertCmd.Parameters.AddWithValue("$atributoBase", (int)pericia.AtributoBase);
-                    insertCmd.Parameters.AddWithValue("$tipo", (int)pericia.Tipo);
-                    insertCmd.Parameters.AddWithValue("$descricao", pericia.Descricao ?? string.Empty);
-                    insertCmd.Parameters.AddWithValue("$ehProficiente", pericia.EhProficiente ? 1 : 0);
-                    insertCmd.Parameters.AddWithValue("$temEspecializacao", pericia.TemEspecializacao ? 1 : 0);
-                    insertCmd.Parameters.AddWithValue("$bonusBase", pericia.BonusBase);
-                    insertCmd.Parameters.AddWithValue("$bonusAdicional", pericia.BonusAdicional);
+            var cmd = CriarInsertCommand(connection, transaction, sql, parametros);
+            await cmd.ExecuteNonQueryAsync();
 
-                    await insertCmd.ExecuteNonQueryAsync();
-                }
-            }
+            await InserirDificuldades(connection, transaction, pericia.Id, pericia.Dificuldades);
+        }
 
-            Console.WriteLine("✅ Perícias populadas.");
+        Console.WriteLine("✅ Perícias populadas.");
+    }
+
+    private static async Task InserirDificuldades(SqliteConnection conn, SqliteTransaction tx, string periciaId, IEnumerable<DificuldadePericia> dificuldades)
+    {
+        foreach (var d in dificuldades ?? Array.Empty<DificuldadePericia>())
+        {
+            var insert = conn.CreateCommand();
+            insert.Transaction = tx;
+            insert.CommandText = @"
+                INSERT OR IGNORE INTO DificuldadePericia (Tipo, Valor, PericiaId)
+                VALUES ($tipo, $valor, $pid);";
+            insert.Parameters.AddWithValue("$tipo", d.Tipo ?? "");
+            insert.Parameters.AddWithValue("$valor", d.Valor);
+            insert.Parameters.AddWithValue("$pid", periciaId);
+            await insert.ExecuteNonQueryAsync();
         }
     }
 }

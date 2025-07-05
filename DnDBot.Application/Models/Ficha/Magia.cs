@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DnDBot.Application.Models
+namespace DnDBot.Application.Models.Ficha
 {
     /// <summary>
     /// Representa uma magia do universo D&D, contendo informações sobre sua conjuração,

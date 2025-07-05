@@ -1,4 +1,6 @@
-﻿using DnDBot.Application.Models.Ficha;
+﻿using DnDBot.Application.Helpers;
+using DnDBot.Application.Models;
+using DnDBot.Application.Models.Ficha;
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
@@ -7,139 +9,119 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using static DnDBot.Application.Helpers.SqliteHelper;
 
-namespace DnDBot.Application.Services.DatabaseSetup
+public static class RacaDatabaseHelper
 {
-    /// <summary>
-    /// Classe estática auxiliar para criação e população das tabelas Raca e SubRaca no banco SQLite.
-    /// </summary>
-    public static class RacaDatabaseHelper
+    private const string CaminhoJson = "Data/racas.json";
+
+    public static async Task CriarTabelaAsync(SqliteCommand cmd)
     {
-        /// <summary>
-        /// Caminho do arquivo JSON que contém os dados das raças.
-        /// </summary>
-        private const string CaminhoJsonRacas = "Data/racas.json";
-
-        /// <summary>
-        /// Cria as tabelas Raca e SubRaca no banco, se ainda não existirem.
-        /// </summary>
-        /// <param name="cmd">Comando SQLite para execução dos comandos SQL.</param>
-        /// <returns>Tarefa assíncrona para a operação de criação.</returns>
-        public static async Task CriarTabelaAsync(SqliteCommand cmd)
+        // Monta definição da tabela SubRaca evitando vírgulas extras antes do FOREIGN KEY
+        var definicaoSubRaca = string.Join(",\n", new[]
         {
-            cmd.CommandText = @"
-                CREATE TABLE IF NOT EXISTS Raca (
-                    Id TEXT PRIMARY KEY,
-                    Fonte TEXT,
-                    Nome TEXT NOT NULL,
-                    Descricao TEXT NOT NULL
-                );
+            "IdRaca TEXT NOT NULL",
+            "TendenciasComuns TEXT",
+            "Tamanho TEXT",
+            "Deslocamento INTEGER",
+            "VisaoNoEscuro INTEGER",
+            SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim().TrimEnd(','),
+            "FOREIGN KEY (IdRaca) REFERENCES Raca(Id) ON DELETE CASCADE"
+        });
 
-                CREATE TABLE IF NOT EXISTS SubRaca (
-                    Id TEXT PRIMARY KEY,
-                    IdRaca TEXT NOT NULL,
-                    Nome TEXT NOT NULL,
-                    Descricao TEXT NOT NULL,
-                    TendenciasComuns TEXT,
-                    Tamanho TEXT,
-                    Deslocamento INTEGER,
-                    VisaoNoEscuro INTEGER,
-                    IconeUrl TEXT,
-                    ImagemUrl TEXT
-                );";
-            await cmd.ExecuteNonQueryAsync();
+        var definicoes = new Dictionary<string, string>
+        {
+            ["Raca"] = SqliteEntidadeBaseHelper.Campos,
+            ["SubRaca"] = definicaoSubRaca,
+            ["RacaTag"] = @"
+                RacaId TEXT NOT NULL,
+                Tag TEXT NOT NULL,
+                PRIMARY KEY (RacaId, Tag),
+                FOREIGN KEY (RacaId) REFERENCES Raca(Id) ON DELETE CASCADE"
+        };
+
+        foreach (var tabela in definicoes)
+            await SqliteHelper.CriarTabelaAsync(cmd, tabela.Key, tabela.Value);
+    }
+
+    public static async Task PopularAsync(SqliteConnection connection, SqliteTransaction transaction)
+    {
+        if (!File.Exists(CaminhoJson))
+        {
+            Console.WriteLine("❌ Arquivo racas.json não encontrado.");
+            return;
         }
 
-        /// <summary>
-        /// Popula as tabelas Raca e SubRaca a partir dos dados do arquivo JSON.
-        /// Realiza verificações para evitar inserções duplicadas.
-        /// </summary>
-        /// <param name="connection">Conexão SQLite aberta.</param>
-        /// <param name="transaction">Transação SQLite para operações atômicas.</param>
-        /// <returns>Tarefa assíncrona para a operação de inserção.</returns>
-        public static async Task PopularAsync(SqliteConnection connection, SqliteTransaction transaction)
+        Console.WriteLine("📥 Lendo dados de racas.json...");
+
+        var json = await File.ReadAllTextAsync(CaminhoJson, Encoding.UTF8);
+        var racas = JsonSerializer.Deserialize<List<Raca>>(json, new JsonSerializerOptions
         {
-            if (!File.Exists(CaminhoJsonRacas))
-            {
-                Console.WriteLine("❌ Arquivo racas.json não encontrado.");
-                return;
-            }
+            PropertyNameCaseInsensitive = true,
+            Converters = { new JsonStringEnumConverter() }
+        });
 
-            Console.WriteLine("📥 Lendo dados de racas.json...");
+        if (racas == null || racas.Count == 0)
+        {
+            Console.WriteLine("❌ Nenhuma raça encontrada no JSON.");
+            return;
+        }
 
-            var json = await File.ReadAllTextAsync(CaminhoJsonRacas, Encoding.UTF8);
-            var racas = JsonSerializer.Deserialize<List<Raca>>(json, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-                Converters = { new JsonStringEnumConverter() }
-            });
+        foreach (var raca in racas)
+        {
+            await InserirRaca(connection, transaction, raca);
+            await InserirSubRacas(connection, transaction, raca.Id, raca.SubRaca);
+            await SqliteHelper.InserirTagsAsync(connection, transaction, "RacaTag", "RacaId", raca.Id, raca.Tags);
+        }
 
-            if (racas == null) return;
+        Console.WriteLine("✅ Raças e sub-raças populadas.");
+    }
 
-            foreach (var raca in racas)
-            {
-                var existsCmd = connection.CreateCommand();
-                existsCmd.Transaction = transaction;
-                existsCmd.CommandText = "SELECT COUNT(*) FROM Raca WHERE Id = $id";
-                existsCmd.Parameters.AddWithValue("$id", raca.Id);
+    private static async Task InserirRaca(SqliteConnection conn, SqliteTransaction tx, Raca raca)
+    {
+        if (await SqliteHelper.RegistroExisteAsync(conn, tx, "Raca", raca.Id))
+            return;
 
-                var count = Convert.ToInt32(await existsCmd.ExecuteScalarAsync());
+        var parametros = SqliteHelper.GerarParametrosEntidadeBase(raca);
 
-                if (count == 0)
-                {
-                    var insertCmd = connection.CreateCommand();
-                    insertCmd.Transaction = transaction;
-                    insertCmd.CommandText = @"
-                        INSERT INTO Raca (Id, Fonte, Nome, Descricao)
-                        VALUES ($id, $fonte, $nome, $descricao)";
-                    insertCmd.Parameters.AddWithValue("$id", raca.Id);
-                    insertCmd.Parameters.AddWithValue("$fonte", raca.Fonte);
-                    insertCmd.Parameters.AddWithValue("$nome", raca.Nome);
-                    insertCmd.Parameters.AddWithValue("$descricao", raca.Descricao);
-                    await insertCmd.ExecuteNonQueryAsync();
-                }
+        var sql = $@"
+            INSERT INTO Raca (
+                {SqliteEntidadeBaseHelper.CamposInsert}
+            ) VALUES (
+                {SqliteEntidadeBaseHelper.ValoresInsert}
+            )";
 
-                if (raca.SubRaca != null)
-                {
-                    foreach (var sub in raca.SubRaca)
-                    {
-                        var subExistsCmd = connection.CreateCommand();
-                        subExistsCmd.Transaction = transaction;
-                        subExistsCmd.CommandText = "SELECT COUNT(*) FROM SubRaca WHERE Id = $id";
-                        subExistsCmd.Parameters.AddWithValue("$id", sub.Id);
+        var cmd = SqliteHelper.CriarInsertCommand(conn, tx, sql, parametros);
+        await cmd.ExecuteNonQueryAsync();
+    }
 
-                        var subCount = Convert.ToInt32(await subExistsCmd.ExecuteScalarAsync());
+    private static async Task InserirSubRacas(SqliteConnection conn, SqliteTransaction tx, string idRaca, IEnumerable<SubRaca> subracas)
+    {
+        if (subracas == null) return;
 
-                        if (subCount == 0)
-                        {
-                            var insertSub = connection.CreateCommand();
-                            insertSub.Transaction = transaction;
-                            insertSub.CommandText = @"
-                                INSERT INTO SubRaca (
-                                    Id, IdRaca, Nome, Descricao,
-                                    TendenciasComuns, Tamanho, Deslocamento,
-                                    VisaoNoEscuro, IconeUrl, ImagemUrl)
-                                VALUES (
-                                    $id, $idRaca, $nome, $descricao,
-                                    $tendencias, $tamanho, $deslocamento,
-                                    $visao, $icone, $imagem)";
-                            insertSub.Parameters.AddWithValue("$id", sub.Id);
-                            insertSub.Parameters.AddWithValue("$idRaca", raca.Id);
-                            insertSub.Parameters.AddWithValue("$nome", sub.Nome);
-                            insertSub.Parameters.AddWithValue("$descricao", sub.Descricao);
-                            insertSub.Parameters.AddWithValue("$tendencias", sub.TendenciasComuns ?? string.Empty);
-                            insertSub.Parameters.AddWithValue("$tamanho", sub.Tamanho ?? string.Empty);
-                            insertSub.Parameters.AddWithValue("$deslocamento", sub.Deslocamento);
-                            insertSub.Parameters.AddWithValue("$visao", sub.VisaoNoEscuro);
-                            insertSub.Parameters.AddWithValue("$icone", sub.IconeUrl ?? string.Empty);
-                            insertSub.Parameters.AddWithValue("$imagem", sub.ImagemUrl ?? string.Empty);
-                            await insertSub.ExecuteNonQueryAsync();
-                        }
-                    }
-                }
-            }
+        foreach (var sub in subracas)
+        {
+            if (await SqliteHelper.RegistroExisteAsync(conn, tx, "SubRaca", sub.Id))
+                continue;
 
-            Console.WriteLine("✅ Raças e sub-raças populadas.");
+            var parametros = SqliteHelper.GerarParametrosEntidadeBase(sub);
+            parametros["idRaca"] = idRaca;
+            parametros["tend"] = sub.TendenciasComuns ?? "";
+            parametros["tam"] = sub.Tamanho ?? "";
+            parametros["desloc"] = sub.Deslocamento;
+            parametros["visao"] = sub.VisaoNoEscuro;
+
+            var sql = $@"
+                INSERT INTO SubRaca (
+                    IdRaca, TendenciasComuns, Tamanho, Deslocamento, VisaoNoEscuro,
+                    {SqliteEntidadeBaseHelper.CamposInsert.Replace("Id,", "")}
+                ) VALUES (
+                    $idRaca, $tend, $tam, $desloc, $visao, 
+                    {SqliteEntidadeBaseHelper.ValoresInsert.Replace("$id,", "")}
+                )";
+
+            var cmd = SqliteHelper.CriarInsertCommand(conn, tx, sql, parametros);
+            await cmd.ExecuteNonQueryAsync();
         }
     }
 }

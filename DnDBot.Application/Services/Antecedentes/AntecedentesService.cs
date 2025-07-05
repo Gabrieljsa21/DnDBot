@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using DnDBot.Application.Data;
-using DnDBot.Application.Models.Antecedente;
+using DnDBot.Application.Models.AntecedenteModels;
 
 namespace DnDBot.Application.Services.Antecedentes
 {

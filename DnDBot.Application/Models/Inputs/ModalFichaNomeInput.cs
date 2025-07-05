@@ -1,7 +1,7 @@
 ﻿using Discord.Interactions;
 using System.ComponentModel.DataAnnotations;
 
-namespace DnDBot.Application.Models
+namespace DnDBot.Application.Models.Inputs
 {
     /// <summary>
     /// Representa a entrada do modal de criação de personagem (etapa 1).

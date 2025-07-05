@@ -17,9 +17,45 @@ namespace DnDBot.Application.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.6");
 
-            modelBuilder.Entity("Antecedente", b =>
+            modelBuilder.Entity("AntecedentePericia", b =>
+                {
+                    b.Property<string>("AntecedentesId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PericiasId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("AntecedentesId", "PericiasId");
+
+                    b.HasIndex("PericiasId");
+
+                    b.ToTable("AntecedentePericia");
+                });
+
+            modelBuilder.Entity("Classe_Pericia", b =>
+                {
+                    b.Property<string>("ClasseId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PericiaId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ClasseId", "PericiaId");
+
+                    b.HasIndex("PericiaId");
+
+                    b.ToTable("Classe_Pericia", (string)null);
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.AntecedenteModels.Antecedente", b =>
                 {
                     b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Descricao")
@@ -28,8 +64,20 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("Fonte")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("IconeUrl")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("IdiomasAdicionais")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -53,22 +101,7 @@ namespace DnDBot.Application.Migrations
                     b.ToTable("Antecedente");
                 });
 
-            modelBuilder.Entity("Classe_Pericia", b =>
-                {
-                    b.Property<string>("ClasseId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PericiaId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("ClasseId", "PericiaId");
-
-                    b.HasIndex("PericiaId");
-
-                    b.ToTable("Classe_Pericia", (string)null);
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Antecedente.Antecedente.Defeito", b =>
+            modelBuilder.Entity("DnDBot.Application.Models.AntecedenteModels.Defeito", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
@@ -76,13 +109,43 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("AntecedenteId")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Descricao")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Fonte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("IdAntecedente")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
+                        .HasColumnType("TEXT");
+
+                    b.PrimitiveCollection<string>("Tags")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Versao")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -92,7 +155,7 @@ namespace DnDBot.Application.Migrations
                     b.ToTable("Defeito");
                 });
 
-            modelBuilder.Entity("DnDBot.Application.Models.Antecedente.Antecedente.Ideal", b =>
+            modelBuilder.Entity("DnDBot.Application.Models.AntecedenteModels.Ideal", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
@@ -100,13 +163,43 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("AntecedenteId")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Descricao")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Fonte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("IdAntecedente")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
+                        .HasColumnType("TEXT");
+
+                    b.PrimitiveCollection<string>("Tags")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Versao")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -116,7 +209,7 @@ namespace DnDBot.Application.Migrations
                     b.ToTable("Ideal");
                 });
 
-            modelBuilder.Entity("DnDBot.Application.Models.Antecedente.Antecedente.Vinculo", b =>
+            modelBuilder.Entity("DnDBot.Application.Models.AntecedenteModels.Vinculo", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
@@ -124,13 +217,43 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("AntecedenteId")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Descricao")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Fonte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("IdAntecedente")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
+                        .HasColumnType("TEXT");
+
+                    b.PrimitiveCollection<string>("Tags")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Versao")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -165,6 +288,12 @@ namespace DnDBot.Application.Migrations
 
                     b.Property<int>("Categoria")
                         .HasColumnType("INTEGER");
+
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasColumnType("TEXT");
 
                     b.Property<decimal>("Custo")
                         .HasColumnType("TEXT");
@@ -202,16 +331,31 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("Fabricante")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Icone")
+                    b.Property<string>("Fonte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemUrl")
                         .HasColumnType("TEXT");
 
                     b.PrimitiveCollection<string>("MagiasAssociadas")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("MunicaoPorAtaque")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
                         .HasColumnType("TEXT");
 
                     b.Property<double>("Peso")
@@ -256,6 +400,9 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("TipoMunicao")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Versao")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.ToTable("Arma");
@@ -272,10 +419,16 @@ namespace DnDBot.Application.Migrations
                     b.Property<int>("ClasseArmadura")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<decimal>("Custo")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("DescricaoDetalhada")
+                    b.Property<string>("Descricao")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("DurabilidadeAtual")
@@ -290,7 +443,13 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("Fabricante")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Icone")
+                    b.Property<string>("Fonte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemUrl")
                         .HasColumnType("TEXT");
 
                     b.PrimitiveCollection<string>("ImunidadesDano")
@@ -299,7 +458,16 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("Material")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("PenalidadeFurtividade")
@@ -323,41 +491,18 @@ namespace DnDBot.Application.Migrations
                     b.PrimitiveCollection<string>("ResistenciasDano")
                         .HasColumnType("TEXT");
 
+                    b.PrimitiveCollection<string>("Tags")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("Tipo")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("Versao")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
                     b.ToTable("Armadura");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Caracteristica", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("AntecedenteId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("FichaPersonagemId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Fonte")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AntecedenteId");
-
-                    b.HasIndex("FichaPersonagemId");
-
-                    b.ToTable("Caracteristica");
                 });
 
             modelBuilder.Entity("DnDBot.Application.Models.Equipamento", b =>
@@ -387,10 +532,40 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Descricao")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Fonte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
+                        .HasColumnType("TEXT");
+
+                    b.PrimitiveCollection<string>("Tags")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Versao")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -398,7 +573,7 @@ namespace DnDBot.Application.Migrations
                     b.ToTable("Alinhamento");
                 });
 
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.ArmaAuxiliares.ArmaRequisitoAtributo", b =>
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.ArmaRequisitoAtributo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -418,6 +593,105 @@ namespace DnDBot.Application.Migrations
                     b.HasIndex("ArmaId");
 
                     b.ToTable("ArmaRequisitoAtributo");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.ClasseMagia", b =>
+                {
+                    b.Property<string>("ClasseId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("MagiaId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ClasseId", "MagiaId");
+
+                    b.HasIndex("MagiaId");
+
+                    b.ToTable("ClasseMagias");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.ClassePericia", b =>
+                {
+                    b.Property<string>("ClasseId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PericiaId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ClasseId", "PericiaId");
+
+                    b.HasIndex("PericiaId");
+
+                    b.ToTable("ClassePericias");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.ClasseProficienciaArma", b =>
+                {
+                    b.Property<string>("ClasseId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ArmaId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ClasseId", "ArmaId");
+
+                    b.HasIndex("ArmaId");
+
+                    b.ToTable("ClasseProficienciasArmas");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.ClasseProficienciaArmadura", b =>
+                {
+                    b.Property<string>("ClasseId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ArmaduraId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ClasseId", "ArmaduraId");
+
+                    b.HasIndex("ArmaduraId");
+
+                    b.ToTable("ClasseProficienciasArmaduras");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.ClasseProficienciaMulticlasse", b =>
+                {
+                    b.Property<string>("ClasseId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IdProficiencia")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ClasseId", "IdProficiencia");
+
+                    b.ToTable("ClasseProficienciasMulticlasse");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.ClasseSalvaguarda", b =>
+                {
+                    b.Property<string>("ClasseId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IdSalvaguarda")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ClasseId", "IdSalvaguarda");
+
+                    b.ToTable("ClasseSalvaguardas");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.RacaTag", b =>
+                {
+                    b.Property<string>("RacaId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Tag")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("RacaId", "Tag");
+
+                    b.ToTable("RacaTag");
                 });
 
             modelBuilder.Entity("DnDBot.Application.Models.Ficha.BonusAtributo", b =>
@@ -456,6 +730,62 @@ namespace DnDBot.Application.Migrations
                     b.ToTable("BonusAtributo");
                 });
 
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Caracteristica", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("AntecedenteId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("FichaPersonagemId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Fonte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
+                        .HasColumnType("TEXT");
+
+                    b.PrimitiveCollection<string>("Tags")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Versao")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AntecedenteId");
+
+                    b.HasIndex("FichaPersonagemId");
+
+                    b.ToTable("Caracteristica");
+                });
+
             modelBuilder.Entity("DnDBot.Application.Models.Ficha.CaracteristicaPorNivel", b =>
                 {
                     b.Property<string>("ClasseId")
@@ -489,6 +819,12 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("DadoVida")
                         .HasColumnType("TEXT");
 
@@ -513,12 +849,18 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("ImagemUrl")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.PrimitiveCollection<string>("Notas")
+                    b.Property<string>("Pagina")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PapelTatico")
@@ -527,98 +869,18 @@ namespace DnDBot.Application.Migrations
                     b.Property<int?>("SubclassePorNivel")
                         .HasColumnType("INTEGER");
 
+                    b.PrimitiveCollection<string>("Tags")
+                        .HasColumnType("TEXT");
+
                     b.Property<bool>("UsaMagiaPreparada")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("Versao")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
                     b.ToTable("Classe");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.ClasseAuxiliares.ClasseMagia", b =>
-                {
-                    b.Property<string>("ClasseId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("MagiaId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("ClasseId", "MagiaId");
-
-                    b.HasIndex("MagiaId");
-
-                    b.ToTable("ClasseMagias");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.ClasseAuxiliares.ClassePericia", b =>
-                {
-                    b.Property<string>("ClasseId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PericiaId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("ClasseId", "PericiaId");
-
-                    b.HasIndex("PericiaId");
-
-                    b.ToTable("ClassePericias");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.ClasseAuxiliares.ClasseProficienciaArma", b =>
-                {
-                    b.Property<string>("ClasseId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ArmaId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("ClasseId", "ArmaId");
-
-                    b.HasIndex("ArmaId");
-
-                    b.ToTable("ClasseProficienciasArmas");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.ClasseAuxiliares.ClasseProficienciaArmadura", b =>
-                {
-                    b.Property<string>("ClasseId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ArmaduraId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("ClasseId", "ArmaduraId");
-
-                    b.HasIndex("ArmaduraId");
-
-                    b.ToTable("ClasseProficienciasArmaduras");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.ClasseAuxiliares.ClasseProficienciaMulticlasse", b =>
-                {
-                    b.Property<string>("ClasseId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("IdProficiencia")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("ClasseId", "IdProficiencia");
-
-                    b.ToTable("ClasseProficienciasMulticlasse");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.ClasseAuxiliares.ClasseSalvaguarda", b =>
-                {
-                    b.Property<string>("ClasseId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("IdSalvaguarda")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("ClasseId", "IdSalvaguarda");
-
-                    b.ToTable("ClasseSalvaguardas");
                 });
 
             modelBuilder.Entity("DnDBot.Application.Models.Ficha.DificuldadePericia", b =>
@@ -680,6 +942,12 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("AntecedenteId")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<decimal>("Custo")
                         .HasColumnType("decimal(18,2)");
 
@@ -690,13 +958,27 @@ namespace DnDBot.Application.Migrations
                     b.Property<bool>("EMagica")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Icone")
-                        .HasMaxLength(250)
+                    b.Property<string>("Fonte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(150)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
                         .HasColumnType("TEXT");
 
                     b.Property<double>("Peso")
@@ -706,6 +988,9 @@ namespace DnDBot.Application.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Tags")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Versao")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -787,11 +1072,13 @@ namespace DnDBot.Application.Migrations
 
             modelBuilder.Entity("DnDBot.Application.Models.Ficha.HistoricoFinanceiroItem", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Categoria")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("CriadoEm")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CriadoPor")
@@ -812,6 +1099,15 @@ namespace DnDBot.Application.Migrations
                     b.Property<bool>("FoiAutomatico")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Fonte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("TEXT");
+
                     b.Property<Guid?>("ItemRelacionadoId")
                         .HasColumnType("TEXT");
 
@@ -821,13 +1117,25 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("ModificadoPor")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Origem")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
                         .HasColumnType("TEXT");
 
                     b.Property<Guid?>("PersonagemDestinoId")
                         .HasColumnType("TEXT");
 
+                    b.PrimitiveCollection<string>("Tags")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Tipo")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Versao")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -839,149 +1147,18 @@ namespace DnDBot.Application.Migrations
                     b.ToTable("HistoricoFinanceiroItem");
                 });
 
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.QuantidadePorNivel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("ClasseId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ClasseId1")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Nivel")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClasseId");
-
-                    b.HasIndex("ClasseId1");
-
-                    b.ToTable("QuantidadePorNivel");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Raca", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Fonte")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("IconeUrl")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ImagemUrl")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Raca");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.RequisitoMulticlasse", b =>
-                {
-                    b.Property<string>("ClasseId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Atributo")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Valor")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("ClasseId", "Atributo");
-
-                    b.ToTable("RequisitoMulticlasse");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.SubRaca", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Deslocamento")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("IconeUrl")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("IdRaca")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ImagemUrl")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("RacaId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Tamanho")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("TendenciasComuns")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("VisaoNoEscuro")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RacaId");
-
-                    b.ToTable("SubRaca");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Subclasse", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ClasseId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Fonte")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ImagemUrl")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClasseId");
-
-                    b.ToTable("Subclasse");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Idioma", b =>
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Idioma", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AntecedenteId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Descricao")
@@ -990,7 +1167,31 @@ namespace DnDBot.Application.Migrations
                     b.Property<Guid?>("FichaPersonagemId")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Fonte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
+                        .HasColumnType("TEXT");
+
+                    b.PrimitiveCollection<string>("Tags")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Versao")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -1002,7 +1203,7 @@ namespace DnDBot.Application.Migrations
                     b.ToTable("Idioma");
                 });
 
-            modelBuilder.Entity("DnDBot.Application.Models.Magia", b =>
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Magia", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
@@ -1043,6 +1244,12 @@ namespace DnDBot.Application.Migrations
                     b.PrimitiveCollection<string>("CondicoesRemovidas")
                         .HasColumnType("TEXT");
 
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("CustoComponenteMaterial")
                         .HasColumnType("TEXT");
 
@@ -1073,10 +1280,13 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("FocoNecessario")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("FonteLivro")
+                    b.Property<string>("Fonte")
                         .HasColumnType("TEXT");
 
-                    b.PrimitiveCollection<string>("Fontes")
+                    b.Property<string>("IconeUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemUrl")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LimiteUso")
@@ -1085,13 +1295,16 @@ namespace DnDBot.Application.Migrations
                     b.Property<bool>("MetadeNoTeste")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Nivel")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nome")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NotasInternas")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("NumeroDeUsos")
@@ -1100,8 +1313,8 @@ namespace DnDBot.Application.Migrations
                     b.Property<int?>("NumeroMaximoAlvos")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("PaginaLivro")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Pagina")
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("PodeSerRitual")
                         .HasColumnType("INTEGER");
@@ -1127,11 +1340,322 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("TipoUso")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Versao")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.HasIndex("FichaPersonagemId");
 
                     b.ToTable("Magia");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Proficiencia", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("FichaPersonagemId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Fonte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
+                        .HasColumnType("TEXT");
+
+                    b.PrimitiveCollection<string>("Tags")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Tipo")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Versao")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FichaPersonagemId");
+
+                    b.ToTable("Proficiencia");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.QuantidadePorNivel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ClasseId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ClasseId1")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Nivel")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClasseId");
+
+                    b.HasIndex("ClasseId1");
+
+                    b.ToTable("QuantidadePorNivel");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Raca", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Fonte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Versao")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Raca");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.RequisitoMulticlasse", b =>
+                {
+                    b.Property<string>("ClasseId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Atributo")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Valor")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ClasseId", "Atributo");
+
+                    b.ToTable("RequisitoMulticlasse");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Resistencia", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("FichaPersonagemId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Fonte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
+                        .HasColumnType("TEXT");
+
+                    b.PrimitiveCollection<string>("Tags")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TipoDano")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Versao")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FichaPersonagemId");
+
+                    b.ToTable("Resistencia");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.SubRaca", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Deslocamento")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Fonte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IdRaca")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
+                        .HasColumnType("TEXT");
+
+                    b.PrimitiveCollection<string>("Tags")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Tamanho")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TendenciasComuns")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Versao")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("VisaoNoEscuro")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdRaca");
+
+                    b.ToTable("SubRaca");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Subclasse", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ClasseId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Fonte")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
+                        .HasColumnType("TEXT");
+
+                    b.PrimitiveCollection<string>("Tags")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Versao")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClasseId");
+
+                    b.ToTable("Subclasse");
                 });
 
             modelBuilder.Entity("DnDBot.Application.Models.OpcaoEscolha<DnDBot.Application.Models.Equipamento>", b =>
@@ -1142,7 +1666,7 @@ namespace DnDBot.Application.Migrations
                     b.ToTable("OpcaoEscolha<Equipamento>");
                 });
 
-            modelBuilder.Entity("DnDBot.Application.Models.OpcaoEscolha<DnDBot.Application.Models.Idioma>", b =>
+            modelBuilder.Entity("DnDBot.Application.Models.OpcaoEscolha<DnDBot.Application.Models.Ficha.Idioma>", b =>
                 {
                     b.Property<int>("QuantidadeEscolhas")
                         .HasColumnType("INTEGER");
@@ -1163,14 +1687,11 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("AntecedenteId")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("AtributoBase")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.PrimitiveCollection<string>("AtributosAlternativos")
+                    b.Property<string>("AtributosAlternativos")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("BonusAdicional")
@@ -1179,6 +1700,13 @@ namespace DnDBot.Application.Migrations
                     b.Property<int>("BonusBase")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime?>("CriadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CriadoPor")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Descricao")
                         .HasMaxLength(2000)
                         .HasColumnType("TEXT");
@@ -1186,13 +1714,32 @@ namespace DnDBot.Application.Migrations
                     b.Property<bool>("EhProficiente")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Icone")
-                        .HasMaxLength(255)
+                    b.Property<string>("Fonte")
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IconeUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImagemUrl")
+                        .HasMaxLength(500)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("ModificadoEm")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ModificadoPor")
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Pagina")
+                        .HasMaxLength(20)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Tags")
@@ -1205,59 +1752,13 @@ namespace DnDBot.Application.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.Property<string>("Versao")
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
 
-                    b.HasIndex("AntecedenteId");
+                    b.HasKey("Id");
 
                     b.ToTable("Pericia");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Proficiencia", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("FichaPersonagemId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Tipo")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FichaPersonagemId");
-
-                    b.ToTable("Proficiencia");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Resistencia", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("FichaPersonagemId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("TipoDano")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FichaPersonagemId");
-
-                    b.ToTable("Resistencia");
                 });
 
             modelBuilder.Entity("FerramentaPericia", b =>
@@ -1350,7 +1851,39 @@ namespace DnDBot.Application.Migrations
                     b.ToTable("SubRaca_Resistencias");
                 });
 
-            modelBuilder.Entity("Antecedente", b =>
+            modelBuilder.Entity("AntecedentePericia", b =>
+                {
+                    b.HasOne("DnDBot.Application.Models.AntecedenteModels.Antecedente", null)
+                        .WithMany()
+                        .HasForeignKey("AntecedentesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DnDBot.Application.Models.Pericia", null)
+                        .WithMany()
+                        .HasForeignKey("PericiasId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Classe_Pericia", b =>
+                {
+                    b.HasOne("DnDBot.Application.Models.Ficha.Classe", null)
+                        .WithMany()
+                        .HasForeignKey("ClasseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_Classe_Pericia_Classe");
+
+                    b.HasOne("DnDBot.Application.Models.Pericia", null)
+                        .WithMany()
+                        .HasForeignKey("PericiaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_Classe_Pericia_Pericia");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.AntecedenteModels.Antecedente", b =>
                 {
                     b.OwnsMany("DnDBot.Application.Models.Enums.Moeda", "RiquezaInicial", b1 =>
                         {
@@ -1382,69 +1915,150 @@ namespace DnDBot.Application.Migrations
                     b.Navigation("RiquezaInicial");
                 });
 
-            modelBuilder.Entity("Classe_Pericia", b =>
+            modelBuilder.Entity("DnDBot.Application.Models.AntecedenteModels.Defeito", b =>
                 {
-                    b.HasOne("DnDBot.Application.Models.Ficha.Classe", null)
-                        .WithMany()
-                        .HasForeignKey("ClasseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_Classe_Pericia_Classe");
-
-                    b.HasOne("DnDBot.Application.Models.Pericia", null)
-                        .WithMany()
-                        .HasForeignKey("PericiaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_Classe_Pericia_Pericia");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Antecedente.Antecedente.Defeito", b =>
-                {
-                    b.HasOne("Antecedente", null)
+                    b.HasOne("DnDBot.Application.Models.AntecedenteModels.Antecedente", null)
                         .WithMany("Defeitos")
                         .HasForeignKey("AntecedenteId");
                 });
 
-            modelBuilder.Entity("DnDBot.Application.Models.Antecedente.Antecedente.Ideal", b =>
+            modelBuilder.Entity("DnDBot.Application.Models.AntecedenteModels.Ideal", b =>
                 {
-                    b.HasOne("Antecedente", null)
+                    b.HasOne("DnDBot.Application.Models.AntecedenteModels.Antecedente", null)
                         .WithMany("Ideais")
                         .HasForeignKey("AntecedenteId");
                 });
 
-            modelBuilder.Entity("DnDBot.Application.Models.Antecedente.Antecedente.Vinculo", b =>
+            modelBuilder.Entity("DnDBot.Application.Models.AntecedenteModels.Vinculo", b =>
                 {
-                    b.HasOne("Antecedente", null)
+                    b.HasOne("DnDBot.Application.Models.AntecedenteModels.Antecedente", null)
                         .WithMany("Vinculos")
                         .HasForeignKey("AntecedenteId");
                 });
 
-            modelBuilder.Entity("DnDBot.Application.Models.Caracteristica", b =>
-                {
-                    b.HasOne("Antecedente", null)
-                        .WithMany("IdFeature")
-                        .HasForeignKey("AntecedenteId");
-
-                    b.HasOne("DnDBot.Application.Models.Ficha.FichaPersonagem", null)
-                        .WithMany("Caracteristicas")
-                        .HasForeignKey("FichaPersonagemId");
-                });
-
             modelBuilder.Entity("DnDBot.Application.Models.Equipamento", b =>
                 {
-                    b.HasOne("Antecedente", null)
+                    b.HasOne("DnDBot.Application.Models.AntecedenteModels.Antecedente", null)
                         .WithMany("EquipamentosDetalhados")
                         .HasForeignKey("AntecedenteId");
                 });
 
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.ArmaAuxiliares.ArmaRequisitoAtributo", b =>
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.ArmaRequisitoAtributo", b =>
                 {
                     b.HasOne("DnDBot.Application.Models.Arma", "Arma")
                         .WithMany("RequisitosAtributos")
                         .HasForeignKey("ArmaId");
 
                     b.Navigation("Arma");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.ClasseMagia", b =>
+                {
+                    b.HasOne("DnDBot.Application.Models.Ficha.Classe", "Classe")
+                        .WithMany()
+                        .HasForeignKey("ClasseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DnDBot.Application.Models.Ficha.Magia", "Magia")
+                        .WithMany()
+                        .HasForeignKey("MagiaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Classe");
+
+                    b.Navigation("Magia");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.ClassePericia", b =>
+                {
+                    b.HasOne("DnDBot.Application.Models.Ficha.Classe", "Classe")
+                        .WithMany()
+                        .HasForeignKey("ClasseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DnDBot.Application.Models.Pericia", "Pericia")
+                        .WithMany()
+                        .HasForeignKey("PericiaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Classe");
+
+                    b.Navigation("Pericia");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.ClasseProficienciaArma", b =>
+                {
+                    b.HasOne("DnDBot.Application.Models.Arma", "Arma")
+                        .WithMany()
+                        .HasForeignKey("ArmaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DnDBot.Application.Models.Ficha.Classe", "Classe")
+                        .WithMany()
+                        .HasForeignKey("ClasseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Arma");
+
+                    b.Navigation("Classe");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.ClasseProficienciaArmadura", b =>
+                {
+                    b.HasOne("DnDBot.Application.Models.Armadura", "Armadura")
+                        .WithMany()
+                        .HasForeignKey("ArmaduraId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DnDBot.Application.Models.Ficha.Classe", "Classe")
+                        .WithMany()
+                        .HasForeignKey("ClasseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Armadura");
+
+                    b.Navigation("Classe");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.ClasseProficienciaMulticlasse", b =>
+                {
+                    b.HasOne("DnDBot.Application.Models.Ficha.Classe", "Classe")
+                        .WithMany()
+                        .HasForeignKey("ClasseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Classe");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.ClasseSalvaguarda", b =>
+                {
+                    b.HasOne("DnDBot.Application.Models.Ficha.Classe", "Classe")
+                        .WithMany()
+                        .HasForeignKey("ClasseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Classe");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Auxiliares.RacaTag", b =>
+                {
+                    b.HasOne("DnDBot.Application.Models.Ficha.Raca", "Raca")
+                        .WithMany("RacaTags")
+                        .HasForeignKey("RacaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Raca");
                 });
 
             modelBuilder.Entity("DnDBot.Application.Models.Ficha.BonusAtributo", b =>
@@ -1458,9 +2072,20 @@ namespace DnDBot.Application.Migrations
                         .HasForeignKey("SubRacaId");
                 });
 
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Caracteristica", b =>
+                {
+                    b.HasOne("DnDBot.Application.Models.AntecedenteModels.Antecedente", null)
+                        .WithMany("Caracteristica")
+                        .HasForeignKey("AntecedenteId");
+
+                    b.HasOne("DnDBot.Application.Models.Ficha.FichaPersonagem", null)
+                        .WithMany("Caracteristicas")
+                        .HasForeignKey("FichaPersonagemId");
+                });
+
             modelBuilder.Entity("DnDBot.Application.Models.Ficha.CaracteristicaPorNivel", b =>
                 {
-                    b.HasOne("DnDBot.Application.Models.Caracteristica", "Caracteristica")
+                    b.HasOne("DnDBot.Application.Models.Ficha.Caracteristica", "Caracteristica")
                         .WithMany()
                         .HasForeignKey("CaracteristicaId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1517,104 +2142,6 @@ namespace DnDBot.Application.Migrations
                     b.Navigation("RiquezaInicial");
                 });
 
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.ClasseAuxiliares.ClasseMagia", b =>
-                {
-                    b.HasOne("DnDBot.Application.Models.Ficha.Classe", "Classe")
-                        .WithMany()
-                        .HasForeignKey("ClasseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DnDBot.Application.Models.Magia", "Magia")
-                        .WithMany()
-                        .HasForeignKey("MagiaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Classe");
-
-                    b.Navigation("Magia");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.ClasseAuxiliares.ClassePericia", b =>
-                {
-                    b.HasOne("DnDBot.Application.Models.Ficha.Classe", "Classe")
-                        .WithMany()
-                        .HasForeignKey("ClasseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DnDBot.Application.Models.Pericia", "Pericia")
-                        .WithMany()
-                        .HasForeignKey("PericiaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Classe");
-
-                    b.Navigation("Pericia");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.ClasseAuxiliares.ClasseProficienciaArma", b =>
-                {
-                    b.HasOne("DnDBot.Application.Models.Arma", "Arma")
-                        .WithMany()
-                        .HasForeignKey("ArmaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DnDBot.Application.Models.Ficha.Classe", "Classe")
-                        .WithMany()
-                        .HasForeignKey("ClasseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Arma");
-
-                    b.Navigation("Classe");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.ClasseAuxiliares.ClasseProficienciaArmadura", b =>
-                {
-                    b.HasOne("DnDBot.Application.Models.Armadura", "Armadura")
-                        .WithMany()
-                        .HasForeignKey("ArmaduraId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DnDBot.Application.Models.Ficha.Classe", "Classe")
-                        .WithMany()
-                        .HasForeignKey("ClasseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Armadura");
-
-                    b.Navigation("Classe");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.ClasseAuxiliares.ClasseProficienciaMulticlasse", b =>
-                {
-                    b.HasOne("DnDBot.Application.Models.Ficha.Classe", "Classe")
-                        .WithMany()
-                        .HasForeignKey("ClasseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Classe");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Ficha.ClasseAuxiliares.ClasseSalvaguarda", b =>
-                {
-                    b.HasOne("DnDBot.Application.Models.Ficha.Classe", "Classe")
-                        .WithMany()
-                        .HasForeignKey("ClasseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Classe");
-                });
-
             modelBuilder.Entity("DnDBot.Application.Models.Ficha.DificuldadePericia", b =>
                 {
                     b.HasOne("DnDBot.Application.Models.Pericia", null)
@@ -1640,7 +2167,7 @@ namespace DnDBot.Application.Migrations
 
             modelBuilder.Entity("DnDBot.Application.Models.Ficha.Ferramenta", b =>
                 {
-                    b.HasOne("Antecedente", null)
+                    b.HasOne("DnDBot.Application.Models.AntecedenteModels.Antecedente", null)
                         .WithMany("Ferramentas")
                         .HasForeignKey("AntecedenteId");
                 });
@@ -1705,8 +2232,8 @@ namespace DnDBot.Application.Migrations
 
                     b.OwnsOne("DnDBot.Application.Models.Ficha.BolsaDeMoedas", "SaldoApos", b1 =>
                         {
-                            b1.Property<int>("HistoricoFinanceiroItemId")
-                                .HasColumnType("INTEGER");
+                            b1.Property<string>("HistoricoFinanceiroItemId")
+                                .HasColumnType("TEXT");
 
                             b1.HasKey("HistoricoFinanceiroItemId");
 
@@ -1721,8 +2248,9 @@ namespace DnDBot.Application.Migrations
                                         .ValueGeneratedOnAdd()
                                         .HasColumnType("INTEGER");
 
-                                    b2.Property<int>("HistoricoFinanceiroItemId_Saldo")
-                                        .HasColumnType("INTEGER");
+                                    b2.Property<string>("BolsaDeMoedasHistoricoFinanceiroItemId")
+                                        .IsRequired()
+                                        .HasColumnType("TEXT");
 
                                     b2.Property<int>("Quantidade")
                                         .HasColumnType("INTEGER");
@@ -1733,12 +2261,12 @@ namespace DnDBot.Application.Migrations
 
                                     b2.HasKey("Id");
 
-                                    b2.HasIndex("HistoricoFinanceiroItemId_Saldo");
+                                    b2.HasIndex("BolsaDeMoedasHistoricoFinanceiroItemId");
 
                                     b2.ToTable("HistoricoFinanceiroItem_SaldoApos_Moedas", (string)null);
 
                                     b2.WithOwner()
-                                        .HasForeignKey("HistoricoFinanceiroItemId_Saldo");
+                                        .HasForeignKey("BolsaDeMoedasHistoricoFinanceiroItemId");
                                 });
 
                             b1.Navigation("Moedas");
@@ -1746,8 +2274,8 @@ namespace DnDBot.Application.Migrations
 
                     b.OwnsOne("DnDBot.Application.Models.Ficha.BolsaDeMoedas", "Valor", b1 =>
                         {
-                            b1.Property<int>("HistoricoFinanceiroItemId")
-                                .HasColumnType("INTEGER");
+                            b1.Property<string>("HistoricoFinanceiroItemId")
+                                .HasColumnType("TEXT");
 
                             b1.HasKey("HistoricoFinanceiroItemId");
 
@@ -1762,8 +2290,9 @@ namespace DnDBot.Application.Migrations
                                         .ValueGeneratedOnAdd()
                                         .HasColumnType("INTEGER");
 
-                                    b2.Property<int>("HistoricoFinanceiroItemId")
-                                        .HasColumnType("INTEGER");
+                                    b2.Property<string>("BolsaDeMoedasHistoricoFinanceiroItemId")
+                                        .IsRequired()
+                                        .HasColumnType("TEXT");
 
                                     b2.Property<int>("Quantidade")
                                         .HasColumnType("INTEGER");
@@ -1774,12 +2303,12 @@ namespace DnDBot.Application.Migrations
 
                                     b2.HasKey("Id");
 
-                                    b2.HasIndex("HistoricoFinanceiroItemId");
+                                    b2.HasIndex("BolsaDeMoedasHistoricoFinanceiroItemId");
 
                                     b2.ToTable("HistoricoFinanceiroItem_Valor_Moedas", (string)null);
 
                                     b2.WithOwner()
-                                        .HasForeignKey("HistoricoFinanceiroItemId");
+                                        .HasForeignKey("BolsaDeMoedasHistoricoFinanceiroItemId");
                                 });
 
                             b1.Navigation("Moedas");
@@ -1790,6 +2319,31 @@ namespace DnDBot.Application.Migrations
                     b.Navigation("SaldoApos");
 
                     b.Navigation("Valor");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Idioma", b =>
+                {
+                    b.HasOne("DnDBot.Application.Models.AntecedenteModels.Antecedente", null)
+                        .WithMany("Idiomas")
+                        .HasForeignKey("AntecedenteId");
+
+                    b.HasOne("DnDBot.Application.Models.Ficha.FichaPersonagem", null)
+                        .WithMany("Idiomas")
+                        .HasForeignKey("FichaPersonagemId");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Magia", b =>
+                {
+                    b.HasOne("DnDBot.Application.Models.Ficha.FichaPersonagem", null)
+                        .WithMany("MagiasRaciais")
+                        .HasForeignKey("FichaPersonagemId");
+                });
+
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Proficiencia", b =>
+                {
+                    b.HasOne("DnDBot.Application.Models.Ficha.FichaPersonagem", null)
+                        .WithMany("Proficiencias")
+                        .HasForeignKey("FichaPersonagemId");
                 });
 
             modelBuilder.Entity("DnDBot.Application.Models.Ficha.QuantidadePorNivel", b =>
@@ -1816,11 +2370,19 @@ namespace DnDBot.Application.Migrations
                     b.Navigation("Classe");
                 });
 
+            modelBuilder.Entity("DnDBot.Application.Models.Ficha.Resistencia", b =>
+                {
+                    b.HasOne("DnDBot.Application.Models.Ficha.FichaPersonagem", null)
+                        .WithMany("Resistencias")
+                        .HasForeignKey("FichaPersonagemId");
+                });
+
             modelBuilder.Entity("DnDBot.Application.Models.Ficha.SubRaca", b =>
                 {
                     b.HasOne("DnDBot.Application.Models.Ficha.Raca", "Raca")
                         .WithMany("SubRaca")
-                        .HasForeignKey("RacaId");
+                        .HasForeignKey("IdRaca")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Raca");
                 });
@@ -1830,45 +2392,6 @@ namespace DnDBot.Application.Migrations
                     b.HasOne("DnDBot.Application.Models.Ficha.Classe", null)
                         .WithMany("Subclasses")
                         .HasForeignKey("ClasseId");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Idioma", b =>
-                {
-                    b.HasOne("Antecedente", null)
-                        .WithMany("Idiomas")
-                        .HasForeignKey("AntecedenteId");
-
-                    b.HasOne("DnDBot.Application.Models.Ficha.FichaPersonagem", null)
-                        .WithMany("Idiomas")
-                        .HasForeignKey("FichaPersonagemId");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Magia", b =>
-                {
-                    b.HasOne("DnDBot.Application.Models.Ficha.FichaPersonagem", null)
-                        .WithMany("MagiasRaciais")
-                        .HasForeignKey("FichaPersonagemId");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Pericia", b =>
-                {
-                    b.HasOne("Antecedente", null)
-                        .WithMany("Pericias")
-                        .HasForeignKey("AntecedenteId");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Proficiencia", b =>
-                {
-                    b.HasOne("DnDBot.Application.Models.Ficha.FichaPersonagem", null)
-                        .WithMany("Proficiencias")
-                        .HasForeignKey("FichaPersonagemId");
-                });
-
-            modelBuilder.Entity("DnDBot.Application.Models.Resistencia", b =>
-                {
-                    b.HasOne("DnDBot.Application.Models.Ficha.FichaPersonagem", null)
-                        .WithMany("Resistencias")
-                        .HasForeignKey("FichaPersonagemId");
                 });
 
             modelBuilder.Entity("FerramentaPericia", b =>
@@ -1888,7 +2411,7 @@ namespace DnDBot.Application.Migrations
 
             modelBuilder.Entity("SubRaca_Caracteristicas", b =>
                 {
-                    b.HasOne("DnDBot.Application.Models.Caracteristica", null)
+                    b.HasOne("DnDBot.Application.Models.Ficha.Caracteristica", null)
                         .WithMany()
                         .HasForeignKey("CaracteristicaId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1903,7 +2426,7 @@ namespace DnDBot.Application.Migrations
 
             modelBuilder.Entity("SubRaca_Idiomas", b =>
                 {
-                    b.HasOne("DnDBot.Application.Models.Idioma", null)
+                    b.HasOne("DnDBot.Application.Models.Ficha.Idioma", null)
                         .WithMany()
                         .HasForeignKey("IdiomaId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1918,7 +2441,7 @@ namespace DnDBot.Application.Migrations
 
             modelBuilder.Entity("SubRaca_MagiasRaciais", b =>
                 {
-                    b.HasOne("DnDBot.Application.Models.Magia", null)
+                    b.HasOne("DnDBot.Application.Models.Ficha.Magia", null)
                         .WithMany()
                         .HasForeignKey("MagiaId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1933,7 +2456,7 @@ namespace DnDBot.Application.Migrations
 
             modelBuilder.Entity("SubRaca_Proficiencias", b =>
                 {
-                    b.HasOne("DnDBot.Application.Models.Proficiencia", null)
+                    b.HasOne("DnDBot.Application.Models.Ficha.Proficiencia", null)
                         .WithMany()
                         .HasForeignKey("ProficienciaId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1948,7 +2471,7 @@ namespace DnDBot.Application.Migrations
 
             modelBuilder.Entity("SubRaca_Resistencias", b =>
                 {
-                    b.HasOne("DnDBot.Application.Models.Resistencia", null)
+                    b.HasOne("DnDBot.Application.Models.Ficha.Resistencia", null)
                         .WithMany()
                         .HasForeignKey("ResistenciaId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1961,21 +2484,19 @@ namespace DnDBot.Application.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Antecedente", b =>
+            modelBuilder.Entity("DnDBot.Application.Models.AntecedenteModels.Antecedente", b =>
                 {
+                    b.Navigation("Caracteristica");
+
                     b.Navigation("Defeitos");
 
                     b.Navigation("EquipamentosDetalhados");
 
                     b.Navigation("Ferramentas");
 
-                    b.Navigation("IdFeature");
-
                     b.Navigation("Ideais");
 
                     b.Navigation("Idiomas");
-
-                    b.Navigation("Pericias");
 
                     b.Navigation("Vinculos");
                 });
@@ -2019,6 +2540,8 @@ namespace DnDBot.Application.Migrations
 
             modelBuilder.Entity("DnDBot.Application.Models.Ficha.Raca", b =>
                 {
+                    b.Navigation("RacaTags");
+
                     b.Navigation("SubRaca");
                 });
 
