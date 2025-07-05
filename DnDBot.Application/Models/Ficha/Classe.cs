@@ -1,4 +1,5 @@
 ﻿using DnDBot.Application.Models.Enums;
+using DnDBot.Application.Models.Ficha.Auxiliares;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -130,6 +131,21 @@ namespace DnDBot.Application.Models.Ficha
         /// Riqueza inicial da classe, em moedas.
         /// </summary>
         public List<Moeda> RiquezaInicial { get; set; } = new();
+
+        /// <summary>
+        /// Relacionamento com as tags armazenadas na tabela Classe_Tag.
+        /// </summary>
+        public List<ClasseTag> ClasseTags { get; set; } = new();
+
+        /// <summary>
+        /// Tags derivadas da lista de ClasseTags, útil para facilitar acesso.
+        /// </summary>
+        [NotMapped]
+        public List<string> Tags
+        {
+            get => ClasseTags?.Select(ct => ct.Tag).ToList() ?? new();
+            set => ClasseTags = value?.Select(tag => new ClasseTag { Tag = tag, ClasseId = this.Id }).ToList() ?? new();
+        }
 
     }
 

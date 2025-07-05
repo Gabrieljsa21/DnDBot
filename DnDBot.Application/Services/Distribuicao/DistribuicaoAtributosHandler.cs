@@ -6,41 +6,25 @@ using System.Linq;
 
 namespace DnDBot.Application.Services.Distribuicao
 {
-    /// <summary>
-    /// Manipula a lógica de distribuição de atributos para fichas de personagem,
-    /// incluindo a criação, atualização, construção de embeds e componentes para Discord.
-    /// </summary>
     public class DistribuicaoAtributosHandler
     {
         private readonly DistribuicaoAtributosService _service;
 
-        /// <summary>
-        /// Inicializa uma nova instância do handler de distribuição de atributos.
-        /// </summary>
-        /// <param name="service">Serviço de distribuição de atributos utilizado para operações.</param>
         public DistribuicaoAtributosHandler(DistribuicaoAtributosService service)
         {
             _service = service;
         }
 
-        /// <summary>
-        /// Obtém a distribuição temporária dos atributos para um jogador e ficha específicos.
-        /// </summary>
-        /// <param name="jogadorId">ID do jogador (Discord).</param>
-        /// <param name="fichaId">ID da ficha do personagem.</param>
-        /// <returns>Objeto temporário contendo os dados da distribuição.</returns>
         public DistribuicaoAtributosTemp ObterDistribuicao(ulong jogadorId, Guid fichaId)
         {
+            Console.WriteLine($"[LOG] Obtendo distribuição de atributos para jogador {jogadorId}, ficha {fichaId}");
             return _service.CriarOuObterDistribuicao(jogadorId, fichaId);
         }
 
-        /// <summary>
-        /// Inicializa a distribuição de atributos, configurando os pontos disponíveis e os valores base.
-        /// </summary>
-        /// <param name="dist">Objeto de distribuição temporária a ser inicializado.</param>
-        /// <param name="ficha">Ficha do personagem usada para valores base dos atributos.</param>
         public void InicializarDistribuicao(DistribuicaoAtributosTemp dist, FichaPersonagem ficha)
         {
+            Console.WriteLine($"[LOG] Inicializando distribuição para ficha {ficha.Id} de jogador {ficha.JogadorId}");
+
             dist.PontosDisponiveis = 27;
             dist.Atributos = new Dictionary<string, int>
             {
@@ -63,49 +47,64 @@ namespace DnDBot.Application.Services.Distribuicao
                 { "Sabedoria", 0 },
                 { "Carisma", 0 }
             };
+
+            Console.WriteLine($"[LOG] Atributos base inicializados:");
+            foreach (var attr in dist.Atributos)
+            {
+                Console.WriteLine($" - {attr.Key}: {attr.Value} (+{dist.BonusRacial[attr.Key]})");
+            }
+
+            Console.WriteLine($"[LOG] Pontos usados: {dist.PontosUsados}/27");
         }
 
-        /// <summary>
-        /// Tenta ajustar o valor de um atributo na distribuição, respeitando os limites do sistema Point Buy
-        /// e os pontos disponíveis.
-        /// </summary>
-        /// <param name="jogadorId">ID do jogador (Discord).</param>
-        /// <param name="fichaId">ID da ficha do personagem.</param>
-        /// <param name="atributo">Nome do atributo a ser alterado (ex: "Forca").</param>
-        /// <param name="delta">Valor de incremento ou decremento (+1 ou -1).</param>
-        /// <returns>True se a alteração foi realizada com sucesso; False caso contrário.</returns>
         public bool TentarAjustarAtributo(ulong jogadorId, Guid fichaId, string atributo, int delta)
         {
             var dist = _service.CriarOuObterDistribuicao(jogadorId, fichaId);
 
             if (!dist.Atributos.ContainsKey(atributo))
+            {
+                Console.WriteLine($"[ERRO] Atributo '{atributo}' inválido para ficha {fichaId}");
                 return false;
+            }
 
             int valorAtual = dist.Atributos[atributo];
             int novoValor = valorAtual + delta;
 
-            // Limites padrão point buy
             if (novoValor < 8 || novoValor > 15)
+            {
+                Console.WriteLine($"[ERRO] Valor fora do limite para {atributo}: {novoValor} (limite: 8-15)");
                 return false;
+            }
 
             int custoNovo = _service.CalcularCustoComAlteracao(dist.Atributos, atributo, novoValor);
 
             if (custoNovo > dist.PontosDisponiveis)
+            {
+                Console.WriteLine($"[ERRO] Pontos insuficientes para ajustar {atributo} para {novoValor}. Custo: {custoNovo}, Disponível: {dist.PontosDisponiveis}");
                 return false;
+            }
+
+            Console.WriteLine($"[LOG] Ajustando atributo {atributo} de {valorAtual} para {novoValor} (delta {delta})");
+            Console.WriteLine($"[LOG] Custo novo: {custoNovo}, Pontos disponíveis: {dist.PontosDisponiveis}");
 
             dist.Atributos[atributo] = novoValor;
             dist.PontosUsados = custoNovo;
 
+            Console.WriteLine($"[LOG] Atributo {atributo} atualizado para {novoValor}. Pontos usados: {dist.PontosUsados}");
             return true;
         }
 
-        /// <summary>
-        /// Constrói o Embed que mostra a distribuição atual dos atributos para exibição no Discord.
-        /// </summary>
-        /// <param name="dist">Distribuição temporária dos atributos.</param>
-        /// <returns>Embed formatado com os atributos e seus valores.</returns>
         public Embed ConstruirEmbedDistribuicao(DistribuicaoAtributosTemp dist)
         {
+            Console.WriteLine("[LOG] Construindo embed de atributos:");
+            foreach (var attr in dist.Atributos)
+            {
+                int bonus = dist.BonusRacial.ContainsKey(attr.Key) ? dist.BonusRacial[attr.Key] : 0;
+                Console.WriteLine($" - {attr.Key}: {attr.Value} (+{bonus})");
+            }
+
+            Console.WriteLine($"[LOG] Pontos usados: {dist.PontosUsados}/{dist.PontosDisponiveis}");
+
             var eb = new EmbedBuilder()
                 .WithTitle("Distribuição de Atributos – Point Buy")
                 .WithDescription($"Total usado: {dist.PontosUsados}/{dist.PontosDisponiveis} pontos")
@@ -124,62 +123,50 @@ namespace DnDBot.Application.Services.Distribuicao
             return eb.Build();
         }
 
-        /// <summary>
-        /// Constrói os componentes interativos (botões) para a interface de distribuição de atributos no Discord.
-        /// Inclui botões para incrementar, decrementar e concluir a distribuição.
-        /// </summary>
-        /// <param name="dist">Distribuição temporária dos atributos.</param>
-        /// <returns>MessageComponent contendo os botões para interação do usuário.</returns>
-        public MessageComponent ConstruirComponentesDistribuicao(DistribuicaoAtributosTemp dist)
+        public MessageComponent ConstruirComponentesDistribuicao(DistribuicaoAtributosTemp dist, Guid fichaId)
         {
+            Console.WriteLine("[LOG] Construindo componentes interativos (botões)");
+
             var builder = new ComponentBuilder();
             var atributos = dist.Atributos.Keys.ToList();
-
             int colunasPorLinha = 3;
             int total = atributos.Count;
 
             for (int i = 0; i < total; i++)
             {
-                int grupo = i / colunasPorLinha; // grupo 0, 1, ...
-                int pos = i % colunasPorLinha;
+                int grupo = i / colunasPorLinha;
+                int rowPositivo = grupo * 2;
+                int rowNegativo = rowPositivo + 1;
 
-                int rowPositivo = grupo * 2;     // linhas 0, 2, 4...
-                int rowNegativo = rowPositivo + 1; // linhas 1, 3, 5...
-
-                // Adiciona botão + na linha rowPositivo
-                if (rowPositivo <= 3) // limitar a linha 3
+                if (rowPositivo <= 3)
                 {
                     builder.WithButton(
                         $"+ {atributos[i]}",
-                        customId: $"atributo_mais_{atributos[i]}",
+                        customId: $"atributo_mais_{atributos[i]}_{fichaId}",
                         style: ButtonStyle.Success,
                         row: rowPositivo);
                 }
 
-                // Adiciona botão - na linha rowNegativo
-                if (rowNegativo <= 3) // limitar a linha 3
+                if (rowNegativo <= 3)
                 {
                     builder.WithButton(
                         $"- {atributos[i]}",
-                        customId: $"atributo_menos_{atributos[i]}",
+                        customId: $"atributo_menos_{atributos[i]}_{fichaId}",
                         style: ButtonStyle.Danger,
                         row: rowNegativo);
                 }
             }
 
-            // Botão concluir na linha 4
-            builder.WithButton("✅ Concluir", customId: "concluir_distribuicao", style: ButtonStyle.Primary, row: 4);
+            builder.WithButton("✅ Concluir", customId: $"concluir_distribuicao_{fichaId}", style: ButtonStyle.Primary, row: 4);
 
+            Console.WriteLine("[LOG] Componentes construídos com sucesso.");
             return builder.Build();
         }
 
-        /// <summary>
-        /// Remove a distribuição temporária associada ao jogador e ficha especificados.
-        /// </summary>
-        /// <param name="jogadorId">ID do jogador (Discord).</param>
-        /// <param name="fichaId">ID da ficha do personagem.</param>
+
         public void RemoverDistribuicao(ulong jogadorId, Guid fichaId)
         {
+            Console.WriteLine($"[LOG] Removendo distribuição temporária para jogador {jogadorId}, ficha {fichaId}");
             _service.RemoverDistribuicao(jogadorId, fichaId);
         }
     }

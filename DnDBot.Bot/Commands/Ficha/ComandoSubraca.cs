@@ -3,10 +3,10 @@ using DnDBot.Application.Models;
 using DnDBot.Application.Models.Ficha;
 using DnDBot.Application.Services;
 using DnDBot.Application.Services.Distribuicao;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 
 namespace DnDBot.Bot.Commands.Ficha
 {
@@ -19,10 +19,6 @@ namespace DnDBot.Bot.Commands.Ficha
         private readonly RacasService _racasService;
         private readonly DistribuicaoAtributosHandler _atributosHandler;
 
-        /// <summary>
-        /// Inicializa uma nova instância do módulo <see cref="ComandoSubraca"/>.
-        /// </summary>
-        /// <param name="fichaService">Serviço responsável pela manipulação das fichas de personagem.</param>
         public ComandoSubraca(FichaService fichaService, RacasService racasService, DistribuicaoAtributosHandler atributosHandler)
         {
             _fichaService = fichaService;
@@ -30,32 +26,31 @@ namespace DnDBot.Bot.Commands.Ficha
             _atributosHandler = atributosHandler;
         }
 
-        /// <summary>
-        /// Manipula a interação do componente de seleção de sub-raça.
-        /// Atualiza a última ficha criada pelo jogador com a sub-raça selecionada.
-        /// </summary>
-        /// <param name="valor">Valor da sub-raça selecionada pelo usuário.</param>
         [ComponentInteraction("select_subraca")]
         public async Task SelectSubracaHandler(string valor)
         {
-            var ficha = await _fichaService.ObterUltimaFichaDoJogadorAsync(Context.User.Id);
+            Console.WriteLine($"[LOG] Usuário {Context.User.Id} selecionou a sub-raça: {valor}");
 
+            var ficha = await _fichaService.ObterUltimaFichaDoJogadorAsync(Context.User.Id);
             if (ficha == null)
             {
+                Console.WriteLine("[LOG] Nenhuma ficha encontrada.");
                 await RespondAsync("❌ Não encontrei a ficha para atualizar a sub-raça.", ephemeral: true);
                 return;
             }
 
             var subraca = (await _racasService.ObterTodasSubracasAsync()).FirstOrDefault(sr => sr.Id == valor);
-
             if (subraca == null)
             {
+                Console.WriteLine("[LOG] Sub-raça não encontrada.");
                 await RespondAsync("❌ Sub-raça selecionada não encontrada.", ephemeral: true);
                 return;
             }
 
-            // Atualiza a ficha com os dados da sub-raça
-            ficha.IdSubraca = subraca.Id;
+            Console.WriteLine($"[LOG] Sub-raça '{subraca.Id}' encontrada. Aplicando à ficha '{ficha.Nome}' ({ficha.Id})");
+
+            // Atualiza os campos da ficha
+            ficha.SubracaId = subraca.Id;
             ficha.BonusAtributos = subraca.BonusAtributos
                 .Select(b => new BonusAtributo
                 {
@@ -72,63 +67,34 @@ namespace DnDBot.Bot.Commands.Ficha
             ficha.Caracteristicas = subraca.Caracteristicas.ToList();
             ficha.MagiasRaciais = subraca.MagiasRaciais.ToList();
 
-
             await _fichaService.AtualizarFichaAsync(ficha);
+            Console.WriteLine("[LOG] Ficha atualizada com dados da sub-raça.");
 
-            // Cria o estado temporário para distribuição (exemplo inicial)
-            var distTemp = new DistribuicaoAtributosTemp
-            {
-                JogadorId = Context.User.Id,
-                FichaId = ficha.Id,
-                PontosDisponiveis = 27,
-                PontosUsados = 0,
-                // Atributos base já com 8 pontos cada (pode alterar se quiser outro valor)
-                Atributos = new Dictionary<string, int>
-                {
-                        { "Forca", 8 },
-                        { "Destreza", 8 },
-                        { "Constituicao", 8 },
-                        { "Inteligencia", 8 },
-                        { "Sabedoria", 8 },
-                        { "Carisma", 8 }
-                    },
-                BonusRacial = new Dictionary<string, int>
-                    {
-                        { "Forca", 0 },
-                        { "Destreza", 0 },
-                        { "Constituicao", 0 },
-                        { "Inteligencia", 0 },
-                        { "Sabedoria", 0 },
-                        { "Carisma", 0 }
-                    }
-            };
-
-            // Aplica os bônus da sub-raça (se houver)
-            foreach (var bonus in ficha.BonusAtributos)
-            {
-                if (distTemp.BonusRacial.ContainsKey(bonus.Atributo))
-                    distTemp.BonusRacial[bonus.Atributo] = bonus.Valor;
-            }
-
-            // Armazena no repositório temporário para depois recuperar nos handlers de botões
+            // Cria e inicializa a distribuição temporária
             var dist = _atributosHandler.ObterDistribuicao(Context.User.Id, ficha.Id);
             _atributosHandler.InicializarDistribuicao(dist, ficha);
 
+            // Aplica os bônus raciais da sub-raça
             foreach (var bonus in ficha.BonusAtributos)
             {
                 if (dist.BonusRacial.ContainsKey(bonus.Atributo))
                     dist.BonusRacial[bonus.Atributo] = bonus.Valor;
             }
 
-            // Envia mensagem para o usuário com os botões para distribuir pontos
+            Console.WriteLine("[LOG] Distribuição de atributos inicializada:");
+            foreach (var attr in dist.Atributos)
+            {
+                int bonus = dist.BonusRacial.ContainsKey(attr.Key) ? dist.BonusRacial[attr.Key] : 0;
+                Console.WriteLine($" - {attr.Key}: {attr.Value} (+{bonus})");
+            }
+            Console.WriteLine($"[LOG] Pontos usados: {dist.PontosUsados}/27");
+
+            // Envia mensagem com embed e botões
             await RespondAsync(
-                $"✅ Sub-raça **{valor}** aplicada à ficha **{ficha.Nome}** com sucesso!\n\nAgora distribua os pontos nos atributos:",
-                embed: _atributosHandler.ConstruirEmbedDistribuicao(distTemp),
-                components: _atributosHandler.ConstruirComponentesDistribuicao(distTemp),
+                $"✅ Sub-raça **{subraca.Id}** aplicada à ficha **{ficha.Nome}** com sucesso!\n\nAgora distribua os pontos nos atributos:",
+                embed: _atributosHandler.ConstruirEmbedDistribuicao(dist),
+                components: _atributosHandler.ConstruirComponentesDistribuicao(dist, ficha.Id),
                 ephemeral: true);
-
         }
-
-
     }
 }

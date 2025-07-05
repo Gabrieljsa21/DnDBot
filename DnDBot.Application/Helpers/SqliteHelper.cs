@@ -54,6 +54,30 @@ namespace DnDBot.Application.Helpers
 
         public static async Task<bool> RegistroExisteAsync(SqliteConnection conn, SqliteTransaction tx, string tabela, string id)
         {
+            var colunaCmd = conn.CreateCommand();
+            colunaCmd.Transaction = tx;
+            colunaCmd.CommandText = $"PRAGMA table_info({tabela})";
+
+            using (var reader = await colunaCmd.ExecuteReaderAsync())
+            {
+                bool colunaExiste = false;
+                while (await reader.ReadAsync())
+                {
+                    var nomeColuna = reader.GetString(1); // 1 = name da coluna
+                    if (string.Equals(nomeColuna, "Id", StringComparison.OrdinalIgnoreCase))
+                    {
+                        colunaExiste = true;
+                        break;
+                    }
+                }
+
+                if (!colunaExiste)
+                {
+                    throw new InvalidOperationException($"A tabela '{tabela}' não possui uma coluna chamada 'Id'.");
+                }
+            }
+
+            // Executa a verificação de existência do registro
             var cmd = conn.CreateCommand();
             cmd.Transaction = tx;
             cmd.CommandText = $"SELECT COUNT(*) FROM {tabela} WHERE Id = $id";
@@ -61,6 +85,7 @@ namespace DnDBot.Application.Helpers
             var count = Convert.ToInt32(await cmd.ExecuteScalarAsync());
             return count > 0;
         }
+
 
         public static async Task CriarTabelaAsync(SqliteCommand cmd, string nomeTabela, string definicaoColunas)
         {

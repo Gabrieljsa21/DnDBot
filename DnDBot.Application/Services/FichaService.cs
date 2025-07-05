@@ -28,18 +28,18 @@ namespace DnDBot.Application.Services
         /// Cria uma ficha básica com dados iniciais padrão.
         /// </summary>
         /// <param name="nome">Nome da ficha/personagem.</param>
-        /// <param name="idJogador">ID do jogador dono da ficha.</param>
+        /// <param name="jogadorId">ID do jogador dono da ficha.</param>
         /// <returns>A ficha criada.</returns>
-        public async Task<FichaPersonagem> CriarFichaBasicaAsync(string nome, ulong idJogador)
+        public async Task<FichaPersonagem> CriarFichaBasicaAsync(string nome, ulong jogadorId)
         {
             var ficha = new FichaPersonagem
             {
                 Nome = nome,
-                IdJogador = idJogador,
-                IdRaca = "Não definida",
-                IdClasse = "Não definida",
-                IdAntecedente = "Não definido",
-                IdAlinhamento = "Não definido",
+                JogadorId = jogadorId,
+                RacaId = "Não definida",
+                ClasseId = "Não definida",
+                AntecedenteId = "Não definido",
+                AlinhamentoId = "Não definido",
                 DataCriacao = DateTime.UtcNow,
                 DataAlteracao = DateTime.UtcNow
             };
@@ -62,25 +62,25 @@ namespace DnDBot.Application.Services
         /// <summary>
         /// Obtém todas as fichas associadas a um jogador pelo seu ID.
         /// </summary>
-        /// <param name="idJogador">ID do jogador.</param>
+        /// <param name="jogadorId">ID do jogador.</param>
         /// <returns>Lista de fichas do jogador.</returns>
-        public async Task<List<FichaPersonagem>> ObterFichasPorJogadorAsync(ulong idJogador)
+        public async Task<List<FichaPersonagem>> ObterFichasPorJogadorAsync(ulong jogadorId)
         {
             return await _dbContext.FichaPersonagem
-                .Where(f => f.IdJogador == idJogador)
+                .Where(f => f.JogadorId == jogadorId)
                 .ToListAsync();
         }
 
         /// <summary>
         /// Busca uma ficha específica pelo jogador e nome da ficha.
         /// </summary>
-        /// <param name="idJogador">ID do jogador.</param>
+        /// <param name="jogadorId">ID do jogador.</param>
         /// <param name="nome">Nome da ficha.</param>
         /// <returns>A ficha encontrada ou null se não existir.</returns>
-        public async Task<FichaPersonagem?> ObterFichaPorJogadorENomeAsync(ulong idJogador, string nome)
+        public async Task<FichaPersonagem?> ObterFichaPorJogadorENomeAsync(ulong jogadorId, string nome)
         {
             return await _dbContext.FichaPersonagem
-                .FirstOrDefaultAsync(f => f.IdJogador == idJogador && f.Nome.ToLower() == nome.ToLower());
+                .FirstOrDefaultAsync(f => f.JogadorId == jogadorId && f.Nome.ToLower() == nome.ToLower());
         }
 
         /// <summary>
@@ -98,12 +98,12 @@ namespace DnDBot.Application.Services
         /// <summary>
         /// Obtém a ficha mais recentemente criada por um jogador.
         /// </summary>
-        /// <param name="idJogador">ID do jogador.</param>
+        /// <param name="jogadorId">ID do jogador.</param>
         /// <returns>A ficha mais nova do jogador, ou null se nenhuma existir.</returns>
-        public async Task<FichaPersonagem?> ObterUltimaFichaDoJogadorAsync(ulong idJogador)
+        public async Task<FichaPersonagem?> ObterUltimaFichaDoJogadorAsync(ulong jogadorId)
         {
             return await _dbContext.FichaPersonagem
-                .Where(f => f.IdJogador == idJogador)
+                .Where(f => f.JogadorId == jogadorId)
                 .OrderByDescending(f => f.DataCriacao)
                 .FirstOrDefaultAsync();
         }

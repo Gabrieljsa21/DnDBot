@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using DnDBot.Application.Models.Ficha.Auxiliares;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace DnDBot.Application.Models.Ficha
 {
@@ -175,5 +178,21 @@ namespace DnDBot.Application.Models.Ficha
         /// Contador opcional de quantas vezes a magia foi usada.
         /// </summary>
         public int NumeroDeUsos { get; set; }
+
+        /// <summary>
+        /// Relacionamento com as tags armazenadas na tabela Magia_Tag.
+        /// </summary>
+        public List<MagiaTag> MagiaTags { get; set; } = new();
+
+        /// <summary>
+        /// Tags derivadas da lista de MagiaTags, útil para facilitar acesso.
+        /// </summary>
+        [NotMapped]
+        public List<string> Tags
+        {
+            get => MagiaTags?.Select(mt => mt.Tag).ToList() ?? new();
+            set => MagiaTags = value?.Select(tag => new MagiaTag { Tag = tag, MagiaId = this.Id }).ToList() ?? new();
+        }
+
     }
 }

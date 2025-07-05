@@ -1,7 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using DnDBot.Application.Models.AntecedenteModels;
 using DnDBot.Application.Models.Enums;
-using DnDBot.Application.Models.AntecedenteModels;
+using DnDBot.Application.Models.Ficha.Auxiliares;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DnDBot.Application.Data.Configurations
 {
@@ -47,6 +48,11 @@ namespace DnDBot.Application.Data.Configurations
                 // Define o nome da tabela que armazenará os registros de riqueza inicial ligados aos antecedentes
                 moedas.ToTable("Antecedente_RiquezaInicial");
             });
+
+            // Configura o relacionamento com AntecedenteTag (tags do antecedente)
+            entity.HasMany(a => a.AntecedenteTags)
+                  .WithOne(at => at.Antecedente)
+                  .HasForeignKey(at => at.AntecedenteId);
         }
     }
 }

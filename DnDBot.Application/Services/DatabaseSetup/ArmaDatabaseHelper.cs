@@ -2,6 +2,7 @@
 using DnDBot.Application.Models;
 using DnDBot.Application.Models.Ficha;
 using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using static DnDBot.Application.Helpers.SqliteHelper;
+using static System.Net.Mime.MediaTypeNames;
 
 public static class ArmaDatabaseHelper
 {
@@ -19,6 +21,7 @@ public static class ArmaDatabaseHelper
         // Monta definição da tabela Arma sem repetir campos do EntidadeBase (que já estão em SqliteEntidadeBaseHelper.Campos)
         var definicaoArma = string.Join(",\n", new[]
         {
+                    "Id TEXT PRIMARY KEY",
             "Tipo INTEGER NOT NULL",
             "Categoria INTEGER NOT NULL",
             "DadoDano TEXT",
@@ -38,8 +41,7 @@ public static class ArmaDatabaseHelper
             "DurabilidadeMaxima INTEGER",
             "Raridade TEXT",
             "Fabricante TEXT",
-            SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim().TrimEnd(','),
-            "PRIMARY KEY (Id)"
+            SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim().TrimEnd(',')
         });
 
         var definicoes = new Dictionary<string, string>

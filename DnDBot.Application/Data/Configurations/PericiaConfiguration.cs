@@ -40,11 +40,6 @@ namespace DnDBot.Application.Data.Configurations
                   .IsRequired();
 
             // Serialização de listas simples
-            entity.Property(p => p.Tags)
-                  .HasConversion(
-                      v => JsonSerializer.Serialize(v, (JsonSerializerOptions)null),
-                      v => JsonSerializer.Deserialize<List<string>>(v, (JsonSerializerOptions)null))
-                  .HasColumnType("TEXT");
 
             entity.Property(p => p.AtributosAlternativos)
                   .HasConversion(

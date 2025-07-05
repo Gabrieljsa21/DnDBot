@@ -26,7 +26,7 @@ namespace DnDBot.Application.Data.Configurations
             // Exclusão em cascata para as SubRacas ao deletar a Raca relacionada
             entity.HasOne(sr => sr.Raca)
                   .WithMany(r => r.SubRaca)
-                  .HasForeignKey(sr => sr.IdRaca)
+                  .HasForeignKey(sr => sr.RacaId)
                   .OnDelete(DeleteBehavior.Cascade);
 
             // Configura relacionamento muitos-para-muitos entre SubRaca e Idioma,

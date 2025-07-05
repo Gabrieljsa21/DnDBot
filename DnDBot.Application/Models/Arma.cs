@@ -1,6 +1,8 @@
 ﻿using DnDBot.Application.Models.Enums;
 using DnDBot.Application.Models.Ficha.Auxiliares;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using System.Text.Json.Serialization;
 
 namespace DnDBot.Application.Models
@@ -112,6 +114,22 @@ namespace DnDBot.Application.Models
 
         /// <summary>Lista de requisitos de atributos para manuseio ideal.</summary>
         public List<ArmaRequisitoAtributo> RequisitosAtributos { get; set; } = new();
+
+        /// <summary>
+        /// Relacionamento com as tags armazenadas na tabela Arma_Tag.
+        /// </summary>
+        public List<ArmaTag> ArmaTags { get; set; } = new();
+
+        /// <summary>
+        /// Tags derivadas da lista de ArmaTags, útil para facilitar acesso.
+        /// </summary>
+        [NotMapped]
+        public List<string> Tags
+        {
+            get => ArmaTags?.Select(at => at.Tag).ToList() ?? new();
+            set => ArmaTags = value?.Select(tag => new ArmaTag { Tag = tag, ArmaId = this.Id }).ToList() ?? new();
+        }
+
 
         /// <summary>
         /// Retorna uma string com o dano da arma incluindo bônus mágico.

@@ -1,6 +1,7 @@
 ﻿using DnDBot.Application.Helpers;
 using DnDBot.Application.Models;
 using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,6 +11,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using static DnDBot.Application.Helpers.SqliteHelper;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DnDBot.Application.Services.DatabaseSetup
 {
@@ -23,6 +25,7 @@ namespace DnDBot.Application.Services.DatabaseSetup
             {
                 ["Armadura"] = string.Join(",\n", new[]
                 {
+                    "Id TEXT PRIMARY KEY",
             "Tipo TEXT NOT NULL",                     // Enum como string
             "ClasseArmadura INTEGER NOT NULL",
             "PermiteFurtividade INTEGER NOT NULL",    // Bool como int (0/1)
@@ -37,7 +40,7 @@ namespace DnDBot.Application.Services.DatabaseSetup
             "Raridade TEXT",
             "Fabricante TEXT",
             "Material TEXT",
-            SqliteEntidadeBaseHelper.Campos
+            SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim().TrimEnd(',')
         }),
 
                 ["ArmaduraTag"] = @"

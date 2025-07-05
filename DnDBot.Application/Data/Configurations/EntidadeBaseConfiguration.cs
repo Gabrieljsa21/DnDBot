@@ -27,11 +27,6 @@ namespace DnDBot.Application.Data.Configurations
             builder.Property(e => e.CriadoEm);
             builder.Property(e => e.ModificadoEm);
 
-            builder.Property(e => e.Tags)
-                   .HasConversion(
-                        v => JsonSerializer.Serialize(v, (JsonSerializerOptions)null),
-                        v => JsonSerializer.Deserialize<List<string>>(v, (JsonSerializerOptions)null))
-                   .HasColumnType("TEXT");
         }
     }
 

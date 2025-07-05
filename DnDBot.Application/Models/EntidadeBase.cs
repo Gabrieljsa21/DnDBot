@@ -27,11 +27,6 @@ namespace DnDBot.Application.Models
         public string Descricao { get; set; } = string.Empty;
 
         /// <summary>
-        /// Lista de tags associadas à entidade para facilitar organização, filtragem e categorização.
-        /// </summary>
-        public List<string> Tags { get; set; } = new();
-
-        /// <summary>
         /// Fonte oficial ou suplemento de onde a entidade foi retirada (ex: "Livro do Jogador").
         /// </summary>
         public string Fonte { get; set; } = string.Empty;
@@ -78,33 +73,5 @@ namespace DnDBot.Application.Models
         /// </summary>
         public DateTime? ModificadoEm { get; set; }
 
-        /// <summary>
-        /// Adiciona uma nova tag à lista de tags, evitando duplicatas.
-        /// </summary>
-        /// <param name="tag">Tag a ser adicionada.</param>
-        public void AdicionarTag(string tag)
-        {
-            if (!Tags.Contains(tag))
-                Tags.Add(tag);
-        }
-
-        /// <summary>
-        /// Remove uma tag da lista de tags.
-        /// </summary>
-        /// <param name="tag">Tag a ser removida.</param>
-        public void RemoverTag(string tag)
-        {
-            Tags.Remove(tag);
-        }
-
-        /// <summary>
-        /// Retorna todas as tags em formato de string separada por vírgula.
-        /// Retorna "Sem tags" caso não haja nenhuma tag registrada.
-        /// </summary>
-        /// <returns>String contendo as tags ou "Sem tags".</returns>
-        public string ListarTags()
-        {
-            return Tags.Count == 0 ? "Sem tags" : string.Join(", ", Tags);
-        }
     }
 }

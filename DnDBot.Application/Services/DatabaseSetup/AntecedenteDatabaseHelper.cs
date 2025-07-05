@@ -70,22 +70,22 @@ public static class AntecedenteDatabaseHelper
                 Id TEXT PRIMARY KEY,
                 Nome TEXT,
                 Descricao TEXT,
-                IdAntecedente TEXT NOT NULL,
-                FOREIGN KEY (IdAntecedente) REFERENCES Antecedente(Id) ON DELETE CASCADE",
+                AntecedenteId TEXT NOT NULL,
+                FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
 
             ["Antecedente_Vinculo"] = @"
                 Id TEXT PRIMARY KEY,
                 Nome TEXT,
                 Descricao TEXT,
-                IdAntecedente TEXT NOT NULL,
-                FOREIGN KEY (IdAntecedente) REFERENCES Antecedente(Id) ON DELETE CASCADE",
+                AntecedenteId TEXT NOT NULL,
+                FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
 
             ["Antecedente_Defeito"] = @"
                 Id TEXT PRIMARY KEY,
                 Nome TEXT,
                 Descricao TEXT,
-                IdAntecedente TEXT NOT NULL,
-                FOREIGN KEY (IdAntecedente) REFERENCES Antecedente(Id) ON DELETE CASCADE"
+                AntecedenteId TEXT NOT NULL,
+                FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE"
         };
 
         foreach (var tabela in definicoes)
@@ -199,7 +199,7 @@ public static class AntecedenteDatabaseHelper
             var insert = conn.CreateCommand();
             insert.Transaction = tx;
             insert.CommandText = $@"
-                INSERT OR IGNORE INTO {tabela} (Id, Nome, Descricao, IdAntecedente)
+                INSERT OR IGNORE INTO {tabela} (Id, Nome, Descricao, AntecedenteId)
                 VALUES ($id, $nome, $desc, $aid)";
             insert.Parameters.AddWithValue("$id", item.Id);
             insert.Parameters.AddWithValue("$nome", item.Nome ?? "");

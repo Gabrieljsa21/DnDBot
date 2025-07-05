@@ -23,16 +23,16 @@ namespace DnDBot.Application.Repositories
             connection.Open();
 
             var command = connection.CreateCommand();
-            command.CommandText = @"INSERT INTO FichaPersonagem (IdJogador, Nome, IdRaca, IdSubraca, IdClasse, IdAntecedente, IdAlinhamento)
-                                VALUES (@idJogador, @nome, @idRaca, @idSubraca, @idClasse, @idAntecedente, @idAlinhamento)";
+            command.CommandText = @"INSERT INTO FichaPersonagem (JogadorId, Nome, RacaId, SubracaId, ClasseId, AntecedenteId, AlinhamentoId)
+                                VALUES (@jogadorId, @nome, @racaId, @subracaId, @classeId, @antecedenteId, @alinhamentoId)";
 
-            command.Parameters.AddWithValue("@idJogador", ficha.IdJogador);
+            command.Parameters.AddWithValue("@jogadorId", ficha.JogadorId);
             command.Parameters.AddWithValue("@nome", ficha.Nome);
-            command.Parameters.AddWithValue("@idRaca", ficha.IdRaca);
-            command.Parameters.AddWithValue("@idSubraca", ficha.IdSubraca);
-            command.Parameters.AddWithValue("@idClasse", ficha.IdClasse);
-            command.Parameters.AddWithValue("@idAntecedente", ficha.IdAntecedente);
-            command.Parameters.AddWithValue("@idAlinhamento", ficha.IdAlinhamento);
+            command.Parameters.AddWithValue("@racaId", ficha.RacaId);
+            command.Parameters.AddWithValue("@subracaId", ficha.SubracaId);
+            command.Parameters.AddWithValue("@classeId", ficha.ClasseId);
+            command.Parameters.AddWithValue("@antecedenteId", ficha.AntecedenteId);
+            command.Parameters.AddWithValue("@alinhamentoId", ficha.AlinhamentoId);
 
             command.ExecuteNonQuery();
         }

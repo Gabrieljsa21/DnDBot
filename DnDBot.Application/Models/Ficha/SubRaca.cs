@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using DnDBot.Application.Models.Ficha.Auxiliares;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace DnDBot.Application.Models.Ficha
 {
@@ -61,11 +64,27 @@ namespace DnDBot.Application.Models.Ficha
         /// <summary>
         /// ID da raça à qual a sub-raça pertence.
         /// </summary>
-        public string IdRaca { get; set; }
+        public string RacaId { get; set; }
 
         /// <summary>
         /// Referência para a raça principal da qual esta sub-raça deriva.
         /// </summary>
         public Raca Raca { get; set; }
+
+
+        /// <summary>
+        /// Relacionamento com as tags armazenadas na tabela Raca_Tag.
+        /// </summary>
+        public List<SubRacaTag> SubRacaTags { get; set; } = new();
+
+        /// <summary>
+        /// Tags derivadas da lista de RacaTags, útil para facilitar acesso.
+        /// </summary>
+        [NotMapped]
+        public List<string> Tags
+        {
+            get => SubRacaTags?.Select(rt => rt.Tag).ToList() ?? new();
+            set => SubRacaTags = value?.Select(tag => new SubRacaTag { Tag = tag, SubRacaId = this.Id }).ToList() ?? new();
+        }
     }
 }

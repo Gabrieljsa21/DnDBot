@@ -11,21 +11,12 @@ using System.Threading.Tasks;
 
 namespace DnDBot.Bot.Commands.Ficha
 {
-    /// <summary>
-    /// Módulo de comandos para gerenciar a distribuição de atributos em fichas de personagem.
-    /// </summary>
     public class ComandoAtributosFicha : InteractionModuleBase<SocketInteractionContext>
     {
         private readonly FichaService _fichaService;
         private readonly DistribuicaoAtributosService _atributosService;
         private readonly DistribuicaoAtributosHandler _atributosHandler;
 
-        /// <summary>
-        /// Construtor que recebe os serviços necessários via injeção de dependência.
-        /// </summary>
-        /// <param name="fichaService">Serviço para manipulação das fichas.</param>
-        /// <param name="atributosService">Serviço para manipulação da distribuição de atributos.</param>
-        /// <param name="atributosHandler">Handler para gerenciamento da UI e lógica de distribuição de atributos.</param>
         public ComandoAtributosFicha(
             FichaService fichaService,
             DistribuicaoAtributosService atributosService,
@@ -36,19 +27,21 @@ namespace DnDBot.Bot.Commands.Ficha
             _atributosHandler = atributosHandler;
         }
 
-        /// <summary>
-        /// Comando Slash que lista as fichas do usuário para que ele escolha uma para distribuir atributos.
-        /// </summary>
         [SlashCommand("ficha_atributos", "Escolha uma ficha para distribuir os atributos")]
         public async Task FichaAtributosCommand()
         {
+            Console.WriteLine($"[LOG] Slash command /ficha_atributos acionado por {Context.User.Id}");
+
             var fichas = await _fichaService.ObterFichasPorJogadorAsync(Context.User.Id);
 
             if (fichas == null || !fichas.Any())
             {
+                Console.WriteLine($"[LOG] Nenhuma ficha encontrada para jogador {Context.User.Id}");
                 await RespondAsync("❌ Você ainda não tem fichas criadas. Use /ficha_criar primeiro.", ephemeral: true);
                 return;
             }
+
+            Console.WriteLine($"[LOG] {fichas.Count()} fichas encontradas para jogador {Context.User.Id}");
 
             var options = fichas.Select(f => new SelectMenuOptionBuilder
             {
@@ -66,16 +59,14 @@ namespace DnDBot.Bot.Commands.Ficha
             await RespondAsync("Selecione a ficha para distribuir atributos:", components: builder.Build(), ephemeral: true);
         }
 
-        /// <summary>
-        /// Handler chamado quando o usuário seleciona uma ficha para distribuição de atributos.
-        /// Inicializa a distribuição e exibe a interface para ajuste.
-        /// </summary>
-        /// <param name="fichaIdStr">ID da ficha selecionada, como string.</param>
         [ComponentInteraction("select_ficha_atributo")]
         public async Task SelectFichaAtributoHandler(string fichaIdStr)
         {
+            Console.WriteLine($"[LOG] Ficha selecionada para distribuição: {fichaIdStr} por {Context.User.Id}");
+
             if (!Guid.TryParse(fichaIdStr, out var fichaId))
             {
+                Console.WriteLine($"[ERRO] ID de ficha inválido recebido: {fichaIdStr}");
                 await RespondAsync("❌ ID da ficha inválido.", ephemeral: true);
                 return;
             }
@@ -85,6 +76,7 @@ namespace DnDBot.Bot.Commands.Ficha
 
             if (ficha == null)
             {
+                Console.WriteLine($"[ERRO] Ficha com ID {fichaId} não encontrada para jogador {Context.User.Id}");
                 await RespondAsync("❌ Ficha não encontrada.", ephemeral: true);
                 return;
             }
@@ -92,53 +84,60 @@ namespace DnDBot.Bot.Commands.Ficha
             var dist = _atributosHandler.ObterDistribuicao(Context.User.Id, ficha.Id);
             _atributosHandler.InicializarDistribuicao(dist, ficha);
 
+            Console.WriteLine($"[LOG] Interface de distribuição inicializada para ficha '{ficha.Nome}' ({ficha.Id})");
+
             var embed = _atributosHandler.ConstruirEmbedDistribuicao(dist);
-            var components = _atributosHandler.ConstruirComponentesDistribuicao(dist);
+            var components = _atributosHandler.ConstruirComponentesDistribuicao(dist, ficha.Id);
 
             await RespondAsync($"Distribua seus pontos de atributo na ficha **{ficha.Nome}**:", embed: embed, components: components, ephemeral: true);
         }
 
-        /// <summary>
-        /// Handler genérico para os botões de ajuste de atributos (incrementar/decrementar).
-        /// Espera um customId no formato "atributo_direcao_atributo" (ex: atributo_mais_Forca).
-        /// </summary>
-        /// <param name="direcao">Direção do ajuste: "mais" ou "menos".</param>
-        /// <param name="atributo">Nome do atributo a ser ajustado.</param>
-        [ComponentInteraction("atributo_*_*")]
-        public async Task AtributoHandler(string direcao, string atributo)
+        [ComponentInteraction("atributo_*_*_*")]
+        public async Task AtributoHandler(string direcao, string atributo, string fichaIdStr)
         {
-            Console.WriteLine($"Botão clicado: {direcao} {atributo}");
+            Console.WriteLine($"[LOG] Botão clicado: {direcao} {atributo}_{fichaIdStr} por usuário {Context.User.Id}");
 
-            await DeferAsync(ephemeral: true);  // Evita timeout da interação
+            await DeferAsync(ephemeral: true);  // Evita timeout
+
+            if (!Guid.TryParse(fichaIdStr, out var fichaId))
+            {
+                Console.WriteLine($"[ERRO] fichaId '{fichaIdStr}' inválido.");
+                await FollowupAsync("❌ ID da ficha inválido.", ephemeral: true);
+                return;
+            }
 
             var fichas = await _fichaService.ObterFichasPorJogadorAsync(Context.User.Id);
-            var ficha = fichas.OrderByDescending(f => f.DataAlteracao).FirstOrDefault();
-
+            var ficha = fichas.FirstOrDefault(f => f.Id == fichaId);
             if (ficha == null)
             {
-                await FollowupAsync("❌ Nenhuma ficha encontrada para distribuir atributos.", ephemeral: true);
+                Console.WriteLine($"[ERRO] Ficha {fichaId} não encontrada.");
+                await FollowupAsync("❌ Ficha não encontrada.", ephemeral: true);
                 return;
             }
 
             int delta = direcao == "mais" ? +1 : -1;
+            Console.WriteLine($"[LOG] Ajustando atributo {atributo} em {delta} ponto(s) na ficha '{ficha.Nome}' ({ficha.Id})");
 
             bool alterou = _atributosHandler.TentarAjustarAtributo(Context.User.Id, ficha.Id, atributo, delta);
             if (!alterou)
             {
+                Console.WriteLine($"[ERRO] Ajuste inválido para {atributo} em ficha {ficha.Id}");
                 await FollowupAsync("❌ Não foi possível alterar o atributo.", ephemeral: true);
                 return;
             }
 
             var dist = _atributosHandler.ObterDistribuicao(Context.User.Id, ficha.Id);
             var embed = _atributosHandler.ConstruirEmbedDistribuicao(dist);
-            var components = _atributosHandler.ConstruirComponentesDistribuicao(dist);
+            var components = _atributosHandler.ConstruirComponentesDistribuicao(dist, ficha.Id);
 
-            // Atualiza a mensagem original com o embed e componentes atualizados
             await Context.Interaction.ModifyOriginalResponseAsync(msg =>
             {
                 msg.Embed = embed;
                 msg.Components = components;
             });
+
+            Console.WriteLine($"[LOG] Atributo {atributo} alterado com sucesso. Atualizando mensagem.");
         }
+
     }
 }

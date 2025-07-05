@@ -59,8 +59,8 @@ class Program
         .AddScoped<ClassesService>()
         .AddScoped<AntecedentesService>()
         .AddScoped<AlinhamentosService>()
-        .AddScoped<DistribuicaoAtributosService>()
         .AddScoped<DistribuicaoAtributosHandler>()
+        .AddSingleton<DistribuicaoAtributosService>()
         .AddSingleton<RolagemDadosService>()
         .AddSingleton<FormatadorMensagemService>()
 

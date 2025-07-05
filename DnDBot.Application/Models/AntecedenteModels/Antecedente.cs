@@ -1,7 +1,9 @@
 ﻿using DnDBot.Application.Models.Enums;
 using DnDBot.Application.Models.Ficha;
+using DnDBot.Application.Models.Ficha.Auxiliares;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace DnDBot.Application.Models.AntecedenteModels
 {
@@ -87,5 +89,21 @@ namespace DnDBot.Application.Models.AntecedenteModels
         /// Riqueza inicial representada pela lista de moedas que o personagem recebe ao escolher este antecedente.
         /// </summary>
         public List<Moeda> RiquezaInicial { get; set; } = new();
+
+        /// <summary>
+        /// Relacionamento com as tags armazenadas na tabela Raca_Tag.
+        /// </summary>
+        public List<AntecedenteTag> AntecedenteTags { get; set; } = new();
+
+        /// <summary>
+        /// Tags derivadas da lista de RacaTags, útil para facilitar acesso.
+        /// </summary>
+        [NotMapped]
+        public List<string> Tags
+        {
+            get => AntecedenteTags?.Select(rt => rt.Tag).ToList() ?? new();
+            set => AntecedenteTags = value?.Select(tag => new AntecedenteTag { Tag = tag, AntecedenteId = this.Id }).ToList() ?? new();
+        }
+
     }
 }

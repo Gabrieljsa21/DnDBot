@@ -114,13 +114,13 @@ Essas tabelas são populadas a partir de arquivos JSON em `/Data`, permitindo man
 public class FichaPersonagem
 {
     public Guid Id { get; set; }
-    public ulong IdJogador { get; set; }
+    public ulong JogadorId { get; set; }
     public string Nome { get; set; }
-    public string IdRaca { get; set; }
-    public string IdSubraca { get; set; }
-    public string IdClasse { get; set; }
-    public string IdAntecedente { get; set; }
-    public string IdAlinhamento { get; set; }
+    public string RacaId { get; set; }
+    public string SubracaId { get; set; }
+    public string ClasseId { get; set; }
+    public string AntecedenteId { get; set; }
+    public string AlinhamentoId { get; set; }
     public int Forca { get; set; }
     public int Destreza { get; set; }
     public int Constituicao { get; set; }

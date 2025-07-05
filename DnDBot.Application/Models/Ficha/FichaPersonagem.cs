@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DnDBot.Application.Models.Ficha.Auxiliares;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 namespace DnDBot.Application.Models.Ficha
@@ -18,7 +20,7 @@ namespace DnDBot.Application.Models.Ficha
         /// <summary>
         /// Identificador do jogador dono da ficha (ex: Discord User ID).
         /// </summary>
-        public ulong IdJogador { get; set; }
+        public ulong JogadorId { get; set; }
 
         /// <summary>
         /// Nome do personagem.
@@ -28,27 +30,27 @@ namespace DnDBot.Application.Models.Ficha
         /// <summary>
         /// ID da raça do personagem.
         /// </summary>
-        public string IdRaca { get; set; } = "Não definida";
+        public string RacaId { get; set; } = "Não definida";
 
         /// <summary>
         /// ID da sub-raça do personagem.
         /// </summary>
-        public string IdSubraca { get; set; } = "Não definida";
+        public string SubracaId { get; set; } = "Não definida";
 
         /// <summary>
         /// ID da classe do personagem.
         /// </summary>
-        public string IdClasse { get; set; } = "Não definida";
+        public string ClasseId { get; set; } = "Não definida";
 
         /// <summary>
         /// ID do antecedente (background) do personagem.
         /// </summary>
-        public string IdAntecedente { get; set; } = "Não definido";
+        public string AntecedenteId { get; set; } = "Não definido";
 
         /// <summary>
         /// ID do alinhamento do personagem.
         /// </summary>
-        public string IdAlinhamento { get; set; } = "Não definido";
+        public string AlinhamentoId { get; set; } = "Não definido";
 
         /// <summary>
         /// Valor base do atributo Força.
@@ -149,6 +151,21 @@ namespace DnDBot.Application.Models.Ficha
         /// Histórico financeiro detalhado do personagem.
         /// </summary>
         public List<HistoricoFinanceiroItem> HistoricoFinanceiro { get; set; } = new();
+
+        /// <summary>
+        /// Relacionamento com as tags armazenadas na tabela Raca_Tag.
+        /// </summary>
+        public List<FichaPersonagemTag> FichaPersonagemTags { get; set; } = new();
+
+        /// <summary>
+        /// Tags derivadas da lista de RacaTags, útil para facilitar acesso.
+        /// </summary>
+        [NotMapped]
+        public List<string> Tags
+        {
+            get => FichaPersonagemTags?.Select(rt => rt.Tag).ToList() ?? new();
+            set => FichaPersonagemTags = value?.Select(tag => new FichaPersonagemTag { Tag = tag, FichaPersonagemId = this.Id }).ToList() ?? new();
+        }
 
         /// <summary>
         /// Obtém o valor total dos bônus aplicados a um determinado atributo (por nome).

@@ -1,5 +1,8 @@
 ﻿using DnDBot.Application.Models.Enums;
+using DnDBot.Application.Models.Ficha.Auxiliares;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace DnDBot.Application.Models
 {
@@ -59,6 +62,22 @@ namespace DnDBot.Application.Models
 
         /// <summary>Lista de tipos de dano contra os quais a armadura concede imunidade total.</summary>
         public List<TipoDano> ImunidadesDano { get; set; }
+
+        /// <summary>
+        /// Relacionamento com as tags armazenadas na tabela Armadura_Tag.
+        /// </summary>
+        public List<ArmaduraTag> ArmaduraTags { get; set; } = new();
+
+        /// <summary>
+        /// Tags derivadas da lista de ArmaduraTags, útil para facilitar acesso.
+        /// </summary>
+        [NotMapped]
+        public List<string> Tags
+        {
+            get => ArmaduraTags?.Select(at => at.Tag).ToList() ?? new();
+            set => ArmaduraTags = value?.Select(tag => new ArmaduraTag { Tag = tag, ArmaduraId = this.Id }).ToList() ?? new();
+        }
+
 
         /// <summary>
         /// Construtor padrão que inicializa listas para evitar valores nulos.

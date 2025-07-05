@@ -17,16 +17,16 @@ public static class RacaDatabaseHelper
 
     public static async Task CriarTabelaAsync(SqliteCommand cmd)
     {
-        // Monta definição da tabela SubRaca evitando vírgulas extras antes do FOREIGN KEY
         var definicaoSubRaca = string.Join(",\n", new[]
         {
-            "IdRaca TEXT NOT NULL",
+            "Id TEXT PRIMARY KEY",
+            "RacaId TEXT NOT NULL",
             "TendenciasComuns TEXT",
             "Tamanho TEXT",
             "Deslocamento INTEGER",
             "VisaoNoEscuro INTEGER",
             SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim().TrimEnd(','),
-            "FOREIGN KEY (IdRaca) REFERENCES Raca(Id) ON DELETE CASCADE"
+            "FOREIGN KEY (RacaId) REFERENCES Raca(Id) ON DELETE CASCADE"
         });
 
         var definicoes = new Dictionary<string, string>
@@ -95,33 +95,39 @@ public static class RacaDatabaseHelper
         await cmd.ExecuteNonQueryAsync();
     }
 
-    private static async Task InserirSubRacas(SqliteConnection conn, SqliteTransaction tx, string idRaca, IEnumerable<SubRaca> subracas)
+    private static async Task InserirSubRacas(SqliteConnection conn, SqliteTransaction tx, string racaId, IEnumerable<SubRaca> subracas)
     {
         if (subracas == null) return;
 
         foreach (var sub in subracas)
         {
+            if (string.IsNullOrWhiteSpace(sub.Id))
+            {
+                throw new InvalidOperationException("Sub-raça sem ID definido. Todos os registros devem ter um Id não nulo.");
+            }
             if (await SqliteHelper.RegistroExisteAsync(conn, tx, "SubRaca", sub.Id))
                 continue;
 
             var parametros = SqliteHelper.GerarParametrosEntidadeBase(sub);
-            parametros["idRaca"] = idRaca;
+            parametros["id"] = sub.Id;
+            parametros["racaId"] = racaId;
             parametros["tend"] = sub.TendenciasComuns ?? "";
             parametros["tam"] = sub.Tamanho ?? "";
             parametros["desloc"] = sub.Deslocamento;
             parametros["visao"] = sub.VisaoNoEscuro;
 
             var sql = $@"
-                INSERT INTO SubRaca (
-                    IdRaca, TendenciasComuns, Tamanho, Deslocamento, VisaoNoEscuro,
-                    {SqliteEntidadeBaseHelper.CamposInsert.Replace("Id,", "")}
-                ) VALUES (
-                    $idRaca, $tend, $tam, $desloc, $visao, 
-                    {SqliteEntidadeBaseHelper.ValoresInsert.Replace("$id,", "")}
-                )";
+        INSERT INTO SubRaca (
+            Id, RacaId, TendenciasComuns, Tamanho, Deslocamento, VisaoNoEscuro,
+            {SqliteEntidadeBaseHelper.CamposInsert.Replace("Id,", "")}
+        ) VALUES (
+            $id, $racaId, $tend, $tam, $desloc, $visao, 
+            {SqliteEntidadeBaseHelper.ValoresInsert.Replace("$id,", "")}
+        )";
 
             var cmd = SqliteHelper.CriarInsertCommand(conn, tx, sql, parametros);
             await cmd.ExecuteNonQueryAsync();
         }
+
     }
 }

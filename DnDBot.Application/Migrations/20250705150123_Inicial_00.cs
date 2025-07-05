@@ -18,7 +18,6 @@ namespace DnDBot.Application.Migrations
                     Id = table.Column<string>(type: "TEXT", nullable: false),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -43,7 +42,6 @@ namespace DnDBot.Application.Migrations
                     Requisitos = table.Column<string>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -99,7 +97,6 @@ namespace DnDBot.Application.Migrations
                     Fabricante = table.Column<string>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -139,7 +136,6 @@ namespace DnDBot.Application.Migrations
                     ImunidadesDano = table.Column<string>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -169,7 +165,6 @@ namespace DnDBot.Application.Migrations
                     IdItensIniciais = table.Column<string>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -190,13 +185,13 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    IdJogador = table.Column<ulong>(type: "INTEGER", nullable: false),
+                    JogadorId = table.Column<ulong>(type: "INTEGER", nullable: false),
                     Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    IdRaca = table.Column<string>(type: "TEXT", nullable: true),
-                    IdSubraca = table.Column<string>(type: "TEXT", nullable: true),
-                    IdClasse = table.Column<string>(type: "TEXT", nullable: true),
-                    IdAntecedente = table.Column<string>(type: "TEXT", nullable: true),
-                    IdAlinhamento = table.Column<string>(type: "TEXT", nullable: true),
+                    RacaId = table.Column<string>(type: "TEXT", nullable: true),
+                    SubracaId = table.Column<string>(type: "TEXT", nullable: true),
+                    ClasseId = table.Column<string>(type: "TEXT", nullable: true),
+                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
+                    AlinhamentoId = table.Column<string>(type: "TEXT", nullable: true),
                     Forca = table.Column<int>(type: "INTEGER", nullable: false),
                     Destreza = table.Column<int>(type: "INTEGER", nullable: false),
                     Constituicao = table.Column<int>(type: "INTEGER", nullable: false),
@@ -259,7 +254,6 @@ namespace DnDBot.Application.Migrations
                     BonusAdicional = table.Column<int>(type: "INTEGER", nullable: false),
                     Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
                     Descricao = table.Column<string>(type: "TEXT", maxLength: 2000, nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", maxLength: 20, nullable: true),
                     Versao = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
@@ -298,6 +292,24 @@ namespace DnDBot.Application.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AlinhamentoTag",
+                columns: table => new
+                {
+                    AlinhamentoId = table.Column<string>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AlinhamentoTag", x => new { x.AlinhamentoId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_AlinhamentoTag_Alinhamento_AlinhamentoId",
+                        column: x => x.AlinhamentoId,
+                        principalTable: "Alinhamento",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Antecedente_RiquezaInicial",
                 columns: table => new
                 {
@@ -319,15 +331,31 @@ namespace DnDBot.Application.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AntecedenteTag",
+                columns: table => new
+                {
+                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AntecedenteTag", x => new { x.AntecedenteId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_AntecedenteTag_Antecedente_AntecedenteId",
+                        column: x => x.AntecedenteId,
+                        principalTable: "Antecedente",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Defeito",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    IdAntecedente = table.Column<string>(type: "TEXT", nullable: true),
                     AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -376,10 +404,10 @@ namespace DnDBot.Application.Migrations
                     Custo = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     EMagica = table.Column<bool>(type: "INTEGER", nullable: false),
                     RequerProficiencia = table.Column<bool>(type: "INTEGER", nullable: false),
+                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
                     Descricao = table.Column<string>(type: "TEXT", maxLength: 1000, nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -405,11 +433,9 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    IdAntecedente = table.Column<string>(type: "TEXT", nullable: true),
                     AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -435,11 +461,9 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    IdAntecedente = table.Column<string>(type: "TEXT", nullable: true),
                     AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -478,6 +502,42 @@ namespace DnDBot.Application.Migrations
                         column: x => x.ArmaId,
                         principalTable: "Arma",
                         principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ArmaTag",
+                columns: table => new
+                {
+                    ArmaId = table.Column<string>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ArmaTag", x => new { x.ArmaId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_ArmaTag_Arma_ArmaId",
+                        column: x => x.ArmaId,
+                        principalTable: "Arma",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ArmaduraTag",
+                columns: table => new
+                {
+                    ArmaduraId = table.Column<string>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ArmaduraTag", x => new { x.ArmaduraId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_ArmaduraTag_Armadura_ArmaduraId",
+                        column: x => x.ArmaduraId,
+                        principalTable: "Armadura",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -586,6 +646,24 @@ namespace DnDBot.Application.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ClasseTag",
+                columns: table => new
+                {
+                    ClasseId = table.Column<string>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClasseTag", x => new { x.ClasseId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_ClasseTag_Classe_ClasseId",
+                        column: x => x.ClasseId,
+                        principalTable: "Classe",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "EspacoMagiaPorNivel",
                 columns: table => new
                 {
@@ -658,7 +736,6 @@ namespace DnDBot.Application.Migrations
                     ClasseId = table.Column<string>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -688,7 +765,6 @@ namespace DnDBot.Application.Migrations
                     FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -736,6 +812,24 @@ namespace DnDBot.Application.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "FichaPersonagemTag",
+                columns: table => new
+                {
+                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FichaPersonagemTag", x => new { x.FichaPersonagemId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_FichaPersonagemTag_FichaPersonagem_FichaPersonagemId",
+                        column: x => x.FichaPersonagemId,
+                        principalTable: "FichaPersonagem",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "HistoricoFinanceiroItem",
                 columns: table => new
                 {
@@ -751,7 +845,6 @@ namespace DnDBot.Application.Migrations
                     FichaPersonagemId1 = table.Column<Guid>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -787,7 +880,6 @@ namespace DnDBot.Application.Migrations
                     FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -853,7 +945,6 @@ namespace DnDBot.Application.Migrations
                     FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -883,7 +974,6 @@ namespace DnDBot.Application.Migrations
                     FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -913,7 +1003,6 @@ namespace DnDBot.Application.Migrations
                     FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -1060,10 +1149,9 @@ namespace DnDBot.Application.Migrations
                     Tamanho = table.Column<string>(type: "TEXT", nullable: true),
                     Deslocamento = table.Column<int>(type: "INTEGER", nullable: false),
                     VisaoNoEscuro = table.Column<int>(type: "INTEGER", nullable: false),
-                    IdRaca = table.Column<string>(type: "TEXT", nullable: true),
+                    RacaId = table.Column<string>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Tags = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
                     Pagina = table.Column<string>(type: "TEXT", nullable: true),
                     Versao = table.Column<string>(type: "TEXT", nullable: true),
@@ -1078,8 +1166,8 @@ namespace DnDBot.Application.Migrations
                 {
                     table.PrimaryKey("PK_SubRaca", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SubRaca_Raca_IdRaca",
-                        column: x => x.IdRaca,
+                        name: "FK_SubRaca_Raca_RacaId",
+                        column: x => x.RacaId,
                         principalTable: "Raca",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -1105,6 +1193,24 @@ namespace DnDBot.Application.Migrations
                         name: "FK_FerramentaPericia_Pericia_PericiaId",
                         column: x => x.PericiaId,
                         principalTable: "Pericia",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FerramentaTag",
+                columns: table => new
+                {
+                    FerramentaId = table.Column<string>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FerramentaTag", x => new { x.FerramentaId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_FerramentaTag_Ferramenta_FerramentaId",
+                        column: x => x.FerramentaId,
+                        principalTable: "Ferramenta",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -1206,6 +1312,24 @@ namespace DnDBot.Application.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ClasseMagias_Magia_MagiaId",
+                        column: x => x.MagiaId,
+                        principalTable: "Magia",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MagiaTag",
+                columns: table => new
+                {
+                    MagiaId = table.Column<string>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MagiaTag", x => new { x.MagiaId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_MagiaTag_Magia_MagiaId",
                         column: x => x.MagiaId,
                         principalTable: "Magia",
                         principalColumn: "Id",
@@ -1354,6 +1478,24 @@ namespace DnDBot.Application.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_SubRaca_Resistencias_SubRaca_SubRacaId",
+                        column: x => x.SubRacaId,
+                        principalTable: "SubRaca",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SubRacaTag",
+                columns: table => new
+                {
+                    SubRacaId = table.Column<string>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SubRacaTag", x => new { x.SubRacaId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_SubRacaTag_SubRaca_SubRacaId",
                         column: x => x.SubRacaId,
                         principalTable: "SubRaca",
                         principalColumn: "Id",
@@ -1546,9 +1688,9 @@ namespace DnDBot.Application.Migrations
                 column: "ClasseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SubRaca_IdRaca",
+                name: "IX_SubRaca_RacaId",
                 table: "SubRaca",
-                column: "IdRaca");
+                column: "RacaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SubRaca_Caracteristicas_SubRacaId",
@@ -1585,7 +1727,7 @@ namespace DnDBot.Application.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Alinhamento");
+                name: "AlinhamentoTag");
 
             migrationBuilder.DropTable(
                 name: "Antecedente_RiquezaInicial");
@@ -1594,7 +1736,16 @@ namespace DnDBot.Application.Migrations
                 name: "AntecedentePericia");
 
             migrationBuilder.DropTable(
+                name: "AntecedenteTag");
+
+            migrationBuilder.DropTable(
+                name: "ArmaduraTag");
+
+            migrationBuilder.DropTable(
                 name: "ArmaRequisitoAtributo");
+
+            migrationBuilder.DropTable(
+                name: "ArmaTag");
 
             migrationBuilder.DropTable(
                 name: "BonusAtributo");
@@ -1627,6 +1778,9 @@ namespace DnDBot.Application.Migrations
                 name: "ClasseSalvaguardas");
 
             migrationBuilder.DropTable(
+                name: "ClasseTag");
+
+            migrationBuilder.DropTable(
                 name: "Defeito");
 
             migrationBuilder.DropTable(
@@ -1642,7 +1796,13 @@ namespace DnDBot.Application.Migrations
                 name: "FerramentaPericia");
 
             migrationBuilder.DropTable(
+                name: "FerramentaTag");
+
+            migrationBuilder.DropTable(
                 name: "FichaPersonagem_BolsaDeMoedas_Moedas");
+
+            migrationBuilder.DropTable(
+                name: "FichaPersonagemTag");
 
             migrationBuilder.DropTable(
                 name: "HistoricoFinanceiroItem_SaldoApos_Moedas");
@@ -1652,6 +1812,9 @@ namespace DnDBot.Application.Migrations
 
             migrationBuilder.DropTable(
                 name: "Ideal");
+
+            migrationBuilder.DropTable(
+                name: "MagiaTag");
 
             migrationBuilder.DropTable(
                 name: "OpcaoEscolha<Equipamento>");
@@ -1687,7 +1850,13 @@ namespace DnDBot.Application.Migrations
                 name: "SubRaca_Resistencias");
 
             migrationBuilder.DropTable(
+                name: "SubRacaTag");
+
+            migrationBuilder.DropTable(
                 name: "Vinculo");
+
+            migrationBuilder.DropTable(
+                name: "Alinhamento");
 
             migrationBuilder.DropTable(
                 name: "Subclasse");
@@ -1699,10 +1868,10 @@ namespace DnDBot.Application.Migrations
                 name: "Arma");
 
             migrationBuilder.DropTable(
-                name: "Ferramenta");
+                name: "Pericia");
 
             migrationBuilder.DropTable(
-                name: "Pericia");
+                name: "Ferramenta");
 
             migrationBuilder.DropTable(
                 name: "HistoricoFinanceiroItem");

@@ -1,72 +1,53 @@
 ﻿using DnDBot.Application.Models.Ficha;
+using System;
 using System.Collections.Concurrent;
 
-/// <summary>
-/// Armazena fichas de personagens temporárias em memória, associadas ao ID do jogador.
-/// Útil para operações intermediárias antes de persistência no banco.
-/// </summary>
 public static class FichaTempStore
 {
     private static readonly ConcurrentDictionary<ulong, FichaPersonagem> _fichasTemporarias = new();
 
-    /// <summary>
-    /// Salva ou substitui completamente a ficha temporária de um jogador.
-    /// </summary>
-    /// <param name="jogadorId">ID único do jogador.</param>
-    /// <param name="ficha">Objeto completo da ficha do personagem.</param>
     public static void SaveFicha(ulong jogadorId, FichaPersonagem ficha)
     {
         _fichasTemporarias[jogadorId] = ficha;
+        Console.WriteLine($"[LOG] Ficha salva temporariamente para jogador {jogadorId} (Nome: {ficha.Nome}, ID: {ficha.Id})");
     }
 
-    /// <summary>
-    /// Retorna a ficha temporária associada ao jogador, se existir.
-    /// </summary>
-    /// <param name="jogadorId">ID do jogador.</param>
-    /// <returns>Ficha do personagem, ou null se não encontrada.</returns>
     public static FichaPersonagem GetFicha(ulong jogadorId)
     {
-        return _fichasTemporarias.TryGetValue(jogadorId, out var ficha) ? ficha : null;
+        if (_fichasTemporarias.TryGetValue(jogadorId, out var ficha))
+        {
+            Console.WriteLine($"[LOG] Ficha recuperada para jogador {jogadorId} (Nome: {ficha.Nome}, ID: {ficha.Id})");
+            return ficha;
+        }
+
+        Console.WriteLine($"[LOG] Nenhuma ficha temporária encontrada para jogador {jogadorId}");
+        return null;
     }
 
-    /// <summary>
-    /// Remove a ficha temporária associada ao jogador.
-    /// </summary>
-    /// <param name="jogadorId">ID do jogador.</param>
     public static void RemoveFicha(ulong jogadorId)
     {
-        _fichasTemporarias.TryRemove(jogadorId, out _);
+        if (_fichasTemporarias.TryRemove(jogadorId, out var ficha))
+            Console.WriteLine($"[LOG] Ficha removida da memória para jogador {jogadorId} (Nome: {ficha.Nome})");
+        else
+            Console.WriteLine($"[LOG] Tentativa de remover ficha falhou: nenhuma ficha encontrada para jogador {jogadorId}");
     }
 
-    /// <summary>
-    /// Cria uma nova ficha básica com nome definido, preenchendo valores padrões nos demais campos.
-    /// </summary>
-    /// <param name="jogadorId">ID do jogador.</param>
-    /// <param name="nome">Nome do personagem.</param>
     public static void SavePartialFicha(ulong jogadorId, string nome)
     {
         var ficha = new FichaPersonagem
         {
-            IdJogador = jogadorId,
+            JogadorId = jogadorId,
             Nome = nome,
-            IdRaca = "Não definida",
-            IdClasse = "Não definida",
-            IdAntecedente = "Não definido",
-            IdAlinhamento = "Não definido"
+            RacaId = "Não definida",
+            ClasseId = "Não definida",
+            AntecedenteId = "Não definido",
+            AlinhamentoId = "Não definido"
         };
 
         SaveFicha(jogadorId, ficha);
+        Console.WriteLine($"[LOG] Ficha parcial criada para jogador {jogadorId} com nome '{nome}'");
     }
 
-    /// <summary>
-    /// Atualiza campos específicos da ficha temporária de um jogador, se fornecidos.
-    /// </summary>
-    /// <param name="idJogador">ID do jogador.</param>
-    /// <param name="idRaca">ID da raça (opcional).</param>
-    /// <param name="idClasse">ID da classe (opcional).</param>
-    /// <param name="idAntecedente">ID do antecedente (opcional).</param>
-    /// <param name="idAlinhamento">ID do alinhamento (opcional).</param>
-    /// <param name="idSubraca">ID da sub-raça (opcional).</param>
     public static void UpdateFicha(
         ulong idJogador,
         string idRaca = null,
@@ -76,36 +57,35 @@ public static class FichaTempStore
         string idSubraca = null)
     {
         if (!_fichasTemporarias.TryGetValue(idJogador, out var ficha))
+        {
+            Console.WriteLine($"[LOG] Não foi possível atualizar ficha: ficha não encontrada para jogador {idJogador}");
             return;
+        }
 
-        if (idRaca != null) ficha.IdRaca = idRaca;
-        if (idClasse != null) ficha.IdClasse = idClasse;
-        if (idAntecedente != null) ficha.IdAntecedente = idAntecedente;
-        if (idAlinhamento != null) ficha.IdAlinhamento = idAlinhamento;
-        if (idSubraca != null) ficha.IdSubraca = idSubraca;
+        if (idRaca != null) { ficha.RacaId = idRaca; Console.WriteLine($"[LOG] Raça atualizada para {idRaca}"); }
+        if (idClasse != null) { ficha.ClasseId = idClasse; Console.WriteLine($"[LOG] Classe atualizada para {idClasse}"); }
+        if (idAntecedente != null) { ficha.AntecedenteId = idAntecedente; Console.WriteLine($"[LOG] Antecedente atualizado para {idAntecedente}"); }
+        if (idAlinhamento != null) { ficha.AlinhamentoId = idAlinhamento; Console.WriteLine($"[LOG] Alinhamento atualizado para {idAlinhamento}"); }
+        if (idSubraca != null) { ficha.SubracaId = idSubraca; Console.WriteLine($"[LOG] Sub-raça atualizada para {idSubraca}"); }
     }
 
-    /// <summary>
-    /// Substitui completamente a ficha temporária do jogador com uma nova ficha.
-    /// </summary>
-    /// <param name="jogadorId">ID do jogador.</param>
-    /// <param name="fichaAtualizada">Nova ficha a ser salva.</param>
     public static void UpdateFicha(ulong jogadorId, FichaPersonagem fichaAtualizada)
     {
         _fichasTemporarias[jogadorId] = fichaAtualizada;
+        Console.WriteLine($"[LOG] Ficha substituída para jogador {jogadorId} (Nome: {fichaAtualizada.Nome}, ID: {fichaAtualizada.Id})");
     }
 
-    /// <summary>
-    /// Obtém a ficha temporária do jogador ou cria uma nova, caso não exista.
-    /// </summary>
-    /// <param name="jogadorId">ID do jogador.</param>
-    /// <returns>Ficha existente ou nova instância criada.</returns>
     public static FichaPersonagem GetOrCreateFicha(ulong jogadorId)
     {
         if (!_fichasTemporarias.TryGetValue(jogadorId, out var ficha))
         {
-            ficha = new FichaPersonagem { IdJogador = jogadorId };
+            ficha = new FichaPersonagem { JogadorId = jogadorId };
             _fichasTemporarias[jogadorId] = ficha;
+            Console.WriteLine($"[LOG] Nova ficha criada temporariamente para jogador {jogadorId}");
+        }
+        else
+        {
+            Console.WriteLine($"[LOG] Ficha existente retornada para jogador {jogadorId} (Nome: {ficha.Nome})");
         }
 
         return ficha;

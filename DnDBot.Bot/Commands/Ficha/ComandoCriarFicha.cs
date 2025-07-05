@@ -95,7 +95,7 @@ namespace DnDBot.Bot.Commands.Ficha
                 valor,
                 "Raça",
                 _racasService.ObterRacaPorIdAsync,
-                (ficha, id) => ficha.IdRaca = id
+                (ficha, id) => ficha.RacaId = id
             );
         }
 
@@ -109,7 +109,7 @@ namespace DnDBot.Bot.Commands.Ficha
                 valor,
                 "Classe",
                 _classesService.ObterClassePorIdAsync,
-                (ficha, id) => ficha.IdClasse = id
+                (ficha, id) => ficha.ClasseId = id
             );
         }
 
@@ -124,7 +124,7 @@ namespace DnDBot.Bot.Commands.Ficha
             }
 
             var ficha = FichaTempStore.GetOrCreateFicha(Context.User.Id);
-            ficha.IdAntecedente = valor;
+            ficha.AntecedenteId = valor;
 
             if (antecedente.RiquezaInicial != null)
             {
@@ -139,13 +139,14 @@ namespace DnDBot.Bot.Commands.Ficha
         /// <summary>
         /// Evento disparado quando o usuário seleciona um alinhamento.
         /// </summary>
+        [ComponentInteraction("select_alinhamento")]
         public async Task SelectAlinhamentoHandler(string valor)
         {
             await AtualizarFichaCampoEFinalizar(
                 valor,
                 "Alinhamento",
                 _alinhamentosService.ObterAlinhamentoPorIdAsync,
-                (ficha, id) => ficha.IdAlinhamento = id
+                (ficha, id) => ficha.AlinhamentoId = id
             );
         }
 
@@ -164,10 +165,10 @@ namespace DnDBot.Bot.Commands.Ficha
             await _fichaService.AdicionarFichaAsync(ficha);
             FichaTempStore.RemoveFicha(Context.User.Id);
 
-            string nomeRaca = (await _racasService.ObterRacaPorIdAsync(ficha.IdRaca))?.Nome ?? ficha.IdRaca;
-            string nomeClasse = (await _classesService.ObterClassePorIdAsync(ficha.IdClasse))?.Nome ?? ficha.IdClasse;
-            string nomeAntecedente = (await _antecedentesService.ObterAntecedentePorIdAsync(ficha.IdAntecedente))?.Nome ?? ficha.IdAntecedente;
-            string nomeAlinhamento = (await _alinhamentosService.ObterAlinhamentoPorIdAsync(ficha.IdAlinhamento))?.Nome ?? ficha.IdAlinhamento;
+            string nomeRaca = (await _racasService.ObterRacaPorIdAsync(ficha.RacaId))?.Nome ?? ficha.RacaId;
+            string nomeClasse = (await _classesService.ObterClassePorIdAsync(ficha.ClasseId))?.Nome ?? ficha.ClasseId;
+            string nomeAntecedente = (await _antecedentesService.ObterAntecedentePorIdAsync(ficha.AntecedenteId))?.Nome ?? ficha.AntecedenteId;
+            string nomeAlinhamento = (await _alinhamentosService.ObterAlinhamentoPorIdAsync(ficha.AlinhamentoId))?.Nome ?? ficha.AlinhamentoId;
 
             string resumo =
                 $"**Nome:** {ficha.Nome}\n" +
@@ -178,7 +179,7 @@ namespace DnDBot.Bot.Commands.Ficha
 
             await RespondAsync($"✅ Ficha do personagem criada com sucesso!\n\n{resumo}", ephemeral: true);
 
-            var racaObj = await _racasService.ObterRacaPorIdAsync(ficha.IdRaca);
+            var racaObj = await _racasService.ObterRacaPorIdAsync(ficha.RacaId);
             if (racaObj?.SubRaca?.Any() == true)
             {
                 var selectSubraca = SelectMenuHelper.CriarSelectSubraca(racaObj.SubRaca);
@@ -197,24 +198,34 @@ namespace DnDBot.Bot.Commands.Ficha
             if (string.IsNullOrWhiteSpace(ficha.Nome)) return false;
 
             string[] invalidos = { "Não definida", "Não definido" };
-            if (invalidos.Contains(ficha.IdRaca)) return false;
-            if (invalidos.Contains(ficha.IdClasse)) return false;
-            if (invalidos.Contains(ficha.IdAntecedente)) return false;
-            if (invalidos.Contains(ficha.IdAlinhamento)) return false;
+            if (invalidos.Contains(ficha.RacaId)) return false;
+            if (invalidos.Contains(ficha.ClasseId)) return false;
+            if (invalidos.Contains(ficha.AntecedenteId)) return false;
+            if (invalidos.Contains(ficha.AlinhamentoId)) return false;
 
             return true;
         }
 
         // Botão para concluir a distribuição
-        [ComponentInteraction("concluir_distribuicao")]
-        public async Task ConcluirDistribuicao()
+        [ComponentInteraction("concluir_distribuicao_*")]
+        public async Task ConcluirDistribuicao(string fichaIdStr)
         {
+            Console.WriteLine($"[LOG] Botão concluir_distribuicao_{fichaIdStr} clicado por usuário {Context.User.Id}");
+
+            await DeferAsync(ephemeral: true); // evita timeout
+
+            if (!Guid.TryParse(fichaIdStr, out var fichaId))
+            {
+                await FollowupAsync("❌ ID da ficha inválido.", ephemeral: true);
+                return;
+            }
+
             var fichas = await _fichaService.ObterFichasPorJogadorAsync(Context.User.Id);
-            var ficha = fichas.OrderByDescending(f => f.DataAlteracao).FirstOrDefault();
+            var ficha = fichas.FirstOrDefault(f => f.Id == fichaId);
 
             if (ficha == null)
             {
-                await RespondAsync("❌ Ficha não encontrada para salvar atributos.", ephemeral: true);
+                await FollowupAsync("❌ Ficha não encontrada para salvar atributos.", ephemeral: true);
                 return;
             }
 
@@ -222,7 +233,7 @@ namespace DnDBot.Bot.Commands.Ficha
 
             if (dist.PontosUsados > dist.PontosDisponiveis)
             {
-                await RespondAsync("❌ Você usou mais pontos do que o permitido.", ephemeral: true);
+                await FollowupAsync("❌ Você usou mais pontos do que o permitido.", ephemeral: true);
                 return;
             }
 
@@ -237,8 +248,9 @@ namespace DnDBot.Bot.Commands.Ficha
 
             _atributosHandler.RemoverDistribuicao(Context.User.Id, ficha.Id);
 
-            await RespondAsync("✅ Distribuição de atributos concluída com sucesso!", ephemeral: true);
+            await FollowupAsync("✅ Distribuição de atributos concluída com sucesso!", ephemeral: true);
         }
+
 
         private async Task<bool> AtualizarFichaCampoEFinalizar<T>(
     string valor,

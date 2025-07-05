@@ -148,4 +148,13 @@
         /// </summary>
         public Magia Magia { get; set; }
     }
+
+    public class ClasseTag
+    {
+        public string ClasseId { get; set; }
+        public string Tag { get; set; }
+
+        public Classe Classe { get; set; }
+    }
+
 }

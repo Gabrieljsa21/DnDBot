@@ -38,4 +38,13 @@ namespace DnDBot.Application.Models.Ficha.Auxiliares
         /// </summary>
         public int Valor { get; set; }
     }
+
+    public class ArmaTag
+    {
+        public string ArmaId { get; set; }
+        public string Tag { get; set; }
+
+        public Arma Arma { get; set; }
+    }
+
 }

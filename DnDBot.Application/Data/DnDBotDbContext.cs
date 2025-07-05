@@ -75,6 +75,78 @@ namespace DnDBot.Application.Data
                 .WithMany(r => r.RacaTags)
                 .HasForeignKey(rt => rt.RacaId);
 
+            modelBuilder.Entity<SubRacaTag>()
+                .HasKey(rt => new { rt.SubRacaId, rt.Tag });
+
+            modelBuilder.Entity<SubRacaTag>()
+                .HasOne(rt => rt.SubRaca)
+                .WithMany(r => r.SubRacaTags)
+                .HasForeignKey(rt => rt.SubRacaId);
+
+            modelBuilder.Entity<MagiaTag>()
+    .HasKey(mt => new { mt.MagiaId, mt.Tag });
+
+            modelBuilder.Entity<MagiaTag>()
+                .HasOne(mt => mt.Magia)
+                .WithMany(m => m.MagiaTags)
+                .HasForeignKey(mt => mt.MagiaId);
+
+            modelBuilder.Entity<ClasseTag>()
+    .HasKey(ct => new { ct.ClasseId, ct.Tag });
+
+            modelBuilder.Entity<ClasseTag>()
+                .HasOne(ct => ct.Classe)
+                .WithMany(c => c.ClasseTags)
+                .HasForeignKey(ct => ct.ClasseId);
+
+            modelBuilder.Entity<ArmaduraTag>()
+    .HasKey(at => new { at.ArmaduraId, at.Tag });
+
+            modelBuilder.Entity<ArmaduraTag>()
+                .HasOne(at => at.Armadura)
+                .WithMany(a => a.ArmaduraTags)
+                .HasForeignKey(at => at.ArmaduraId);
+
+            modelBuilder.Entity<ArmaTag>()
+    .HasKey(at => new { at.ArmaId, at.Tag });
+
+            modelBuilder.Entity<ArmaTag>()
+                .HasOne(at => at.Arma)
+                .WithMany(a => a.ArmaTags)
+                .HasForeignKey(at => at.ArmaId);
+
+            modelBuilder.Entity<FichaPersonagemTag>()
+    .HasKey(ft => new { ft.FichaPersonagemId, ft.Tag });
+
+            modelBuilder.Entity<FichaPersonagemTag>()
+                .HasOne(ft => ft.FichaPersonagem)
+                .WithMany(fp => fp.FichaPersonagemTags)
+                .HasForeignKey(ft => ft.FichaPersonagemId);
+
+            modelBuilder.Entity<AlinhamentoTag>()
+    .HasKey(at => new { at.AlinhamentoId, at.Tag });
+
+            modelBuilder.Entity<AlinhamentoTag>()
+                .HasOne(at => at.Alinhamento)
+                .WithMany(a => a.AlinhamentoTags)
+                .HasForeignKey(at => at.AlinhamentoId);
+
+            modelBuilder.Entity<FerramentaTag>()
+                .HasKey(ft => new { ft.FerramentaId, ft.Tag });
+
+            modelBuilder.Entity<FerramentaTag>()
+                .HasOne(ft => ft.Ferramenta)
+                .WithMany(f => f.FerramentaTags)
+                .HasForeignKey(ft => ft.FerramentaId);
+
+            modelBuilder.Entity<AntecedenteTag>()
+    .HasKey(at => new { at.AntecedenteId, at.Tag });
+
+            modelBuilder.Entity<AntecedenteTag>()
+                .HasOne(at => at.Antecedente)
+                .WithMany(a => a.AntecedenteTags)
+                .HasForeignKey(at => at.AntecedenteId);
+
         }
     }
 }

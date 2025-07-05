@@ -12,6 +12,6 @@ namespace DnDBot.Application.Models.AntecedenteModels
         /// <summary>
         /// Identificador do antecedente ao qual este vínculo está associado.
         /// </summary>
-        public string IdAntecedente { get; set; }
+        public string AntecedenteId { get; set; }
     }
 }
