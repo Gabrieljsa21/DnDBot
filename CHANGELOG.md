@@ -4,6 +4,21 @@ Todas as alterações significativas neste projeto serão documentadas neste arquiv
 
 O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e o versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+
+## [1.3.2] - 2025-07-06
+
+### Adicionado
+- Implementação do handler `SelectIdiomaAdicionalHandler` para tratar a escolha de idiomas adicionais após a criação da ficha.
+- Inclusão do processo de verificação e substituição de entradas com ID `"adicional"` por idiomas selecionados pelo jogador.
+- Novo passo de escolha de idiomas adicionais ao final da distribuição de atributos, exibido automaticamente após clicar em "Concluir Distribuição".
+
+### Melhorado
+- Refatoração do fluxo de criação de ficha para exibir a seleção de idiomas adicionais separadamente, após a conclusão da distribuição de atributos.
+- Adicionada validação clara para impedir a seleção de idiomas já conhecidos.
+- Ajustes nos IDs dinâmicos dos SelectMenus de idioma adicional para permitir múltiplas escolhas sem conflitos.
+- Organização dos handlers relacionados a idioma no módulo `ComandoIdiomas`, mantendo o código modular e coeso.
+
+
 ## [1.3.1] - 2025-07-06
 
 ### Melhorado

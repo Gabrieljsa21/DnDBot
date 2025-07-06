@@ -16,15 +16,18 @@ namespace DnDBot.Bot.Commands.Ficha
         private readonly FichaService _fichaService;
         private readonly DistribuicaoAtributosService _atributosService;
         private readonly DistribuicaoAtributosHandler _atributosHandler;
+        private readonly IdiomaService _idiomaService;
 
         public ComandoAtributosFicha(
             FichaService fichaService,
             DistribuicaoAtributosService atributosService,
-            DistribuicaoAtributosHandler atributosHandler)
+            DistribuicaoAtributosHandler atributosHandler,
+            IdiomaService idiomaService)
         {
             _fichaService = fichaService;
             _atributosService = atributosService;
             _atributosHandler = atributosHandler;
+            _idiomaService = idiomaService;
         }
 
         [SlashCommand("ficha_atributos", "Escolha uma ficha para distribuir os atributos")]
@@ -138,6 +141,98 @@ namespace DnDBot.Bot.Commands.Ficha
 
             Console.WriteLine($"[LOG] Atributo {atributo} alterado com sucesso. Atualizando mensagem.");
         }
+
+
+        // Botão para concluir a distribuição
+        [ComponentInteraction("concluir_distribuicao_*")]
+        public async Task ConcluirDistribuicao(string fichaIdStr)
+        {
+            Console.WriteLine($"[LOG] Botão concluir_distribuicao_{fichaIdStr} clicado por usuário {Context.User.Id}");
+
+            await DeferAsync(ephemeral: true); // evita timeout
+
+            if (!Guid.TryParse(fichaIdStr, out var fichaId))
+            {
+                await FollowupAsync("❌ ID da ficha inválido.", ephemeral: true);
+                return;
+            }
+
+            var fichas = await _fichaService.ObterFichasPorJogadorAsync(Context.User.Id);
+            var ficha = fichas.FirstOrDefault(f => f.Id == fichaId);
+
+            if (ficha == null)
+            {
+                await FollowupAsync("❌ Ficha não encontrada para salvar atributos.", ephemeral: true);
+                return;
+            }
+
+            var dist = _atributosHandler.ObterDistribuicao(Context.User.Id, ficha.Id);
+
+            if (dist.PontosUsados > dist.PontosDisponiveis)
+            {
+                await FollowupAsync("❌ Você usou mais pontos do que o permitido.", ephemeral: true);
+                return;
+            }
+
+            // Atualiza atributos
+            ficha.Forca = dist.Atributos["Forca"];
+            ficha.Destreza = dist.Atributos["Destreza"];
+            ficha.Constituicao = dist.Atributos["Constituicao"];
+            ficha.Inteligencia = dist.Atributos["Inteligencia"];
+            ficha.Sabedoria = dist.Atributos["Sabedoria"];
+            ficha.Carisma = dist.Atributos["Carisma"];
+
+            await _fichaService.AtualizarFichaAsync(ficha);
+            _atributosHandler.RemoverDistribuicao(Context.User.Id, ficha.Id);
+
+            // Atualiza a mensagem original com os atributos finais
+            var embedFinal = _atributosHandler.ConstruirEmbedDistribuicao(dist);
+            await Context.Interaction.ModifyOriginalResponseAsync(msg =>
+            {
+                msg.Content = $"✅ Distribuição finalizada para a ficha **{ficha.Nome}**!";
+                msg.Embed = embedFinal;
+                msg.Components = new ComponentBuilder().Build(); // remove botões
+            });
+
+            // Verifica idiomas adicionais
+            await _idiomaService.ObterFichaIdiomasAsync(ficha);
+            int qtdAdicionais = ficha.Idiomas.Count(i => i.Id == "adicional");
+
+            if (qtdAdicionais > 0)
+            {
+                var todosIdiomas = await _idiomaService.ObterTodosIdiomasAsync();
+                var conhecidos = ficha.Idiomas.Where(i => i.Id != "adicional").Select(i => i.Id).ToHashSet();
+
+                var disponiveis = todosIdiomas
+                    .Where(i => i.Id != "adicional" && !conhecidos.Contains(i.Id))
+                    .ToList();
+
+                var builder = new ComponentBuilder();
+
+                for (int i = 0; i < qtdAdicionais; i++)
+                {
+                    var menu = new SelectMenuBuilder()
+                        .WithCustomId($"{ficha.Id}_idioma_adicional_{i + 1}")
+                        .WithPlaceholder($"Escolha o idioma adicional {i + 1}")
+                        .WithMinValues(1)
+                        .WithMaxValues(1);
+
+                    foreach (var idioma in disponiveis.Take(25))
+                    {
+                        menu.AddOption(idioma.Nome, idioma.Id);
+                    }
+
+                    builder.WithSelectMenu(menu);
+                }
+
+                await FollowupAsync(
+                    text: $"🌐 Você tem **{qtdAdicionais} idioma(s) adicional(is)** para escolher:",
+                    components: builder.Build(),
+                    ephemeral: true
+                );
+            }
+        }
+
 
     }
 }

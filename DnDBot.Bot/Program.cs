@@ -60,6 +60,7 @@ class Program
         .AddScoped<AntecedentesService>()
         .AddScoped<AlinhamentosService>()
         .AddScoped<InventarioService>()
+        .AddScoped<IdiomaService>()
         .AddScoped<IFichaRepository, FichaRepository>()
 
         .AddScoped<DistribuicaoAtributosHandler>()

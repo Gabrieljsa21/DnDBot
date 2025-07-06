@@ -48,6 +48,7 @@ namespace DnDBot.Application.Data
         public DbSet<ClasseMagia> ClasseMagias { get; set; }
         public DbSet<Pericia> Pericia { get; set; }
         public DbSet<Inventario> Inventarios { get; set; }
+        public DbSet<Idioma> Idiomas { get; set; }
 
         // Lista normal (não DbSet) para requisitos de atributos de armas, talvez gerenciada separadamente
         public List<ArmaRequisitoAtributo> RequisitosAtributos { get; set; }

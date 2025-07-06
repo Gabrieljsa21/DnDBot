@@ -63,33 +63,6 @@
     "Versao": "5.0"
   },
   {
-    "Id": "gigante",
-    "Nome": "Gigante",
-    "Categoria": "Standard",
-    "Fonte": "Player's Handbook",
-    "Descricao": "Idioma antigo derivado do dracônico, falado por gigantes e ogros. É ressonante, direto e transmite uma sensação de poder e autoridade.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "abissal",
-    "Nome": "Abissal",
-    "Categoria": "Exotic",
-    "Fonte": "Player's Handbook",
-    "Descricao": "Língua corrompida e dissonante falada por demônios e entidades do Abismo. Tem origem no Primordial, distorcido pela essência caótica e maligna.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "celestial",
-    "Nome": "Celestial",
-    "Categoria": "Exotic",
-    "Fonte": "Player's Handbook",
-    "Descricao": "Idioma dos celestiais como anjos e devas. É musical e brilhante, com uma gramática elegante que transmite significado espiritual profundo.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
     "Id": "draconico",
     "Nome": "Dracônico",
     "Categoria": "Exotic",
@@ -108,200 +81,20 @@
     "Versao": "5.0"
   },
   {
+    "Id": "celestial",
+    "Nome": "Celestial",
+    "Categoria": "Exotic",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Idioma dos celestiais como anjos e devas. É musical e brilhante, com uma gramática elegante que transmite significado espiritual profundo.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
     "Id": "primordial",
     "Nome": "Primordial",
     "Categoria": "Exotic",
     "Fonte": "Player's Handbook",
     "Descricao": "Língua elemental falada por criaturas como djinns, elementais e outras forças da natureza. Serve de base para dialetos como Aquan, Ignan, Terran e Auran.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "silvestre",
-    "Nome": "Silvestre",
-    "Categoria": "Exotic",
-    "Fonte": "Player's Handbook",
-    "Descricao": "O idioma Silvestre é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Exotic'.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "subcomum",
-    "Nome": "Subcomum",
-    "Categoria": "Exotic",
-    "Fonte": "Player's Handbook",
-    "Descricao": "O idioma Subcomum é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Exotic'.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "deep_speech",
-    "Nome": "Profundo (Deep Speech)",
-    "Categoria": "TelepaticoOuMagico",
-    "Fonte": "Player's Handbook",
-    "Descricao": "O idioma Profundo (Deep Speech) é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'TelepaticoOuMagico'.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "aquan",
-    "Nome": "Aquan",
-    "Categoria": "Dialeto",
-    "Fonte": "Player's Handbook",
-    "Descricao": "O idioma Aquan é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Dialeto'.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "auran",
-    "Nome": "Auran",
-    "Categoria": "Dialeto",
-    "Fonte": "Player's Handbook",
-    "Descricao": "O idioma Auran é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Dialeto'.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "ignan",
-    "Nome": "Ignan",
-    "Categoria": "Dialeto",
-    "Fonte": "Player's Handbook",
-    "Descricao": "O idioma Ignan é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Dialeto'.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "terran",
-    "Nome": "Terran",
-    "Categoria": "Dialeto",
-    "Fonte": "Player's Handbook",
-    "Descricao": "O idioma Terran é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Dialeto'.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "druidico",
-    "Nome": "Druídico",
-    "Categoria": "Secreto",
-    "Fonte": "Player's Handbook",
-    "Descricao": "O idioma Druídico é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Secreto'.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "thieves_cant",
-    "Nome": "Thieves' Cant",
-    "Categoria": "Secreto",
-    "Fonte": "Player's Handbook",
-    "Descricao": "O idioma Thieves' Cant é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Secreto'.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "quori",
-    "Nome": "Quori",
-    "Categoria": "RegionalOuCultural",
-    "Fonte": "Eberron",
-    "Descricao": "O idioma Quori é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'RegionalOuCultural'.",
-    "Pagina": "Variante",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "riedran",
-    "Nome": "Riedran",
-    "Categoria": "RegionalOuCultural",
-    "Fonte": "Eberron",
-    "Descricao": "O idioma Riedran é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'RegionalOuCultural'.",
-    "Pagina": "Variante",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "zemnian",
-    "Nome": "Zemnian",
-    "Categoria": "RegionalOuCultural",
-    "Fonte": "Explorer's Guide to Wildemount",
-    "Descricao": "O idioma Zemnian é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'RegionalOuCultural'.",
-    "Pagina": "Variante",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "marquesiano",
-    "Nome": "Marquesiano",
-    "Categoria": "RegionalOuCultural",
-    "Fonte": "Explorer's Guide to Wildemount",
-    "Descricao": "O idioma Marquesiano é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'RegionalOuCultural'.",
-    "Pagina": "Variante",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "golgari",
-    "Nome": "Idioma dos Golgari",
-    "Categoria": "RegionalOuCultural",
-    "Fonte": "Guildmaster's Guide to Ravnica",
-    "Descricao": "O idioma Idioma dos Golgari é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'RegionalOuCultural'.",
-    "Pagina": "Variante",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "simic",
-    "Nome": "Idioma dos Simic",
-    "Categoria": "RegionalOuCultural",
-    "Fonte": "Guildmaster's Guide to Ravnica",
-    "Descricao": "O idioma Idioma dos Simic é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'RegionalOuCultural'.",
-    "Pagina": "Variante",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "modron",
-    "Nome": "Modron",
-    "Categoria": "ArtificialOuConstruto",
-    "Fonte": "Mordenkainen’s Tome of Foes",
-    "Descricao": "O idioma Modron é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'ArtificialOuConstruto'.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "slaadi",
-    "Nome": "Slaadi",
-    "Categoria": "TelepaticoOuMagico",
-    "Fonte": "Mordenkainen’s Tome of Foes",
-    "Descricao": "O idioma Slaadi é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'TelepaticoOuMagico'.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "pictografico",
-    "Nome": "Linguagem Pictográfica",
-    "Categoria": "BestialOuPictografico",
-    "Fonte": "Várias fontes de monstros",
-    "Descricao": "O idioma Linguagem Pictográfica é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'BestialOuPictografico'.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "silvestre",
-    "Nome": "Silvestre",
-    "Categoria": "Exotic",
-    "Fonte": "Player's Handbook",
-    "Descricao": "Idioma mágico e melodioso falado por criaturas do Feywild, como dríades, pixies e outras entidades feéricas. Reflete a natureza encantada e caprichosa do plano das fadas, repleto de metáforas e símbolos da floresta.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "subcomum",
-    "Nome": "Subcomum",
-    "Categoria": "Exotic",
-    "Fonte": "Player's Handbook",
-    "Descricao": "Língua franca das raças subterrâneas como drow, duergar e outros habitantes do Underdark. Usada para comércio, espionagem e diplomacia entre facções ocultas e rivais do subterrâneo.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "deep_speech",
-    "Nome": "Profundo (Deep Speech)",
-    "Categoria": "TelepaticoOuMagico",
-    "Fonte": "Player's Handbook",
-    "Descricao": "Idioma estranho e alienígena falado por criaturas aberrantes como mind flayers e beholders. Comunica conceitos abstratos e medos primordiais, e muitas vezes é transmitido por telepatia ou sussurros na mente.",
     "Pagina": "123",
     "Versao": "5.0"
   },
@@ -360,6 +153,51 @@
     "Versao": "5.0"
   },
   {
+    "Id": "deep_speech",
+    "Nome": "Profundo (Deep Speech)",
+    "Categoria": "TelepaticoOuMagico",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Idioma estranho e alienígena falado por criaturas aberrantes como mind flayers e beholders. Comunica conceitos abstratos e medos primordiais, e muitas vezes é transmitido por telepatia ou sussurros na mente.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "slaadi",
+    "Nome": "Slaadi",
+    "Categoria": "TelepaticoOuMagico",
+    "Fonte": "Mordenkainen’s Tome of Foes",
+    "Descricao": "Língua caótica e telepática falada pelos slaadi, criaturas do plano da Lua Selvagem. Expressa emoções e conceitos fluidos, muitas vezes incompreensíveis para mentes mortais.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "modron",
+    "Nome": "Modron",
+    "Categoria": "ArtificialOuConstruto",
+    "Fonte": "Mordenkainen’s Tome of Foes",
+    "Descricao": "Idioma lógico e matemático dos modrons, seres mecânicos do plano de Mechanus. A linguagem é precisa, linear e dificilmente compreendida por seres orgânicos.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "silvestre",
+    "Nome": "Silvestre",
+    "Categoria": "Exotic",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Idioma mágico e melodioso falado por criaturas do Feywild, como dríades, pixies e outras entidades feéricas. Reflete a natureza encantada e caprichosa do plano das fadas, repleto de metáforas e símbolos da floresta.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "subcomum",
+    "Nome": "Subcomum",
+    "Categoria": "Exotic",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Língua franca das raças subterrâneas como drow, duergar e outros habitantes do Underdark. Usada para comércio, espionagem e diplomacia entre facções ocultas e rivais do subterrâneo.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
     "Id": "quori",
     "Nome": "Quori",
     "Categoria": "RegionalOuCultural",
@@ -375,78 +213,6 @@
     "Fonte": "Eberron",
     "Descricao": "Idioma oficial do Império de Riedra, fortemente influenciado pelos quori. Usado em documentos oficiais e na administração imperial, tem uma sonoridade formal e imponente.",
     "Pagina": "Variante",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "zemnian",
-    "Nome": "Zemnian",
-    "Categoria": "RegionalOuCultural",
-    "Fonte": "Explorer's Guide to Wildemount",
-    "Descricao": "Idioma falado no Império Dwendalian em Wildemount, com raízes culturais similares às línguas germânicas. Utilizado em comércio, leis e literatura formal.",
-    "Pagina": "Variante",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "marquesiano",
-    "Nome": "Marquesiano",
-    "Categoria": "RegionalOuCultural",
-    "Fonte": "Explorer's Guide to Wildemount",
-    "Descricao": "Língua elegante e culta falada nas regiões costeiras de Wildemount. Possui influências de línguas romances, utilizada em artes, diplomacia e cultura refinada.",
-    "Pagina": "Variante",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "golgari",
-    "Nome": "Idioma dos Golgari",
-    "Categoria": "RegionalOuCultural",
-    "Fonte": "Guildmaster's Guide to Ravnica",
-    "Descricao": "Língua simbiótica dos membros da guilda Golgari em Ravnica, que combina comunicação verbal com sinais biológicos e sonoros, refletindo sua conexão com fungos e criaturas subterrâneas.",
-    "Pagina": "Variante",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "simic",
-    "Nome": "Idioma dos Simic",
-    "Categoria": "RegionalOuCultural",
-    "Fonte": "Guildmaster's Guide to Ravnica",
-    "Descricao": "Idioma científico e experimental usado pelos híbridos da guilda Simic. Incorpora termos biológicos e arcanos para descrever processos de transformação e adaptação.",
-    "Pagina": "Variante",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "modron",
-    "Nome": "Modron",
-    "Categoria": "ArtificialOuConstruto",
-    "Fonte": "Mordenkainen’s Tome of Foes",
-    "Descricao": "Idioma lógico e matemático dos modrons, seres mecânicos do plano de Mechanus. A linguagem é precisa, linear e dificilmente compreendida por seres orgânicos.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "slaadi",
-    "Nome": "Slaadi",
-    "Categoria": "TelepaticoOuMagico",
-    "Fonte": "Mordenkainen’s Tome of Foes",
-    "Descricao": "Língua caótica e telepática falada pelos slaadi, criaturas do plano da Lua Selvagem. Expressa emoções e conceitos fluidos, muitas vezes incompreensíveis para mentes mortais.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "pictografico",
-    "Nome": "Linguagem Pictográfica",
-    "Categoria": "BestialOuPictografico",
-    "Fonte": "Várias fontes de monstros",
-    "Descricao": "Forma primitiva de comunicação baseada em imagens e símbolos, usada por tribos, bestas inteligentes e criaturas que não possuem linguagem verbal desenvolvida.",
-    "Pagina": "123",
-    "Versao": "5.0"
-  },
-  {
-    "Id": "leonin",
-    "Nome": "Leonin",
-    "Categoria": "RegionalOuCultural",
-    "Fonte": "Guildmaster's Guide to Ravnica",
-    "Descricao": "Linguagem falada pelos leonins, uma raça de humanoides felinos que valorizam honra e coragem. É uma língua forte, com sons guturais e vibrantes, refletindo a cultura guerreira e tribal dos leonins.",
-    "Pagina": "142",
     "Versao": "5.0"
   },
   {

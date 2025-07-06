@@ -1,9 +1,11 @@
-﻿using Discord.Interactions;
+﻿using Discord;
+using Discord.Interactions;
 using DnDBot.Application.Models;
 using DnDBot.Application.Models.Enums;
 using DnDBot.Application.Models.Ficha;
 using DnDBot.Application.Services;
 using DnDBot.Application.Services.Distribuicao;
+using DnDBot.Bot.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,108 +21,90 @@ namespace DnDBot.Bot.Commands.Ficha
         private readonly FichaService _fichaService;
         private readonly RacasService _racasService;
         private readonly DistribuicaoAtributosHandler _atributosHandler;
+        private readonly IdiomaService _idiomaService;
 
-        public ComandoSubraca(FichaService fichaService, RacasService racasService, DistribuicaoAtributosHandler atributosHandler)
+        public ComandoSubraca(FichaService fichaService, RacasService racasService, DistribuicaoAtributosHandler atributosHandler, IdiomaService idiomaService)
         {
             _fichaService = fichaService;
             _racasService = racasService;
             _atributosHandler = atributosHandler;
+            _idiomaService = idiomaService;
         }
 
         [ComponentInteraction("select_subraca")]
-        public async Task SelectSubracaHandler(string valor)
+        public async Task SelectSubracaHandler(string subracaId)
         {
-            Console.WriteLine($"[LOG] Usuário {Context.User.Id} selecionou a sub-raça: {valor}");
-
             var ficha = await _fichaService.ObterUltimaFichaDoJogadorAsync(Context.User.Id);
             if (ficha == null)
             {
-                Console.WriteLine("[LOG] Nenhuma ficha encontrada.");
                 await RespondAsync("❌ Não encontrei a ficha para atualizar a sub-raça.", ephemeral: true);
                 return;
             }
 
-            var subraca = (await _racasService.ObterTodasSubracasAsync()).FirstOrDefault(sr => sr.Id == valor);
+            var subraca = (await _racasService.ObterTodasSubracasAsync())
+                            .FirstOrDefault(sr => sr.Id == subracaId);
+
             if (subraca == null)
             {
-                Console.WriteLine("[LOG] Sub-raça não encontrada.");
                 await RespondAsync("❌ Sub-raça selecionada não encontrada.", ephemeral: true);
                 return;
             }
 
-            Console.WriteLine($"[LOG] Sub-raça '{subraca.Id}' encontrada. Aplicando à ficha '{ficha.Nome}' ({ficha.Id})");
+            await _idiomaService.ObterFichaIdiomasAsync(ficha); // ✅ Correção importante
 
-            // Atualiza os campos da ficha
+            AtualizarFichaComSubraca(ficha, subraca);
+
+            await _fichaService.AtualizarFichaAsync(ficha);
+
+            var dist = _atributosHandler.ObterDistribuicao(Context.User.Id, ficha.Id);
+            _atributosHandler.InicializarDistribuicao(dist, ficha);
+
+            await RespondAsync(
+                $"✅ Sub-raça **{subraca.Nome}** aplicada! Agora distribua os pontos nos atributos:",
+                embed: _atributosHandler.ConstruirEmbedDistribuicao(dist),
+                components: _atributosHandler.ConstruirComponentesDistribuicao(dist, ficha.Id),
+                ephemeral: true);
+        }
+
+
+        // Método helper que aplica dados da sub-raça na ficha
+        private void AtualizarFichaComSubraca(FichaPersonagem ficha, SubRaca subraca)
+        {
             ficha.SubracaId = subraca.Id;
-            ficha.BonusAtributos = subraca.BonusAtributos
-                .Select(b => new BonusAtributo
-                {
-                    Atributo = b.Atributo,
-                    Valor = b.Valor,
-                    Origem = "Sub-Raça"
-                }).ToList();
+            ficha.BonusAtributos = subraca.BonusAtributos.Select(b => new BonusAtributo
+            {
+                Atributo = b.Atributo,
+                Valor = b.Valor,
+                Origem = "Sub-Raça"
+            }).ToList();
+
             ficha.Tamanho = subraca.Tamanho.ToString();
             ficha.Deslocamento = subraca.Deslocamento;
 
-            // Garante que os idiomas atuais estejam carregados
-            await _fichaService.CarregarIdiomasAsync(ficha);
+            // Atualiza idiomas (adiciona os fixos da sub-raça)
+            var idiomasNovos = subraca.Idiomas.Where(i => !string.IsNullOrWhiteSpace(i.Id))
+                                .GroupBy(i => i.Id)
+                                .Select(g =>
+                                {
+                                    var idioma = g.First();
+                                    if (idioma.Categoria == 0)
+                                        idioma.Categoria = CategoriaIdioma.Standard;
+                                    return idioma;
+                                });
 
-            // Prepara os idiomas da sub-raça
-            var idiomasNovos = subraca.Idiomas
-                .Where(i => !string.IsNullOrWhiteSpace(i.Id))
-                .GroupBy(i => i.Id)
-                .Select(g =>
-                {
-                    var idioma = g.First();
-                    if (idioma.Categoria == 0)
-                        idioma.Categoria = CategoriaIdioma.Standard;
-                    return idioma;
-                });
-
-            // Adiciona apenas os que ainda não estão na ficha
             foreach (var idioma in idiomasNovos)
             {
                 if (!ficha.Idiomas.Any(i => i.Id == idioma.Id))
-                {
                     ficha.Idiomas.Add(idioma);
-                }
             }
-
 
             ficha.Proficiencias = subraca.Proficiencias;
             ficha.VisaoNoEscuro = subraca.VisaoNoEscuro;
             ficha.Resistencias = subraca.Resistencias.ToList();
             ficha.Caracteristicas = subraca.Caracteristicas.ToList();
             ficha.MagiasRaciais = subraca.MagiasRaciais.ToList();
-
-            await _fichaService.AtualizarFichaAsync(ficha);
-            Console.WriteLine("[LOG] Ficha atualizada com dados da sub-raça.");
-
-            // Cria e inicializa a distribuição temporária
-            var dist = _atributosHandler.ObterDistribuicao(Context.User.Id, ficha.Id);
-            _atributosHandler.InicializarDistribuicao(dist, ficha);
-
-            // Aplica os bônus raciais da sub-raça
-            foreach (var bonus in ficha.BonusAtributos)
-            {
-                if (dist.BonusRacial.ContainsKey(bonus.Atributo.ToString()))
-                    dist.BonusRacial[bonus.Atributo.ToString()] = bonus.Valor;
-            }
-
-            Console.WriteLine("[LOG] Distribuição de atributos inicializada:");
-            foreach (var attr in dist.Atributos)
-            {
-                int bonus = dist.BonusRacial.ContainsKey(attr.Key) ? dist.BonusRacial[attr.Key] : 0;
-                Console.WriteLine($" - {attr.Key}: {attr.Value} (+{bonus})");
-            }
-            Console.WriteLine($"[LOG] Pontos usados: {dist.PontosUsados}/27");
-
-            // Envia mensagem com embed e botões
-            await RespondAsync(
-                $"✅ Sub-raça **{subraca.Id}** aplicada à ficha **{ficha.Nome}** com sucesso!\n\nAgora distribua os pontos nos atributos:",
-                embed: _atributosHandler.ConstruirEmbedDistribuicao(dist),
-                components: _atributosHandler.ConstruirComponentesDistribuicao(dist, ficha.Id),
-                ephemeral: true);
         }
+
+
     }
 }

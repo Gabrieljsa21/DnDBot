@@ -24,6 +24,7 @@ namespace DnDBot.Bot.Commands.Ficha
         private readonly AntecedentesService _antecedentesService;
         private readonly AlinhamentosService _alinhamentosService;
         private readonly InventarioService _inventarioService;
+        private readonly IdiomaService _idiomaService;
 
         /// <summary>
         /// Construtor com injeção do serviço de fichas.
@@ -34,7 +35,8 @@ namespace DnDBot.Bot.Commands.Ficha
             ClassesService classesService,
             AntecedentesService antecedentesService,
             AlinhamentosService alinhamentosService,
-            InventarioService inventarioService
+            InventarioService inventarioService,
+            IdiomaService idiomaService
         )
         {
             _fichaService = fichaService;
@@ -43,6 +45,7 @@ namespace DnDBot.Bot.Commands.Ficha
             _antecedentesService = antecedentesService;
             _alinhamentosService = alinhamentosService;
             _inventarioService = inventarioService;
+            _idiomaService = idiomaService;
         }
 
         [SlashCommand("ficha_detalhes", "Visualiza uma ficha específica")]
@@ -177,7 +180,7 @@ namespace DnDBot.Bot.Commands.Ficha
             }
 
             // Carrega os idiomas se necessário
-            await _fichaService.CarregarIdiomasAsync(ficha);
+            await _idiomaService.ObterFichaIdiomasAsync(ficha);
 
             if (ficha.Idiomas == null || ficha.Idiomas.Count == 0)
             {

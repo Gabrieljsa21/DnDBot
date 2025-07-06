@@ -137,12 +137,6 @@ namespace DnDBot.Application.Services
             return $"{total} ({modStr})";
         }
 
-        public async Task CarregarIdiomasAsync(FichaPersonagem ficha)
-        {
-            await _dbContext.Entry(ficha)
-                .Collection(f => f.Idiomas)
-                .LoadAsync();
-        }
 
     }
 }

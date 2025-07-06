@@ -214,51 +214,6 @@ namespace DnDBot.Bot.Commands.Ficha
             return true;
         }
 
-        // Botão para concluir a distribuição
-        [ComponentInteraction("concluir_distribuicao_*")]
-        public async Task ConcluirDistribuicao(string fichaIdStr)
-        {
-            Console.WriteLine($"[LOG] Botão concluir_distribuicao_{fichaIdStr} clicado por usuário {Context.User.Id}");
-
-            await DeferAsync(ephemeral: true); // evita timeout
-
-            if (!Guid.TryParse(fichaIdStr, out var fichaId))
-            {
-                await FollowupAsync("❌ ID da ficha inválido.", ephemeral: true);
-                return;
-            }
-
-            var fichas = await _fichaService.ObterFichasPorJogadorAsync(Context.User.Id);
-            var ficha = fichas.FirstOrDefault(f => f.Id == fichaId);
-
-            if (ficha == null)
-            {
-                await FollowupAsync("❌ Ficha não encontrada para salvar atributos.", ephemeral: true);
-                return;
-            }
-
-            var dist = _atributosHandler.ObterDistribuicao(Context.User.Id, ficha.Id);
-
-            if (dist.PontosUsados > dist.PontosDisponiveis)
-            {
-                await FollowupAsync("❌ Você usou mais pontos do que o permitido.", ephemeral: true);
-                return;
-            }
-
-            ficha.Forca = dist.Atributos["Forca"];
-            ficha.Destreza = dist.Atributos["Destreza"];
-            ficha.Constituicao = dist.Atributos["Constituicao"];
-            ficha.Inteligencia = dist.Atributos["Inteligencia"];
-            ficha.Sabedoria = dist.Atributos["Sabedoria"];
-            ficha.Carisma = dist.Atributos["Carisma"];
-
-            await _fichaService.AtualizarFichaAsync(ficha);
-
-            _atributosHandler.RemoverDistribuicao(Context.User.Id, ficha.Id);
-
-            await FollowupAsync("✅ Distribuição de atributos concluída com sucesso!", ephemeral: true);
-        }
-
 
         private async Task<bool> AtualizarFichaCampoEFinalizar<T>(
     string valor,
