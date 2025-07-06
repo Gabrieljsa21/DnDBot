@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DnDBot.Application.Migrations
 {
     [DbContext(typeof(DnDBotDbContext))]
-    [Migration("20250706012145_Inicial_00")]
+    [Migration("20250706030852_Inicial_00")]
     partial class Inicial_00
     {
         /// <inheritdoc />
@@ -937,6 +937,9 @@ namespace DnDBot.Application.Migrations
 
                     b.Property<string>("AntecedenteId")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("Categoria")
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime?>("CriadoEm")
                         .HasColumnType("TEXT");

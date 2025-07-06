@@ -703,6 +703,7 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Categoria = table.Column<int>(type: "INTEGER", nullable: false),
                     AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
                     FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),

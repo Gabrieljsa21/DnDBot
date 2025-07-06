@@ -1,0 +1,443 @@
+[
+  {
+    "Id": "comum",
+    "Nome": "Comum",
+    "Categoria": "Standard",
+    "Fonte": "Player's Handbook",
+    "Descricao": "O idioma mais amplamente falado nos mundos de D&D. Serve como uma língua franca entre as diversas raças civilizadas e é usado em comércio, diplomacia e interação cotidiana.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "anao",
+    "Nome": "Anão",
+    "Categoria": "Standard",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Língua ancestral dos anões, conhecida por sua estrutura firme e sons guturais. Usada em inscrições rúnicas e textos históricos, e escrita com o alfabeto anão.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "elfico",
+    "Nome": "Élfico",
+    "Categoria": "Standard",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Idioma gracioso e melódico falado pelos elfos, refletindo sua conexão com a natureza, a magia e uma história milenar. É escrito com o alfabeto élfico.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "gnomico",
+    "Nome": "Gnômico",
+    "Categoria": "Standard",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Língua dos gnomos, marcada por precisão técnica e inventividade. Frequentemente usada em projetos arcanos e invenções, e escrita com o alfabeto anão.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "halfling",
+    "Nome": "Halfling",
+    "Categoria": "Standard",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Idioma simples e prático usado entre halflings. Pouco comum fora de suas comunidades, raramente é escrito e tende a ser passado oralmente.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "orc",
+    "Nome": "Orc",
+    "Categoria": "Standard",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Língua rude e direta dos orcs e clãs bárbaros. Utiliza sons fortes e guturais e é eficiente para comandos militares e gritos de guerra.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "goblin",
+    "Nome": "Goblin",
+    "Categoria": "Standard",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Língua áspera e veloz falada por goblins, hobgoblins e bugbears. É conhecida por sua cadência irregular e vocabulário agressivo.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "gigante",
+    "Nome": "Gigante",
+    "Categoria": "Standard",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Idioma antigo derivado do dracônico, falado por gigantes e ogros. É ressonante, direto e transmite uma sensação de poder e autoridade.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "abissal",
+    "Nome": "Abissal",
+    "Categoria": "Exotic",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Língua corrompida e dissonante falada por demônios e entidades do Abismo. Tem origem no Primordial, distorcido pela essência caótica e maligna.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "celestial",
+    "Nome": "Celestial",
+    "Categoria": "Exotic",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Idioma dos celestiais como anjos e devas. É musical e brilhante, com uma gramática elegante que transmite significado espiritual profundo.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "draconico",
+    "Nome": "Dracônico",
+    "Categoria": "Exotic",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Língua ancestral dos dragões, considerada uma das mais antigas do mundo. Utilizada em textos mágicos e arcanos por sua precisão e poder simbólico.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "infernal",
+    "Nome": "Infernal",
+    "Categoria": "Exotic",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Idioma meticulosamente estruturado falado por diabos e habitantes dos Nove Infernos. Reflete a natureza hierárquica e legalista de Baator.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "primordial",
+    "Nome": "Primordial",
+    "Categoria": "Exotic",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Língua elemental falada por criaturas como djinns, elementais e outras forças da natureza. Serve de base para dialetos como Aquan, Ignan, Terran e Auran.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "silvestre",
+    "Nome": "Silvestre",
+    "Categoria": "Exotic",
+    "Fonte": "Player's Handbook",
+    "Descricao": "O idioma Silvestre é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Exotic'.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "subcomum",
+    "Nome": "Subcomum",
+    "Categoria": "Exotic",
+    "Fonte": "Player's Handbook",
+    "Descricao": "O idioma Subcomum é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Exotic'.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "deep_speech",
+    "Nome": "Profundo (Deep Speech)",
+    "Categoria": "TelepaticoOuMagico",
+    "Fonte": "Player's Handbook",
+    "Descricao": "O idioma Profundo (Deep Speech) é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'TelepaticoOuMagico'.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "aquan",
+    "Nome": "Aquan",
+    "Categoria": "Dialeto",
+    "Fonte": "Player's Handbook",
+    "Descricao": "O idioma Aquan é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Dialeto'.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "auran",
+    "Nome": "Auran",
+    "Categoria": "Dialeto",
+    "Fonte": "Player's Handbook",
+    "Descricao": "O idioma Auran é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Dialeto'.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "ignan",
+    "Nome": "Ignan",
+    "Categoria": "Dialeto",
+    "Fonte": "Player's Handbook",
+    "Descricao": "O idioma Ignan é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Dialeto'.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "terran",
+    "Nome": "Terran",
+    "Categoria": "Dialeto",
+    "Fonte": "Player's Handbook",
+    "Descricao": "O idioma Terran é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Dialeto'.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "druidico",
+    "Nome": "Druídico",
+    "Categoria": "Secreto",
+    "Fonte": "Player's Handbook",
+    "Descricao": "O idioma Druídico é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Secreto'.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "thieves_cant",
+    "Nome": "Thieves' Cant",
+    "Categoria": "Secreto",
+    "Fonte": "Player's Handbook",
+    "Descricao": "O idioma Thieves' Cant é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'Secreto'.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "quori",
+    "Nome": "Quori",
+    "Categoria": "RegionalOuCultural",
+    "Fonte": "Eberron",
+    "Descricao": "O idioma Quori é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'RegionalOuCultural'.",
+    "Pagina": "Variante",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "riedran",
+    "Nome": "Riedran",
+    "Categoria": "RegionalOuCultural",
+    "Fonte": "Eberron",
+    "Descricao": "O idioma Riedran é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'RegionalOuCultural'.",
+    "Pagina": "Variante",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "zemnian",
+    "Nome": "Zemnian",
+    "Categoria": "RegionalOuCultural",
+    "Fonte": "Explorer's Guide to Wildemount",
+    "Descricao": "O idioma Zemnian é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'RegionalOuCultural'.",
+    "Pagina": "Variante",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "marquesiano",
+    "Nome": "Marquesiano",
+    "Categoria": "RegionalOuCultural",
+    "Fonte": "Explorer's Guide to Wildemount",
+    "Descricao": "O idioma Marquesiano é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'RegionalOuCultural'.",
+    "Pagina": "Variante",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "golgari",
+    "Nome": "Idioma dos Golgari",
+    "Categoria": "RegionalOuCultural",
+    "Fonte": "Guildmaster's Guide to Ravnica",
+    "Descricao": "O idioma Idioma dos Golgari é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'RegionalOuCultural'.",
+    "Pagina": "Variante",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "simic",
+    "Nome": "Idioma dos Simic",
+    "Categoria": "RegionalOuCultural",
+    "Fonte": "Guildmaster's Guide to Ravnica",
+    "Descricao": "O idioma Idioma dos Simic é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'RegionalOuCultural'.",
+    "Pagina": "Variante",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "modron",
+    "Nome": "Modron",
+    "Categoria": "ArtificialOuConstruto",
+    "Fonte": "Mordenkainen’s Tome of Foes",
+    "Descricao": "O idioma Modron é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'ArtificialOuConstruto'.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "slaadi",
+    "Nome": "Slaadi",
+    "Categoria": "TelepaticoOuMagico",
+    "Fonte": "Mordenkainen’s Tome of Foes",
+    "Descricao": "O idioma Slaadi é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'TelepaticoOuMagico'.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "pictografico",
+    "Nome": "Linguagem Pictográfica",
+    "Categoria": "BestialOuPictografico",
+    "Fonte": "Várias fontes de monstros",
+    "Descricao": "O idioma Linguagem Pictográfica é utilizado por certas raças, criaturas ou culturas no mundo de D&D. Ele pertence à categoria 'BestialOuPictografico'.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "silvestre",
+    "Nome": "Silvestre",
+    "Categoria": "Exotic",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Idioma mágico e melodioso falado por criaturas do Feywild, como dríades, pixies e outras entidades feéricas. Reflete a natureza encantada e caprichosa do plano das fadas, repleto de metáforas e símbolos da floresta.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "subcomum",
+    "Nome": "Subcomum",
+    "Categoria": "Exotic",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Língua franca das raças subterrâneas como drow, duergar e outros habitantes do Underdark. Usada para comércio, espionagem e diplomacia entre facções ocultas e rivais do subterrâneo.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "deep_speech",
+    "Nome": "Profundo (Deep Speech)",
+    "Categoria": "TelepaticoOuMagico",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Idioma estranho e alienígena falado por criaturas aberrantes como mind flayers e beholders. Comunica conceitos abstratos e medos primordiais, e muitas vezes é transmitido por telepatia ou sussurros na mente.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "aquan",
+    "Nome": "Aquan",
+    "Categoria": "Dialeto",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Dialeto do Primordial, falado pelas criaturas da água, como elementais aquáticos e sereias. O idioma é fluido e ondulante, refletindo o movimento constante dos mares e rios.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "auran",
+    "Nome": "Auran",
+    "Categoria": "Dialeto",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Dialeto do Primordial utilizado por seres do ar, como elementais aéreos e águias gigantes. É um idioma sussurrante, leve e efêmero, quase inaudível para ouvidos mortais.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "ignan",
+    "Nome": "Ignan",
+    "Categoria": "Dialeto",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Dialeto do Primordial falado por elementais de fogo e criaturas flamejantes. A linguagem é rápida, cheia de estalos e ruídos crepitantes, como o som de chamas dançantes.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "terran",
+    "Nome": "Terran",
+    "Categoria": "Dialeto",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Dialeto do Primordial usado por elementais da terra e criaturas subterrâneas. Possui sons graves, rítmicos e reverberantes, lembrando o eco nas cavernas profundas.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "druidico",
+    "Nome": "Druídico",
+    "Categoria": "Secreto",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Língua secreta dos druidas, passada apenas entre membros do Círculo Druídico. Usada para rituais, encantamentos e comunicação cifrada, é desconhecida para não iniciados.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "thieves_cant",
+    "Nome": "Thieves' Cant",
+    "Categoria": "Secreto",
+    "Fonte": "Player's Handbook",
+    "Descricao": "Código secreto utilizado por ladrões e criminosos para se comunicar sem despertar suspeitas. Consiste em linguagem codificada, gírias e sinais ocultos misturados a conversas comuns.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "quori",
+    "Nome": "Quori",
+    "Categoria": "RegionalOuCultural",
+    "Fonte": "Eberron",
+    "Descricao": "Idioma do plano dos sonhos Dal Quor e falado pelos Inspired, uma raça de servos psíquicos que influenciam a população do Império de Riedra. A linguagem é enigmática e cheia de simbolismo mental.",
+    "Pagina": "Variante",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "riedran",
+    "Nome": "Riedran",
+    "Categoria": "RegionalOuCultural",
+    "Fonte": "Eberron",
+    "Descricao": "Idioma oficial do Império de Riedra, fortemente influenciado pelos quori. Usado em documentos oficiais e na administração imperial, tem uma sonoridade formal e imponente.",
+    "Pagina": "Variante",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "zemnian",
+    "Nome": "Zemnian",
+    "Categoria": "RegionalOuCultural",
+    "Fonte": "Explorer's Guide to Wildemount",
+    "Descricao": "Idioma falado no Império Dwendalian em Wildemount, com raízes culturais similares às línguas germânicas. Utilizado em comércio, leis e literatura formal.",
+    "Pagina": "Variante",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "marquesiano",
+    "Nome": "Marquesiano",
+    "Categoria": "RegionalOuCultural",
+    "Fonte": "Explorer's Guide to Wildemount",
+    "Descricao": "Língua elegante e culta falada nas regiões costeiras de Wildemount. Possui influências de línguas romances, utilizada em artes, diplomacia e cultura refinada.",
+    "Pagina": "Variante",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "golgari",
+    "Nome": "Idioma dos Golgari",
+    "Categoria": "RegionalOuCultural",
+    "Fonte": "Guildmaster's Guide to Ravnica",
+    "Descricao": "Língua simbiótica dos membros da guilda Golgari em Ravnica, que combina comunicação verbal com sinais biológicos e sonoros, refletindo sua conexão com fungos e criaturas subterrâneas.",
+    "Pagina": "Variante",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "simic",
+    "Nome": "Idioma dos Simic",
+    "Categoria": "RegionalOuCultural",
+    "Fonte": "Guildmaster's Guide to Ravnica",
+    "Descricao": "Idioma científico e experimental usado pelos híbridos da guilda Simic. Incorpora termos biológicos e arcanos para descrever processos de transformação e adaptação.",
+    "Pagina": "Variante",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "modron",
+    "Nome": "Modron",
+    "Categoria": "ArtificialOuConstruto",
+    "Fonte": "Mordenkainen’s Tome of Foes",
+    "Descricao": "Idioma lógico e matemático dos modrons, seres mecânicos do plano de Mechanus. A linguagem é precisa, linear e dificilmente compreendida por seres orgânicos.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "slaadi",
+    "Nome": "Slaadi",
+    "Categoria": "TelepaticoOuMagico",
+    "Fonte": "Mordenkainen’s Tome of Foes",
+    "Descricao": "Língua caótica e telepática falada pelos slaadi, criaturas do plano da Lua Selvagem. Expressa emoções e conceitos fluidos, muitas vezes incompreensíveis para mentes mortais.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "pictografico",
+    "Nome": "Linguagem Pictográfica",
+    "Categoria": "BestialOuPictografico",
+    "Fonte": "Várias fontes de monstros",
+    "Descricao": "Forma primitiva de comunicação baseada em imagens e símbolos, usada por tribos, bestas inteligentes e criaturas que não possuem linguagem verbal desenvolvida.",
+    "Pagina": "123",
+    "Versao": "5.0"
+  }
+]

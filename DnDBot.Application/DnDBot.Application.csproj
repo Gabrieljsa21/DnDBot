@@ -12,6 +12,7 @@
     <None Remove="Data\racas.json" />
     <None Remove="Data\classes.json" />
     <None Remove="Data\antecedentes.json" />
+    <None Remove="Data\idiomas.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\pericias.json">
@@ -27,6 +28,9 @@
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Data\antecedentes.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Data\idiomas.json">
 		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
   </ItemGroup>

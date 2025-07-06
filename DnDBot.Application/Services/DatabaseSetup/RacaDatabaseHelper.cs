@@ -65,11 +65,31 @@ public static class RacaDatabaseHelper
         Console.WriteLine("📥 Lendo dados de racas.json...");
 
         var json = await File.ReadAllTextAsync(CaminhoJson, Encoding.UTF8);
-        var racas = JsonSerializer.Deserialize<List<Raca>>(json, new JsonSerializerOptions
+
+        List<Raca>? racas = null;
+
+        try
         {
-            PropertyNameCaseInsensitive = true,
-            Converters = { new JsonStringEnumConverter() }
-        });
+            racas = JsonSerializer.Deserialize<List<Raca>>(json, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                Converters = { new JsonStringEnumConverter() }
+            });
+        }
+        catch (JsonException ex)
+        {
+            Console.WriteLine("❌ Erro ao desserializar o JSON:");
+            Console.WriteLine(ex.Message);
+            Console.WriteLine();
+
+            var linhas = json.Split('\n');
+            if (ex.LineNumber is long line && line > 0 && line <= linhas.Length)
+            {
+                Console.WriteLine($"🔍 Linha {line}: {linhas[line - 1]}");
+            }
+
+            return;
+        }
 
         if (racas == null || racas.Count == 0)
         {
@@ -86,6 +106,7 @@ public static class RacaDatabaseHelper
 
         Console.WriteLine("✅ Raças e sub-raças populadas.");
     }
+
 
     private static async Task InserirRaca(SqliteConnection conn, SqliteTransaction tx, Raca raca)
     {

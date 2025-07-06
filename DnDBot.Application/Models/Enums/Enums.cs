@@ -46,7 +46,9 @@ namespace DnDBot.Application.Models.Enums
         Sabedoria,
 
         /// <summary>Representa o carisma, influência e capacidade social.</summary>
-        Carisma
+        Carisma,
+
+        Selecionável
     }
 
 
@@ -100,25 +102,25 @@ namespace DnDBot.Application.Models.Enums
         Gelo,
 
         /// <summary>Dano causado por eletricidade ou choque elétrico.</summary>
-        Eletrico,
+        Elétrico,
 
         /// <summary>Dano causado por ácido ou substâncias corrosivas.</summary>
-        Acido,
+        Ácido,
 
         /// <summary>Dano causado por veneno ou toxinas.</summary>
         Veneno,
 
         /// <summary>Dano causado por força mágica ou física não convencional.</summary>
-        Forca,
+        Força,
 
         /// <summary>Dano causado por energia radiante, geralmente associada a forças divinas.</summary>
         Radiante,
 
         /// <summary>Dano causado por energia necromântica ou força negativa.</summary>
-        Necrotico,
+        Necrótico,
 
         /// <summary>Dano psicológico ou mental, como medo ou confusão.</summary>
-        Psicologico
+        Psíquico
     }
 
     public enum TipoArma
@@ -171,5 +173,97 @@ namespace DnDBot.Application.Models.Enums
         Cauda,
         Tentaculo,
         // etc.
+    }
+    public enum CategoriaIdioma
+    {
+        Standard,
+        Exotic,
+        Dialeto,
+        Secreto,
+        TelepaticoOuMagico,
+        RegionalOuCultural,
+        BestialOuPictografico,
+        ArtificialOuConstruto
+    }
+
+    public enum TipoCaracteristica
+    {
+        Passiva,
+        Ativa,
+        Reacao,
+        Resistência,
+        Imunidade,
+        Magia,
+        HabilidadeEspecial,
+        PericiaExtra,
+        Outra
+    }
+
+    public enum AcaoRequerida
+    {
+        Nenhuma,
+        Acao,
+        AcaoBonus,
+        Reacao,
+        Movimento,
+        TempoLivre
+    }
+
+    public enum Alvo
+    {
+        Self,
+        Aliado,
+        Inimigo,
+        Area,
+        Objeto,
+        Criatura
+    }
+
+    public enum CondicaoAtivacao
+    {
+        Sempre,
+        EmCombate,
+        EmAmbienteNatural,
+        AposAtaque,
+        SobDano,
+        AposMagia,
+        EmDescanso
+    }
+
+    public enum TipoEfeito
+    {
+        BonusAtributo,
+        ResistenciaDano,
+        ImunidadeDano,
+        VulnerabilidadeDano,
+        Condicao,
+        ModificadorAtaque,
+        ModificadorDefesa,
+        Velocidade,
+        Outros
+    }
+
+    public enum Condicao
+    {
+        Atordoado,
+        Enfeitiçado,
+        Paralisado,
+        Cego,
+        Surdo,
+        Imobilizado,
+        Silenciado,
+        Envenenado,
+        Caído,
+        Outros
+    }
+
+    public enum OrigemCaracteristica
+    {
+        Racial,
+        Classe,
+        Feat,
+        MagiaRacial,
+        ItemMagico,
+        Outra
     }
 }

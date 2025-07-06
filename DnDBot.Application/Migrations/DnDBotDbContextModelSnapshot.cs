@@ -935,6 +935,9 @@ namespace DnDBot.Application.Migrations
                     b.Property<string>("AntecedenteId")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Categoria")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime?>("CriadoEm")
                         .HasColumnType("TEXT");
 
