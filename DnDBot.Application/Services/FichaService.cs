@@ -55,6 +55,11 @@ namespace DnDBot.Application.Services
         /// <param name="ficha">Ficha a ser adicionada.</param>
         public async Task AdicionarFichaAsync(FichaPersonagem ficha)
         {
+            if (ficha.Inventario != null)
+            {
+                ficha.Inventario.Id = Guid.NewGuid().ToString(); // Garante ID único
+            }
+
             _dbContext.FichaPersonagem.Add(ficha);
             await _dbContext.SaveChangesAsync();
         }
@@ -115,7 +120,9 @@ namespace DnDBot.Application.Services
         /// <returns>A ficha encontrada ou null se não existir.</returns>
         public async Task<FichaPersonagem?> ObterFichaPorIdAsync(Guid id)
         {
-            return await _dbContext.FichaPersonagem.FirstOrDefaultAsync(f => f.Id == id);
+            return await _dbContext.FichaPersonagem
+                .Include(f => f.Idiomas)
+                .FirstOrDefaultAsync(f => f.Id == id);
         }
 
 
@@ -129,5 +136,13 @@ namespace DnDBot.Application.Services
             string modStr = mod >= 0 ? $"+{mod}" : mod.ToString();
             return $"{total} ({modStr})";
         }
+
+        public async Task CarregarIdiomasAsync(FichaPersonagem ficha)
+        {
+            await _dbContext.Entry(ficha)
+                .Collection(f => f.Idiomas)
+                .LoadAsync();
+        }
+
     }
 }

@@ -123,5 +123,24 @@ namespace DnDBot.Application.Helpers
             }
         }
 
+        public static async Task InserirEntidadeBaseAsync(SqliteConnection conn, SqliteTransaction tx, string tabela, EntidadeBase entidade)
+        {
+            if (await RegistroExisteAsync(conn, tx, tabela, entidade.Id))
+                return;
+
+            var parametros = GerarParametrosEntidadeBase(entidade);
+
+            var sql = $@"
+        INSERT INTO {tabela} (
+            {SqliteEntidadeBaseHelper.CamposInsert}
+        ) VALUES (
+            {SqliteEntidadeBaseHelper.ValoresInsert}
+        )";
+
+            var cmd = CriarInsertCommand(conn, tx, sql, parametros);
+            await cmd.ExecuteNonQueryAsync();
+        }
+
+
     }
 }

@@ -176,15 +176,38 @@ namespace DnDBot.Bot.Commands.Ficha
                 return;
             }
 
+            // Carrega os idiomas se necessário
+            await _fichaService.CarregarIdiomasAsync(ficha);
+
             if (ficha.Idiomas == null || ficha.Idiomas.Count == 0)
             {
                 await RespondAsync("🗣️ Nenhum idioma conhecido.", ephemeral: true);
                 return;
             }
 
-            var texto = string.Join(", ", ficha.Idiomas.Select(i => i.Nome));
-            await RespondAsync($"🗣️ **Idiomas de {ficha.Nome}:**\n{texto}", ephemeral: true);
+            var embedBuilder = new EmbedBuilder()
+                .WithTitle($"🗣️ Idiomas de {ficha.Nome}")
+                .WithColor(Color.DarkPurple);
+
+            foreach (var idioma in ficha.Idiomas)
+            {
+                var descricao = string.IsNullOrWhiteSpace(idioma.Descricao)
+                    ? "*Sem descrição*"
+                    : idioma.Descricao;
+
+                var categoria = idioma.Categoria.ToString();
+                var fonte = string.IsNullOrWhiteSpace(idioma.Fonte) ? null : $"{idioma.Fonte} — p. {idioma.Pagina}";
+
+                var texto = $"📖 {descricao}\n🧩 Categoria: **{categoria}**";
+                if (fonte != null)
+                    texto += $"\n📚 {fonte}";
+
+                embedBuilder.AddField(idioma.Nome, texto, inline: false);
+            }
+
+            await RespondAsync(embed: embedBuilder.Build(), ephemeral: true);
         }
+
 
         [ComponentInteraction("btn_proficiencias_*")]
         public async Task MostrarProficienciasHandler(string fichaId)

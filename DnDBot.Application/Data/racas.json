@@ -44,11 +44,11 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum"
           },
           {
-            "Id": "idioma_celestial",
+            "Id": "celestial",
             "Nome": "Celestial"
           }
         ],
@@ -130,11 +130,11 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum"
           },
           {
-            "Id": "idioma_infernal",
+            "Id": "infernal",
             "Nome": "Infernal"
           }
         ],
@@ -205,11 +205,11 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum"
           },
           {
-            "Id": "idioma_celestial",
+            "Id": "celestial",
             "Nome": "Celestial"
           }
         ],
@@ -314,7 +314,7 @@
         "Deslocamento": 7,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -329,7 +329,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_anao",
+            "Id": "anao",
             "Nome": "Anão",
             "Descricao": "Idioma tradicional dos anões, escrito com o alfabeto anão.",
             "Fonte": "Livro do Jogador",
@@ -436,7 +436,7 @@
         "Deslocamento": 7,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -451,7 +451,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_anao",
+            "Id": "anao",
             "Nome": "Anão",
             "Descricao": "Idioma tradicional dos anões, escrito com o alfabeto anão.",
             "Fonte": "Livro do Jogador",
@@ -563,7 +563,7 @@
         "Deslocamento": 7,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -578,7 +578,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_anao",
+            "Id": "anao",
             "Nome": "Anão",
             "Descricao": "Idioma tradicional dos anões, escrito com o alfabeto anão.",
             "Fonte": "Livro do Jogador",
@@ -756,13 +756,13 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_goblinoide",
-            "Nome": "Goblinoide",
+            "Id": "goblin",
+            "Nome": "goblin",
             "Categoria": "Standard"
           }
         ],
@@ -870,12 +870,12 @@
         "Deslocamento": 12,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_silvestre",
+            "Id": "silvestre",
             "Nome": "Silvestre",
             "Categoria": "Exotic"
           }
@@ -994,24 +994,9 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Categoria": "Standard"
-          },
-          {
-            "Id": "idioma_sui_generis",
-            "Nome": "Idioma dos Changelings",
-            "Descricao": "Língua única falada pelos changelings, cheia de sutilezas e mudanças.",
-            "Fonte": "Eberron: Rising from the Last War",
-            "Pagina": "34",
-            "Versao": "1.0",
-            "ImagemUrl": "",
-            "IconeUrl": "",
-            "CriadoPor": "sistema",
-            "CriadoEm": null,
-            "ModificadoPor": "",
-            "ModificadoEm": null,
-            "Categoria": "Exotic"
           }
         ],
         "Proficiencias": [],
@@ -1065,7 +1050,7 @@
     ]
   },
   {
-    "Id": "draconato",
+    "Id": "draconico",
     "Nome": "Draconato",
     "Descricao": "Draconatos são humanoides com traços dracônicos, descendentes de dragões antigos ou criados por magia. Orgulhosos, honrados e imponentes, eles carregam o poder elemental de seu ancestral dracônico em seu sopro e aparência. Cada draconato possui um tipo de ancestralidade dracônica que define o elemento de sua baforada.",
     "Fonte": "Livro do Jogador",
@@ -1109,7 +1094,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -1118,7 +1103,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_draconato",
+            "Id": "draconico",
             "Nome": "Dracônico",
             "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
             "Fonte": "Livro do Jogador",
@@ -1210,7 +1195,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -1219,7 +1204,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_draconato",
+            "Id": "draconico",
             "Nome": "Dracônico",
             "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
             "Fonte": "Livro do Jogador",
@@ -1311,7 +1296,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -1320,7 +1305,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_draconato",
+            "Id": "draconico",
             "Nome": "Dracônico",
             "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
             "Fonte": "Livro do Jogador",
@@ -1412,7 +1397,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -1421,7 +1406,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_draconato",
+            "Id": "draconico",
             "Nome": "Dracônico",
             "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
             "Fonte": "Livro do Jogador",
@@ -1513,7 +1498,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -1522,7 +1507,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_draconato",
+            "Id": "draconico",
             "Nome": "Dracônico",
             "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
             "Fonte": "Livro do Jogador",
@@ -1614,7 +1599,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -1623,7 +1608,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_draconato",
+            "Id": "draconico",
             "Nome": "Dracônico",
             "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
             "Fonte": "Livro do Jogador",
@@ -1715,7 +1700,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -1724,7 +1709,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_draconato",
+            "Id": "draconico",
             "Nome": "Dracônico",
             "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
             "Fonte": "Livro do Jogador",
@@ -1816,7 +1801,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -1825,7 +1810,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_draconato",
+            "Id": "draconico",
             "Nome": "Dracônico",
             "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
             "Fonte": "Livro do Jogador",
@@ -1917,7 +1902,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -1926,7 +1911,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_draconato",
+            "Id": "draconico",
             "Nome": "Dracônico",
             "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
             "Fonte": "Livro do Jogador",
@@ -2018,7 +2003,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -2027,7 +2012,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_draconato",
+            "Id": "draconico",
             "Nome": "Dracônico",
             "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
             "Fonte": "Livro do Jogador",
@@ -2125,7 +2110,7 @@
       {
         "Id": "elfo_alto",
         "Nome": "Elfo Alto",
-        "Descricao": "Elfos Altos são conhecidos por sua inteligência aguçada e afinidade natural com a magia. Eles recebem um bônus em Destreza e Inteligência, possuem visão no escuro e ganham uma magia racial adicional.",
+        "Descricao": "Elfos Altos são conhecidos por sua Inteligencia aguçada e afinidade natural com a magia. Eles recebem um bônus em Destreza e Inteligencia, possuem visão no escuro e ganham uma magia racial adicional.",
         "Fonte": "Livro do Jogador",
         "Pagina": "23",
         "Versao": "1.0",
@@ -2153,7 +2138,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -2162,7 +2147,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_elfo",
+            "Id": "elfico",
             "Nome": "Élfico",
             "Descricao": "Idioma nativo dos elfos, cheio de sons melodiosos e significados profundos.",
             "Fonte": "Livro do Jogador",
@@ -2282,7 +2267,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -2291,7 +2276,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_elfico",
+            "Id": "elfico",
             "Nome": "Élfico",
             "Descricao": "Língua antiga e melódica falada pelos elfos.",
             "Fonte": "Livro do Jogador",
@@ -2381,7 +2366,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -2390,7 +2375,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_elfico",
+            "Id": "elfico",
             "Nome": "Élfico",
             "Descricao": "Idioma ancestral dos elfos, cheio de nuances poéticas e musicais.",
             "Fonte": "Livro do Jogador",
@@ -2603,7 +2588,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -2612,7 +2597,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_elfico",
+            "Id": "elfico",
             "Nome": "Élfico",
             "Descricao": "Língua dos elfos, antiga e cheia de magia.",
             "Fonte": "Livro do Jogador",
@@ -2694,7 +2679,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -2703,7 +2688,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_elfo",
+            "Id": "elfico",
             "Nome": "Élfico",
             "Descricao": "Idioma dos elfos, cheio de sons musicais e antiga tradição.",
             "Fonte": "Livro do Jogador",
@@ -2848,7 +2833,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -2857,13 +2842,10 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_fera",
-            "Nome": "Idiomas das Feras",
-            "Descricao": "Capacidade de se comunicar com animais e outras criaturas da natureza.",
-            "Fonte": "Guildmasters' Guide to Ravnica / Volo's Guide to Monsters",
-            "Pagina": "119 / 22",
-            "Versao": "1.0",
-            "Categoria": "TelepaticoOuMagico"
+            "Id": "elfico"
+          },
+          {
+            "Id": "gigante"
           }
         ],
         "Proficiencias": [],
@@ -3009,7 +2991,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -3018,13 +3000,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_animal",
-            "Nome": "Auran",
-            "Descricao": "Idioma dos elementais do ar, usado por genasi e outras criaturas elementais.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Exotic"
+            "Id": "primordial"
           }
         ],
         "Proficiencias": [],
@@ -3113,7 +3089,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -3122,7 +3098,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_genasi",
+            "Id": "primordial",
             "Nome": "Primordial",
             "Descricao": "Idioma elemental dos genasi e outras criaturas relacionadas aos elementos.",
             "Fonte": "Livro do Jogador",
@@ -3265,7 +3241,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -3274,7 +3250,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_primordial",
+            "Id": "primordial",
             "Nome": "Primordial",
             "Descricao": "Idioma elemental falado por genasi e seres elementais.",
             "Fonte": "Livro do Jogador",
@@ -3356,7 +3332,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado pela maioria das raças civilizadas.",
             "Fonte": "Livro do Jogador",
@@ -3365,7 +3341,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_primordial",
+            "Id": "primordial",
             "Nome": "Primordial",
             "Descricao": "Idioma elemental usado por seres ligados aos elementos.",
             "Fonte": "Livro do Jogador",
@@ -3421,7 +3397,7 @@
           }
         ],
         "Tags": [ "fogo", "resistencia" ]
-      }    
+      }
     ],
     "RacaTags": [
       {
@@ -3487,7 +3463,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -3496,7 +3472,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_goliath",
+            "Id": "gigante",
             "Nome": "Giant",
             "Descricao": "Idioma ancestral dos gigantes, usado pelos Goliaths nas montanhas.",
             "Fonte": "Livro do Jogador",
@@ -3588,7 +3564,7 @@
   {
     "Id": "gnomo",
     "Nome": "Gnomo",
-    "Descricao": "Gnomos são pequenos humanoides conhecidos por sua curiosidade, inteligência e ligação com a magia e a invenção. Eles possuem grande afinidade com ilusões e a natureza, e suas personalidades vibrantes os tornam membros queridos de qualquer comunidade. Existem diferentes sub-raças de gnomos, cada uma com suas próprias características e talentos.",
+    "Descricao": "Gnomos são pequenos humanoides conhecidos por sua curiosidade, Inteligencia e ligação com a magia e a invenção. Eles possuem grande afinidade com ilusões e a natureza, e suas personalidades vibrantes os tornam membros queridos de qualquer comunidade. Existem diferentes sub-raças de gnomos, cada uma com suas próprias características e talentos.",
     "Fonte": "Livro do Jogador",
     "Pagina": "37",
     "Versao": "1.0",
@@ -3602,7 +3578,7 @@
       {
         "Id": "gnomo_da_floresta",
         "Nome": "Gnomo da Floresta",
-        "Descricao": "Gnomos da Floresta são pequenos e ágeis, com uma afinidade natural com a magia da natureza. São conhecidos por sua inteligência e habilidade em magia ilusória, além de possuírem uma visão aguçada no escuro e grande velocidade.",
+        "Descricao": "Gnomos da Floresta são pequenos e ágeis, com uma afinidade natural com a magia da natureza. São conhecidos por sua Inteligencia e habilidade em magia ilusória, além de possuírem uma visão aguçada no escuro e grande velocidade.",
         "Fonte": "Livro do Jogador",
         "Pagina": "37",
         "Versao": "1.0",
@@ -3624,7 +3600,7 @@
         "Deslocamento": 7,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -3633,7 +3609,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_gnomo",
+            "Id": "gnomico",
             "Nome": "Gnômico",
             "Descricao": "Idioma tradicional dos gnomos.",
             "Fonte": "Livro do Jogador",
@@ -3770,7 +3746,7 @@
         "Deslocamento": 7,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -3779,7 +3755,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_gnomo",
+            "Id": "gnomico",
             "Nome": "Gnomo",
             "Descricao": "Língua dos gnomos, repleta de termos relacionados a artesanato e magia.",
             "Fonte": "Livro do Jogador",
@@ -3910,7 +3886,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -3919,7 +3895,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_goblin",
+            "Id": "goblin",
             "Nome": "Goblin",
             "Descricao": "Idioma dos goblins, simples e prático, usado em suas tribos e territórios.",
             "Fonte": "Livro do Jogador",
@@ -4065,7 +4041,7 @@
         "Deslocamento": 7,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -4074,7 +4050,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_halfling",
+            "Id": "halfling",
             "Nome": "Halfling",
             "Descricao": "Idioma nativo dos halflings, rico em expressões culturais.",
             "Fonte": "Livro do Jogador",
@@ -4168,7 +4144,7 @@
         "Deslocamento": 7,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -4177,7 +4153,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_halfling",
+            "Id": "halfling",
             "Nome": "Halfling",
             "Descricao": "Idioma tradicional dos halflings.",
             "Fonte": "Livro do Jogador",
@@ -4301,7 +4277,7 @@
         "Deslocamento": 7,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -4310,13 +4286,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_kenku",
-            "Nome": "Linguagem Kenku",
-            "Descricao": "Comunicação própria dos Kenku, que envolve sons, imitações e linguagem corporal.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "178",
-            "Versao": "1.0",
-            "Categoria": "Standard"
+            "Id": "auran"
           }
         ],
         "Proficiencias": [],
@@ -4392,7 +4362,7 @@
   {
     "Id": "kobold",
     "Nome": "Kobold",
-    "Descricao": "Kobolds são pequenas criaturas reptilianas conhecidas por sua astúcia, habilidade em armadilhas e trabalho em grupo. Embora fisicamente frágeis, compensam com inteligência e táticas, vivendo geralmente em cavernas e túneis subterrâneos. São descendentes distantes de dragões, o que lhes confere algumas características dracônicas.",
+    "Descricao": "Kobolds são pequenas criaturas reptilianas conhecidas por sua astúcia, habilidade em armadilhas e trabalho em grupo. Embora fisicamente frágeis, compensam com Inteligencia e táticas, vivendo geralmente em cavernas e túneis subterrâneos. São descendentes distantes de dragões, o que lhes confere algumas características dracônicas.",
     "Fonte": "Livro do Jogador",
     "Pagina": "195",
     "Versao": "1.0",
@@ -4428,7 +4398,7 @@
         "Deslocamento": 7,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -4437,7 +4407,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_draconato",
+            "Id": "draconico",
             "Nome": "Dracônico",
             "Descricao": "Língua ancestral dos dragões e de algumas raças reptilianas como os kobolds.",
             "Fonte": "Livro do Jogador",
@@ -4580,7 +4550,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -4589,7 +4559,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_leonin",
+            "Id": "leonin",
             "Nome": "Leonin",
             "Descricao": "Idioma nativo dos Leonins, contendo expressões e sons próprios de sua cultura.",
             "Fonte": "Guildmaster's Guide to Ravnica",
@@ -4725,7 +4695,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -4734,7 +4704,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_elfico",
+            "Id": "elfico",
             "Nome": "Élfico",
             "Descricao": "Língua ancestral dos elfos, conhecida por sua musicalidade e antiguidade.",
             "Fonte": "Livro do Jogador",
@@ -4881,7 +4851,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -4890,7 +4860,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_orc",
+            "Id": "orc",
             "Nome": "Orc",
             "Descricao": "Idioma rústico e forte, falado pelos orcs e seus descendentes.",
             "Fonte": "Livro do Jogador",
@@ -5054,7 +5024,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -5063,7 +5033,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_adicional",
+            "Id": "adicional",
             "Nome": "Idioma Adicional",
             "Descricao": "Você pode escolher um idioma adicional de sua escolha.",
             "Fonte": "Livro do Jogador",
@@ -5122,7 +5092,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -5131,7 +5101,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_adicional",
+            "Id": "adicional",
             "Nome": "Idioma Adicional",
             "Descricao": "Você fala um idioma adicional à sua escolha.",
             "Fonte": "Livro do Jogador",
@@ -5257,7 +5227,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -5266,7 +5236,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_elfico",
+            "Id": "elfico",
             "Nome": "Élfico",
             "Descricao": "Idioma dos elfos e criaturas feéricas.",
             "Fonte": "Livro do Jogador",
@@ -5488,7 +5458,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -5497,13 +5467,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_tabaxi",
-            "Nome": "Tabaxi",
-            "Descricao": "Idioma nativo dos Tabaxi.",
-            "Fonte": "Volo's Guide to Monsters",
-            "Pagina": "112",
-            "Versao": "1.0",
-            "Categoria": "Standard"
+            "Id": "adicional"
           }
         ],
         "Proficiencias": [],
@@ -5640,225 +5604,224 @@
     "ModificadoEm": "2025-07-05T00:00:00",
     "SubRaca": [
       {
-        {
-          "Id": "tiefling_padrao",
-          "Nome": "Tiefling Padrão",
-          "Descricao": "Tieflings possuem herança infernal que lhes concede resistência a fogo, além de magias raciais inatas baseadas em sua linhagem infernal.",
-          "Fonte": "Livro do Jogador",
-          "Pagina": "43",
-          "Versao": "1.0",
-          "ImagemUrl": "",
-          "IconeUrl": "",
-          "CriadoPor": "sistema",
-          "CriadoEm": null,
-          "ModificadoPor": "",
-          "ModificadoEm": null,
-          "BonusAtributos": [
-            {
-              "Id": "inteligencia_tiefling_padrao",
-              "Atributo": "Inteligencia",
-              "Valor": 1,
-              "Origem": "Sub-raça"
-            },
-            {
-              "Id": "carisma_tiefling_padrao",
-              "Atributo": "Carisma",
-              "Valor": 2,
-              "Origem": "Sub-raça"
-            }
-          ],
-          "Tamanho": "Médio",
-          "Deslocamento": 9,
-          "Idiomas": [
-            {
-              "Id": "idioma_comum",
-              "Nome": "Comum",
-              "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-              "Fonte": "Livro do Jogador",
-              "Pagina": "123",
-              "Versao": "1.0",
-              "Categoria": "Standard"
-            },
-            {
-              "Id": "idioma_infernal",
-              "Nome": "Infernal",
-              "Descricao": "Língua dos demônios e dos infernais, escrita com um alfabeto arcano.",
-              "Fonte": "Livro do Jogador",
-              "Pagina": "123",
-              "Versao": "1.0",
-              "Categoria": "Standard"
-            }
-          ],
-          "Proficiencias": [],
-          "VisaoNoEscuro": 18,
-          "Resistencias": [],
-          "Caracteristicas": [
-            {
-              "Id": "magia_ascendencia_infernal",
-              "Nome": "Magias da Ascendência Infernal",
-              "Descricao": "Você conhece a magia Thaumaturgy. Quando alcançar o 3º nível, pode lançar Hellish Rebuke como magia de 2º nível uma vez por descanso longo. Ao 5º nível, pode lançar Darkness uma vez por descanso longo. Carisma é seu atributo para essas magias.",
-              "Fonte": "Livro do Jogador",
-              "Pagina": "43",
-              "Versao": "1.0",
-              "Tipo": "Magia",
-              "AcaoRequerida": "Nenhuma",
-              "Alvo": "Self",
-              "DuracaoEmRodadas": null,
-              "UsosPorDescansoCurto": null,
-              "UsosPorDescansoLongo": null,
-              "CondicaoAtivacao": "Sempre",
-              "Origem": "MagiaRacial",
-              "OrigemId": "tiefling_padrao",
-              "NivelMinimo": 1
-            }
-          ],
-          "MagiasRaciais": [
-            {
-              "Id": "thaumaturgy",
-              "Nome": "Thaumaturgy",
-              "Descricao": "Você pode manifestar efeitos menores sobrenaturais para impressionar ou intimidar.",
-              "Fonte": "Livro do Jogador",
-              "Pagina": "282",
-              "Versao": "1.0",
-              "Nivel": "Truque",
-              "Escola": "Evocação",
-              "TempoConjuracao": "1 ação",
-              "Alcance": "30 pés",
-              "Alvo": "Self",
-              "Concentração": false,
-              "Duracao": "1 minuto",
-              "PodeSerRitual": false,
-              "ComponenteVerbal": true,
-              "ComponenteSomatico": true,
-              "ComponenteMaterial": false,
-              "DetalhesMaterial": "",
-              "ComponenteMaterialConsumido": false,
-              "CustoComponenteMaterial": "",
-              "TipoDano": null,
-              "DadoDano": null,
-              "Escalonamento": null,
-              "AtributoTesteResistencia": null,
-              "MetadeNoTeste": false,
-              "CondicoesAplicadas": [],
-              "CondicoesRemovidas": [],
-              "ClassesPermitidas": [],
-              "Recarga": null,
-              "TipoUso": "Ação",
-              "RequerLinhaDeVisao": false,
-              "RequerLinhaReta": false,
-              "NumeroMaximoAlvos": null,
-              "AreaEfeito": null,
-              "FocoNecessario": null,
-              "LimiteUso": null,
-              "EfeitoPorTurno": null,
-              "NumeroDeUsos": 0,
-              "MagiaTags": [],
-              "Tags": []
-            },
-            {
-              "Id": "hellish_rebuke",
-              "Nome": "Hellish Rebuke",
-              "Descricao": "Como reação, você pode causar fogo infernal em uma criatura que te tenha atacado. (Lançável 1 vez por descanso longo a partir do 3º nível.)",
-              "Fonte": "Livro do Jogador",
-              "Pagina": "252",
-              "Versao": "1.0",
-              "Nivel": "1º nível",
-              "Escola": "Evocação",
-              "TempoConjuracao": "Reação",
-              "Alcance": "60 pés",
-              "Alvo": "Criatura",
-              "Concentração": false,
-              "Duracao": "Instantânea",
-              "PodeSerRitual": false,
-              "ComponenteVerbal": true,
-              "ComponenteSomatico": true,
-              "ComponenteMaterial": false,
-              "DetalhesMaterial": "",
-              "ComponenteMaterialConsumido": false,
-              "CustoComponenteMaterial": "",
-              "TipoDano": "Fogo",
-              "DadoDano": "2d10",
-              "Escalonamento": "Dano aumenta para 3d10 ao alcançar o 5º nível",
-              "AtributoTesteResistencia": "Dexteridade",
-              "MetadeNoTeste": true,
-              "CondicoesAplicadas": [],
-              "CondicoesRemovidas": [],
-              "ClassesPermitidas": [],
-              "Recarga": "Descanso Longo",
-              "TipoUso": "Reação",
-              "RequerLinhaDeVisao": true,
-              "RequerLinhaReta": false,
-              "NumeroMaximoAlvos": 1,
-              "AreaEfeito": null,
-              "FocoNecessario": null,
-              "LimiteUso": "1 vez por descanso longo",
-              "EfeitoPorTurno": null,
-              "NumeroDeUsos": 0,
-              "MagiaTags": [],
-              "Tags": []
-            },
-            {
-              "Id": "darkness",
-              "Nome": "Darkness",
-              "Descricao": "Você pode lançar Darkness uma vez por descanso longo a partir do 5º nível.",
-              "Fonte": "Livro do Jogador",
-              "Pagina": "230",
-              "Versao": "1.0",
-              "Nivel": "2º nível",
-              "Escola": "Evocação",
-              "TempoConjuracao": "1 ação",
-              "Alcance": "60 pés",
-              "Alvo": "Área (esfera de 15 pés de raio)",
-              "Concentração": true,
-              "Duracao": "Até 1 minuto",
-              "PodeSerRitual": false,
-              "ComponenteVerbal": true,
-              "ComponenteSomatico": true,
-              "ComponenteMaterial": true,
-              "DetalhesMaterial": "pó de carvão ou pedaços de carvão queimado",
-              "ComponenteMaterialConsumido": false,
-              "CustoComponenteMaterial": "",
-              "TipoDano": null,
-              "DadoDano": null,
-              "Escalonamento": null,
-              "AtributoTesteResistencia": null,
-              "MetadeNoTeste": false,
-              "CondicoesAplicadas": [],
-              "CondicoesRemovidas": [],
-              "ClassesPermitidas": [],
-              "Recarga": "Descanso Longo",
-              "TipoUso": "Ação",
-              "RequerLinhaDeVisao": true,
-              "RequerLinhaReta": false,
-              "NumeroMaximoAlvos": null,
-              "AreaEfeito": "Esfera de 15 pés de raio",
-              "FocoNecessario": null,
-              "LimiteUso": "1 vez por descanso longo",
-              "EfeitoPorTurno": null,
-              "NumeroDeUsos": 0,
-              "MagiaTags": [],
-              "Tags": []
-            }
-          ],
-          "RacaId": "tiefling",
-          "Raca": null,
-          "SubRacaTags": [
-            {
-              "SubRacaId": "tiefling_padrao",
-              "Tag": "tiefling"
-            },
-            {
-              "SubRacaId": "tiefling_padrao",
-              "Tag": "infernal"
-            },
-            {
-              "SubRacaId": "tiefling_padrao",
-              "Tag": "magia"
-            }
-          ],
-          "Tags": [ "tiefling", "infernal", "magia" ]
-        },
-
+        "Id": "tiefling_padrao",
+        "Nome": "Tiefling Padrão",
+        "Descricao": "Tieflings possuem herança infernal que lhes concede resistência a fogo, além de magias raciais inatas baseadas em sua linhagem infernal.",
+        "Fonte": "Livro do Jogador",
+        "Pagina": "43",
+        "Versao": "1.0",
+        "ImagemUrl": "",
+        "IconeUrl": "",
+        "CriadoPor": "sistema",
+        "CriadoEm": null,
+        "ModificadoPor": "",
+        "ModificadoEm": null,
+        "BonusAtributos": [
+          {
+            "Id": "inteligencia_tiefling_padrao",
+            "Atributo": "Inteligencia",
+            "Valor": 1,
+            "Origem": "Sub-raça"
+          },
+          {
+            "Id": "carisma_tiefling_padrao",
+            "Atributo": "Carisma",
+            "Valor": 2,
+            "Origem": "Sub-raça"
+          }
+        ],
+        "Tamanho": "Médio",
+        "Deslocamento": 9,
+        "Idiomas": [
+          {
+            "Id": "comum",
+            "Nome": "Comum",
+            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
+            "Fonte": "Livro do Jogador",
+            "Pagina": "123",
+            "Versao": "1.0",
+            "Categoria": "Standard"
+          },
+          {
+            "Id": "infernal",
+            "Nome": "Infernal",
+            "Descricao": "Língua dos demônios e dos infernais, escrita com um alfabeto arcano.",
+            "Fonte": "Livro do Jogador",
+            "Pagina": "123",
+            "Versao": "1.0",
+            "Categoria": "Standard"
+          }
+        ],
+        "Proficiencias": [],
+        "VisaoNoEscuro": 18,
+        "Resistencias": [],
+        "Caracteristicas": [
+          {
+            "Id": "magia_ascendencia_infernal",
+            "Nome": "Magias da Ascendência Infernal",
+            "Descricao": "Você conhece a magia Thaumaturgy. Quando alcançar o 3º nível, pode lançar Hellish Rebuke como magia de 2º nível uma vez por descanso longo. Ao 5º nível, pode lançar Darkness uma vez por descanso longo. Carisma é seu atributo para essas magias.",
+            "Fonte": "Livro do Jogador",
+            "Pagina": "43",
+            "Versao": "1.0",
+            "Tipo": "Magia",
+            "AcaoRequerida": "Nenhuma",
+            "Alvo": "Self",
+            "DuracaoEmRodadas": null,
+            "UsosPorDescansoCurto": null,
+            "UsosPorDescansoLongo": null,
+            "CondicaoAtivacao": "Sempre",
+            "Origem": "MagiaRacial",
+            "OrigemId": "tiefling_padrao",
+            "NivelMinimo": 1
+          }
+        ],
+        "MagiasRaciais": [
+          {
+            "Id": "thaumaturgy",
+            "Nome": "Thaumaturgy",
+            "Descricao": "Você pode manifestar efeitos menores sobrenaturais para impressionar ou intimidar.",
+            "Fonte": "Livro do Jogador",
+            "Pagina": "282",
+            "Versao": "1.0",
+            "Nivel": "Truque",
+            "Escola": "Evocação",
+            "TempoConjuracao": "1 ação",
+            "Alcance": "30 pés",
+            "Alvo": "Self",
+            "Concentração": false,
+            "Duracao": "1 minuto",
+            "PodeSerRitual": false,
+            "ComponenteVerbal": true,
+            "ComponenteSomatico": true,
+            "ComponenteMaterial": false,
+            "DetalhesMaterial": "",
+            "ComponenteMaterialConsumido": false,
+            "CustoComponenteMaterial": "",
+            "TipoDano": null,
+            "DadoDano": null,
+            "Escalonamento": null,
+            "AtributoTesteResistencia": null,
+            "MetadeNoTeste": false,
+            "CondicoesAplicadas": [],
+            "CondicoesRemovidas": [],
+            "ClassesPermitidas": [],
+            "Recarga": null,
+            "TipoUso": "Ação",
+            "RequerLinhaDeVisao": false,
+            "RequerLinhaReta": false,
+            "NumeroMaximoAlvos": null,
+            "AreaEfeito": null,
+            "FocoNecessario": null,
+            "LimiteUso": null,
+            "EfeitoPorTurno": null,
+            "NumeroDeUsos": 0,
+            "MagiaTags": [],
+            "Tags": []
+          },
+          {
+            "Id": "hellish_rebuke",
+            "Nome": "Hellish Rebuke",
+            "Descricao": "Como reação, você pode causar fogo infernal em uma criatura que te tenha atacado. (Lançável 1 vez por descanso longo a partir do 3º nível.)",
+            "Fonte": "Livro do Jogador",
+            "Pagina": "252",
+            "Versao": "1.0",
+            "Nivel": "1º nível",
+            "Escola": "Evocação",
+            "TempoConjuracao": "Reação",
+            "Alcance": "60 pés",
+            "Alvo": "Criatura",
+            "Concentração": false,
+            "Duracao": "Instantânea",
+            "PodeSerRitual": false,
+            "ComponenteVerbal": true,
+            "ComponenteSomatico": true,
+            "ComponenteMaterial": false,
+            "DetalhesMaterial": "",
+            "ComponenteMaterialConsumido": false,
+            "CustoComponenteMaterial": "",
+            "TipoDano": "Fogo",
+            "DadoDano": "2d10",
+            "Escalonamento": "Dano aumenta para 3d10 ao alcançar o 5º nível",
+            "AtributoTesteResistencia": "Dexteridade",
+            "MetadeNoTeste": true,
+            "CondicoesAplicadas": [],
+            "CondicoesRemovidas": [],
+            "ClassesPermitidas": [],
+            "Recarga": "Descanso Longo",
+            "TipoUso": "Reação",
+            "RequerLinhaDeVisao": true,
+            "RequerLinhaReta": false,
+            "NumeroMaximoAlvos": 1,
+            "AreaEfeito": null,
+            "FocoNecessario": null,
+            "LimiteUso": "1 vez por descanso longo",
+            "EfeitoPorTurno": null,
+            "NumeroDeUsos": 0,
+            "MagiaTags": [],
+            "Tags": []
+          },
+          {
+            "Id": "darkness",
+            "Nome": "Darkness",
+            "Descricao": "Você pode lançar Darkness uma vez por descanso longo a partir do 5º nível.",
+            "Fonte": "Livro do Jogador",
+            "Pagina": "230",
+            "Versao": "1.0",
+            "Nivel": "2º nível",
+            "Escola": "Evocação",
+            "TempoConjuracao": "1 ação",
+            "Alcance": "60 pés",
+            "Alvo": "Área (esfera de 15 pés de raio)",
+            "Concentração": true,
+            "Duracao": "Até 1 minuto",
+            "PodeSerRitual": false,
+            "ComponenteVerbal": true,
+            "ComponenteSomatico": true,
+            "ComponenteMaterial": true,
+            "DetalhesMaterial": "pó de carvão ou pedaços de carvão queimado",
+            "ComponenteMaterialConsumido": false,
+            "CustoComponenteMaterial": "",
+            "TipoDano": null,
+            "DadoDano": null,
+            "Escalonamento": null,
+            "AtributoTesteResistencia": null,
+            "MetadeNoTeste": false,
+            "CondicoesAplicadas": [],
+            "CondicoesRemovidas": [],
+            "ClassesPermitidas": [],
+            "Recarga": "Descanso Longo",
+            "TipoUso": "Ação",
+            "RequerLinhaDeVisao": true,
+            "RequerLinhaReta": false,
+            "NumeroMaximoAlvos": null,
+            "AreaEfeito": "Esfera de 15 pés de raio",
+            "FocoNecessario": null,
+            "LimiteUso": "1 vez por descanso longo",
+            "EfeitoPorTurno": null,
+            "NumeroDeUsos": 0,
+            "MagiaTags": [],
+            "Tags": []
+          }
+        ],
+        "RacaId": "tiefling",
+        "Raca": null,
+        "SubRacaTags": [
+          {
+            "SubRacaId": "tiefling_padrao",
+            "Tag": "tiefling"
+          },
+          {
+            "SubRacaId": "tiefling_padrao",
+            "Tag": "infernal"
+          },
+          {
+            "SubRacaId": "tiefling_padrao",
+            "Tag": "magia"
+          }
+        ],
+        "Tags": [ "tiefling", "infernal", "magia" ]
+      },
+      {
         "Id": "tiefling_zariel",
         "Nome": "Zariel",
         "Descricao": "Tieflings com ascendência de Zariel, arqui-demônio dos anjos caídos, manifestam traços de sua natureza guerreira e ardente. Eles possuem resistência ao fogo e habilidades mágicas infernais específicas.",
@@ -5889,7 +5852,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -5898,7 +5861,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_infernal",
+            "Id": "infernal",
             "Nome": "Infernal",
             "Descricao": "Idioma dos diabos e dos seres infernais.",
             "Fonte": "Livro do Jogador",
@@ -6054,7 +6017,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -6063,7 +6026,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_infernal",
+            "Id": "infernal",
             "Nome": "Infernal",
             "Descricao": "Idioma dos diabos e dos seres infernais.",
             "Fonte": "Livro do Jogador",
@@ -6078,7 +6041,7 @@
           {
             "Id": "resistencia_frio_tiefling_levistus",
             "Nome": "Resistência ao frio",
-            "TipoDano": "frio",
+            "TipoDano": "Gelo",
             "Descricao": "Você tem resistência ao dano de frio.",
             "Fonte": "Mordenkainen's Tome of Foes",
             "Pagina": "22",
@@ -6145,7 +6108,7 @@
             "DetalhesMaterial": "",
             "ComponenteMaterialConsumido": false,
             "CustoComponenteMaterial": "",
-            "TipoDano": "frio",
+            "TipoDano": "Gelo",
             "DadoDano": "5",
             "Escalonamento": "",
             "AtributoTesteResistencia": "",
@@ -6219,7 +6182,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -6228,7 +6191,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_infernal",
+            "Id": "infernal",
             "Nome": "Infernal",
             "Descricao": "Idioma dos diabos e dos seres infernais.",
             "Fonte": "Livro do Jogador",
@@ -6406,7 +6369,7 @@
           },
           {
             "Id": "inteligencia_tiefling_dispater",
-            "Atributo": "Inteligência",
+            "Atributo": "Inteligencia",
             "Valor": 1,
             "Origem": "Sub-raça"
           }
@@ -6415,7 +6378,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -6424,7 +6387,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_infernal",
+            "Id": "infernal",
             "Nome": "Infernal",
             "Descricao": "Idioma dos diabos e dos seres infernais.",
             "Fonte": "Livro do Jogador",
@@ -6621,7 +6584,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -6630,7 +6593,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_infernal",
+            "Id": "infernal",
             "Nome": "Infernal",
             "Descricao": "Idioma dos diabos e dos seres infernais.",
             "Fonte": "Livro do Jogador",
@@ -6786,7 +6749,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -6795,7 +6758,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_infernal",
+            "Id": "infernal",
             "Nome": "Infernal",
             "Descricao": "Idioma dos diabos e dos seres infernais.",
             "Fonte": "Livro do Jogador",
@@ -6951,7 +6914,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -6960,7 +6923,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_infernal",
+            "Id": "infernal",
             "Nome": "Infernal",
             "Descricao": "Idioma dos diabos e dos seres infernais.",
             "Fonte": "Livro do Jogador",
@@ -7107,7 +7070,7 @@
           },
           {
             "Id": "inteligencia_tiefling_mephistopheles",
-            "Atributo": "Inteligência",
+            "Atributo": "Inteligencia",
             "Valor": 1,
             "Origem": "Sub-raça"
           }
@@ -7116,7 +7079,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -7125,7 +7088,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_infernal",
+            "Id": "infernal",
             "Nome": "Infernal",
             "Descricao": "Idioma dos diabos e dos seres infernais.",
             "Fonte": "Livro do Jogador",
@@ -7207,7 +7170,7 @@
             "DetalhesMaterial": "",
             "ComponenteMaterialConsumido": false,
             "CustoComponenteMaterial": "",
-            "TipoDano": "frio",
+            "TipoDano": "Gelo",
             "DadoDano": "4d8",
             "Escalonamento": "Dano aumenta 1d8 a cada nível acima do 2º",
             "AtributoTesteResistencia": "Constituição",
@@ -7325,7 +7288,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -7334,13 +7297,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_tritao",
-            "Nome": "Trítico",
-            "Descricao": "Idioma ancestral dos tritões e criaturas marinhas.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
+            "Id": "aquan"
           }
         ],
         "Proficiencias": [],
@@ -7477,7 +7434,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -7486,13 +7443,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_eleron",
-            "Nome": "Dwarvish",
-            "Descricao": "Idioma dos anões, mas também aprendido por warforged.",
-            "Fonte": "Eberron: Rising from the Last War",
-            "Pagina": "35",
-            "Versao": "1.0",
-            "Categoria": "Standard"
+            "Id": "adicional"
           }
         ],
         "Proficiencias": [],
@@ -7582,7 +7533,7 @@
   {
     "Id": "yuan-ti",
     "Nome": "Yuan-ti",
-    "Descricao": "Yuan-ti são descendentes serpentinos, conhecidos por sua inteligência astuta, habilidades mágicas e traços reptilianos. Muitas vezes associados a cultos e segredos antigos, eles são mestres em manipulação, furtividade e controle mental. Sua herança serpente lhes confere resistência e características físicas únicas.",
+    "Descricao": "Yuan-ti são descendentes serpentinos, conhecidos por sua Inteligencia astuta, habilidades mágicas e traços reptilianos. Muitas vezes associados a cultos e segredos antigos, eles são mestres em manipulação, furtividade e controle mental. Sua herança serpente lhes confere resistência e características físicas únicas.",
     "Fonte": "Volo’s Guide to Monsters",
     "Pagina": "120",
     "Versao": "1.0",
@@ -7624,7 +7575,7 @@
         "Deslocamento": 9,
         "Idiomas": [
           {
-            "Id": "idioma_comum",
+            "Id": "comum",
             "Nome": "Comum",
             "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
             "Fonte": "Livro do Jogador",
@@ -7633,7 +7584,7 @@
             "Categoria": "Standard"
           },
           {
-            "Id": "idioma_primordial",
+            "Id": "primordial",
             "Nome": "Primordial",
             "Descricao": "Idioma dos elementos, espíritos e seres primordiais.",
             "Fonte": "Livro do Jogador",
@@ -7810,5 +7761,4 @@
       }
     ]
   }
-
 ]

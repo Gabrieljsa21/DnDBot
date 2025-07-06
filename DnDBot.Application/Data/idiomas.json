@@ -439,5 +439,23 @@
     "Descricao": "Forma primitiva de comunicação baseada em imagens e símbolos, usada por tribos, bestas inteligentes e criaturas que não possuem linguagem verbal desenvolvida.",
     "Pagina": "123",
     "Versao": "5.0"
+  },
+  {
+    "Id": "leonin",
+    "Nome": "Leonin",
+    "Categoria": "RegionalOuCultural",
+    "Fonte": "Guildmaster's Guide to Ravnica",
+    "Descricao": "Linguagem falada pelos leonins, uma raça de humanoides felinos que valorizam honra e coragem. É uma língua forte, com sons guturais e vibrantes, refletindo a cultura guerreira e tribal dos leonins.",
+    "Pagina": "142",
+    "Versao": "5.0"
+  },
+  {
+    "Id": "adicional",
+    "Nome": "Idioma Adicional",
+    "Descricao": "Você pode escolher um idioma adicional de sua escolha.",
+    "Fonte": "Livro do Jogador",
+    "Pagina": "29",
+    "Versao": "1.0",
+    "Categoria": "Standard"
   }
 ]

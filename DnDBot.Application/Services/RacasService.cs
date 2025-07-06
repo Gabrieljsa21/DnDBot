@@ -74,7 +74,13 @@ namespace DnDBot.Application.Services
         /// <returns>Lista de sub-raças.</returns>
         public async Task<List<SubRaca>> ObterTodasSubracasAsync()
         {
-            return await _db.SubRaca.ToListAsync();
+            return await _db.SubRaca
+                .Include(sr => sr.Idiomas)
+                .Include(sr => sr.Proficiencias)
+                .Include(sr => sr.Caracteristicas)
+                .Include(sr => sr.Resistencias)
+                .Include(sr => sr.MagiasRaciais)
+                .ToListAsync();
         }
 
         /// <summary>

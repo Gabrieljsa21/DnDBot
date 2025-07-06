@@ -54,6 +54,7 @@ namespace DnDBot.Application.Services
             await RacaDatabaseHelper.CriarTabelaAsync(cmd);
             await ClasseDatabaseHelper.CriarTabelaAsync(cmd);
             await AntecedenteDatabaseHelper.CriarTabelaAsync(cmd);
+            await FichaDatabaseHelper.CriarTabelaAsync(cmd);
         }
 
         /// <summary>

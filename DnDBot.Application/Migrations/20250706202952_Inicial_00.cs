@@ -305,6 +305,35 @@ namespace DnDBot.Application.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Idioma",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Categoria = table.Column<int>(type: "INTEGER", nullable: false),
+                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Idioma", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Idioma_Antecedente_AntecedenteId",
+                        column: x => x.AntecedenteId,
+                        principalTable: "Antecedente",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Item",
                 columns: table => new
                 {
@@ -588,6 +617,17 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Tipo = table.Column<int>(type: "INTEGER", nullable: false),
+                    AcaoRequerida = table.Column<int>(type: "INTEGER", nullable: false),
+                    Alvo = table.Column<int>(type: "INTEGER", nullable: false),
+                    DuracaoEmRodadas = table.Column<int>(type: "INTEGER", nullable: true),
+                    UsosPorDescansoCurto = table.Column<int>(type: "INTEGER", nullable: true),
+                    UsosPorDescansoLongo = table.Column<int>(type: "INTEGER", nullable: true),
+                    CondicaoAtivacao = table.Column<int>(type: "INTEGER", nullable: false),
+                    Origem = table.Column<int>(type: "INTEGER", nullable: false),
+                    OrigemId = table.Column<string>(type: "TEXT", nullable: true),
+                    NivelMinimo = table.Column<int>(type: "INTEGER", nullable: false),
+                    NivelMaximo = table.Column<int>(type: "INTEGER", nullable: true),
                     AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
                     FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
@@ -694,41 +734,6 @@ namespace DnDBot.Application.Migrations
                     table.ForeignKey(
                         name: "FK_HistoricoFinanceiroItem_FichaPersonagem_FichaPersonagemId1",
                         column: x => x.FichaPersonagemId1,
-                        principalTable: "FichaPersonagem",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Idioma",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Categoria = table.Column<int>(type: "INTEGER", nullable: false),
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
-                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
-                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
-                    Versao = table.Column<string>(type: "TEXT", nullable: true),
-                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Idioma", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Idioma_Antecedente_AntecedenteId",
-                        column: x => x.AntecedenteId,
-                        principalTable: "Antecedente",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Idioma_FichaPersonagem_FichaPersonagemId",
-                        column: x => x.FichaPersonagemId,
                         principalTable: "FichaPersonagem",
                         principalColumn: "Id");
                 });
@@ -857,7 +862,7 @@ namespace DnDBot.Application.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
-                    TipoDano = table.Column<string>(type: "TEXT", nullable: true),
+                    TipoDano = table.Column<int>(type: "INTEGER", nullable: false),
                     FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
@@ -1026,6 +1031,30 @@ namespace DnDBot.Application.Migrations
                         name: "FK_SubRaca_Raca_RacaId",
                         column: x => x.RacaId,
                         principalTable: "Raca",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FichaPersonagem_Idiomas",
+                columns: table => new
+                {
+                    FichaId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    IdiomaId = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FichaPersonagem_Idiomas", x => new { x.FichaId, x.IdiomaId });
+                    table.ForeignKey(
+                        name: "FK_FichaPersonagem_Idiomas_FichaPersonagem_FichaId",
+                        column: x => x.FichaId,
+                        principalTable: "FichaPersonagem",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_FichaPersonagem_Idiomas_Idioma_IdiomaId",
+                        column: x => x.IdiomaId,
+                        principalTable: "Idioma",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -1717,6 +1746,11 @@ namespace DnDBot.Application.Migrations
                 column: "FichaPersonagemId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_FichaPersonagem_Idiomas_IdiomaId",
+                table: "FichaPersonagem_Idiomas",
+                column: "IdiomaId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_HistoricoFinanceiroItem_FichaPersonagemId",
                 table: "HistoricoFinanceiroItem",
                 column: "FichaPersonagemId");
@@ -1745,11 +1779,6 @@ namespace DnDBot.Application.Migrations
                 name: "IX_Idioma_AntecedenteId",
                 table: "Idioma",
                 column: "AntecedenteId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Idioma_FichaPersonagemId",
-                table: "Idioma",
-                column: "FichaPersonagemId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Inventarios_FichaPersonagemId",
@@ -1935,6 +1964,9 @@ namespace DnDBot.Application.Migrations
 
             migrationBuilder.DropTable(
                 name: "FichaPersonagem_BolsaDeMoedas_Moedas");
+
+            migrationBuilder.DropTable(
+                name: "FichaPersonagem_Idiomas");
 
             migrationBuilder.DropTable(
                 name: "FichaPersonagemTag");

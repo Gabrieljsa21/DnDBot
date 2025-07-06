@@ -187,6 +187,19 @@ namespace DnDBot.Application.Data
     .WithOne(e => e.Inventario)
     .HasForeignKey(e => e.InventarioId);
 
+            modelBuilder.Entity<FichaPersonagem>()
+    .HasMany(f => f.Idiomas)
+    .WithMany()
+    .UsingEntity<Dictionary<string, object>>(
+        "FichaPersonagem_Idiomas",
+        j => j.HasOne<Idioma>().WithMany().HasForeignKey("IdiomaId").OnDelete(DeleteBehavior.Cascade),
+        j => j.HasOne<FichaPersonagem>().WithMany().HasForeignKey("FichaId").OnDelete(DeleteBehavior.Cascade),
+        j =>
+        {
+            j.HasKey("FichaId", "IdiomaId");
+            j.ToTable("FichaPersonagem_Idiomas");
+        });
+
 
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Discord.Interactions;
 using DnDBot.Application.Models;
+using DnDBot.Application.Models.Enums;
 using DnDBot.Application.Models.Ficha;
 using DnDBot.Application.Services;
 using DnDBot.Application.Services.Distribuicao;
@@ -60,7 +61,32 @@ namespace DnDBot.Bot.Commands.Ficha
                 }).ToList();
             ficha.Tamanho = subraca.Tamanho.ToString();
             ficha.Deslocamento = subraca.Deslocamento;
-            ficha.Idiomas = subraca.Idiomas;
+
+            // Garante que os idiomas atuais estejam carregados
+            await _fichaService.CarregarIdiomasAsync(ficha);
+
+            // Prepara os idiomas da sub-raça
+            var idiomasNovos = subraca.Idiomas
+                .Where(i => !string.IsNullOrWhiteSpace(i.Id))
+                .GroupBy(i => i.Id)
+                .Select(g =>
+                {
+                    var idioma = g.First();
+                    if (idioma.Categoria == 0)
+                        idioma.Categoria = CategoriaIdioma.Standard;
+                    return idioma;
+                });
+
+            // Adiciona apenas os que ainda não estão na ficha
+            foreach (var idioma in idiomasNovos)
+            {
+                if (!ficha.Idiomas.Any(i => i.Id == idioma.Id))
+                {
+                    ficha.Idiomas.Add(idioma);
+                }
+            }
+
+
             ficha.Proficiencias = subraca.Proficiencias;
             ficha.VisaoNoEscuro = subraca.VisaoNoEscuro;
             ficha.Resistencias = subraca.Resistencias.ToList();

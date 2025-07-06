@@ -4,6 +4,23 @@ Todas as alterações significativas neste projeto serão documentadas neste arquiv
 
 O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e o versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.3.1] - 2025-07-06
+
+### Melhorado
+- Refatoração do handler `SelectSubracaHandler` para garantir que os idiomas da ficha sejam carregados antes da atualização, prevenindo perda de idiomas existentes.
+- Ajuste na lógica de adição de idiomas para evitar duplicatas e preservar idiomas vindos de antecedentes ou outras fontes.
+- Implementação de filtro para atribuir categoria padrão `CategoriaIdioma.Standard` aos idiomas da sub-raça que não possuíam categoria definida.
+- Melhoria na resposta do comando `btn_idiomas_*` com mensagem formatada, utilizando Embed do Discord para exibir idiomas conhecidos de forma clara e organizada.
+- Validação mais robusta para garantir que a ficha pertence ao usuário antes de mostrar informações sensíveis.
+- Logs detalhados adicionados para auxiliar no diagnóstico durante a seleção e aplicação de sub-raça.
+
+### Corrigido
+- Correção do problema onde os idiomas salvos não apareciam na ficha após atualização da sub-raça.
+- Correção de exibição incorreta ou vazia da lista de idiomas no comando de visualização.
+- Evitado erro de duplicação de idiomas ao aplicar sub-raça, respeitando os idiomas já existentes na ficha.
+- Prevenção de erros ao tentar acessar ou manipular idiomas quando a lista estava nula.
+
+
 ## [1.3.0] - 2025-07-06
 
 ### Adicionado

@@ -69,6 +69,14 @@ namespace DnDBot.Bot.Commands.Ficha
                 return;
             }
 
+            // 🔒 Verifica se já existe uma ficha com o mesmo nome para este usuário
+            var fichaExistente = await _fichaService.ObterFichaPorJogadorENomeAsync(Context.User.Id, input.Nome);
+            if (fichaExistente != null)
+            {
+                await RespondAsync("❌ Você já possui uma ficha com esse nome. Escolha outro nome.", ephemeral: true);
+                return;
+            }
+
             FichaTempStore.SavePartialFicha(Context.User.Id, input.Nome);
 
             var racas = await _racasService.ObterRacasAsync();
