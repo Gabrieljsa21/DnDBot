@@ -2,6 +2,7 @@
 using DnDBot.Application.Models.AntecedenteModels;
 using DnDBot.Application.Models.Ficha;
 using DnDBot.Application.Models.Ficha.Auxiliares;
+using DnDBot.Application.Models.ItensInventario;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
@@ -46,6 +47,7 @@ namespace DnDBot.Application.Data
         public DbSet<ClasseSalvaguarda> ClasseSalvaguardas { get; set; }
         public DbSet<ClasseMagia> ClasseMagias { get; set; }
         public DbSet<Pericia> Pericia { get; set; }
+        public DbSet<Inventario> Inventarios { get; set; }
 
         // Lista normal (não DbSet) para requisitos de atributos de armas, talvez gerenciada separadamente
         public List<ArmaRequisitoAtributo> RequisitosAtributos { get; set; }
@@ -64,7 +66,6 @@ namespace DnDBot.Application.Data
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(DnDBotDbContext).Assembly);
 
             // Configurações para entidades que não possuem chave primária definida (tipos usados para consultas específicas)
-            modelBuilder.Entity<OpcaoEscolha<Equipamento>>().HasNoKey();
             modelBuilder.Entity<OpcaoEscolha<Idioma>>().HasNoKey();
             modelBuilder.Entity<OpcaoEscolha<Pericia>>().HasNoKey();
 
@@ -160,6 +161,32 @@ namespace DnDBot.Application.Data
                 .HasOne(at => at.Antecedente)
                 .WithMany(a => a.AntecedenteTags)
                 .HasForeignKey(at => at.AntecedenteId);
+
+            modelBuilder.Entity<Inventario>().OwnsOne(i => i.BolsaDeMoedas, bolsa =>
+            {
+                bolsa.OwnsMany(b => b.Moedas, moedas =>
+                {
+                    moedas.WithOwner().HasForeignKey("BolsaDeMoedasId"); // FK para a bolsa de moedas (owned entity)
+                    moedas.HasKey(m => m.Id);                           // Chave primária para Moeda
+
+                    // Configura Id como auto-increment
+                    moedas.Property(m => m.Id)
+                          .ValueGeneratedOnAdd();
+                });
+            });
+
+
+            modelBuilder.Entity<FichaPersonagem>()
+        .HasOne(f => f.Inventario)
+        .WithOne(i => i.FichaPersonagem)
+        .HasForeignKey<Inventario>(i => i.FichaPersonagemId)
+        .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Inventario>()
+    .HasMany(i => i.Equipados)
+    .WithOne(e => e.Inventario)
+    .HasForeignKey(e => e.InventarioId);
+
 
         }
     }

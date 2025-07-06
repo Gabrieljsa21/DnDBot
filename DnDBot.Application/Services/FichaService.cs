@@ -40,8 +40,8 @@ namespace DnDBot.Application.Services
                 ClasseId = "Não definida",
                 AntecedenteId = "Não definido",
                 AlinhamentoId = "Não definido",
-                DataCriacao = DateTime.UtcNow,
-                DataAlteracao = DateTime.UtcNow
+                CriadoEm = DateTime.UtcNow,
+                ModificadoEm = DateTime.UtcNow
             };
 
             _dbContext.FichaPersonagem.Add(ficha);
@@ -90,7 +90,7 @@ namespace DnDBot.Application.Services
         /// <param name="fichaAtualizada">Ficha com dados atualizados.</param>
         public async Task AtualizarFichaAsync(FichaPersonagem fichaAtualizada)
         {
-            fichaAtualizada.DataAlteracao = DateTime.UtcNow;
+            fichaAtualizada.ModificadoEm = DateTime.UtcNow;
             _dbContext.FichaPersonagem.Update(fichaAtualizada);
             await _dbContext.SaveChangesAsync();
         }
@@ -104,8 +104,30 @@ namespace DnDBot.Application.Services
         {
             return await _dbContext.FichaPersonagem
                 .Where(f => f.JogadorId == jogadorId)
-                .OrderByDescending(f => f.DataCriacao)
+                .OrderByDescending(f => f.CriadoEm)
                 .FirstOrDefaultAsync();
+        }
+
+        /// <summary>
+        /// Busca uma ficha específica pelo seu Id.
+        /// </summary>
+        /// <param name="id">Id da ficha.</param>
+        /// <returns>A ficha encontrada ou null se não existir.</returns>
+        public async Task<FichaPersonagem?> ObterFichaPorIdAsync(Guid id)
+        {
+            return await _dbContext.FichaPersonagem.FirstOrDefaultAsync(f => f.Id == id);
+        }
+
+
+        /// <summary>
+        /// Formata o atributo com valor total e modificador (ex: "16 (+3)").
+        /// </summary>
+        public string FormatarAtributo(FichaPersonagem ficha, string atributo)
+        {
+            int total = ficha.ObterTotalComBonus(atributo);
+            int mod = ficha.ObterModificador(atributo);
+            string modStr = mod >= 0 ? $"+{mod}" : mod.ToString();
+            return $"{total} ({modStr})";
         }
     }
 }

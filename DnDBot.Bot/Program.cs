@@ -1,18 +1,18 @@
 using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
+using DnDBot.Application.Data; // Namespace onde está o DbContext
+using DnDBot.Application.Repositories;
 using DnDBot.Application.Services;
 using DnDBot.Application.Services.Antecedentes;
 using DnDBot.Application.Services.Distribuicao;
 using DnDBot.Bot.Commands.Ficha;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Reflection;
 using System.Threading.Tasks;
-
-using DnDBot.Application.Data; // Namespace onde está o DbContext
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 class Program
 {
@@ -59,6 +59,9 @@ class Program
         .AddScoped<ClassesService>()
         .AddScoped<AntecedentesService>()
         .AddScoped<AlinhamentosService>()
+        .AddScoped<InventarioService>()
+        .AddScoped<IFichaRepository, FichaRepository>()
+
         .AddScoped<DistribuicaoAtributosHandler>()
         .AddSingleton<DistribuicaoAtributosService>()
         .AddSingleton<RolagemDadosService>()

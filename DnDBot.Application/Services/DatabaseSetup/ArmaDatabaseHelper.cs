@@ -1,6 +1,5 @@
 ﻿using DnDBot.Application.Helpers;
-using DnDBot.Application.Models;
-using DnDBot.Application.Models.Ficha;
+using DnDBot.Application.Models.ItensInventario;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
@@ -178,8 +177,8 @@ public static class ArmaDatabaseHelper
         dict["$dadoDano"] = arma.DadoDano ?? "";
         dict["$tipoDano"] = (int)arma.TipoDano;
         dict["$tipoDanoSecundario"] = arma.TipoDanoSecundario.HasValue ? (object)(int)arma.TipoDanoSecundario.Value : DBNull.Value;
-        dict["$peso"] = arma.Peso;
-        dict["$custo"] = arma.Custo;
+        dict["$peso"] = arma.PesoUnitario;
+        dict["$custo"] = arma.ValorCobre;
         dict["$alcance"] = arma.Alcance ?? (object)DBNull.Value;
         dict["$ehDuasMaos"] = arma.EhDuasMaos ? 1 : 0;
         dict["$ehLeve"] = arma.EhLeve ? 1 : 0;

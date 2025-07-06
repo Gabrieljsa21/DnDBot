@@ -1,28 +1,9 @@
-﻿using System;
+﻿using DnDBot.Application.Models.Enums;
+using System;
 using System.Collections.Generic;
 
-namespace DnDBot.Application.Models.Enums
+namespace DnDBot.Application.Models.ItensInventario
 {
-    /// <summary>
-    /// Representa os tipos de moedas usadas em Dungeons & Dragons.
-    /// </summary>
-    public enum TipoMoeda
-    {
-        /// <summary>Peça de Cobre, a unidade base.</summary>
-        PC,
-
-        /// <summary>Peça de Prata.</summary>
-        PP,
-
-        /// <summary>Peça de Electrum.</summary>
-        PE,
-
-        /// <summary>Peça de Ouro.</summary>
-        PO,
-
-        /// <summary>Peça de Platina.</summary>
-        PL
-    }
 
     /// <summary>
     /// Representa uma quantidade de moedas de um determinado tipo.

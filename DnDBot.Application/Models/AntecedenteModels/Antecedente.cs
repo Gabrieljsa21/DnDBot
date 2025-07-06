@@ -1,6 +1,6 @@
-﻿using DnDBot.Application.Models.Enums;
-using DnDBot.Application.Models.Ficha;
+﻿using DnDBot.Application.Models.Ficha;
 using DnDBot.Application.Models.Ficha.Auxiliares;
+using DnDBot.Application.Models.ItensInventario;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -51,7 +51,7 @@ namespace DnDBot.Application.Models.AntecedenteModels
         /// Esta propriedade não é mapeada no banco de dados.
         /// </summary>
         [NotMapped]
-        public OpcaoEscolha<Equipamento> OpcoesEquipamentos { get; set; } = new();
+        public OpcaoEscolha<ItemInventario> OpcoesEquipamentos { get; set; } = new();
 
         /// <summary>
         /// Opções de escolha para perícias adicionais — permite seleção de perícias extras.
@@ -63,7 +63,7 @@ namespace DnDBot.Application.Models.AntecedenteModels
         /// <summary>
         /// Equipamentos detalhados que este antecedente concede ao personagem.
         /// </summary>
-        public List<Equipamento> EquipamentosDetalhados { get; set; } = new();
+        public List<ItemInventario> EquipamentosDetalhados { get; set; } = new();
 
         /// <summary>
         /// Ideais associados ao antecedente, que ajudam a moldar a personalidade do personagem.

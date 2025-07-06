@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DnDBot.Application.Models.ItensInventario;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

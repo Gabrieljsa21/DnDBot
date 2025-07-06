@@ -1,4 +1,6 @@
-﻿namespace DnDBot.Application.Models.Ficha.Auxiliares
+﻿using DnDBot.Application.Models.ItensInventario;
+
+namespace DnDBot.Application.Models.Ficha.Auxiliares
 {
     /// <summary>
     /// Representa a associação entre uma classe e uma perícia que ela possui.

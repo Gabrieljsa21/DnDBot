@@ -1,5 +1,5 @@
 ﻿using DnDBot.Application.Helpers;
-using DnDBot.Application.Models;
+using DnDBot.Application.Models.ItensInventario;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;

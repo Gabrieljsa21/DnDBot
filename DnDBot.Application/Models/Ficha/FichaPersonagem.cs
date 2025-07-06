@@ -1,5 +1,6 @@
 ﻿using DnDBot.Application.Models.Enums;
 using DnDBot.Application.Models.Ficha.Auxiliares;
+using DnDBot.Application.Models.ItensInventario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -129,19 +130,46 @@ namespace DnDBot.Application.Models.Ficha
         public int? VisaoNoEscuro { get; set; }
 
         /// <summary>
+        /// Nome ou ID do usuário que criou o registro da entidade.
+        /// </summary>
+        public string CriadoPor { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Nome ou ID do usuário que realizou a última modificação no registro.
+        /// </summary>
+        public string ModificadoPor { get; set; } = string.Empty;
+
+        /// <summary>
         /// Data de criação da ficha, ajustada para fuso horário "E. South America Standard Time".
         /// </summary>
-        public DateTime DataCriacao { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.UtcNow, "E. South America Standard Time");
+        public DateTime CriadoEm { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.UtcNow, "E. South America Standard Time");
 
         /// <summary>
         /// Data da última alteração da ficha, ajustada para fuso horário "E. South America Standard Time".
         /// </summary>
-        public DateTime DataAlteracao { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.UtcNow, "E. South America Standard Time");
+        public DateTime ModificadoEm { get; set; } = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.UtcNow, "E. South America Standard Time");
+
+
+        /// <summary>
+        /// URL de uma imagem ilustrativa relacionada à entidade.
+        /// Pode ser usada em embeds, cards visuais ou sistemas de pré-visualização.
+        /// </summary>
+        public string ImagemUrl { get; set; } = string.Empty;
+
+        /// <summary>
+        /// URL de um ícone representativo da entidade.
+        /// Pode ser usado em listas ou menus compactos.
+        /// </summary>
+        public string IconeUrl { get; set; } = string.Empty;
+
 
         /// <summary>
         /// Indica se a ficha está ativa.
         /// </summary>
         public bool EstaAtivo { get; set; } = true;
+
+        public ItensInventario.Inventario Inventario { get; set; } = new ItensInventario.Inventario();
+
 
         /// <summary>
         /// Bolsa de moedas do personagem, contendo quantidades de cada tipo de moeda.

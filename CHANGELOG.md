@@ -4,6 +4,24 @@ Todas as alterações significativas neste projeto serão documentadas neste arquiv
 
 O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e o versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.3.0] - 2025-07-06
+
+### Adicionado
+- Implementação da classe `Inventario` para gerenciamento completo dos itens do personagem, com controle de peso, adição, remoção e histórico de ações.
+- Criação da classe `Equipamento` para gerenciamento dos itens equipados, com métodos para equipar, desequipar e obter itens por slot.
+- Integração entre `FichaPersonagem` e `Inventario`, garantindo associação direta e facilitando manipulação de itens e moedas.
+- Sistema detalhado de moedas (`BolsaDeMoedas` e `Moeda`), com métodos para adicionar, remover e converter entre diferentes tipos de moedas.
+- Métodos auxiliares na ficha para obter valores totais de atributos com bônus e calcular modificadores automaticamente.
+- Histórico detalhado das operações no inventário, permitindo rastrear adições e remoções de itens.
+- Métodos para listar itens por categoria, verificar quantidade disponível e limpar o inventário.
+- Propriedade para acesso fácil aos equipamentos atualmente equipados pelo personagem.
+
+### Melhorado
+- Padronização da estrutura de dados para itens e moedas, garantindo compatibilidade com Entity Framework Core e SQLite.
+- Melhor controle sobre persistência dos dados de inventário e equipamentos, reduzindo erros no banco e facilitando futuras migrações.
+- Documentação e comentários detalhados para facilitar manutenção e uso do sistema de inventário dentro do projeto.
+
+
 ## [1.2.3] - 2025-07-04
 
 ### Adicionado

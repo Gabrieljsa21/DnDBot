@@ -1,7 +1,7 @@
 ﻿using DnDBot.Application.Helpers;
 using DnDBot.Application.Models;
 using DnDBot.Application.Models.AntecedenteModels;
-using DnDBot.Application.Models.Enums;
+using DnDBot.Application.Models.ItensInventario;
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
@@ -51,13 +51,6 @@ public static class AntecedenteDatabaseHelper
                 PRIMARY KEY (AntecedenteId, IdFerramenta),
                 FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE,
                 FOREIGN KEY (IdFerramenta) REFERENCES Ferramenta(Id) ON DELETE CASCADE",
-
-            ["Antecedente_Equipamento"] = @"
-                AntecedenteId TEXT NOT NULL,
-                Nome TEXT NOT NULL,
-                Quantidade INTEGER NOT NULL,
-                PRIMARY KEY (AntecedenteId, Nome),
-                FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
 
             ["Antecedente_RiquezaInicial"] = @"
                 AntecedenteId TEXT NOT NULL,
@@ -135,7 +128,6 @@ public static class AntecedenteDatabaseHelper
             await InserirRelacionamentoSimples(connection, transaction, "Antecedente_Ferramenta", "IdFerramenta", antecedente.Id, antecedente.Ferramentas);
             await InserirTagsAsync(connection, transaction, "Antecedente_Tag", "AntecedenteId", antecedente.Id, antecedente.Tags);
 
-            await InserirEquipamentos(connection, transaction, antecedente.Id, antecedente.EquipamentosDetalhados);
             await InserirRiqueza(connection, transaction, antecedente.Id, antecedente.RiquezaInicial);
             await InserirCaracteristicas(connection, transaction, "Antecedente_Ideal", antecedente.Id, antecedente.Ideais);
             await InserirCaracteristicas(connection, transaction, "Antecedente_Vinculo", antecedente.Id, antecedente.Vinculos);
@@ -162,20 +154,6 @@ public static class AntecedenteDatabaseHelper
     {
         foreach (var item in itens ?? new List<EntidadeBase>())
             await InserirRelacionamentoSimples(conn, tx, tabela, coluna, antecedenteId, new[] { item.Id });
-    }
-
-    private static async Task InserirEquipamentos(SqliteConnection conn, SqliteTransaction tx, string antecedenteId, IEnumerable<Equipamento> equipamentos)
-    {
-        foreach (var eq in equipamentos ?? new List<Equipamento>())
-        {
-            var insert = conn.CreateCommand();
-            insert.Transaction = tx;
-            insert.CommandText = "INSERT OR IGNORE INTO Antecedente_Equipamento (AntecedenteId, Nome, Quantidade) VALUES ($aid, $nome, $qtd)";
-            insert.Parameters.AddWithValue("$aid", antecedenteId);
-            insert.Parameters.AddWithValue("$nome", eq.Nome ?? "");
-            insert.Parameters.AddWithValue("$qtd", eq.Quantidade);
-            await insert.ExecuteNonQueryAsync();
-        }
     }
 
     private static async Task InserirRiqueza(SqliteConnection conn, SqliteTransaction tx, string antecedenteId, IEnumerable<Moeda> moedas)

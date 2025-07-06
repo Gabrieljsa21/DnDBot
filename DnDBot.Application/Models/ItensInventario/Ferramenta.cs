@@ -1,30 +1,16 @@
-﻿using DnDBot.Application.Models.Ficha.Auxiliares;
+﻿using DnDBot.Application.Models.Enums;
+using DnDBot.Application.Models.Ficha.Auxiliares;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
-namespace DnDBot.Application.Models.Ficha
+namespace DnDBot.Application.Models.ItensInventario
 {
     /// <summary>
     /// Representa uma ferramenta utilizada por personagens em diversas tarefas e perícias.
     /// </summary>
-    public class Ferramenta : EntidadeBase
+    public class Ferramenta : Item
     {
-        /// <summary>
-        /// Peso da ferramenta em quilogramas.
-        /// </summary>
-        public double Peso { get; set; }
-
-        /// <summary>
-        /// Custo da ferramenta em moedas de ouro (PO).
-        /// </summary>
-        public decimal Custo { get; set; }
-
-        /// <summary>
-        /// Indica se é uma ferramenta mágica.
-        /// </summary>
-        public bool EMagica { get; set; }
-
         /// <summary>
         /// Lista de perícias que a ferramenta pode auxiliar ou está associada.
         /// </summary>
@@ -47,9 +33,19 @@ namespace DnDBot.Application.Models.Ficha
         public List<string> Tags
         {
             get => FerramentaTags?.Select(ft => ft.Tag).ToList() ?? new();
-            set => FerramentaTags = value?.Select(tag => new FerramentaTag { Tag = tag, FerramentaId = this.Id }).ToList() ?? new();
+            set => FerramentaTags = value?.Select(tag => new FerramentaTag { Tag = tag, FerramentaId = Id }).ToList() ?? new();
         }
 
+        /// <summary>
+        /// Construtor padrão que inicializa propriedades herdadas do Item.
+        /// </summary>
+        public Ferramenta()
+        {
+            // Se quiser definir valores padrão para PesoUnitario, Categoria etc, pode fazer aqui
+            Categoria ??= "Ferramenta";
+            Empilhavel = false;
+            Equipavel = false;
+        }
 
         /// <summary>
         /// Adiciona uma perícia associada à ferramenta, caso ainda não esteja na lista.
@@ -79,6 +75,5 @@ namespace DnDBot.Application.Models.Ficha
         {
             return PericiasAssociadas.Contains(pericia);
         }
-
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DnDBot.Application.Models.ItensInventario;
+using System;
 
 namespace DnDBot.Application.Models.Ficha.Auxiliares
 {

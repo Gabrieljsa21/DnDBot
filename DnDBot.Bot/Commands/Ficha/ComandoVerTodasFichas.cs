@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 namespace DnDBot.Bot.Commands.Ficha
 {
     /// <summary>
-    /// Módulo responsável pelo comando /ficha_ver que exibe fichas salvas do usuário.
+    /// Módulo responsável pelo comando /ficha_ver_todas que exibe fichas salvas do usuário.
     /// </summary>
-    public class ComandoVerFichas : InteractionModuleBase<SocketInteractionContext>
+    public class ComandoVerTodasFichas : InteractionModuleBase<SocketInteractionContext>
     {
         private readonly FichaService _fichaService;
         private readonly RacasService _racasService;
@@ -25,7 +25,7 @@ namespace DnDBot.Bot.Commands.Ficha
         /// <summary>
         /// Construtor com injeção do serviço de fichas.
         /// </summary>
-        public ComandoVerFichas(
+        public ComandoVerTodasFichas(
             FichaService fichaService,
             RacasService racasService,
             ClassesService classesService,
@@ -43,7 +43,7 @@ namespace DnDBot.Bot.Commands.Ficha
         /// <summary>
         /// Comando que exibe todas as fichas criadas pelo usuário atual.
         /// </summary>
-        [SlashCommand("ficha_ver", "Mostra suas fichas de personagem")]
+        [SlashCommand("ficha_ver_todas", "Mostra suas fichas de personagem")]
         public async Task VerFichasAsync()
         {
             var fichas = await _fichaService.ObterFichasPorJogadorAsync(Context.User.Id);
@@ -62,12 +62,12 @@ namespace DnDBot.Bot.Commands.Ficha
             {
                 var atributosTexto = new List<string>
         {
-            $"Força: {FormatarAtributo(ficha, "Forca")}",
-            $"Destreza: {FormatarAtributo(ficha, "Destreza")}",
-            $"Constituição: {FormatarAtributo(ficha, "Constituicao")}",
-            $"Inteligência: {FormatarAtributo(ficha, "Inteligencia")}",
-            $"Sabedoria: {FormatarAtributo(ficha, "Sabedoria")}",
-            $"Carisma: {FormatarAtributo(ficha, "Carisma")}"
+            $"Força: {_fichaService.FormatarAtributo(ficha, "Forca")}",
+            $"Destreza: {_fichaService.FormatarAtributo(ficha, "Destreza")}",
+            $"Constituição: {_fichaService.FormatarAtributo(ficha, "Constituicao")}",
+            $"Inteligência: {_fichaService.FormatarAtributo(ficha, "Inteligencia")}",
+            $"Sabedoria: {_fichaService.FormatarAtributo(ficha, "Sabedoria")}",
+            $"Carisma: {_fichaService.FormatarAtributo(ficha, "Carisma")}"
         };
 
                 string raca;
@@ -115,16 +115,6 @@ namespace DnDBot.Bot.Commands.Ficha
             await RespondAsync(embed: embedBuilder.Build(), ephemeral: true);
         }
 
-        /// <summary>
-        /// Formata o atributo com valor total e modificador (ex: "16 (+3)").
-        /// </summary>
-        private string FormatarAtributo(FichaPersonagem ficha, string atributo)
-        {
-            int total = ficha.ObterTotalComBonus(atributo);
-            int mod = ficha.ObterModificador(atributo);
-            string modStr = mod >= 0 ? $"+{mod}" : mod.ToString();
-            return $"{total} ({modStr})";
-        }
 
 
     }

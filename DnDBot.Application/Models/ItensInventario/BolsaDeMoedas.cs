@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DnDBot.Application.Models.Ficha
+namespace DnDBot.Application.Models.ItensInventario
 {
     /// <summary>
     /// Representa o conjunto de moedas carregadas por um personagem.
