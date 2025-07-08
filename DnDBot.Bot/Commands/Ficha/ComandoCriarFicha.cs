@@ -21,6 +21,7 @@ namespace DnDBot.Bot.Commands.Ficha
         private readonly DistribuicaoAtributosHandler _atributosHandler;
         private readonly ControladorEtapasFicha _controladorEtapasFicha;
         private readonly IdiomaService _idiomaService;
+        private readonly ResistenciaService _resistenciaService;
 
         public ComandoCriarFicha(
             FichaService fichaService,
@@ -30,7 +31,8 @@ namespace DnDBot.Bot.Commands.Ficha
             AlinhamentosService alinhamentosService,
             DistribuicaoAtributosHandler atributosHandler,
             ControladorEtapasFicha controladorEtapasFicha,
-            IdiomaService idiomaService
+            IdiomaService idiomaService,
+            ResistenciaService resistenciaService
             )
         {
             _fichaService = fichaService;
@@ -41,6 +43,7 @@ namespace DnDBot.Bot.Commands.Ficha
             _atributosHandler = atributosHandler;
             _controladorEtapasFicha = controladorEtapasFicha;
             _idiomaService = idiomaService;
+            _resistenciaService = resistenciaService;
         }
 
         /// <summary>
@@ -231,6 +234,14 @@ namespace DnDBot.Bot.Commands.Ficha
             {
                 await _idiomaService.AdicionarIdiomasAsync(ficha.Id, subraca.Idiomas);
             }
+
+            if (subraca.Resistencias != null && subraca.Resistencias.Any())
+            {
+                var tipos = subraca.Resistencias.Select(sr => sr.TipoDano);
+                await _resistenciaService.AdicionarResistenciasAsync(ficha.Id, tipos);
+            }
+
+
 
             await _controladorEtapasFicha.ProcessarProximaEtapaAsync(ficha, Context, usarFollowUp: true);
         }

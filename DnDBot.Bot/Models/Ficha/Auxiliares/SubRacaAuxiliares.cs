@@ -1,4 +1,5 @@
-﻿using DnDBot.Bot.Models.Ficha;
+﻿using DnDBot.Bot.Models.Enums;
+using DnDBot.Bot.Models.Ficha;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,4 +28,13 @@ namespace DnDBot.Bot.Models.Ficha.Auxiliares
         public string AlinhamentoId { get; set; }
         public Alinhamento Alinhamento { get; set; }
     }
+
+    public class SubRacaResistencia
+    {
+        public string SubRacaId { get; set; }
+        public SubRaca SubRaca { get; set; }
+
+        public TipoDano TipoDano { get; set; }
+    }
+
 }

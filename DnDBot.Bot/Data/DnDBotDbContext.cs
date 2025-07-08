@@ -137,6 +137,15 @@ namespace DnDBot.Bot.Data
                 .WithMany(fp => fp.FichaPersonagemTags)
                 .HasForeignKey(ft => ft.FichaPersonagemId);
 
+            modelBuilder.Entity<FichaPersonagemResistencia>()
+    .HasKey(f => new { f.FichaPersonagemId, f.TipoDano });
+
+            modelBuilder.Entity<FichaPersonagemResistencia>()
+                .HasOne(f => f.FichaPersonagem)
+                .WithMany(p => p.Resistencias)
+                .HasForeignKey(f => f.FichaPersonagemId);
+
+
             modelBuilder.Entity<AlinhamentoTag>()
     .HasKey(at => new { at.AlinhamentoId, at.Tag });
 
@@ -206,6 +215,9 @@ namespace DnDBot.Bot.Data
                     moeda.HasKey("FichaPersonagemId", "Tipo");
                 });
             });
+
+            modelBuilder.Entity<SubRacaResistencia>()
+        .HasKey(sr => new { sr.SubRacaId, sr.TipoDano });
 
         }
     }

@@ -49,10 +49,12 @@ namespace DnDBot.Bot.Services
             await ArmaDatabaseHelper.CriarTabelaAsync(cmd);
             await ArmaduraDatabaseHelper.CriarTabelaAsync(cmd);
             await AlinhamentoDatabaseHelper.CriarTabelaAsync(cmd);
+            await ResistenciaDatabaseHelper.CriarTabelaAsync(cmd);
             await RacaDatabaseHelper.CriarTabelaAsync(cmd);
             await ClasseDatabaseHelper.CriarTabelaAsync(cmd);
             await AntecedenteDatabaseHelper.CriarTabelaAsync(cmd);
             await FichaDatabaseHelper.CriarTabelaAsync(cmd);
+            await SubRacaResistenciaDatabaseHelper.CriarTabelaAsync(cmd);
         }
 
         /// <summary>
@@ -70,9 +72,11 @@ namespace DnDBot.Bot.Services
             await ArmaDatabaseHelper.PopularAsync(connection, transaction);
             await ArmaduraDatabaseHelper.PopularAsync(connection, transaction);
             await AlinhamentoDatabaseHelper.PopularAsync(connection, transaction);
+            await ResistenciaDatabaseHelper.PopularAsync(connection, transaction);
             await RacaDatabaseHelper.PopularAsync(connection, transaction);
             await ClasseDatabaseHelper.PopularAsync(connection, transaction);
             await AntecedenteDatabaseHelper.PopularAsync(connection, transaction);
+            await SubRacaResistenciaDatabaseHelper.PopularAsync(connection, transaction);
 
             transaction.Commit();
             Console.WriteLine("Commit feito!");

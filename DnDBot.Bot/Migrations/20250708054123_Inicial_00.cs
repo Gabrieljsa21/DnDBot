@@ -87,40 +87,6 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FichaPersonagem",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    JogadorId = table.Column<ulong>(type: "INTEGER", nullable: false),
-                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    RacaId = table.Column<string>(type: "TEXT", nullable: true),
-                    SubracaId = table.Column<string>(type: "TEXT", nullable: true),
-                    ClasseId = table.Column<string>(type: "TEXT", nullable: true),
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
-                    AlinhamentoId = table.Column<string>(type: "TEXT", nullable: true),
-                    Forca = table.Column<int>(type: "INTEGER", nullable: false),
-                    Destreza = table.Column<int>(type: "INTEGER", nullable: false),
-                    Constituicao = table.Column<int>(type: "INTEGER", nullable: false),
-                    Inteligencia = table.Column<int>(type: "INTEGER", nullable: false),
-                    Sabedoria = table.Column<int>(type: "INTEGER", nullable: false),
-                    Carisma = table.Column<int>(type: "INTEGER", nullable: false),
-                    Tamanho = table.Column<string>(type: "TEXT", nullable: true),
-                    Deslocamento = table.Column<int>(type: "INTEGER", nullable: false),
-                    VisaoNoEscuro = table.Column<int>(type: "INTEGER", nullable: true),
-                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    EstaAtivo = table.Column<bool>(type: "INTEGER", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FichaPersonagem", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "OpcaoEscolha<Idioma>",
                 columns: table => new
                 {
@@ -189,6 +155,29 @@ namespace DnDBot.Bot.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Raca", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Resistencia",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    TipoDano = table.Column<int>(type: "INTEGER", nullable: false),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Resistencia", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -611,235 +600,6 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BolsasDeMoedas",
-                columns: table => new
-                {
-                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BolsasDeMoedas", x => x.FichaPersonagemId);
-                    table.ForeignKey(
-                        name: "FK_BolsasDeMoedas_FichaPersonagem_FichaPersonagemId",
-                        column: x => x.FichaPersonagemId,
-                        principalTable: "FichaPersonagem",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Caracteristica",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Tipo = table.Column<int>(type: "INTEGER", nullable: false),
-                    AcaoRequerida = table.Column<int>(type: "INTEGER", nullable: false),
-                    Alvo = table.Column<int>(type: "INTEGER", nullable: false),
-                    DuracaoEmRodadas = table.Column<int>(type: "INTEGER", nullable: true),
-                    UsosPorDescansoCurto = table.Column<int>(type: "INTEGER", nullable: true),
-                    UsosPorDescansoLongo = table.Column<int>(type: "INTEGER", nullable: true),
-                    CondicaoAtivacao = table.Column<int>(type: "INTEGER", nullable: false),
-                    Origem = table.Column<int>(type: "INTEGER", nullable: false),
-                    OrigemId = table.Column<string>(type: "TEXT", nullable: true),
-                    NivelMinimo = table.Column<int>(type: "INTEGER", nullable: false),
-                    NivelMaximo = table.Column<int>(type: "INTEGER", nullable: true),
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
-                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
-                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
-                    Versao = table.Column<string>(type: "TEXT", nullable: true),
-                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Caracteristica", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Caracteristica_Antecedente_AntecedenteId",
-                        column: x => x.AntecedenteId,
-                        principalTable: "Antecedente",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Caracteristica_FichaPersonagem_FichaPersonagemId",
-                        column: x => x.FichaPersonagemId,
-                        principalTable: "FichaPersonagem",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "FichaPersonagemTag",
-                columns: table => new
-                {
-                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Tag = table.Column<string>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FichaPersonagemTag", x => new { x.FichaPersonagemId, x.Tag });
-                    table.ForeignKey(
-                        name: "FK_FichaPersonagemTag_FichaPersonagem_FichaPersonagemId",
-                        column: x => x.FichaPersonagemId,
-                        principalTable: "FichaPersonagem",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Inventarios",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    PesoMaximo = table.Column<double>(type: "REAL", nullable: false),
-                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
-                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
-                    Versao = table.Column<string>(type: "TEXT", nullable: true),
-                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Inventarios", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Inventarios_FichaPersonagem_FichaPersonagemId",
-                        column: x => x.FichaPersonagemId,
-                        principalTable: "FichaPersonagem",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Magia",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Nivel = table.Column<string>(type: "TEXT", nullable: true),
-                    Escola = table.Column<string>(type: "TEXT", nullable: true),
-                    TempoConjuracao = table.Column<string>(type: "TEXT", nullable: true),
-                    Alcance = table.Column<string>(type: "TEXT", nullable: true),
-                    Alvo = table.Column<string>(type: "TEXT", nullable: true),
-                    Concentração = table.Column<bool>(type: "INTEGER", nullable: false),
-                    Duracao = table.Column<string>(type: "TEXT", nullable: true),
-                    PodeSerRitual = table.Column<bool>(type: "INTEGER", nullable: false),
-                    ComponenteVerbal = table.Column<bool>(type: "INTEGER", nullable: false),
-                    ComponenteSomatico = table.Column<bool>(type: "INTEGER", nullable: false),
-                    ComponenteMaterial = table.Column<bool>(type: "INTEGER", nullable: false),
-                    DetalhesMaterial = table.Column<string>(type: "TEXT", nullable: true),
-                    ComponenteMaterialConsumido = table.Column<bool>(type: "INTEGER", nullable: false),
-                    CustoComponenteMaterial = table.Column<string>(type: "TEXT", nullable: true),
-                    TipoDano = table.Column<string>(type: "TEXT", nullable: true),
-                    DadoDano = table.Column<string>(type: "TEXT", nullable: true),
-                    Escalonamento = table.Column<string>(type: "TEXT", nullable: true),
-                    AtributoTesteResistencia = table.Column<string>(type: "TEXT", nullable: true),
-                    MetadeNoTeste = table.Column<bool>(type: "INTEGER", nullable: false),
-                    CondicoesAplicadas = table.Column<string>(type: "TEXT", nullable: true),
-                    CondicoesRemovidas = table.Column<string>(type: "TEXT", nullable: true),
-                    ClassesPermitidas = table.Column<string>(type: "TEXT", nullable: true),
-                    Recarga = table.Column<string>(type: "TEXT", nullable: true),
-                    TipoUso = table.Column<string>(type: "TEXT", nullable: true),
-                    RequerLinhaDeVisao = table.Column<bool>(type: "INTEGER", nullable: false),
-                    RequerLinhaReta = table.Column<bool>(type: "INTEGER", nullable: false),
-                    NumeroMaximoAlvos = table.Column<int>(type: "INTEGER", nullable: true),
-                    AreaEfeito = table.Column<string>(type: "TEXT", nullable: true),
-                    FocoNecessario = table.Column<string>(type: "TEXT", nullable: true),
-                    LimiteUso = table.Column<string>(type: "TEXT", nullable: true),
-                    EfeitoPorTurno = table.Column<string>(type: "TEXT", nullable: true),
-                    NumeroDeUsos = table.Column<int>(type: "INTEGER", nullable: false),
-                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
-                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
-                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
-                    Versao = table.Column<string>(type: "TEXT", nullable: true),
-                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Magia", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Magia_FichaPersonagem_FichaPersonagemId",
-                        column: x => x.FichaPersonagemId,
-                        principalTable: "FichaPersonagem",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Proficiencia",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Tipo = table.Column<string>(type: "TEXT", nullable: true),
-                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
-                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
-                    Versao = table.Column<string>(type: "TEXT", nullable: true),
-                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Proficiencia", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Proficiencia_FichaPersonagem_FichaPersonagemId",
-                        column: x => x.FichaPersonagemId,
-                        principalTable: "FichaPersonagem",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Resistencia",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    TipoDano = table.Column<int>(type: "INTEGER", nullable: false),
-                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
-                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
-                    Versao = table.Column<string>(type: "TEXT", nullable: true),
-                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Resistencia", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Resistencia_FichaPersonagem_FichaPersonagemId",
-                        column: x => x.FichaPersonagemId,
-                        principalTable: "FichaPersonagem",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AntecedentePericia",
                 columns: table => new
                 {
@@ -989,27 +749,43 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FichaPersonagem_Idiomas",
+                name: "FichaPersonagem",
                 columns: table => new
                 {
-                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    IdiomaId = table.Column<string>(type: "TEXT", nullable: false)
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    JogadorId = table.Column<ulong>(type: "INTEGER", nullable: false),
+                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    RacaId = table.Column<string>(type: "TEXT", nullable: true),
+                    SubracaId = table.Column<string>(type: "TEXT", nullable: true),
+                    ClasseId = table.Column<string>(type: "TEXT", nullable: true),
+                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
+                    AlinhamentoId = table.Column<string>(type: "TEXT", nullable: true),
+                    Forca = table.Column<int>(type: "INTEGER", nullable: false),
+                    Destreza = table.Column<int>(type: "INTEGER", nullable: false),
+                    Constituicao = table.Column<int>(type: "INTEGER", nullable: false),
+                    Inteligencia = table.Column<int>(type: "INTEGER", nullable: false),
+                    Sabedoria = table.Column<int>(type: "INTEGER", nullable: false),
+                    Carisma = table.Column<int>(type: "INTEGER", nullable: false),
+                    Tamanho = table.Column<string>(type: "TEXT", nullable: true),
+                    Deslocamento = table.Column<int>(type: "INTEGER", nullable: false),
+                    VisaoNoEscuro = table.Column<int>(type: "INTEGER", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    EstaAtivo = table.Column<bool>(type: "INTEGER", nullable: false),
+                    ResistenciaId = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FichaPersonagem_Idiomas", x => new { x.FichaPersonagemId, x.IdiomaId });
+                    table.PrimaryKey("PK_FichaPersonagem", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_FichaPersonagem_Idiomas_FichaPersonagem_FichaPersonagemId",
-                        column: x => x.FichaPersonagemId,
-                        principalTable: "FichaPersonagem",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_FichaPersonagem_Idiomas_Idioma_IdiomaId",
-                        column: x => x.IdiomaId,
-                        principalTable: "Idioma",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "FK_FichaPersonagem_Resistencia_ResistenciaId",
+                        column: x => x.ResistenciaId,
+                        principalTable: "Resistencia",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1159,6 +935,360 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "SubRaca_Idioma",
+                columns: table => new
+                {
+                    IdiomaId = table.Column<string>(type: "TEXT", nullable: false),
+                    SubRacaId = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SubRaca_Idioma", x => new { x.IdiomaId, x.SubRacaId });
+                    table.ForeignKey(
+                        name: "FK_SubRaca_Idioma_Idioma_IdiomaId",
+                        column: x => x.IdiomaId,
+                        principalTable: "Idioma",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SubRaca_Idioma_SubRaca_SubRacaId",
+                        column: x => x.SubRacaId,
+                        principalTable: "SubRaca",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SubRacaAlinhamento",
+                columns: table => new
+                {
+                    SubRacaId = table.Column<string>(type: "TEXT", nullable: false),
+                    AlinhamentoId = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SubRacaAlinhamento", x => new { x.SubRacaId, x.AlinhamentoId });
+                    table.ForeignKey(
+                        name: "FK_SubRacaAlinhamento_Alinhamento_AlinhamentoId",
+                        column: x => x.AlinhamentoId,
+                        principalTable: "Alinhamento",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SubRacaAlinhamento_SubRaca_SubRacaId",
+                        column: x => x.SubRacaId,
+                        principalTable: "SubRaca",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SubRacaResistencia",
+                columns: table => new
+                {
+                    SubRacaId = table.Column<string>(type: "TEXT", nullable: false),
+                    TipoDano = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SubRacaResistencia", x => new { x.SubRacaId, x.TipoDano });
+                    table.ForeignKey(
+                        name: "FK_SubRacaResistencia_SubRaca_SubRacaId",
+                        column: x => x.SubRacaId,
+                        principalTable: "SubRaca",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SubRacaTag",
+                columns: table => new
+                {
+                    SubRacaId = table.Column<string>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SubRacaTag", x => new { x.SubRacaId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_SubRacaTag_SubRaca_SubRacaId",
+                        column: x => x.SubRacaId,
+                        principalTable: "SubRaca",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BolsasDeMoedas",
+                columns: table => new
+                {
+                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BolsasDeMoedas", x => x.FichaPersonagemId);
+                    table.ForeignKey(
+                        name: "FK_BolsasDeMoedas_FichaPersonagem_FichaPersonagemId",
+                        column: x => x.FichaPersonagemId,
+                        principalTable: "FichaPersonagem",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "BonusAtributos",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Atributo = table.Column<int>(type: "INTEGER", nullable: false),
+                    Valor = table.Column<int>(type: "INTEGER", nullable: false),
+                    Origem = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
+                    OwnerType = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
+                    OwnerId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    SubRacaId = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BonusAtributos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_BonusAtributos_FichaPersonagem_FichaPersonagemId",
+                        column: x => x.FichaPersonagemId,
+                        principalTable: "FichaPersonagem",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_BonusAtributos_SubRaca_SubRacaId",
+                        column: x => x.SubRacaId,
+                        principalTable: "SubRaca",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Caracteristica",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Tipo = table.Column<int>(type: "INTEGER", nullable: false),
+                    AcaoRequerida = table.Column<int>(type: "INTEGER", nullable: false),
+                    Alvo = table.Column<int>(type: "INTEGER", nullable: false),
+                    DuracaoEmRodadas = table.Column<int>(type: "INTEGER", nullable: true),
+                    UsosPorDescansoCurto = table.Column<int>(type: "INTEGER", nullable: true),
+                    UsosPorDescansoLongo = table.Column<int>(type: "INTEGER", nullable: true),
+                    CondicaoAtivacao = table.Column<int>(type: "INTEGER", nullable: false),
+                    Origem = table.Column<int>(type: "INTEGER", nullable: false),
+                    OrigemId = table.Column<string>(type: "TEXT", nullable: true),
+                    NivelMinimo = table.Column<int>(type: "INTEGER", nullable: false),
+                    NivelMaximo = table.Column<int>(type: "INTEGER", nullable: true),
+                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
+                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Caracteristica", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Caracteristica_Antecedente_AntecedenteId",
+                        column: x => x.AntecedenteId,
+                        principalTable: "Antecedente",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Caracteristica_FichaPersonagem_FichaPersonagemId",
+                        column: x => x.FichaPersonagemId,
+                        principalTable: "FichaPersonagem",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FichaPersonagem_Idiomas",
+                columns: table => new
+                {
+                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    IdiomaId = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FichaPersonagem_Idiomas", x => new { x.FichaPersonagemId, x.IdiomaId });
+                    table.ForeignKey(
+                        name: "FK_FichaPersonagem_Idiomas_FichaPersonagem_FichaPersonagemId",
+                        column: x => x.FichaPersonagemId,
+                        principalTable: "FichaPersonagem",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_FichaPersonagem_Idiomas_Idioma_IdiomaId",
+                        column: x => x.IdiomaId,
+                        principalTable: "Idioma",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FichaPersonagemResistencia",
+                columns: table => new
+                {
+                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    TipoDano = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FichaPersonagemResistencia", x => new { x.FichaPersonagemId, x.TipoDano });
+                    table.ForeignKey(
+                        name: "FK_FichaPersonagemResistencia_FichaPersonagem_FichaPersonagemId",
+                        column: x => x.FichaPersonagemId,
+                        principalTable: "FichaPersonagem",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FichaPersonagemTag",
+                columns: table => new
+                {
+                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FichaPersonagemTag", x => new { x.FichaPersonagemId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_FichaPersonagemTag_FichaPersonagem_FichaPersonagemId",
+                        column: x => x.FichaPersonagemId,
+                        principalTable: "FichaPersonagem",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Inventarios",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    PesoMaximo = table.Column<double>(type: "REAL", nullable: false),
+                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Inventarios", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Inventarios_FichaPersonagem_FichaPersonagemId",
+                        column: x => x.FichaPersonagemId,
+                        principalTable: "FichaPersonagem",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Magia",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Nivel = table.Column<string>(type: "TEXT", nullable: true),
+                    Escola = table.Column<string>(type: "TEXT", nullable: true),
+                    TempoConjuracao = table.Column<string>(type: "TEXT", nullable: true),
+                    Alcance = table.Column<string>(type: "TEXT", nullable: true),
+                    Alvo = table.Column<string>(type: "TEXT", nullable: true),
+                    Concentração = table.Column<bool>(type: "INTEGER", nullable: false),
+                    Duracao = table.Column<string>(type: "TEXT", nullable: true),
+                    PodeSerRitual = table.Column<bool>(type: "INTEGER", nullable: false),
+                    ComponenteVerbal = table.Column<bool>(type: "INTEGER", nullable: false),
+                    ComponenteSomatico = table.Column<bool>(type: "INTEGER", nullable: false),
+                    ComponenteMaterial = table.Column<bool>(type: "INTEGER", nullable: false),
+                    DetalhesMaterial = table.Column<string>(type: "TEXT", nullable: true),
+                    ComponenteMaterialConsumido = table.Column<bool>(type: "INTEGER", nullable: false),
+                    CustoComponenteMaterial = table.Column<string>(type: "TEXT", nullable: true),
+                    TipoDano = table.Column<string>(type: "TEXT", nullable: true),
+                    DadoDano = table.Column<string>(type: "TEXT", nullable: true),
+                    Escalonamento = table.Column<string>(type: "TEXT", nullable: true),
+                    AtributoTesteResistencia = table.Column<string>(type: "TEXT", nullable: true),
+                    MetadeNoTeste = table.Column<bool>(type: "INTEGER", nullable: false),
+                    CondicoesAplicadas = table.Column<string>(type: "TEXT", nullable: true),
+                    CondicoesRemovidas = table.Column<string>(type: "TEXT", nullable: true),
+                    ClassesPermitidas = table.Column<string>(type: "TEXT", nullable: true),
+                    Recarga = table.Column<string>(type: "TEXT", nullable: true),
+                    TipoUso = table.Column<string>(type: "TEXT", nullable: true),
+                    RequerLinhaDeVisao = table.Column<bool>(type: "INTEGER", nullable: false),
+                    RequerLinhaReta = table.Column<bool>(type: "INTEGER", nullable: false),
+                    NumeroMaximoAlvos = table.Column<int>(type: "INTEGER", nullable: true),
+                    AreaEfeito = table.Column<string>(type: "TEXT", nullable: true),
+                    FocoNecessario = table.Column<string>(type: "TEXT", nullable: true),
+                    LimiteUso = table.Column<string>(type: "TEXT", nullable: true),
+                    EfeitoPorTurno = table.Column<string>(type: "TEXT", nullable: true),
+                    NumeroDeUsos = table.Column<int>(type: "INTEGER", nullable: false),
+                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Magia", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Magia_FichaPersonagem_FichaPersonagemId",
+                        column: x => x.FichaPersonagemId,
+                        principalTable: "FichaPersonagem",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Proficiencia",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Tipo = table.Column<string>(type: "TEXT", nullable: true),
+                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Proficiencia", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Proficiencia_FichaPersonagem_FichaPersonagemId",
+                        column: x => x.FichaPersonagemId,
+                        principalTable: "FichaPersonagem",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Moedas",
                 columns: table => new
                 {
@@ -1213,6 +1343,30 @@ namespace DnDBot.Bot.Migrations
                         column: x => x.SubclasseId,
                         principalTable: "Subclasse",
                         principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SubRaca_Caracteristicas",
+                columns: table => new
+                {
+                    CaracteristicaId = table.Column<string>(type: "TEXT", nullable: false),
+                    SubRacaId = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SubRaca_Caracteristicas", x => new { x.CaracteristicaId, x.SubRacaId });
+                    table.ForeignKey(
+                        name: "FK_SubRaca_Caracteristicas_Caracteristica_CaracteristicaId",
+                        column: x => x.CaracteristicaId,
+                        principalTable: "Caracteristica",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SubRaca_Caracteristicas_SubRaca_SubRacaId",
+                        column: x => x.SubRacaId,
+                        principalTable: "SubRaca",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -1299,82 +1453,6 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BonusAtributos",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    Atributo = table.Column<int>(type: "INTEGER", nullable: false),
-                    Valor = table.Column<int>(type: "INTEGER", nullable: false),
-                    Origem = table.Column<string>(type: "TEXT", maxLength: 100, nullable: true),
-                    OwnerType = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
-                    OwnerId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    FichaPersonagemId = table.Column<Guid>(type: "TEXT", nullable: true),
-                    SubRacaId = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BonusAtributos", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BonusAtributos_FichaPersonagem_FichaPersonagemId",
-                        column: x => x.FichaPersonagemId,
-                        principalTable: "FichaPersonagem",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_BonusAtributos_SubRaca_SubRacaId",
-                        column: x => x.SubRacaId,
-                        principalTable: "SubRaca",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "SubRaca_Caracteristicas",
-                columns: table => new
-                {
-                    CaracteristicaId = table.Column<string>(type: "TEXT", nullable: false),
-                    SubRacaId = table.Column<string>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SubRaca_Caracteristicas", x => new { x.CaracteristicaId, x.SubRacaId });
-                    table.ForeignKey(
-                        name: "FK_SubRaca_Caracteristicas_Caracteristica_CaracteristicaId",
-                        column: x => x.CaracteristicaId,
-                        principalTable: "Caracteristica",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SubRaca_Caracteristicas_SubRaca_SubRacaId",
-                        column: x => x.SubRacaId,
-                        principalTable: "SubRaca",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "SubRaca_Idioma",
-                columns: table => new
-                {
-                    IdiomaId = table.Column<string>(type: "TEXT", nullable: false),
-                    SubRacaId = table.Column<string>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SubRaca_Idioma", x => new { x.IdiomaId, x.SubRacaId });
-                    table.ForeignKey(
-                        name: "FK_SubRaca_Idioma_Idioma_IdiomaId",
-                        column: x => x.IdiomaId,
-                        principalTable: "Idioma",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SubRaca_Idioma_SubRaca_SubRacaId",
-                        column: x => x.SubRacaId,
-                        principalTable: "SubRaca",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "SubRaca_MagiasRaciais",
                 columns: table => new
                 {
@@ -1416,72 +1494,6 @@ namespace DnDBot.Bot.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_SubRaca_Proficiencias_SubRaca_SubRacaId",
-                        column: x => x.SubRacaId,
-                        principalTable: "SubRaca",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "SubRaca_Resistencias",
-                columns: table => new
-                {
-                    ResistenciaId = table.Column<string>(type: "TEXT", nullable: false),
-                    SubRacaId = table.Column<string>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SubRaca_Resistencias", x => new { x.ResistenciaId, x.SubRacaId });
-                    table.ForeignKey(
-                        name: "FK_SubRaca_Resistencias_Resistencia_ResistenciaId",
-                        column: x => x.ResistenciaId,
-                        principalTable: "Resistencia",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SubRaca_Resistencias_SubRaca_SubRacaId",
-                        column: x => x.SubRacaId,
-                        principalTable: "SubRaca",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "SubRacaAlinhamento",
-                columns: table => new
-                {
-                    SubRacaId = table.Column<string>(type: "TEXT", nullable: false),
-                    AlinhamentoId = table.Column<string>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SubRacaAlinhamento", x => new { x.SubRacaId, x.AlinhamentoId });
-                    table.ForeignKey(
-                        name: "FK_SubRacaAlinhamento_Alinhamento_AlinhamentoId",
-                        column: x => x.AlinhamentoId,
-                        principalTable: "Alinhamento",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SubRacaAlinhamento_SubRaca_SubRacaId",
-                        column: x => x.SubRacaId,
-                        principalTable: "SubRaca",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "SubRacaTag",
-                columns: table => new
-                {
-                    SubRacaId = table.Column<string>(type: "TEXT", nullable: false),
-                    Tag = table.Column<string>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SubRacaTag", x => new { x.SubRacaId, x.Tag });
-                    table.ForeignKey(
-                        name: "FK_SubRacaTag_SubRaca_SubRacaId",
                         column: x => x.SubRacaId,
                         principalTable: "SubRaca",
                         principalColumn: "Id",
@@ -1628,6 +1640,11 @@ namespace DnDBot.Bot.Migrations
                 column: "PericiaId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_FichaPersonagem_ResistenciaId",
+                table: "FichaPersonagem",
+                column: "ResistenciaId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_FichaPersonagem_Idiomas_IdiomaId",
                 table: "FichaPersonagem_Idiomas",
                 column: "IdiomaId");
@@ -1689,11 +1706,6 @@ namespace DnDBot.Bot.Migrations
                 column: "ClasseId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Resistencia_FichaPersonagemId",
-                table: "Resistencia",
-                column: "FichaPersonagemId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Subclasse_ClasseId",
                 table: "Subclasse",
                 column: "ClasseId");
@@ -1721,11 +1733,6 @@ namespace DnDBot.Bot.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_SubRaca_Proficiencias_SubRacaId",
                 table: "SubRaca_Proficiencias",
-                column: "SubRacaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SubRaca_Resistencias_SubRacaId",
-                table: "SubRaca_Resistencias",
                 column: "SubRacaId");
 
             migrationBuilder.CreateIndex(
@@ -1818,6 +1825,9 @@ namespace DnDBot.Bot.Migrations
                 name: "FichaPersonagem_Idiomas");
 
             migrationBuilder.DropTable(
+                name: "FichaPersonagemResistencia");
+
+            migrationBuilder.DropTable(
                 name: "FichaPersonagemTag");
 
             migrationBuilder.DropTable(
@@ -1857,10 +1867,10 @@ namespace DnDBot.Bot.Migrations
                 name: "SubRaca_Proficiencias");
 
             migrationBuilder.DropTable(
-                name: "SubRaca_Resistencias");
+                name: "SubRacaAlinhamento");
 
             migrationBuilder.DropTable(
-                name: "SubRacaAlinhamento");
+                name: "SubRacaResistencia");
 
             migrationBuilder.DropTable(
                 name: "SubRacaTag");
@@ -1893,9 +1903,6 @@ namespace DnDBot.Bot.Migrations
                 name: "Proficiencia");
 
             migrationBuilder.DropTable(
-                name: "Resistencia");
-
-            migrationBuilder.DropTable(
                 name: "Alinhamento");
 
             migrationBuilder.DropTable(
@@ -1918,6 +1925,9 @@ namespace DnDBot.Bot.Migrations
 
             migrationBuilder.DropTable(
                 name: "Antecedente");
+
+            migrationBuilder.DropTable(
+                name: "Resistencia");
         }
     }
 }

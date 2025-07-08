@@ -4,17 +4,19 @@ Todas as alterações significativas neste projeto serão documentadas neste arquiv
 
 O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e o versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
-## [1.3.3] - 2025-07-08
+## [1.3.3] - 2025-07-07
 
 ### Adicionado
 - Novo controlador `ControladorEtapasFicha` para gerenciar a criação da ficha de personagem por etapas sequenciais.
 - Implementação da interface `IEtapaFicha` para modularizar cada etapa do processo de criação.
 - Validador estático `ValidadorFicha` para verificar se a ficha está completa com critérios centralizados.
+- Helper estático `ResistenciaDatabaseHelper` para criação da tabela e inserção inicial de resistências no banco SQLite, com correto tratamento do campo `TipoDano`.
 
 ### Melhorado
 - Refatoração completa do fluxo de criação da ficha para usar o controlador de etapas, facilitando a manutenção e expansão.
 - Melhorias na experiência do usuário durante a criação, com etapas sequenciais que guiam o preenchimento da ficha.
 - Consolidação da lógica de validação da ficha em um único local para maior clareza e consistência.
+- Correção no método de popular a tabela `Resistencia` para incluir o campo `TipoDano` no insert, evitando falha de constraint NOT NULL.
 
 ## [1.3.2] - 2025-07-06
 

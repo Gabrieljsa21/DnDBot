@@ -24,6 +24,7 @@ namespace DnDBot.Bot.Commands.Ficha
         private readonly AlinhamentosService _alinhamentosService;
         private readonly InventarioService _inventarioService;
         private readonly IdiomaService _idiomaService;
+        private readonly ResistenciaService _resistenciaService;
 
         /// <summary>
         /// Construtor com injeção do serviço de fichas.
@@ -35,7 +36,8 @@ namespace DnDBot.Bot.Commands.Ficha
             AntecedentesService antecedentesService,
             AlinhamentosService alinhamentosService,
             InventarioService inventarioService,
-            IdiomaService idiomaService
+            IdiomaService idiomaService,
+            ResistenciaService resistenciaService
         )
         {
             _fichaService = fichaService;
@@ -45,6 +47,7 @@ namespace DnDBot.Bot.Commands.Ficha
             _alinhamentosService = alinhamentosService;
             _inventarioService = inventarioService;
             _idiomaService = idiomaService;
+            _resistenciaService = resistenciaService;
         }
 
         [SlashCommand("ficha_detalhes", "Visualiza uma ficha específica")]
@@ -95,7 +98,7 @@ namespace DnDBot.Bot.Commands.Ficha
                 return;
             }
 
-            await DeferAsync(ephemeral: true);  // IMPORTANTE: defira antes de modificar
+            await DeferAsync(ephemeral: true); 
             await MostrarFichaEmbedAsync(ficha);
         }
 
@@ -168,48 +171,76 @@ namespace DnDBot.Bot.Commands.Ficha
         {
             if (!Guid.TryParse(fichaId, out var id))
             {
-                await RespondAsync("❌ ID inválido.", ephemeral: true);
+                await RespondAsync("❌ **ID inválido.**", ephemeral: true);
                 return;
             }
 
             var ficha = await _fichaService.ObterFichaPorIdAsync(id);
             if (ficha == null || ficha.JogadorId != Context.User.Id)
             {
-                await RespondAsync("❌ Acesso negado.", ephemeral: true);
+                await RespondAsync("⛔ **Acesso negado.**", ephemeral: true);
                 return;
             }
 
-            // Carrega os idiomas se necessário
             await _idiomaService.ObterFichaIdiomasAsync(ficha);
 
             if (ficha.Idiomas == null || ficha.Idiomas.Count == 0)
             {
-                await RespondAsync("🗣️ Nenhum idioma conhecido.", ephemeral: true);
+                await RespondAsync($"🗣️ **{ficha.Nome}** ainda não conhece nenhum idioma.", ephemeral: true);
                 return;
             }
 
-            var embedBuilder = new EmbedBuilder()
+            var embed = new EmbedBuilder()
                 .WithTitle($"🗣️ Idiomas de {ficha.Nome}")
                 .WithColor(Color.DarkPurple);
 
-            foreach (var idioma in ficha.Idiomas)
+            var grupos = ficha.Idiomas
+                .GroupBy(i => i.Categoria)
+                .OrderBy(g => g.Key.ToString());
+
+            foreach (var grupo in grupos)
             {
-                var descricao = string.IsNullOrWhiteSpace(idioma.Descricao)
-                    ? "*Sem descrição*"
-                    : idioma.Descricao;
+                var titulo = $"🧩 {ObterNomeCategoria(grupo.Key)}";
+                var linhas = new List<string>();
 
-                var categoria = idioma.Categoria.ToString();
-                var fonte = string.IsNullOrWhiteSpace(idioma.Fonte) ? null : $"{idioma.Fonte} — p. {idioma.Pagina}";
+                foreach (var idioma in grupo.OrderBy(i => i.Nome))
+                {
+                    var fonte = string.IsNullOrWhiteSpace(idioma.Fonte)
+                        ? ""
+                        : $"\n{idioma.Fonte} — p.{idioma.Pagina}";
 
-                var texto = $"📖 {descricao}\n🧩 Categoria: **{categoria}**";
-                if (fonte != null)
-                    texto += $"\n📚 {fonte}";
+                    var descricao = string.IsNullOrWhiteSpace(idioma.Descricao)
+                        ? "*Sem descrição.*"
+                        : idioma.Descricao;
 
-                embedBuilder.AddField(idioma.Nome, texto, inline: false);
+                    linhas.Add($"**📖 {idioma.Nome.ToUpper()}**\n🔹 {descricao}{fonte}");
+                }
+
+                embed.AddField(titulo, string.Join("\n\n", linhas), inline: false);
             }
 
-            await RespondAsync(embed: embedBuilder.Build(), ephemeral: true);
+            await RespondAsync(embed: embed.Build(), ephemeral: true);
         }
+
+        private string ObterNomeCategoria(CategoriaIdioma categoria)
+        {
+            return categoria switch
+            {
+                CategoriaIdioma.Standard => "Padrão",
+                CategoriaIdioma.Exotic => "Exótico",
+                CategoriaIdioma.Dialeto => "Dialeto",
+                CategoriaIdioma.Secreto => "Secreto",
+                CategoriaIdioma.TelepaticoOuMagico => "Telepático ou Mágico",
+                CategoriaIdioma.RegionalOuCultural => "Regional ou Cultural",
+                CategoriaIdioma.BestialOuPictografico => "Bestial ou Pictográfico",
+                CategoriaIdioma.ArtificialOuConstruto => "Artificial ou Construto",
+                _ => categoria.ToString()
+            };
+        }
+
+
+
+
 
 
         [ComponentInteraction("btn_proficiencias_*")]
@@ -244,26 +275,54 @@ namespace DnDBot.Bot.Commands.Ficha
         {
             if (!Guid.TryParse(fichaId, out var id))
             {
-                await RespondAsync("❌ ID inválido.", ephemeral: true);
+                await RespondAsync("❌ **ID inválido.**", ephemeral: true);
                 return;
             }
 
             var ficha = await _fichaService.ObterFichaPorIdAsync(id);
             if (ficha == null || ficha.JogadorId != Context.User.Id)
             {
-                await RespondAsync("❌ Acesso negado.", ephemeral: true);
+                await RespondAsync("⛔ **Acesso negado.**", ephemeral: true);
                 return;
             }
+
+            await _resistenciaService.ObterFichaResistenciasAsync(ficha);
 
             if (ficha.Resistencias == null || ficha.Resistencias.Count == 0)
             {
-                await RespondAsync("🛡️ Nenhuma resistência registrada.", ephemeral: true);
+                await RespondAsync($"🛡️ **{ficha.Nome}** não possui resistências registradas.", ephemeral: true);
                 return;
             }
 
-            var texto = string.Join(", ", ficha.Resistencias.Select(r => r.Nome));
-            await RespondAsync($"🛡️ **Resistências de {ficha.Nome}:**\n{texto}", ephemeral: true);
+            var embed = new EmbedBuilder()
+                .WithTitle($"🛡️ Resistências de {ficha.Nome}")
+                .WithColor(Color.Orange);
+
+            foreach (var resistencia in ficha.Resistencias.OrderBy(r => r.TipoDano.ToString()))
+            {
+                var tipo = resistencia.TipoDano.ToString().ToUpper();
+                var dados = await _resistenciaService.ObterTodosResistenciasAsync();
+                var info = dados.FirstOrDefault(r => r.TipoDano == resistencia.TipoDano);
+
+                var nome = info?.Nome ?? tipo;
+                var descricao = string.IsNullOrWhiteSpace(info?.Descricao)
+                    ? "*Sem descrição.*"
+                    : info.Descricao;
+
+                var fonte = !string.IsNullOrWhiteSpace(info?.Fonte)
+                    ? $"📚 {info.Fonte} — p.{info.Pagina}"
+                    : null;
+
+                var texto = $"📖 {descricao}";
+                if (fonte != null)
+                    texto += $"\n{fonte}";
+
+                embed.AddField($"**🔹 {nome.ToUpper()}**", texto, inline: false);
+            }
+
+            await RespondAsync(embed: embed.Build(), ephemeral: true);
         }
+
 
 
         [ComponentInteraction("btn_caracteristicas_*")]

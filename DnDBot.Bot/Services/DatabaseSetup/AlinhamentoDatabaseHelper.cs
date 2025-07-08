@@ -9,8 +9,6 @@ using static DnDBot.Bot.Helpers.SqliteHelper;
 
 public static class AlinhamentoDatabaseHelper
 {
-    private const string CaminhoJson = "Data/alinhamentos.json";
-
     public static async Task CriarTabelaAsync(SqliteCommand cmd)
     {
         var definicoes = new Dictionary<string, string>

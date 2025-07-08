@@ -122,6 +122,8 @@ namespace DnDBot.Bot.Services
         {
             return await _dbContext.FichaPersonagem
                 .Include(f => f.Idiomas)
+                .Include(f => f.Resistencias)
+                .Include(f => f.BonusAtributos)
                 .FirstOrDefaultAsync(f => f.Id == id);
         }
 

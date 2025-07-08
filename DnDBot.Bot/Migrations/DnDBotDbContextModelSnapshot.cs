@@ -471,6 +471,19 @@ namespace DnDBot.Bot.Migrations
                     b.ToTable("FerramentaTag");
                 });
 
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.FichaPersonagemResistencia", b =>
+                {
+                    b.Property<Guid>("FichaPersonagemId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("TipoDano")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("FichaPersonagemId", "TipoDano");
+
+                    b.ToTable("FichaPersonagemResistencia");
+                });
+
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.FichaPersonagemTag", b =>
                 {
                     b.Property<Guid>("FichaPersonagemId")
@@ -523,6 +536,19 @@ namespace DnDBot.Bot.Migrations
                     b.HasIndex("AlinhamentoId");
 
                     b.ToTable("SubRacaAlinhamento");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.SubRacaResistencia", b =>
+                {
+                    b.Property<string>("SubRacaId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("TipoDano")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("SubRacaId", "TipoDano");
+
+                    b.ToTable("SubRacaResistencia");
                 });
 
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.SubRacaTag", b =>
@@ -871,6 +897,9 @@ namespace DnDBot.Bot.Migrations
                     b.Property<string>("RacaId")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("ResistenciaId")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("Sabedoria")
                         .HasColumnType("INTEGER");
 
@@ -884,6 +913,8 @@ namespace DnDBot.Bot.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ResistenciaId");
 
                     b.ToTable("FichaPersonagem");
                 });
@@ -1240,9 +1271,6 @@ namespace DnDBot.Bot.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid?>("FichaPersonagemId")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Fonte")
                         .HasColumnType("TEXT");
 
@@ -1271,8 +1299,6 @@ namespace DnDBot.Bot.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("FichaPersonagemId");
 
                     b.ToTable("Resistencia");
                 });
@@ -1778,21 +1804,6 @@ namespace DnDBot.Bot.Migrations
                     b.ToTable("SubRaca_Proficiencias");
                 });
 
-            modelBuilder.Entity("SubRaca_Resistencias", b =>
-                {
-                    b.Property<string>("ResistenciaId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SubRacaId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("ResistenciaId", "SubRacaId");
-
-                    b.HasIndex("SubRacaId");
-
-                    b.ToTable("SubRaca_Resistencias");
-                });
-
             modelBuilder.Entity("DnDBot.Bot.Models.ItensInventario.Arma", b =>
                 {
                     b.HasBaseType("DnDBot.Bot.Models.ItensInventario.Item");
@@ -2243,6 +2254,17 @@ namespace DnDBot.Bot.Migrations
                     b.Navigation("Ferramenta");
                 });
 
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.FichaPersonagemResistencia", b =>
+                {
+                    b.HasOne("DnDBot.Bot.Models.Ficha.FichaPersonagem", "FichaPersonagem")
+                        .WithMany("Resistencias")
+                        .HasForeignKey("FichaPersonagemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("FichaPersonagem");
+                });
+
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.FichaPersonagemTag", b =>
                 {
                     b.HasOne("DnDBot.Bot.Models.Ficha.FichaPersonagem", "FichaPersonagem")
@@ -2291,6 +2313,17 @@ namespace DnDBot.Bot.Migrations
                         .IsRequired();
 
                     b.Navigation("Alinhamento");
+
+                    b.Navigation("SubRaca");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.SubRacaResistencia", b =>
+                {
+                    b.HasOne("DnDBot.Bot.Models.Ficha.SubRaca", "SubRaca")
+                        .WithMany("Resistencias")
+                        .HasForeignKey("SubRacaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("SubRaca");
                 });
@@ -2410,6 +2443,10 @@ namespace DnDBot.Bot.Migrations
 
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.FichaPersonagem", b =>
                 {
+                    b.HasOne("DnDBot.Bot.Models.Ficha.Resistencia", null)
+                        .WithMany("Fichas")
+                        .HasForeignKey("ResistenciaId");
+
                     b.OwnsOne("DnDBot.Bot.Models.ItensInventario.BolsaDeMoedas", "BolsaDeMoedas", b1 =>
                         {
                             b1.Property<Guid>("FichaPersonagemId")
@@ -2496,13 +2533,6 @@ namespace DnDBot.Bot.Migrations
                         .IsRequired();
 
                     b.Navigation("Classe");
-                });
-
-            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Resistencia", b =>
-                {
-                    b.HasOne("DnDBot.Bot.Models.Ficha.FichaPersonagem", null)
-                        .WithMany("Resistencias")
-                        .HasForeignKey("FichaPersonagemId");
                 });
 
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.SubRaca", b =>
@@ -2655,21 +2685,6 @@ namespace DnDBot.Bot.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("SubRaca_Resistencias", b =>
-                {
-                    b.HasOne("DnDBot.Bot.Models.Ficha.Resistencia", null)
-                        .WithMany()
-                        .HasForeignKey("ResistenciaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DnDBot.Bot.Models.Ficha.SubRaca", null)
-                        .WithMany()
-                        .HasForeignKey("SubRacaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("DnDBot.Bot.Models.ItensInventario.Ferramenta", b =>
                 {
                     b.HasOne("DnDBot.Bot.Models.AntecedenteModels.Antecedente", null)
@@ -2747,11 +2762,18 @@ namespace DnDBot.Bot.Migrations
                     b.Navigation("SubRaca");
                 });
 
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Resistencia", b =>
+                {
+                    b.Navigation("Fichas");
+                });
+
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.SubRaca", b =>
                 {
                     b.Navigation("AlinhamentosComuns");
 
                     b.Navigation("BonusAtributos");
+
+                    b.Navigation("Resistencias");
 
                     b.Navigation("SubRacaTags");
                 });

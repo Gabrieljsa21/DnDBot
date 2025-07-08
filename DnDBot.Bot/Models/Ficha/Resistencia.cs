@@ -1,4 +1,6 @@
 ﻿using DnDBot.Bot.Models.Enums;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace DnDBot.Bot.Models.Ficha
 {
@@ -10,7 +12,10 @@ namespace DnDBot.Bot.Models.Ficha
         /// <summary>
         /// Tipo de dano ao qual a resistência se aplica (ex: "fogo", "frio", "radiante").
         /// </summary>
+
         public TipoDano TipoDano { get; set; }
+
+        public List<FichaPersonagem> Fichas { get; set; } = new List<FichaPersonagem>();
 
     }
 }

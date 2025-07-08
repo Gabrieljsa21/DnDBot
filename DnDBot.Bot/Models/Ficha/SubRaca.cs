@@ -39,6 +39,11 @@ namespace DnDBot.Bot.Models.Ficha
         public List<Idioma> Idiomas { get; set; } = new();
 
         /// <summary>
+        /// Tipos de resistência concedidas (ex: resistência a dano radiante).
+        /// </summary>
+        public List<SubRacaResistencia> Resistencias { get; set; } = new();
+
+        /// <summary>
         /// Proficiências concedidas pela sub-raça (ex: armas, ferramentas, perícias).
         /// </summary>
         public List<Proficiencia> Proficiencias { get; set; } = new();
@@ -47,11 +52,6 @@ namespace DnDBot.Bot.Models.Ficha
         /// Alcance da visão no escuro em metros. Use 0 para indicar que a sub-raça não possui visão no escuro.
         /// </summary>
         public int VisaoNoEscuro { get; set; }
-
-        /// <summary>
-        /// Tipos de resistência concedidas (ex: resistência a dano radiante).
-        /// </summary>
-        public List<Resistencia> Resistencias { get; set; } = new();
 
         /// <summary>
         /// Características especiais únicas da sub-raça.

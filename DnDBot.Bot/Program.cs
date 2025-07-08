@@ -62,6 +62,7 @@ class Program
             .AddScoped<AlinhamentosService>()
             .AddScoped<InventarioService>()
             .AddScoped<IdiomaService>()
+            .AddScoped<ResistenciaService>()
             .AddScoped<IFichaRepository, FichaRepository>()
 
             // Registre as etapas como Singleton, evitando duplicação

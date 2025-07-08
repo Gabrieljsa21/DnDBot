@@ -67,18 +67,6 @@ namespace DnDBot.Bot.Data.Configurations
                             .WithMany()
                             .HasForeignKey("SubRacaId"));
 
-            // Configura relacionamento muitos-para-muitos entre SubRaca e Resistencia,
-            // com tabela intermediária "SubRaca_Resistencias"
-            entity.HasMany(sr => sr.Resistencias)
-                  .WithMany()
-                  .UsingEntity<Dictionary<string, object>>(
-                      "SubRaca_Resistencias",
-                      r => r.HasOne<Resistencia>()
-                            .WithMany()
-                            .HasForeignKey("ResistenciaId"),
-                      l => l.HasOne<SubRaca>()
-                            .WithMany()
-                            .HasForeignKey("SubRacaId"));
 
             // Configura relacionamento muitos-para-muitos entre SubRaca e Caracteristica,
             // com tabela intermediária "SubRaca_Caracteristicas"

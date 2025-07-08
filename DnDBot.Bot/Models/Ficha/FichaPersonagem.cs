@@ -102,7 +102,7 @@ namespace DnDBot.Bot.Models.Ficha
         /// <summary>
         /// Lista de resistências do personagem.
         /// </summary>
-        public List<Resistencia> Resistencias { get; set; } = new();
+        public List<FichaPersonagemResistencia> Resistencias { get; set; } = new();
 
         /// <summary>
         /// Lista de características especiais do personagem.
@@ -239,7 +239,7 @@ namespace DnDBot.Bot.Models.Ficha
         public int ObterModificador(string atributo)
         {
             int total = ObterTotalComBonus(atributo);
-            return (total - 10) / 2;
+            return (int)Math.Floor((total - 10) / 2.0);
         }
     }
 
