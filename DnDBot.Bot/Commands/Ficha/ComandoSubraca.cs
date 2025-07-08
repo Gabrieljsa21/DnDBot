@@ -1,11 +1,11 @@
 ﻿using Discord;
 using Discord.Interactions;
 using DnDBot.Application.Models;
-using DnDBot.Application.Models.Enums;
-using DnDBot.Application.Models.Ficha;
-using DnDBot.Application.Services;
-using DnDBot.Application.Services.Distribuicao;
 using DnDBot.Bot.Helpers;
+using DnDBot.Bot.Models.Enums;
+using DnDBot.Bot.Models.Ficha;
+using DnDBot.Bot.Services;
+using DnDBot.Bot.Services.Distribuicao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,40 +31,6 @@ namespace DnDBot.Bot.Commands.Ficha
             _idiomaService = idiomaService;
         }
 
-        [ComponentInteraction("select_subraca")]
-        public async Task SelectSubracaHandler(string subracaId)
-        {
-            var ficha = await _fichaService.ObterUltimaFichaDoJogadorAsync(Context.User.Id);
-            if (ficha == null)
-            {
-                await RespondAsync("❌ Não encontrei a ficha para atualizar a sub-raça.", ephemeral: true);
-                return;
-            }
-
-            var subraca = (await _racasService.ObterTodasSubracasAsync())
-                            .FirstOrDefault(sr => sr.Id == subracaId);
-
-            if (subraca == null)
-            {
-                await RespondAsync("❌ Sub-raça selecionada não encontrada.", ephemeral: true);
-                return;
-            }
-
-            await _idiomaService.ObterFichaIdiomasAsync(ficha); // ✅ Correção importante
-
-            AtualizarFichaComSubraca(ficha, subraca);
-
-            await _fichaService.AtualizarFichaAsync(ficha);
-
-            var dist = _atributosHandler.ObterDistribuicao(Context.User.Id, ficha.Id);
-            _atributosHandler.InicializarDistribuicao(dist, ficha);
-
-            await RespondAsync(
-                $"✅ Sub-raça **{subraca.Nome}** aplicada! Agora distribua os pontos nos atributos:",
-                embed: _atributosHandler.ConstruirEmbedDistribuicao(dist),
-                components: _atributosHandler.ConstruirComponentesDistribuicao(dist, ficha.Id),
-                ephemeral: true);
-        }
 
 
         // Método helper que aplica dados da sub-raça na ficha

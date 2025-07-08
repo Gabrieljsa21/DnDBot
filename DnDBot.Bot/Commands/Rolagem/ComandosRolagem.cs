@@ -1,6 +1,6 @@
 ﻿using Discord.Interactions;
-using DnDBot.Application.Models.Rolagem;
-using DnDBot.Application.Services;
+using DnDBot.Bot.Models.Rolagem;
+using DnDBot.Bot.Services;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

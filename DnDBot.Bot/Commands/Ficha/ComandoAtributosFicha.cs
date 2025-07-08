@@ -2,8 +2,9 @@
 using Discord.Interactions;
 using Discord.WebSocket;
 using DnDBot.Application.Models;
-using DnDBot.Application.Services;
-using DnDBot.Application.Services.Distribuicao;
+using DnDBot.Bot.Services;
+using DnDBot.Bot.Services.Distribuicao;
+using DnDBot.Bot.Services.EtapasFicha;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,17 +18,20 @@ namespace DnDBot.Bot.Commands.Ficha
         private readonly DistribuicaoAtributosService _atributosService;
         private readonly DistribuicaoAtributosHandler _atributosHandler;
         private readonly IdiomaService _idiomaService;
+        private readonly ControladorEtapasFicha _controladorEtapasFicha;
 
         public ComandoAtributosFicha(
             FichaService fichaService,
             DistribuicaoAtributosService atributosService,
             DistribuicaoAtributosHandler atributosHandler,
-            IdiomaService idiomaService)
+            IdiomaService idiomaService,
+            ControladorEtapasFicha controladorEtapasFicha)
         {
             _fichaService = fichaService;
             _atributosService = atributosService;
             _atributosHandler = atributosHandler;
             _idiomaService = idiomaService;
+            _controladorEtapasFicha = controladorEtapasFicha;
         }
 
         [SlashCommand("ficha_atributos", "Escolha uma ficha para distribuir os atributos")]
@@ -89,7 +93,7 @@ namespace DnDBot.Bot.Commands.Ficha
 
             Console.WriteLine($"[LOG] Interface de distribuição inicializada para ficha '{ficha.Nome}' ({ficha.Id})");
 
-            var embed = _atributosHandler.ConstruirEmbedDistribuicao(dist);
+            var embed = _atributosHandler.ConstruirEmbedDistribuicao(dist, ficha);
             var components = _atributosHandler.ConstruirComponentesDistribuicao(dist, ficha.Id);
 
             await RespondAsync($"Distribua seus pontos de atributo na ficha **{ficha.Nome}**:", embed: embed, components: components, ephemeral: true);
@@ -130,7 +134,7 @@ namespace DnDBot.Bot.Commands.Ficha
             }
 
             var dist = _atributosHandler.ObterDistribuicao(Context.User.Id, ficha.Id);
-            var embed = _atributosHandler.ConstruirEmbedDistribuicao(dist);
+            var embed = _atributosHandler.ConstruirEmbedDistribuicao(dist, ficha);
             var components = _atributosHandler.ConstruirComponentesDistribuicao(dist, ficha.Id);
 
             await Context.Interaction.ModifyOriginalResponseAsync(msg =>
@@ -143,13 +147,13 @@ namespace DnDBot.Bot.Commands.Ficha
         }
 
 
-        // Botão para concluir a distribuição
+        // Módulo responsável apenas pela etapa de distribuição de atributos
         [ComponentInteraction("concluir_distribuicao_*")]
         public async Task ConcluirDistribuicao(string fichaIdStr)
         {
             Console.WriteLine($"[LOG] Botão concluir_distribuicao_{fichaIdStr} clicado por usuário {Context.User.Id}");
 
-            await DeferAsync(ephemeral: true); // evita timeout
+            await DeferAsync(ephemeral: true);
 
             if (!Guid.TryParse(fichaIdStr, out var fichaId))
             {
@@ -157,24 +161,30 @@ namespace DnDBot.Bot.Commands.Ficha
                 return;
             }
 
+            // Busca todas as fichas do jogador e seleciona a correta
             var fichas = await _fichaService.ObterFichasPorJogadorAsync(Context.User.Id);
             var ficha = fichas.FirstOrDefault(f => f.Id == fichaId);
-
             if (ficha == null)
             {
                 await FollowupAsync("❌ Ficha não encontrada para salvar atributos.", ephemeral: true);
                 return;
             }
 
+            // Recupera o estado atual da distribuição
             var dist = _atributosHandler.ObterDistribuicao(Context.User.Id, ficha.Id);
 
-            if (dist.PontosUsados > dist.PontosDisponiveis)
-            {
-                await FollowupAsync("❌ Você usou mais pontos do que o permitido.", ephemeral: true);
-                return;
-            }
+            // Valida se usou exatamente todos os pontos
+            //if (dist.PontosUsados != dist.PontosDisponiveis)
+            //{
+            //    int faltando = dist.PontosDisponiveis - dist.PontosUsados;
+            //    string mensagemErro = faltando > 0
+            //        ? $"❌ Você ainda tem **{faltando} ponto(s)** para distribuir."
+            //        : "❌ Você usou mais pontos do que o permitido.";
+            //    await FollowupAsync(mensagemErro, ephemeral: true);
+            //    return;
+            //}
 
-            // Atualiza atributos
+            // Atualiza os atributos na ficha
             ficha.Forca = dist.Atributos["Forca"];
             ficha.Destreza = dist.Atributos["Destreza"];
             ficha.Constituicao = dist.Atributos["Constituicao"];
@@ -182,57 +192,24 @@ namespace DnDBot.Bot.Commands.Ficha
             ficha.Sabedoria = dist.Atributos["Sabedoria"];
             ficha.Carisma = dist.Atributos["Carisma"];
 
+            // Persiste no banco
             await _fichaService.AtualizarFichaAsync(ficha);
+
+            // Limpa o estado de distribuição em memória
             _atributosHandler.RemoverDistribuicao(Context.User.Id, ficha.Id);
 
-            // Atualiza a mensagem original com os atributos finais
-            var embedFinal = _atributosHandler.ConstruirEmbedDistribuicao(dist);
+            // Atualiza a mensagem original com o embed final
+            var embedFinal = _atributosHandler.ConstruirEmbedDistribuicao(dist, ficha);
             await Context.Interaction.ModifyOriginalResponseAsync(msg =>
             {
                 msg.Content = $"✅ Distribuição finalizada para a ficha **{ficha.Nome}**!";
                 msg.Embed = embedFinal;
-                msg.Components = new ComponentBuilder().Build(); // remove botões
+                msg.Components = new ComponentBuilder().Build();
             });
 
-            // Verifica idiomas adicionais
-            await _idiomaService.ObterFichaIdiomasAsync(ficha);
-            int qtdAdicionais = ficha.Idiomas.Count(i => i.Id == "adicional");
-
-            if (qtdAdicionais > 0)
-            {
-                var todosIdiomas = await _idiomaService.ObterTodosIdiomasAsync();
-                var conhecidos = ficha.Idiomas.Where(i => i.Id != "adicional").Select(i => i.Id).ToHashSet();
-
-                var disponiveis = todosIdiomas
-                    .Where(i => i.Id != "adicional" && !conhecidos.Contains(i.Id))
-                    .ToList();
-
-                var builder = new ComponentBuilder();
-
-                for (int i = 0; i < qtdAdicionais; i++)
-                {
-                    var menu = new SelectMenuBuilder()
-                        .WithCustomId($"{ficha.Id}_idioma_adicional_{i + 1}")
-                        .WithPlaceholder($"Escolha o idioma adicional {i + 1}")
-                        .WithMinValues(1)
-                        .WithMaxValues(1);
-
-                    foreach (var idioma in disponiveis.Take(25))
-                    {
-                        menu.AddOption(idioma.Nome, idioma.Id);
-                    }
-
-                    builder.WithSelectMenu(menu);
-                }
-
-                await FollowupAsync(
-                    text: $"🌐 Você tem **{qtdAdicionais} idioma(s) adicional(is)** para escolher:",
-                    components: builder.Build(),
-                    ephemeral: true
-                );
-            }
+            // --- Em vez de emendar aqui bônus raciais e idiomas, dispare a próxima etapa: ---
+            await _controladorEtapasFicha.ProcessarProximaEtapaAsync(ficha, Context, usarFollowUp: true);
         }
-
 
     }
 }

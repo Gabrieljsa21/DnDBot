@@ -1,6 +1,6 @@
 ﻿using Discord;
 using Discord.Interactions;
-using DnDBot.Application.Services.Antecedentes;
+using DnDBot.Bot.Services.Antecedentes;
 using System.Linq;
 using System.Threading.Tasks;
 

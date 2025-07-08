@@ -1,6 +1,6 @@
 ﻿using Discord;
 using Discord.Interactions;
-using DnDBot.Application.Services;
+using DnDBot.Bot.Services;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;

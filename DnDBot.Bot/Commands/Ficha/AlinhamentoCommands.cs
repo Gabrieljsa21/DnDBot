@@ -1,6 +1,5 @@
 ﻿using Discord.Interactions;
-using DnDBot.Application.Data;
-using DnDBot.Application.Models.Ficha;
+using DnDBot.Bot.Models.Ficha;
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;

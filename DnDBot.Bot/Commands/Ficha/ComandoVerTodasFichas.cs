@@ -1,9 +1,7 @@
 ﻿using Discord;
 using Discord.Interactions;
-using DnDBot.Application.Models.Ficha;
-using DnDBot.Application.Services;
-using DnDBot.Application.Services.Antecedentes;
-using DnDBot.Application.Services.Distribuicao;
+using DnDBot.Bot.Services;
+using DnDBot.Bot.Services.Antecedentes;
 using System;
 using System.Collections.Generic;
 using System.Linq;

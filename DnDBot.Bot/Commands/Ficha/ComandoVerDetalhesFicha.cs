@@ -1,10 +1,9 @@
 ﻿using Discord;
 using Discord.Interactions;
-using DnDBot.Application.Models.Enums;
-using DnDBot.Application.Models.Ficha;
-using DnDBot.Application.Services;
-using DnDBot.Application.Services.Antecedentes;
-using DnDBot.Application.Services.Distribuicao;
+using DnDBot.Bot.Models.Enums;
+using DnDBot.Bot.Models.Ficha;
+using DnDBot.Bot.Services;
+using DnDBot.Bot.Services.Antecedentes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,7 +70,7 @@ namespace DnDBot.Bot.Commands.Ficha
                 .WithCustomId("ficha_ver_uma_dropdown")
                 .WithPlaceholder("Escolha a ficha que deseja ver");
 
-            foreach (var ficha in fichas)
+            foreach (var ficha in fichas.Take(25))
             {
                 menu.AddOption(ficha.Nome, ficha.Id.ToString());
             }
@@ -163,6 +162,7 @@ namespace DnDBot.Bot.Commands.Ficha
 
         }
 
+
         [ComponentInteraction("btn_idiomas_*")]
         public async Task MostrarIdiomasHandler(string fichaId)
         {
@@ -238,6 +238,7 @@ namespace DnDBot.Bot.Commands.Ficha
             await RespondAsync($"📜 **Proficiencias de {ficha.Nome}:**\n{texto}", ephemeral: true);
         }
 
+
         [ComponentInteraction("btn_resistencias_*")]
         public async Task MostrarResistenciasHandler(string fichaId)
         {
@@ -263,6 +264,7 @@ namespace DnDBot.Bot.Commands.Ficha
             var texto = string.Join(", ", ficha.Resistencias.Select(r => r.Nome));
             await RespondAsync($"🛡️ **Resistências de {ficha.Nome}:**\n{texto}", ephemeral: true);
         }
+
 
         [ComponentInteraction("btn_caracteristicas_*")]
         public async Task MostrarCaracteristicasHandler(string fichaId)
@@ -290,6 +292,7 @@ namespace DnDBot.Bot.Commands.Ficha
             await RespondAsync($"✨ **Características de {ficha.Nome}:**\n{texto}", ephemeral: true);
         }
 
+
         [ComponentInteraction("btn_magias_*")]
         public async Task MostrarMagiasHandler(string fichaId)
         {
@@ -315,6 +318,7 @@ namespace DnDBot.Bot.Commands.Ficha
             var texto = string.Join("\n", ficha.MagiasRaciais.Select(m => $"• {m.Nome} ({m.Nivel}º nível): {m.Descricao}"));
             await RespondAsync($"🧠 **Magias Raciais de {ficha.Nome}:**\n{texto}", ephemeral: true);
         }
+
 
         [ComponentInteraction("btn_moedas_*")]
         public async Task MostrarMoedasHandler(string fichaId)
@@ -346,6 +350,7 @@ namespace DnDBot.Bot.Commands.Ficha
             await RespondAsync($"💰 **Bolsa de moedas de {ficha.Nome}:**\n{texto}", ephemeral: true);
         }
 
+
         private string ObterEmojiMoeda(TipoMoeda tipo)
         {
             return tipo switch
@@ -355,9 +360,11 @@ namespace DnDBot.Bot.Commands.Ficha
                 TipoMoeda.PE => "🟣", // eletro
                 TipoMoeda.PO => "🟡", // ouro
                 TipoMoeda.PL => "🔵", // platina
+                _ => "❓" // fallback para valores desconhecidos
 
             };
         }
+
 
         [ComponentInteraction("btn_inventario_*")]
         public async Task MostrarInventarioHandler(string fichaIdStr)
@@ -394,6 +401,7 @@ namespace DnDBot.Bot.Commands.Ficha
 
             await RespondAsync(embed: embed, ephemeral: true);
         }
+
 
         [ComponentInteraction("btn_equipamentos_*")]
         public async Task MostrarEquipamentosHandler(string fichaIdStr)

@@ -3,18 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36203.30
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDBot.Application", "DnDBot.Application\DnDBot.Application.csproj", "{EEE934EF-A37F-BDCA-4228-203E07880820}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDBot.Bot", "DnDBot.Bot\DnDBot.Bot.csproj", "{90181F20-FA81-879D-02AF-E73B5C8EE832}"
-	ProjectSection(ProjectDependencies) = postProject
-		{EEE934EF-A37F-BDCA-4228-203E07880820} = {EEE934EF-A37F-BDCA-4228-203E07880820}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDBot.Domain", "DnDBot.Domain\DnDBot.Domain.csproj", "{C4B7DF7E-722F-9F8F-4271-6D3ED1A4F9E7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDBot.Infrastructure", "DnDBot.Infrastructure\DnDBot.Infrastructure.csproj", "{EE872715-1B5D-0608-411D-B6A647358E6D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnDBot.Shared", "DnDBot.Shared\DnDBot.Shared.csproj", "{505BC768-B675-730D-33A7-1BAFE2AC772F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{380A7511-A354-6D7A-0CC0-8FA1F1BA7B6C}"
 	ProjectSection(SolutionItems) = preProject
@@ -33,26 +22,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EEE934EF-A37F-BDCA-4228-203E07880820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EEE934EF-A37F-BDCA-4228-203E07880820}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EEE934EF-A37F-BDCA-4228-203E07880820}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EEE934EF-A37F-BDCA-4228-203E07880820}.Release|Any CPU.Build.0 = Release|Any CPU
 		{90181F20-FA81-879D-02AF-E73B5C8EE832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{90181F20-FA81-879D-02AF-E73B5C8EE832}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90181F20-FA81-879D-02AF-E73B5C8EE832}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90181F20-FA81-879D-02AF-E73B5C8EE832}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C4B7DF7E-722F-9F8F-4271-6D3ED1A4F9E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C4B7DF7E-722F-9F8F-4271-6D3ED1A4F9E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C4B7DF7E-722F-9F8F-4271-6D3ED1A4F9E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C4B7DF7E-722F-9F8F-4271-6D3ED1A4F9E7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EE872715-1B5D-0608-411D-B6A647358E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EE872715-1B5D-0608-411D-B6A647358E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EE872715-1B5D-0608-411D-B6A647358E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EE872715-1B5D-0608-411D-B6A647358E6D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{505BC768-B675-730D-33A7-1BAFE2AC772F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{505BC768-B675-730D-33A7-1BAFE2AC772F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{505BC768-B675-730D-33A7-1BAFE2AC772F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{505BC768-B675-730D-33A7-1BAFE2AC772F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

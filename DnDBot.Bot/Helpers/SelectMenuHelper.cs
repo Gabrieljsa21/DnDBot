@@ -1,8 +1,6 @@
 ﻿using Discord;
-using Discord.Interactions;
-using DnDBot.Application.Models.AntecedenteModels;
-using DnDBot.Application.Models.Ficha;
-using DnDBot.Application.Services;
+using DnDBot.Bot.Models.AntecedenteModels;
+using DnDBot.Bot.Models.Ficha;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +9,7 @@ namespace DnDBot.Bot.Helpers
 {
     public static class SelectMenuHelper
     {
-
-
-        private static void AdicionarOpcaoSafe(
+        public static void AdicionarOpcaoSafe(
             SelectMenuBuilder select,
             string label,
             string value,
@@ -113,6 +109,9 @@ namespace DnDBot.Bot.Helpers
 
             return select;
         }
+
+
+
 
         public static List<SelectMenuBuilder> CriarSelectsIdiomasAdicionais(FichaPersonagem ficha, List<Idioma> todosIdiomas)
         {

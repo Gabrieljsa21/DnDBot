@@ -1,12 +1,13 @@
 using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
-using DnDBot.Application.Data; // Namespace onde está o DbContext
-using DnDBot.Application.Repositories;
-using DnDBot.Application.Services;
-using DnDBot.Application.Services.Antecedentes;
-using DnDBot.Application.Services.Distribuicao;
 using DnDBot.Bot.Commands.Ficha;
+using DnDBot.Bot.Data;
+using DnDBot.Bot.Repositories;
+using DnDBot.Bot.Services;
+using DnDBot.Bot.Services.Antecedentes;
+using DnDBot.Bot.Services.Distribuicao;
+using DnDBot.Bot.Services.EtapasFicha;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -51,32 +52,42 @@ class Program
         // Registrar serviços com injeção de dependência
         var services = new ServiceCollection()
 
-        .AddDbContext<DnDBotDbContext>(options =>
-            options.UseSqlite(configuration.GetConnectionString("DnDBotDatabase")))
+            .AddDbContext<DnDBotDbContext>(options =>
+                options.UseSqlite(configuration.GetConnectionString("DnDBotDatabase")))
 
-        .AddScoped<FichaService>()
-        .AddScoped<RacasService>()
-        .AddScoped<ClassesService>()
-        .AddScoped<AntecedentesService>()
-        .AddScoped<AlinhamentosService>()
-        .AddScoped<InventarioService>()
-        .AddScoped<IdiomaService>()
-        .AddScoped<IFichaRepository, FichaRepository>()
+            .AddScoped<FichaService>()
+            .AddScoped<RacasService>()
+            .AddScoped<ClassesService>()
+            .AddScoped<AntecedentesService>()
+            .AddScoped<AlinhamentosService>()
+            .AddScoped<InventarioService>()
+            .AddScoped<IdiomaService>()
+            .AddScoped<IFichaRepository, FichaRepository>()
 
-        .AddScoped<DistribuicaoAtributosHandler>()
-        .AddSingleton<DistribuicaoAtributosService>()
-        .AddSingleton<RolagemDadosService>()
-        .AddSingleton<FormatadorMensagemService>()
+            // Registre as etapas como Singleton, evitando duplicação
+            .AddSingleton<IEtapaFicha, EtapaEscolhasIniciais>()
+            .AddSingleton<IEtapaFicha, EtapaSubraca>()
+            .AddSingleton<IEtapaFicha, EtapaDistribuicaoAtributos>()
+            .AddSingleton<IEtapaFicha, EtapaBonusAtributoVariante>()
+            .AddSingleton<IEtapaFicha, EtapaIdiomaAdicional>()
+            .AddSingleton<IEtapaFicha, EtapaFinalizacaoFicha>()
 
-        // Adicione GeracaoDeDadosService aqui
-        .AddScoped<GeracaoDeDadosService>()
+            // Controlador das etapas também Singleton para evitar múltiplas instâncias
+            .AddSingleton<ControladorEtapasFicha>()
 
-        .AddSingleton(_cliente)
-        .AddSingleton(_interactionService)
+            .AddScoped<DistribuicaoAtributosHandler>()
+            .AddSingleton<DistribuicaoAtributosService>()
+            .AddSingleton<RolagemDadosService>()
+            .AddSingleton<FormatadorMensagemService>()
 
-        .AddSingleton<IConfiguration>(configuration)
+            .AddScoped<GeracaoDeDadosService>()
 
-        .BuildServiceProvider();
+            .AddSingleton(_cliente)
+            .AddSingleton(_interactionService)
+
+            .AddSingleton<IConfiguration>(configuration)
+
+            .BuildServiceProvider();
 
         _services = services;
 
