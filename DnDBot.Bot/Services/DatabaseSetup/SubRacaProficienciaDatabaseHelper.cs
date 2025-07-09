@@ -51,18 +51,24 @@ public static class SubRacaProficienciaDatabaseHelper
 
             foreach (var profId in profIds)
             {
-
-                var sql = @"
-                    INSERT OR IGNORE INTO SubRacaProficiencia 
-                        (SubRacaId, ProficienciaId) 
-                    VALUES 
-                        ($subId, $profId)";
-                using var cmd = conn.CreateCommand();
-                cmd.Transaction = tx;
-                cmd.CommandText = sql;
-                cmd.Parameters.AddWithValue("$subId", subRacaId);
-                cmd.Parameters.AddWithValue("$profId", profId);
-                await cmd.ExecuteNonQueryAsync();
+                try
+                {
+                    var sql = @"
+                INSERT OR IGNORE INTO SubRacaProficiencia 
+                    (SubRacaId, ProficienciaId) 
+                VALUES 
+                    ($subId, $profId)";
+                    using var cmd = conn.CreateCommand();
+                    cmd.Transaction = tx;
+                    cmd.CommandText = sql;
+                    cmd.Parameters.AddWithValue("$subId", subRacaId);
+                    cmd.Parameters.AddWithValue("$profId", profId);
+                    await cmd.ExecuteNonQueryAsync();
+                }
+                catch (SqliteException ex)
+                {
+                    Console.WriteLine($"❌ Erro ao inserir SubRacaId: '{subRacaId}' com ProficienciaId: '{profId}' — {ex.Message}");
+                }
             }
         }
 

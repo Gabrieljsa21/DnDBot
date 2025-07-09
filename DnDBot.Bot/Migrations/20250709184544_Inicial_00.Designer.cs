@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DnDBot.Bot.Migrations
 {
     [DbContext(typeof(DnDBotDbContext))]
-    [Migration("20250709041129_Inicial_00")]
+    [Migration("20250709184544_Inicial_00")]
     partial class Inicial_00
     {
         /// <inheritdoc />
@@ -60,15 +60,10 @@ namespace DnDBot.Bot.Migrations
                     b.Property<string>("Pagina")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("PericiaId")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Versao")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PericiaId");
 
                     b.ToTable("Antecedente");
                 });
@@ -653,6 +648,12 @@ namespace DnDBot.Bot.Migrations
                     b.Property<string>("ProficienciaId")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("BonusAdicional")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("TemEspecializacao")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("FichaPersonagemId", "ProficienciaId");
 
                     b.HasIndex("ProficienciaId");
@@ -1028,9 +1029,6 @@ namespace DnDBot.Bot.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("PericiaId")
-                        .HasColumnType("TEXT");
-
                     b.Property<bool>("UsaMagiaPreparada")
                         .HasColumnType("INTEGER");
 
@@ -1038,8 +1036,6 @@ namespace DnDBot.Bot.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PericiaId");
 
                     b.ToTable("Classe");
                 });
@@ -1397,43 +1393,65 @@ namespace DnDBot.Bot.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("BonusAdicional")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime?>("CriadoEm")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CriadoPor")
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Descricao")
+                        .HasMaxLength(2000)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Fonte")
+                        .HasMaxLength(200)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("IconeUrl")
+                        .HasMaxLength(500)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ImagemUrl")
+                        .HasMaxLength(500)
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("ModificadoEm")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ModificadoPor")
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Pagina")
+                        .HasMaxLength(20)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("PericiaId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("TemEspecializacao")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Tipo")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Versao")
+                        .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PericiaId");
 
                     b.ToTable("Proficiencia");
                 });
@@ -1927,15 +1945,6 @@ namespace DnDBot.Bot.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("AtributosAlternativos")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("BonusAdicional")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("BonusBase")
-                        .HasColumnType("INTEGER");
-
                     b.Property<DateTime?>("CriadoEm")
                         .HasColumnType("TEXT");
 
@@ -1946,9 +1955,6 @@ namespace DnDBot.Bot.Migrations
                     b.Property<string>("Descricao")
                         .HasMaxLength(2000)
                         .HasColumnType("TEXT");
-
-                    b.Property<bool>("EhProficiente")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Fonte")
                         .HasMaxLength(200)
@@ -1976,13 +1982,6 @@ namespace DnDBot.Bot.Migrations
 
                     b.Property<string>("Pagina")
                         .HasMaxLength(20)
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("TemEspecializacao")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Tipo")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Versao")
@@ -2199,13 +2198,6 @@ namespace DnDBot.Bot.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasDiscriminator().HasValue("Ferramenta");
-                });
-
-            modelBuilder.Entity("DnDBot.Bot.Models.AntecedenteModels.Antecedente", b =>
-                {
-                    b.HasOne("DnDBot.Bot.Models.Pericia", null)
-                        .WithMany("Antecedentes")
-                        .HasForeignKey("PericiaId");
                 });
 
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.AlinhamentoTag", b =>
@@ -2867,13 +2859,6 @@ namespace DnDBot.Bot.Migrations
                     b.Navigation("Classe");
                 });
 
-            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Classe", b =>
-                {
-                    b.HasOne("DnDBot.Bot.Models.Pericia", null)
-                        .WithMany("ClassesRelacionadas")
-                        .HasForeignKey("PericiaId");
-                });
-
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.DificuldadePericia", b =>
                 {
                     b.HasOne("DnDBot.Bot.Models.Pericia", null)
@@ -2916,6 +2901,15 @@ namespace DnDBot.Bot.Migrations
                         .HasForeignKey("ResistenciaId");
 
                     b.Navigation("BolsaDeMoedas");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Proficiencia", b =>
+                {
+                    b.HasOne("DnDBot.Bot.Models.Pericia", "Pericia")
+                        .WithMany()
+                        .HasForeignKey("PericiaId");
+
+                    b.Navigation("Pericia");
                 });
 
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.QuantidadePorNivel", b =>
@@ -3141,10 +3135,6 @@ namespace DnDBot.Bot.Migrations
 
             modelBuilder.Entity("DnDBot.Bot.Models.Pericia", b =>
                 {
-                    b.Navigation("Antecedentes");
-
-                    b.Navigation("ClassesRelacionadas");
-
                     b.Navigation("Dificuldades");
                 });
 

@@ -55,6 +55,9 @@ namespace DnDBot.Bot.Models.Ficha.Auxiliares
 
         public string ProficienciaId { get; set; }
         public Proficiencia Proficiencia { get; set; }
+
+        public bool TemEspecializacao { get; set; } = false;
+        public int BonusAdicional { get; set; } = 0;
     }
 
     public class FichaPersonagemMagia

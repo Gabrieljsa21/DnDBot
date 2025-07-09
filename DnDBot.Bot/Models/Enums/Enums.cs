@@ -278,4 +278,15 @@ namespace DnDBot.Bot.Models.Enums
         ItemMagico,
         Outra
     }
+    public enum TipoProficiencia
+    {
+        Pericia,
+        Ferramenta,
+        Arma,
+        Armadura,
+        Idioma,
+        Veiculo,
+        TesteResistencia
+    }
+
 }

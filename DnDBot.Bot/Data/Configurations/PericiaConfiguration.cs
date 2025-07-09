@@ -35,21 +35,8 @@ namespace DnDBot.Bot.Data.Configurations
                   .HasConversion<string>()
                   .IsRequired();
 
-            entity.Property(p => p.Tipo)
-                  .HasConversion<string>()
-                  .IsRequired();
-
-            // Serialização de listas simples
-
-            entity.Property(p => p.AtributosAlternativos)
-                  .HasConversion(
-                      v => JsonSerializer.Serialize(v, (JsonSerializerOptions)null),
-                      v => JsonSerializer.Deserialize<List<Atributo>>(v, (JsonSerializerOptions)null))
-                  .HasColumnType("TEXT");
-
             // Ignora propriedades que não devem ser persistidas
             entity.Ignore(p => p.DificuldadeSugerida);
-            entity.Ignore(p => p.ValorTotal);
 
             // Um-para-muitos: Pericia -> Dificuldades
             entity.HasMany(p => p.Dificuldades)
@@ -57,11 +44,6 @@ namespace DnDBot.Bot.Data.Configurations
                   .HasForeignKey("PericiaId")
                   .OnDelete(DeleteBehavior.Cascade);
 
-            // Bools e ints obrigatórios
-            entity.Property(p => p.EhProficiente).IsRequired();
-            entity.Property(p => p.TemEspecializacao).IsRequired();
-            entity.Property(p => p.BonusBase).IsRequired();
-            entity.Property(p => p.BonusAdicional).IsRequired();
         }
     }
 }

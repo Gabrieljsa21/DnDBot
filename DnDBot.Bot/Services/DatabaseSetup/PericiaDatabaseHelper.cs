@@ -22,11 +22,6 @@ public static class PericiaDatabaseHelper
             CREATE TABLE IF NOT EXISTS Pericia (
                 Id TEXT PRIMARY KEY,
                 AtributoBase TEXT NOT NULL,
-                Tipo TEXT NOT NULL,
-                EhProficiente INTEGER NOT NULL,
-                TemEspecializacao INTEGER NOT NULL,
-                BonusBase INTEGER NOT NULL,
-                BonusAdicional INTEGER NOT NULL,
                 {SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "")}
             );",
             @"
@@ -76,18 +71,13 @@ public static class PericiaDatabaseHelper
 
             var parametros = GerarParametrosEntidadeBase(pericia);
             parametros["atributoBase"] = pericia.AtributoBase.ToString();
-            parametros["tipo"] = pericia.Tipo.ToString();
-            parametros["ehProficiente"] = pericia.EhProficiente ? 1 : 0;
-            parametros["temEspecializacao"] = pericia.TemEspecializacao ? 1 : 0;
-            parametros["bonusBase"] = pericia.BonusBase;
-            parametros["bonusAdicional"] = pericia.BonusAdicional;
 
             var sql = $@"
                 INSERT INTO Pericia (
-                    Id, AtributoBase, Tipo, EhProficiente, TemEspecializacao, BonusBase, BonusAdicional,
+                    Id, AtributoBase,
                     {SqliteEntidadeBaseHelper.CamposInsert.Replace("Id,", "")}
                 ) VALUES (
-                    $id, $atributoBase, $tipo, $ehProficiente, $temEspecializacao, $bonusBase, $bonusAdicional,
+                    $id, $atributoBase,
                     {SqliteEntidadeBaseHelper.ValoresInsert.Replace("$id,", "")}
                 );";
 

@@ -4,9 +4,7 @@
     "Nome": "Atletismo",
     "AtributoBase": "Forca",
     "Tipo": "Habilidade",
-    "Descricao": "Capacidade de correr, escalar, nadar ou realizar feitos f�sicos exigentes.",
-    "EhProficiente": false,
-    "BonusBase": 0,
+    "Descricao": "Capacidade de correr, escalar, nadar ou realizar feitos físicos exigentes.",
     "Icone": "icone_atletismo.png"
   },
   {
@@ -14,9 +12,7 @@
     "Nome": "Acrobacia",
     "AtributoBase": "Destreza",
     "Tipo": "Habilidade",
-    "Descricao": "Capacidade de manter o equil�brio, realizar cambalhotas ou saltos.",
-    "EhProficiente": false,
-    "BonusBase": 0,
+    "Descricao": "Capacidade de manter o equilíbrio, realizar cambalhotas ou saltos.",
     "Icone": "icone_acrobacia.png"
   },
   {
@@ -25,18 +21,14 @@
     "AtributoBase": "Destreza",
     "Tipo": "Habilidade",
     "Descricao": "Capacidade de se mover silenciosamente e evitar ser detectado.",
-    "EhProficiente": false,
-    "BonusBase": 0,
     "Icone": "icone_furtividade.png"
   },
   {
     "Id": "prestidigitacao",
-    "Nome": "Prestidigita��o",
+    "Nome": "Prestidigitação",
     "AtributoBase": "Destreza",
     "Tipo": "Habilidade",
-    "Descricao": "Habilidade de realizar truques de m�os r�pidos, como batedores de carteira.",
-    "EhProficiente": false,
-    "BonusBase": 0,
+    "Descricao": "Habilidade de realizar truques de mãos rápidos, como batedores de carteira.",
     "Icone": "icone_prestidigitacao.png"
   },
   {
@@ -44,29 +36,23 @@
     "Nome": "Arcanismo",
     "AtributoBase": "Inteligencia",
     "Tipo": "Habilidade",
-    "Descricao": "Conhecimento sobre magia, s�mbolos, planos e tradi��es m�sticas.",
-    "EhProficiente": false,
-    "BonusBase": 0,
+    "Descricao": "Conhecimento sobre magia, símbolos, planos e tradições místicas.",
     "Icone": "icone_arcanismo.png"
   },
   {
     "Id": "historia",
-    "Nome": "Hist�ria",
+    "Nome": "História",
     "AtributoBase": "Inteligencia",
     "Tipo": "Habilidade",
-    "Descricao": "Conhecimento sobre eventos hist�ricos, reinos, guerras e figuras importantes.",
-    "EhProficiente": false,
-    "BonusBase": 0,
+    "Descricao": "Conhecimento sobre eventos históricos, reinos, guerras e figuras importantes.",
     "Icone": "icone_historia.png"
   },
   {
     "Id": "investigacao",
-    "Nome": "Investiga��o",
+    "Nome": "Investigação",
     "AtributoBase": "Inteligencia",
     "Tipo": "Habilidade",
-    "Descricao": "Habilidade de examinar pistas, analisar l�gica e encontrar detalhes ocultos.",
-    "EhProficiente": false,
-    "BonusBase": 0,
+    "Descricao": "Habilidade de examinar pistas, analisar lógica e encontrar detalhes ocultos.",
     "Icone": "icone_investigacao.png"
   },
   {
@@ -75,28 +61,22 @@
     "AtributoBase": "Inteligencia",
     "Tipo": "Habilidade",
     "Descricao": "Conhecimento sobre terreno, clima, plantas, animais e ecossistemas.",
-    "EhProficiente": false,
-    "BonusBase": 0,
     "Icone": "icone_natureza.png"
   },
   {
     "Id": "religiao",
-    "Nome": "Religi�o",
+    "Nome": "Religião",
     "AtributoBase": "Inteligencia",
     "Tipo": "Habilidade",
-    "Descricao": "Conhecimento sobre divindades, doutrinas, s�mbolos e rituais religiosos.",
-    "EhProficiente": false,
-    "BonusBase": 0,
+    "Descricao": "Conhecimento sobre divindades, doutrinas, símbolos e rituais religiosos.",
     "Icone": "icone_religiao.png"
   },
   {
     "Id": "intuicao",
-    "Nome": "Intui��o",
+    "Nome": "Intuição",
     "AtributoBase": "Sabedoria",
     "Tipo": "Habilidade",
-    "Descricao": "Capacidade de perceber emo��es, mentiras e inten��es ocultas.",
-    "EhProficiente": false,
-    "BonusBase": 0,
+    "Descricao": "Capacidade de perceber emoções, mentiras e intenções ocultas.",
     "Icone": "icone_intuicao.png"
   },
   {
@@ -104,29 +84,23 @@
     "Nome": "Medicina",
     "AtributoBase": "Sabedoria",
     "Tipo": "Habilidade",
-    "Descricao": "Capacidade de estabilizar feridos, diagnosticar doen�as e aplicar tratamentos.",
-    "EhProficiente": false,
-    "BonusBase": 0,
+    "Descricao": "Capacidade de estabilizar feridos, diagnosticar doenças e aplicar tratamentos.",
     "Icone": "icone_medicina.png"
   },
   {
     "Id": "percepcao",
-    "Nome": "Percep��o",
+    "Nome": "Percepção",
     "AtributoBase": "Sabedoria",
     "Tipo": "Habilidade",
-    "Descricao": "Capacidade de notar sons, cheiros, movimentos e mudan�as ao redor.",
-    "EhProficiente": false,
-    "BonusBase": 0,
+    "Descricao": "Capacidade de notar sons, cheiros, movimentos e mudanças ao redor.",
     "Icone": "icone_percepcao.png"
   },
   {
     "Id": "sobrevivencia",
-    "Nome": "Sobreviv�ncia",
+    "Nome": "Sobrevivência",
     "AtributoBase": "Sabedoria",
     "Tipo": "Habilidade",
-    "Descricao": "Habilidade para rastrear, ca�ar, encontrar comida ou sobreviver na natureza.",
-    "EhProficiente": false,
-    "BonusBase": 0,
+    "Descricao": "Habilidade para rastrear, caçar, encontrar comida ou sobreviver na natureza.",
     "Icone": "icone_sobrevivencia.png"
   },
   {
@@ -135,68 +109,62 @@
     "AtributoBase": "Sabedoria",
     "Tipo": "Habilidade",
     "Descricao": "Capacidade de interagir, acalmar ou treinar animais.",
-    "EhProficiente": false,
-    "BonusBase": 0,
     "Icone": "icone_trato_com_animais.png"
   },
   {
     "Id": "atuacao",
-    "Nome": "Atua��o",
+    "Nome": "Atuação",
     "AtributoBase": "Carisma",
     "Tipo": "Habilidade",
-    "Descricao": "Habilidade de se apresentar com canto, dan�a, atua��o ou conta��o de hist�rias.",
-    "EhProficiente": false,
-    "BonusBase": 0,
+    "Descricao": "Habilidade de se apresentar com canto, dança, atuação ou contação de histórias.",
     "Icone": "icone_atuacao.png"
   },
   {
     "Id": "enganacao",
-    "Nome": "Engana��o",
+    "Nome": "Enganação",
     "AtributoBase": "Carisma",
     "Tipo": "Habilidade",
     "Descricao": "Habilidade de mentir, omitir ou enganar com palavras ou comportamento.",
-    "EhProficiente": false,
-    "BonusBase": 0,
     "Icone": "icone_enganacao.png"
   },
   {
     "Id": "intimidacao",
-    "Nome": "Intimida��o",
+    "Nome": "Intimidação",
     "AtributoBase": "Carisma",
     "Tipo": "Habilidade",
-    "Descricao": "Capacidade de influenciar outros por amea�a, for�a ou imposi��o.",
-    "EhProficiente": false,
-    "BonusBase": 0,
+    "Descricao": "Capacidade de influenciar outros por ameaça, Forca ou imposição.",
     "Icone": "icone_intimidacao.png"
   },
   {
     "Id": "persuasao",
-    "Nome": "Persuas�o",
+    "Nome": "Persuasão",
     "AtributoBase": "Carisma",
     "Tipo": "Habilidade",
-    "Descricao": "Capacidade de influenciar outros de forma educada, encantadora ou diplom�tica.",
-    "EhProficiente": false,
-    "BonusBase": 0,
+    "Descricao": "Capacidade de influenciar outros de forma educada, encantadora ou diplomática.",
     "Icone": "icone_persuasao.png"
   },
   {
-    "Id": "ferramenta_artesao",
-    "Nome": "Ferramentas de Artes�o",
-    "AtributoBase": "Inteligencia",
-    "Tipo": "Ferramenta",
-    "Descricao": "Habilidade para usar ferramentas espec�ficas de artes�o.",
-    "EhProficiente": false,
-    "BonusBase": 0,
-    "Icone": "icone_ferramenta_artesao.png"
+    "Id": "truque",
+    "Nome": "Truque",
+    "AtributoBase": "Carisma",
+    "Tipo": "Habilidade",
+    "Descricao": "Conhecimento ou prática com pequenos efeitos mágicos triviais.",
+    "Icone": "icone_truque.png"
   },
   {
-    "Id": "pericia_espada_longa",
-    "Nome": "Per�cia com Espada Longa",
+    "Id": "natacao",
+    "Nome": "Natação",
     "AtributoBase": "Forca",
-    "Tipo": "PericiaDeArma",
-    "Descricao": "Habilidade para usar espadas longas com profici�ncia.",
-    "EhProficiente": false,
-    "BonusBase": 0,
-    "Icone": "icone_espada_longa.png"
+    "Tipo": "Habilidade",
+    "Descricao": "Habilidade para nadar com eficiência em diferentes tipos de água.",
+    "Icone": "icone_nadacao.png"
+  },
+  {
+    "Id": "escavacao",
+    "Nome": "Escavação",
+    "AtributoBase": "Forca",
+    "Tipo": "Habilidade",
+    "Descricao": "Habilidade para escavar túneis ou mover terra com eficiência.",
+    "Icone": "icone_escavar.png"
   }
 ]

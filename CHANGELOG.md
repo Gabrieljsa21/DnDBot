@@ -4,6 +4,14 @@ Todas as alterações significativas neste projeto serão documentadas neste arquiv
 
 O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e o versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.3.4] - 2025-07-08
+
+### Adicionado
+- Inserção dos dados de `Proficiencia`, `Pericia` e `Caracteristica` no banco de dados a partir dos arquivos JSON, garantindo consistência e integridade referencial.
+- Ajustes no arquivo JSON de proficiências para refletir o novo formato com campos obrigatórios e tipos corretos.
+- Padronização das proficiências no formato JSON, como `"armadura_media"`, para evitar erros de chave estrangeira.
+- Atualização da lógica de inserção de perícias para contemplar os campos obrigatórios e facilitar a manutenção.
+
 ## [1.3.3] - 2025-07-07
 
 ### Adicionado

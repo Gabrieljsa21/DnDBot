@@ -21,43 +21,6 @@ namespace DnDBot.Bot.Models
         public Atributo AtributoBase { get; set; }
 
         /// <summary>
-        /// Lista de atributos alternativos que podem ser usados para testes.
-        /// </summary>
-        public List<Atributo> AtributosAlternativos { get; set; }
-
-        /// <summary>
-        /// Tipo da perícia (habilidade, ferramenta, perícia de arma).
-        /// </summary>
-        public TipoPericia Tipo { get; set; } = TipoPericia.Habilidade;
-
-        /// <summary>
-        /// Indica se o personagem é proficiente nessa perícia.
-        /// </summary>
-        public bool EhProficiente { get; set; } = false;
-
-        /// <summary>
-        /// Indica se o personagem possui especialização (dobro do bônus de proficiência).
-        /// </summary>
-        public bool TemEspecializacao { get; set; } = false;
-
-        /// <summary>
-        /// Bônus base aplicado na perícia (ex: bônus de proficiência).
-        /// </summary>
-        public int BonusBase { get; set; } = 0;
-
-        /// <summary>
-        /// Bônus adicional, podendo vir de talentos, magias ou itens.
-        /// </summary>
-        public int BonusAdicional { get; set; } = 0;
-
-        public virtual ICollection<Antecedente> Antecedentes { get; set; } = new List<Antecedente>();
-
-        /// <summary>
-        /// Coleção de classes que podem estar relacionadas a essa perícia.
-        /// </summary>
-        public virtual ICollection<Classe> ClassesRelacionadas { get; set; } = new List<Classe>();
-
-        /// <summary>
         /// Níveis de dificuldade sugeridos para testes dessa perícia.
         /// </summary>
         public List<DificuldadePericia> Dificuldades { get; set; } = new();
@@ -70,20 +33,5 @@ namespace DnDBot.Bot.Models
             Dificuldades.ToDictionary(d => d.Tipo, d => d.Valor);
 
 
-        /// <summary>
-        /// Valor total calculado para essa perícia (atributo + bônus + proficiência).
-        /// </summary>
-        [JsonIgnore]
-        public int ValorTotal { get; set; }
-
-        /// <summary>
-        /// Enumeração dos tipos possíveis de perícia.
-        /// </summary>
-        public enum TipoPericia
-        {
-            Habilidade,
-            Ferramenta,
-            PericiaDeArma
-        }
     }
 }

@@ -22,6 +22,9 @@ namespace DnDBot.Bot.Commands.Ficha
         private readonly ControladorEtapasFicha _controladorEtapasFicha;
         private readonly IdiomaService _idiomaService;
         private readonly ResistenciaService _resistenciaService;
+        private readonly CaracteristicaService _caracteristicaService;
+        private readonly ProficienciaService _proficienciaService;
+        private readonly MagiaService _magiaService;
 
         public ComandoCriarFicha(
             FichaService fichaService,
@@ -32,7 +35,10 @@ namespace DnDBot.Bot.Commands.Ficha
             DistribuicaoAtributosHandler atributosHandler,
             ControladorEtapasFicha controladorEtapasFicha,
             IdiomaService idiomaService,
-            ResistenciaService resistenciaService
+            ResistenciaService resistenciaService,
+            CaracteristicaService caracteristicaService,
+            ProficienciaService proficienciaService,
+            MagiaService magiaService
             )
         {
             _fichaService = fichaService;
@@ -44,6 +50,9 @@ namespace DnDBot.Bot.Commands.Ficha
             _controladorEtapasFicha = controladorEtapasFicha;
             _idiomaService = idiomaService;
             _resistenciaService = resistenciaService;
+            _caracteristicaService = caracteristicaService;
+            _proficienciaService = proficienciaService;
+            _magiaService = magiaService;
         }
 
         /// <summary>
@@ -237,6 +246,36 @@ namespace DnDBot.Bot.Commands.Ficha
                     .ToList();
 
                 await _idiomaService.AdicionarIdiomasAsync(ficha.Id, idiomasEntidades);
+            }
+
+            if (subraca.Caracteristicas != null && subraca.Caracteristicas.Any())
+            {
+                var caracteristicas = subraca.Caracteristicas
+                    .Select(sr => sr.Caracteristica)
+                    .Where(c => c != null)
+                    .ToList();
+
+                await _caracteristicaService.AdicionarCaracteristicasAsync(ficha.Id, caracteristicas);
+            }
+
+            if (subraca.Proficiencias != null && subraca.Proficiencias.Any())
+            {
+                var proficiencias = subraca.Proficiencias
+                    .Select(sr => sr.Proficiencia)
+                    .Where(p => p != null)
+                    .ToList();
+
+                await _proficienciaService.AdicionarProficienciasAsync(ficha.Id, proficiencias);
+            }
+
+            if (subraca.MagiasRaciais != null && subraca.MagiasRaciais.Any())
+            {
+                var magias = subraca.MagiasRaciais
+                    .Select(sr => sr.Magia)
+                    .Where(m => m != null)
+                    .ToList();
+
+                await _magiaService.AdicionarMagiasAsync(ficha.Id, magias);
             }
 
             if (subraca.Resistencias != null && subraca.Resistencias.Any())

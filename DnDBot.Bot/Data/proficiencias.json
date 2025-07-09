@@ -1,0 +1,159 @@
+[
+  {
+    "Id": "prof_atletismo",
+    "Nome": "Proficiência em Atletismo",
+    "Tipo": "Pericia",
+    "PericiaId": "atletismo"
+  },
+  {
+    "Id": "prof_acrobacia",
+    "Nome": "Proficiência em Acrobacia",
+    "Tipo": "Pericia",
+    "PericiaId": "acrobacia"
+  },
+  {
+    "Id": "prof_furtividade",
+    "Nome": "Proficiência em Furtividade",
+    "Tipo": "Pericia",
+    "PericiaId": "furtividade"
+  },
+  {
+    "Id": "prof_prestidigitacao",
+    "Nome": "Proficiência em Prestidigitação",
+    "Tipo": "Pericia",
+    "PericiaId": "prestidigitacao"
+  },
+  {
+    "Id": "prof_arcanismo",
+    "Nome": "Proficiência em Arcanismo",
+    "Tipo": "Pericia",
+    "PericiaId": "arcanismo"
+  },
+  {
+    "Id": "prof_historia",
+    "Nome": "Proficiência em História",
+    "Tipo": "Pericia",
+    "PericiaId": "historia"
+  },
+  {
+    "Id": "prof_investigacao",
+    "Nome": "Proficiência em Investigação",
+    "Tipo": "Pericia",
+    "PericiaId": "investigacao"
+  },
+  {
+    "Id": "prof_natureza",
+    "Nome": "Proficiência em Natureza",
+    "Tipo": "Pericia",
+    "PericiaId": "natureza"
+  },
+  {
+    "Id": "prof_religiao",
+    "Nome": "Proficiência em Religião",
+    "Tipo": "Pericia",
+    "PericiaId": "religiao"
+  },
+  {
+    "Id": "prof_intuicao",
+    "Nome": "Proficiência em Intuição",
+    "Tipo": "Pericia",
+    "PericiaId": "intuicao"
+  },
+  {
+    "Id": "prof_medicina",
+    "Nome": "Proficiência em Medicina",
+    "Tipo": "Pericia",
+    "PericiaId": "medicina"
+  },
+  {
+    "Id": "prof_percepcao",
+    "Nome": "Proficiência em Percepção",
+    "Tipo": "Pericia",
+    "PericiaId": "percepcao"
+  },
+  {
+    "Id": "prof_sobrevivencia",
+    "Nome": "Proficiência em Sobrevivência",
+    "Tipo": "Pericia",
+    "PericiaId": "sobrevivencia"
+  },
+  {
+    "Id": "prof_trato_com_animais",
+    "Nome": "Proficiência em Trato com Animais",
+    "Tipo": "Pericia",
+    "PericiaId": "trato_com_animais"
+  },
+  {
+    "Id": "prof_atuacao",
+    "Nome": "Proficiência em Atuação",
+    "Tipo": "Pericia",
+    "PericiaId": "atuacao"
+  },
+  {
+    "Id": "prof_enganacao",
+    "Nome": "Proficiência em Enganação",
+    "Tipo": "Pericia",
+    "PericiaId": "enganacao"
+  },
+  {
+    "Id": "prof_intimidacao",
+    "Nome": "Proficiência em Intimidação",
+    "Tipo": "Pericia",
+    "PericiaId": "intimidacao"
+  },
+  {
+    "Id": "prof_persuasao",
+    "Nome": "Proficiência em Persuasão",
+    "Tipo": "Pericia",
+    "PericiaId": "persuasao"
+  },
+  {
+    "Id": "prof_truque",
+    "Nome": "Proficiência em Truque",
+    "Tipo": "Pericia",
+    "PericiaId": "truque"
+  },
+  {
+    "Id": "prof_natacao",
+    "Nome": "Proficiência em Natação",
+    "Tipo": "Pericia",
+    "PericiaId": "natacao"
+  },
+  {
+    "Id": "prof_escavacao",
+    "Nome": "Proficiência em Escavação",
+    "Tipo": "Pericia",
+    "PericiaId": "escavacao"
+  },
+  {
+    "Id": "prof_ferramenta_artesao",
+    "Nome": "Ferramentas de Artesão",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_espada_longa",
+    "Nome": "Espada Longa",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_espada_curva",
+    "Nome": "Espada Curva",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_arco_curto",
+    "Nome": "Arco Curto",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_rapieira",
+    "Nome": "Rapieira",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_armadura_media",
+    "Nome": "Armadura Média",
+    "Tipo": "Armadura"
+  }
+
+]

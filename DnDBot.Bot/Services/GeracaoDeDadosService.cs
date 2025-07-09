@@ -1,4 +1,5 @@
 ﻿using DnDBot.Bot.Data;
+using DnDBot.Bot.Models.Ficha.Auxiliares;
 using DnDBot.Bot.Services.DatabaseSetup;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
@@ -46,6 +47,7 @@ namespace DnDBot.Bot.Services
             await IdiomaDatabaseHelper.CriarTabelaAsync(cmd);
             await MagiaDatabaseHelper.CriarTabelaAsync(cmd);
             await PericiaDatabaseHelper.CriarTabelaAsync(cmd);
+            await ProficienciaDatabaseHelper.CriarTabelaAsync(cmd);
             await ArmaDatabaseHelper.CriarTabelaAsync(cmd);
             await ArmaduraDatabaseHelper.CriarTabelaAsync(cmd);
             await AlinhamentoDatabaseHelper.CriarTabelaAsync(cmd);
@@ -58,6 +60,7 @@ namespace DnDBot.Bot.Services
             await SubRacaResistenciaDatabaseHelper.CriarTabelaAsync(cmd);
             await SubRacaIdiomaDatabaseHelper.CriarTabelaAsync(cmd);
             await SubRacaCaracteristicaDatabaseHelper.CriarTabelaAsync(cmd);
+            await SubRacaProficienciaDatabaseHelper.CriarTabelaAsync(cmd);
         }
 
         /// <summary>
@@ -72,6 +75,7 @@ namespace DnDBot.Bot.Services
             await IdiomaDatabaseHelper.PopularAsync(connection, transaction);
             await MagiaDatabaseHelper.PopularAsync(connection, transaction);
             await PericiaDatabaseHelper.PopularAsync(connection, transaction);
+            await ProficienciaDatabaseHelper.PopularAsync(connection, transaction);
             await ArmaDatabaseHelper.PopularAsync(connection, transaction);
             await ArmaduraDatabaseHelper.PopularAsync(connection, transaction);
             await AlinhamentoDatabaseHelper.PopularAsync(connection, transaction);
@@ -83,6 +87,7 @@ namespace DnDBot.Bot.Services
             await SubRacaResistenciaDatabaseHelper.PopularAsync(connection, transaction);
             await SubRacaIdiomaDatabaseHelper.PopularAsync(connection, transaction);
             await SubRacaCaracteristicaDatabaseHelper.PopularAsync(connection, transaction);
+            await SubRacaProficienciaDatabaseHelper.PopularAsync(connection, transaction);
 
             transaction.Commit();
             Console.WriteLine("Commit feito!");
