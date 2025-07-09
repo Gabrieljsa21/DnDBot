@@ -1,8 +1,11 @@
-﻿using DnDBot.Bot.Models.Enums;
+﻿using DnDBot.Bot.Data;
+using DnDBot.Bot.Models.Enums;
+using DnDBot.Bot.Models.Ficha;
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -56,14 +59,22 @@ public static class SubRacaResistenciaDatabaseHelper
                     continue;
                 }
 
-                var sql = "INSERT OR IGNORE INTO SubRacaResistencia (SubRacaId, TipoDano) VALUES ($subId, $tipoDano)";
+                var resistencia = ResistenciasData.Resistencias.FirstOrDefault(r => r.TipoDano == tipoDanoEnum);
+                if (resistencia == null)
+                {
+                    Console.WriteLine($"❌ Nenhuma resistência encontrada para tipo de dano: {tipoDanoEnum}");
+                    continue;
+                }
+
+                var sql = "INSERT OR IGNORE INTO SubRacaResistencia (SubRacaId, ResistenciaId) VALUES ($subId, $resistenciaId)";
                 var cmd = conn.CreateCommand();
                 cmd.Transaction = tx;
                 cmd.CommandText = sql;
                 cmd.Parameters.AddWithValue("$subId", subRacaId);
-                cmd.Parameters.AddWithValue("$tipoDano", tipoDanoEnum.ToString());
+                cmd.Parameters.AddWithValue("$resistenciaId", resistencia.Id);
                 await cmd.ExecuteNonQueryAsync();
             }
+
         }
 
         Console.WriteLine("✅ Resistências de sub-raças populadas.");

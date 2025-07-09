@@ -7,15 +7,15 @@ namespace DnDBot.Bot.Data.Configurations
 {
     public class MagiaConfiguration : IEntityTypeConfiguration<Magia>
     {
-        public void Configure(EntityTypeBuilder<Magia> builder)
+        public void Configure(EntityTypeBuilder<Magia> entity)
         {
-            builder.HasKey(m => m.Id);
+            entity.HasKey(m => m.Id);
 
-            builder.Property(m => m.Nome)
+            entity.Property(m => m.Nome)
                 .IsRequired()
                 .HasMaxLength(100);
 
-            builder.HasMany(m => m.MagiaTags)
+            entity.HasMany(m => m.MagiaTags)
                 .WithOne(mt => mt.Magia)
                 .HasForeignKey(mt => mt.MagiaId);
         }

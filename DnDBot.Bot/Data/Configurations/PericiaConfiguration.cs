@@ -51,25 +51,6 @@ namespace DnDBot.Bot.Data.Configurations
             entity.Ignore(p => p.DificuldadeSugerida);
             entity.Ignore(p => p.ValorTotal);
 
-            // Muitos-para-muitos: Pericia <-> Classe
-            entity.HasMany(p => p.ClassesRelacionadas)
-                  .WithMany(c => c.PericiasRelacionadas)
-                  .UsingEntity<Dictionary<string, object>>(
-                      "Classe_Pericia",
-                      j => j.HasOne<Classe>()
-                            .WithMany()
-                            .HasForeignKey("ClasseId")
-                            .HasConstraintName("FK_Classe_Pericia_Classe"),
-                      j => j.HasOne<Pericia>()
-                            .WithMany()
-                            .HasForeignKey("PericiaId")
-                            .HasConstraintName("FK_Classe_Pericia_Pericia"),
-                      j =>
-                      {
-                          j.HasKey("ClasseId", "PericiaId");
-                          j.ToTable("Classe_Pericia");
-                      });
-
             // Um-para-muitos: Pericia -> Dificuldades
             entity.HasMany(p => p.Dificuldades)
                   .WithOne()

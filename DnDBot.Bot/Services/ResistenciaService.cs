@@ -45,25 +45,31 @@ namespace DnDBot.Bot.Services
         }
 
 
-        public async Task AdicionarResistenciasAsync(Guid fichaId, IEnumerable<TipoDano> tiposDano)
+        public async Task AdicionarResistenciasAsync(Guid fichaId, IEnumerable<string> resistenciaIds)
         {
             var ficha = await _fichaService.ObterFichaPorIdAsync(fichaId);
             if (ficha == null) throw new InvalidOperationException("Ficha não encontrada");
 
-            foreach (var tipo in tiposDano)
+            var todasResistencias = await ObterTodosResistenciasAsync(); // ou buscar apenas as necessárias
+            var mapaResistencias = todasResistencias.ToDictionary(r => r.Id);
+
+            foreach (var resistenciaId in resistenciaIds.Distinct())
             {
-                if (!ficha.Resistencias.Any(r => r.TipoDano == tipo))
+                if (!ficha.Resistencias.Any(r => r.ResistenciaId == resistenciaId) && mapaResistencias.TryGetValue(resistenciaId, out var resistencia))
                 {
                     ficha.Resistencias.Add(new FichaPersonagemResistencia
                     {
                         FichaPersonagemId = ficha.Id,
-                        TipoDano = tipo
+                        ResistenciaId = resistencia.Id,
+                        TipoDano = resistencia.TipoDano
                     });
                 }
             }
 
             await _dbContext.SaveChangesAsync();
         }
+
+
 
 
         public static async Task<List<TipoDano>> ObterResistenciasDisponiveisAsync(FichaPersonagem ficha, ResistenciaService resistenciaService)
@@ -90,21 +96,24 @@ namespace DnDBot.Bot.Services
         {
             var todos = await resistenciaService.ObterTodosResistenciasAsync();
 
-            var conhecidos = ficha.Resistencias.Select(i => i.TipoDano).ToHashSet();
+            // Verifica resistências já conhecidas pela ficha
+            var conhecidos = ficha.Resistencias.Select(r => r.ResistenciaId).ToHashSet();
 
+            // Filtra resistências ainda não adicionadas
             var selecionados = todos
-                .Where(r => resistenciaIds.Contains(r.Id) && !conhecidos.Contains(r.TipoDano))
+                .Where(r => resistenciaIds.Contains(r.Id) && !conhecidos.Contains(r.Id))
                 .ToList();
 
             if (!selecionados.Any())
                 return null;
 
-            var tiposParaAdicionar = selecionados.Select(r => r.TipoDano);
+            var idsParaAdicionar = selecionados.Select(r => r.Id);
 
-            await resistenciaService.AdicionarResistenciasAsync(ficha.Id, tiposParaAdicionar);
+            await resistenciaService.AdicionarResistenciasAsync(ficha.Id, idsParaAdicionar);
 
             return string.Join(", ", selecionados.Select(r => r.Nome));
         }
+
 
 
 

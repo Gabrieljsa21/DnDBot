@@ -95,6 +95,7 @@ namespace DnDBot.Bot.Models.Enums
         Colossal
     }
 
+
     public enum TipoDano
     {
         /// <summary>Dano causado por armas cortantes, como espadas e machados.</summary>

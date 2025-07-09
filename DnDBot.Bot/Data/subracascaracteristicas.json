@@ -1,0 +1,307 @@
+{
+  "aasimar_caido": [
+    "legado_celestial",
+    "radiancia_curativa",
+    "capa_necrotica"
+  ],
+  "aasimar_guardiao": [
+    "legado_celestial",
+    "radiancia_curativa",
+    "consumacao_radiante"
+  ],
+  "aasimar_protetor": [
+    "legado_celestial",
+    "radiancia_curativa",
+    "alma_radiante"
+  ],
+  "anao_da_colina": [
+    "visao_no_escuro",
+    "resistencia_ana",
+    "sabedoria_das_pedras",
+    "robustez_ana"
+  ],
+  "anao_da_montanha": [
+    "visao_no_escuro",
+    "resistencia_ana",
+    "sabedoria_das_pedras",
+    "treinamento_com_armas_anao",
+    "proficiencia_ferramentas"
+  ],
+  "anao_das_profundezas": [
+    "visao_no_escuro",
+    "resistencia_ana",
+    "sabedoria_das_pedras",
+    "conjuracao_duergar",
+    "resistencia_duergar"
+  ],
+  "bugbear": [
+    "visao_no_escuro",
+    "ataque_surpresa",
+    "membros_longos",
+    "forca_bruta"
+  ],
+  "centauro": [
+    "investida",
+    "casco",
+    "protecao_da_natureza",
+    "estrutura_equina"
+  ],
+  "changeling": [
+    "habilidades_changeante",
+    "metamorfo"
+  ],
+  "draconato_dragao_azul": [
+    "ancestralidade_draconica",
+    "sopro_relampago",
+    "resistencia_relampago"
+  ],
+  "draconato_dragao_branco": [
+    "ancestralidade_draconica",
+    "sopro_frio",
+    "resistencia_frio"
+  ],
+  "draconato_dragao_bronze": [
+    "ancestralidade_draconica",
+    "sopro_relampago",
+    "resistencia_relampago"
+  ],
+  "draconato_dragao_cobre": [
+    "ancestralidade_draconica",
+    "sopro_acido",
+    "resistencia_acido"
+  ],
+  "draconato_dragao_latao": [
+    "ancestralidade_draconica",
+    "sopro_acido",
+    "resistencia_acido"
+  ],
+  "draconato_dragao_negro": [
+    "ancestralidade_draconica",
+    "sopro_de_fogo",
+    "resistencia_fogo"
+  ],
+  "draconato_dragao_ouro": [
+    "ancestralidade_draconica",
+    "sopro_fogo",
+    "resistencia_fogo"
+  ],
+  "draconato_dragao_prata": [
+    "ancestralidade_draconica",
+    "sopro_frio",
+    "resistencia_frio"
+  ],
+  "draconato_dragao_verde": [
+    "ancestralidade_draconica",
+    "sopro_gas_venenoso",
+    "resistencia_veneno"
+  ],
+  "draconato_dragao_vermelho": [
+    "ancestralidade_draconica",
+    "sopro_fogo",
+    "resistencia_fogo"
+  ],
+  "drow": [
+    "visao_no_escuro",
+    "ancestral_fey",
+    "transe",
+    "sensibilidade_ao_sol",
+    "magia_elfica_drow"
+  ],
+  "eladrin": [
+    "visao_no_escuro",
+    "sentidos_agucados",
+    "ancestral_fey",
+    "transe",
+    "passo_fey"
+  ],
+  "elfo_alto": [
+    "visao_no_escuro",
+    "sentidos_agucados",
+    "ancestral_fey",
+    "transe",
+    "truque_arcano"
+  ],
+  "elfo_da_floresta": [
+    "visao_no_escuro",
+    "sentidos_agucados",
+    "ancestral_fey",
+    "transe",
+    "mascara_da_floresta",
+    "corrida_leve"
+  ],
+  "firbolg": [
+    "magia_firbolg",
+    "passo_oculto",
+    "forca_construtiva",
+    "fala_com_animais"
+  ],
+  "genasi_agua": [
+    "visao_no_escuro",
+    "anfibio",
+    "velocidade_natacao"
+  ],
+  "genasi_da_terra": [
+    "visao_no_escuro",
+    "passar_sem_traco",
+    "caminhada_na_terra"
+  ],
+  "genasi_do_ar": [
+    "visao_no_escuro",
+    "respiracao_infinita",
+    "caminhada_pelo_vento"
+  ],
+  "genasi_fogo": [
+    "visao_no_escuro",
+    "resistencia_fogo",
+    "flama_criativa"
+  ],
+  "gnomo_da_floresta": [
+    "visao_no_escuro",
+    "mente_gnomica",
+    "ilusionista_natural",
+    "fala_com_pequenos"
+  ],
+  "gnomo_das_rochas": [
+    "visao_no_escuro",
+    "mente_gnomica",
+    "inventor"
+  ],
+  "goblin": [
+    "visao_no_escuro",
+    "fuga_rapida",
+    "furia_do_pequeno"
+  ],
+  "goliath": [
+    "atletismo_natural",
+    "resistencia_pedra",
+    "constituicao_montanhosa",
+    "forca_construtiva"
+  ],
+  "halfling_pes_leves": [
+    "sortudo",
+    "corajoso",
+    "agilidade_halfling"
+  ],
+  "halfling_robusto": [
+    "sortudo",
+    "corajoso",
+    "resistencia_halfling"
+  ],
+  "humano_padrao": [
+    "habilidade_extra",
+    "idioma_extra"
+  ],
+  "humano_variante": [
+    "pericia_extra",
+    "destaque"
+  ],
+  "kenku": [
+    "pericia_dupla",
+    "mimetismo",
+    "combate_com_duas_armas"
+  ],
+  "kobold": [
+    "visao_no_escuro",
+    "recursos_rapidos",
+    "submissao_oracao"
+  ],
+  "leonin": [
+    "visao_no_escuro",
+    "rugido_intimidante",
+    "legado_de_cacador",
+    "agilidade_leonin"
+  ],
+  "meio_elfo": [
+    "visao_no_escuro",
+    "ancestral_fey",
+    "versatilidade_pericias",
+    "idioma_extra"
+  ],
+  "meio_orc": [
+    "visao_no_escuro",
+    "amedrontar",
+    "resistencia_inabalavel",
+    "ataques_sangrentos"
+  ],
+  "satiro": [
+    "magia_fey",
+    "resistencia_fey",
+    "investida_corporal"
+  ],
+  "shadar_kai": [
+    "visao_no_escuro",
+    "ancestral_fey",
+    "transe",
+    "salto_sombroso",
+    "inverno_perpetuo"
+  ],
+  "tabaxi": [
+    "visao_no_escuro",
+    "agilidade_felina",
+    "garras_de_gato",
+    "talentos_de_gato"
+  ],
+  "tiefling_baalzebul": [
+    "visao_no_escuro",
+    "resistencia_infernal",
+    "legado_de_baalzebul"
+  ],
+  "tiefling_dispater": [
+    "visao_no_escuro",
+    "resistencia_infernal",
+    "legado_de_dispater"
+  ],
+  "tiefling_fierna": [
+    "visao_no_escuro",
+    "resistencia_infernal",
+    "legado_de_fierna"
+  ],
+  "tiefling_glasya": [
+    "visao_no_escuro",
+    "resistencia_infernal",
+    "legado_de_glasya"
+  ],
+  "tiefling_levistus": [
+    "visao_no_escuro",
+    "resistencia_infernal",
+    "legado_de_levistus"
+  ],
+  "tiefling_mammon": [
+    "visao_no_escuro",
+    "resistencia_infernal",
+    "legado_de_mammon"
+  ],
+  "tiefling_mephistopheles": [
+    "visao_no_escuro",
+    "resistencia_infernal",
+    "legado_de_mephistopheles"
+  ],
+  "tiefling_padrao": [
+    "visao_no_escuro",
+    "resistencia_infernal",
+    "legado_infernal"
+  ],
+  "tiefling_zariel": [
+    "visao_no_escuro",
+    "resistencia_infernal",
+    "legado_de_zariel"
+  ],
+  "tritao": [
+    "visao_no_escuro",
+    "anfibio",
+    "guardiao_das_profundezas",
+    "resistencia_de_facao"
+  ],
+  "warforged": [
+    "protecao_integrada",
+    "resistencia_construto",
+    "repouso_de_sentinela",
+    "corpo_engenheirado"
+  ],
+  "yuan_ti_puro_sangue": [
+    "visao_no_escuro",
+    "conjuracao_inata",
+    "resistencia_magica",
+    "imunidade_veneno"
+  ]
+}

@@ -11,8 +11,7 @@ namespace DnDBot.Bot.Models.ItensInventario
     /// </summary>
     public class Inventario : EntidadeBase
     {
-        private readonly List<ItemInventario> itens = new();
-        public IReadOnlyList<ItemInventario> Itens => itens.AsReadOnly();
+        public List<InventarioItem> Itens { get; set; } = new();
         public List<EquipamentoItem> Equipados { get; set; } = new();
 
         public double PesoMaximo { get; set; } = 50.0;
@@ -23,7 +22,7 @@ namespace DnDBot.Bot.Models.ItensInventario
         // Propriedade de navegação (precisa existir para configurar o relacionamento 1:1)
         public FichaPersonagem FichaPersonagem { get; set; }
 
-        public double PesoAtual => itens.Sum(i => i.PesoTotal);
+        public double PesoAtual => Itens.Sum(i => i.PesoTotal);
 
         public bool PodeAdicionarItem(Item item, int quantidade)
         {
@@ -36,42 +35,42 @@ namespace DnDBot.Bot.Models.ItensInventario
             if (!PodeAdicionarItem(item, quantidade))
                 return false;
 
-            var existente = itens.FirstOrDefault(i => i.ItemBase.Id == item.Id);
+            var existente = Itens.FirstOrDefault(i => i.ItemBase.Id == item.Id);
             if (existente != null && item.Empilhavel)
                 existente.Adicionar(quantidade);
             else
-                itens.Add(new ItemInventario(item, quantidade));
+                Itens.Add(new InventarioItem(item, quantidade));
 
             return true;
         }
 
         public bool RemoverItem(string itemId, int quantidade)
         {
-            var item = itens.FirstOrDefault(i => i.ItemBase.Id == itemId);
+            var item = Itens.FirstOrDefault(i => i.ItemBase.Id == itemId);
             if (item == null || item.Quantidade < quantidade)
                 return false;
 
             item.Remover(quantidade);
             if (item.Quantidade <= 0)
-                itens.Remove(item);
+                Itens.Remove(item);
 
             return true;
         }
 
-        public IEnumerable<ItemInventario> ListarPorCategoria(string categoria)
+        public IEnumerable<InventarioItem> ListarPorCategoria(string categoria)
         {
-            return itens.Where(i => i.ItemBase.Categoria.Equals(categoria, StringComparison.OrdinalIgnoreCase));
+            return Itens.Where(i => i.ItemBase.Categoria.Equals(categoria, StringComparison.OrdinalIgnoreCase));
         }
 
         public void LimparInventario()
         {
-            itens.Clear();
+            Itens.Clear();
         }
 
 
-        public ItemInventario ObterItem(string itemId)
+        public InventarioItem ObterItem(string itemId)
         {
-            return itens.FirstOrDefault(i => i.ItemBase.Id == itemId);
+            return Itens.FirstOrDefault(i => i.ItemBase.Id == itemId);
         }
 
         public bool PossuiItem(string itemId, int quantidade = 1)

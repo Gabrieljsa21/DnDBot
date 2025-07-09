@@ -23,14 +23,14 @@ namespace DnDBot.Bot.Commands.Ficha
         {
             await idiomaService.ObterFichaIdiomasAsync(ficha);
             var todosIdiomas = await idiomaService.ObterTodosIdiomasAsync();
-            var conhecidos = ficha.Idiomas.Select(i => i.Id).ToHashSet();
+            var conhecidos = ficha.Idiomas.Select(i => i.IdiomaId).ToHashSet();
             return todosIdiomas.Where(i => !conhecidos.Contains(i.Id)).ToList();
         }
 
         public static async Task<string> AdicionarIdiomasAsync(FichaPersonagem ficha, IEnumerable<string> idiomaIds, IdiomaService idiomaService)
         {
             var todos = await idiomaService.ObterTodosIdiomasAsync();
-            var conhecidos = ficha.Idiomas.Select(i => i.Id).ToHashSet();
+            var conhecidos = ficha.Idiomas.Select(i => i.IdiomaId).ToHashSet();
             var selecionados = todos.Where(i => idiomaIds.Contains(i.Id) && !conhecidos.Contains(i.Id)).ToList();
 
             if (!selecionados.Any())
@@ -82,7 +82,7 @@ namespace DnDBot.Bot.Commands.Ficha
                 return;
             }
 
-            var placeholder = ficha.Idiomas.FirstOrDefault(i => i.Id == "adicional");
+            var placeholder = ficha.Idiomas.FirstOrDefault(i => i.IdiomaId == "adicional");
             if (placeholder != null)
             {
                 ficha.Idiomas.Remove(placeholder);

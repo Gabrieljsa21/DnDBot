@@ -6,17 +6,17 @@ namespace DnDBot.Bot.Data.Configurations
 {
     public class IdiomaConfiguration : IEntityTypeConfiguration<Idioma>
     {
-        public void Configure(EntityTypeBuilder<Idioma> builder)
+        public void Configure(EntityTypeBuilder<Idioma> entity)
         {
-            builder.HasKey(i => i.Id);
+            entity.HasKey(i => i.Id);
 
-            builder.Property(i => i.Nome)
+            entity.Property(i => i.Nome)
                    .HasMaxLength(50)
                    .IsRequired();
 
             // Relação many-to-many com FichaPersonagem configurada em FichaPersonagemConfiguration
 
-            builder.ToTable("Idioma");
+            entity.ToTable("Idioma");
         }
     }
 }

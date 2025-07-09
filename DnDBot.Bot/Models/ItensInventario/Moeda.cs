@@ -10,7 +10,7 @@ namespace DnDBot.Bot.Models.ItensInventario
     /// </summary>
     public class Moeda
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         /// <summary>
         /// Tipo da moeda (ex: PC, PP, PE, PO, PL).
         /// </summary>

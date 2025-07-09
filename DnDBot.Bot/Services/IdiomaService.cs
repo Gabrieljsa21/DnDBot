@@ -1,5 +1,6 @@
 ﻿using DnDBot.Bot.Data;
 using DnDBot.Bot.Models.Ficha;
+using DnDBot.Bot.Models.Ficha.Auxiliares;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -47,7 +48,10 @@ namespace DnDBot.Bot.Services
             var ficha = await _fichaService.ObterFichaPorIdAsync(fichaId);
             if (ficha == null) throw new InvalidOperationException("Ficha não encontrada");
 
-            var idiomaIds = idiomas.Select(i => i.Id).ToList();
+            var idiomaIds = idiomas
+                .Where(i => i != null)
+                .Select(i => i.Id)
+                .ToList();
 
             var idiomasDb = await _dbContext.Idioma
                 .Where(i => idiomaIds.Contains(i.Id))
@@ -55,14 +59,19 @@ namespace DnDBot.Bot.Services
 
             foreach (var idioma in idiomasDb)
             {
-                if (!ficha.Idiomas.Any(i => i.Id == idioma.Id))
+                if (!ficha.Idiomas.Any(fi => fi.IdiomaId == idioma.Id))
                 {
-                    ficha.Idiomas.Add(idioma);
+                    ficha.Idiomas.Add(new FichaPersonagemIdioma
+                    {
+                        FichaPersonagemId = ficha.Id,
+                        IdiomaId = idioma.Id
+                    });
                 }
             }
 
             await _dbContext.SaveChangesAsync();
         }
+
 
         public static async Task<FichaPersonagem> ObterFichaValidaAsync(Guid fichaId, ulong userId, FichaService fichaService)
         {
@@ -78,7 +87,7 @@ namespace DnDBot.Bot.Services
             await idiomaService.ObterFichaIdiomasAsync(ficha);
             var todosIdiomas = await idiomaService.ObterTodosIdiomasAsync();
 
-            var conhecidos = ficha.Idiomas.Select(i => i.Id).ToHashSet();
+            var conhecidos = ficha.Idiomas.Select(i => i.IdiomaId).ToHashSet();
             return todosIdiomas
                 .Where(i => !conhecidos.Contains(i.Id))
                 .ToList();
@@ -87,7 +96,7 @@ namespace DnDBot.Bot.Services
         public static async Task<string> AdicionarIdiomasAsync(FichaPersonagem ficha, IEnumerable<string> idiomaIds, IdiomaService idiomaService)
         {
             var todos = await idiomaService.ObterTodosIdiomasAsync();
-            var conhecidos = ficha.Idiomas.Select(i => i.Id).ToHashSet();
+            var conhecidos = ficha.Idiomas.Select(i => i.IdiomaId).ToHashSet();
 
             var selecionados = todos
                 .Where(i => idiomaIds.Contains(i.Id) && !conhecidos.Contains(i.Id))

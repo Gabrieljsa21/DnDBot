@@ -162,10 +162,10 @@ namespace DnDBot.Bot.Commands.Ficha
             var ficha = FichaTempStore.GetOrCreateFicha(Context.User.Id);
             ficha.AntecedenteId = valor;
 
-            if (antecedente.RiquezaInicial != null)
+            if (antecedente.Moedas != null)
             {
-                foreach (var moeda in antecedente.RiquezaInicial)
-                    ficha.BolsaDeMoedas.Adicionar(moeda);
+                foreach (var moeda in antecedente.Moedas)
+                    ficha.BolsaDeMoedas.Adicionar(moeda.Moeda);
             }
 
             if (ControladorEtapasFicha.ValidadorFicha.EstaCompleta(ficha))
@@ -232,13 +232,21 @@ namespace DnDBot.Bot.Commands.Ficha
 
             if (subraca.Idiomas != null && subraca.Idiomas.Any())
             {
-                await _idiomaService.AdicionarIdiomasAsync(ficha.Id, subraca.Idiomas);
+                var idiomasEntidades = subraca.Idiomas
+                    .Select(sr => sr.Idioma)
+                    .ToList();
+
+                await _idiomaService.AdicionarIdiomasAsync(ficha.Id, idiomasEntidades);
             }
 
             if (subraca.Resistencias != null && subraca.Resistencias.Any())
             {
-                var tipos = subraca.Resistencias.Select(sr => sr.TipoDano);
-                await _resistenciaService.AdicionarResistenciasAsync(ficha.Id, tipos);
+                var ids = subraca.Resistencias
+                    .Where(sr => sr.ResistenciaId != null)
+                    .Select(sr => sr.ResistenciaId);
+
+                await _resistenciaService.AdicionarResistenciasAsync(ficha.Id, ids);
+
             }
 
 

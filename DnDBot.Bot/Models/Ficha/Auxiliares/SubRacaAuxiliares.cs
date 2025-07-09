@@ -29,12 +29,49 @@ namespace DnDBot.Bot.Models.Ficha.Auxiliares
         public Alinhamento Alinhamento { get; set; }
     }
 
+    public class SubRacaIdioma
+    {
+        public string SubRacaId { get; set; }
+        public SubRaca SubRaca { get; set; }
+
+        public string IdiomaId { get; set; }
+        public Idioma Idioma { get; set; }
+    }
+
+    public class SubRacaCaracteristica
+    {
+        public string SubRacaId { get; set; }
+        public SubRaca SubRaca { get; set; }
+
+        public string CaracteristicaId { get; set; }
+        public Caracteristica Caracteristica { get; set; }
+    }
+
     public class SubRacaResistencia
     {
         public string SubRacaId { get; set; }
         public SubRaca SubRaca { get; set; }
 
-        public TipoDano TipoDano { get; set; }
+        public string ResistenciaId { get; set; }
+        public Resistencia Resistencia { get; set; }
+    }
+
+    public class SubRacaProficiencia
+    {
+        public string SubRacaId { get; set; }
+        public SubRaca SubRaca { get; set; }
+
+        public string ProficienciaId{ get; set; }
+        public Proficiencia Proficiencia { get; set; }
+    }
+
+    public class SubRacaMagia
+    {
+        public string SubRacaId { get; set; }
+        public SubRaca SubRaca { get; set; }
+
+        public string MagiaId{ get; set; }
+        public Magia Magia { get; set; }
     }
 
 }

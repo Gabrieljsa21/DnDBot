@@ -40,13 +40,7 @@ public static class RacaDatabaseHelper
                 AlinhamentoId TEXT NOT NULL,
                 PRIMARY KEY (SubRacaId, AlinhamentoId),
                 FOREIGN KEY (SubRacaId) REFERENCES SubRaca(Id) ON DELETE CASCADE,
-                FOREIGN KEY (AlinhamentoId) REFERENCES Alinhamento(Id) ON DELETE CASCADE",
-            ["SubRaca_Idioma"] = @"
-                SubRacaId TEXT NOT NULL,
-                IdiomaId TEXT NOT NULL,
-                PRIMARY KEY (SubRacaId, IdiomaId),
-                FOREIGN KEY (SubRacaId) REFERENCES SubRaca(Id) ON DELETE CASCADE,
-                FOREIGN KEY (IdiomaId) REFERENCES Idioma(Id) ON DELETE CASCADE"
+                FOREIGN KEY (AlinhamentoId) REFERENCES Alinhamento(Id) ON DELETE CASCADE"
         };
 
         foreach (var tabela in definicoes)
@@ -110,7 +104,6 @@ public static class RacaDatabaseHelper
 
             await InserirSubRaca(conn, tx, sub, racaId);
             await InserirSubRacaAlinhamentos(conn, tx, sub);
-            await InserirSubRacaIdiomas(conn, tx, sub);
         }
     }
 
@@ -156,32 +149,4 @@ public static class RacaDatabaseHelper
         }
     }
 
-    private static async Task InserirSubRacaIdiomas(SqliteConnection conn, SqliteTransaction tx, SubRaca sub)
-    {
-        foreach (var idioma in sub.Idiomas)
-        {
-            var idiomaId = idioma.Id;
-
-            if (string.IsNullOrWhiteSpace(idiomaId))
-            {
-                Console.WriteLine($"❌ Idioma sem ID em SubRaca '{sub.Id}'. Ignorado.");
-                continue;
-            }
-
-            if (!await SqliteHelper.RegistroExisteAsync(conn, tx, "Idioma", idiomaId))
-            {
-                Console.WriteLine($"⚠ Idioma '{idiomaId}' não existe na tabela. Ignorando essa entrada.");
-                continue;
-            }
-
-            var sql = "INSERT OR IGNORE INTO SubRaca_Idioma (SubRacaId, IdiomaId) VALUES ($subId, $idiomaId)";
-            var cmd = SqliteHelper.CriarInsertCommand(conn, tx, sql, new Dictionary<string, object>
-            {
-                ["subId"] = sub.Id,
-                ["idiomaId"] = idiomaId
-            });
-
-            await cmd.ExecuteNonQueryAsync();
-        }
-    }
 }

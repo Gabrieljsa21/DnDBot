@@ -6,17 +6,17 @@ namespace DnDBot.Bot.Models.ItensInventario
     /// <summary>
     /// Representa um item armazenado no inventário do personagem, com quantidade.
     /// </summary>
-    public class ItemInventario : EntidadeBase
+    public class InventarioItem : EntidadeBase
     {
         /// <summary>
         /// Construtor sem parâmetros obrigatório para o Entity Framework.
         /// </summary>
-        public ItemInventario() { }
+        public InventarioItem() { }
 
         /// <summary>
         /// Construtor principal.
         /// </summary>
-        public ItemInventario(Item item, int quantidade)
+        public InventarioItem(Item item, int quantidade)
         {
             ItemBase = item ?? throw new ArgumentNullException(nameof(item));
             Quantidade = quantidade > 0 ? quantidade : throw new ArgumentOutOfRangeException(nameof(quantidade));

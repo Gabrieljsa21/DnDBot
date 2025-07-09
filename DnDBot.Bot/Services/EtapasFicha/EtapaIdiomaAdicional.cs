@@ -20,19 +20,19 @@ namespace DnDBot.Bot.Services.EtapasFicha
         public Task<bool> EstaCompletaAsync(FichaPersonagem ficha)
         {
             // Completo se não tiver idiomas "adicional" pendentes
-            bool completa = !ficha.Idiomas.Any(i => i.Id == "adicional");
+            bool completa = !ficha.Idiomas.Select(x => x.Idioma).Any(i => i.Id == "adicional");
             return Task.FromResult(completa);
         }
 
         public async Task ExecutarAsync(FichaPersonagem ficha, SocketInteractionContext context, bool usarFollowUp = false)
         {
             ficha.EtapaAtual = EtapaCriacaoFicha.Idiomas;
-            int qtdAdicionais = ficha.Idiomas.Count(i => i.Id == "adicional");
+            int qtdAdicionais = ficha.Idiomas.Select(x => x.Idioma).Count(i => i.Id == "adicional");
             if (qtdAdicionais == 0)
                 return;
 
             var todosIdiomas = await _idiomaService.ObterTodosIdiomasAsync();
-            var conhecidos = ficha.Idiomas.Where(i => i.Id != "adicional").Select(i => i.Id).ToHashSet();
+            var conhecidos = ficha.Idiomas.Select(x => x.Idioma).Where(i => i.Id != "adicional").Select(i => i.Id).ToHashSet();
 
             var disponiveis = todosIdiomas
                 .Where(i => i.Id != "adicional" && !conhecidos.Contains(i.Id))

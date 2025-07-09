@@ -36,7 +36,7 @@ namespace DnDBot.Bot.Models.Ficha
         /// <summary>
         /// Idiomas que a sub-raça conhece por padrão.
         /// </summary>
-        public List<Idioma> Idiomas { get; set; } = new();
+        public List<SubRacaIdioma> Idiomas { get; set; } = new();
 
         /// <summary>
         /// Tipos de resistência concedidas (ex: resistência a dano radiante).
@@ -46,7 +46,7 @@ namespace DnDBot.Bot.Models.Ficha
         /// <summary>
         /// Proficiências concedidas pela sub-raça (ex: armas, ferramentas, perícias).
         /// </summary>
-        public List<Proficiencia> Proficiencias { get; set; } = new();
+        public List<SubRacaProficiencia> Proficiencias { get; set; } = new();
 
         /// <summary>
         /// Alcance da visão no escuro em metros. Use 0 para indicar que a sub-raça não possui visão no escuro.
@@ -56,12 +56,12 @@ namespace DnDBot.Bot.Models.Ficha
         /// <summary>
         /// Características especiais únicas da sub-raça.
         /// </summary>
-        public List<Caracteristica> Caracteristicas { get; set; } = new();
+        public List<SubRacaCaracteristica> Caracteristicas { get; set; } = new();
 
         /// <summary>
         /// Lista de magias raciais que o personagem pode conjurar.
         /// </summary>
-        public List<Magia> MagiasRaciais { get; set; } = new();
+        public List<SubRacaMagia> MagiasRaciais { get; set; } = new();
 
         /// <summary>
         /// ID da raça à qual a sub-raça pertence.

@@ -42,15 +42,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum"
-          },
-          {
-            "Id": "celestial"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 18,
         "Resistencias": [
@@ -212,15 +203,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum"
-          },
-          {
-            "Id": "celestial"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 18,
         "Resistencias": [
@@ -331,38 +313,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 7,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "ImagemUrl": "",
-            "IconeUrl": "",
-            "CriadoPor": "sistema",
-            "CriadoEm": null,
-            "ModificadoPor": "",
-            "ModificadoEm": null,
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "anao",
-            "Nome": "Anão",
-            "Descricao": "Idioma tradicional dos anões, escrito com o alfabeto anão.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "ImagemUrl": "",
-            "IconeUrl": "",
-            "CriadoPor": "sistema",
-            "CriadoEm": null,
-            "ModificadoPor": "",
-            "ModificadoEm": null,
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 18,
         "Resistencias": [
@@ -453,38 +403,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 7,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "ImagemUrl": "",
-            "IconeUrl": "",
-            "CriadoPor": "sistema",
-            "CriadoEm": null,
-            "ModificadoPor": "",
-            "ModificadoEm": null,
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "anao",
-            "Nome": "Anão",
-            "Descricao": "Idioma tradicional dos anões, escrito com o alfabeto anão.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "ImagemUrl": "",
-            "IconeUrl": "",
-            "CriadoPor": "sistema",
-            "CriadoEm": null,
-            "ModificadoPor": "",
-            "ModificadoEm": null,
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [
         ],
         "VisaoNoEscuro": 18,
@@ -568,38 +486,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 7,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "ImagemUrl": "",
-            "IconeUrl": "",
-            "CriadoPor": "sistema",
-            "CriadoEm": null,
-            "ModificadoPor": "",
-            "ModificadoEm": null,
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "anao",
-            "Nome": "Anão",
-            "Descricao": "Idioma tradicional dos anões, escrito com o alfabeto anão.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "ImagemUrl": "",
-            "IconeUrl": "",
-            "CriadoPor": "sistema",
-            "CriadoEm": null,
-            "ModificadoPor": "",
-            "ModificadoEm": null,
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 18,
         "Resistencias": [
@@ -776,18 +662,6 @@
         ],
         "Tamanho": "Grande",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "goblin",
-            "Nome": "goblin",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 18,
         "Resistencias": [],
@@ -890,18 +764,6 @@
         ],
         "Tamanho": "Grande",
         "Deslocamento": 12,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "silvestre",
-            "Nome": "Silvestre",
-            "Categoria": "Exotic"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 0,
         "Resistencias": [],
@@ -1014,13 +876,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 18,
         "Resistencias": [],
@@ -1114,26 +969,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "draconico",
-            "Nome": "Dracônico",
-            "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 0,
         "Resistencias": [
@@ -1215,26 +1050,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "draconico",
-            "Nome": "Dracônico",
-            "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 0,
         "Resistencias": [
@@ -1316,26 +1131,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "draconico",
-            "Nome": "Dracônico",
-            "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 0,
         "Resistencias": [
@@ -1417,26 +1212,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "draconico",
-            "Nome": "Dracônico",
-            "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 0,
         "Resistencias": [
@@ -1518,26 +1293,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "draconico",
-            "Nome": "Dracônico",
-            "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 0,
         "Resistencias": [
@@ -1619,26 +1374,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "draconico",
-            "Nome": "Dracônico",
-            "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 0,
         "Resistencias": [
@@ -1720,26 +1455,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "draconico",
-            "Nome": "Dracônico",
-            "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 0,
         "Resistencias": [
@@ -1821,26 +1536,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "draconico",
-            "Nome": "Dracônico",
-            "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 0,
         "Resistencias": [
@@ -1922,26 +1617,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "draconico",
-            "Nome": "Dracônico",
-            "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 0,
         "Resistencias": [
@@ -2023,26 +1698,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "draconico",
-            "Nome": "Dracônico",
-            "Descricao": "Língua ancestral dos dragões e draconatos, usada em magia e tradições antigas.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 0,
         "Resistencias": [
@@ -2158,26 +1813,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "elfico",
-            "Nome": "Élfico",
-            "Descricao": "Idioma nativo dos elfos, cheio de sons melodiosos e significados profundos.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 18,
         "Resistencias": [],
@@ -2287,26 +1922,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "elfico",
-            "Nome": "Élfico",
-            "Descricao": "Língua antiga e melódica falada pelos elfos.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 18,
         "Resistencias": [],
@@ -2386,26 +2001,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "elfico",
-            "Nome": "Élfico",
-            "Descricao": "Idioma ancestral dos elfos, cheio de nuances poéticas e musicais.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 24,
         "Resistencias": [],
@@ -2608,26 +2203,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "elfico",
-            "Nome": "Élfico",
-            "Descricao": "Língua dos elfos, antiga e cheia de magia.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 18,
         "Resistencias": [],
@@ -2699,26 +2274,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "elfico",
-            "Nome": "Élfico",
-            "Descricao": "Idioma dos elfos, cheio de sons musicais e antiga tradição.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 18,
         "Resistencias": [
@@ -2853,23 +2408,6 @@
         ],
         "Tamanho": "Médio",
         "Deslocamento": 9,
-        "Idiomas": [
-          {
-            "Id": "comum",
-            "Nome": "Comum",
-            "Descricao": "Idioma comum falado por praticamente todos os povos civilizados.",
-            "Fonte": "Livro do Jogador",
-            "Pagina": "123",
-            "Versao": "1.0",
-            "Categoria": "Standard"
-          },
-          {
-            "Id": "elfico"
-          },
-          {
-            "Id": "gigante"
-          }
-        ],
         "Proficiencias": [],
         "VisaoNoEscuro": 18,
         "Resistencias": [],

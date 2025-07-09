@@ -118,10 +118,10 @@ namespace DnDBot.Bot.Helpers
             var selects = new List<SelectMenuBuilder>();
 
             // Identifica quantos "Idioma Adicional" existem
-            var adicionais = ficha.Idiomas.Where(i => i.Id == "adicional").ToList();
+            var adicionais = ficha.Idiomas.Select(x => x.Idioma).Where(i => i.Id == "adicional").ToList();
 
             // Coleta os idiomas já conhecidos (exceto os adicionais)
-            var conhecidos = ficha.Idiomas.Where(i => i.Id != "adicional").Select(i => i.Id).ToHashSet();
+            var conhecidos = ficha.Idiomas.Select(x => x.Idioma).Where(i => i.Id != "adicional").Select(i => i.Id).ToHashSet();
 
             // Filtra os disponíveis (exclui conhecidos e "adicional")
             var disponiveis = todosIdiomas

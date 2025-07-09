@@ -49,10 +49,24 @@ namespace DnDBot.Bot.Services
         public async Task<Raca> ObterRacaPorIdAsync(string id)
         {
             return await _db.Raca
-                .Include(r => r.SubRaca).ThenInclude(sr => sr.Idiomas)
-                .Include(r => r.SubRaca).ThenInclude(sr => sr.Resistencias)
+                .Include(r => r.SubRaca)
+                    .ThenInclude(sr => sr.Idiomas)
+                        .ThenInclude(i => i.Idioma)
+                .Include(r => r.SubRaca)
+                    .ThenInclude(sr => sr.Proficiencias)
+                        .ThenInclude(sr => sr.Proficiencia)
+                .Include(r => r.SubRaca)
+                    .ThenInclude(sr => sr.Caracteristicas)
+                        .ThenInclude(sr => sr.Caracteristica)
+                .Include(r => r.SubRaca)
+                    .ThenInclude(sr => sr.Resistencias)
+                        .ThenInclude(rz => rz.Resistencia)
+                .Include(r => r.SubRaca)
+                    .ThenInclude(sr => sr.MagiasRaciais)
+                        .ThenInclude(sr => sr.Magia)
                 .Include(r => r.RacaTags)
                 .FirstOrDefaultAsync(r => r.Id.ToLower() == id.ToLower());
+
         }
 
         /// <summary>

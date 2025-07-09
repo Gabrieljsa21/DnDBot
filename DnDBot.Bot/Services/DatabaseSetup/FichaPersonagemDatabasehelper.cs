@@ -28,7 +28,7 @@ namespace DnDBot.Bot.Services.DatabaseSetup
                     "ModificadoEm TEXT"
                 }),
 
-                ["FichaPersonagem_Idiomas"] = string.Join(",\n", new[]
+                ["FichaPersonagemIdioma"] = string.Join(",\n", new[]
                 {
                     "FichaId TEXT NOT NULL",
                     "IdiomaId TEXT NOT NULL",

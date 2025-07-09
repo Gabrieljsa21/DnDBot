@@ -6,6 +6,7 @@ using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -21,59 +22,58 @@ public static class AntecedenteDatabaseHelper
         {
             ["Antecedente"] = @"
                 Id TEXT PRIMARY KEY,
-                Requisitos TEXT,
                 IdiomasAdicionais INTEGER,
                 " + SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim(),
 
-            ["Antecedente_Tag"] = @"
+            ["AntecedenteTag"] = @"
                 AntecedenteId TEXT NOT NULL,
                 Tag TEXT NOT NULL,
                 PRIMARY KEY (AntecedenteId, Tag),
                 FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
 
-            ["Antecedente_Pericia"] = @"
+            ["AntecedentePericia"] = @"
                 AntecedenteId TEXT NOT NULL,
-                IdPericia TEXT NOT NULL,
-                PRIMARY KEY (AntecedenteId, IdPericia),
+                PericiaId TEXT NOT NULL,
+                PRIMARY KEY (AntecedenteId, PericiaId),
                 FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE,
-                FOREIGN KEY (IdPericia) REFERENCES Pericia(Id) ON DELETE CASCADE",
+                FOREIGN KEY (PericiaId) REFERENCES Pericia(Id) ON DELETE CASCADE",
 
-            ["Antecedente_Idioma"] = @"
+            ["AntecedenteIdioma"] = @"
                 AntecedenteId TEXT NOT NULL,
-                IdIdioma TEXT NOT NULL,
-                PRIMARY KEY (AntecedenteId, IdIdioma),
+                IdiomaId TEXT NOT NULL,
+                PRIMARY KEY (AntecedenteId, IdiomaId),
                 FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE,
-                FOREIGN KEY (IdIdioma) REFERENCES Idioma(Id) ON DELETE CASCADE",
+                FOREIGN KEY (IdiomaId) REFERENCES Idioma(Id) ON DELETE CASCADE",
 
-            ["Antecedente_Ferramenta"] = @"
+            ["AntecedenteFerramenta"] = @"
                 AntecedenteId TEXT NOT NULL,
-                IdFerramenta TEXT NOT NULL,
-                PRIMARY KEY (AntecedenteId, IdFerramenta),
+                FerramentaId TEXT NOT NULL,
+                PRIMARY KEY (AntecedenteId, FerramentaId),
                 FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE,
-                FOREIGN KEY (IdFerramenta) REFERENCES Ferramenta(Id) ON DELETE CASCADE",
+                FOREIGN KEY (FerramentaId) REFERENCES Ferramenta(Id) ON DELETE CASCADE",
 
-            ["Antecedente_RiquezaInicial"] = @"
+            ["AntecedenteMoeda"] = @"
                 AntecedenteId TEXT NOT NULL,
                 Tipo TEXT NOT NULL,
                 Quantidade INTEGER NOT NULL,
                 PRIMARY KEY (AntecedenteId, Tipo),
                 FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
 
-            ["Antecedente_Ideal"] = @"
+            ["AntecedenteIdeal"] = @"
                 Id TEXT PRIMARY KEY,
                 Nome TEXT,
                 Descricao TEXT,
                 AntecedenteId TEXT NOT NULL,
                 FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
 
-            ["Antecedente_Vinculo"] = @"
+            ["AntecedenteVinculo"] = @"
                 Id TEXT PRIMARY KEY,
                 Nome TEXT,
                 Descricao TEXT,
                 AntecedenteId TEXT NOT NULL,
                 FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
 
-            ["Antecedente_Defeito"] = @"
+            ["AntecedenteDefeito"] = @"
                 Id TEXT PRIMARY KEY,
                 Nome TEXT,
                 Descricao TEXT,
@@ -109,29 +109,29 @@ public static class AntecedenteDatabaseHelper
             if (!await RegistroExisteAsync(connection, transaction, "Antecedente", antecedente.Id))
             {
                 var parametros = GerarParametrosEntidadeBase(antecedente);
-                parametros["req"] = antecedente.Requisitos ?? "";
                 parametros["idiomas"] = antecedente.IdiomasAdicionais;
 
                 var sql = $@"
                     INSERT INTO Antecedente (
-                        Id, Requisitos, IdiomasAdicionais, {SqliteEntidadeBaseHelper.CamposInsert.Replace("Id,", "").Trim()}
+                        Id, IdiomasAdicionais, {SqliteEntidadeBaseHelper.CamposInsert.Replace("Id,", "").Trim()}
                     ) VALUES (
-                        $id, $req, $idiomas, {SqliteEntidadeBaseHelper.ValoresInsert.Replace("$id,", "").Trim()}
+                        $id, $idiomas, {SqliteEntidadeBaseHelper.ValoresInsert.Replace("$id,", "").Trim()}
                     )";
 
                 var cmd = CriarInsertCommand(connection, transaction, sql, parametros);
                 await cmd.ExecuteNonQueryAsync();
             }
 
-            await InserirRelacionamentoSimples(connection, transaction, "Antecedente_Pericia", "IdPericia", antecedente.Id, antecedente.Pericias);
-            await InserirRelacionamentoSimples(connection, transaction, "Antecedente_Idioma", "IdIdioma", antecedente.Id, antecedente.Idiomas);
-            await InserirRelacionamentoSimples(connection, transaction, "Antecedente_Ferramenta", "IdFerramenta", antecedente.Id, antecedente.Ferramentas);
-            await InserirTagsAsync(connection, transaction, "Antecedente_Tag", "AntecedenteId", antecedente.Id, antecedente.Tags);
+            await InserirRelacionamentoSimples(connection, transaction, "AntecedentePericia", "PericiaId", antecedente.Id, antecedente.Pericias.Select(x => x.PericiaId));
+            await InserirRelacionamentoSimples(connection, transaction, "AntecedenteIdioma", "IdiomaId", antecedente.Id, antecedente.Idiomas.Select(x => x.IdiomaId));
+            await InserirRelacionamentoSimples(connection, transaction, "AntecedenteFerramenta", "FerramentaId", antecedente.Id, antecedente.Ferramentas.Select(x => x.FerramentaId));
+            await InserirTagsAsync(connection, transaction, "AntecedenteTag", "AntecedenteId", antecedente.Id, antecedente.Tags);
 
-            await InserirRiqueza(connection, transaction, antecedente.Id, antecedente.RiquezaInicial);
-            await InserirCaracteristicas(connection, transaction, "Antecedente_Ideal", antecedente.Id, antecedente.Ideais);
-            await InserirCaracteristicas(connection, transaction, "Antecedente_Vinculo", antecedente.Id, antecedente.Vinculos);
-            await InserirCaracteristicas(connection, transaction, "Antecedente_Defeito", antecedente.Id, antecedente.Defeitos);
+            await InserirMoedas(connection, transaction, antecedente.Id, antecedente.Moedas.Select(x => x.Moeda));
+            await InserirCaracteristicas(connection, transaction, "AntecedenteIdeal", antecedente.Id, antecedente.Ideais.Select(x => x.Ideal));
+            await InserirCaracteristicas(connection, transaction, "AntecedenteVinculo", antecedente.Id, antecedente.Vinculos.Select(x => x.Vinculo));
+            await InserirCaracteristicas(connection, transaction, "AntecedenteDefeito", antecedente.Id, antecedente.Defeitos.Select(x => x.Defeito));
+
         }
 
         Console.WriteLine("✅ Antecedentes populados.");
@@ -139,7 +139,10 @@ public static class AntecedenteDatabaseHelper
 
     private static async Task InserirRelacionamentoSimples(SqliteConnection conn, SqliteTransaction tx, string tabela, string coluna, string antecedenteId, IEnumerable<string> itens)
     {
-        foreach (var item in itens ?? new List<string>())
+        if (string.IsNullOrEmpty(antecedenteId))
+            throw new ArgumentException("antecedenteId não pode ser nulo ou vazio", nameof(antecedenteId));
+
+        foreach (var item in itens?.Where(i => !string.IsNullOrEmpty(i)) ?? Enumerable.Empty<string>())
         {
             var insert = conn.CreateCommand();
             insert.Transaction = tx;
@@ -150,19 +153,20 @@ public static class AntecedenteDatabaseHelper
         }
     }
 
+
     private static async Task InserirRelacionamentoSimples(SqliteConnection conn, SqliteTransaction tx, string tabela, string coluna, string antecedenteId, IEnumerable<EntidadeBase> itens)
     {
         foreach (var item in itens ?? new List<EntidadeBase>())
             await InserirRelacionamentoSimples(conn, tx, tabela, coluna, antecedenteId, new[] { item.Id });
     }
 
-    private static async Task InserirRiqueza(SqliteConnection conn, SqliteTransaction tx, string antecedenteId, IEnumerable<Moeda> moedas)
+    private static async Task InserirMoedas(SqliteConnection conn, SqliteTransaction tx, string antecedenteId, IEnumerable<Moeda> moedas)
     {
         foreach (var m in moedas ?? new List<Moeda>())
         {
             var insert = conn.CreateCommand();
             insert.Transaction = tx;
-            insert.CommandText = "INSERT OR IGNORE INTO Antecedente_RiquezaInicial (AntecedenteId, Tipo, Quantidade) VALUES ($aid, $tipo, $qtd)";
+            insert.CommandText = "INSERT OR IGNORE INTO AntecedenteMoeda (AntecedenteId, Tipo, Quantidade) VALUES ($aid, $tipo, $qtd)";
             insert.Parameters.AddWithValue("$aid", antecedenteId);
             insert.Parameters.AddWithValue("$tipo", m.Tipo.ToString());
             insert.Parameters.AddWithValue("$qtd", m.Quantidade);

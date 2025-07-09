@@ -194,7 +194,7 @@ namespace DnDBot.Bot.Commands.Ficha
                 .WithTitle($"🗣️ Idiomas de {ficha.Nome}")
                 .WithColor(Color.DarkPurple);
 
-            var grupos = ficha.Idiomas
+            var grupos = ficha.Idiomas.Select(x=>x.Idioma)
                 .GroupBy(i => i.Categoria)
                 .OrderBy(g => g.Key.ToString());
 
@@ -265,7 +265,7 @@ namespace DnDBot.Bot.Commands.Ficha
                 return;
             }
 
-            var texto = string.Join(", ", ficha.Proficiencias.Select(p => p.Nome));
+            var texto = string.Join(", ", ficha.Proficiencias.Select(p => p.Proficiencia.Nome));
             await RespondAsync($"📜 **Proficiencias de {ficha.Nome}:**\n{texto}", ephemeral: true);
         }
 
@@ -298,11 +298,13 @@ namespace DnDBot.Bot.Commands.Ficha
                 .WithTitle($"🛡️ Resistências de {ficha.Nome}")
                 .WithColor(Color.Orange);
 
-            foreach (var resistencia in ficha.Resistencias.OrderBy(r => r.TipoDano.ToString()))
+            foreach (var resistencia in ficha.Resistencias
+                .Where(r => r.Resistencia != null)
+                .OrderBy(r => r.Resistencia.TipoDano.ToString()))
             {
-                var tipo = resistencia.TipoDano.ToString().ToUpper();
+                var tipo = resistencia.Resistencia.TipoDano.ToString().ToUpper();
                 var dados = await _resistenciaService.ObterTodosResistenciasAsync();
-                var info = dados.FirstOrDefault(r => r.TipoDano == resistencia.TipoDano);
+                var info = dados.FirstOrDefault(r => r.TipoDano == resistencia.Resistencia.TipoDano);
 
                 var nome = info?.Nome ?? tipo;
                 var descricao = string.IsNullOrWhiteSpace(info?.Descricao)
@@ -347,7 +349,7 @@ namespace DnDBot.Bot.Commands.Ficha
                 return;
             }
 
-            var texto = string.Join("\n", ficha.Caracteristicas.Select(c => $"• {c.Nome}: {c.Descricao}"));
+            var texto = string.Join("\n", ficha.Caracteristicas.Select(c => $"• {c.Caracteristica.Nome}: {c.Caracteristica.Descricao}"));
             await RespondAsync($"✨ **Características de {ficha.Nome}:**\n{texto}", ephemeral: true);
         }
 
@@ -374,7 +376,7 @@ namespace DnDBot.Bot.Commands.Ficha
                 return;
             }
 
-            var texto = string.Join("\n", ficha.MagiasRaciais.Select(m => $"• {m.Nome} ({m.Nivel}º nível): {m.Descricao}"));
+            var texto = string.Join("\n", ficha.MagiasRaciais.Select(m => $"• {m.Magia.Nome} ({m.Magia.Nivel}º nível): {m.Magia.Descricao}"));
             await RespondAsync($"🧠 **Magias Raciais de {ficha.Nome}:**\n{texto}", ephemeral: true);
         }
 

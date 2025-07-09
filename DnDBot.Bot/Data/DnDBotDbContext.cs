@@ -39,9 +39,7 @@ namespace DnDBot.Bot.Data
         public DbSet<BonusAtributo> BonusAtributo { get; set; }
         public DbSet<Classe> Classe { get; set; }
         public DbSet<ClassePericia> ClassePericias { get; set; }
-        public DbSet<ClasseProficienciaArma> ClasseProficienciasArmas { get; set; }
-        public DbSet<ClasseProficienciaArmadura> ClasseProficienciasArmaduras { get; set; }
-        public DbSet<ClasseProficienciaMulticlasse> ClasseProficienciasMulticlasse { get; set; }
+        public DbSet<ClasseProficiencia> ClasseProficienciasArmas { get; set; }
         public DbSet<ClasseSalvaguarda> ClasseSalvaguardas { get; set; }
         public DbSet<ClasseMagia> ClasseMagias { get; set; }
         public DbSet<Pericia> Pericia { get; set; }
@@ -84,19 +82,6 @@ namespace DnDBot.Bot.Data
                 .WithMany(r => r.SubRacaTags)
                 .HasForeignKey(rt => rt.SubRacaId);
 
-            modelBuilder.Entity<SubRacaAlinhamento>()
-    .HasKey(sa => new { sa.SubRacaId, sa.AlinhamentoId });
-
-            modelBuilder.Entity<SubRacaAlinhamento>()
-                .HasOne(sa => sa.SubRaca)
-                .WithMany(s => s.AlinhamentosComuns)
-                .HasForeignKey(sa => sa.SubRacaId);
-
-            modelBuilder.Entity<SubRacaAlinhamento>()
-                .HasOne(sa => sa.Alinhamento)
-                .WithMany()
-                .HasForeignKey(sa => sa.AlinhamentoId);
-
             modelBuilder.Entity<MagiaTag>()
     .HasKey(mt => new { mt.MagiaId, mt.Tag });
 
@@ -137,15 +122,6 @@ namespace DnDBot.Bot.Data
                 .WithMany(fp => fp.FichaPersonagemTags)
                 .HasForeignKey(ft => ft.FichaPersonagemId);
 
-            modelBuilder.Entity<FichaPersonagemResistencia>()
-    .HasKey(f => new { f.FichaPersonagemId, f.TipoDano });
-
-            modelBuilder.Entity<FichaPersonagemResistencia>()
-                .HasOne(f => f.FichaPersonagem)
-                .WithMany(p => p.Resistencias)
-                .HasForeignKey(f => f.FichaPersonagemId);
-
-
             modelBuilder.Entity<AlinhamentoTag>()
     .HasKey(at => new { at.AlinhamentoId, at.Tag });
 
@@ -170,54 +146,17 @@ namespace DnDBot.Bot.Data
                 .WithMany(a => a.AntecedenteTags)
                 .HasForeignKey(at => at.AntecedenteId);
 
-            modelBuilder.Entity<Inventario>()
-    .HasMany(i => i.Equipados)
-    .WithOne(e => e.Inventario)
-    .HasForeignKey(e => e.InventarioId);
+            // FichaPersonagem ↔ Caracteristica
+            modelBuilder.Entity<FichaPersonagemCaracteristica>()
+                .HasKey(x => new { x.FichaPersonagemId, x.CaracteristicaId });
 
-            modelBuilder.Entity<FichaPersonagem>()
-        .HasOne(f => f.Inventario)
-        .WithOne(i => i.FichaPersonagem)
-        .HasForeignKey<Inventario>(i => i.FichaPersonagemId)
-        .OnDelete(DeleteBehavior.Cascade);
+            // FichaPersonagem ↔ Idioma
+            modelBuilder.Entity<FichaPersonagemIdioma>()
+                .HasKey(x => new { x.FichaPersonagemId, x.IdiomaId });
 
-            modelBuilder.Entity<FichaPersonagem>()
-    .OwnsOne(f => f.BolsaDeMoedas, b =>
-    {
-        b.ToTable("BolsasDeMoedas");
-        b.OwnsMany(bm => bm.Moedas, m =>
-        {
-            m.ToTable("Moedas");
-            m.WithOwner().HasForeignKey("FichaPersonagemId");
-            m.HasKey("FichaPersonagemId", "Tipo");
-        });
-    });
-
-            modelBuilder.Entity<FichaPersonagem>()
-    .HasMany(f => f.Idiomas)
-    .WithMany(i => i.Fichas)
-    .UsingEntity<Dictionary<string, object>>(
-        "FichaPersonagem_Idiomas",
-        j => j.HasOne<Idioma>().WithMany().HasForeignKey("IdiomaId").OnDelete(DeleteBehavior.Cascade),
-        j => j.HasOne<FichaPersonagem>().WithMany().HasForeignKey("FichaPersonagemId").OnDelete(DeleteBehavior.Cascade),
-        j =>
-        {
-            j.HasKey("FichaPersonagemId", "IdiomaId");
-            j.ToTable("FichaPersonagem_Idiomas");
-        });
-
-            modelBuilder.Entity<FichaPersonagem>().OwnsOne(f => f.BolsaDeMoedas, bolsa =>
-            {
-                bolsa.OwnsMany(b => b.Moedas, moeda =>
-                {
-                    moeda.WithOwner().HasForeignKey("FichaPersonagemId");
-                    moeda.Property(m => m.Tipo).HasConversion<int>();
-                    moeda.HasKey("FichaPersonagemId", "Tipo");
-                });
-            });
-
-            modelBuilder.Entity<SubRacaResistencia>()
-        .HasKey(sr => new { sr.SubRacaId, sr.TipoDano });
+            // SubRaca ↔ Proficiencia
+            modelBuilder.Entity<SubRacaProficiencia>()
+                .HasKey(x => new { x.SubRacaId, x.ProficienciaId });
 
         }
     }

@@ -54,15 +54,22 @@ namespace DnDBot.Bot.Services
         /// </summary>
         /// <param name="ficha">Ficha a ser adicionada.</param>
         public async Task AdicionarFichaAsync(FichaPersonagem ficha)
-        {
-            if (ficha.Inventario != null)
-            {
-                ficha.Inventario.Id = Guid.NewGuid().ToString(); // Garante ID único
-            }
+{
+    if (ficha.Inventario != null)
+        ficha.Inventario.Id = Guid.NewGuid().ToString();
 
-            _dbContext.FichaPersonagem.Add(ficha);
-            await _dbContext.SaveChangesAsync();
-        }
+    if (ficha.BolsaDeMoedas != null)
+    {
+        ficha.BolsaDeMoedas.Id = Guid.NewGuid();
+
+        foreach (var moeda in ficha.BolsaDeMoedas.Moedas)
+            moeda.Id ??= Guid.NewGuid().ToString();
+    }
+
+    _dbContext.FichaPersonagem.Add(ficha);
+    await _dbContext.SaveChangesAsync();
+}
+
 
         /// <summary>
         /// Obtém todas as fichas associadas a um jogador pelo seu ID.
@@ -122,9 +129,18 @@ namespace DnDBot.Bot.Services
         {
             return await _dbContext.FichaPersonagem
                 .Include(f => f.Idiomas)
+                    .ThenInclude(fr => fr.Idioma)
                 .Include(f => f.Resistencias)
+                    .ThenInclude(fr => fr.Resistencia)
+                .Include(f => f.Caracteristicas)
+                    .ThenInclude(fr => fr.Caracteristica)
+                .Include(f => f.Proficiencias)
+                    .ThenInclude(fr => fr.Proficiencia)
+                .Include(f => f.MagiasRaciais)
+                    .ThenInclude(fr => fr.Magia)
                 .Include(f => f.BonusAtributos)
                 .FirstOrDefaultAsync(f => f.Id == id);
+
         }
 
 

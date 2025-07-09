@@ -14,7 +14,7 @@ namespace DnDBot.Bot.Models.ItensInventario
 
         // Id do ItemInventario que está equipado
         public string ItemInventarioId { get; set; }
-        public ItemInventario ItemInventario { get; set; }
+        public InventarioItem ItemInventario { get; set; }
 
         public string InventarioId { get; set; }
         public Inventario Inventario { get; set; }

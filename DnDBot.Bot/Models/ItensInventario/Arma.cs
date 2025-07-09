@@ -13,7 +13,7 @@ namespace DnDBot.Bot.Models.ItensInventario
     public class Arma : Item
     {
         public TipoArma Tipo { get; set; }
-        public new CategoriaArma Categoria { get; set; }
+        public CategoriaArma CategoriaArma { get; set; }
 
         public string DadoDano { get; set; }
         public TipoDano TipoDano { get; set; }

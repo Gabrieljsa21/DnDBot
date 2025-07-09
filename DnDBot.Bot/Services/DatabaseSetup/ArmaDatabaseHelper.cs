@@ -173,7 +173,7 @@ public static class ArmaDatabaseHelper
         var dict = SqliteHelper.GerarParametrosEntidadeBase(arma);
 
         dict["$tipo"] = (int)arma.Tipo;
-        dict["$categoria"] = (int)arma.Categoria;
+        dict["$categoria"] = arma.Categoria;
         dict["$dadoDano"] = arma.DadoDano ?? "";
         dict["$tipoDano"] = (int)arma.TipoDano;
         dict["$tipoDanoSecundario"] = arma.TipoDanoSecundario.HasValue ? (object)(int)arma.TipoDanoSecundario.Value : DBNull.Value;

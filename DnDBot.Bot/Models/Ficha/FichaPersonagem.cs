@@ -30,6 +30,16 @@ namespace DnDBot.Bot.Models.Ficha
         public string Nome { get; set; } = string.Empty;
 
         /// <summary>
+        /// Nível atual do personagem.
+        /// </summary>
+        public int Level { get; set; } = 1;
+
+        /// <summary>
+        /// Quantidade total de pontos de experiência acumulados.
+        /// </summary>
+        public int Experiencia { get; set; } = 0;
+
+        /// <summary>
         /// ID da raça do personagem.
         /// </summary>
         public string RacaId { get; set; } = "Não definida";
@@ -92,12 +102,12 @@ namespace DnDBot.Bot.Models.Ficha
         /// <summary>
         /// Lista de proficiências do personagem.
         /// </summary>
-        public List<Proficiencia> Proficiencias { get; set; } = new();
+        public List<FichaPersonagemProficiencia> Proficiencias { get; set; } = new();
 
         /// <summary>
         /// Lista de idiomas conhecidos pelo personagem.
         /// </summary>
-        public List<Idioma> Idiomas { get; set; } = new();
+        public List<FichaPersonagemIdioma> Idiomas { get; set; } = new();
 
         /// <summary>
         /// Lista de resistências do personagem.
@@ -107,12 +117,12 @@ namespace DnDBot.Bot.Models.Ficha
         /// <summary>
         /// Lista de características especiais do personagem.
         /// </summary>
-        public List<Caracteristica> Caracteristicas { get; set; } = new();
+        public List<FichaPersonagemCaracteristica> Caracteristicas { get; set; } = new();
 
         /// <summary>
         /// Lista de magias raciais que o personagem possui.
         /// </summary>
-        public List<Magia> MagiasRaciais { get; set; } = new();
+        public List<FichaPersonagemMagia> MagiasRaciais { get; set; } = new();
 
         /// <summary>
         /// Tamanho do personagem (ex: Pequeno, Médio).

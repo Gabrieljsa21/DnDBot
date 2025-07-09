@@ -21,31 +21,12 @@ namespace DnDBot.Bot.Models.Ficha
         /// <summary>
         /// Lista de proficiências em armaduras concedidas pela classe.
         /// </summary>
-        [NotMapped]
-        public List<Proficiencia> ProficienciasArmadura { get; set; } = new();
-
-        /// <summary>
-        /// Lista de proficiências em armas concedidas pela classe.
-        /// </summary>
-        [NotMapped]
-        public List<Proficiencia> ProficienciasArmas { get; set; } = new();
-
-        /// <summary>
-        /// Lista de proficiências específicas de multiclasse.
-        /// </summary>
-        [NotMapped]
-        public List<Proficiencia> ProficienciasMulticlasse { get; set; } = new();
-
-        /// <summary>
-        /// Requisitos mínimos para multiclassing (atributo e valor mínimo).
-        /// </summary>
-        [NotMapped]
-        public List<RequisitoMulticlasse> RequisitosParaMulticlasseEntities { get; set; }
+        public List<ClasseProficiencia> Proficiencias { get; set; } = new();
 
         /// <summary>
         /// Perícias associadas à classe.
         /// </summary>
-        public virtual ICollection<Pericia> PericiasRelacionadas { get; set; } = new List<Pericia>();
+        public virtual ICollection<ClassePericia> PericiasRelacionadas { get; set; } = new List<ClassePericia>();
 
         /// <summary>
         /// Lista de identificadores das salvaguardas da classe.
@@ -71,8 +52,7 @@ namespace DnDBot.Bot.Models.Ficha
         /// <summary>
         /// Lista de magias disponíveis para a classe.
         /// </summary>
-        [NotMapped]
-        public List<Magia> MagiasDisponiveis { get; set; } = new();
+        public List<ClasseMagia> MagiasDisponiveis { get; set; } = new();
 
         /// <summary>
         /// Número de truques conhecidos por nível.
@@ -88,11 +68,6 @@ namespace DnDBot.Bot.Models.Ficha
         /// Quantidade de espaços de magia disponíveis por nível.
         /// </summary>
         public List<EspacoMagiaPorNivel> EspacosMagia { get; set; }
-
-        /// <summary>
-        /// Nível em que o personagem escolhe sua subclasse.
-        /// </summary>
-        public int? SubclassePorNivel { get; set; }
 
         /// <summary>
         /// Subclasses associadas à classe.
@@ -125,12 +100,12 @@ namespace DnDBot.Bot.Models.Ficha
         /// <summary>
         /// Lista dos IDs dos itens iniciais da classe.
         /// </summary>
-        public List<string> IdItensIniciais { get; set; } = new();
+        public List<ClasseItens> IdItensIniciais { get; set; } = new();
 
         /// <summary>
         /// Riqueza inicial da classe, em moedas.
         /// </summary>
-        public List<Moeda> RiquezaInicial { get; set; } = new();
+        public List<ClasseMoeda> Moedas { get; set; } = new();
 
         /// <summary>
         /// Relacionamento com as tags armazenadas na tabela Classe_Tag.

@@ -65,11 +65,11 @@ namespace DnDBot.Bot.Services
         /// <summary>
         /// Retorna uma lista de itens no inventário, opcionalmente filtrando por categoria.
         /// </summary>
-        public async Task<IEnumerable<ItemInventario>> ListarItensAsync(Guid fichaId, string categoria = null)
+        public async Task<IEnumerable<InventarioItem>> ListarItensAsync(Guid fichaId, string categoria = null)
         {
             var ficha = await _fichaRepository.ObterFichaPorIdAsync(fichaId);
             var inventario = ficha?.Inventario;
-            if (inventario == null) return new List<ItemInventario>();
+            if (inventario == null) return new List<InventarioItem>();
 
             if (string.IsNullOrEmpty(categoria))
                 return inventario.Itens;
@@ -77,7 +77,7 @@ namespace DnDBot.Bot.Services
             return inventario.ListarPorCategoria(categoria);
         }
 
-        public async Task<Dictionary<SlotEquipamento, ItemInventario>> ObterEquipamentosEquipadosAsync(Guid fichaId)
+        public async Task<Dictionary<SlotEquipamento, InventarioItem>> ObterEquipamentosEquipadosAsync(Guid fichaId)
         {
             var ficha = await _fichaRepository.ObterFichaPorIdAsync(fichaId);
             var inventario = ficha?.Inventario;

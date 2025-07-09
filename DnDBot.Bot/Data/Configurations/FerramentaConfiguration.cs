@@ -11,20 +11,20 @@ using System.Linq;
 /// </summary>
 public class FerramentaConfiguration : IEntityTypeConfiguration<Ferramenta>
 {
-    public void Configure(EntityTypeBuilder<Ferramenta> builder)
+    public void Configure(EntityTypeBuilder<Ferramenta> entity)
     {
         // NÃO DEFINA builder.HasKey()
 
-        builder.Property(f => f.Nome)
+        entity.Property(f => f.Nome)
             .IsRequired()
             .HasMaxLength(150);
 
-        builder.Property(f => f.Descricao)
+        entity.Property(f => f.Descricao)
             .HasMaxLength(1000);
 
-        builder.Property(f => f.RequerProficiencia);
+        entity.Property(f => f.RequerProficiencia);
 
-        builder.HasMany(f => f.PericiasAssociadas)
+        entity.HasMany(f => f.PericiasAssociadas)
             .WithMany()
             .UsingEntity<Dictionary<string, object>>(
                 "FerramentaPericia",
@@ -35,7 +35,7 @@ public class FerramentaConfiguration : IEntityTypeConfiguration<Ferramenta>
                       .WithMany()
                       .HasForeignKey("FerramentaId"));
 
-        builder.Ignore(f => f.Tags); // Ou mapeie com uma tabela se quiser usar FerramentaTag
+        entity.Ignore(f => f.Tags); // Ou mapeie com uma tabela se quiser usar FerramentaTag
     }
 }
 

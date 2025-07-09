@@ -18,22 +18,54 @@ namespace DnDBot.Bot.Models.AntecedenteModels
         /// <summary>
         /// Lista das perícias concedidas por este antecedente.
         /// </summary>
-        public List<Pericia> Pericias { get; set; } = new();
+        public List<AntecedentePericia> Pericias { get; set; } = new();
 
         /// <summary>
         /// Lista das ferramentas concedidas por este antecedente.
         /// </summary>
-        public List<Ferramenta> Ferramentas { get; set; } = new();
+        public List<AntecedenteFerramenta> Ferramentas { get; set; } = new();
 
         /// <summary>
         /// Lista das línguas que o personagem aprende com este antecedente.
         /// </summary>
-        public List<Idioma> Idiomas { get; set; } = new();
+        public List<AntecedenteIdioma> Idiomas { get; set; } = new();
 
         /// <summary>
         /// Características especiais (features) concedidas por este antecedente.
         /// </summary>
-        public List<Caracteristica> Caracteristica { get; set; } = new();
+        public List<AntecedenteCaracteristica> Caracteristicas { get; set; } = new();
+
+        /// <summary>
+        /// Equipamentos detalhados que este antecedente concede ao personagem.
+        /// </summary>
+        public List<AntecedenteItem> itens { get; set; } = new();
+
+        /// <summary>
+        /// Ideais associados ao antecedente, que ajudam a moldar a personalidade do personagem.
+        /// </summary>
+        public List<AntecedenteIdeal> Ideais { get; set; } = new();
+
+        /// <summary>
+        /// Vínculos do personagem com pessoas, lugares ou eventos ligados a este antecedente.
+        /// </summary>
+        public List<AntecedenteVinculo> Vinculos { get; set; } = new();
+
+        /// <summary>
+        /// Defeitos ou fraquezas típicas associadas ao antecedente.
+        /// </summary>
+        public List<AntecedenteDefeito> Defeitos { get; set; } = new();
+
+        /// <summary>
+        /// Riqueza inicial representada pela lista de moedas que o personagem recebe ao escolher este antecedente.
+        /// </summary>
+        public List<AntecedenteMoeda> Moedas { get; set; } = new();
+
+        /// <summary>
+        /// Relacionamento com as tags armazenadas na tabela Raca_Tag.
+        /// </summary>
+        public List<AntecedenteTag> AntecedenteTags { get; set; } = new();
+
+
 
         /// <summary>
         /// Quantidade adicional de idiomas que o personagem pode escolher com este antecedente.
@@ -45,14 +77,14 @@ namespace DnDBot.Bot.Models.AntecedenteModels
         /// Esta propriedade não é mapeada no banco de dados.
         /// </summary>
         [NotMapped]
-        public OpcaoEscolha<Idioma> OpcoesLinguas { get; set; } = new();
+        public OpcaoEscolha<Idioma> OpcoesIdiomas { get; set; } = new();
 
         /// <summary>
         /// Opções de escolha para equipamentos adicionais — permite seleção de equipamentos.
         /// Esta propriedade não é mapeada no banco de dados.
         /// </summary>
         [NotMapped]
-        public OpcaoEscolha<ItemInventario> OpcoesEquipamentos { get; set; } = new();
+        public OpcaoEscolha<InventarioItem> OpcoesEquipamentos { get; set; } = new();
 
         /// <summary>
         /// Opções de escolha para perícias adicionais — permite seleção de perícias extras.
@@ -61,40 +93,6 @@ namespace DnDBot.Bot.Models.AntecedenteModels
         [NotMapped]
         public OpcaoEscolha<Pericia> OpcoesPericias { get; set; } = new();
 
-        /// <summary>
-        /// Equipamentos detalhados que este antecedente concede ao personagem.
-        /// </summary>
-        public List<ItemInventario> EquipamentosDetalhados { get; set; } = new();
-
-        /// <summary>
-        /// Ideais associados ao antecedente, que ajudam a moldar a personalidade do personagem.
-        /// </summary>
-        public List<Ideal> Ideais { get; set; } = new();
-
-        /// <summary>
-        /// Vínculos do personagem com pessoas, lugares ou eventos ligados a este antecedente.
-        /// </summary>
-        public List<Vinculo> Vinculos { get; set; } = new();
-
-        /// <summary>
-        /// Defeitos ou fraquezas típicas associadas ao antecedente.
-        /// </summary>
-        public List<Defeito> Defeitos { get; set; } = new();
-
-        /// <summary>
-        /// Requisitos para que o personagem possa ter este antecedente (pode ser usado para restrições).
-        /// </summary>
-        public string Requisitos { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Riqueza inicial representada pela lista de moedas que o personagem recebe ao escolher este antecedente.
-        /// </summary>
-        public List<Moeda> RiquezaInicial { get; set; } = new();
-
-        /// <summary>
-        /// Relacionamento com as tags armazenadas na tabela Raca_Tag.
-        /// </summary>
-        public List<AntecedenteTag> AntecedenteTags { get; set; } = new();
 
         /// <summary>
         /// Tags derivadas da lista de RacaTags, útil para facilitar acesso.
