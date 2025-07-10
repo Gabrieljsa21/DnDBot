@@ -19,9 +19,10 @@ public static class SubRacaResistenciaDatabaseHelper
         const string sql = @"
             CREATE TABLE IF NOT EXISTS SubRacaResistencia (
                 SubRacaId TEXT NOT NULL,
-                TipoDano TEXT NOT NULL,
-                PRIMARY KEY (SubRacaId, TipoDano),
-                FOREIGN KEY (SubRacaId) REFERENCES SubRaca(Id) ON DELETE CASCADE
+                ResistenciaId TEXT NOT NULL,
+                PRIMARY KEY (SubRacaId, ResistenciaId),
+                FOREIGN KEY (SubRacaId) REFERENCES SubRaca(Id) ON DELETE CASCADE,
+                FOREIGN KEY (ResistenciaId) REFERENCES Resistencia(Id) ON DELETE CASCADE
             )";
         cmd.CommandText = sql;
         await cmd.ExecuteNonQueryAsync();

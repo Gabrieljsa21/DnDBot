@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DnDBot.Bot.Migrations
 {
     [DbContext(typeof(DnDBotDbContext))]
-    [Migration("20250709184544_Inicial_00")]
+    [Migration("20250710212418_Inicial_00")]
     partial class Inicial_00
     {
         /// <inheritdoc />
@@ -692,6 +692,60 @@ namespace DnDBot.Bot.Migrations
                     b.ToTable("FichaPersonagemTag");
                 });
 
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.MagiaClassePermitida", b =>
+                {
+                    b.Property<string>("MagiaId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Classe")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("MagiaId1")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("MagiaId", "Classe");
+
+                    b.HasIndex("MagiaId1");
+
+                    b.ToTable("MagiaClassePermitida");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.MagiaCondicaoAplicada", b =>
+                {
+                    b.Property<string>("MagiaId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Condicao")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("MagiaId1")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("MagiaId", "Condicao");
+
+                    b.HasIndex("MagiaId1");
+
+                    b.ToTable("MagiaCondicaoAplicada");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.MagiaCondicaoRemovida", b =>
+                {
+                    b.Property<string>("MagiaId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Condicao")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("MagiaId1")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("MagiaId", "Condicao");
+
+                    b.HasIndex("MagiaId1");
+
+                    b.ToTable("MagiaCondicaoRemovida");
+                });
+
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.MagiaTag", b =>
                 {
                     b.Property<string>("MagiaId")
@@ -1173,9 +1227,6 @@ namespace DnDBot.Bot.Migrations
                     b.Property<string>("RacaId")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ResistenciaId")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("Sabedoria")
                         .HasColumnType("INTEGER");
 
@@ -1193,8 +1244,6 @@ namespace DnDBot.Bot.Migrations
                     b.HasIndex("BolsaDeMoedasId");
 
                     b.HasIndex("IdiomaId");
-
-                    b.HasIndex("ResistenciaId");
 
                     b.ToTable("FichaPersonagem");
                 });
@@ -1252,20 +1301,17 @@ namespace DnDBot.Bot.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Alcance")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Alcance")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("Alvo")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Alvo")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("AreaEfeito")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("AtributoTesteResistencia")
-                        .HasColumnType("TEXT");
-
-                    b.PrimitiveCollection<string>("ClassesPermitidas")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("AtributoTesteResistencia")
+                        .HasColumnType("INTEGER");
 
                     b.Property<bool>("ComponenteMaterial")
                         .HasColumnType("INTEGER");
@@ -1279,14 +1325,8 @@ namespace DnDBot.Bot.Migrations
                     b.Property<bool>("ComponenteVerbal")
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("Concentração")
+                    b.Property<bool>("Concentracao")
                         .HasColumnType("INTEGER");
-
-                    b.PrimitiveCollection<string>("CondicoesAplicadas")
-                        .HasColumnType("TEXT");
-
-                    b.PrimitiveCollection<string>("CondicoesRemovidas")
-                        .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("CriadoEm")
                         .HasColumnType("TEXT");
@@ -1306,8 +1346,11 @@ namespace DnDBot.Bot.Migrations
                     b.Property<string>("DetalhesMaterial")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Duracao")
-                        .HasColumnType("TEXT");
+                    b.Property<int?>("DuracaoQuantidade")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("DuracaoUnidade")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("EfeitoPorTurno")
                         .HasColumnType("TEXT");
@@ -1315,14 +1358,17 @@ namespace DnDBot.Bot.Migrations
                     b.Property<string>("Escalonamento")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Escola")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Escola")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("FocoNecessario")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Fonte")
                         .HasColumnType("TEXT");
+
+                    b.Property<int?>("FormaAreaEfeito")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("IconeUrl")
                         .HasColumnType("TEXT");
@@ -1342,8 +1388,8 @@ namespace DnDBot.Bot.Migrations
                     b.Property<string>("ModificadoPor")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Nivel")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Nivel")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -1362,8 +1408,8 @@ namespace DnDBot.Bot.Migrations
                     b.Property<bool>("PodeSerRitual")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Recarga")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Recarga")
+                        .HasColumnType("INTEGER");
 
                     b.Property<bool>("RequerLinhaDeVisao")
                         .HasColumnType("INTEGER");
@@ -1371,14 +1417,14 @@ namespace DnDBot.Bot.Migrations
                     b.Property<bool>("RequerLinhaReta")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("TempoConjuracao")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("TempoConjuracao")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("TipoDano")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("TipoDano")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("TipoUso")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("TipoUso")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Versao")
                         .HasColumnType("TEXT");
@@ -2674,6 +2720,51 @@ namespace DnDBot.Bot.Migrations
                     b.Navigation("FichaPersonagem");
                 });
 
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.MagiaClassePermitida", b =>
+                {
+                    b.HasOne("DnDBot.Bot.Models.Ficha.Magia", "Magia")
+                        .WithMany()
+                        .HasForeignKey("MagiaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DnDBot.Bot.Models.Ficha.Magia", null)
+                        .WithMany("ClassesPermitidas")
+                        .HasForeignKey("MagiaId1");
+
+                    b.Navigation("Magia");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.MagiaCondicaoAplicada", b =>
+                {
+                    b.HasOne("DnDBot.Bot.Models.Ficha.Magia", "Magia")
+                        .WithMany()
+                        .HasForeignKey("MagiaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DnDBot.Bot.Models.Ficha.Magia", null)
+                        .WithMany("CondicoesAplicadas")
+                        .HasForeignKey("MagiaId1");
+
+                    b.Navigation("Magia");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.MagiaCondicaoRemovida", b =>
+                {
+                    b.HasOne("DnDBot.Bot.Models.Ficha.Magia", "Magia")
+                        .WithMany()
+                        .HasForeignKey("MagiaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DnDBot.Bot.Models.Ficha.Magia", null)
+                        .WithMany("CondicoesRemovidas")
+                        .HasForeignKey("MagiaId1");
+
+                    b.Navigation("Magia");
+                });
+
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.MagiaTag", b =>
                 {
                     b.HasOne("DnDBot.Bot.Models.Ficha.Magia", "Magia")
@@ -2896,10 +2987,6 @@ namespace DnDBot.Bot.Migrations
                         .WithMany("Fichas")
                         .HasForeignKey("IdiomaId");
 
-                    b.HasOne("DnDBot.Bot.Models.Ficha.Resistencia", null)
-                        .WithMany("Fichas")
-                        .HasForeignKey("ResistenciaId");
-
                     b.Navigation("BolsaDeMoedas");
                 });
 
@@ -3082,6 +3169,12 @@ namespace DnDBot.Bot.Migrations
 
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Magia", b =>
                 {
+                    b.Navigation("ClassesPermitidas");
+
+                    b.Navigation("CondicoesAplicadas");
+
+                    b.Navigation("CondicoesRemovidas");
+
                     b.Navigation("MagiaTags");
                 });
 
@@ -3090,11 +3183,6 @@ namespace DnDBot.Bot.Migrations
                     b.Navigation("RacaTags");
 
                     b.Navigation("SubRaca");
-                });
-
-            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Resistencia", b =>
-                {
-                    b.Navigation("Fichas");
                 });
 
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.SubRaca", b =>

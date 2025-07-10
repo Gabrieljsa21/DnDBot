@@ -132,7 +132,8 @@ namespace DnDBot.Bot.Models.Enums
         Necrótico,
 
         /// <summary>Dano psicológico ou mental, como medo ou confusão.</summary>
-        Psíquico
+        Psíquico,
+        Nenhum
     }
 
     public enum TipoArma
@@ -231,6 +232,17 @@ namespace DnDBot.Bot.Models.Enums
         Criatura
     }
 
+    public enum FormaAreaEfeito
+    {
+        Cone,
+        Esfera,
+        Cilindro,
+        Cubo,
+        Linha,
+        Nuvem,
+        Outro
+    }
+
     public enum CondicaoAtivacao
     {
         Sempre,
@@ -258,14 +270,14 @@ namespace DnDBot.Bot.Models.Enums
     public enum Condicao
     {
         Atordoado,
-        Enfeitiçado,
+        Enfeiticado,
         Paralisado,
         Cego,
         Surdo,
         Imobilizado,
         Silenciado,
         Envenenado,
-        Caído,
+        Caido,
         Outros
     }
 
@@ -287,6 +299,98 @@ namespace DnDBot.Bot.Models.Enums
         Idioma,
         Veiculo,
         TesteResistencia
+    }
+
+    public enum NivelMagia
+    {
+        Truque = 0,
+        Nivel1 = 1,
+        Nivel2 = 2,
+        Nivel3 = 3,
+        Nivel4 = 4,
+        Nivel5 = 5,
+        Nivel6 = 6,
+        Nivel7 = 7,
+        Nivel8 = 8,
+        Nivel9 = 9
+    }
+
+    public enum EscolaMagia
+    {
+        Abjuracao,
+        Conjuracao,
+        Adivinhacao,
+        Encantamento,
+        Evocacao,
+        Ilusao,
+        Necromancia,
+        Transmutacao
+    }
+
+    public enum TipoUsoMagia
+    {
+        Acao,
+        AcaoBonus,
+        Reacao,
+        Minuto1,
+        Minutos10,
+        Hora1,
+        TempoEspecial
+    }
+
+    public enum RecargaMagia
+    {
+        Nenhuma,
+        DescansoCurto,
+        DescansoLongo,
+        Diario,
+        PorCombate,
+        Personalizada
+    }
+
+    public enum DuracaoUnidade
+    {
+        Instantanea,
+        Rodadas,
+        Minutos,
+        Horas,
+        Permanente,
+        Especial
+    }
+
+    public enum ClassePersonagem
+    {
+        Barbaro,
+        Bardo,
+        Bruxo,
+        Clerigo,
+        Druida,
+        Feiticeiro,
+        Guerreiro,
+        Ladino,
+        Mago,
+        Monge,
+        Paladino,
+        Patrulheiro,
+        //SangueRuim,
+        Artifice,
+        Outra
+    }
+
+    public enum TipoAlcance
+    {
+        Toque,
+        Pessoal,
+        Vista,
+        Metros1,    // ~5 pés
+        Metros3,    // ~10 pés
+        Metros4,    // ~15 pés
+        Metros9,    // ~30 pés
+        Metros18,   // ~60 pés
+        Metros27,   // ~90 pés
+        Metros36,   // ~120 pés
+        Ilimitado,
+        Especial
     }
 
 }

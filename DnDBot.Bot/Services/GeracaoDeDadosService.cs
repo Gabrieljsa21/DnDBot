@@ -61,6 +61,7 @@ namespace DnDBot.Bot.Services
             await SubRacaIdiomaDatabaseHelper.CriarTabelaAsync(cmd);
             await SubRacaCaracteristicaDatabaseHelper.CriarTabelaAsync(cmd);
             await SubRacaProficienciaDatabaseHelper.CriarTabelaAsync(cmd);
+            await SubRacaMagiaDatabaseHelper.CriarTabelaAsync(cmd);
         }
 
         /// <summary>
@@ -88,6 +89,7 @@ namespace DnDBot.Bot.Services
             await SubRacaIdiomaDatabaseHelper.PopularAsync(connection, transaction);
             await SubRacaCaracteristicaDatabaseHelper.PopularAsync(connection, transaction);
             await SubRacaProficienciaDatabaseHelper.PopularAsync(connection, transaction);
+            await SubRacaMagiaDatabaseHelper.PopularAsync(connection, transaction);
 
             transaction.Commit();
             Console.WriteLine("Commit feito!");

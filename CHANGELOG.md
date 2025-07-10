@@ -4,6 +4,14 @@ Todas as alterações significativas neste projeto serão documentadas neste arquiv
 
 O formato segue o padrão [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e o versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.3.5] - 2025-07-10
+
+### Adicionado
+- Implementação da entidade `Resistencia`, incluindo seu relacionamento com `SubRaça` por meio da tabela auxiliar `SubRacaResistencia`.
+- Criação e popularização da tabela `Resistencia` com base nos tipos de dano definidos no sistema.
+- Definição e estruturação das magias raciais no modelo `SubRacaMagia`, com suporte à associação de magias específicas às sub-raças.
+- População da tabela `SubRacaMagia` a partir do JSON, garantindo integridade com os registros existentes de `Magia` e `SubRaça`.
+
 ## [1.3.4] - 2025-07-08
 
 ### Adicionado

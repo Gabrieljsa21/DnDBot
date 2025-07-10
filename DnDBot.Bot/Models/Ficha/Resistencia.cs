@@ -15,7 +15,5 @@ namespace DnDBot.Bot.Models.Ficha
 
         public TipoDano TipoDano { get; set; }
 
-        public List<FichaPersonagem> Fichas { get; set; } = new List<FichaPersonagem>();
-
     }
 }

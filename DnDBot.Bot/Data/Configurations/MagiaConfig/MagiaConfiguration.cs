@@ -3,7 +3,7 @@ using DnDBot.Bot.Models.Ficha;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DnDBot.Bot.Data.Configurations
+namespace DnDBot.Bot.Data.Configurations.MagiaConfig
 {
     public class MagiaConfiguration : IEntityTypeConfiguration<Magia>
     {

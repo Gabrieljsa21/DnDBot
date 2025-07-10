@@ -14,9 +14,7 @@ public static class ResistenciaDatabaseHelper
         var definicoes = new Dictionary<string, string>
         {
             ["Resistencia"] = SqliteEntidadeBaseHelper.Campos + @",
-                TipoDano INTEGER NOT NULL,
-                Nome TEXT NOT NULL,
-                Descricao TEXT"
+                TipoDano INTEGER NOT NULL"
         };
 
         foreach (var tabela in definicoes)
