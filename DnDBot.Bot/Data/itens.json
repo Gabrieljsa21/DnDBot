@@ -799,5 +799,952 @@
     "PesoUnitario": 0.2,
     "Equipavel": true,
     "ValorCobre": 2000
+  },
+  {
+    "Id": "instrumento_alaude",
+    "Nome": "Alaúde",
+    "Descricao": "Instrumento de cordas usado em apresentações musicais.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 3500
+  },
+  {
+    "Id": "instrumento_charamela",
+    "Nome": "Charamela",
+    "Descricao": "Instrumento de sopro rústico semelhante a um oboé.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "instrumento_flauta_doce",
+    "Nome": "Flauta Doce",
+    "Descricao": "Flauta simples usada em apresentações melódicas suaves.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "instrumento_flauta",
+    "Nome": "Flauta",
+    "Descricao": "Instrumento de sopro usado para criar melodias agudas.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 1200
+  },
+  {
+    "Id": "instrumento_gaita_fole",
+    "Nome": "Gaita de Fole",
+    "Descricao": "Instrumento de sopro com foles, típico de músicas folclóricas.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 2.5,
+    "Equipavel": false,
+    "ValorCobre": 3000
+  },
+  {
+    "Id": "instrumento_lira",
+    "Nome": "Lira",
+    "Descricao": "Pequeno instrumento de cordas em formato de arco.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 3000
+  },
+  {
+    "Id": "instrumento_tambor",
+    "Nome": "Tambor",
+    "Descricao": "Instrumento de percussão com som rítmico e marcante.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 1.5,
+    "Equipavel": false,
+    "ValorCobre": 600
+  },
+  {
+    "Id": "instrumento_trombeta",
+    "Nome": "Trombeta",
+    "Descricao": "Instrumento de sopro metálico usado para fanfarras e sinais.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 300
+  },
+  {
+    "Id": "instrumento_viola",
+    "Nome": "Viola",
+    "Descricao": "Instrumento de cordas semelhante a um violino, mas com som mais grave.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 3000
+  },
+  {
+    "Id": "instrumento_xilofone",
+    "Nome": "Xilofone",
+    "Descricao": "Instrumento de percussão com lâminas afinadas de madeira.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 4.5,
+    "Equipavel": false,
+    "ValorCobre": 2500
+  },
+
+  {
+    "Id": "abaco",
+    "Nome": "Ábaco",
+    "Descricao": "Instrumento usado para cálculos matemáticos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "acido",
+    "Nome": "Ácido (vidro)",
+    "Descricao": "Substância corrosiva usada para dissolver materiais.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 2500
+  },
+  {
+    "Id": "agua_benta",
+    "Nome": "Água Benta (frasco)",
+    "Descricao": "Água santificada usada contra mortos-vivos e demônios.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 2500
+  },
+  {
+    "Id": "algemas",
+    "Nome": "Algemas",
+    "Descricao": "Dispositivo para prender os pulsos de uma criatura.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 2,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "algibeira",
+    "Nome": "Algibeira",
+    "Descricao": "Pequena bolsa usada para guardar objetos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "aljava",
+    "Nome": "Aljava",
+    "Descricao": "Contêiner usado para carregar flechas, virotes ou dardos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": true,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "ampulheta",
+    "Nome": "Ampulheta",
+    "Descricao": "Dispositivo para medir o tempo.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 2500
+  },
+  {
+    "Id": "antidoto",
+    "Nome": "Antídoto (vidro)",
+    "Descricao": "Remédio que neutraliza venenos ingeridos ou aplicados.",
+    "Categoria": "Consumivel",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 5000
+  },
+  {
+    "Id": "apito_advertencia",
+    "Nome": "Apito de Advertência",
+    "Descricao": "Apito usado para sinalizar perigo ou alerta.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 2500
+  },
+  {
+    "Id": "ariete_portatil",
+    "Nome": "Aríete Portátil",
+    "Descricao": "Ferramenta pesada usada para arrombar portas.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 17.5,
+    "Equipavel": false,
+    "ValorCobre": 400
+  },
+  {
+    "Id": "balanca_mercador",
+    "Nome": "Balança de Mercador",
+    "Descricao": "Usada para medir o peso de itens com precisão.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1.5,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "balde",
+    "Nome": "Balde",
+    "Descricao": "Recipiente usado para transportar líquidos ou objetos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 5
+  },
+  {
+    "Id": "barril",
+    "Nome": "Barril",
+    "Descricao": "Grande recipiente cilíndrico usado para armazenamento.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 35,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "bau",
+    "Nome": "Baú",
+    "Descricao": "Baú de madeira usado para guardar pertences.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 12.5,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "bolsa_componentes",
+    "Nome": "Bolsa de Componentes",
+    "Descricao": "Bolsa usada para armazenar componentes de magia.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": true,
+    "ValorCobre": 2500
+  },
+  {
+    "Id": "caixa_fogo",
+    "Nome": "Caixa de Fogo",
+    "Descricao": "Usada para acender fogo com facilidade.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 50
+  },
+  {
+    "Id": "caneca",
+    "Nome": "Caneca",
+    "Descricao": "Recipiente usado para beber líquidos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 2
+  },
+  {
+    "Id": "caneta_tinteiro",
+    "Nome": "Caneta Tinteiro",
+    "Descricao": "Ferramenta de escrita usada com tinta.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 2
+  },
+  {
+    "Id": "cantil",
+    "Nome": "Cantil",
+    "Descricao": "Recipiente usado para armazenar água ou bebidas.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 2.5,
+    "Equipavel": false,
+    "ValorCobre": 20
+  },
+  {
+    "Id": "cesto",
+    "Nome": "Cesto",
+    "Descricao": "Recipiente trançado para carregar ou armazenar objetos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 40
+  },
+  {
+    "Id": "corda_canhamo_15m",
+    "Nome": "Corda de Cânhamo (15 metros)",
+    "Descricao": "Corda comum usada para amarrar, escalar ou arrastar.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 5,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "corrente_3m",
+    "Nome": "Corrente (3 metros)",
+    "Descricao": "Corrente de metal resistente usada para contenção.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 5,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "equipamento_pescaria",
+    "Nome": "Equipamento de Pescaria",
+    "Descricao": "Conjunto de linhas, anzóis e iscas para pesca.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 2,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "escada_3m",
+    "Nome": "Escada (3 metros)",
+    "Descricao": "Escada portátil de madeira para alcançar locais elevados.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 12.5,
+    "Equipavel": false,
+    "ValorCobre": 10
+  },
+  {
+    "Id": "esferas",
+    "Nome": "Esferas (bolsa com 1.000)",
+    "Descricao": "Pequenas esferas de metal usadas para detectar movimento.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "esmeril",
+    "Nome": "Esmeril",
+    "Descricao": "Ferramenta usada para afiar lâminas ou ferramentas.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 1
+  },
+  {
+    "Id": "espelho_aco",
+    "Nome": "Espelho de Aço",
+    "Descricao": "Espelho pequeno de aço polido.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.25,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "estrepes",
+    "Nome": "Estrepes (bolsa com 20)",
+    "Descricao": "Picos metálicos usados para impedir movimentação.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "fechadura",
+    "Nome": "Fechadura",
+    "Descricao": "Dispositivo para trancar portas ou baús.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 1000
+  },
+  {
+    "Id": "fogo_alquimico",
+    "Nome": "Fogo Alquímico (frasco)",
+    "Descricao": "Substância incendiária que gruda e queima superfícies.",
+    "Categoria": "Consumivel",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 5000
+  },
+  {
+    "Id": "garrafa_vidro",
+    "Nome": "Garrafa de Vidro",
+    "Descricao": "Recipiente de vidro usado para armazenar líquidos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 2
+  },
+  {
+    "Id": "giz",
+    "Nome": "Giz (1 peça)",
+    "Descricao": "Usado para marcações temporárias em superfícies.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 1
+  },
+  {
+    "Id": "grimorio",
+    "Nome": "Grimório",
+    "Descricao": "Livro mágico onde magos registram suas magias.",
+    "Categoria": "LivroOuTomo",
+    "PesoUnitario": 1.5,
+    "Equipavel": false,
+    "ValorCobre": 5000
+  },
+  {
+    "Id": "implemento_arcano_bastao",
+    "Nome": "Bastão Arcano",
+    "Descricao": "Canalizador arcano em forma de bastão.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": true,
+    "ValorCobre": 1000
+  },
+  {
+    "Id": "implemento_arcano_cajado",
+    "Nome": "Cajado Arcano",
+    "Descricao": "Cajado usado por conjuradores para canalizar magias.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 2,
+    "Equipavel": true,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "implemento_arcano_cristal",
+    "Nome": "Cristal Arcano",
+    "Descricao": "Cristal brilhante usado como foco mágico.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": true,
+    "ValorCobre": 1000
+  },
+  {
+    "Id": "implemento_arcano_orbe",
+    "Nome": "Orbe Arcano",
+    "Descricao": "Orbe místico usado para canalizar energia mágica.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1.5,
+    "Equipavel": true,
+    "ValorCobre": 2000
+  },
+  {
+    "Id": "implemento_arcano_varinha",
+    "Nome": "Varinha Arcana",
+    "Descricao": "Pequena varinha usada para conjurar magias.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": true,
+    "ValorCobre": 1000
+  },
+  {
+    "Id": "implemento_druidico_cajado",
+    "Nome": "Cajado Druídico",
+    "Descricao": "Cajado simples feito de madeira natural.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 2,
+    "Equipavel": true,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "implemento_druidico_visco",
+    "Nome": "Ramo de Visco",
+    "Descricao": "Ramo usado por druidas como foco mágico.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0,
+    "Equipavel": true,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "implemento_druidico_totem",
+    "Nome": "Totem Druídico",
+    "Descricao": "Pequeno totem simbólico com ligação à natureza.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0,
+    "Equipavel": true,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "implemento_druidico_varinha",
+    "Nome": "Varinha Druídica",
+    "Descricao": "Varinha esculpida em madeira para canalizar magia.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": true,
+    "ValorCobre": 1000
+  },
+  {
+    "Id": "jarro",
+    "Nome": "Jarro",
+    "Descricao": "Recipiente usado para armazenar líquidos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 2,
+    "Equipavel": false,
+    "ValorCobre": 4
+  },
+  {
+    "Id": "kit_escalada",
+    "Nome": "Kit de Escalada",
+    "Descricao": "Inclui grampos, cordas e outros itens úteis para escalar.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 6,
+    "Equipavel": false,
+    "ValorCobre": 2500
+  },
+  {
+    "Id": "kit_primeiros_socorros",
+    "Nome": "Kit de Primeiros Socorros",
+    "Descricao": "Kit básico usado para tratar ferimentos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1.5,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "kit_refeicao",
+    "Nome": "Kit de Refeição",
+    "Descricao": "Conjunto básico para preparar e comer refeições.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 20
+  },
+  {
+    "Id": "lampada",
+    "Nome": "Lâmpada",
+    "Descricao": "Dispositivo de iluminação portátil.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 50
+  },
+  {
+    "Id": "lanterna_coberta",
+    "Nome": "Lanterna Coberta",
+    "Descricao": "Lanterna com tampa que direciona a luz.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "lanterna_furta_fogo",
+    "Nome": "Lanterna Furta-Fogo",
+    "Descricao": "Lanterna que emite pouca luz, ideal para furtividade.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 1000
+  },
+  {
+    "Id": "lente_ampliacao",
+    "Nome": "Lente de Ampliação",
+    "Descricao": "Usada para inspecionar detalhes minuciosos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 10000
+  },
+  {
+    "Id": "livro",
+    "Nome": "Livro",
+    "Descricao": "Obra escrita contendo conhecimento ou narrativa.",
+    "Categoria": "LivroOuTomo",
+    "PesoUnitario": 2.5,
+    "Equipavel": false,
+    "ValorCobre": 2500
+  },
+  {
+    "Id": "luneta",
+    "Nome": "Luneta",
+    "Descricao": "Dispositivo óptico para ver objetos à distância.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 100000
+  },
+  {
+    "Id": "manto",
+    "Nome": "Manto",
+    "Descricao": "Vestuário usado para proteção contra o frio.",
+    "Categoria": "Roupas",
+    "PesoUnitario": 2,
+    "Equipavel": true,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "marreta",
+    "Nome": "Marreta",
+    "Descricao": "Ferramenta pesada para trabalhos de impacto.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 5,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "martelo",
+    "Nome": "Martelo",
+    "Descricao": "Ferramenta comum de construção e combate.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1.5,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "mochila",
+    "Nome": "Mochila",
+    "Descricao": "Bolsa grande para transportar itens.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 2.5,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "municao_zarabatana",
+    "Nome": "Zarabatana (50)",
+    "Descricao": "Projéteis usados com zarabatana.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "municao_balas_funda",
+    "Nome": "Balas de Funda (20)",
+    "Descricao": "Projéteis esféricos usados com fundas.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.75,
+    "Equipavel": false,
+    "ValorCobre": 4
+  },
+  {
+    "Id": "municao_flechas",
+    "Nome": "Flechas (20)",
+    "Descricao": "Flechas comuns para uso com arcos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "municao_virotes",
+    "Nome": "Virotes (20)",
+    "Descricao": "Projéteis para bestas.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.75,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "oleo_frasco",
+    "Nome": "Óleo (frasco)",
+    "Descricao": "Frasco de óleo inflamável ou lubrificante.",
+    "Categoria": "Consumivel",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 10
+  },
+  {
+    "Id": "pa",
+    "Nome": "Pá",
+    "Descricao": "Ferramenta usada para cavar.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 2.5,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "panela_ferro",
+    "Nome": "Panela de Ferro",
+    "Descricao": "Usada para cozinhar refeições.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 5,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "papel",
+    "Nome": "Papel (uma folha)",
+    "Descricao": "Folha de papel comum.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 20
+  },
+  {
+    "Id": "parafina",
+    "Nome": "Parafina",
+    "Descricao": "Substância usada para vedação ou moldagem.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 50
+  },
+  {
+    "Id": "pe_de_cabra",
+    "Nome": "Pé de Cabra",
+    "Descricao": "Ferramenta usada para forçar entradas.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 2.5,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "perfume",
+    "Nome": "Perfume (vidro)",
+    "Descricao": "Frasco de aroma agradável.",
+    "Categoria": "Consumivel",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "pergaminho_folha",
+    "Nome": "Pergaminho (uma folha)",
+    "Descricao": "Folha de pergaminho usada para escrever.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 10
+  },
+  {
+    "Id": "picareta_mina",
+    "Nome": "Picareta de Mina",
+    "Descricao": "Ferramenta de escavação robusta.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 5,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "piton",
+    "Nome": "Píton",
+    "Descricao": "Estaca metálica usada para escalada.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 5
+  },
+  {
+    "Id": "pocao_cura",
+    "Nome": "Poção de Cura",
+    "Descricao": "Poção mágica que restaura pontos de vida.",
+    "Categoria": "Consumivel",
+    "PesoUnitario": 0.25,
+    "Equipavel": false,
+    "ValorCobre": 5000
+  },
+  {
+    "Id": "porta_mapas_pergaminhos",
+    "Nome": "Porta Mapas ou Pergaminhos",
+    "Descricao": "Estojo para transportar mapas ou pergaminhos com segurança.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "porta_virotes_besta",
+    "Nome": "Porta Virotes de Besta",
+    "Descricao": "Estojo para guardar virotes de besta.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "pregos_ferro_10",
+    "Nome": "Pregos de Ferro (10)",
+    "Descricao": "Conjunto de 10 pregos de ferro.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 2.5,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "racoes_viagem_1_dia",
+    "Nome": "Rações de Viagem (1 dia)",
+    "Descricao": "Alimento suficiente para um dia de viagem.",
+    "Categoria": "Consumivel",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 50
+  },
+  {
+    "Id": "sabo",
+    "Nome": "Sabão",
+    "Descricao": "Utilizado para limpeza pessoal ou de equipamentos.",
+    "Categoria": "Consumivel",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 20
+  },
+  {
+    "Id": "saco",
+    "Nome": "Saco",
+    "Descricao": "Bolsa pequena para carregar itens.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.25,
+    "Equipavel": false,
+    "ValorCobre": 25
+  },
+  {
+    "Id": "saco_dormir",
+    "Nome": "Saco de Dormir",
+    "Descricao": "Equipamento para dormir ao ar livre.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 3.5,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "simbolo_sagrado_amuleto",
+    "Nome": "Símbolo Sagrado (Amuleto)",
+    "Descricao": "Símbolo usado para canalizar poderes divinos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": true,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "simbolo_sagrado_emblema",
+    "Nome": "Símbolo Sagrado (Emblema)",
+    "Descricao": "Símbolo usado para canalizar poderes divinos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0,
+    "Equipavel": true,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "simbolo_sagrado_relicario",
+    "Nome": "Símbolo Sagrado (Relicário)",
+    "Descricao": "Símbolo usado para canalizar poderes divinos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": true,
+    "ValorCobre": 1000
+  },
+  {
+    "Id": "sinete",
+    "Nome": "Sínte",
+    "Descricao": "Objeto usado para selar documentos oficialmente.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "sino",
+    "Nome": "Sino",
+    "Descricao": "Pequeno sino usado para alertar ou chamar atenção.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "talha_ou_sisal",
+    "Nome": "Talha ou Sisal",
+    "Descricao": "Material usado para amarrar ou prender objetos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 2.5,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "tenda_2_pessoas",
+    "Nome": "Tenda para duas pessoas",
+    "Descricao": "Abrigo portátil para duas pessoas.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 10,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "tocha",
+    "Nome": "Tocha",
+    "Descricao": "Fonte portátil de luz e calor.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 10
+  },
+  {
+    "Id": "tinta_vidro_30ml",
+    "Nome": "Tinta (vidro de 30ml)",
+    "Descricao": "Tinta para uso artístico ou anotação.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "traje_comum",
+    "Nome": "Traje, comum",
+    "Descricao": "Roupas comuns do dia a dia.",
+    "Categoria": "Roupas",
+    "PesoUnitario": 1.5,
+    "Equipavel": true,
+    "ValorCobre": 50
+  },
+  {
+    "Id": "traje_elegante",
+    "Nome": "Traje, elegante",
+    "Descricao": "Roupas formais para ocasiões especiais.",
+    "Categoria": "Roupas",
+    "PesoUnitario": 3,
+    "Equipavel": true,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "traje_fantasia",
+    "Nome": "Traje, fantasia",
+    "Descricao": "Roupa temática usada em eventos e performances.",
+    "Categoria": "Roupas",
+    "PesoUnitario": 2,
+    "Equipavel": true,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "traje_viajante",
+    "Nome": "Traje, viajante",
+    "Descricao": "Roupas resistentes e práticas para longas jornadas.",
+    "Categoria": "Roupas",
+    "PesoUnitario": 2,
+    "Equipavel": true,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "vara_3_metros",
+    "Nome": "Vara (3 metros)",
+    "Descricao": "Vara de madeira longa, útil para apoio ou defesa.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 3.5,
+    "Equipavel": false,
+    "ValorCobre": 35
+  },
+  {
+    "Id": "vela",
+    "Nome": "Vela",
+    "Descricao": "Fonte pequena de luz por tempo limitado.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 1
+  },
+  {
+    "Id": "veneno_basico_vidro",
+    "Nome": "Veneno básico (vidro)",
+    "Descricao": "Frasco contendo veneno simples para armas.",
+    "Categoria": "Consumivel",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 10000
+  },
+  {
+    "Id": "vidro_ou_frasco",
+    "Nome": "Vidro ou frasco",
+    "Descricao": "Recipiente de vidro para armazenar líquidos ou substâncias.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 100
   }
+
 ]

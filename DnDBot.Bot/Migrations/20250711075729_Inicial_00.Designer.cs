@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DnDBot.Bot.Migrations
 {
     [DbContext(typeof(DnDBotDbContext))]
-    [Migration("20250711065231_Inicial_00")]
+    [Migration("20250711075729_Inicial_00")]
     partial class Inicial_00
     {
         /// <inheritdoc />
