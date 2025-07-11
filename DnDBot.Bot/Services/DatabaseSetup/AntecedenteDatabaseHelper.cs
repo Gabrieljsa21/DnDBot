@@ -21,65 +21,84 @@ public static class AntecedenteDatabaseHelper
         var definicoes = new Dictionary<string, string>
         {
             ["Antecedente"] = @"
-                Id TEXT PRIMARY KEY,
-                IdiomasAdicionais INTEGER,
-                " + SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim(),
+        Id TEXT PRIMARY KEY,
+        IdiomasAdicionais INTEGER,
+        Ouro INTEGER,
+        " + SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim(),
 
             ["AntecedenteTag"] = @"
-                AntecedenteId TEXT NOT NULL,
-                Tag TEXT NOT NULL,
-                PRIMARY KEY (AntecedenteId, Tag),
-                FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
+        AntecedenteId TEXT NOT NULL,
+        Tag TEXT NOT NULL,
+        PRIMARY KEY (AntecedenteId, Tag),
+        FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
 
-            ["AntecedentePericia"] = @"
-                AntecedenteId TEXT NOT NULL,
-                PericiaId TEXT NOT NULL,
-                PRIMARY KEY (AntecedenteId, PericiaId),
-                FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE,
-                FOREIGN KEY (PericiaId) REFERENCES Pericia(Id) ON DELETE CASCADE",
-
-            ["AntecedenteIdioma"] = @"
-                AntecedenteId TEXT NOT NULL,
-                IdiomaId TEXT NOT NULL,
-                PRIMARY KEY (AntecedenteId, IdiomaId),
-                FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE,
-                FOREIGN KEY (IdiomaId) REFERENCES Idioma(Id) ON DELETE CASCADE",
+            ["AntecedenteProficienciaPericia"] = @"
+        AntecedenteId TEXT NOT NULL,
+        PericiaId TEXT NOT NULL,
+        PRIMARY KEY (AntecedenteId, PericiaId),
+        FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE,
+        FOREIGN KEY (PericiaId) REFERENCES Pericia(Id) ON DELETE CASCADE",
 
             ["AntecedenteFerramenta"] = @"
-                AntecedenteId TEXT NOT NULL,
-                FerramentaId TEXT NOT NULL,
-                PRIMARY KEY (AntecedenteId, FerramentaId),
-                FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE,
-                FOREIGN KEY (FerramentaId) REFERENCES Ferramenta(Id) ON DELETE CASCADE",
+        AntecedenteId TEXT NOT NULL,
+        FerramentaId TEXT NOT NULL,
+        PRIMARY KEY (AntecedenteId, FerramentaId),
+        FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE,
+        FOREIGN KEY (FerramentaId) REFERENCES Ferramenta(Id) ON DELETE CASCADE",
 
-            ["AntecedenteMoeda"] = @"
-                AntecedenteId TEXT NOT NULL,
-                Tipo TEXT NOT NULL,
-                Quantidade INTEGER NOT NULL,
-                PRIMARY KEY (AntecedenteId, Tipo),
-                FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
+            ["AntecedenteItem"] = @"
+        AntecedenteId TEXT NOT NULL,
+        ItemId TEXT NOT NULL,
+        PRIMARY KEY (AntecedenteId, ItemId),
+        FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE,
+        FOREIGN KEY (ItemId) REFERENCES Item(Id) ON DELETE CASCADE",
 
             ["AntecedenteIdeal"] = @"
-                Id TEXT PRIMARY KEY,
-                Nome TEXT,
-                Descricao TEXT,
-                AntecedenteId TEXT NOT NULL,
-                FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
+        Id TEXT PRIMARY KEY,
+        Nome TEXT,
+        Descricao TEXT,
+        AntecedenteId TEXT NOT NULL,
+        FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
 
             ["AntecedenteVinculo"] = @"
-                Id TEXT PRIMARY KEY,
-                Nome TEXT,
-                Descricao TEXT,
-                AntecedenteId TEXT NOT NULL,
-                FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
+        Id TEXT PRIMARY KEY,
+        Nome TEXT,
+        Descricao TEXT,
+        AntecedenteId TEXT NOT NULL,
+        FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
 
             ["AntecedenteDefeito"] = @"
-                Id TEXT PRIMARY KEY,
-                Nome TEXT,
-                Descricao TEXT,
-                AntecedenteId TEXT NOT NULL,
-                FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE"
+        Id TEXT PRIMARY KEY,
+        Nome TEXT,
+        Descricao TEXT,
+        AntecedenteId TEXT NOT NULL,
+        FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
+
+            ["AntecedenteOpcaoFerramenta"] = @"
+        AntecedenteId TEXT NOT NULL,
+        FerramentaId TEXT NOT NULL,
+        PRIMARY KEY (AntecedenteId, FerramentaId),
+        FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE,
+        FOREIGN KEY (FerramentaId) REFERENCES Ferramenta(Id) ON DELETE CASCADE",
+
+            ["AntecedenteOpcaoFerramenta_Meta"] = @"
+        AntecedenteId TEXT PRIMARY KEY,
+        QuantidadeEscolhas INTEGER NOT NULL,
+        FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE",
+
+            ["AntecedenteOpcaoItem"] = @"
+        AntecedenteId TEXT NOT NULL,
+        ItemId TEXT NOT NULL,
+        PRIMARY KEY (AntecedenteId, ItemId),
+        FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE,
+        FOREIGN KEY (ItemId) REFERENCES Item(Id) ON DELETE CASCADE",
+
+            ["AntecedenteOpcaoItem_Meta"] = @"
+        AntecedenteId TEXT PRIMARY KEY,
+        QuantidadeEscolhas INTEGER NOT NULL,
+        FOREIGN KEY (AntecedenteId) REFERENCES Antecedente(Id) ON DELETE CASCADE"
         };
+
 
         foreach (var tabela in definicoes)
             await SqliteHelper.CriarTabelaAsync(cmd, tabela.Key, tabela.Value);
@@ -110,24 +129,23 @@ public static class AntecedenteDatabaseHelper
             {
                 var parametros = GerarParametrosEntidadeBase(antecedente);
                 parametros["idiomas"] = antecedente.IdiomasAdicionais;
+                parametros["ouro"] = antecedente.Ouro;
 
                 var sql = $@"
                     INSERT INTO Antecedente (
-                        Id, IdiomasAdicionais, {SqliteEntidadeBaseHelper.CamposInsert.Replace("Id,", "").Trim()}
+                        Id, IdiomasAdicionais,Ouro, {SqliteEntidadeBaseHelper.CamposInsert.Replace("Id,", "").Trim()}
                     ) VALUES (
-                        $id, $idiomas, {SqliteEntidadeBaseHelper.ValoresInsert.Replace("$id,", "").Trim()}
+                        $id, $idiomas, $ouro, {SqliteEntidadeBaseHelper.ValoresInsert.Replace("$id,", "").Trim()}
                     )";
 
                 var cmd = CriarInsertCommand(connection, transaction, sql, parametros);
                 await cmd.ExecuteNonQueryAsync();
             }
-
-            await InserirRelacionamentoSimples(connection, transaction, "AntecedentePericia", "PericiaId", antecedente.Id, antecedente.Pericias.Select(x => x.PericiaId));
-            await InserirRelacionamentoSimples(connection, transaction, "AntecedenteIdioma", "IdiomaId", antecedente.Id, antecedente.Idiomas.Select(x => x.IdiomaId));
-            await InserirRelacionamentoSimples(connection, transaction, "AntecedenteFerramenta", "FerramentaId", antecedente.Id, antecedente.Ferramentas.Select(x => x.FerramentaId));
+            await InserirRelacionamentoSimples(connection, transaction, "AntecedenteProficienciaPericia", "PericiaId", antecedente.Id, antecedente.ProficienciaPericias.Select(x => x.PericiaId));
+            await InserirRelacionamentoSimples(connection, transaction, "AntecedenteFerramenta", "FerramentaId", antecedente.Id, antecedente.ProficienciaFerramentas.Select(x => x.FerramentaId));
             await InserirTagsAsync(connection, transaction, "AntecedenteTag", "AntecedenteId", antecedente.Id, antecedente.Tags);
 
-            await InserirMoedas(connection, transaction, antecedente.Id, antecedente.Moedas.Select(x => x.Moeda));
+            await InserirRelacionamentoSimples(connection, transaction, "AntecedenteItem", "ItemId", antecedente.Id, antecedente.Itens.Select(x => x.ItemId));
             await InserirCaracteristicas(connection, transaction, "AntecedenteIdeal", antecedente.Id, antecedente.Ideais.Select(x => x.Ideal));
             await InserirCaracteristicas(connection, transaction, "AntecedenteVinculo", antecedente.Id, antecedente.Vinculos.Select(x => x.Vinculo));
             await InserirCaracteristicas(connection, transaction, "AntecedenteDefeito", antecedente.Id, antecedente.Defeitos.Select(x => x.Defeito));
@@ -158,20 +176,6 @@ public static class AntecedenteDatabaseHelper
     {
         foreach (var item in itens ?? new List<EntidadeBase>())
             await InserirRelacionamentoSimples(conn, tx, tabela, coluna, antecedenteId, new[] { item.Id });
-    }
-
-    private static async Task InserirMoedas(SqliteConnection conn, SqliteTransaction tx, string antecedenteId, IEnumerable<Moeda> moedas)
-    {
-        foreach (var m in moedas ?? new List<Moeda>())
-        {
-            var insert = conn.CreateCommand();
-            insert.Transaction = tx;
-            insert.CommandText = "INSERT OR IGNORE INTO AntecedenteMoeda (AntecedenteId, Tipo, Quantidade) VALUES ($aid, $tipo, $qtd)";
-            insert.Parameters.AddWithValue("$aid", antecedenteId);
-            insert.Parameters.AddWithValue("$tipo", m.Tipo.ToString());
-            insert.Parameters.AddWithValue("$qtd", m.Quantidade);
-            await insert.ExecuteNonQueryAsync();
-        }
     }
 
     private static async Task InserirCaracteristicas(SqliteConnection conn, SqliteTransaction tx, string tabela, string antecedenteId, IEnumerable<EntidadeBase> lista)

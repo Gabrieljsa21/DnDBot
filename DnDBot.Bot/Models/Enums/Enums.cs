@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace DnDBot.Bot.Models.Enums
 {
-
     public enum EtapaCriacaoFicha
     {
         Inicio = 1,
@@ -15,6 +14,21 @@ namespace DnDBot.Bot.Models.Enums
         DistribuicaoAtributos = 4,
         BonusAtributos = 5,
         Idiomas = 6
+    }
+
+    /// <summary>
+    /// Enumeração para indicar o tipo de cura aplicada por uma poção.
+    /// </summary>
+    public enum TipoCura
+    {
+        /// <summary>Valor numérico fixo (ex: 10 PV).</summary>
+        Fixo,
+
+        /// <summary>Rolagem de dado (ex: 2d4+2).</summary>
+        Dado,
+
+        /// <summary>Porcentagem do total de PV.</summary>
+        Porcentagem
     }
 
     /// <summary>
@@ -147,11 +161,44 @@ namespace DnDBot.Bot.Models.Enums
     /// </summary>
     public enum SlotEquipamento
     {
-        MaoDireita,
-        MaoEsquerda,
+        /// <summary>Mão principal (ex: espada, machado).</summary>
+        MaoPrincipal,
+
+        /// <summary>Mão secundária (ex: escudo, adaga).</summary>
+        MaoSecundaria,
+
+        /// <summary>Ambas as mãos (ex: arco longo, espada grande).</summary>
+        AmbasAsMaos,
+
+        /// <summary>Armadura corporal principal (leve, média ou pesada).</summary>
+        ArmaduraCorpo,
+
+        /// <summary>Escudo ou proteção adicional.</summary>
+        Escudo,
+
+        /// <summary>Capacete, elmo ou tiara.</summary>
         Cabeca,
-        Corpo,
+
+        /// <summary>Luvas ou manoplas.</summary>
+        Maos,
+
+        /// <summary>Botas ou calçados.</summary>
         Pes,
+
+        /// <summary>Capa, manto ou asas.</summary>
+        Costas,
+
+        /// <summary>Anel mágico (1º slot).</summary>
+        Anel1,
+
+        /// <summary>Anel mágico (2º slot).</summary>
+        Anel2,
+
+        /// <summary>Amuleto, colar ou talismã.</summary>
+        Pescoco,
+
+        /// <summary>Faixa, cinturão ou cinto mágico.</summary>
+        Cintura
     }
 
     public enum CategoriaArma
@@ -210,16 +257,6 @@ namespace DnDBot.Bot.Models.Enums
         HabilidadeEspecial,
         PericiaExtra,
         Outra
-    }
-
-    public enum AcaoRequerida
-    {
-        Nenhuma,
-        Acao,
-        AcaoBonus,
-        Reacao,
-        Movimento,
-        TempoLivre
     }
 
     public enum Alvo
@@ -338,6 +375,16 @@ namespace DnDBot.Bot.Models.Enums
         TempoEspecial
     }
 
+    public enum AcaoRequerida
+    {
+        Nenhuma,
+        Acao,
+        AcaoBonus,
+        Reacao,
+        Movimento,
+        TempoLivre
+    }
+
     public enum RecargaMagia
     {
         Nenhuma,
@@ -391,6 +438,84 @@ namespace DnDBot.Bot.Models.Enums
         Metros36,   // ~120 pés
         Ilimitado,
         Especial
+    }
+
+    /// <summary>
+    /// Enum que representa as possíveis categorias de itens no sistema D&D 5e.
+    /// </summary>
+    public enum CategoriaItem
+    {
+        Arma,
+        Armadura,
+        Escudo,
+        Ferramenta,
+        Consumivel,
+        EquipamentoAventura,
+        Roupas,
+        Veiculo,
+        LivroOuTomo,
+        Outro
+    }
+
+    public enum SubcategoriaItem
+    {
+        Nenhuma,
+
+        // Para Consumíveis
+        Pocao,
+        Pergaminho,
+        Alimento,
+        Bebida,
+        Kit,
+
+        // Para Ferramentas
+        FerramentaCarpinteiro,
+        FerramentaCartografo,
+        FerramentaCostureiro,
+        FerramentaCoureiro,
+        FerramentaEntalhador,
+        FerramentaFerreiro,
+        FerramentaFunileiro,
+        FerramentaJoalheiro,
+        FerramentaOleiro,
+        FerramentaPedreiro,
+        FerramentaPintor,
+        FerramentaSapateiro,
+        FerramentaVidreiro,
+        FerramentaLadrao,
+        FerramentaNavegador,
+
+        // Para Armas
+        ArmaCorpoACorpo,
+        ArmaADistancia,
+
+        // Para Armaduras
+        ArmaduraLeve,
+        ArmaduraMedia,
+        ArmaduraPesada,
+        Escudo,
+
+        // Para outros
+        InstrumentoMusical,
+        ObjetoMagico,
+        EquipamentoAventura,
+        Roupas,
+        Veiculo,
+        LivroOuTomo,
+        Joia,
+        AnimalEstimacao,
+        Documento,
+        Mapa,
+        Fetiche,
+        Insignia,
+        Amuleto,
+
+        Outro
+    }
+
+    public enum RaridadeItem
+    {
+        Comum, Incomum, Rara, MuitoRara, Lendária, Artefato
     }
 
 }

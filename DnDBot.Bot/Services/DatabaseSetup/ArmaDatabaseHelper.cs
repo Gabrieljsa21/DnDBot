@@ -35,10 +35,8 @@ public static class ArmaDatabaseHelper
             "DadoDanoVersatil TEXT",
             "PodeSerArremessada INTEGER",
             "AlcanceArremesso INTEGER",
-            "BonusMagico INTEGER",
             "DurabilidadeAtual INTEGER",
             "DurabilidadeMaxima INTEGER",
-            "Raridade TEXT",
             "Fabricante TEXT",
             SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim().TrimEnd(',')
         });
@@ -156,12 +154,12 @@ public static class ArmaDatabaseHelper
                 {SqliteEntidadeBaseHelper.CamposInsert},
                 Tipo, Categoria, DadoDano, TipoDano, TipoDanoSecundario, Peso, Custo, Alcance,
                 EhDuasMaos, EhLeve, EhVersatil, DadoDanoVersatil, PodeSerArremessada, AlcanceArremesso,
-                BonusMagico, DurabilidadeAtual, DurabilidadeMaxima, Raridade, Fabricante
+                DurabilidadeAtual, DurabilidadeMaxima, Fabricante
             ) VALUES (
                 {SqliteEntidadeBaseHelper.ValoresInsert},
                 $tipo, $categoria, $dadoDano, $tipoDano, $tipoDanoSecundario, $peso, $custo, $alcance,
                 $ehDuasMaos, $ehLeve, $ehVersatil, $dadoDanoVersatil, $podeSerArremessada, $alcanceArremesso,
-                $bonusMagico, $durabilidadeAtual, $durabilidadeMaxima, $raridade, $fabricante
+                $durabilidadeAtual, $durabilidadeMaxima, $fabricante
             )";
 
         var cmd = CriarInsertCommand(conn, tx, sql, parametros);
@@ -186,10 +184,8 @@ public static class ArmaDatabaseHelper
         dict["$dadoDanoVersatil"] = arma.DadoDanoVersatil ?? "";
         dict["$podeSerArremessada"] = arma.PodeSerArremessada ? 1 : 0;
         dict["$alcanceArremesso"] = arma.AlcanceArremesso ?? (object)DBNull.Value;
-        dict["$bonusMagico"] = arma.BonusMagico;
         dict["$durabilidadeAtual"] = arma.DurabilidadeAtual;
         dict["$durabilidadeMaxima"] = arma.DurabilidadeMaxima;
-        dict["$raridade"] = arma.Raridade ?? "";
         dict["$fabricante"] = arma.Fabricante ?? "";
 
         return dict;

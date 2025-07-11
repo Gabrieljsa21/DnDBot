@@ -25,21 +25,16 @@ namespace DnDBot.Bot.Services.DatabaseSetup
             {
                 ["Armadura"] = string.Join(",\n", new[]
                 {
-                    "Id TEXT PRIMARY KEY",
-            "Tipo TEXT NOT NULL",                     // Enum como string
-            "ClasseArmadura INTEGER NOT NULL",
-            "PermiteFurtividade INTEGER NOT NULL",    // Bool como int (0/1)
-            "PenalidadeFurtividade INTEGER",
-            "Peso REAL",
-            "Custo REAL",
-            "RequisitoForca INTEGER",
-            "DurabilidadeAtual INTEGER",
-            "DurabilidadeMaxima INTEGER",
-            "EMagica INTEGER NOT NULL",               // Bool como int
-            "BonusMagico INTEGER",
-            "Raridade TEXT",
-            "Fabricante TEXT",
-            "Material TEXT",
+                "Id TEXT PRIMARY KEY",
+                "Tipo TEXT NOT NULL",                     // Enum como string
+                "ClasseArmadura INTEGER NOT NULL",
+                "PermiteFurtividade INTEGER NOT NULL",    // Bool como int (0/1)
+                "PenalidadeFurtividade INTEGER",
+                "Custo REAL",
+                "RequisitoForca INTEGER",
+                "DurabilidadeAtual INTEGER",
+                "DurabilidadeMaxima INTEGER",
+                "Fabricante TEXT",
             SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim().TrimEnd(',')
         }),
 
@@ -120,29 +115,23 @@ namespace DnDBot.Bot.Services.DatabaseSetup
             parametros["ca"] = armadura.ClasseArmadura;
             parametros["furtivo"] = armadura.PermiteFurtividade ? 1 : 0;
             parametros["penalidade"] = armadura.PenalidadeFurtividade;
-            parametros["peso"] = armadura.Peso;
             parametros["custo"] = armadura.Custo;
             parametros["forca"] = armadura.RequisitoForca;
             parametros["dAtual"] = armadura.DurabilidadeAtual;
             parametros["dMax"] = armadura.DurabilidadeMaxima;
-            parametros["magica"] = armadura.EMagica ? 1 : 0;
-            parametros["bonus"] = armadura.BonusMagico;
-            parametros["raridade"] = armadura.Raridade ?? "";
             parametros["fabricante"] = armadura.Fabricante ?? "";
-            parametros["material"] = armadura.Material ?? "";
 
             var sql = $@"
         INSERT INTO Armadura (
             Tipo, ClasseArmadura, PermiteFurtividade, PenalidadeFurtividade,
-            Peso, Custo, RequisitoForca,
+            Custo, RequisitoForca,
             DurabilidadeAtual, DurabilidadeMaxima,
-            EMagica, BonusMagico, Raridade, Fabricante, Material,
             {SqliteEntidadeBaseHelper.CamposInsert}
         ) VALUES (
             $tipo, $ca, $furtivo, $penalidade,
-            $peso, $custo, $forca,
+            $custo, $forca,
             $dAtual, $dMax,
-            $magica, $bonus, $raridade, $fabricante, $material,
+            $fabricante
             {SqliteEntidadeBaseHelper.ValoresInsert}
         )";
 

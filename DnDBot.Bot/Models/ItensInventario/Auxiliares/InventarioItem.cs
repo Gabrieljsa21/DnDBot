@@ -1,7 +1,6 @@
-﻿using DnDBot.Bot.Models;
-using System;
+﻿using System;
 
-namespace DnDBot.Bot.Models.ItensInventario
+namespace DnDBot.Bot.Models.ItensInventario.Auxiliares
 {
     /// <summary>
     /// Representa um item armazenado no inventário do personagem, com quantidade.

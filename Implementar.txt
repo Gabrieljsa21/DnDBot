@@ -1,0 +1,31 @@
+Aplicar efeitos do material no item AplicarEfeitosDoMaterial
+
+public void AplicarEfeitosDoMaterial()
+{
+    if (Material == null) return;
+
+    // Aplica modificadores universais
+    PesoUnitario *= Material.PesoRelativo;
+    ValorCobre = (int)(ValorCobre * Material.CustoMultiplicador);
+
+    // Verifica se é uma armadura
+    if (this is Armadura armadura)
+    {
+        // Se o material remove desvantagem em furtividade
+        if (Material.IgnoraDesvantagemFurtividade)
+            armadura.PermiteFurtividade = true;
+
+        // Aplica bônus de CA se houver
+        armadura.ClasseArmadura += Material.BonusCA;
+    }
+
+    // Verifica se é uma arma
+    if (this is Arma arma)
+    {
+        // Aplica bônus de ataque e dano
+        arma.IncrementarBonusMagico(Material.BonusAtaque);
+        // Dano poderia ser ajustado dinamicamente, se você usar sistema de dano customizado
+    }
+
+    // Pode adicionar efeitos extras dependendo da lógica do seu jogo
+}

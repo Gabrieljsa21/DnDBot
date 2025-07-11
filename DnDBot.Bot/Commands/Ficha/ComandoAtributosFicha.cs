@@ -1,7 +1,6 @@
 ﻿using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
-using DnDBot.Application.Models;
 using DnDBot.Bot.Services;
 using DnDBot.Bot.Services.Distribuicao;
 using DnDBot.Bot.Services.EtapasFicha;

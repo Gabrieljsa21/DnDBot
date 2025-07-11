@@ -15,19 +15,27 @@ namespace DnDBot.Bot.Models.Ficha.Auxiliares
 
         public Antecedente Antecedente { get; set; }
     }
-    public class AntecedentePericia
+    public class AntecedenteProficienciaPericias
     {
         public string AntecedenteId { get; set; }
         public string PericiaId { get; set; }
         public Antecedente Antecedente { get; set; }
         public Pericia Pericia { get; set; }
     }
-    public class AntecedenteFerramenta
+    
+    public class AntecedenteProficienciaFerramentas
     {
         public string AntecedenteId { get; set; }
         public string FerramentaId { get; set; }
         public Antecedente Antecedente { get; set; }
         public Ferramenta Ferramenta { get; set; }
+    }
+    
+    public class AntecedenteOpcaoEscolhaProficienciaFerramentas
+    {
+        public string Id { get; set; }
+        public List<Ferramenta> Opcoes { get; set; } = new();
+        public int QuantidadeEscolhas { get; set; } = 1;
     }
     public class AntecedenteIdioma
     {
@@ -51,6 +59,28 @@ namespace DnDBot.Bot.Models.Ficha.Auxiliares
         public Antecedente Antecedente { get; set; }
         public Item Item { get; set; }
     }
+
+    public class AntecedenteOpcaoEscolhaItem
+    {
+        public string Id { get; set; }
+
+        public int QuantidadeEscolhas { get; set; }
+
+        public List<AntecedenteOpcaoEscolhaItemOpcoes> Opcoes { get; set; } = new();
+    }
+
+    public class AntecedenteOpcaoEscolhaItemOpcoes
+    {
+        public string Id { get; set; }
+
+        public string AntecedenteOpcaoEscolhaItemId { get; set; }
+        public AntecedenteOpcaoEscolhaItem AntecedenteOpcaoEscolhaItem { get; set; }
+
+        public string ItemId { get; set; }
+        public Item Item { get; set; }
+    }
+
+
     public class AntecedenteIdeal
     {
         public string AntecedenteId { get; set; }

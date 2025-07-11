@@ -2,9 +2,11 @@
 using DnDBot.Bot.Models.Ficha;
 using DnDBot.Bot.Models.Ficha.Auxiliares;
 using DnDBot.Bot.Models.ItensInventario;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace DnDBot.Bot.Models.AntecedenteModels
 {
@@ -14,31 +16,49 @@ namespace DnDBot.Bot.Models.AntecedenteModels
     /// </summary>
     public class Antecedente : EntidadeBase
     {
-
         /// <summary>
         /// Lista das perícias concedidas por este antecedente.
         /// </summary>
-        public List<AntecedentePericia> Pericias { get; set; } = new();
+        public List<AntecedenteProficienciaPericias> ProficienciaPericias { get; set; } = new();
 
         /// <summary>
         /// Lista das ferramentas concedidas por este antecedente.
         /// </summary>
-        public List<AntecedenteFerramenta> Ferramentas { get; set; } = new();
+        public List<AntecedenteProficienciaFerramentas> ProficienciaFerramentas { get; set; } = new();
 
         /// <summary>
-        /// Lista das línguas que o personagem aprende com este antecedente.
+        /// Equipamentos detalhados que este antecedente concede ao personagem.
         /// </summary>
-        public List<AntecedenteIdioma> Idiomas { get; set; } = new();
+        public AntecedenteOpcaoEscolhaProficienciaFerramentas OpcoesProficienciaFerramentas { get; set; }
+
+
+        /// <summary>
+        /// Número de idiomas adicionais concedidos.
+        /// </summary>
+        public int IdiomasAdicionais { get; set; } = 0;
+
+        /// <summary>
+        /// Quantidade fixa de ouro inicial concedida pelo antecedente.
+        /// </summary>
+        public int Ouro { get; set; } = 0;
 
         /// <summary>
         /// Características especiais (features) concedidas por este antecedente.
         /// </summary>
+
+        [JsonIgnore] 
         public List<AntecedenteCaracteristica> Caracteristicas { get; set; } = new();
 
         /// <summary>
         /// Equipamentos detalhados que este antecedente concede ao personagem.
         /// </summary>
-        public List<AntecedenteItem> itens { get; set; } = new();
+        public List<AntecedenteItem> Itens { get; set; } = new();
+
+        /// <summary>
+        /// Opções de escolha para equipamentos adicionais — permite seleção de equipamentos.
+        /// Esta propriedade não é mapeada no banco de dados.
+        /// </summary>
+        public AntecedenteOpcaoEscolhaItem OpcoesItens { get; set; } = new();
 
         /// <summary>
         /// Ideais associados ao antecedente, que ajudam a moldar a personalidade do personagem.
@@ -56,46 +76,14 @@ namespace DnDBot.Bot.Models.AntecedenteModels
         public List<AntecedenteDefeito> Defeitos { get; set; } = new();
 
         /// <summary>
-        /// Riqueza inicial representada pela lista de moedas que o personagem recebe ao escolher este antecedente.
-        /// </summary>
-        public List<AntecedenteMoeda> Moedas { get; set; } = new();
-
-        /// <summary>
-        /// Relacionamento com as tags armazenadas na tabela Raca_Tag.
+        /// Relacionamento com as tags armazenadas na tabela Antecedente_Tag.
         /// </summary>
         public List<AntecedenteTag> AntecedenteTags { get; set; } = new();
 
 
 
         /// <summary>
-        /// Quantidade adicional de idiomas que o personagem pode escolher com este antecedente.
-        /// </summary>
-        public int IdiomasAdicionais { get; set; } = 0;
-
-        /// <summary>
-        /// Opções de escolha para idiomas adicionais — permite que o jogador selecione idiomas extras.
-        /// Esta propriedade não é mapeada no banco de dados.
-        /// </summary>
-        [NotMapped]
-        public OpcaoEscolha<Idioma> OpcoesIdiomas { get; set; } = new();
-
-        /// <summary>
-        /// Opções de escolha para equipamentos adicionais — permite seleção de equipamentos.
-        /// Esta propriedade não é mapeada no banco de dados.
-        /// </summary>
-        [NotMapped]
-        public OpcaoEscolha<InventarioItem> OpcoesEquipamentos { get; set; } = new();
-
-        /// <summary>
-        /// Opções de escolha para perícias adicionais — permite seleção de perícias extras.
-        /// Esta propriedade não é mapeada no banco de dados.
-        /// </summary>
-        [NotMapped]
-        public OpcaoEscolha<Pericia> OpcoesPericias { get; set; } = new();
-
-
-        /// <summary>
-        /// Tags derivadas da lista de RacaTags, útil para facilitar acesso.
+        /// Tags derivadas da lista de AntecedenteTags, útil para facilitar acesso.
         /// </summary>
         [NotMapped]
         public List<string> Tags
@@ -104,5 +92,19 @@ namespace DnDBot.Bot.Models.AntecedenteModels
             set => AntecedenteTags = value?.Select(tag => new AntecedenteTag { Tag = tag, AntecedenteId = Id }).ToList() ?? new();
         }
 
+        // Essa propriedade é usada para JSON, para receber só os IDs
+        [JsonPropertyName("Caracteristicas")]
+        public List<string> CaracteristicaIds
+        {
+            get => Caracteristicas.Select(c => c.CaracteristicaId).ToList();
+            set
+            {
+                Caracteristicas = value?.Select(id => new AntecedenteCaracteristica
+                {
+                    CaracteristicaId = id,
+                    AntecedenteId = this.Id
+                }).ToList() ?? new List<AntecedenteCaracteristica>();
+            }
+        }
     }
 }

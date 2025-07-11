@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DnDBot.Bot.Data.Configurations.CaracteristicaConfig
+namespace DnDBot.Bot.Data.Configurations
 {
     /// <summary>
     /// Configuração da entidade Caracteristica para o Entity Framework Core.

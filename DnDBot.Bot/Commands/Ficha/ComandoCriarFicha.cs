@@ -1,6 +1,8 @@
 ﻿using Discord;
 using Discord.Interactions;
+using DnDBot.Bot.Models.Enums;
 using DnDBot.Bot.Models.Ficha;
+using DnDBot.Bot.Models.ItensInventario;
 using DnDBot.Bot.Services;
 using DnDBot.Bot.Services.Antecedentes;
 using DnDBot.Bot.Services.Distribuicao;
@@ -171,11 +173,11 @@ namespace DnDBot.Bot.Commands.Ficha
             var ficha = FichaTempStore.GetOrCreateFicha(Context.User.Id);
             ficha.AntecedenteId = valor;
 
-            if (antecedente.Moedas != null)
+            if (antecedente.Ouro > 0)
             {
-                foreach (var moeda in antecedente.Moedas)
-                    ficha.BolsaDeMoedas.Adicionar(moeda.Moeda);
+                ficha.BolsaDeMoedas.Adicionar(new Moeda(TipoMoeda.PO, antecedente.Ouro));
             }
+
 
             if (ControladorEtapasFicha.ValidadorFicha.EstaCompleta(ficha))
             {

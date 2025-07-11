@@ -1,5 +1,4 @@
-﻿using DnDBot.Application.Models;
-using DnDBot.Bot.Data;
+﻿using DnDBot.Bot.Data;
 using DnDBot.Bot.Helpers;
 using Microsoft.Data.Sqlite;
 using System;

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using DnDBot.Bot.Models.Enums;
+using System.Collections.Generic;
 
 namespace DnDBot.Bot.Models.ItensInventario
 {
@@ -6,37 +7,19 @@ namespace DnDBot.Bot.Models.ItensInventario
     /// Representa um material com suas propriedades específicas,
     /// podendo ser usado para itens como armas, armaduras, etc.
     /// </summary>
-    public class Material
+    public class Material : EntidadeBase
     {
-        /// <summary>
-        /// Identificador único do material.
-        /// </summary>
-        public string Id { get; init; }
 
-        /// <summary>
-        /// Nome do material (ex: Aço, Mithral, Couro, Vidro).
-        /// </summary>
-        public string Nome { get; init; }
+        public bool IgnoraCritico { get; init; } = false;
+        public bool IgnoraDesvantagemFurtividade { get; init; } = false; 
+        public int BonusCA { get; init; } = 0; 
+        public int BonusAtaque { get; init; } = 0;
+        public int BonusDano { get; init; } = 0;
 
-        /// <summary>
-        /// Descrição ou detalhes do material.
-        /// </summary>
-        public string Descricao { get; init; }
+        public List<TipoDano> ResistenciasDano { get; init; } = new();
+        public List<TipoDano> ImunidadesDano { get; init; } = new();
 
-        /// <summary>
-        /// Propriedades especiais ou vantagens do material.
-        /// Exemplo: "Leve", "Resistente a fogo", "Silencioso".
-        /// </summary>
-        public List<string> PropriedadesEspeciais { get; init; } = new();
-
-        /// <summary>
-        /// Peso relativo do material, usado para cálculos de peso de itens.
-        /// </summary>
         public double PesoRelativo { get; init; } = 1.0;
-
-        /// <summary>
-        /// Multiplicador de custo do material, usado para cálculo de valor de itens.
-        /// </summary>
         public decimal CustoMultiplicador { get; init; } = 1m;
 
         public Material(string id, string nome, string descricao)
@@ -46,4 +29,5 @@ namespace DnDBot.Bot.Models.ItensInventario
             Descricao = descricao;
         }
     }
+
 }

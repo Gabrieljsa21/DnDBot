@@ -1,4 +1,6 @@
-﻿using DnDBot.Bot.Models.Ficha;
+﻿using DnDBot.Bot.Models.Enums;
+using DnDBot.Bot.Models.Ficha;
+using DnDBot.Bot.Models.ItensInventario.Auxiliares;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -59,8 +61,12 @@ namespace DnDBot.Bot.Models.ItensInventario
 
         public IEnumerable<InventarioItem> ListarPorCategoria(string categoria)
         {
-            return Itens.Where(i => i.ItemBase.Categoria.Equals(categoria, StringComparison.OrdinalIgnoreCase));
+            if (!Enum.TryParse<CategoriaItem>(categoria, ignoreCase: true, out var categoriaEnum))
+                return Enumerable.Empty<InventarioItem>();
+
+            return Itens.Where(i => i.ItemBase.Categoria == categoriaEnum);
         }
+
 
         public void LimparInventario()
         {

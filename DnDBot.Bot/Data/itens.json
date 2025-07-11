@@ -1,0 +1,803 @@
+[
+  {
+    "Id": "kit_artesao_alquimista",
+    "Nome": "Kit de Artesão (Alquimista)",
+    "Descricao": "Conjunto com frascos, reagentes e ferramentas para criação de poções e elixires.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 5,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "kit_artesao_carpinteiro",
+    "Nome": "Kit de Artesão (Carpinteiro)",
+    "Descricao": "Ferramentas especializadas para trabalhos em madeira.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 6,
+    "Equipavel": false,
+    "ValorCobre": 800
+  },
+  {
+    "Id": "kit_artesao_ceramista",
+    "Nome": "Kit de Artesão (Ceramista)",
+    "Descricao": "Ferramentas para moldar, esculpir e trabalhar com cerâmica.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 3,
+    "Equipavel": false,
+    "ValorCobre": 250
+  },
+  {
+    "Id": "kit_artesao_coureiro",
+    "Nome": "Kit de Artesão (Coureiro)",
+    "Descricao": "Ferramentas para trabalhar couro e confeccionar armaduras ou roupas.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 4,
+    "Equipavel": false,
+    "ValorCobre": 450
+  },
+  {
+    "Id": "kit_artesao_ferreiro",
+    "Nome": "Kit de Artesão (Ferreiro)",
+    "Descricao": "Ferramentas para forjar armas, armaduras e objetos metálicos.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 8,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "kit_artesao_vidraceiro",
+    "Nome": "Kit de Artesão (Vidraceiro)",
+    "Descricao": "Ferramentas para cortar, moldar e trabalhar vidro.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 3,
+    "Equipavel": false,
+    "ValorCobre": 300
+  },
+  {
+    "Id": "kit_artesao_joalheiro",
+    "Nome": "Kit de Artesão (Joalheiro)",
+    "Descricao": "Ferramentas delicadas para fabricar e consertar joias.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 2,
+    "Equipavel": false,
+    "ValorCobre": 2500
+  },
+  {
+    "Id": "kit_artesao_marceneiro",
+    "Nome": "Kit de Artesão (Marceneiro)",
+    "Descricao": "Ferramentas para trabalhos finos em madeira e mobiliário.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 6,
+    "Equipavel": false,
+    "ValorCobre": 750
+  },
+  {
+    "Id": "kit_artesao_papeleiro",
+    "Nome": "Kit de Artesão (Papeleiro)",
+    "Descricao": "Ferramentas para fabricar e manipular papel e pergaminhos.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 2,
+    "Equipavel": false,
+    "ValorCobre": 300
+  },
+  {
+    "Id": "kit_artesao_pintor",
+    "Nome": "Kit de Artesão (Pintor)",
+    "Descricao": "Conjunto com pincéis, tintas e telas para pintura artística.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 3,
+    "Equipavel": false,
+    "ValorCobre": 1000
+  },
+  {
+    "Id": "kit_artesao_tecelao",
+    "Nome": "Kit de Artesão (Tecelão)",
+    "Descricao": "Ferramentas para tecer, costurar e trabalhar com tecidos.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 3,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "kit_artesao_tosquiador",
+    "Nome": "Kit de Artesão (Tosquiador)",
+    "Descricao": "Ferramentas para tosquiar animais e trabalhar com lã.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 3,
+    "Equipavel": false,
+    "ValorCobre": 350
+  },
+  {
+    "Id": "kit_cartografo",
+    "Nome": "Kit de Cartógrafo",
+    "Descricao": "Ferramentas para mapear territórios e criar cartas geográficas.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 5,
+    "Equipavel": false,
+    "ValorCobre": 1500
+  },
+  {
+    "Id": "kit_disfarce",
+    "Nome": "Kit de Disfarce",
+    "Descricao": "Material para alterar a aparência e criar disfarces convincentes.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 3,
+    "Equipavel": false,
+    "ValorCobre": 250
+  },
+  {
+    "Id": "kit_ladrao",
+    "Nome": "Kit de Ladrão",
+    "Descricao": "Conjunto de ferramentas para arrombar fechaduras e desarmar armadilhas.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 250
+  },
+  {
+    "Id": "kit_navegacao",
+    "Nome": "Kit de Navegação",
+    "Descricao": "Instrumentos para navegação marítima e orientação em alto mar.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 4,
+    "Equipavel": false,
+    "ValorCobre": 250
+  },
+  {
+    "Id": "ferramentas_carpinteiro",
+    "Nome": "Ferramentas de Carpinteiro",
+    "Descricao": "Conjunto de ferramentas básicas para trabalhos em madeira.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 6,
+    "Equipavel": false,
+    "ValorCobre": 800
+  },
+  {
+    "Id": "ferramentas_cartografo",
+    "Nome": "Ferramentas de Cartógrafo",
+    "Descricao": "Instrumentos usados para desenhar mapas e medir distâncias.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 5,
+    "Equipavel": false,
+    "ValorCobre": 1500
+  },
+  {
+    "Id": "ferramentas_costureiro",
+    "Nome": "Ferramentas de Costureiro",
+    "Descricao": "Agulhas, linhas e outros itens para costura e reparos de roupas.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 2,
+    "Equipavel": false,
+    "ValorCobre": 300
+  },
+  {
+    "Id": "ferramentas_coureiro",
+    "Nome": "Ferramentas de Coureiro",
+    "Descricao": "Ferramentas para trabalhar couro com precisão.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 4,
+    "Equipavel": false,
+    "ValorCobre": 450
+  },
+  {
+    "Id": "ferramentas_entalhador",
+    "Nome": "Ferramentas de Entalhador",
+    "Descricao": "Ferramentas para esculpir madeira e outros materiais.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 3,
+    "Equipavel": false,
+    "ValorCobre": 400
+  },
+  {
+    "Id": "ferramentas_ferreiro",
+    "Nome": "Ferramentas de Ferreiro",
+    "Descricao": "Equipamentos para forjar e reparar itens metálicos.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 8,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "ferramentas_funileiro",
+    "Nome": "Ferramentas de Funileiro",
+    "Descricao": "Ferramentas para trabalhar metais finos e chapas.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 6,
+    "Equipavel": false,
+    "ValorCobre": 400
+  },
+  {
+    "Id": "ferramentas_joalheiro",
+    "Nome": "Ferramentas de Joalheiro",
+    "Descricao": "Instrumentos delicados para consertar e fabricar joias.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 2,
+    "Equipavel": false,
+    "ValorCobre": 2500
+  },
+  {
+    "Id": "ferramentas_oleiro",
+    "Nome": "Ferramentas de Oleiro",
+    "Descricao": "Ferramentas para moldar barro e cerâmica.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 3,
+    "Equipavel": false,
+    "ValorCobre": 300
+  },
+  {
+    "Id": "ferramentas_pedreiro",
+    "Nome": "Ferramentas de Pedreiro",
+    "Descricao": "Ferramentas para construção e reparos em pedra e alvenaria.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 10,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "ferramentas_pintor",
+    "Nome": "Ferramentas de Pintor",
+    "Descricao": "Pincéis, tintas e equipamentos para pintura e acabamento.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 3,
+    "Equipavel": false,
+    "ValorCobre": 1000
+  },
+  {
+    "Id": "ferramentas_sapateiro",
+    "Nome": "Ferramentas de Sapateiro",
+    "Descricao": "Equipamentos para consertar calçados e acessórios de couro.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 2,
+    "Equipavel": false,
+    "ValorCobre": 400
+  },
+  {
+    "Id": "ferramentas_vidreiro",
+    "Nome": "Ferramentas de Vidreiro",
+    "Descricao": "Ferramentas para cortar e instalar vidro.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 3,
+    "Equipavel": false,
+    "ValorCobre": 300
+  },
+  {
+    "Id": "ferramentas_ladrao",
+    "Nome": "Ferramentas de Ladrão",
+    "Descricao": "Conjunto de ferramentas para arrombamento e desarmar armadilhas.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 250
+  },
+  {
+    "Id": "ferramentas_navegador",
+    "Nome": "Ferramentas de Navegador",
+    "Descricao": "Instrumentos para navegação em terra e mar, incluindo bússola e mapas.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 4,
+    "Equipavel": false,
+    "ValorCobre": 250
+  },
+  {
+    "Id": "veiculos_terrestres",
+    "Nome": "Veículos Terrestres",
+    "Descricao": "Cavalos, carruagens e outros veículos para deslocamento em terra.",
+    "Categoria": "Veiculo",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 0
+  },
+  {
+    "Id": "veiculos_aquaticos",
+    "Nome": "Veículos Aquáticos",
+    "Descricao": "Barcos, canoas e outros meios de transporte aquático.",
+    "Categoria": "Veiculo",
+    "PesoUnitario": 0,
+    "Equipavel": false,
+    "ValorCobre": 0
+  },
+  {
+    "Id": "simbolo_sagrado",
+    "Nome": "Símbolo Sagrado",
+    "Descricao": "Símbolo usado para canalizar energia divina em magias e rituais.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "conta_oracoes",
+    "Nome": "Conta de Orações",
+    "Descricao": "Rosário usado para meditação e orações.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 10
+  },
+  {
+    "Id": "incenso_x5",
+    "Nome": "Incenso (x5)",
+    "Descricao": "Pacote com cinco varetas de incenso aromático para rituais.",
+    "Categoria": "Consumivel",
+    "PesoUnitario": 0.1,
+    "Equipavel": false,
+    "ValorCobre": 15
+  },
+  {
+    "Id": "vestimentas",
+    "Nome": "Vestimentas",
+    "Descricao": "Roupas comuns usadas por aventureiros e cidadãos.",
+    "Categoria": "Roupas",
+    "PesoUnitario": 4,
+    "Equipavel": true,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "roupas_comuns",
+    "Nome": "Roupas Comuns",
+    "Descricao": "Vestimentas básicas usadas no dia a dia.",
+    "Categoria": "Roupas",
+    "PesoUnitario": 3,
+    "Equipavel": true,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "diario_encadernado_couro",
+    "Nome": "Diário Encadernado em Couro",
+    "Descricao": "Livro pessoal para anotações e registros.",
+    "Categoria": "LivroOuTomo",
+    "PesoUnitario": 2,
+    "Equipavel": false,
+    "ValorCobre": 250
+  },
+  {
+    "Id": "frasco_tinta",
+    "Nome": "Frasco de Tinta",
+    "Descricao": "Conteúdo para escrever com penas ou pincéis.",
+    "Categoria": "Consumivel",
+    "PesoUnitario": 0.3,
+    "Equipavel": false,
+    "ValorCobre": 50
+  },
+  {
+    "Id": "pena",
+    "Nome": "Pena",
+    "Descricao": "Pena usada para escrever, desenhar ou desenhar mapas.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.1,
+    "Equipavel": false,
+    "ValorCobre": 1
+  },
+  {
+    "Id": "roupas_viajante",
+    "Nome": "Roupas de Viajante",
+    "Descricao": "Roupas resistentes e confortáveis para longas viagens.",
+    "Categoria": "Roupas",
+    "PesoUnitario": 4,
+    "Equipavel": true,
+    "ValorCobre": 1500
+  },
+  {
+    "Id": "bugiganga_significativa",
+    "Nome": "Bugiganga Significativa",
+    "Descricao": "Objeto pequeno com significado pessoal ou mágico.",
+    "Categoria": "Outro",
+    "PesoUnitario": 0.1,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "baralho_de_cartas",
+    "Nome": "Baralho de Cartas",
+    "Descricao": "Conjunto padrão para jogos e truques de mágica.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 50
+  },
+  {
+    "Id": "conjunto_de_dados",
+    "Nome": "Conjunto de Dados",
+    "Descricao": "Dados variados usados para jogos e apostas.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 50
+  },
+  {
+    "Id": "amuleto_sorte",
+    "Nome": "Amuleto da Sorte",
+    "Descricao": "Amuleto que traz boa sorte e proteção.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.1,
+    "Equipavel": true,
+    "ValorCobre": 1000
+  },
+  {
+    "Id": "roupas_finas",
+    "Nome": "Roupas Finas",
+    "Descricao": "Vestimentas elegantes e luxuosas para ocasiões especiais.",
+    "Categoria": "Roupas",
+    "PesoUnitario": 3,
+    "Equipavel": true,
+    "ValorCobre": 1500
+  },
+  {
+    "Id": "caixa_mapa_ruina",
+    "Nome": "Caixa com Mapa de Ruínas",
+    "Descricao": "Caixa contendo mapas e indicações de ruínas antigas.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 2,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "lanterna_olho_de_boi",
+    "Nome": "Lanterna Olho de Boi",
+    "Descricao": "Lanterna resistente com vidro grosso para iluminar áreas escuras.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 2,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "picareta_mineiro",
+    "Nome": "Picareta de Mineiro",
+    "Descricao": "Ferramenta pesada para mineração e escavações.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 10,
+    "Equipavel": false,
+    "ValorCobre": 250
+  },
+  {
+    "Id": "pa",
+    "Nome": "Pá",
+    "Descricao": "Ferramenta para escavar e cavar terra.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 5,
+    "Equipavel": false,
+    "ValorCobre": 50
+  },
+  {
+    "Id": "barraca_dupla",
+    "Nome": "Barraca Dupla",
+    "Descricao": "Abrigo portátil para duas pessoas.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 20,
+    "Equipavel": false,
+    "ValorCobre": 2000
+  },
+  {
+    "Id": "bugiganga_escavacao",
+    "Nome": "Bugiganga de Escavação",
+    "Descricao": "Dispositivo para auxiliar em escavações e sondagens.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 150
+  },
+  {
+    "Id": "carta_apresentacao_guilda",
+    "Nome": "Carta de Apresentação da Guilda",
+    "Descricao": "Documento oficial usado para ganhar credibilidade e acesso em guildas.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.1,
+    "Equipavel": false,
+    "ValorCobre": 50
+  },
+  {
+    "Id": "roupas_profissionais",
+    "Nome": "Roupas Profissionais",
+    "Descricao": "Vestimentas específicas usadas em ambientes de trabalho formal.",
+    "Categoria": "Roupas",
+    "PesoUnitario": 4,
+    "Equipavel": true,
+    "ValorCobre": 800
+  },
+  {
+    "Id": "kit_falsificacao",
+    "Nome": "Kit de Falsificação",
+    "Descricao": "Ferramentas usadas para falsificar documentos e assinaturas.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 2,
+    "Equipavel": false,
+    "ValorCobre": 150
+  },
+  {
+    "Id": "garrafas_coloridas",
+    "Nome": "Garrafas Coloridas",
+    "Descricao": "Conjunto de frascos coloridos usados para armazenamento ou decoração.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "dados_viciados",
+    "Nome": "Dados Viciados",
+    "Descricao": "Dados manipulados para favorecer certas apostas.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "baralho_marcado",
+    "Nome": "Baralho Marcado",
+    "Descricao": "Baralho com marcas especiais para trapaças em jogos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "anel_sinete",
+    "Nome": "Anel Sinete",
+    "Descricao": "Anel usado para selar documentos com cera quente.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.1,
+    "Equipavel": true,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "colete_couro_fino",
+    "Nome": "Colete de Couro Fino",
+    "Descricao": "Armadura leve feita de couro tratado e reforçado.",
+    "Categoria": "Armadura",
+    "PesoUnitario": 5,
+    "Equipavel": true,
+    "ValorCobre": 3000
+  },
+  {
+    "Id": "botas_couro_fino",
+    "Nome": "Botas de Couro Fino",
+    "Descricao": "Botas confortáveis feitas de couro fino para viagens longas.",
+    "Categoria": "Roupas",
+    "PesoUnitario": 2,
+    "Equipavel": true,
+    "ValorCobre": 1000
+  },
+  {
+    "Id": "pe_de_cabra",
+    "Nome": "Pé de Cabra",
+    "Descricao": "Ferramenta usada para alavancar objetos e abrir portas ou caixotes.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 4,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "roupas_escuras_com_capuz",
+    "Nome": "Roupas Escuras com Capuz",
+    "Descricao": "Vestimentas usadas para furtividade e disfarce.",
+    "Categoria": "Roupas",
+    "PesoUnitario": 3,
+    "Equipavel": true,
+    "ValorCobre": 800
+  },
+  {
+    "Id": "kit_herbalismo",
+    "Nome": "Kit de Herbalismo",
+    "Descricao": "Ferramentas para coleta e preparação de ervas medicinais.",
+    "Categoria": "Ferramenta",
+    "PesoUnitario": 3,
+    "Equipavel": false,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "estojo_pergaminho",
+    "Nome": "Estojo para Pergaminhos",
+    "Descricao": "Recipiente para guardar e proteger pergaminhos e documentos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "cobertor_inverno",
+    "Nome": "Cobertor de Inverno",
+    "Descricao": "Cobertor grosso para proteger contra o frio intenso.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 5,
+    "Equipavel": false,
+    "ValorCobre": 150
+  },
+  {
+    "Id": "bordao",
+    "Nome": "Bordão",
+    "Descricao": "Bastão forte usado como apoio ou arma improvisada.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 4,
+    "Equipavel": true,
+    "ValorCobre": 50
+  },
+  {
+    "Id": "armadilha_caca",
+    "Nome": "Armadilha para Caça",
+    "Descricao": "Dispositivo para capturar pequenos animais para alimentação.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 1,
+    "Equipavel": false,
+    "ValorCobre": 30
+  },
+  {
+    "Id": "fetiche_animal",
+    "Nome": "Fetiche Animal",
+    "Descricao": "Objeto ritualístico com ligação a espíritos animais.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": true,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "pote_ferro",
+    "Nome": "Pote de Ferro",
+    "Descricao": "Recipiente resistente usado para cozinhar e armazenar alimentos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 3,
+    "Equipavel": false,
+    "ValorCobre": 50
+  },
+  {
+    "Id": "malagueta",
+    "Nome": "Malagueta",
+    "Descricao": "Pimenta usada como tempero ou ingrediente de poções.",
+    "Categoria": "Consumivel",
+    "PesoUnitario": 0.1,
+    "Equipavel": false,
+    "ValorCobre": 5
+  },
+  {
+    "Id": "corda_seda_15m",
+    "Nome": "Corda de Seda (15 metros)",
+    "Descricao": "Corda resistente e leve feita de seda, ótima para escalada.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 2,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "amuletosorte",
+    "Nome": "Amuleto da Sorte",
+    "Descricao": "Amuleto que traz proteção e sorte ao portador.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.1,
+    "Equipavel": true,
+    "ValorCobre": 1000
+  },
+  {
+    "Id": "trajes_comuns",
+    "Nome": "Trajes Comuns",
+    "Descricao": "Roupas usadas no cotidiano por pessoas comuns.",
+    "Categoria": "Roupas",
+    "PesoUnitario": 3,
+    "Equipavel": true,
+    "ValorCobre": 500
+  },
+  {
+    "Id": "trajes_finos",
+    "Nome": "Trajes Finos",
+    "Descricao": "Roupas elegantes para ocasiões especiais.",
+    "Categoria": "Roupas",
+    "PesoUnitario": 3,
+    "Equipavel": true,
+    "ValorCobre": 1500
+  },
+  {
+    "Id": "pergaminho_linhagem",
+    "Nome": "Pergaminho de Linhagem",
+    "Descricao": "Documento que detalha a história ancestral de uma família.",
+    "Categoria": "LivroOuTomo",
+    "PesoUnitario": 0.1,
+    "Equipavel": false,
+    "ValorCobre": 250
+  },
+  {
+    "Id": "faca_pequena",
+    "Nome": "Faca Pequena",
+    "Descricao": "Pequena lâmina para corte e defesa pessoal.",
+    "Categoria": "Arma",
+    "PesoUnitario": 0.5,
+    "Equipavel": true,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "mapa_cidade",
+    "Nome": "Mapa da Cidade",
+    "Descricao": "Mapa detalhado para navegação urbana.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.2,
+    "Equipavel": false,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "rato_estimacao",
+    "Nome": "Rato de Estimação",
+    "Descricao": "Pequeno roedor domesticado como animal de companhia.",
+    "Categoria": "Outro",
+    "PesoUnitario": 0.2,
+    "Equipavel": false,
+    "ValorCobre": 20
+  },
+  {
+    "Id": "objeto_lembranca_pais",
+    "Nome": "Objeto de Lembrança dos Pais",
+    "Descricao": "Item sentimental passado por familiares.",
+    "Categoria": "Outro",
+    "PesoUnitario": 0.1,
+    "Equipavel": false,
+    "ValorCobre": 50
+  },
+  {
+    "Id": "vidro_tinta_escura",
+    "Nome": "Vidro de Tinta Escura",
+    "Descricao": "Frasco contendo tinta escura para escrita ou pintura.",
+    "Categoria": "Consumivel",
+    "PesoUnitario": 0.3,
+    "Equipavel": false,
+    "ValorCobre": 50
+  },
+  {
+    "Id": "carta_colega",
+    "Nome": "Carta de Colega",
+    "Descricao": "Carta pessoal recebida de um conhecido ou amigo.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.1,
+    "Equipavel": false,
+    "ValorCobre": 10
+  },
+  {
+    "Id": "insignia_patente",
+    "Nome": "Insígnia de Patente",
+    "Descricao": "Símbolo que indica cargo ou posição em uma organização.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.1,
+    "Equipavel": true,
+    "ValorCobre": 100
+  },
+  {
+    "Id": "fetiche_inimigo",
+    "Nome": "Fetiche Inimigo",
+    "Descricao": "Objeto simbólico representando um inimigo ou rival.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.3,
+    "Equipavel": true,
+    "ValorCobre": 150
+  },
+  {
+    "Id": "dados_osso",
+    "Nome": "Dados de Osso",
+    "Descricao": "Dados feitos de osso usados em jogos e adivinhações.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 200
+  },
+  {
+    "Id": "baralho",
+    "Nome": "Baralho",
+    "Descricao": "Conjunto padrão para jogos de cartas.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.5,
+    "Equipavel": false,
+    "ValorCobre": 50
+  },
+  {
+    "Id": "mapas_pobres",
+    "Nome": "Mapas Pobres",
+    "Descricao": "Mapas pouco detalhados ou imprecisos.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.3,
+    "Equipavel": false,
+    "ValorCobre": 30
+  },
+  {
+    "Id": "joia_natal",
+    "Nome": "Jóia Natal",
+    "Descricao": "Jóia valiosa usada em ocasiões especiais.",
+    "Categoria": "EquipamentoAventura",
+    "PesoUnitario": 0.2,
+    "Equipavel": true,
+    "ValorCobre": 2000
+  }
+]

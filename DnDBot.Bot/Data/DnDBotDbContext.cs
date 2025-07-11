@@ -45,6 +45,8 @@ namespace DnDBot.Bot.Data
         public DbSet<Pericia> Pericia { get; set; }
         public DbSet<Inventario> Inventarios { get; set; }
         public DbSet<Idioma> Idioma { get; set; }
+        public DbSet<AntecedenteOpcaoEscolhaProficienciaFerramentas> AntecedenteOpcoesFerramentas { get; set; }
+
 
         // Lista normal (não DbSet) para requisitos de atributos de armas, talvez gerenciada separadamente
         public List<ArmaRequisitoAtributo> RequisitosAtributos { get; set; }
@@ -61,10 +63,6 @@ namespace DnDBot.Bot.Data
 
             // Aplica automaticamente todas as configurações de entidades presentes neste assembly
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(DnDBotDbContext).Assembly);
-
-            // Configurações para entidades que não possuem chave primária definida (tipos usados para consultas específicas)
-            modelBuilder.Entity<OpcaoEscolha<Idioma>>().HasNoKey();
-            modelBuilder.Entity<OpcaoEscolha<Pericia>>().HasNoKey();
 
             modelBuilder.Entity<RacaTag>()
                 .HasKey(rt => new { rt.RacaId, rt.Tag });
@@ -157,6 +155,9 @@ namespace DnDBot.Bot.Data
             // SubRaca ↔ Proficiencia
             modelBuilder.Entity<SubRacaProficiencia>()
                 .HasKey(x => new { x.SubRacaId, x.ProficienciaId });
+
+            modelBuilder.Entity<PropriedadesMagicas>()
+                .HasKey(p => p.Id);
 
         }
     }

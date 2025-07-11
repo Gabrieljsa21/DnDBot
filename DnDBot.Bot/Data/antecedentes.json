@@ -3,759 +3,260 @@
     "Id": "acolito",
     "Nome": "Acólito",
     "Descricao": "Você passou sua vida em serviço a um templo específico de um deus ou panteão. Você age como um intermediário entre o reino do divino e o mundo mortal.",
-    "Pericias": [
-      {
-        "Id": "religiao",
-        "Nome": "Religião",
-        "AtributoBase": "Inteligencia",
-        "AtributosAlternativos": [],
-        "Tipo": "Habilidade",
-        "Descricao": "Conhecimento sobre dogmas, mitos e rituais religiosos.",
-        "EhProficiente": true,
-        "TemEspecializacao": false,
-        "ClassesRelacionadas": [],
-        "Tags": [],
-        "SugestoesParaVantagem": [],
-        "SugestoesParaDesvantagem": [],
-        "ExemplosDeUso": [],
-        "HistoricoLore": "",
-        "Dificuldades": [],
-        "Icone": "",
-        "ValorTotal": 0
-      },
-      {
-        "Id": "intuicao",
-        "Nome": "Intuição",
-        "AtributoBase": "Sabedoria",
-        "AtributosAlternativos": [],
-        "Tipo": "Habilidade",
-        "Descricao": "Percepção emocional e avaliação de intenções.",
-        "EhProficiente": true,
-        "TemEspecializacao": false,
-        "ClassesRelacionadas": [],
-        "Tags": [],
-        "SugestoesParaVantagem": [],
-        "SugestoesParaDesvantagem": [],
-        "ExemplosDeUso": [],
-        "HistoricoLore": "",
-        "Dificuldades": [],
-        "Icone": "",
-        "ValorTotal": 0
-      }
-    ],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "refugio_religioso",
-        "Nome": "Refúgio Religioso",
-        "Descricao": "Você e seus companheiros podem receber cura e proteção em templos aliados.",
-        "Fonte": "Livro do Jogador"
-      }
-    ],
     "IdiomasAdicionais": 2,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "intuicao", "religiao" ],
+    "Ouro": 15,
+    "Caracteristicas": [ "abrigo_dos_fieis" ],
     "Tags": [ "religião", "fé" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "127",
-    "Versao": "5e",
-    "RiquezaInicial": []
+    "Versao": "5e"
   },
   {
     "Id": "antropologo",
     "Nome": "Antropólogo",
     "Descricao": "Você estudou culturas distantes para entender suas tradições, costumes e valores.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "observador_cultural",
-        "Nome": "Observador Cultural",
-        "Descricao": "Você pode se integrar rapidamente em culturas estrangeiras e compreender seus costumes.",
-        "Fonte": "Guia de Tomb of Annihilation"
-      }
-    ],
     "IdiomasAdicionais": 2,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "intuicao", "religiao" ],
+    "Ouro": 10,
+    "Caracteristicas": [ "camaleao_cultural" ],
     "Tags": [ "conhecimento", "social" ],
     "Fonte": "Tomb of Annihilation",
     "Pagina": "33",
-    "Versao": "5e",
-    "RiquezaInicial": []
+    "Versao": "5e"
   },
   {
     "Id": "apostador",
     "Nome": "Apostador",
     "Descricao": "Você viveu de apostas, blefes e jogos de azar, dominando a arte de arriscar e vencer.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "faroleiro_nato",
-        "Nome": "Faroleiro Nato",
-        "Descricao": "Você sabe quando alguém está trapaceando, e sabe como trapacear sem ser pego.",
-        "Fonte": "Fonte Caseira"
-      }
-    ],
-    "IdiomasAdicionais": 0,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "IdiomasAdicionais": 1,
+    "ProficienciasPericias": [ "enganacao", "intuicao" ],
+    "Ouro": 15,
+    "Caracteristicas": [ "nunca_me_diga_as_chances" ],
     "Tags": [ "jogo", "esperteza" ],
     "Fonte": "Homebrew",
     "Pagina": "-",
-    "Versao": "Custom",
-    "RiquezaInicial": []
+    "Versao": "Custom"
   },
   {
     "Id": "arqueologo",
     "Nome": "Arqueólogo",
     "Descricao": "Você passou anos escavando ruínas antigas e estudando civilizações esquecidas.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "historia_antiga",
-        "Nome": "Conhecimento das Eras",
-        "Descricao": "Você tem facilidade em identificar artefatos, símbolos e arquitetura antiga.",
-        "Fonte": "Tomb of Annihilation"
-      }
-    ],
     "IdiomasAdicionais": 1,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "historia", "sobrevivencia" ],
+    "Ouro": 25,
+    "Caracteristicas": [ "escavador_empoeirado" ],
     "Tags": [ "exploração", "conhecimento" ],
     "Fonte": "Tomb of Annihilation",
     "Pagina": "34",
-    "Versao": "5e",
-    "RiquezaInicial": []
+    "Versao": "5e"
   },
   {
     "Id": "artesao_guilda",
     "Nome": "Artesão de Guilda",
     "Descricao": "Você pertence a uma guilda de artesãos respeitada, criando itens de qualidade.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "membro_guilda",
-        "Nome": "Membro de Guilda",
-        "Descricao": "Você pode contar com o apoio e abrigo da sua guilda, e se comunicar com outros membros.",
-        "Fonte": "Livro do Jogador"
-      }
-    ],
     "IdiomasAdicionais": 0,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "intuicao", "persuasao" ],
+    "Ouro": 15,
+    "Caracteristicas": [ "associados_da_guilda" ],
     "Tags": [ "profissão", "respeito" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "132",
-    "Versao": "5e",
-    "RiquezaInicial": []
+    "Versao": "5e"
+  },
+  {
+    "Id": "artista",
+    "Nome": "Artista",
+    "Descricao": "Você viveu sua vida entre artistas, frequentando teatros, salões de dança e circos itinerantes. Seu talento e carisma garantem atenção e aplausos por onde passa.",
+    "IdiomasAdicionais": 0,
+    "ProficienciasPericias": [ "acrobacia", "atuacao" ],
+    "Ouro": 15,
+    "Caracteristicas": [ "pela_demanda_popular" ],
+    "Tags": [ "expressao", "arte", "carisma" ],
+    "Fonte": "Xanathar's Guide to Everything",
+    "Pagina": "130",
+    "Versao": "5e"
   },
   {
     "Id": "assombrado",
     "Nome": "Assombrado",
     "Descricao": "Você sofreu um evento sobrenatural traumático que marcou sua mente e alma, e agora carrega cicatrizes visíveis e invisíveis.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "olhar_assombrado",
-        "Nome": "Olhar Assombrado",
-        "Descricao": "Pessoas comuns sentem desconforto ou medo ao olhar para você. Você é familiar com o sobrenatural.",
-        "Fonte": "Curse of Strahd"
-      }
-    ],
-    "IdiomasAdicionais": 1,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "IdiomasAdicionais": 2,
+    "ProficienciasPericias": [ "arcanismo", "sobrevivencia" ],
+    "Ouro": 10,
+    "Caracteristicas": [ "evento_assombrador" ],
     "Tags": [ "terror", "mistério" ],
     "Fonte": "Curse of Strahd",
     "Pagina": "210",
-    "Versao": "5e",
-    "RiquezaInicial": []
+    "Versao": "5e"
   },
   {
     "Id": "cacador_recompensas_urbano",
     "Nome": "Caçador de Recompensas Urbano",
     "Descricao": "Você rastreava criminosos nas cidades, conhecendo seus becos e informantes.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "rede_de_informantes",
-        "Nome": "Rede de Informantes",
-        "Descricao": "Você tem uma rede de contatos urbanos que fornece informações e pistas em grandes cidades.",
-        "Fonte": "Sword Coast Adventurer's Guide"
-      }
-    ],
     "IdiomasAdicionais": 0,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "persuasao", "furtividade" ],
+    "Ouro": 20,
+    "Caracteristicas": [ "ouvido_nas_ruas" ],
     "Tags": [ "investigação", "justiça", "cidade" ],
     "Fonte": "SCAG",
     "Pagina": "146",
-    "Versao": "5e",
-    "RiquezaInicial": []
-  },
-  {
-    "Id": "cavaleiro_feudo_livre",
-    "Nome": "Cavaleiro do Feudo Livre",
-    "Descricao": "Você é um cavaleiro sem terras, que luta por honra, ideais ou autoafirmação.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "emblema_nobre",
-        "Nome": "Emblema Nobre",
-        "Descricao": "Você possui um brasão e título que ainda inspira respeito em alguns círculos.",
-        "Fonte": "Sword Coast Adventurer's Guide"
-      }
-    ],
-    "IdiomasAdicionais": 0,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
-    "Tags": [ "nobreza", "guerra", "honra" ],
-    "Fonte": "SCAG",
-    "Pagina": "147",
-    "Versao": "5e",
-    "RiquezaInicial": []
+    "Versao": "5e"
   },
   {
     "Id": "charlatao",
     "Nome": "Charlatão",
     "Descricao": "Você é um mestre da enganação, blefes e disfarces. Sempre há um plano, e sempre há alguém para enganar.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "identidade_falsa",
-        "Nome": "Identidade Falsa",
-        "Descricao": "Você possui uma identidade falsa completa, com documentos, disfarces e uma rede de suporte.",
-        "Fonte": "Livro do Jogador"
-      }
-    ],
     "IdiomasAdicionais": 0,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "enganacao", "prestidigitacao" ],
+    "Ouro": 15,
+    "Caracteristicas": [ "identidade_falsa" ],
     "Tags": [ "engano", "furtividade", "disfarce" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "128",
-    "Versao": "5e",
-    "RiquezaInicial": []
-  },
-  {
-    "Id": "comerciante_fracassado",
-    "Nome": "Comerciante Fracassado",
-    "Descricao": "Você tentou ganhar a vida honestamente com comércio, mas algo deu muito errado.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "memoria_comercial",
-        "Nome": "Memória Comercial",
-        "Descricao": "Você ainda se lembra de preços, contatos e truques do comércio, mesmo falido.",
-        "Fonte": "Homebrew"
-      }
-    ],
-    "IdiomasAdicionais": 0,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
-    "Tags": [ "comércio", "fracasso", "negócios" ],
-    "Fonte": "Homebrew",
-    "Pagina": "-",
-    "Versao": "Custom",
-    "RiquezaInicial": []
+    "Versao": "5e"
   },
   {
     "Id": "contrabandista",
     "Nome": "Contrabandista",
     "Descricao": "Você é um traficante habilidoso, movendo mercadorias ilegais por entre as sombras da lei.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "rede_de_mercado_negro",
-        "Nome": "Rede de Mercado Negro",
-        "Descricao": "Você tem contatos em redes clandestinas para conseguir ou vender itens ilegais.",
-        "Fonte": "Homebrew"
-      }
-    ],
     "IdiomasAdicionais": 0,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "atletismo", "enganacao" ],
+    "Ouro": 15,
+    "Caracteristicas": [ "rede_subterranea" ],
     "Tags": [ "ilegais", "furtividade", "mercado negro" ],
     "Fonte": "Homebrew",
     "Pagina": "-",
-    "Versao": "Custom",
-    "RiquezaInicial": []
+    "Versao": "Custom"
   },
   {
     "Id": "criminoso",
     "Nome": "Criminoso",
     "Descricao": "Você viveu à margem da lei e desenvolveu habilidades para sobreviver em um mundo perigoso.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "contatos_criminais",
-        "Nome": "Contatos Criminais",
-        "Descricao": "Você possui uma rede de contatos no submundo que podem ajudar em diversas situações.",
-        "Fonte": "Livro do Jogador"
-      }
-    ],
     "IdiomasAdicionais": 0,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "enganacao", "furtividade" ],
+    "Ouro": 15,
+    "Caracteristicas": [ "contato_criminal" ],
     "Tags": [ "submundo", "furtividade", "sobrevivência" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "128",
-    "Versao": "5e",
-    "RiquezaInicial": []
+    "Versao": "5e"
   },
   {
     "Id": "eremita",
     "Nome": "Eremita",
     "Descricao": "Você passou um longo período isolado do mundo, buscando conhecimento ou redenção.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "descoberta",
-        "Nome": "Descoberta",
-        "Descricao": "Você fez uma importante descoberta durante seu isolamento que ainda carrega consigo.",
-        "Fonte": "Livro do Jogador"
-      }
-    ],
     "IdiomasAdicionais": 1,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "medicina", "religiao" ],
+    "Ouro": 5,
+    "Caracteristicas": [ "descoberta" ],
     "Tags": [ "isolamento", "sabedoria", "mistério" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "128",
-    "Versao": "5e",
-    "RiquezaInicial": []
-  },
-  {
-    "Id": "estudioso_recluso",
-    "Nome": "Estudioso Recluso",
-    "Descricao": "Você passou anos estudando em solidão, adquirindo um conhecimento profundo em uma área específica.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "conhecimento_especializado",
-        "Nome": "Conhecimento Especializado",
-        "Descricao": "Você tem acesso a informações e segredos que poucos conhecem.",
-        "Fonte": "Homebrew"
-      }
-    ],
-    "IdiomasAdicionais": 1,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
-    "Tags": [ "estudo", "isolamento", "saber" ],
-    "Fonte": "Homebrew",
-    "Pagina": "-",
-    "Versao": "Custom",
-    "RiquezaInicial": []
+    "Versao": "5e"
   },
   {
     "Id": "forasteiro",
     "Nome": "Forasteiro",
     "Descricao": "Você cresceu longe da civilização, habituado a sobreviver na natureza selvagem.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "passo_firme",
-        "Nome": "Passo Firme",
-        "Descricao": "Você sabe como se mover pela natureza sem ser notado e tem conhecimento das terras selvagens.",
-        "Fonte": "Livro do Jogador"
-      }
-    ],
-    "IdiomasAdicionais": 0,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "IdiomasAdicionais": 1,
+    "ProficienciasPericias": [ "atletismo", "sobrevivencia" ],
+    "Ouro": 10,
+    "Caracteristicas": [ "andarilho" ],
     "Tags": [ "natureza", "sobrevivência", "exploração" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "131",
-    "Versao": "5e",
-    "RiquezaInicial": []
-  },
-  {
-    "Id": "fuzileiro_marinha",
-    "Nome": "Fuzileiro (Marinha)",
-    "Descricao": "Você serviu como fuzileiro naval, treinado para combate e operações marítimas.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "treinamento_militar",
-        "Nome": "Treinamento Militar",
-        "Descricao": "Você tem treinamento formal em combate e disciplina militar.",
-        "Fonte": "Homebrew"
-      }
-    ],
-    "IdiomasAdicionais": 0,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
-    "Tags": [ "militar", "combate", "disciplina" ],
-    "Fonte": "Homebrew",
-    "Pagina": "-",
-    "Versao": "Custom",
-    "RiquezaInicial": []
+    "Versao": "5e"
   },
   {
     "Id": "heroi_do_povo",
     "Nome": "Herói do Povo",
     "Descricao": "Você é reconhecido como um protetor ou salvador da sua comunidade.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "prestigio_local",
-        "Nome": "Prestígio Local",
-        "Descricao": "Você tem reputação e apoio da comunidade local.",
-        "Fonte": "Homebrew"
-      }
-    ],
     "IdiomasAdicionais": 0,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "trata_com_animais", "sobrevivencia" ],
+    "Ouro": 10,
+    "Caracteristicas": [ "hospitalidade_rustica" ],
     "Tags": [ "prestígio", "comunidade", "liderança" ],
     "Fonte": "Homebrew",
     "Pagina": "-",
-    "Versao": "Custom",
-    "RiquezaInicial": []
+    "Versao": "Custom"
   },
   {
     "Id": "marinheiro",
     "Nome": "Marinheiro",
     "Descricao": "Você tem experiência na vida no mar, navegando e enfrentando tempestades e piratas.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "conhecimento_nautico",
-        "Nome": "Conhecimento Náutico",
-        "Descricao": "Você conhece técnicas de navegação e vida a bordo de embarcações.",
-        "Fonte": "Livro do Jogador"
-      }
-    ],
     "IdiomasAdicionais": 0,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "atletismo", "percepcao" ],
+    "Ouro": 10,
+    "Caracteristicas": [ "passagem_de_navio" ],
     "Tags": [ "marítimo", "navegação", "sobrevivência" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "131",
-    "Versao": "5e",
-    "RiquezaInicial": []
-  },
-  {
-    "Id": "mercenario_veterano",
-    "Nome": "Mercenário Veterano",
-    "Descricao": "Você é um soldado profissional que lutou em diversas campanhas e conhece a dura vida mercenária.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "experiencia_combatente",
-        "Nome": "Experiência Combatente",
-        "Descricao": "Você tem vasta experiência em combate e táticas militares.",
-        "Fonte": "Homebrew"
-      }
-    ],
-    "IdiomasAdicionais": 0,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
-    "Tags": [ "militar", "combate", "tática" ],
-    "Fonte": "Homebrew",
-    "Pagina": "-",
-    "Versao": "Custom",
-    "RiquezaInicial": []
+    "Versao": "5e"
   },
   {
     "Id": "nobre",
     "Nome": "Nobre",
     "Descricao": "Você nasceu em uma família de alta posição social, com privilégios e responsabilidades.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "status_nobreza",
-        "Nome": "Status de Nobreza",
-        "Descricao": "Você tem títulos e conexões que abrem portas e oferecem influência.",
-        "Fonte": "Livro do Jogador"
-      }
-    ],
     "IdiomasAdicionais": 1,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "historia", "persuasao" ],
+    "Ouro": 25,
+    "Caracteristicas": [ "posicao_privilegiada" ],
     "Tags": [ "nobreza", "influência", "política" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "135",
-    "Versao": "5e",
-    "RiquezaInicial": []
+    "Versao": "5e"
   },
   {
     "Id": "orfao",
     "Nome": "Órfão",
     "Descricao": "Você perdeu seus pais cedo e teve que aprender a sobreviver por conta própria.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "resiliencia",
-        "Nome": "Resiliência",
-        "Descricao": "Você desenvolveu uma grande força de vontade para superar adversidades.",
-        "Fonte": "Homebrew"
-      }
-    ],
     "IdiomasAdicionais": 0,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "furtividade", "prestidigitacao" ],
+    "Ouro": 10,
+    "Caracteristicas": [ "segredos_da_cidade" ],
     "Tags": [ "sobrevivência", "resiliência", "independência" ],
     "Fonte": "Homebrew",
     "Pagina": "-",
-    "Versao": "Custom",
-    "RiquezaInicial": []
+    "Versao": "Custom"
   },
   {
     "Id": "sabio",
     "Nome": "Sábio",
     "Descricao": "Você dedicou sua vida ao estudo, buscando conhecimento e sabedoria.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "memoria_fotografica",
-        "Nome": "Memória Fotográfica",
-        "Descricao": "Você consegue lembrar com detalhes informações importantes estudadas.",
-        "Fonte": "Livro do Jogador"
-      }
-    ],
     "IdiomasAdicionais": 2,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "arcanismo", "historia" ],
+    "Ouro": 10,
+    "Caracteristicas": [ "pesquisador" ],
     "Tags": [ "conhecimento", "estudo", "sabedoria" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "135",
-    "Versao": "5e",
-    "RiquezaInicial": []
+    "Versao": "5e"
   },
   {
     "Id": "soldado",
     "Nome": "Soldado",
     "Descricao": "Você serviu no exército e aprendeu disciplina, táticas e combate.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "disciplina_militar",
-        "Nome": "Disciplina Militar",
-        "Descricao": "Você tem treinamento e experiência em estratégias militares.",
-        "Fonte": "Livro do Jogador"
-      }
-    ],
     "IdiomasAdicionais": 0,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "atletismo", "intimidacao" ],
+    "Ouro": 10,
+    "Caracteristicas": [ "patente_militar" ],
     "Tags": [ "militar", "disciplina", "combate" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "137",
-    "Versao": "5e",
-    "RiquezaInicial": []
+    "Versao": "5e"
   },
   {
     "Id": "viajante_distante",
     "Nome": "Viajante Distante",
     "Descricao": "Você percorreu terras distantes, aprendendo costumes e línguas diversas.",
-    "Pericias": [],
-    "Ferramentas": [],
-    "Idiomas": [],
-    "IdFeature": [
-      {
-        "Id": "experiencia_cultural",
-        "Nome": "Experiência Cultural",
-        "Descricao": "Você tem facilidade para se adaptar a diferentes culturas e ambientes.",
-        "Fonte": "Homebrew"
-      }
-    ],
     "IdiomasAdicionais": 1,
-    "OpcoesLinguas": {},
-    "OpcoesEquipamentos": {},
-    "OpcoesPericias": {},
-    "EquipamentosDetalhados": [],
-    "Ideais": [],
-    "Vinculos": [],
-    "Defeitos": [],
-    "Requisitos": "",
+    "ProficienciasPericias": [ "intuicao", "percepcao" ],
+    "Ouro": 5,
+    "Caracteristicas": [ "por_que_esta_aqui" ],
     "Tags": [ "exploração", "cultura", "adaptação" ],
     "Fonte": "Homebrew",
     "Pagina": "-",
-    "Versao": "Custom",
-    "RiquezaInicial": []
+    "Versao": "Custom"
   }
 ]

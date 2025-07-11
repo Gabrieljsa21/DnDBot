@@ -1,45 +1,27 @@
-﻿using System;
+﻿using DnDBot.Bot.Models.Enums;
+using DnDBot.Bot.Models.Ficha;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DnDBot.Bot.Models.ItensInventario
 {
-    /// <summary>
-    /// Representa um pergaminho mágico que armazena uma magia para ser usada uma vez.
-    /// </summary>
     public class Pergaminho : Consumivel
     {
-        /// <summary>
-        /// Nome da magia contida no pergaminho.
-        /// </summary>
-        public string Magia { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Nível da magia armazenada.
-        /// </summary>
+        public string MagiaId { get; set; }
+        public Magia Magia { get; set; }
         public int NivelMagia { get; set; } = 0;
 
-        /// <summary>
-        /// Indica se o pergaminho foi usado.
-        /// </summary>
-        public bool Usado { get; private set; } = false;
+        public EscolaMagia? Escola { get; set; }
+        public string TempoConjuracao { get; set; } = "Ação";
 
-        /// <summary>
-        /// Usa o pergaminho, consumindo-o e aplicando o efeito da magia.
-        /// </summary>
-        /// <returns>True se o uso foi bem-sucedido, false se já foi usado.</returns>
         public bool Usar()
         {
-            if (Usado) return false;
-            Usado = true;
-            // Aqui você pode adicionar lógica para aplicar o efeito da magia no jogo
-            return true;
+            if (!PodeSerUsado()) return false;
+            return Consumir();
         }
 
-        /// <summary>
-        /// Restaura o pergaminho para o estado não usado (ex: recarga mágica, ou uso limitado).
-        /// </summary>
         public void Restaurar()
         {
-            Usado = false;
+            Recarregar();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using DnDBot.Bot.Models.Enums;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DnDBot.Bot.Models.ItensInventario
@@ -39,24 +40,33 @@ namespace DnDBot.Bot.Models.ItensInventario
         public string Aparencia { get; set; }
 
         /// <summary>
-        /// Descrição completa da poção.
+        /// Descrição completa da poção, incluindo cura e efeitos colaterais.
         /// </summary>
         [NotMapped]
-        public string Resumo => $"{Nome} — Cura: {ValorCura} ({TipoCura}) — Usos: {UsosRestantes}/{UsosTotais}";
-    }
+        public string Resumo
+        {
+            get
+            {
+                var efeitos = TemEfeitosColaterais && EfeitosColaterais?.Count > 0
+                    ? $" — Colateral: {string.Join(", ", EfeitosColaterais)}"
+                    : string.Empty;
 
-    /// <summary>
-    /// Enumeração para indicar o tipo de cura aplicada por uma poção.
-    /// </summary>
-    public enum TipoCura
-    {
-        /// <summary>Valor numérico fixo (ex: 10 PV).</summary>
-        Fixo,
+                return $"{Nome} — Cura: {ValorCura} ({TipoCura}) — Usos: {UsosRestantes}/{UsosTotais}{efeitos}";
+            }
+        }
 
-        /// <summary>Rolagem de dado (ex: 2d4+2).</summary>
-        Dado,
-
-        /// <summary>Porcentagem do total de PV.</summary>
-        Porcentagem
+        /// <summary>
+        /// Valida se o valor de cura está coerente com o tipo.
+        /// </summary>
+        public bool ValorCuraValido()
+        {
+            return TipoCura switch
+            {
+                TipoCura.Fixo => int.TryParse(ValorCura, out _),
+                TipoCura.Dado => ValorCura.Contains("d"),
+                TipoCura.Porcentagem => int.TryParse(ValorCura, out int pct) && pct > 0 && pct <= 100,
+                _ => false
+            };
+        }
     }
 }

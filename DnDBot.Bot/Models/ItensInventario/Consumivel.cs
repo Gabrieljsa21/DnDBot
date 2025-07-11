@@ -1,71 +1,43 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using DnDBot.Bot.Models.Enums;
 
 namespace DnDBot.Bot.Models.ItensInventario
 {
-    /// <summary>
-    /// Representa um item consumível, como poções, pergaminhos, ou kits de uso único.
-    /// </summary>
     public class Consumivel : Item
     {
-        /// <summary>
-        /// Número de usos antes do item se esgotar.
-        /// </summary>
         public int UsosTotais { get; set; } = 1;
 
-        /// <summary>
-        /// Usos restantes do item.
-        /// </summary>
-        public int UsosRestantes { get; set; } = 1;
-
-        /// <summary>
-        /// Descreve o efeito causado ao consumir este item.
-        /// </summary>
-        public string Efeito { get; set; }
-
-        /// <summary>
-        /// Lista de condições ou efeitos aplicados ao personagem.
-        /// </summary>
-        public List<string> CondicoesAplicadas { get; set; } = new();
-
-        /// <summary>
-        /// Tempo necessário para usar (ex: "Ação", "Bônus", "1 minuto").
-        /// </summary>
-        public string TempoDeUso { get; set; }
-
-        /// <summary>
-        /// Verifica se o consumível ainda pode ser usado.
-        /// </summary>
-        /// <returns>True se ainda tem usos restantes.</returns>
-        public bool PodeSerUsado()
+        private int _usosRestantes = 1;
+        public int UsosRestantes
         {
-            return UsosRestantes > 0;
+            get => _usosRestantes;
+            set => _usosRestantes = Math.Clamp(value, 0, UsosTotais);
         }
 
-        /// <summary>
-        /// Reduz o número de usos restantes do item.
-        /// </summary>
-        /// <returns>True se ainda restam usos, False se esgotou.</returns>
+        public string Efeito { get; set; }
+        public List<string> CondicoesAplicadas { get; set; } = new();
+
+        public TipoUsoMagia TempoDeUso { get; set; }
+
+        public SubcategoriaItem Subcategoria { get; set; } = SubcategoriaItem.Nenhuma;
+
+        public bool PodeSerUsado() => UsosRestantes > 0;
+
         public bool Consumir()
         {
-            if (UsosRestantes <= 0)
-                return false;
+            if (UsosRestantes <= 0) return false;
 
             UsosRestantes--;
             return UsosRestantes > 0;
         }
 
-        /// <summary>
-        /// Restaura os usos do item ao máximo.
-        /// </summary>
-        public void Recarregar()
+        public void Recarregar(int quantidade = -1)
         {
-            UsosRestantes = UsosTotais;
+            UsosRestantes = (quantidade < 0) ? UsosTotais : Math.Min(quantidade, UsosTotais);
         }
 
-        /// <summary>
-        /// Texto formatado do efeito e usos.
-        /// </summary>
         [NotMapped]
         public string DescricaoCompleta => $"{Nome} — {Efeito} ({UsosRestantes}/{UsosTotais} usos)";
     }

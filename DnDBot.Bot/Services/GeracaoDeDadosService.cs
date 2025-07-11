@@ -46,6 +46,7 @@ namespace DnDBot.Bot.Services
 
             await IdiomaDatabaseHelper.CriarTabelaAsync(cmd);
             await MagiaDatabaseHelper.CriarTabelaAsync(cmd);
+            await ItemDatabaseHelper.CriarTabelaAsync(cmd);
             await PericiaDatabaseHelper.CriarTabelaAsync(cmd);
             await ProficienciaDatabaseHelper.CriarTabelaAsync(cmd);
             await ArmaDatabaseHelper.CriarTabelaAsync(cmd);
@@ -75,6 +76,7 @@ namespace DnDBot.Bot.Services
 
             await IdiomaDatabaseHelper.PopularAsync(connection, transaction);
             await MagiaDatabaseHelper.PopularAsync(connection, transaction);
+            await ItemDatabaseHelper.PopularAsync(connection, transaction);
             await PericiaDatabaseHelper.PopularAsync(connection, transaction);
             await ProficienciaDatabaseHelper.PopularAsync(connection, transaction);
             await ArmaDatabaseHelper.PopularAsync(connection, transaction);

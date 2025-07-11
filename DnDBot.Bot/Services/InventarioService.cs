@@ -1,5 +1,6 @@
 ﻿using DnDBot.Bot.Models.Enums;
 using DnDBot.Bot.Models.ItensInventario;
+using DnDBot.Bot.Models.ItensInventario.Auxiliares;
 using DnDBot.Bot.Repositories;
 using System;
 using System.Collections.Generic;

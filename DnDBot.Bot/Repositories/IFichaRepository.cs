@@ -1,5 +1,4 @@
-﻿using DnDBot.Application.Models.Inventario;
-using DnDBot.Bot.Models.Ficha;
+﻿using DnDBot.Bot.Models.Ficha;
 using DnDBot.Bot.Models.ItensInventario;
 using System;
 using System.Threading.Tasks;

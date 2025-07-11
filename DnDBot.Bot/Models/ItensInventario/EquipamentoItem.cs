@@ -1,4 +1,5 @@
 ﻿using DnDBot.Bot.Models.Enums;
+using DnDBot.Bot.Models.ItensInventario.Auxiliares;
 using System;
 using System.Collections.Generic;
 using System.Linq;
