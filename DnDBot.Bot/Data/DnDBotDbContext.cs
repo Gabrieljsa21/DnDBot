@@ -45,7 +45,8 @@ namespace DnDBot.Bot.Data
         public DbSet<Pericia> Pericia { get; set; }
         public DbSet<Inventario> Inventarios { get; set; }
         public DbSet<Idioma> Idioma { get; set; }
-        public DbSet<AntecedenteOpcaoEscolhaProficienciaFerramentas> AntecedenteOpcoesFerramentas { get; set; }
+        public DbSet<AntecedenteItemOpcoes> AntecedenteItemOpcoes { get; set; }
+        public DbSet<AntecedenteProficienciaOpcoes> AntecedenteProficienciaOpcoes { get; set; }
 
 
         // Lista normal (não DbSet) para requisitos de atributos de armas, talvez gerenciada separadamente

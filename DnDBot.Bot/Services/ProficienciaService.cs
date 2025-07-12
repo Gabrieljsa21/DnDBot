@@ -1,6 +1,7 @@
 ﻿using DnDBot.Bot.Data;
 using DnDBot.Bot.Models.Ficha;
 using DnDBot.Bot.Models.Ficha.Auxiliares;
+using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -58,6 +59,15 @@ namespace DnDBot.Bot.Services
             }
 
             await _dbContext.SaveChangesAsync();
+        }
+
+        private static async Task<bool> VerificarPericiaExiste(SqliteConnection connection, SqliteTransaction transaction, string periciaId)
+        {
+            const string sql = "SELECT 1 FROM Pericia WHERE Id = $id LIMIT 1;";
+            using var cmd = new SqliteCommand(sql, connection, transaction);
+            cmd.Parameters.AddWithValue("$id", periciaId);
+            var result = await cmd.ExecuteScalarAsync();
+            return result != null;
         }
     }
 }

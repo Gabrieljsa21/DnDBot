@@ -1,206 +1,223 @@
 ﻿using DnDBot.Bot.Helpers;
 using DnDBot.Bot.Models.ItensInventario;
+using DnDBot.Bot.Models.ItensInventario.Auxiliares;
 using Microsoft.Data.Sqlite;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using static DnDBot.Bot.Helpers.SqliteHelper;
-using static System.Net.Mime.MediaTypeNames;
 
-public static class ArmaDatabaseHelper
+namespace DnDBot.Bot.Services.DatabaseSetup
 {
-    private const string CaminhoJson = "Data/armas.json";
-
-    public static async Task CriarTabelaAsync(SqliteCommand cmd)
+    public static class ArmaDatabaseHelper
     {
-        // Monta definição da tabela Arma sem repetir campos do EntidadeBase (que já estão em SqliteEntidadeBaseHelper.Campos)
-        var definicaoArma = string.Join(",\n", new[]
+        private const string CaminhoJsonArmaCorpo = "Data/armascorpoacorpo.json";
+        private const string CaminhoJsonArmaDistancia = "Data/armasadistancia.json";
+
+        public static async Task CriarTabelaAsync(SqliteCommand cmd)
         {
-                    "Id TEXT PRIMARY KEY",
-            "Tipo INTEGER NOT NULL",
-            "Categoria INTEGER NOT NULL",
-            "DadoDano TEXT",
-            "TipoDano INTEGER NOT NULL",
-            "TipoDanoSecundario INTEGER",
-            "Peso REAL",
-            "Custo DECIMAL",
-            "Alcance INTEGER",
-            "EhDuasMaos INTEGER",
-            "EhLeve INTEGER",
-            "EhVersatil INTEGER",
-            "DadoDanoVersatil TEXT",
-            "PodeSerArremessada INTEGER",
-            "AlcanceArremesso INTEGER",
-            "DurabilidadeAtual INTEGER",
-            "DurabilidadeMaxima INTEGER",
-            "Fabricante TEXT",
-            SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim().TrimEnd(',')
-        });
-
-        var definicoes = new Dictionary<string, string>
-        {
-            ["Arma"] = definicaoArma,
-            ["Arma_Requisitos"] = @"
-                ArmaId TEXT NOT NULL,
-                Requisito TEXT NOT NULL,
-                PRIMARY KEY (ArmaId, Requisito),
-                FOREIGN KEY (ArmaId) REFERENCES Arma(Id) ON DELETE CASCADE
-            ",
-            ["Arma_Tags"] = @"
-                ArmaId TEXT NOT NULL,
-                Tag TEXT NOT NULL,
-                PRIMARY KEY (ArmaId, Tag),
-                FOREIGN KEY (ArmaId) REFERENCES Arma(Id) ON DELETE CASCADE
-            ",
-            ["Arma_PropriedadesEspeciais"] = @"
-                ArmaId TEXT NOT NULL,
-                Propriedade TEXT NOT NULL,
-                PRIMARY KEY (ArmaId, Propriedade),
-                FOREIGN KEY (ArmaId) REFERENCES Arma(Id) ON DELETE CASCADE
-            ",
-            ["Arma_BonusContraTipos"] = @"
-                ArmaId TEXT NOT NULL,
-                TipoContra TEXT NOT NULL,
-                PRIMARY KEY (ArmaId, TipoContra),
-                FOREIGN KEY (ArmaId) REFERENCES Arma(Id) ON DELETE CASCADE
-            ",
-            ["Arma_MagiasAssociadas"] = @"
-                ArmaId TEXT NOT NULL,
-                MagiaId TEXT NOT NULL,
-                PRIMARY KEY (ArmaId, MagiaId),
-                FOREIGN KEY (ArmaId) REFERENCES Arma(Id) ON DELETE CASCADE
-            ",
-            ["Arma_RequisitosAtributos"] = @"
-                ArmaId TEXT NOT NULL,
-                Atributo INTEGER NOT NULL,
-                Valor INTEGER NOT NULL,
-                PRIMARY KEY (ArmaId, Atributo),
-                FOREIGN KEY (ArmaId) REFERENCES Arma(Id) ON DELETE CASCADE
-            "
-        };
-
-        foreach (var tabela in definicoes)
-        {
-            await SqliteHelper.CriarTabelaAsync(cmd, tabela.Key, tabela.Value);
-        }
-    }
-
-    public static async Task PopularAsync(SqliteConnection connection, SqliteTransaction transaction)
-    {
-        if (!File.Exists(CaminhoJson))
-        {
-            Console.WriteLine("❌ Arquivo armas.json não encontrado.");
-            return;
-        }
-
-        Console.WriteLine("📥 Lendo dados de armas.json...");
-
-        var json = await File.ReadAllTextAsync(CaminhoJson, Encoding.UTF8);
-        var armas = JsonSerializer.Deserialize<List<Arma>>(json, new JsonSerializerOptions
-        {
-            PropertyNameCaseInsensitive = true
-        });
-
-        if (armas == null || armas.Count == 0)
-        {
-            Console.WriteLine("❌ Nenhuma arma encontrada no JSON.");
-            return;
-        }
-
-        foreach (var arma in armas)
-        {
-            await InserirArma(connection, transaction, arma);
-            await SqliteHelper.InserirTagsAsync(connection, transaction, "ArmaTag", "ArmaId", arma.Id, arma.Tags);
-
-            await InserirListaTexto(connection, transaction, "Arma_Requisitos", "Requisito", arma.Id, arma.Requisitos);
-            await InserirListaTexto(connection, transaction, "Arma_Tags", "Tag", arma.Id, arma.Tags);
-            await InserirListaTexto(connection, transaction, "Arma_PropriedadesEspeciais", "Propriedade", arma.Id, arma.PropriedadesEspeciais);
-            await InserirListaTexto(connection, transaction, "Arma_BonusContraTipos", "TipoContra", arma.Id, arma.BonusContraTipos);
-            await InserirListaTexto(connection, transaction, "Arma_MagiasAssociadas", "MagiaId", arma.Id, arma.MagiasAssociadas);
-
-            if (arma.RequisitosAtributos != null)
+            var definicoes = new Dictionary<string, string>
             {
-                foreach (var r in arma.RequisitosAtributos)
-                {
-                    var cmd = connection.CreateCommand();
-                    cmd.Transaction = transaction;
-                    cmd.CommandText = @"
-                        INSERT OR IGNORE INTO Arma_RequisitosAtributos (ArmaId, Atributo, Valor)
-                        VALUES ($armaId, $atributo, $valor)";
-                    cmd.Parameters.AddWithValue("$armaId", arma.Id);
-                    cmd.Parameters.AddWithValue("$atributo", (int)r.Atributo);
-                    cmd.Parameters.AddWithValue("$valor", r.Valor);
-                    await cmd.ExecuteNonQueryAsync();
-                }
+                ["Arma"] = @"
+                    Id TEXT PRIMARY KEY,
+                    Tipo INTEGER NOT NULL,
+                    CategoriaArma INTEGER NOT NULL,
+                    DadoDano TEXT NOT NULL,
+                    TipoDano INTEGER NOT NULL,
+                    TipoDanoSecundario INTEGER NULL,
+                    EhDuasMaos INTEGER NOT NULL,
+                    EhLeve INTEGER NOT NULL,
+                    EhVersatil INTEGER NOT NULL,
+                    EhAgil INTEGER NOT NULL,
+                    EhPesada INTEGER NOT NULL,
+                    DadoDanoVersatil TEXT NULL,
+                    DurabilidadeAtual INTEGER NOT NULL,
+                    DurabilidadeMaxima INTEGER NOT NULL,
+                    AlcanceEmMetros INTEGER NOT NULL,
+                    FOREIGN KEY (Id) REFERENCES Item(Id) ON DELETE CASCADE
+                ",
+                ["ArmaTag"] = @"
+                    ArmaId TEXT NOT NULL,
+                    Tag TEXT NOT NULL,
+                    PRIMARY KEY (ArmaId, Tag),
+                    FOREIGN KEY (ArmaId) REFERENCES Arma(Id) ON DELETE CASCADE
+                ",
+                ["ArmaRequisitoAtributo"] = @"
+                    ArmaId TEXT NOT NULL,
+                    AtributoId TEXT NOT NULL,
+                    ValorMinimo INTEGER NOT NULL,
+                    PRIMARY KEY (ArmaId, AtributoId),
+                    FOREIGN KEY (ArmaId) REFERENCES Arma(Id) ON DELETE CASCADE
+                "
+            };
+
+            foreach (var tabela in definicoes)
+            {
+                await SqliteHelper.CriarTabelaAsync(cmd, tabela.Key, tabela.Value);
             }
         }
 
-        Console.WriteLine("✅ Armas e dados relacionados populados.");
-    }
-
-    private static async Task InserirArma(SqliteConnection conn, SqliteTransaction tx, Arma arma)
-    {
-        if (await SqliteHelper.RegistroExisteAsync(conn, tx, "Arma", arma.Id))
-            return;
-
-        var parametros = GerarParametrosArma(arma);
-
-        var sql = $@"
-            INSERT INTO Arma (
-                {SqliteEntidadeBaseHelper.CamposInsert},
-                Tipo, Categoria, DadoDano, TipoDano, TipoDanoSecundario, Peso, Custo, Alcance,
-                EhDuasMaos, EhLeve, EhVersatil, DadoDanoVersatil, PodeSerArremessada, AlcanceArremesso,
-                DurabilidadeAtual, DurabilidadeMaxima, Fabricante
-            ) VALUES (
-                {SqliteEntidadeBaseHelper.ValoresInsert},
-                $tipo, $categoria, $dadoDano, $tipoDano, $tipoDanoSecundario, $peso, $custo, $alcance,
-                $ehDuasMaos, $ehLeve, $ehVersatil, $dadoDanoVersatil, $podeSerArremessada, $alcanceArremesso,
-                $durabilidadeAtual, $durabilidadeMaxima, $fabricante
-            )";
-
-        var cmd = CriarInsertCommand(conn, tx, sql, parametros);
-        await cmd.ExecuteNonQueryAsync();
-    }
-
-    private static Dictionary<string, object> GerarParametrosArma(Arma arma)
-    {
-        var dict = SqliteHelper.GerarParametrosEntidadeBase(arma);
-
-        dict["$tipo"] = (int)arma.Tipo;
-        dict["$categoria"] = arma.Categoria;
-        dict["$dadoDano"] = arma.DadoDano ?? "";
-        dict["$tipoDano"] = (int)arma.TipoDano;
-        dict["$tipoDanoSecundario"] = arma.TipoDanoSecundario.HasValue ? (object)(int)arma.TipoDanoSecundario.Value : DBNull.Value;
-        dict["$peso"] = arma.PesoUnitario;
-        dict["$custo"] = arma.ValorCobre;
-        dict["$alcance"] = arma.Alcance ?? (object)DBNull.Value;
-        dict["$ehDuasMaos"] = arma.EhDuasMaos ? 1 : 0;
-        dict["$ehLeve"] = arma.EhLeve ? 1 : 0;
-        dict["$ehVersatil"] = arma.EhVersatil ? 1 : 0;
-        dict["$dadoDanoVersatil"] = arma.DadoDanoVersatil ?? "";
-        dict["$podeSerArremessada"] = arma.PodeSerArremessada ? 1 : 0;
-        dict["$alcanceArremesso"] = arma.AlcanceArremesso ?? (object)DBNull.Value;
-        dict["$durabilidadeAtual"] = arma.DurabilidadeAtual;
-        dict["$durabilidadeMaxima"] = arma.DurabilidadeMaxima;
-        dict["$fabricante"] = arma.Fabricante ?? "";
-
-        return dict;
-    }
-
-    private static async Task InserirListaTexto(SqliteConnection conn, SqliteTransaction tx, string tabela, string coluna, string armaId, IEnumerable<string> itens)
-    {
-        foreach (var item in itens ?? new List<string>())
+        public static async Task PopularAsync(SqliteConnection connection, SqliteTransaction transaction)
         {
-            var cmd = conn.CreateCommand();
-            cmd.Transaction = tx;
-            cmd.CommandText = $"INSERT OR IGNORE INTO {tabela} (ArmaId, {coluna}) VALUES ($armaId, $valor)";
-            cmd.Parameters.AddWithValue("$armaId", armaId);
-            cmd.Parameters.AddWithValue("$valor", item);
-            await cmd.ExecuteNonQueryAsync();
+            await PopularArmasCorpoACorpoAsync(connection, transaction);
+            await PopularArmasDistanciaAsync(connection, transaction);
+        }
+
+        private static async Task PopularArmasCorpoACorpoAsync(SqliteConnection connection, SqliteTransaction transaction)
+        {
+            if (!File.Exists(CaminhoJsonArmaCorpo))
+            {
+                Console.WriteLine($"❌ Arquivo {CaminhoJsonArmaCorpo} não encontrado.");
+                return;
+            }
+
+            Console.WriteLine("📥 Lendo armas corpo a corpo do JSON...");
+
+            var jsonTexto = await File.ReadAllTextAsync(CaminhoJsonArmaCorpo, Encoding.UTF8);
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) }
+            };
+
+            var listaArmas = JsonSerializer.Deserialize<List<ArmaCorpoACorpo>>(jsonTexto, options);
+            if (listaArmas == null || listaArmas.Count == 0)
+            {
+                Console.WriteLine("❌ Nenhuma arma corpo a corpo encontrada.");
+                return;
+            }
+
+            foreach (var arma in listaArmas)
+            {
+                await ItemDatabaseHelper.InserirItem(connection, transaction, arma, discriminator: "Arma");
+                await InserirArma(connection, transaction, arma);
+                await InserirArmaTag(connection, transaction, arma);
+                await InserirArmaRequisitoAtributo(connection, transaction, arma);
+            }
+
+            Console.WriteLine("✅ Armas corpo a corpo populadas.");
+        }
+
+        private static async Task PopularArmasDistanciaAsync(SqliteConnection connection, SqliteTransaction transaction)
+        {
+            if (!File.Exists(CaminhoJsonArmaDistancia))
+            {
+                Console.WriteLine($"❌ Arquivo {CaminhoJsonArmaDistancia} não encontrado.");
+                return;
+            }
+
+            Console.WriteLine("📥 Lendo armas à distância do JSON...");
+
+            var jsonTexto = await File.ReadAllTextAsync(CaminhoJsonArmaDistancia, Encoding.UTF8);
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) }
+            };
+
+            var listaArmas = JsonSerializer.Deserialize<List<ArmaADistancia>>(jsonTexto, options);
+            if (listaArmas == null || listaArmas.Count == 0)
+            {
+                Console.WriteLine("❌ Nenhuma arma à distância encontrada.");
+                return;
+            }
+
+            foreach (var arma in listaArmas)
+            {
+                await ItemDatabaseHelper.InserirItem(connection, transaction, arma, discriminator: "Arma");
+                await InserirArma(connection, transaction, arma);
+                await InserirArmaTag(connection, transaction, arma);
+                await InserirArmaRequisitoAtributo(connection, transaction, arma);
+            }
+
+            Console.WriteLine("✅ Armas à distância populadas.");
+        }
+
+        private static async Task InserirArma(SqliteConnection connection, SqliteTransaction transaction, Arma arma)
+        {
+            int alcanceEmMetros = 0;
+
+            if (arma is ArmaADistancia armaDist)
+            {
+                // Usar AlcanceMaximo do JSON para alcance em metros
+                alcanceEmMetros = armaDist.AlcanceMaximo;
+            }
+
+            var parametros = new Dictionary<string, object>
+            {
+                ["id"] = arma.Id,
+                ["tipo"] = (int)arma.Tipo,
+                ["categoriaArma"] = (int)arma.CategoriaArma,
+                ["dadoDano"] = arma.DadoDano,
+                ["tipoDano"] = (int)arma.TipoDano,
+                ["tipoDanoSecundario"] = arma.TipoDanoSecundario.HasValue ? (object)(int)arma.TipoDanoSecundario.Value : DBNull.Value,
+                ["ehDuasMaos"] = arma.EhDuasMaos ? 1 : 0,
+                ["ehLeve"] = arma.EhLeve ? 1 : 0,
+                ["ehVersatil"] = arma.EhVersatil ? 1 : 0,
+                ["ehAgil"] = arma.EhAgil ? 1 : 0,
+                ["ehPesada"] = arma.EhPesada ? 1 : 0,
+                ["dadoDanoVersatil"] = string.IsNullOrEmpty(arma.DadoDanoVersatil) ? DBNull.Value : arma.DadoDanoVersatil,
+                ["durabilidadeAtual"] = arma.DurabilidadeAtual,
+                ["durabilidadeMaxima"] = arma.DurabilidadeMaxima,
+                ["alcanceEmMetros"] = alcanceEmMetros
+            };
+
+            const string sql = @"
+                INSERT OR IGNORE INTO Arma
+                    (Id, Tipo, CategoriaArma, DadoDano, TipoDano, TipoDanoSecundario, EhDuasMaos, EhLeve, EhVersatil, EhAgil, EhPesada, DadoDanoVersatil, DurabilidadeAtual, DurabilidadeMaxima, AlcanceEmMetros)
+                VALUES
+                    ($id, $tipo, $categoriaArma, $dadoDano, $tipoDano, $tipoDanoSecundario, $ehDuasMaos, $ehLeve, $ehVersatil, $ehAgil, $ehPesada, $dadoDanoVersatil, $durabilidadeAtual, $durabilidadeMaxima, $alcanceEmMetros);";
+
+            await SqliteHelper.CriarInsertCommand(connection, transaction, sql, parametros)
+                .ExecuteNonQueryAsync();
+        }
+
+        private static async Task InserirArmaTag(SqliteConnection connection, SqliteTransaction transaction, Arma arma)
+        {
+            if (arma.Tags == null) return;
+
+            const string sqlTag = @"
+                INSERT OR IGNORE INTO ArmaTag
+                    (ArmaId, Tag)
+                VALUES
+                    ($armaId, $tag);";
+
+            foreach (var tag in arma.Tags)
+            {
+                var parametrosTag = new Dictionary<string, object>
+                {
+                    ["armaId"] = arma.Id,
+                    ["tag"] = tag
+                };
+                await SqliteHelper.CriarInsertCommand(connection, transaction, sqlTag, parametrosTag)
+                    .ExecuteNonQueryAsync();
+            }
+        }
+
+        private static async Task InserirArmaRequisitoAtributo(SqliteConnection connection, SqliteTransaction transaction, Arma arma)
+        {
+            if (arma.RequisitosAtributos == null) return;
+
+            const string sqlReq = @"
+                INSERT OR IGNORE INTO ArmaRequisitoAtributo
+                    (ArmaId, AtributoId, ValorMinimo)
+                VALUES
+                    ($armaId, $atributoId, $valorMinimo);";
+
+            foreach (var requisito in arma.RequisitosAtributos)
+            {
+                var parametrosReq = new Dictionary<string, object>
+                {
+                    ["armaId"] = arma.Id,
+                    ["atributoId"] = requisito.Atributo,
+                    ["valorMinimo"] = requisito.Valor
+                };
+                await SqliteHelper.CriarInsertCommand(connection, transaction, sqlReq, parametrosReq)
+                    .ExecuteNonQueryAsync();
+            }
         }
     }
 }

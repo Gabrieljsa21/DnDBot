@@ -2,6 +2,7 @@
 using DnDBot.Bot.Models.Enums;
 using DnDBot.Bot.Models.Ficha.Auxiliares;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace DnDBot.Bot.Models.ItensInventario
 {
@@ -21,8 +22,19 @@ namespace DnDBot.Bot.Models.ItensInventario
         public RaridadeItem Raridade { get; set; } = RaridadeItem.Comum;
         public string Fabricante { get; set; } = string.Empty;
 
+        [JsonIgnore]
+        public ItemMaterial Material { get; set; }
 
-        public Material Material { get; set; }
-        
+        [JsonPropertyName("Material")]
+        public string MaterialId
+        {
+            get => Material?.MaterialId;
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                    Material = new ItemMaterial { MaterialId = value };
+            }
+        }
+
     }
 }

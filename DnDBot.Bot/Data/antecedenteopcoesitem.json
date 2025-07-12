@@ -1,0 +1,57 @@
+{
+  "artesao_guilda": [
+    "ferramentas_carpinteiro",
+    "ferramentas_cartografo",
+    "ferramentas_costureiro",
+    "ferramentas_coureiro",
+    "ferramentas_entalhador",
+    "ferramentas_ferreiro",
+    "ferramentas_funileiro",
+    "ferramentas_joalheiro",
+    "ferramentas_oleiro",
+    "ferramentas_pedreiro",
+    "ferramentas_pintor",
+    "ferramentas_sapateiro",
+    "ferramentas_vidreiro"
+  ],
+  "artista": [
+    "alaude",
+    "flauta",
+    "flauta_doce",
+    "gaita_foles",
+    "lira",
+    "charamela",
+    "tambor",
+    "trombeta",
+    "viola",
+    "xilofone"
+  ],
+  "charlatao": [
+    "garrafas_coloridas",
+    "dados_viciados",
+    "baralho_marcado",
+    "anel_sinete"
+  ],
+  "contrabandista": [
+    "colete_couro_fino",
+    "botas_couro_fino"
+  ],
+  "soldado": [
+    "dados_osso",
+    "baralho"
+  ],
+  "viajante_distante": [
+    "baralho_de_cartas",
+    "conjunto_de_dados",
+    "alaude",
+    "flauta",
+    "flauta_doce",
+    "gaita_foles",
+    "lira",
+    "charamela",
+    "tambor",
+    "trombeta",
+    "viola",
+    "xilofone"
+  ]
+}

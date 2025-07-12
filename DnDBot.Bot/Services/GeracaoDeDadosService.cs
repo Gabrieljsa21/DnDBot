@@ -51,6 +51,8 @@ namespace DnDBot.Bot.Services
             await ProficienciaDatabaseHelper.CriarTabelaAsync(cmd);
             await ArmaDatabaseHelper.CriarTabelaAsync(cmd);
             await ArmaduraDatabaseHelper.CriarTabelaAsync(cmd);
+            await FerramentaDatabaseHelper.CriarTabelaAsync(cmd);
+            await EscudoDatabaseHelper.CriarTabelaAsync(cmd);
             await AlinhamentoDatabaseHelper.CriarTabelaAsync(cmd);
             await ResistenciaDatabaseHelper.CriarTabelaAsync(cmd);
             await CaracteristicaDatabaseHelper.CriarTabelaAsync(cmd);
@@ -81,6 +83,8 @@ namespace DnDBot.Bot.Services
             await ProficienciaDatabaseHelper.PopularAsync(connection, transaction);
             await ArmaDatabaseHelper.PopularAsync(connection, transaction);
             await ArmaduraDatabaseHelper.PopularAsync(connection, transaction);
+            await FerramentaDatabaseHelper.PopularAsync(connection, transaction);
+            await EscudoDatabaseHelper.PopularAsync(connection, transaction);
             await AlinhamentoDatabaseHelper.PopularAsync(connection, transaction);
             await ResistenciaDatabaseHelper.PopularAsync(connection, transaction);
             await CaracteristicaDatabaseHelper.PopularAsync(connection, transaction);

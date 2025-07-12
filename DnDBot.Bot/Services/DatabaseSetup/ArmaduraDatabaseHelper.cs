@@ -17,7 +17,7 @@ namespace DnDBot.Bot.Services.DatabaseSetup
 {
     public static class ArmaduraDatabaseHelper
     {
-        private const string CaminhoJsonArmaduras = "Data/armaduras.json";
+        const string CaminhoJson = "Data/armaduras.json";
 
         public static async Task CriarTabelaAsync(SqliteCommand cmd)
         {
@@ -25,18 +25,16 @@ namespace DnDBot.Bot.Services.DatabaseSetup
             {
                 ["Armadura"] = string.Join(",\n", new[]
                 {
-                "Id TEXT PRIMARY KEY",
-                "Tipo TEXT NOT NULL",                     // Enum como string
-                "ClasseArmadura INTEGER NOT NULL",
-                "PermiteFurtividade INTEGER NOT NULL",    // Bool como int (0/1)
-                "PenalidadeFurtividade INTEGER",
-                "Custo REAL",
-                "RequisitoForca INTEGER",
-                "DurabilidadeAtual INTEGER",
-                "DurabilidadeMaxima INTEGER",
-                "Fabricante TEXT",
-            SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim().TrimEnd(',')
-        }),
+                    "Id TEXT PRIMARY KEY",
+                    "ClasseArmadura INTEGER NOT NULL",
+                    "ImpedeFurtividade INTEGER NOT NULL",
+                    "RequisitoForca INTEGER",
+                    "DurabilidadeAtual INTEGER",
+                    "DurabilidadeMaxima INTEGER",
+                    "Fabricante TEXT",
+                    SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim().TrimEnd(',')
+                }),
+
 
                 ["ArmaduraTag"] = @"
             ArmaduraId TEXT NOT NULL,
@@ -70,7 +68,6 @@ namespace DnDBot.Bot.Services.DatabaseSetup
 
         public static async Task PopularAsync(SqliteConnection connection, SqliteTransaction transaction)
         {
-            const string CaminhoJson = "Data/armaduras.json";
 
             if (!File.Exists(CaminhoJson))
             {
@@ -95,6 +92,7 @@ namespace DnDBot.Bot.Services.DatabaseSetup
 
             foreach (var armadura in armaduras)
             {
+                await ItemDatabaseHelper.InserirItem(connection, transaction, armadura, discriminator: "Armadura");
                 await InserirArmadura(connection, transaction, armadura);
                 await InserirTagsAsync(connection, transaction, "ArmaduraTag", "ArmaduraId", armadura.Id, armadura.Tags);
                 await InserirPropriedades(connection, transaction, armadura.Id, armadura.PropriedadesEspeciais);
@@ -111,33 +109,28 @@ namespace DnDBot.Bot.Services.DatabaseSetup
                 return;
 
             var parametros = GerarParametrosEntidadeBase(armadura);
-            parametros["tipo"] = armadura.Tipo.ToString();
             parametros["ca"] = armadura.ClasseArmadura;
-            parametros["furtivo"] = armadura.PermiteFurtividade ? 1 : 0;
-            parametros["penalidade"] = armadura.PenalidadeFurtividade;
-            parametros["custo"] = armadura.Custo;
+            parametros["impedeFurtividade"] = armadura.ImpedeFurtividade ? 1 : 0;
             parametros["forca"] = armadura.RequisitoForca;
             parametros["dAtual"] = armadura.DurabilidadeAtual;
             parametros["dMax"] = armadura.DurabilidadeMaxima;
             parametros["fabricante"] = armadura.Fabricante ?? "";
 
             var sql = $@"
-        INSERT INTO Armadura (
-            Tipo, ClasseArmadura, PermiteFurtividade, PenalidadeFurtividade,
-            Custo, RequisitoForca,
-            DurabilidadeAtual, DurabilidadeMaxima,
-            {SqliteEntidadeBaseHelper.CamposInsert}
-        ) VALUES (
-            $tipo, $ca, $furtivo, $penalidade,
-            $custo, $forca,
-            $dAtual, $dMax,
-            $fabricante
-            {SqliteEntidadeBaseHelper.ValoresInsert}
-        )";
+            INSERT INTO Armadura (
+                ClasseArmadura, ImpedeFurtividade,
+                RequisitoForca, DurabilidadeAtual, DurabilidadeMaxima, Fabricante,
+                {SqliteEntidadeBaseHelper.CamposInsert}
+            ) VALUES (
+                $ca, $impedeFurtividade,
+                $forca, $dAtual, $dMax, $fabricante,
+                {SqliteEntidadeBaseHelper.ValoresInsert}
+            )";
 
             var cmd = CriarInsertCommand(conn, tx, sql, parametros);
             await cmd.ExecuteNonQueryAsync();
         }
+
 
         private static async Task InserirPropriedades(SqliteConnection conn, SqliteTransaction tx, string armaduraId, List<string> propriedades)
         {

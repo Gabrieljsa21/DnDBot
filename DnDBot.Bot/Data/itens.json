@@ -390,7 +390,7 @@
     "Id": "baralho_de_cartas",
     "Nome": "Baralho de Cartas",
     "Descricao": "Conjunto padrão para jogos e truques de mágica.",
-    "Categoria": "EquipamentoAventura",
+    "Categoria": "Ferramenta",
     "PesoUnitario": 0.5,
     "Equipavel": false,
     "ValorCobre": 50
@@ -399,7 +399,7 @@
     "Id": "conjunto_de_dados",
     "Nome": "Conjunto de Dados",
     "Descricao": "Dados variados usados para jogos e apostas.",
-    "Categoria": "EquipamentoAventura",
+    "Categoria": "Ferramenta",
     "PesoUnitario": 0.5,
     "Equipavel": false,
     "ValorCobre": 50
@@ -801,7 +801,7 @@
     "ValorCobre": 2000
   },
   {
-    "Id": "instrumento_alaude",
+    "Id": "alaude",
     "Nome": "Alaúde",
     "Descricao": "Instrumento de cordas usado em apresentações musicais.",
     "Categoria": "Ferramenta",
@@ -810,7 +810,7 @@
     "ValorCobre": 3500
   },
   {
-    "Id": "instrumento_charamela",
+    "Id": "charamela",
     "Nome": "Charamela",
     "Descricao": "Instrumento de sopro rústico semelhante a um oboé.",
     "Categoria": "Ferramenta",
@@ -819,7 +819,7 @@
     "ValorCobre": 200
   },
   {
-    "Id": "instrumento_flauta_doce",
+    "Id": "flauta_doce",
     "Nome": "Flauta Doce",
     "Descricao": "Flauta simples usada em apresentações melódicas suaves.",
     "Categoria": "Ferramenta",
@@ -828,7 +828,7 @@
     "ValorCobre": 200
   },
   {
-    "Id": "instrumento_flauta",
+    "Id": "flauta",
     "Nome": "Flauta",
     "Descricao": "Instrumento de sopro usado para criar melodias agudas.",
     "Categoria": "Ferramenta",
@@ -837,8 +837,8 @@
     "ValorCobre": 1200
   },
   {
-    "Id": "instrumento_gaita_fole",
-    "Nome": "Gaita de Fole",
+    "Id": "gaita_foles",
+    "Nome": "Gaita de Foles",
     "Descricao": "Instrumento de sopro com foles, típico de músicas folclóricas.",
     "Categoria": "Ferramenta",
     "PesoUnitario": 2.5,
@@ -846,7 +846,7 @@
     "ValorCobre": 3000
   },
   {
-    "Id": "instrumento_lira",
+    "Id": "lira",
     "Nome": "Lira",
     "Descricao": "Pequeno instrumento de cordas em formato de arco.",
     "Categoria": "Ferramenta",
@@ -855,7 +855,7 @@
     "ValorCobre": 3000
   },
   {
-    "Id": "instrumento_tambor",
+    "Id": "tambor",
     "Nome": "Tambor",
     "Descricao": "Instrumento de percussão com som rítmico e marcante.",
     "Categoria": "Ferramenta",
@@ -864,7 +864,7 @@
     "ValorCobre": 600
   },
   {
-    "Id": "instrumento_trombeta",
+    "Id": "trombeta",
     "Nome": "Trombeta",
     "Descricao": "Instrumento de sopro metálico usado para fanfarras e sinais.",
     "Categoria": "Ferramenta",
@@ -873,16 +873,16 @@
     "ValorCobre": 300
   },
   {
-    "Id": "instrumento_viola",
+    "Id": "viola",
     "Nome": "Viola",
-    "Descricao": "Instrumento de cordas semelhante a um violino, mas com som mais grave.",
+    "Descricao": "Instrumento de cordas semelhante a um viola, mas com som mais grave.",
     "Categoria": "Ferramenta",
     "PesoUnitario": 0.5,
     "Equipavel": false,
     "ValorCobre": 3000
   },
   {
-    "Id": "instrumento_xilofone",
+    "Id": "xilofone",
     "Nome": "Xilofone",
     "Descricao": "Instrumento de percussão com lâminas afinadas de madeira.",
     "Categoria": "Ferramenta",
@@ -1745,6 +1745,18 @@
     "PesoUnitario": 1,
     "Equipavel": false,
     "ValorCobre": 100
+  },
+  {
+    "Id": "presente_admirador",
+    "Nome": "Presente do Admirador",
+    "Descricao": "Um presente misterioso deixado por um admirador secreto, simbolizando afeição e mistério.",
+    "Categoria": "EquipamentoAventura",
+    "SubCategoria": "Outro",
+    "PesoUnitario": 0.5,
+    "Empilhavel": false,
+    "ValorCobre": 50,
+    "Equipavel": false,
+    "MaterialId": "papel"
   }
 
 ]

@@ -1,0 +1,23 @@
+{
+  "acolito": [ "simbolo_sagrado", "conta_oracoes", "incenso_x5", "vestimentas", "roupas_comuns" ],
+  "antropologo": [ "diario_encadernado_couro", "frasco_tinta", "pena", "roupas_viajante", "bugiganga_significativa" ],
+  "apostador": [ "baralho_de_cartas", "conjunto_de_dados", "amuleto_sorte", "roupas_finas" ],
+  "arqueologo": [ "caixa_mapa_ruina", "lanterna_olho_de_boi", "picareta_mineiro", "roupas_viajante", "pa", "barraca_dupla", "bugiganga_escavacao" ],
+  "artesao_guilda": [ "carta_apresentacao_guilda", "roupas_viajante" ],
+  "artista": [ "traje_fantasia", "presente_admirador" ],
+  "assombrado": [],
+  "cacador_recompensas_urbano": [ "roupas_profissionais" ],
+  "charlatao": [ "roupas_finas", "kit_disfarce" ],
+  "comerciante_fracassado": [],
+  "contrabandista": [ "roupas_comuns" ],
+  "criminoso": [ "pe_de_cabra", "roupas_escuras_com_capuz" ],
+  "eremita": [ "estojo_pergaminho", "cobertor_inverno", "roupas_comuns", "kit_herbalismo" ],
+  "forasteiro": [ "bordao", "armadilha_caca", "fetiche_animal", "roupas_viajante" ],
+  "heroi_do_povo": [ "pa", "pote_ferro", "roupas_comuns" ],
+  "marinheiro": [ "malagueta", "corda_seda_15m", "amuletosorte", "trajes_comuns" ],
+  "nobre": [ "trajes_finos", "anel_sinete", "pergaminho_linhagem" ],
+  "orfao": [ "faca_pequena", "mapa_cidade", "rato_estimacao", "objeto_lembranca_pais", "roupas_comuns" ],
+  "sabio": [ "vidro_tinta_escura", "pena", "faca_pequena", "carta_colega", "roupas_comuns" ],
+  "soldado": [ "insignia_patente", "fetiche_inimigo", "roupas_comuns" ],
+  "viajante_distante": [ "roupas_viajante", "mapas_pobres", "joia_natal" ]
+}

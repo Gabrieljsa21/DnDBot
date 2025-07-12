@@ -154,6 +154,150 @@
     "Id": "prof_armadura_media",
     "Nome": "Armadura Média",
     "Tipo": "Armadura"
+  },
+  {
+    "Id": "prof_veiculos_aquaticos",
+    "Nome": "Veículos Aquáticos",
+    "Tipo": "Veiculo"
+  },
+  {
+    "Id": "prof_veiculos_terrestres",
+    "Nome": "Veículos Terrestres",
+    "Tipo": "Veiculo"
+  },
+  {
+    "Id": "prof_alaude",
+    "Nome": "Alaúde",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_flauta",
+    "Nome": "Flauta",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_flauta_doce",
+    "Nome": "Flauta Doce",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_gaita_foles",
+    "Nome": "Gaita de Foles",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_lira",
+    "Nome": "Lira",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_charamela",
+    "Nome": "Charamela",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_tambor",
+    "Nome": "Tambor",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_trombeta",
+    "Nome": "Trombeta",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_viola",
+    "Nome": "Viola",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_xilofone",
+    "Nome": "Xilofone",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_kit_artesao_alquimista",
+    "Nome": "Kit de Artesão (Alquimista)",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_kit_artesao_carpinteiro",
+    "Nome": "Kit de Artesão (Carpinteiro)",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_kit_artesao_ceramista",
+    "Nome": "Kit de Artesão (Ceramista)",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_kit_artesao_coureiro",
+    "Nome": "Kit de Artesão (Coureiro)",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_kit_artesao_ferreiro",
+    "Nome": "Kit de Artesão (Ferreiro)",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_kit_artesao_vidraceiro",
+    "Nome": "Kit de Artesão (Vidraceiro)",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_kit_artesao_joalheiro",
+    "Nome": "Kit de Artesão (Joalheiro)",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_kit_artesao_marceneiro",
+    "Nome": "Kit de Artesão (Marceneiro)",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_kit_artesao_papeleiro",
+    "Nome": "Kit de Artesão (Papeleiro)",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_kit_artesao_pintor",
+    "Nome": "Kit de Artesão (Pintor)",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_kit_artesao_tecelao",
+    "Nome": "Kit de Artesão (Tecelão)",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_kit_artesao_tosquiador",
+    "Nome": "Kit de Artesão (Tosquiador)",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_baralho_de_cartas",
+    "Nome": "Baralho de Cartas",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_conjunto_de_dados",
+    "Nome": "Conjunto de Dados",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_ferramentas_cartografo",
+    "Nome": "Ferramentas de Cartógrafo",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_ferramentas_navegador",
+    "Nome": "Ferramentas de Navegador",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_ferramentas_ladrao",
+    "Nome": "Ferramentas de Ladrão",
+    "Tipo": "Ferramenta"
   }
-
 ]

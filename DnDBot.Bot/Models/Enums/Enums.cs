@@ -153,7 +153,7 @@ namespace DnDBot.Bot.Models.Enums
     public enum TipoArma
     {
         CorpoACorpo,
-        ADistancia
+        Distancia
     }
 
     /// <summary>
@@ -205,24 +205,6 @@ namespace DnDBot.Bot.Models.Enums
     {
         Simples,
         Marcial
-    }
-
-    /// <summary>
-    /// Enumeração que define os tipos de armadura.
-    /// </summary>
-    public enum TipoArmadura
-    {
-        /// <summary>Armadura leve (ex: gibão de couro).</summary>
-        Leve,
-
-        /// <summary>Armadura média (ex: cota de escamas).</summary>
-        Media,
-
-        /// <summary>Armadura pesada (ex: armadura completa).</summary>
-        Pesada,
-
-        /// <summary>Escudo (complemento defensivo).</summary>
-        Escudo
     }
 
     public enum AnatomiaPermitida
@@ -277,6 +259,7 @@ namespace DnDBot.Bot.Models.Enums
         Cubo,
         Linha,
         Nuvem,
+        Nenhum,
         Outro
     }
 
@@ -322,6 +305,7 @@ namespace DnDBot.Bot.Models.Enums
     {
         Racial,
         Classe,
+        Antecedente,
         Feat,
         MagiaRacial,
         ItemMagico,

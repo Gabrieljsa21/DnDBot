@@ -1,0 +1,21 @@
+[
+  {
+    "Id": "escudo_comum",
+    "Nome": "Escudo",
+    "Descricao": "Um escudo comum de madeira ou metal que concede +2 de CA quando empunhado.",
+    "Categoria": "Escudo",
+    "SubCategoria": "Escudo",
+    "PesoUnitario": 3,
+    "Empilhavel": false,
+    "ValorCobre": 1000,
+    "Equipavel": true,
+    "Raridade": "Comum",
+    "Fabricante": "Forja dos Anões",
+    "DurabilidadeAtual": 10,
+    "DurabilidadeMaxima": 10,
+    "PropriedadesEspeciais": [],
+    "ResistenciasDano": [],
+    "ImunidadesDano": [],
+    "Tags": [ "defesa", "comum" ]
+  }
+]

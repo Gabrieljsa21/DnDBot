@@ -37,21 +37,13 @@ namespace DnDBot.Bot.Data.Configurations
                   .WithOne(at => at.Antecedente)
                   .HasForeignKey(at => at.AntecedenteId);
 
-            entity.HasMany(a => a.ProficienciaPericias)
+            entity.HasMany(a => a.Proficiencia)
                   .WithOne(p => p.Antecedente)
                   .HasForeignKey(p => p.AntecedenteId);
-
-            entity.HasOne(a => a.OpcoesProficienciaFerramentas)
-                  .WithOne()
-                  .HasForeignKey<AntecedenteOpcaoEscolhaProficienciaFerramentas>(e => e.Id);
 
             entity.HasMany(a => a.Itens)
                   .WithOne(i => i.Antecedente)
                   .HasForeignKey(i => i.AntecedenteId);
-
-            entity.HasOne(a => a.OpcoesItens)
-                  .WithOne()
-                  .HasForeignKey<AntecedenteOpcaoEscolhaItem>(x => x.Id);
 
             entity.HasMany(a => a.Caracteristicas)
                   .WithOne(c => c.Antecedente)
@@ -104,19 +96,19 @@ namespace DnDBot.Bot.Data.Configurations
         }
     }
 
-    public class AntecedenteFerramentaConfiguration : IEntityTypeConfiguration<AntecedenteProficienciaFerramentas>
+    public class AntecedenteProficienciaConfiguration : IEntityTypeConfiguration<AntecedenteProficiencia>
     {
-        public void Configure(EntityTypeBuilder<AntecedenteProficienciaFerramentas> builder)
+        public void Configure(EntityTypeBuilder<AntecedenteProficiencia> builder)
         {
-            builder.HasKey(x => new { x.AntecedenteId, x.FerramentaId });
+            builder.HasKey(x => new { x.AntecedenteId, x.ProficienciaId });
 
             builder.HasOne(x => x.Antecedente)
-                   .WithMany(a => a.ProficienciaFerramentas)
+                   .WithMany(a => a.Proficiencia)
                    .HasForeignKey(x => x.AntecedenteId);
 
-            builder.HasOne(x => x.Ferramenta)
+            builder.HasOne(x => x.Proficiencia)
                    .WithMany()
-                   .HasForeignKey(x => x.FerramentaId);
+                   .HasForeignKey(x => x.ProficienciaId);
         }
     }
 
@@ -167,58 +159,34 @@ namespace DnDBot.Bot.Data.Configurations
                    .HasForeignKey(x => x.VinculoId);
         }
     }
-
-    public class AntecedenteProficienciaPericiasConfiguration : IEntityTypeConfiguration<AntecedenteProficienciaPericias>
+    public class AntecedenteItemOpcoesConfiguration : IEntityTypeConfiguration<AntecedenteItemOpcoes>
     {
-        public void Configure(EntityTypeBuilder<AntecedenteProficienciaPericias> builder)
+        public void Configure(EntityTypeBuilder<AntecedenteItemOpcoes> builder)
         {
-            builder.HasKey(x => new { x.AntecedenteId, x.PericiaId });
+            builder.HasKey(x => new { x.AntecedenteId, x.ItemId });
 
             builder.HasOne(x => x.Antecedente)
-                   .WithMany(a => a.ProficienciaPericias)
+                   .WithMany(a => a.OpcoesItens)
                    .HasForeignKey(x => x.AntecedenteId);
-
-            builder.HasOne(x => x.Pericia)
-                   .WithMany()
-                   .HasForeignKey(x => x.PericiaId);
-        }
-    }
-
-    public class AntecedenteOpcaoEscolhaProficienciaFerramentasConfiguration : IEntityTypeConfiguration<AntecedenteOpcaoEscolhaProficienciaFerramentas>
-    {
-        public void Configure(EntityTypeBuilder<AntecedenteOpcaoEscolhaProficienciaFerramentas> builder)
-        {
-            builder.HasKey(x => x.Id);
-
-        }
-    }
-
-    public class AntecedenteOpcaoEscolhaItemConfiguration : IEntityTypeConfiguration<AntecedenteOpcaoEscolhaItem>
-    {
-        public void Configure(EntityTypeBuilder<AntecedenteOpcaoEscolhaItem> builder)
-        {
-            builder.HasKey(x => x.Id);
-
-            builder.Property(x => x.QuantidadeEscolhas)
-                   .IsRequired();
-
-            builder.HasMany(x => x.Opcoes)
-                   .WithOne(x => x.AntecedenteOpcaoEscolhaItem)
-                   .HasForeignKey(x => x.AntecedenteOpcaoEscolhaItemId);
-        }
-    }
-
-    public class AntecedenteOpcaoEscolhaItemOpcoesConfiguration : IEntityTypeConfiguration<AntecedenteOpcaoEscolhaItemOpcoes>
-    {
-        public void Configure(EntityTypeBuilder<AntecedenteOpcaoEscolhaItemOpcoes> builder)
-        {
-            builder.HasKey(x => x.Id);
 
             builder.HasOne(x => x.Item)
                    .WithMany()
                    .HasForeignKey(x => x.ItemId);
         }
     }
+    public class AntecedenteProficienciaOpcoesConfiguration : IEntityTypeConfiguration<AntecedenteProficienciaOpcoes>
+    {
+        public void Configure(EntityTypeBuilder<AntecedenteProficienciaOpcoes> builder)
+        {
+            builder.HasKey(x => new { x.AntecedenteId, x.ProficienciaId });
 
+            builder.HasOne(x => x.Antecedente)
+                   .WithMany(a => a.OpcoesProficiencia)
+                   .HasForeignKey(x => x.AntecedenteId);
 
+            builder.HasOne(x => x.Proficiencia)
+                   .WithMany()
+                   .HasForeignKey(x => x.ProficienciaId);
+        }
+    }
 }

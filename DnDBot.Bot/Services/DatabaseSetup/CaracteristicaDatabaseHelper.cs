@@ -35,11 +35,11 @@ public static class CaracteristicaDatabaseHelper
     {
         if (!File.Exists(CaminhoJson))
         {
-            Console.WriteLine("❌ Arquivo caracteristicas.json não encontrado.");
+            Console.WriteLine("❌ Arquivo caracteristicasraciais.json não encontrado.");
             return;
         }
 
-        Console.WriteLine("📥 Lendo dados de caracteristicas.json...");
+        Console.WriteLine("📥 Lendo dados de caracteristicasraciais.json...");
 
         var json = await File.ReadAllTextAsync(CaminhoJson);
         var caracteristicas = JsonSerializer.Deserialize<Dictionary<string, Caracteristica>>(json, new JsonSerializerOptions
@@ -47,7 +47,6 @@ public static class CaracteristicaDatabaseHelper
             PropertyNameCaseInsensitive = true,
             Converters = { new JsonStringEnumConverter() }
         });
-
 
         if (caracteristicas == null || caracteristicas.Count == 0)
         {
@@ -57,40 +56,45 @@ public static class CaracteristicaDatabaseHelper
 
         foreach (var c in caracteristicas.Values)
         {
-            if (!await RegistroExisteAsync(conn, tx, "Caracteristica", c.Id))
-            {
-                var parametros = GerarParametrosEntidadeBase(c);
-
-                // Campos adicionais
-                parametros["tipo"] = c.Tipo.ToString();
-                parametros["acao"] = c.AcaoRequerida.ToString();
-                parametros["alvo"] = c.Alvo.ToString();
-                parametros["duracao"] = c.DuracaoEmRodadas ?? (object)DBNull.Value;
-                parametros["usosCurto"] = c.UsosPorDescansoCurto ?? (object)DBNull.Value;
-                parametros["usosLongo"] = c.UsosPorDescansoLongo ?? (object)DBNull.Value;
-                parametros["condicao"] = c.CondicaoAtivacao.ToString();
-                parametros["origem"] = c.Origem.ToString();
-                parametros["nivelMin"] = c.NivelMinimo;
-                parametros["nivelMax"] = c.NivelMaximo ?? (object)DBNull.Value;
-
-                var sql = $@"
-                    INSERT INTO Caracteristica (
-                        Id, Tipo, AcaoRequerida, Alvo, DuracaoEmRodadas,
-                        UsosPorDescansoCurto, UsosPorDescansoLongo, CondicaoAtivacao,
-                        Origem, NivelMinimo, NivelMaximo,
-                        {SqliteEntidadeBaseHelper.CamposInsert.Replace("Id,", "").Trim()}
-                    ) VALUES (
-                        $id, $tipo, $acao, $alvo, $duracao,
-                        $usosCurto, $usosLongo, $condicao,
-                        $origem, $nivelMin, $nivelMax,
-                        {SqliteEntidadeBaseHelper.ValoresInsert.Replace("$id,", "").Trim()}
-                    )";
-
-                var cmd = CriarInsertCommand(conn, tx, sql, parametros);
-                await cmd.ExecuteNonQueryAsync();
-            }
+            await InserirCaracteristica(conn, tx, c);
         }
 
         Console.WriteLine("✅ Características populadas.");
+    }
+    public static async Task InserirCaracteristica(SqliteConnection conn, SqliteTransaction tx, Caracteristica caracteristica)
+    {
+        if (string.IsNullOrWhiteSpace(caracteristica?.Id))
+            return;
+
+        if (await RegistroExisteAsync(conn, tx, "Caracteristica", caracteristica.Id))
+            return;
+
+        var parametros = GerarParametrosEntidadeBase(caracteristica);
+
+        parametros["tipo"] = caracteristica.Tipo.ToString();
+        parametros["acao"] = caracteristica.AcaoRequerida.ToString();
+        parametros["alvo"] = caracteristica.Alvo.ToString();
+        parametros["duracao"] = caracteristica.DuracaoEmRodadas ?? (object)DBNull.Value;
+        parametros["usosCurto"] = caracteristica.UsosPorDescansoCurto ?? (object)DBNull.Value;
+        parametros["usosLongo"] = caracteristica.UsosPorDescansoLongo ?? (object)DBNull.Value;
+        parametros["condicao"] = caracteristica.CondicaoAtivacao.ToString();
+        parametros["origem"] = caracteristica.Origem.ToString();
+        parametros["nivelMin"] = caracteristica.NivelMinimo;
+        parametros["nivelMax"] = caracteristica.NivelMaximo ?? (object)DBNull.Value;
+
+        var sql = $@"
+            INSERT INTO Caracteristica (
+                Id, Tipo, AcaoRequerida, Alvo, DuracaoEmRodadas,
+                UsosPorDescansoCurto, UsosPorDescansoLongo, CondicaoAtivacao,
+                Origem, NivelMinimo, NivelMaximo,
+                {SqliteEntidadeBaseHelper.CamposInsert.Replace("Id,", "").Trim()}
+            ) VALUES (
+                $id, $tipo, $acao, $alvo, $duracao,
+                $usosCurto, $usosLongo, $condicao,
+                $origem, $nivelMin, $nivelMax,
+                {SqliteEntidadeBaseHelper.ValoresInsert.Replace("$id,", "").Trim()}
+            );";
+
+        await CriarInsertCommand(conn, tx, sql, parametros).ExecuteNonQueryAsync();
     }
 }

@@ -17,7 +17,7 @@
     "Id": "kit_artesao_ceramista",
     "Nome": "Kit de Artesão (Ceramista)",
     "RequerProficiencia": true,
-    "PericiasAssociadas": [ "historia", "arcana" ],
+    "PericiasAssociadas": [ "historia", "arcanismo" ],
     "Tags": [ "ceramica" ]
   },
   {
@@ -38,7 +38,7 @@
     "Id": "kit_artesao_vidraceiro",
     "Nome": "Kit de Artesão (Vidraceiro)",
     "RequerProficiencia": true,
-    "PericiasAssociadas": [ "arcana" ],
+    "PericiasAssociadas": [ "arcanismo" ],
     "Tags": [ "vidro" ]
   },
   {
@@ -101,15 +101,15 @@
     "Id": "kit_ladrao",
     "Nome": "Kit de Ladrão",
     "RequerProficiencia": true,
-    "PericiasAssociadas": [ "arrombamento" ],
+    "PericiasAssociadas": [ "prestidigitacao" ],
     "Tags": [ "ladrão" ]
   },
   {
     "Id": "kit_navegacao",
     "Nome": "Kit de Navegação",
     "RequerProficiencia": true,
-    "PericiasAssociadas": [ "navegacao" ],
-    "Tags": [ "navegacao" ]
+    "PericiasAssociadas": [ "sobrevivencia" ],
+    "Tags": [ "sobrevivencia" ]
   },
   {
     "Id": "ferramentas_carpinteiro",
@@ -171,7 +171,7 @@
     "Id": "ferramentas_oleiro",
     "Nome": "Ferramentas de Oleiro",
     "RequerProficiencia": true,
-    "PericiasAssociadas": [ "arcana" ],
+    "PericiasAssociadas": [ "arcanismo" ],
     "Tags": [ "oleiro" ]
   },
   {
@@ -199,22 +199,22 @@
     "Id": "ferramentas_vidreiro",
     "Nome": "Ferramentas de Vidreiro",
     "RequerProficiencia": true,
-    "PericiasAssociadas": [ "arcana" ],
+    "PericiasAssociadas": [ "arcanismo" ],
     "Tags": [ "vidro" ]
   },
   {
     "Id": "ferramentas_ladrao",
     "Nome": "Ferramentas de Ladrão",
     "RequerProficiencia": true,
-    "PericiasAssociadas": [ "arrombamento" ],
+    "PericiasAssociadas": [ "prestidigitacao" ],
     "Tags": [ "ladrão" ]
   },
   {
     "Id": "ferramentas_navegador",
     "Nome": "Ferramentas de Navegador",
     "RequerProficiencia": true,
-    "PericiasAssociadas": [ "navegacao" ],
-    "Tags": [ "navegacao" ]
+    "PericiasAssociadas": [ "sobrevivencia" ],
+    "Tags": [ "sobrevivencia" ]
   },
   {
     "Id": "kit_falsificacao",
@@ -231,73 +231,87 @@
     "Tags": [ "herbalismo" ]
   },
   {
-    "Id": "instrumento_alaude",
+    "Id": "alaude",
     "Nome": "Alaúde",
     "RequerProficiencia": true,
     "PericiasAssociadas": [ "atuacao" ],
     "Tags": [ "cordas", "alaude" ]
   },
   {
-    "Id": "instrumento_charamela",
+    "Id": "charamela",
     "Nome": "Charamela",
     "RequerProficiencia": true,
     "PericiasAssociadas": [ "atuacao" ],
     "Tags": [ "sopro", "charamela" ]
   },
   {
-    "Id": "instrumento_flauta_doce",
+    "Id": "flauta_doce",
     "Nome": "Flauta Doce",
     "RequerProficiencia": true,
     "PericiasAssociadas": [ "atuacao" ],
     "Tags": [ "sopro", "flauta_doce" ]
   },
   {
-    "Id": "instrumento_flauta",
+    "Id": "flauta",
     "Nome": "Flauta",
     "RequerProficiencia": true,
     "PericiasAssociadas": [ "atuacao" ],
     "Tags": [ "sopro", "flauta" ]
   },
   {
-    "Id": "instrumento_gaita_fole",
-    "Nome": "Gaita de Fole",
+    "Id": "gaita_foles",
+    "Nome": "Gaita de Foles",
     "RequerProficiencia": true,
     "PericiasAssociadas": [ "atuacao" ],
     "Tags": [ "sopro", "gaita" ]
   },
   {
-    "Id": "instrumento_lira",
+    "Id": "lira",
     "Nome": "Lira",
     "RequerProficiencia": true,
     "PericiasAssociadas": [ "atuacao" ],
     "Tags": [ "cordas", "lira" ]
   },
   {
-    "Id": "instrumento_tambor",
+    "Id": "tambor",
     "Nome": "Tambor",
     "RequerProficiencia": true,
     "PericiasAssociadas": [ "atuacao" ],
     "Tags": [ "percussao", "tambor" ]
   },
   {
-    "Id": "instrumento_trombeta",
+    "Id": "trombeta",
     "Nome": "Trombeta",
     "RequerProficiencia": true,
     "PericiasAssociadas": [ "atuacao" ],
     "Tags": [ "sopro", "trombeta" ]
   },
   {
-    "Id": "instrumento_viola",
+    "Id": "viola",
     "Nome": "Viola",
     "RequerProficiencia": true,
     "PericiasAssociadas": [ "atuacao" ],
     "Tags": [ "cordas", "viola" ]
   },
   {
-    "Id": "instrumento_xilofone",
+    "Id": "xilofone",
     "Nome": "Xilofone",
     "RequerProficiencia": true,
     "PericiasAssociadas": [ "atuacao" ],
     "Tags": [ "percussao", "xilofone" ]
+  },
+  {
+    "Id": "baralho_de_cartas",
+    "Nome": "Baralho de Cartas",
+    "RequerProficiencia": true,
+    "PericiasAssociadas": [ "atuacao", "enganacao", "prestidigitacao" ],
+    "Tags": [ "jogo", "cartas", "kit_de_jogo" ]
+  },
+  {
+    "Id": "conjunto_de_dados",
+    "Nome": "Conjunto de Dados",
+    "RequerProficiencia": true,
+    "PericiasAssociadas": [ "enganacao", "percepcao", "prestidigitacao" ],
+    "Tags": [ "jogo", "dados", "kit_de_jogo" ]
   }
 ]

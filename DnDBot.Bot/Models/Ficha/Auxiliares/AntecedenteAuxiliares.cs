@@ -15,27 +15,29 @@ namespace DnDBot.Bot.Models.Ficha.Auxiliares
 
         public Antecedente Antecedente { get; set; }
     }
-    public class AntecedenteProficienciaPericias
+    
+    public class AntecedenteProficiencia
     {
         public string AntecedenteId { get; set; }
-        public string PericiaId { get; set; }
+        public string ProficienciaId { get; set; }
         public Antecedente Antecedente { get; set; }
-        public Pericia Pericia { get; set; }
+        public Proficiencia Proficiencia { get; set; }
     }
     
-    public class AntecedenteProficienciaFerramentas
+    public class AntecedenteProficienciaOpcoes
     {
         public string AntecedenteId { get; set; }
-        public string FerramentaId { get; set; }
         public Antecedente Antecedente { get; set; }
-        public Ferramenta Ferramenta { get; set; }
+        public string ProficienciaId { get; set; }
+        public Proficiencia Proficiencia { get; set; }
     }
     
-    public class AntecedenteOpcaoEscolhaProficienciaFerramentas
+    public class AntecedenteItemOpcoes
     {
-        public string Id { get; set; }
-        public List<Ferramenta> Opcoes { get; set; } = new();
-        public int QuantidadeEscolhas { get; set; } = 1;
+        public string AntecedenteId { get; set; }
+        public Antecedente Antecedente { get; set; }
+        public string ItemId { get; set; }
+        public Item Item { get; set; }
     }
     public class AntecedenteIdioma
     {
@@ -59,27 +61,6 @@ namespace DnDBot.Bot.Models.Ficha.Auxiliares
         public Antecedente Antecedente { get; set; }
         public Item Item { get; set; }
     }
-
-    public class AntecedenteOpcaoEscolhaItem
-    {
-        public string Id { get; set; }
-
-        public int QuantidadeEscolhas { get; set; }
-
-        public List<AntecedenteOpcaoEscolhaItemOpcoes> Opcoes { get; set; } = new();
-    }
-
-    public class AntecedenteOpcaoEscolhaItemOpcoes
-    {
-        public string Id { get; set; }
-
-        public string AntecedenteOpcaoEscolhaItemId { get; set; }
-        public AntecedenteOpcaoEscolhaItem AntecedenteOpcaoEscolhaItem { get; set; }
-
-        public string ItemId { get; set; }
-        public Item Item { get; set; }
-    }
-
 
     public class AntecedenteIdeal
     {

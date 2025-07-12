@@ -3,6 +3,7 @@ using DnDBot.Bot.Models.Ficha.Auxiliares;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace DnDBot.Bot.Models.ItensInventario
 {
@@ -14,7 +15,11 @@ namespace DnDBot.Bot.Models.ItensInventario
         /// <summary>
         /// Lista de perícias que a ferramenta pode auxiliar ou está associada.
         /// </summary>
+        [JsonIgnore] // Ignorar no JSON, pois você vai usar outra propriedade para desserializar as IDs
         public List<FerramentaPericia> PericiasAssociadas { get; set; } = new();
+
+        [JsonPropertyName("PericiasAssociadas")]
+        public List<string> PericiasIds { get; set; } = new();
 
         /// <summary>
         /// Indica se a ferramenta requer proficiência para uso efetivo.

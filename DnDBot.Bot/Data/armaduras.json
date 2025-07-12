@@ -1,0 +1,137 @@
+[
+  {
+    "Id": "arm_acolchoada",
+    "Nome": "Armadura Acolchoada",
+    "Categoria": "Armadura",
+    "SubCategoria": "ArmaduraLeve",
+    "ClasseArmadura": 11,
+    "ImpedeFurtividade": false,
+    "PesoUnitario": 4,
+    "ValorCobre": 500,
+    "Equipavel": true
+  },
+  {
+    "Id": "arm_couro",
+    "Nome": "Armadura de Couro",
+    "Categoria": "Armadura",
+    "SubCategoria": "ArmaduraLeve",
+    "ClasseArmadura": 11,
+    "ImpedeFurtividade": false,
+    "PesoUnitario": 5,
+    "ValorCobre": 1000,
+    "Equipavel": true
+  },
+  {
+    "Id": "arm_couro_batido",
+    "Nome": "Armadura de Couro Batido",
+    "Categoria": "Armadura",
+    "SubCategoria": "ArmaduraLeve",
+    "ClasseArmadura": 12,
+    "ImpedeFurtividade": false,
+    "PesoUnitario": 6.5,
+    "ValorCobre": 4500,
+    "Equipavel": true
+  },
+  {
+    "Id": "arm_gibao_peles",
+    "Nome": "Gibão de Peles",
+    "Categoria": "Armadura",
+    "SubCategoria": "ArmaduraMedia",
+    "ClasseArmadura": 12,
+    "ImpedeFurtividade": false,
+    "PesoUnitario": 6,
+    "ValorCobre": 1000,
+    "Equipavel": true
+  },
+  {
+    "Id": "arm_camisa_malha",
+    "Nome": "Camisão de Malha",
+    "Categoria": "Armadura",
+    "SubCategoria": "ArmaduraMedia",
+    "ClasseArmadura": 13,
+    "ImpedeFurtividade": false,
+    "PesoUnitario": 10,
+    "ValorCobre": 5000,
+    "Equipavel": true
+  },
+  {
+    "Id": "arm_brunea",
+    "Nome": "Brunea",
+    "Categoria": "Armadura",
+    "SubCategoria": "ArmaduraMedia",
+    "ClasseArmadura": 14,
+    "ImpedeFurtividade": true,
+    "PesoUnitario": 22.5,
+    "ValorCobre": 5000,
+    "Equipavel": true
+  },
+  {
+    "Id": "arm_peitoral_acero",
+    "Nome": "Peitoral de Aço",
+    "Categoria": "Armadura",
+    "SubCategoria": "ArmaduraMedia",
+    "ClasseArmadura": 14,
+    "ImpedeFurtividade": false,
+    "PesoUnitario": 10,
+    "ValorCobre": 40000,
+    "Equipavel": true
+  },
+  {
+    "Id": "arm_meia_armadura",
+    "Nome": "Meia-Armadura",
+    "Categoria": "Armadura",
+    "SubCategoria": "ArmaduraMedia",
+    "ClasseArmadura": 15,
+    "ImpedeFurtividade": true,
+    "PesoUnitario": 20,
+    "ValorCobre": 75000,
+    "Equipavel": true
+  },
+  {
+    "Id": "arm_cota_aneis",
+    "Nome": "Cota de Anéis",
+    "Categoria": "Armadura",
+    "SubCategoria": "ArmaduraPesada",
+    "ClasseArmadura": 14,
+    "ImpedeFurtividade": true,
+    "PesoUnitario": 20,
+    "ValorCobre": 3000,
+    "Equipavel": true
+  },
+  {
+    "Id": "arm_cota_malha",
+    "Nome": "Cota de Malha",
+    "Categoria": "Armadura",
+    "SubCategoria": "ArmaduraPesada",
+    "ClasseArmadura": 16,
+    "ImpedeFurtividade": true,
+    "PesoUnitario": 22.5,
+    "ValorCobre": 7500,
+    "Equipavel": true,
+    "RequisitoForca": 13
+  },
+  {
+    "Id": "arm_cota_talas",
+    "Nome": "Cota de Talas",
+    "Categoria": "Armadura",
+    "SubCategoria": "ArmaduraPesada",
+    "ClasseArmadura": 17,
+    "ImpedeFurtividade": true,
+    "PesoUnitario": 30,
+    "ValorCobre": 20000,
+    "Equipavel": true,
+    "RequisitoForca": 15
+  },
+  {
+    "Id": "arm_armadura_placas",
+    "Nome": "Armadura de Placas",
+    "Categoria": "Armadura",
+    "SubCategoria": "ArmaduraPesada",
+    "ClasseArmadura": 18,
+    "ImpedeFurtividade": true,
+    "PesoUnitario": 32.5,
+    "ValorCobre": 150000,
+    "Equipavel": true,
+    "RequisitoForca": 15
+  }
+]

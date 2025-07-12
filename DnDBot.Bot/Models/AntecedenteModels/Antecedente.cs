@@ -16,21 +16,29 @@ namespace DnDBot.Bot.Models.AntecedenteModels
     /// </summary>
     public class Antecedente : EntidadeBase
     {
-        /// <summary>
-        /// Lista das perícias concedidas por este antecedente.
-        /// </summary>
-        public List<AntecedenteProficienciaPericias> ProficienciaPericias { get; set; } = new();
 
         /// <summary>
         /// Lista das ferramentas concedidas por este antecedente.
         /// </summary>
-        public List<AntecedenteProficienciaFerramentas> ProficienciaFerramentas { get; set; } = new();
+        public List<AntecedenteProficiencia> Proficiencia { get; set; } = new();
 
         /// <summary>
         /// Equipamentos detalhados que este antecedente concede ao personagem.
         /// </summary>
-        public AntecedenteOpcaoEscolhaProficienciaFerramentas OpcoesProficienciaFerramentas { get; set; }
+        public List<AntecedenteProficienciaOpcoes> OpcoesProficiencia { get; set; }
+        public int QntOpcoesProficiencia { get; set; }
 
+        /// <summary>
+        /// Equipamentos detalhados que este antecedente concede ao personagem.
+        /// </summary>
+        public List<AntecedenteItem> Itens { get; set; } = new();
+
+        /// <summary>
+        /// Opções de escolha para equipamentos adicionais — permite seleção de equipamentos.
+        /// Esta propriedade não é mapeada no banco de dados.
+        /// </summary>
+        public List<AntecedenteItemOpcoes> OpcoesItens { get; set; } = new();
+        public int QntOpcoesItem { get; set; } = 0;
 
         /// <summary>
         /// Número de idiomas adicionais concedidos.
@@ -46,19 +54,8 @@ namespace DnDBot.Bot.Models.AntecedenteModels
         /// Características especiais (features) concedidas por este antecedente.
         /// </summary>
 
-        [JsonIgnore] 
+        [JsonIgnore]
         public List<AntecedenteCaracteristica> Caracteristicas { get; set; } = new();
-
-        /// <summary>
-        /// Equipamentos detalhados que este antecedente concede ao personagem.
-        /// </summary>
-        public List<AntecedenteItem> Itens { get; set; } = new();
-
-        /// <summary>
-        /// Opções de escolha para equipamentos adicionais — permite seleção de equipamentos.
-        /// Esta propriedade não é mapeada no banco de dados.
-        /// </summary>
-        public AntecedenteOpcaoEscolhaItem OpcoesItens { get; set; } = new();
 
         /// <summary>
         /// Ideais associados ao antecedente, que ajudam a moldar a personalidade do personagem.

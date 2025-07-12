@@ -3,11 +3,10 @@ using DnDBot.Bot.Models.Ficha.Auxiliares;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Text.Json.Serialization;
 
 namespace DnDBot.Bot.Models.ItensInventario
 {
-    public class Arma : Item
+    public abstract class Arma : Item
     {
         public TipoArma Tipo { get; set; }
         public CategoriaArma CategoriaArma { get; set; }
@@ -16,14 +15,13 @@ namespace DnDBot.Bot.Models.ItensInventario
         public TipoDano TipoDano { get; set; }
         public TipoDano? TipoDanoSecundario { get; set; }
 
-        public int? Alcance { get; set; }
         public bool EhDuasMaos { get; set; }
         public bool EhLeve { get; set; }
         public bool EhVersatil { get; set; }
-        public string DadoDanoVersatil { get; set; } = string.Empty;
+        public bool EhAgil { get; set; }
+        public bool EhPesada { get; set; }
 
-        public bool PodeSerArremessada { get; set; }
-        public int? AlcanceArremesso { get; set; }
+        public string DadoDanoVersatil { get; set; } = string.Empty;
 
         public List<string> Requisitos { get; set; } = new();
         public List<string> PropriedadesEspeciais { get; set; } = new();
@@ -37,11 +35,6 @@ namespace DnDBot.Bot.Models.ItensInventario
         public FormaAreaEfeito AreaAtaque { get; set; }
         public AcaoRequerida TipoAcao { get; set; }
         public string RegraCritico { get; set; } = string.Empty;
-
-        public string TipoMunicao { get; set; } = string.Empty;
-        public int MunicaoPorAtaque { get; set; } = 1;
-        public bool RequerRecarga { get; set; }
-        public int TempoRecargaTurnos { get; set; }
 
         public List<string> AtaquesEspeciais { get; set; } = new();
 
