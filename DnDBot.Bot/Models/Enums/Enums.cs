@@ -60,7 +60,7 @@ namespace DnDBot.Bot.Models.Enums
         /// </summary>
         Desvantagem
     }
-    
+
     public enum Atributo
     {
         /// <summary>Representa a Força física do personagem, usada para força bruta e ataques corpo a corpo.</summary>
@@ -81,7 +81,9 @@ namespace DnDBot.Bot.Models.Enums
         /// <summary>Representa o carisma, influência e capacidade social.</summary>
         Carisma,
 
-        Selecionável
+        Selecionável,
+
+        Nenhum
     }
 
 
@@ -297,15 +299,21 @@ namespace DnDBot.Bot.Models.Enums
 
     public enum Condicao
     {
+        Agarrado,
+        Amedrontado,
         Atordoado,
-        Enfeiticado,
-        Paralisado,
-        Cego,
-        Surdo,
-        Imobilizado,
-        Silenciado,
-        Envenenado,
         Caido,
+        Cego,
+        Enfeiticado,
+        Envenenado,
+        Impedido,
+        Incapacitado,
+        Inconsciente,
+        Exaustao,
+        Invisivel,
+        Paralisado,
+        Petrificado,
+        Surdo,
         Outros
     }
 
@@ -328,20 +336,6 @@ namespace DnDBot.Bot.Models.Enums
         Idioma,
         Veiculo,
         TesteResistencia
-    }
-
-    public enum NivelMagia
-    {
-        Truque = 0,
-        Nivel1 = 1,
-        Nivel2 = 2,
-        Nivel3 = 3,
-        Nivel4 = 4,
-        Nivel5 = 5,
-        Nivel6 = 6,
-        Nivel7 = 7,
-        Nivel8 = 8,
-        Nivel9 = 9
     }
 
     public enum EscolaMagia

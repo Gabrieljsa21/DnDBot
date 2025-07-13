@@ -357,66 +357,6 @@ namespace DnDBot.Bot.Migrations
                     b.ToTable("ArmaduraTag");
                 });
 
-            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.CaracteristicaEscala", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("AcaoRequerida")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Alvo")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("CaracteristicaId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("CondicaoAtivacao")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("DuracaoEmRodadas")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("NivelMaximo")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("NivelMinimo")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("UsosPorDescansoCurto")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("UsosPorDescansoLongo")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CaracteristicaId");
-
-                    b.ToTable("CaracteristicaEscala");
-                });
-
-            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.CaracteristicaEscalaDano", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("CaracteristicaEscalaId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DadoDano")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("TipoDano")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CaracteristicaEscalaId");
-
-                    b.ToTable("CaracteristicaEscalaDano");
-                });
-
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.ClasseItens", b =>
                 {
                     b.Property<string>("ClasseId")
@@ -741,12 +681,12 @@ namespace DnDBot.Bot.Migrations
                     b.Property<int>("Condicao")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("MagiaId1")
+                    b.Property<string>("EfeitoEscalonadoId")
                         .HasColumnType("TEXT");
 
                     b.HasKey("MagiaId", "Condicao");
 
-                    b.HasIndex("MagiaId1");
+                    b.HasIndex("EfeitoEscalonadoId");
 
                     b.ToTable("MagiaCondicaoAplicada");
                 });
@@ -759,12 +699,12 @@ namespace DnDBot.Bot.Migrations
                     b.Property<int>("Condicao")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("MagiaId1")
+                    b.Property<string>("EfeitoEscalonadoId")
                         .HasColumnType("TEXT");
 
                     b.HasKey("MagiaId", "Condicao");
 
-                    b.HasIndex("MagiaId1");
+                    b.HasIndex("EfeitoEscalonadoId");
 
                     b.ToTable("MagiaCondicaoRemovida");
                 });
@@ -1307,18 +1247,6 @@ namespace DnDBot.Bot.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Alcance")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Alvo")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("AreaEfeito")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("AtributoTesteResistencia")
-                        .HasColumnType("INTEGER");
-
                     b.Property<bool>("ComponenteMaterial")
                         .HasColumnType("INTEGER");
 
@@ -1331,9 +1259,6 @@ namespace DnDBot.Bot.Migrations
                     b.Property<bool>("ComponenteVerbal")
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("Concentracao")
-                        .HasColumnType("INTEGER");
-
                     b.Property<DateTime?>("CriadoEm")
                         .HasColumnType("TEXT");
 
@@ -1343,50 +1268,23 @@ namespace DnDBot.Bot.Migrations
                     b.Property<string>("CustoComponenteMaterial")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("DadoDano")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Descricao")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("DetalhesMaterial")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("DuracaoQuantidade")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("DuracaoUnidade")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("EfeitoPorTurno")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Escalonamento")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("Escola")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("FocoNecessario")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Fonte")
                         .HasColumnType("TEXT");
-
-                    b.Property<int?>("FormaAreaEfeito")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("IconeUrl")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ImagemUrl")
                         .HasColumnType("TEXT");
-
-                    b.Property<string>("LimiteUso")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("MetadeNoTeste")
-                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime?>("ModificadoEm")
                         .HasColumnType("TEXT");
@@ -1402,34 +1300,10 @@ namespace DnDBot.Bot.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("NumeroDeUsos")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("NumeroMaximoAlvos")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Pagina")
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("PodeSerRitual")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Recarga")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("RequerLinhaDeVisao")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("RequerLinhaReta")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("TempoConjuracao")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("TipoDano")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("TipoUso")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Versao")
@@ -1798,6 +1672,131 @@ namespace DnDBot.Bot.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("BolsaDeMoedas");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.ItensInventario.EfeitoDano", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DadoDano")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("EfeitoEscalonadoId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TipoDano")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EfeitoEscalonadoId");
+
+                    b.ToTable("EfeitoDano");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.ItensInventario.EfeitoEscalonado", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("AcaoRequerida")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Alcance")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Alvo")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("AtributoTesteResistencia")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CaracteristicaId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("Concentracao")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CondicaoAtivacao")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DescricaoEfeito")
+                        .HasMaxLength(4000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("DuracaoEmRodadas")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("DuracaoQuantidade")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("DuracaoUnidade")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FocoNecessario")
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FormaAreaEfeito")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("MagiaId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("MetadeNoTeste")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("NivelMaximo")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("NivelMinimo")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("NumeroMaximoAlvos")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Recarga")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("RequerLinhaDeVisao")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("RequerLinhaReta")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("TempoConjuracao")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TipoUso")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("UsosPorDescansoCurto")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("UsosPorDescansoLongo")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CaracteristicaId");
+
+                    b.HasIndex("MagiaId");
+
+                    b.ToTable("EfeitoEscalonado");
                 });
 
             modelBuilder.Entity("DnDBot.Bot.Models.ItensInventario.EquipamentoItem", b =>
@@ -2649,25 +2648,6 @@ namespace DnDBot.Bot.Migrations
                     b.Navigation("Armadura");
                 });
 
-            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.CaracteristicaEscala", b =>
-                {
-                    b.HasOne("DnDBot.Bot.Models.Ficha.Caracteristica", "Caracteristica")
-                        .WithMany("EscalasPorNivel")
-                        .HasForeignKey("CaracteristicaId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.Navigation("Caracteristica");
-                });
-
-            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.CaracteristicaEscalaDano", b =>
-                {
-                    b.HasOne("DnDBot.Bot.Models.Ficha.Auxiliares.CaracteristicaEscala", "CaracteristicaEscala")
-                        .WithMany("Danos")
-                        .HasForeignKey("CaracteristicaEscalaId");
-
-                    b.Navigation("CaracteristicaEscala");
-                });
-
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.ClasseItens", b =>
                 {
                     b.HasOne("DnDBot.Bot.Models.Ficha.Classe", "Classe")
@@ -3007,30 +2987,30 @@ namespace DnDBot.Bot.Migrations
 
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.MagiaCondicaoAplicada", b =>
                 {
+                    b.HasOne("DnDBot.Bot.Models.ItensInventario.EfeitoEscalonado", null)
+                        .WithMany("CondicoesAplicadas")
+                        .HasForeignKey("EfeitoEscalonadoId");
+
                     b.HasOne("DnDBot.Bot.Models.Ficha.Magia", "Magia")
                         .WithMany()
                         .HasForeignKey("MagiaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("DnDBot.Bot.Models.Ficha.Magia", null)
-                        .WithMany("CondicoesAplicadas")
-                        .HasForeignKey("MagiaId1");
 
                     b.Navigation("Magia");
                 });
 
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.MagiaCondicaoRemovida", b =>
                 {
+                    b.HasOne("DnDBot.Bot.Models.ItensInventario.EfeitoEscalonado", null)
+                        .WithMany("CondicoesRemovidas")
+                        .HasForeignKey("EfeitoEscalonadoId");
+
                     b.HasOne("DnDBot.Bot.Models.Ficha.Magia", "Magia")
                         .WithMany()
                         .HasForeignKey("MagiaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("DnDBot.Bot.Models.Ficha.Magia", null)
-                        .WithMany("CondicoesRemovidas")
-                        .HasForeignKey("MagiaId1");
 
                     b.Navigation("Magia");
                 });
@@ -3325,6 +3305,33 @@ namespace DnDBot.Bot.Migrations
                     b.Navigation("ItemBase");
                 });
 
+            modelBuilder.Entity("DnDBot.Bot.Models.ItensInventario.EfeitoDano", b =>
+                {
+                    b.HasOne("DnDBot.Bot.Models.ItensInventario.EfeitoEscalonado", "EfeitoEscalonado")
+                        .WithMany("Danos")
+                        .HasForeignKey("EfeitoEscalonadoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("EfeitoEscalonado");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.ItensInventario.EfeitoEscalonado", b =>
+                {
+                    b.HasOne("DnDBot.Bot.Models.Ficha.Caracteristica", "Caracteristica")
+                        .WithMany("EfeitoEscalonado")
+                        .HasForeignKey("CaracteristicaId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("DnDBot.Bot.Models.Ficha.Magia", "Magia")
+                        .WithMany("EfeitosEscalonados")
+                        .HasForeignKey("MagiaId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Caracteristica");
+
+                    b.Navigation("Magia");
+                });
+
             modelBuilder.Entity("DnDBot.Bot.Models.ItensInventario.EquipamentoItem", b =>
                 {
                     b.HasOne("DnDBot.Bot.Models.ItensInventario.Inventario", "Inventario")
@@ -3430,14 +3437,9 @@ namespace DnDBot.Bot.Migrations
                     b.Navigation("AntecedenteNarrativaTags");
                 });
 
-            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.CaracteristicaEscala", b =>
-                {
-                    b.Navigation("Danos");
-                });
-
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Caracteristica", b =>
                 {
-                    b.Navigation("EscalasPorNivel");
+                    b.Navigation("EfeitoEscalonado");
                 });
 
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Classe", b =>
@@ -3493,9 +3495,7 @@ namespace DnDBot.Bot.Migrations
                 {
                     b.Navigation("ClassesPermitidas");
 
-                    b.Navigation("CondicoesAplicadas");
-
-                    b.Navigation("CondicoesRemovidas");
+                    b.Navigation("EfeitosEscalonados");
 
                     b.Navigation("MagiaTags");
                 });
@@ -3534,6 +3534,15 @@ namespace DnDBot.Bot.Migrations
             modelBuilder.Entity("DnDBot.Bot.Models.ItensInventario.BolsaDeMoedas", b =>
                 {
                     b.Navigation("Moedas");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.ItensInventario.EfeitoEscalonado", b =>
+                {
+                    b.Navigation("CondicoesAplicadas");
+
+                    b.Navigation("CondicoesRemovidas");
+
+                    b.Navigation("Danos");
                 });
 
             modelBuilder.Entity("DnDBot.Bot.Models.ItensInventario.Inventario", b =>

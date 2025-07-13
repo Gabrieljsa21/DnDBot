@@ -1,6 +1,7 @@
 ﻿using DnDBot.Bot.Helpers;
 using DnDBot.Bot.Models.Ficha;
 using DnDBot.Bot.Models.Ficha.Auxiliares;
+using DnDBot.Bot.Models.ItensInventario;
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
@@ -47,7 +48,7 @@ public static class CaracteristicaDatabaseHelper
         await InserirEntidadeFilhaAsync(conn, tx, "Caracteristica", parametros);
 
         // Agora insere as escalas que estão na lista EscalasPorNivel
-        foreach (var escala in caracteristica.EscalasPorNivel)
+        foreach (var escala in caracteristica.EfeitoEscalonado)
         {
             if (string.IsNullOrEmpty(escala.Id))
                 escala.Id = Guid.NewGuid().ToString();
@@ -56,7 +57,7 @@ public static class CaracteristicaDatabaseHelper
         }
     }
 
-    private static async Task InserirCaracteristicaEscala(SqliteConnection conn, SqliteTransaction tx, string caracteristicaId, CaracteristicaEscala escala)
+    private static async Task InserirCaracteristicaEscala(SqliteConnection conn, SqliteTransaction tx, string caracteristicaId, EfeitoEscalonado escala)
     {
         var parametros = new Dictionary<string, object>
         {

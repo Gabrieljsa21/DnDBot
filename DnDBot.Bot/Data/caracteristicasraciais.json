@@ -2792,35 +2792,6 @@
       }
     ]
   },
-  "sopro_de_fogo": {
-    "Id": "sopro_fogo",
-    "Nome": "Sopro de fogo",
-    "Descricao": "Descrição não encontrada.",
-    "Fonte": "Livro do Jogador",
-    "Pagina": "",
-    "Versao": "1.0",
-    "ImagemUrl": "",
-    "IconeUrl": "",
-    "Tipo": "Outra",
-    "Origem": "Racial",
-    "CriadoPor": "sistema",
-    "CriadoEm": "2025-07-09T02:41:14.503401",
-    "ModificadoPor": "sistema",
-    "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "EscalasPorNivel": [
-      {
-        "NivelMinimo": 1,
-        "NivelMaximo": null,
-        "AcaoRequerida": "Nenhuma",
-        "Alvo": "Self",
-        "DuracaoEmRodadas": null,
-        "UsosPorDescansoCurto": null,
-        "UsosPorDescansoLongo": null,
-        "CondicaoAtivacao": "Sempre",
-        "Danos": []
-      }
-    ]
-  },
   "sopro_fogo": {
     "Id": "sopro_fogo",
     "Nome": "Sopro fogo",

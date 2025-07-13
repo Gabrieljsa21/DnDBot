@@ -8,17 +8,22 @@ namespace DnDBot.Bot.Data.Configurations
 {
     public class MagiaConfiguration : IEntityTypeConfiguration<Magia>
     {
-        public void Configure(EntityTypeBuilder<Magia> entity)
+        public void Configure(EntityTypeBuilder<Magia> builder)
         {
-            entity.HasKey(m => m.Id);
+            builder.HasKey(m => m.Id);
 
-            entity.Property(m => m.Nome)
+            builder.Property(m => m.Nome)
                 .IsRequired()
                 .HasMaxLength(100);
 
-            entity.HasMany(m => m.MagiaTags)
+            builder.HasMany(m => m.MagiaTags)
                 .WithOne(mt => mt.Magia)
                 .HasForeignKey(mt => mt.MagiaId);
+
+            builder.HasMany(m => m.EfeitosEscalonados)
+                   .WithOne(e => e.Magia)
+                   .HasForeignKey(e => e.MagiaId)
+                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
     public class MagiaClassePermitidaConfiguration : IEntityTypeConfiguration<MagiaClassePermitida>
@@ -28,7 +33,7 @@ namespace DnDBot.Bot.Data.Configurations
             builder.HasKey(x => new { x.MagiaId, x.Classe });
 
             builder.HasOne(x => x.Magia)
-                   .WithMany()
+                   .WithMany(m => m.ClassesPermitidas)
                    .HasForeignKey(x => x.MagiaId);
         }
     }

@@ -176,12 +176,6 @@ namespace DnDBot.Bot.Migrations
                     Id = table.Column<string>(type: "TEXT", nullable: false),
                     Nivel = table.Column<int>(type: "INTEGER", nullable: false),
                     Escola = table.Column<int>(type: "INTEGER", nullable: false),
-                    TempoConjuracao = table.Column<int>(type: "INTEGER", nullable: false),
-                    Alcance = table.Column<int>(type: "INTEGER", nullable: false),
-                    Alvo = table.Column<int>(type: "INTEGER", nullable: false),
-                    Concentracao = table.Column<bool>(type: "INTEGER", nullable: false),
-                    DuracaoQuantidade = table.Column<int>(type: "INTEGER", nullable: true),
-                    DuracaoUnidade = table.Column<int>(type: "INTEGER", nullable: false),
                     PodeSerRitual = table.Column<bool>(type: "INTEGER", nullable: false),
                     ComponenteVerbal = table.Column<bool>(type: "INTEGER", nullable: false),
                     ComponenteSomatico = table.Column<bool>(type: "INTEGER", nullable: false),
@@ -189,22 +183,6 @@ namespace DnDBot.Bot.Migrations
                     DetalhesMaterial = table.Column<string>(type: "TEXT", nullable: true),
                     ComponenteMaterialConsumido = table.Column<bool>(type: "INTEGER", nullable: false),
                     CustoComponenteMaterial = table.Column<string>(type: "TEXT", nullable: true),
-                    TipoDano = table.Column<int>(type: "INTEGER", nullable: false),
-                    DadoDano = table.Column<string>(type: "TEXT", nullable: true),
-                    Escalonamento = table.Column<string>(type: "TEXT", nullable: true),
-                    AtributoTesteResistencia = table.Column<int>(type: "INTEGER", nullable: false),
-                    MetadeNoTeste = table.Column<bool>(type: "INTEGER", nullable: false),
-                    FormaAreaEfeito = table.Column<int>(type: "INTEGER", nullable: true),
-                    Recarga = table.Column<int>(type: "INTEGER", nullable: false),
-                    TipoUso = table.Column<int>(type: "INTEGER", nullable: false),
-                    RequerLinhaDeVisao = table.Column<bool>(type: "INTEGER", nullable: false),
-                    RequerLinhaReta = table.Column<bool>(type: "INTEGER", nullable: false),
-                    NumeroMaximoAlvos = table.Column<int>(type: "INTEGER", nullable: true),
-                    AreaEfeito = table.Column<string>(type: "TEXT", nullable: true),
-                    FocoNecessario = table.Column<string>(type: "TEXT", nullable: true),
-                    LimiteUso = table.Column<string>(type: "TEXT", nullable: true),
-                    EfeitoPorTurno = table.Column<string>(type: "TEXT", nullable: true),
-                    NumeroDeUsos = table.Column<int>(type: "INTEGER", nullable: false),
                     Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
@@ -475,32 +453,6 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CaracteristicaEscala",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    NivelMinimo = table.Column<int>(type: "INTEGER", nullable: false),
-                    NivelMaximo = table.Column<int>(type: "INTEGER", nullable: true),
-                    UsosPorDescansoCurto = table.Column<int>(type: "INTEGER", nullable: true),
-                    UsosPorDescansoLongo = table.Column<int>(type: "INTEGER", nullable: true),
-                    DuracaoEmRodadas = table.Column<int>(type: "INTEGER", nullable: true),
-                    AcaoRequerida = table.Column<int>(type: "INTEGER", nullable: false),
-                    Alvo = table.Column<int>(type: "INTEGER", nullable: false),
-                    CondicaoAtivacao = table.Column<int>(type: "INTEGER", nullable: false),
-                    CaracteristicaId = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CaracteristicaEscala", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CaracteristicaEscala_Caracteristica_CaracteristicaId",
-                        column: x => x.CaracteristicaId,
-                        principalTable: "Caracteristica",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ClasseSalvaguardas",
                 columns: table => new
                 {
@@ -695,6 +647,54 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "EfeitoEscalonado",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    NivelMinimo = table.Column<int>(type: "INTEGER", nullable: false),
+                    NivelMaximo = table.Column<int>(type: "INTEGER", nullable: true),
+                    UsosPorDescansoCurto = table.Column<int>(type: "INTEGER", nullable: true),
+                    UsosPorDescansoLongo = table.Column<int>(type: "INTEGER", nullable: true),
+                    DuracaoEmRodadas = table.Column<int>(type: "INTEGER", nullable: true),
+                    AcaoRequerida = table.Column<string>(type: "TEXT", nullable: false),
+                    CondicaoAtivacao = table.Column<string>(type: "TEXT", nullable: false),
+                    DescricaoEfeito = table.Column<string>(type: "TEXT", maxLength: 4000, nullable: true),
+                    CaracteristicaId = table.Column<string>(type: "TEXT", nullable: true),
+                    MagiaId = table.Column<string>(type: "TEXT", nullable: true),
+                    FormaAreaEfeito = table.Column<string>(type: "TEXT", nullable: true),
+                    Alcance = table.Column<string>(type: "TEXT", nullable: false),
+                    Alvo = table.Column<string>(type: "TEXT", nullable: false),
+                    Concentracao = table.Column<bool>(type: "INTEGER", nullable: false),
+                    DuracaoQuantidade = table.Column<int>(type: "INTEGER", nullable: true),
+                    DuracaoUnidade = table.Column<string>(type: "TEXT", nullable: true),
+                    Recarga = table.Column<string>(type: "TEXT", nullable: false),
+                    TipoUso = table.Column<string>(type: "TEXT", nullable: false),
+                    RequerLinhaDeVisao = table.Column<bool>(type: "INTEGER", nullable: false),
+                    RequerLinhaReta = table.Column<bool>(type: "INTEGER", nullable: false),
+                    NumeroMaximoAlvos = table.Column<int>(type: "INTEGER", nullable: true),
+                    FocoNecessario = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
+                    AtributoTesteResistencia = table.Column<string>(type: "TEXT", nullable: false),
+                    MetadeNoTeste = table.Column<bool>(type: "INTEGER", nullable: false),
+                    TempoConjuracao = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EfeitoEscalonado", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_EfeitoEscalonado_Caracteristica_CaracteristicaId",
+                        column: x => x.CaracteristicaId,
+                        principalTable: "Caracteristica",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_EfeitoEscalonado_Magia_MagiaId",
+                        column: x => x.MagiaId,
+                        principalTable: "Magia",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "MagiaClassePermitida",
                 columns: table => new
                 {
@@ -713,54 +713,6 @@ namespace DnDBot.Bot.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_MagiaClassePermitida_Magia_MagiaId1",
-                        column: x => x.MagiaId1,
-                        principalTable: "Magia",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "MagiaCondicaoAplicada",
-                columns: table => new
-                {
-                    MagiaId = table.Column<string>(type: "TEXT", nullable: false),
-                    Condicao = table.Column<int>(type: "INTEGER", nullable: false),
-                    MagiaId1 = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MagiaCondicaoAplicada", x => new { x.MagiaId, x.Condicao });
-                    table.ForeignKey(
-                        name: "FK_MagiaCondicaoAplicada_Magia_MagiaId",
-                        column: x => x.MagiaId,
-                        principalTable: "Magia",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_MagiaCondicaoAplicada_Magia_MagiaId1",
-                        column: x => x.MagiaId1,
-                        principalTable: "Magia",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "MagiaCondicaoRemovida",
-                columns: table => new
-                {
-                    MagiaId = table.Column<string>(type: "TEXT", nullable: false),
-                    Condicao = table.Column<int>(type: "INTEGER", nullable: false),
-                    MagiaId1 = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MagiaCondicaoRemovida", x => new { x.MagiaId, x.Condicao });
-                    table.ForeignKey(
-                        name: "FK_MagiaCondicaoRemovida_Magia_MagiaId",
-                        column: x => x.MagiaId,
-                        principalTable: "Magia",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_MagiaCondicaoRemovida_Magia_MagiaId1",
                         column: x => x.MagiaId1,
                         principalTable: "Magia",
                         principalColumn: "Id");
@@ -1003,25 +955,6 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CaracteristicaEscalaDano",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    DadoDano = table.Column<string>(type: "TEXT", nullable: true),
-                    TipoDano = table.Column<int>(type: "INTEGER", nullable: false),
-                    CaracteristicaEscalaId = table.Column<string>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CaracteristicaEscalaDano", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CaracteristicaEscalaDano_CaracteristicaEscala_CaracteristicaEscalaId",
-                        column: x => x.CaracteristicaEscalaId,
-                        principalTable: "CaracteristicaEscala",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "CaracteristicaPorNivel",
                 columns: table => new
                 {
@@ -1213,6 +1146,74 @@ namespace DnDBot.Bot.Migrations
                         name: "FK_Inventarios_FichaPersonagem_FichaPersonagemId",
                         column: x => x.FichaPersonagemId,
                         principalTable: "FichaPersonagem",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EfeitoDano",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    DadoDano = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    TipoDano = table.Column<string>(type: "TEXT", nullable: false),
+                    EfeitoEscalonadoId = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EfeitoDano", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_EfeitoDano_EfeitoEscalonado_EfeitoEscalonadoId",
+                        column: x => x.EfeitoEscalonadoId,
+                        principalTable: "EfeitoEscalonado",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MagiaCondicaoAplicada",
+                columns: table => new
+                {
+                    MagiaId = table.Column<string>(type: "TEXT", nullable: false),
+                    Condicao = table.Column<int>(type: "INTEGER", nullable: false),
+                    EfeitoEscalonadoId = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MagiaCondicaoAplicada", x => new { x.MagiaId, x.Condicao });
+                    table.ForeignKey(
+                        name: "FK_MagiaCondicaoAplicada_EfeitoEscalonado_EfeitoEscalonadoId",
+                        column: x => x.EfeitoEscalonadoId,
+                        principalTable: "EfeitoEscalonado",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_MagiaCondicaoAplicada_Magia_MagiaId",
+                        column: x => x.MagiaId,
+                        principalTable: "Magia",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MagiaCondicaoRemovida",
+                columns: table => new
+                {
+                    MagiaId = table.Column<string>(type: "TEXT", nullable: false),
+                    Condicao = table.Column<int>(type: "INTEGER", nullable: false),
+                    EfeitoEscalonadoId = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MagiaCondicaoRemovida", x => new { x.MagiaId, x.Condicao });
+                    table.ForeignKey(
+                        name: "FK_MagiaCondicaoRemovida_EfeitoEscalonado_EfeitoEscalonadoId",
+                        column: x => x.EfeitoEscalonadoId,
+                        principalTable: "EfeitoEscalonado",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_MagiaCondicaoRemovida_Magia_MagiaId",
+                        column: x => x.MagiaId,
+                        principalTable: "Magia",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -2058,16 +2059,6 @@ namespace DnDBot.Bot.Migrations
                 column: "SubRacaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CaracteristicaEscala_CaracteristicaId",
-                table: "CaracteristicaEscala",
-                column: "CaracteristicaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CaracteristicaEscalaDano_CaracteristicaEscalaId",
-                table: "CaracteristicaEscalaDano",
-                column: "CaracteristicaEscalaId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_CaracteristicaPorNivel_AntecedenteId",
                 table: "CaracteristicaPorNivel",
                 column: "AntecedenteId");
@@ -2146,6 +2137,21 @@ namespace DnDBot.Bot.Migrations
                 name: "IX_DificuldadePericia_PericiaId1",
                 table: "DificuldadePericia",
                 column: "PericiaId1");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EfeitoDano_EfeitoEscalonadoId",
+                table: "EfeitoDano",
+                column: "EfeitoEscalonadoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EfeitoEscalonado_CaracteristicaId",
+                table: "EfeitoEscalonado",
+                column: "CaracteristicaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_EfeitoEscalonado_MagiaId",
+                table: "EfeitoEscalonado",
+                column: "MagiaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_EquipamentoItem_InventarioId",
@@ -2255,14 +2261,14 @@ namespace DnDBot.Bot.Migrations
                 column: "MagiaId1");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MagiaCondicaoAplicada_MagiaId1",
+                name: "IX_MagiaCondicaoAplicada_EfeitoEscalonadoId",
                 table: "MagiaCondicaoAplicada",
-                column: "MagiaId1");
+                column: "EfeitoEscalonadoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MagiaCondicaoRemovida_MagiaId1",
+                name: "IX_MagiaCondicaoRemovida_EfeitoEscalonadoId",
                 table: "MagiaCondicaoRemovida",
-                column: "MagiaId1");
+                column: "EfeitoEscalonadoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Moeda_BolsaDeMoedasId",
@@ -2374,9 +2380,6 @@ namespace DnDBot.Bot.Migrations
                 name: "BonusAtributos");
 
             migrationBuilder.DropTable(
-                name: "CaracteristicaEscalaDano");
-
-            migrationBuilder.DropTable(
                 name: "CaracteristicaPorNivel");
 
             migrationBuilder.DropTable(
@@ -2402,6 +2405,9 @@ namespace DnDBot.Bot.Migrations
 
             migrationBuilder.DropTable(
                 name: "DificuldadePericia");
+
+            migrationBuilder.DropTable(
+                name: "EfeitoDano");
 
             migrationBuilder.DropTable(
                 name: "EquipamentoItem");
@@ -2497,9 +2503,6 @@ namespace DnDBot.Bot.Migrations
                 name: "Arma");
 
             migrationBuilder.DropTable(
-                name: "CaracteristicaEscala");
-
-            migrationBuilder.DropTable(
                 name: "Subclasse");
 
             migrationBuilder.DropTable(
@@ -2518,10 +2521,10 @@ namespace DnDBot.Bot.Migrations
                 name: "Material");
 
             migrationBuilder.DropTable(
-                name: "Alinhamento");
+                name: "EfeitoEscalonado");
 
             migrationBuilder.DropTable(
-                name: "Magia");
+                name: "Alinhamento");
 
             migrationBuilder.DropTable(
                 name: "Proficiencia");
@@ -2536,9 +2539,6 @@ namespace DnDBot.Bot.Migrations
                 name: "Antecedente");
 
             migrationBuilder.DropTable(
-                name: "Caracteristica");
-
-            migrationBuilder.DropTable(
                 name: "Classe");
 
             migrationBuilder.DropTable(
@@ -2546,6 +2546,12 @@ namespace DnDBot.Bot.Migrations
 
             migrationBuilder.DropTable(
                 name: "Item");
+
+            migrationBuilder.DropTable(
+                name: "Caracteristica");
+
+            migrationBuilder.DropTable(
+                name: "Magia");
 
             migrationBuilder.DropTable(
                 name: "Pericia");

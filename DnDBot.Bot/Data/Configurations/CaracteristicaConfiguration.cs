@@ -58,29 +58,12 @@ namespace DnDBot.Bot.Data.Configurations
                    .IsRequired();
 
 
-            builder
-                .HasMany(c => c.EscalasPorNivel)
-                .WithOne(e => e.Caracteristica)
-                .HasForeignKey(e => e.CaracteristicaId)
-                .OnDelete(DeleteBehavior.Cascade);
+            builder.HasMany(c => c.EfeitoEscalonado)
+               .WithOne(e => e.Caracteristica)
+               .HasForeignKey(e => e.CaracteristicaId)
+               .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 
-    public class EscalaCaracteristicaConfiguration : IEntityTypeConfiguration<CaracteristicaEscala>
-    {
-        public void Configure(EntityTypeBuilder<CaracteristicaEscala> builder)
-        {
-            builder.HasKey(e => e.Id);
-
-            builder
-                .Property(e => e.NivelMinimo)
-                .IsRequired();
-
-            builder
-                .HasOne(e => e.Caracteristica)
-                .WithMany(c => c.EscalasPorNivel)
-                .HasForeignKey(e => e.CaracteristicaId)
-                .OnDelete(DeleteBehavior.Cascade);
-        }
-    }
 }

@@ -40,16 +40,11 @@ public static class MagiaDatabaseHelper
             if (await RegistroExisteAsync(conn, tx, "Magia", magia.Id))
                 continue;
 
+            // Inserir dados básicos da magia
             var parametros = GerarParametrosEntidadeBase(magia);
             parametros["Id"] = magia.Id;
-            parametros["Nivel"] = magia.Nivel.ToString();
+            parametros["Nivel"] = magia.Nivel;
             parametros["Escola"] = magia.Escola.ToString();
-            parametros["TempoConjuracao"] = magia.TempoConjuracao.ToString();
-            parametros["Alcance"] = magia.Alcance.ToString();
-            parametros["Alvo"] = magia.Alvo.ToString();
-            parametros["Concentracao"] = magia.Concentracao ? 1 : 0;
-            parametros["DuracaoQuantidade"] = magia.DuracaoQuantidade;
-            parametros["DuracaoUnidade"] = magia.DuracaoUnidade.ToString();
             parametros["PodeSerRitual"] = magia.PodeSerRitual ? 1 : 0;
             parametros["ComponenteVerbal"] = magia.ComponenteVerbal ? 1 : 0;
             parametros["ComponenteSomatico"] = magia.ComponenteSomatico ? 1 : 0;
@@ -57,59 +52,73 @@ public static class MagiaDatabaseHelper
             parametros["DetalhesMaterial"] = magia.DetalhesMaterial ?? "";
             parametros["ComponenteMaterialConsumido"] = magia.ComponenteMaterialConsumido ? 1 : 0;
             parametros["CustoComponenteMaterial"] = magia.CustoComponenteMaterial ?? "";
-            parametros["TipoDano"] = magia.TipoDano.ToString();
-            parametros["DadoDano"] = magia.DadoDano ?? "";
-            parametros["Escalonamento"] = magia.Escalonamento ?? "";
-            parametros["AtributoTesteResistencia"] = magia.AtributoTesteResistencia.ToString();
-            parametros["MetadeNoTeste"] = magia.MetadeNoTeste ? 1 : 0;
-            parametros["Recarga"] = magia.Recarga.ToString();
-            parametros["TipoUso"] = magia.TipoUso.ToString();
-            parametros["RequerLinhaDeVisao"] = magia.RequerLinhaDeVisao ? 1 : 0;
-            parametros["RequerLinhaReta"] = magia.RequerLinhaReta ? 1 : 0;
-            parametros["NumeroMaximoAlvos"] = magia.NumeroMaximoAlvos ?? (object)DBNull.Value;
-            parametros["AreaEfeito"] = magia.AreaEfeito ?? "";
-            parametros["FocoNecessario"] = magia.FocoNecessario ?? "";
-            parametros["LimiteUso"] = magia.LimiteUso ?? "";
-            parametros["EfeitoPorTurno"] = magia.EfeitoPorTurno ?? "";
-            parametros["NumeroDeUsos"] = magia.NumeroDeUsos;
 
             await InserirEntidadeFilhaAsync(conn, tx, "Magia", parametros);
+
+            // Inserir tags
             await InserirTagsAsync(conn, tx, "MagiaTag", "MagiaId", magia.Id, magia.Tags);
+
+            // Inserir classes permitidas
+            await InserirRelacionamentoSimplesAsync(conn,tx,"MagiaClassePermitida",new[] { "MagiaId", "Classe" },magia.ClassesPermitidas,c => new object[] { magia.Id, c.Classe.ToString() });
+
+            // Inserir efeitos escalonados
+            foreach (var efeito in magia.EfeitosEscalonados)
+            {
+                efeito.MagiaId = magia.Id;
+
+                var parametrosEfeito = new Dictionary<string, object>
+                {
+                    ["Id"] = efeito.Id,
+                    ["MagiaId"] = efeito.MagiaId,
+                    ["NivelMinimo"] = efeito.NivelMinimo,
+                    ["NivelMaximo"] = (object)efeito.NivelMaximo ?? DBNull.Value,
+                    ["UsosPorDescansoCurto"] = (object)efeito.UsosPorDescansoCurto ?? DBNull.Value,
+                    ["UsosPorDescansoLongo"] = (object)efeito.UsosPorDescansoLongo ?? DBNull.Value,
+                    ["DuracaoEmRodadas"] = (object)efeito.DuracaoEmRodadas ?? DBNull.Value,
+                    ["DescricaoEfeito"] = efeito.DescricaoEfeito ?? "",
+                    ["AcaoRequerida"] = efeito.AcaoRequerida.ToString(),
+                    ["CondicaoAtivacao"] = efeito.CondicaoAtivacao.ToString(),
+                    ["FormaAreaEfeito"] = efeito.FormaAreaEfeito?.ToString() ?? "",
+                    ["Alcance"] = efeito.Alcance.ToString(),
+                    ["Alvo"] = efeito.Alvo.ToString(),
+                    ["Concentracao"] = efeito.Concentracao ? 1 : 0,
+                    ["DuracaoQuantidade"] = (object)efeito.DuracaoQuantidade ?? DBNull.Value,
+                    ["DuracaoUnidade"] = efeito.DuracaoUnidade?.ToString() ?? "",
+                    ["Recarga"] = efeito.Recarga.ToString(),
+                    ["TipoUso"] = efeito.TipoUso.ToString(),
+                    ["RequerLinhaDeVisao"] = efeito.RequerLinhaDeVisao ? 1 : 0,
+                    ["RequerLinhaReta"] = efeito.RequerLinhaReta ? 1 : 0,
+                    ["NumeroMaximoAlvos"] = (object)efeito.NumeroMaximoAlvos ?? DBNull.Value,
+                    ["FocoNecessario"] = efeito.FocoNecessario ?? "",
+                    ["AtributoTesteResistencia"] = efeito.AtributoTesteResistencia.ToString(),
+                    ["MetadeNoTeste"] = efeito.MetadeNoTeste ? 1 : 0,
+                    ["TempoConjuracao"] = efeito.TempoConjuracao.ToString()
+                };
+
+                await InserirEntidadeFilhaAsync(conn, tx, "EfeitoEscalonado", parametrosEfeito);
+
+                // Inserir danos do efeito
+                await InserirRelacionamentoSimplesAsync(conn,tx,"EfeitoDano",new[] { "Id", "EfeitoEscalonadoId", "DadoDano", "TipoDano" },efeito.Danos,dano => new object[] { dano.Id, efeito.Id, dano.DadoDano, dano.TipoDano.ToString() });
+
+                // Inserir condições aplicadas
+                await InserirRelacionamentoSimplesAsync(conn,tx,"MagiaCondicaoAplicada",new[] { "MagiaId", "Condicao", "EfeitoEscalonadoId" },efeito.CondicoesAplicadas,c => new object[] { magia.Id, c.Condicao, efeito.Id });
+
+                // Inserir condições removidas
+                await InserirRelacionamentoSimplesAsync(conn,tx,"MagiaCondicaoRemovida",new[] { "MagiaId", "Condicao", "EfeitoEscalonadoId" },efeito.CondicoesRemovidas,c => new object[] { magia.Id, c.Condicao, efeito.Id });
+            }
         }
 
         Console.WriteLine("✅ Magias populadas.");
     }
 
+
+
     private static bool ValidarEnums(Magia magia, out string erro)
     {
         erro = "";
 
-        if (!Enum.IsDefined(typeof(TipoDano), magia.TipoDano))
-            erro += $"TipoDano inválido: {magia.TipoDano}. ";
-
-        if (!Enum.IsDefined(typeof(NivelMagia), magia.Nivel))
-            erro += $"Nivel inválido: {magia.Nivel}. ";
-
         if (!Enum.IsDefined(typeof(EscolaMagia), magia.Escola))
             erro += $"Escola inválida: {magia.Escola}. ";
-
-        if (!Enum.IsDefined(typeof(TipoUsoMagia), magia.TempoConjuracao))
-            erro += $"TempoConjuracao inválido: {magia.TempoConjuracao}. ";
-
-        if (!Enum.IsDefined(typeof(TipoAlcance), magia.Alcance))
-            erro += $"Alcance inválido: {magia.Alcance}. ";
-
-        if (!Enum.IsDefined(typeof(Alvo), magia.Alvo))
-            erro += $"Alvo inválido: {magia.Alvo}. ";
-
-        if (!Enum.IsDefined(typeof(Atributo), magia.AtributoTesteResistencia))
-            erro += $"AtributoTesteResistencia inválido: {magia.AtributoTesteResistencia}. ";
-
-        if (!Enum.IsDefined(typeof(RecargaMagia), magia.Recarga))
-            erro += $"Recarga inválida: {magia.Recarga}. ";
-
-        if (!Enum.IsDefined(typeof(TipoUsoMagia), magia.TipoUso))
-            erro += $"TipoUso inválido: {magia.TipoUso}. ";
 
         return string.IsNullOrWhiteSpace(erro);
     }
