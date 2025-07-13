@@ -98,10 +98,17 @@ public static class AntecedenteDatabaseHelper
                     ["Id"] = narrativa.Id,
                     ["AntecedenteId"] = narrativa.AntecedenteId,
                     ["Descricao"] = narrativa.Descricao,
-                    ["Tipo"] = (int)narrativa.Tipo
-                };
+                    ["Tipo"] = (int)narrativa.Tipo,
 
+                };
+                // Insere a narrativa
                 await InserirEntidadeFilhaAsync(connection, transaction, "AntecedenteNarrativa", parametrosNarrativa);
+
+                // Insere as tags da narrativa
+                if (narrativa.Tags?.Any() == true)
+                {
+                    await InserirTagsAsync(connection,transaction,"AntecedenteNarrativaTag","AntecedenteNarrativaId",narrativa.Id,narrativa.Tags);
+                }
             }
         }
 

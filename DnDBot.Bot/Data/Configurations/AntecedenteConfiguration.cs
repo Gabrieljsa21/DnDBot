@@ -162,4 +162,17 @@ namespace DnDBot.Bot.Data.Configurations
                    .HasForeignKey(at => at.AntecedenteId);
         }
     }
+
+    public class AntecedenteNarrativaTagConfiguration : IEntityTypeConfiguration<AntecedenteNarrativaTag>
+    {
+        public void Configure(EntityTypeBuilder<AntecedenteNarrativaTag> builder)
+        {
+            builder.HasKey(nt => new { nt.AntecedenteNarrativaId, nt.Tag });
+
+            builder.HasOne(nt => nt.Antecedente)
+                   .WithMany(n => n.AntecedenteNarrativaTags)
+                   .HasForeignKey(nt => nt.AntecedenteNarrativaId);
+        }
+    }
+
 }

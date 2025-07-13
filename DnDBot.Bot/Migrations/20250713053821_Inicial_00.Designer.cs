@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DnDBot.Bot.Migrations
 {
     [DbContext(typeof(DnDBotDbContext))]
-    [Migration("20250713031652_Inicial_00")]
+    [Migration("20250713053821_Inicial_00")]
     partial class Inicial_00
     {
         /// <inheritdoc />
@@ -209,6 +209,19 @@ namespace DnDBot.Bot.Migrations
                     b.HasIndex("AntecedenteId");
 
                     b.ToTable("AntecedenteNarrativa");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.AntecedenteNarrativaTag", b =>
+                {
+                    b.Property<string>("AntecedenteNarrativaId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Tag")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("AntecedenteNarrativaId", "Tag");
+
+                    b.ToTable("AntecedenteNarrativaTag");
                 });
 
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.AntecedenteProficiencia", b =>
@@ -2458,6 +2471,17 @@ namespace DnDBot.Bot.Migrations
                     b.Navigation("Antecedente");
                 });
 
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.AntecedenteNarrativaTag", b =>
+                {
+                    b.HasOne("DnDBot.Bot.Models.Ficha.Auxiliares.AntecedenteNarrativa", "Antecedente")
+                        .WithMany("AntecedenteNarrativaTags")
+                        .HasForeignKey("AntecedenteNarrativaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Antecedente");
+                });
+
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.AntecedenteProficiencia", b =>
                 {
                     b.HasOne("DnDBot.Bot.Models.AntecedenteModels.Antecedente", "Antecedente")
@@ -3350,6 +3374,11 @@ namespace DnDBot.Bot.Migrations
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Alinhamento", b =>
                 {
                     b.Navigation("AlinhamentoTags");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.AntecedenteNarrativa", b =>
+                {
+                    b.Navigation("AntecedenteNarrativaTags");
                 });
 
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Classe", b =>

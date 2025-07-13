@@ -18,6 +18,7 @@ namespace DnDBot.Bot.Models.Enums
 
     public enum TipoNarrativa
     {
+        Personalidade,
         Ideal,
         Vinculo,
         Defeito

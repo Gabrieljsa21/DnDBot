@@ -943,6 +943,24 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AntecedenteNarrativaTag",
+                columns: table => new
+                {
+                    AntecedenteNarrativaId = table.Column<string>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AntecedenteNarrativaTag", x => new { x.AntecedenteNarrativaId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_AntecedenteNarrativaTag_AntecedenteNarrativa_AntecedenteNarrativaId",
+                        column: x => x.AntecedenteNarrativaId,
+                        principalTable: "AntecedenteNarrativa",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ClasseMoeda",
                 columns: table => new
                 {
@@ -2276,7 +2294,7 @@ namespace DnDBot.Bot.Migrations
                 name: "AntecedenteItemOpcoes");
 
             migrationBuilder.DropTable(
-                name: "AntecedenteNarrativa");
+                name: "AntecedenteNarrativaTag");
 
             migrationBuilder.DropTable(
                 name: "AntecedenteProficiencia");
@@ -2414,6 +2432,9 @@ namespace DnDBot.Bot.Migrations
                 name: "SubRacaTag");
 
             migrationBuilder.DropTable(
+                name: "AntecedenteNarrativa");
+
+            migrationBuilder.DropTable(
                 name: "Imunidade");
 
             migrationBuilder.DropTable(
@@ -2424,9 +2445,6 @@ namespace DnDBot.Bot.Migrations
 
             migrationBuilder.DropTable(
                 name: "Arma");
-
-            migrationBuilder.DropTable(
-                name: "Antecedente");
 
             migrationBuilder.DropTable(
                 name: "Subclasse");
@@ -2463,6 +2481,9 @@ namespace DnDBot.Bot.Migrations
 
             migrationBuilder.DropTable(
                 name: "SubRaca");
+
+            migrationBuilder.DropTable(
+                name: "Antecedente");
 
             migrationBuilder.DropTable(
                 name: "Classe");

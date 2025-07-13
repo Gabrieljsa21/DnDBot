@@ -1,0 +1,3671 @@
+[
+  {
+    "Id": "acolito_personalidade_1",
+    "AntecedenteId": "acolito",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu idolatro um herói particular da minha fé, e constantemente me refiro a seus feitos e exemplos.",
+    "Tags": [ "devoto", "respeitador", "exemplar" ]
+  },
+  {
+    "Id": "acolito_personalidade_2",
+    "AntecedenteId": "acolito",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu consigo encontrar semelhanças mesmo entre os inimigos mais violentos, com empatia e sempre trabalhando pela paz.",
+    "Tags": [ "empático", "pacifista", "compreensivo" ]
+  },
+  {
+    "Id": "acolito_personalidade_3",
+    "AntecedenteId": "acolito",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu vejo presságios em cada evento e ação. Os deuses estão falando conosco, nós apenas temos de ouvi-los.",
+    "Tags": [ "místico", "observador", "espiritual" ]
+  },
+  {
+    "Id": "acolito_personalidade_4",
+    "AntecedenteId": "acolito",
+    "Tipo": "Personalidade",
+    "Descricao": "Nada pode abalar minha atitude otimista.",
+    "Tags": [ "otimista", "persistente", "positivo" ]
+  },
+  {
+    "Id": "acolito_personalidade_5",
+    "AntecedenteId": "acolito",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu cito (corretamente ou não) textos sagrados e provérbios em quase qualquer situação.",
+    "Tags": [ "erudito", "religioso", "confiável" ]
+  },
+  {
+    "Id": "acolito_personalidade_6",
+    "AntecedenteId": "acolito",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu sou tolerante (ou intolerante) a qualquer outra fé, e respeito (ou condeno) a adoração a outros deuses.",
+    "Tags": [ "tolerante", "crítico", "convicto" ]
+  },
+  {
+    "Id": "acolito_personalidade_7",
+    "AntecedenteId": "acolito",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu aprecio comida requintada, bebidas e a elite entre o alto escalão de meu templo. Uma vida dura me irrita.",
+    "Tags": [ "exigente", "refinado", "sensível" ]
+  },
+  {
+    "Id": "acolito_personalidade_8",
+    "AntecedenteId": "acolito",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu passei tanto tempo no templo que possuo pouca prática em lidar com as pessoas mundo a fora.",
+    "Tags": [ "isolado", "introvertido", "reservado" ]
+  },
+
+  {
+    "Id": "acolito_ideal_1",
+    "AntecedenteId": "acolito",
+    "Tipo": "Ideal",
+    "Descricao": "Tradição. As tradições ancestrais de adoração e sacrifício devem ser preservadas e perpetradas. (Leal)",
+    "Tags": [ "tradicional", "fiel", "conservador" ]
+  },
+  {
+    "Id": "acolito_ideal_2",
+    "AntecedenteId": "acolito",
+    "Tipo": "Ideal",
+    "Descricao": "Caridade. Eu sempre tento ajudar aqueles em necessidade, não importando o custo pessoal. (Bom)",
+    "Tags": [ "generoso", "solidário", "altruísta" ]
+  },
+  {
+    "Id": "acolito_ideal_3",
+    "AntecedenteId": "acolito",
+    "Tipo": "Ideal",
+    "Descricao": "Mudança. Nós devemos ajudar a conduzir as mudanças que os deuses estão constantemente trabalhando para o mundo. (Caótico)",
+    "Tags": [ "inovador", "reformista", "progressista" ]
+  },
+  {
+    "Id": "acolito_ideal_4",
+    "AntecedenteId": "acolito",
+    "Tipo": "Ideal",
+    "Descricao": "Poder. Eu espero que um dia eu consiga chegar ao topo na hierarquia da minha religião. (Leal)",
+    "Tags": [ "ambicioso", "determinado", "focado" ]
+  },
+  {
+    "Id": "acolito_ideal_5",
+    "AntecedenteId": "acolito",
+    "Tipo": "Ideal",
+    "Descricao": "Fé. Eu acredito que minha divindade guia minhas ações. Eu tenho fé que, se eu trabalhar duro, coisas boas acontecerão. (Leal)",
+    "Tags": [ "confiante", "esperançoso", "devoto" ]
+  },
+  {
+    "Id": "acolito_ideal_6",
+    "AntecedenteId": "acolito",
+    "Tipo": "Ideal",
+    "Descricao": "Aspiração. Eu busco ser digno da graça do meu deus ao corresponder minhas ações aos seus ensinamentos. (Qualquer)",
+    "Tags": [ "determinado", "sonhador", "dedicado" ]
+  },
+
+  {
+    "Id": "acolito_vinculo_1",
+    "AntecedenteId": "acolito",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu morreria para recuperar uma relíquia ancestral de minha fé, perdida há muito tempo.",
+    "Tags": [ "devotado", "protetor", "fiel" ]
+  },
+  {
+    "Id": "acolito_vinculo_2",
+    "AntecedenteId": "acolito",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu ainda terei minha vingança contra o templo corrupto que me acusou de heresia.",
+    "Tags": [ "vingativo", "resiliente", "focado" ]
+  },
+  {
+    "Id": "acolito_vinculo_3",
+    "AntecedenteId": "acolito",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu devo minha vida ao sacerdote que me acolheu quando meus pais morreram.",
+    "Tags": [ "grato", "leal", "protetor" ]
+  },
+  {
+    "Id": "acolito_vinculo_4",
+    "AntecedenteId": "acolito",
+    "Tipo": "Vinculo",
+    "Descricao": "Tudo o que faço, faço pelo povo.",
+    "Tags": [ "altruísta", "dedicado", "responsável" ]
+  },
+  {
+    "Id": "acolito_vinculo_5",
+    "AntecedenteId": "acolito",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu farei qualquer coisa para proteger o templo que sirvo.",
+    "Tags": [ "protetor", "leal", "resoluto" ]
+  },
+  {
+    "Id": "acolito_vinculo_6",
+    "AntecedenteId": "acolito",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu busco guardar um texto sagrado que meus inimigos dizem ser herético e tentam destruí-lo.",
+    "Tags": [ "protetor", "determinador", "cauteloso" ]
+  },
+
+  {
+    "Id": "acolito_defeito_1",
+    "AntecedenteId": "acolito",
+    "Tipo": "Defeito",
+    "Descricao": "Eu julgo os outros severamente, e a mim mesmo mais ainda.",
+    "Tags": [ "severo", "autocrítico", "rígido" ]
+  },
+  {
+    "Id": "acolito_defeito_2",
+    "AntecedenteId": "acolito",
+    "Tipo": "Defeito",
+    "Descricao": "Eu deposito muita confiança naqueles que detêm o poder na hierarquia de meu templo.",
+    "Tags": [ "confiante", "inocente", "confiável" ]
+  },
+  {
+    "Id": "acolito_defeito_3",
+    "AntecedenteId": "acolito",
+    "Tipo": "Defeito",
+    "Descricao": "Minha devoção é muitas vezes me cega perante aqueles que professam a fé do meu deus.",
+    "Tags": [ "cego", "fiel", "inflexível" ]
+  },
+  {
+    "Id": "acolito_defeito_4",
+    "AntecedenteId": "acolito",
+    "Tipo": "Defeito",
+    "Descricao": "Meu pensamento é inflexível.",
+    "Tags": [ "teimoso", "rígido", "inflexível" ]
+  },
+  {
+    "Id": "acolito_defeito_5",
+    "AntecedenteId": "acolito",
+    "Tipo": "Defeito",
+    "Descricao": "Eu suspeito de estranhos e sempre espero o pior deles.",
+    "Tags": [ "desconfiado", "cauteloso", "paranoico" ]
+  },
+  {
+    "Id": "acolito_defeito_6",
+    "AntecedenteId": "acolito",
+    "Tipo": "Defeito",
+    "Descricao": "Depois de escolher um objetivo, eu fico obcecado em cumpri-lo, até mesmo em detrimento de qualquer outra coisa em minha vida.",
+    "Tags": [ "obcecado", "teimoso", "determinado" ]
+  },
+  {
+    "Id": "artesao_guilda_personalidade_1",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu acredito que tudo que valha a pena fazer, vale a pena ser feito direito. Eu não posso evitar – Eu sou perfeccionista.",
+    "Tags": [ "perfeccionista", "detalhista", "exigente" ]
+  },
+  {
+    "Id": "artesao_guilda_personalidade_2",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu sou um esnobe que olha de cima a baixo aqueles que não sabem apreciar artes requintadas.",
+    "Tags": [ "esnobe", "orgulhoso", "crítico" ]
+  },
+  {
+    "Id": "artesao_guilda_personalidade_3",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu sempre quero aprender como as coisas funcionam e o que deixa as pessoas motivadas.",
+    "Tags": [ "curioso", "observador", "analítico" ]
+  },
+  {
+    "Id": "artesao_guilda_personalidade_4",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu sou cheio de aforismos espirituosos e tenho um proverbio para cada ocasião.",
+    "Tags": [ "sábio", "eloquente", "cultural" ]
+  },
+  {
+    "Id": "artesao_guilda_personalidade_5",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu sou grosso com as pessoas que não tem o mesmo comprometimento que eu com o trabalho duro e honesto.",
+    "Tags": [ "rígido", "sincero", "focado" ]
+  },
+  {
+    "Id": "artesao_guilda_personalidade_6",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu gosto de falar longamente sobre minha profissão.",
+    "Tags": [ "comunicativo", "apaixonado", "persuasivo" ]
+  },
+  {
+    "Id": "artesao_guilda_personalidade_7",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu não gasto meu dinheiro facilmente e vou barganhar incansavelmente para conseguir o melhor acordo possível.",
+    "Tags": [ "econômico", "negociador", "prático" ]
+  },
+  {
+    "Id": "artesao_guilda_personalidade_8",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu sou bem conhecido pelo meu trabalho e quero ter certeza que todos o apreciam. Eu sempre fico surpreso quando conheço pessoas que não ouviram falar de mim.",
+    "Tags": [ "famoso", "orgulhoso", "reconhecido" ]
+  },
+
+  {
+    "Id": "artesao_guilda_ideal_1",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Ideal",
+    "Descricao": "Comunidade. É dever de todo cidadão civilizado fortalecer os elos da comunidade e a segurança da civilização. (Leal)",
+    "Tags": [ "comunitário", "leal", "protetor" ]
+  },
+  {
+    "Id": "artesao_guilda_ideal_2",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Ideal",
+    "Descricao": "Generosidade. Meus talentos me foram dados para que eu pudesse usá-los para beneficiar o mundo. (Bom)",
+    "Tags": [ "generoso", "altruísta", "solidário" ]
+  },
+  {
+    "Id": "artesao_guilda_ideal_3",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Ideal",
+    "Descricao": "Liberdade. Todos deveriam ser livres para perseguir seus próprios meios de vida. (Caótico)",
+    "Tags": [ "livre", "independente", "espontâneo" ]
+  },
+  {
+    "Id": "artesao_guilda_ideal_4",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Ideal",
+    "Descricao": "Ganância. Eu só estou aqui pelo dinheiro. (Mau)",
+    "Tags": [ "ganancioso", "ambicioso", "pragmático" ]
+  },
+  {
+    "Id": "artesao_guilda_ideal_5",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Ideal",
+    "Descricao": "Povo. Eu sou cometido com o povo com quem me importo, não com ideias. (Neutro)",
+    "Tags": [ "leal", "prático", "realista" ]
+  },
+  {
+    "Id": "artesao_guilda_ideal_6",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Ideal",
+    "Descricao": "Aspiração. Eu trabalho duro para ser o melhor no meu ofício. (Qualquer)",
+    "Tags": [ "ambicioso", "focado", "determinado" ]
+  },
+
+  {
+    "Id": "artesao_guilda_vinculo_1",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Vinculo",
+    "Descricao": "A oficina onde aprendi meu negócio é o local mais importante do mundo pra mim.",
+    "Tags": [ "nostálgico", "orgulhoso", "protetor" ]
+  },
+  {
+    "Id": "artesao_guilda_vinculo_2",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu criei um trabalho incrível para alguém, mas descobri que ele não era merecedor de recebê-lo. Ainda estou à procura de alguém que seja merecedor.",
+    "Tags": [ "exigente", "justo", "observador" ]
+  },
+  {
+    "Id": "artesao_guilda_vinculo_3",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu tenho uma grande dívida para com minha guilda por fazer de mim a pessoa que sou hoje.",
+    "Tags": [ "grato", "leal", "responsável" ]
+  },
+  {
+    "Id": "artesao_guilda_vinculo_4",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu busco riqueza para conseguir o amor de alguém.",
+    "Tags": [ "ambicioso", "apaixonado", "determinado" ]
+  },
+  {
+    "Id": "artesao_guilda_vinculo_5",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Vinculo",
+    "Descricao": "Um dia eu voltarei para a minha guilda e provarei que sou o maior artesão dentre eles.",
+    "Tags": [ "orgulhoso", "determinado", "leal" ]
+  },
+  {
+    "Id": "artesao_guilda_vinculo_6",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu irem me vingar das forças malignas que destruíram meu local de negócios e arruinaram meu estilo de vida.",
+    "Tags": [ "vingativo", "raivoso", "implacável" ]
+  },
+
+  {
+    "Id": "artesao_guilda_defeito_1",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Defeito",
+    "Descricao": "Eu farei de tudo para pôr minha mãos em algo raro ou inestimável.",
+    "Tags": [ "ganancioso", "obcecado", "determinado" ]
+  },
+  {
+    "Id": "artesao_guilda_defeito_2",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Defeito",
+    "Descricao": "Eu rapidamente presumo que alguém está tentando me trapacear.",
+    "Tags": [ "desconfiado", "paranoico", "protetor" ]
+  },
+  {
+    "Id": "artesao_guilda_defeito_3",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Defeito",
+    "Descricao": "Ninguém nunca poderá saber que eu, certa vez, roubei dinheiro dos cofres da guilda.",
+    "Tags": [ "secreto", "culpado", "desonesto" ]
+  },
+  {
+    "Id": "artesao_guilda_defeito_4",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Defeito",
+    "Descricao": "Eu nunca estou satisfeito com o que tenho – eu sempre quero mais.",
+    "Tags": [ "insatisfeito", "ambicioso", "invejoso" ]
+  },
+  {
+    "Id": "artesao_guilda_defeito_5",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Defeito",
+    "Descricao": "Eu mataria para adquirir um título de nobreza.",
+    "Tags": [ "ambicioso", "mortal", "implacável" ]
+  },
+  {
+    "Id": "artesao_guilda_defeito_6",
+    "AntecedenteId": "artesao_guilda",
+    "Tipo": "Defeito",
+    "Descricao": "Eu sou terrivelmente invejoso com qualquer um que possa ofuscar meu ofício. Todo lugar que eu vou, estou cercado de rivais.",
+    "Tags": [ "invejoso", "paranoico", "rivalidade" ]
+  },
+  {
+    "Id": "artista_personalidade_1",
+    "AntecedenteId": "artista",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu conheço uma história relevante de praticamente todas as situações.",
+    "Tags": [ "historiador", "conhecimento", "sabedoria" ]
+  },
+  {
+    "Id": "artista_personalidade_2",
+    "AntecedenteId": "artista",
+    "Tipo": "Personalidade",
+    "Descricao": "Sempre que eu chego em um lugar novo, eu coleto os rumores locais e espalho fofocas.",
+    "Tags": [ "curioso", "fofoqueiro", "social" ]
+  },
+  {
+    "Id": "artista_personalidade_3",
+    "AntecedenteId": "artista",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu sou um romântico incorrigível, sempre em busca daquele “alguém especial.”",
+    "Tags": [ "romântico", "amor", "esperança" ]
+  },
+  {
+    "Id": "artista_personalidade_4",
+    "AntecedenteId": "artista",
+    "Tipo": "Personalidade",
+    "Descricao": "Ninguém fica com raiva de mim ou perto de mim por muito tempo, já que eu posso acabar com qualquer tipo de tensão.",
+    "Tags": [ "carismático", "pacificador", "simpatia" ]
+  },
+  {
+    "Id": "artista_personalidade_5",
+    "AntecedenteId": "artista",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu amo um bom insulto, até os direcionados a mim.",
+    "Tags": [ "humor", "autoestima", "provocador" ]
+  },
+  {
+    "Id": "artista_personalidade_6",
+    "AntecedenteId": "artista",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu fico sentido se eu não for o centro das atenções.",
+    "Tags": [ "vaidade", "egocentrismo", "insegurança" ]
+  },
+  {
+    "Id": "artista_personalidade_7",
+    "AntecedenteId": "artista",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu não vou me contentar com nada menos que a perfeição.",
+    "Tags": [ "perfeccionismo", "ambição", "exigente" ]
+  },
+  {
+    "Id": "artista_personalidade_8",
+    "AntecedenteId": "artista",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu mudo de ânimo ou de pensamento tão rápido quando mudo eu mudo de nota em uma canção.",
+    "Tags": [ "impulsivo", "emocional", "inconstante" ]
+  },
+  {
+    "Id": "artista_ideal_1",
+    "AntecedenteId": "artista",
+    "Tipo": "Ideal",
+    "Descricao": "Beleza. Quando eu atuo, eu torno o mundo um lugar melhor. (Bom)",
+    "Tags": [ "beleza", "inspiração", "bondade" ]
+  },
+  {
+    "Id": "artista_ideal_2",
+    "AntecedenteId": "artista",
+    "Tipo": "Ideal",
+    "Descricao": "Tradição. As histórias, lendas e canções do passado nunca devem ser esquecidas, pois elas nos ensinam quem nós somos. (Leal)",
+    "Tags": [ "tradição", "cultura", "lealdade" ]
+  },
+  {
+    "Id": "artista_ideal_3",
+    "AntecedenteId": "artista",
+    "Tipo": "Ideal",
+    "Descricao": "Criatividade. O mundo precisa de novas ideias e ações ousadas. (Caótico)",
+    "Tags": [ "criatividade", "inovação", "ousadia" ]
+  },
+  {
+    "Id": "artista_ideal_4",
+    "AntecedenteId": "artista",
+    "Tipo": "Ideal",
+    "Descricao": "Ganância. Eu só estou aqui pelo dinheiro e pela fama. (Mau)",
+    "Tags": [ "ganância", "fama", "dinheiro", "maldade" ]
+  },
+  {
+    "Id": "artista_ideal_5",
+    "AntecedenteId": "artista",
+    "Tipo": "Ideal",
+    "Descricao": "Povo. Eu gosto de ver os sorrisos nos rostos das pessoas quando eu atuo. Isso é tudo que importa. (Neutro)",
+    "Tags": [ "povo", "empatia", "neutro" ]
+  },
+  {
+    "Id": "artista_ideal_6",
+    "AntecedenteId": "artista",
+    "Tipo": "Ideal",
+    "Descricao": "Honestidade. A arte deve refletir a alma; ela deve vir de dentro e revelar quem realmente somos. (Qualquer)",
+    "Tags": [ "honestidade", "expressão", "autenticidade" ]
+  },
+  {
+    "Id": "artista_vinculo_1",
+    "AntecedenteId": "artista",
+    "Tipo": "Vinculo",
+    "Descricao": "Meu instrumento é meu bem mais valioso e ele me lembra de alguém que eu amo.",
+    "Tags": [ "amor", "instrumento", "sentimental" ]
+  },
+  {
+    "Id": "artista_vinculo_2",
+    "AntecedenteId": "artista",
+    "Tipo": "Vinculo",
+    "Descricao": "Alguém roubou meu precioso instrumento e, algum dia, eu vou pegá-lo de volta.",
+    "Tags": [ "vingança", "instrumento", "perda" ]
+  },
+  {
+    "Id": "artista_vinculo_3",
+    "AntecedenteId": "artista",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu quero ser famoso, custe o que custar.",
+    "Tags": [ "fama", "ambição", "obstinação" ]
+  },
+  {
+    "Id": "artista_vinculo_4",
+    "AntecedenteId": "artista",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu idolatro um herói dos contos antigos e mensuro meus feitos baseados nessa personalidade.",
+    "Tags": [ "idolatria", "inspiração", "modelo" ]
+  },
+  {
+    "Id": "artista_vinculo_5",
+    "AntecedenteId": "artista",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu vou fazer tudo para provar que sou superior eu meu odiado rival.",
+    "Tags": [ "rivalidade", "competição", "orgulho" ]
+  },
+  {
+    "Id": "artista_vinculo_6",
+    "AntecedenteId": "artista",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu faria qualquer coisa pelos membros da minha antiga trupe.",
+    "Tags": [ "lealdade", "amizade", "grupo" ]
+  },
+  {
+    "Id": "artista_defeito_1",
+    "AntecedenteId": "artista",
+    "Tipo": "Defeito",
+    "Descricao": "Eu farei de tudo para ganhar fama e renome.",
+    "Tags": [ "ganância", "fama", "vaidade" ]
+  },
+  {
+    "Id": "artista_defeito_2",
+    "AntecedenteId": "artista",
+    "Tipo": "Defeito",
+    "Descricao": "Eu viro um idiota quando vejo um rosto bonito.",
+    "Tags": [ "romântico", "impulsivo", "fragilidade" ]
+  },
+  {
+    "Id": "artista_defeito_3",
+    "AntecedenteId": "artista",
+    "Tipo": "Defeito",
+    "Descricao": "Um escândalo me impede de voltar para casa novamente. Esse tipo de problema parece me perseguir por ai.",
+    "Tags": [ "escândalo", "exílio", "passado" ]
+  },
+  {
+    "Id": "artista_defeito_4",
+    "AntecedenteId": "artista",
+    "Tipo": "Defeito",
+    "Descricao": "Eu, certa vez, satirizei um nobre que ainda quer minha cabeça. Foi um erro que eu adoraria repetir.",
+    "Tags": [ "imprudência", "provocador", "orgulho" ]
+  },
+  {
+    "Id": "artista_defeito_5",
+    "AntecedenteId": "artista",
+    "Tipo": "Defeito",
+    "Descricao": "Eu tenho problemas em esconder meus verdadeiros sentimentos. Minha língua afiada me mete em confusão.",
+    "Tags": [ "sinceridade", "impulsivo", "confusão" ]
+  },
+  {
+    "Id": "artista_defeito_6",
+    "AntecedenteId": "artista",
+    "Tipo": "Defeito",
+    "Descricao": "Apesar dos meus melhores esforços, meus amigos não me consideram confiável.",
+    "Tags": [ "desconfiança", "isolamento", "fracasso" ]
+  },
+  {
+    "Id": "charlatao_personalidade_1",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu me apaixono e desapaixono facilmente, e estou sempre em busca de alguém.",
+    "Tags": [ "romântico", "impulsivo", "inconstante" ]
+  },
+  {
+    "Id": "charlatao_personalidade_2",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu tenho uma piada para cada ocasião, especialmente ocasiões em que o humor é inapropriado.",
+    "Tags": [ "engraçado", "irreverente", "provocador" ]
+  },
+  {
+    "Id": "charlatao_personalidade_3",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Personalidade",
+    "Descricao": "Bajulação é meu truque predileto para conseguir o que eu quero.",
+    "Tags": [ "manipulador", "astuto", "persuasivo" ]
+  },
+  {
+    "Id": "charlatao_personalidade_4",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu sou um jogador nato que não consegue resistir a se arriscar por uma possível recompensa.",
+    "Tags": [ "arriscado", "jogador", "audacioso" ]
+  },
+  {
+    "Id": "charlatao_personalidade_5",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu minto sobre quase tudo, mesmo quando não existe qualquer boa razão.",
+    "Tags": [ "mentiroso", "enganador", "imprevisível" ]
+  },
+  {
+    "Id": "charlatao_personalidade_6",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Personalidade",
+    "Descricao": "Sarcasmo e insultos são minhas armas prediletas.",
+    "Tags": [ "sarcastico", "ácido", "provocador" ]
+  },
+  {
+    "Id": "charlatao_personalidade_7",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu tenho vários símbolos sagrados comigo, e invoco a divindade que seja mais útil em cada dado momento.",
+    "Tags": [ "religioso", "pragmático", "versátil" ]
+  },
+  {
+    "Id": "charlatao_personalidade_8",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu furto qualquer coisa que eu vejo que possa ter algum valor.",
+    "Tags": [ "ladrão", "oportunista", "astuto" ]
+  },
+
+  {
+    "Id": "charlatao_ideal_1",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Ideal",
+    "Descricao": "Independência. Sou um espirito livre – ninguém me diz o que fazer. (Caótico)",
+    "Tags": [ "livre", "independente", "rebelde" ]
+  },
+  {
+    "Id": "charlatao_ideal_2",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Ideal",
+    "Descricao": "Justiça. Eu nunca roubo de pessoas que não podem perder algumas moedas. (Leal)",
+    "Tags": [ "justo", "ético", "honesto" ]
+  },
+  {
+    "Id": "charlatao_ideal_3",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Ideal",
+    "Descricao": "Caridade. Eu distribuo o dinheiro que adquiro com as pessoas que realmente precisam. (Bom)",
+    "Tags": [ "generoso", "solidário", "altruísta" ]
+  },
+  {
+    "Id": "charlatao_ideal_4",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Ideal",
+    "Descricao": "Criatividade. Eu nunca faço a mesma trapaça duas vezes. (Caótico)",
+    "Tags": [ "criativo", "engenhoso", "inovador" ]
+  },
+  {
+    "Id": "charlatao_ideal_5",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Ideal",
+    "Descricao": "Amizade. Bens materiais vem e vão. Os laços de amizade duram pra sempre. (Bom)",
+    "Tags": [ "leal", "amigável", "valorizador" ]
+  },
+  {
+    "Id": "charlatao_ideal_6",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Ideal",
+    "Descricao": "Aspiração. Eu estou determinado a fazer algo por mim mesmo. (Qualquer)",
+    "Tags": [ "determinado", "ambicioso", "persistente" ]
+  },
+
+  {
+    "Id": "charlatao_vinculo_1",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu extorqui a pessoa errada e devo trabalhar para que esse indivíduo nunca mais cruze meu caminho ou o das pessoas com quem me importo.",
+    "Tags": [ "arrependido", "cauteloso", "protetor" ]
+  },
+  {
+    "Id": "charlatao_vinculo_2",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu devo tudo ao meu mentor – uma pessoa terrível que, provavelmente, está apodrecendo na cadeia em algum lugar.",
+    "Tags": [ "leal", "agradecido", "conflituoso" ]
+  },
+  {
+    "Id": "charlatao_vinculo_3",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Vinculo",
+    "Descricao": "Em algum lugar por ai, eu tenho um filho que não me conhece. Eu estou tornando o mundo melhor para ele.",
+    "Tags": [ "paternal", "esperançoso", "protetor" ]
+  },
+  {
+    "Id": "charlatao_vinculo_4",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu vim de uma família nobre e, um dia, irei reivindicar minhas terras e título daqueles que o roubaram de mim.",
+    "Tags": [ "ambicioso", "vingativo", "determinado" ]
+  },
+  {
+    "Id": "charlatao_vinculo_5",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Vinculo",
+    "Descricao": "Uma pessoa poderosa matou alguém que eu amava. Algum dia, em breve, terei minha vingança.",
+    "Tags": [ "vingativo", "resoluto", "obcecado" ]
+  },
+  {
+    "Id": "charlatao_vinculo_6",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu enganei e arruinei a vida de uma pessoa que não merecia. Eu busco reparar meus erros, mas talvez nunca seja capaz de me perdoar.",
+    "Tags": [ "arrependido", "conflituoso", "remorso" ]
+  },
+
+  {
+    "Id": "charlatao_defeito_1",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Defeito",
+    "Descricao": "Não resisto um rostinho bonito.",
+    "Tags": [ "impulsivo", "romântico", "inconstante" ]
+  },
+  {
+    "Id": "charlatao_defeito_2",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Defeito",
+    "Descricao": "Estou sempre com dividas. Eu gasto meus lucros ilícitos com luxurias decadentes mais rápido do que os ganho...",
+    "Tags": [ "gastador", "viciado", "imprudente" ]
+  },
+  {
+    "Id": "charlatao_defeito_3",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Defeito",
+    "Descricao": "Estou convencido que ninguém pode me enganar da forma que eu engano os outros.",
+    "Tags": [ "convencido", "arrogante", "manipulador" ]
+  },
+  {
+    "Id": "charlatao_defeito_4",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Defeito",
+    "Descricao": "Eu sou ganancioso demais pra meu próprio bem. Eu não consigo resistir a me arriscar se tiver dinheiro envolvido.",
+    "Tags": [ "ganancioso", "arriscado", "impulsivo" ]
+  },
+  {
+    "Id": "charlatao_defeito_5",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Defeito",
+    "Descricao": "Eu não resisto a enganar pessoas que são mais poderosas que eu.",
+    "Tags": [ "audacioso", "imprudente", "desafiante" ]
+  },
+  {
+    "Id": "charlatao_defeito_6",
+    "AntecedenteId": "charlatao",
+    "Tipo": "Defeito",
+    "Descricao": "Eu odeio admitir e vou me odiar por isso, mas, eu vou correr e salvar minha própria pele se as coisas engrossarem.",
+    "Tags": [ "covarde", "egoísta", "fugitivo" ]
+  },
+  {
+    "Id": "criminoso_personalidade_1",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu sempre tenho um plano para quando as coisas dão errado.",
+    "Tags": [ "estrategista", "preparado", "calmo" ]
+  },
+  {
+    "Id": "criminoso_personalidade_2",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu estou sempre calmo, não importa a situação. Eu nunca levanto minha voz ou deixo minhas emoções me controlarem.",
+    "Tags": [ "calmo", "controlado", "resiliente" ]
+  },
+  {
+    "Id": "criminoso_personalidade_3",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Personalidade",
+    "Descricao": "A primeira coisa que faço ao chegar a um novo local é decorar a localização de coisas valiosas – ou onde essas coisas podem estar escondidas.",
+    "Tags": [ "observador", "cuidadoso", "metódico" ]
+  },
+  {
+    "Id": "criminoso_personalidade_4",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu prefiro fazer um novo amigo a um novo inimigo.",
+    "Tags": [ "amigável", "diplomático", "sociável" ]
+  },
+  {
+    "Id": "criminoso_personalidade_5",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu sou incrivelmente receoso em confiar. Aqueles que parecem mais amigáveis geralmente têm mais a esconder.",
+    "Tags": [ "desconfiado", "cauteloso", "prudente" ]
+  },
+  {
+    "Id": "criminoso_personalidade_6",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu não presto atenção aos riscos envolvidos em uma situação, nunca me alerte sobre as probabilidades de fracasso.",
+    "Tags": [ "impulsivo", "irresponsável", "audacioso" ]
+  },
+  {
+    "Id": "criminoso_personalidade_7",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Personalidade",
+    "Descricao": "A melhor maneira de me levar a fazer algo é dizendo que eu não posso fazer.",
+    "Tags": [ "teimoso", "desafiador", "motivador" ]
+  },
+  {
+    "Id": "criminoso_personalidade_8",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu explodo ao menor insulto.",
+    "Tags": [ "irritável", "explosivo", "temperamental" ]
+  },
+
+  {
+    "Id": "criminoso_ideal_1",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Ideal",
+    "Descricao": "Honra. Eu não roubo de irmãos de profissão. (Leal)",
+    "Tags": [ "honrado", "leal", "ético" ]
+  },
+  {
+    "Id": "criminoso_ideal_2",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Ideal",
+    "Descricao": "Liberdade. Correntes foram feitas para serem partidas, assim como aqueles que as forjaram. (Caótico)",
+    "Tags": [ "livre", "rebelde", "independente" ]
+  },
+  {
+    "Id": "criminoso_ideal_3",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Ideal",
+    "Descricao": "Caridade. Eu roubo dos ricos para dar aos que realmente precisam. (Bom)",
+    "Tags": [ "generoso", "altruísta", "justo" ]
+  },
+  {
+    "Id": "criminoso_ideal_4",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Ideal",
+    "Descricao": "Ganância. Eu farei qualquer coisa para me tornar rico. (Mal)",
+    "Tags": [ "ganancioso", "ambicioso", "implacável" ]
+  },
+  {
+    "Id": "criminoso_ideal_5",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Ideal",
+    "Descricao": "Povo. Eu sou leal aos meus amigos, não a qualquer ideal, e todos sabem que posso viajar até o Estige por aqueles que me importo. (Neutro)",
+    "Tags": [ "leal", "protetor", "pragmático" ]
+  },
+  {
+    "Id": "criminoso_ideal_6",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Ideal",
+    "Descricao": "Redenção. Há uma centelha de bondade em todo mundo. (Bom)",
+    "Tags": [ "esperançoso", "bondoso", "transformado" ]
+  },
+
+  {
+    "Id": "criminoso_vinculo_1",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu estou tentando quitar uma dívida que tenho com um generoso benfeitor.",
+    "Tags": [ "responsável", "grato", "dedicado" ]
+  },
+  {
+    "Id": "criminoso_vinculo_2",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Vinculo",
+    "Descricao": "Meus ganhos, honestos ou não, são para sustentar minha família.",
+    "Tags": [ "protetor", "familiar", "dedicado" ]
+  },
+  {
+    "Id": "criminoso_vinculo_3",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Vinculo",
+    "Descricao": "Algo importante foi roubado de mim, e eu vou recuperá-lo.",
+    "Tags": [ "determinado", "vingativo", "persistente" ]
+  },
+  {
+    "Id": "criminoso_vinculo_4",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu me tornarei o maior ladrão que já existiu.",
+    "Tags": [ "ambicioso", "orgulhoso", "destemido" ]
+  },
+  {
+    "Id": "criminoso_vinculo_5",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu sou culpado por um terrível crime, espero algum dia poder me redimir.",
+    "Tags": [ "arrependido", "esperançoso", "reflexivo" ]
+  },
+  {
+    "Id": "criminoso_vinculo_6",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Vinculo",
+    "Descricao": "Alguém que amo morreu por causa de um erro que cometi. Isso nunca acontecerá novamente.",
+    "Tags": [ "culpado", "arrependido", "protetor" ]
+  },
+
+  {
+    "Id": "criminoso_defeito_1",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Defeito",
+    "Descricao": "Quando vejo algo valioso, não consigo pensar em mais nada, além de roubá-lo.",
+    "Tags": [ "obsessivo", "ganancioso", "impulsivo" ]
+  },
+  {
+    "Id": "criminoso_defeito_2",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Defeito",
+    "Descricao": "Quando confrontado com uma escolha entre dinheiro e amigo, eu bem que escolho o dinheiro.",
+    "Tags": [ "egoísta", "ganancioso", "imprudente" ]
+  },
+  {
+    "Id": "criminoso_defeito_3",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Defeito",
+    "Descricao": "Se há um plano, eu vou esquecê-lo. Se eu não esquecê-lo, vou ignorá-lo.",
+    "Tags": [ "distraído", "imprevisível", "desorganizado" ]
+  },
+  {
+    "Id": "criminoso_defeito_4",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Defeito",
+    "Descricao": "Eu tenho um \"tique\" que revela se estou mentindo.",
+    "Tags": [ "nervoso", "inseguro", "tenso" ]
+  },
+  {
+    "Id": "criminoso_defeito_5",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Defeito",
+    "Descricao": "Eu viro as costas e corro quando as coisas começam a ficar ruins.",
+    "Tags": [ "covarde", "fugitivo", "medroso" ]
+  },
+  {
+    "Id": "criminoso_defeito_6",
+    "AntecedenteId": "criminoso",
+    "Tipo": "Defeito",
+    "Descricao": "Um inocente foi preso por um crime que eu cometi. Por mim tudo bem.",
+    "Tags": [ "imoral", "desprezível", "sem remorso" ]
+  },
+  {
+    "Id": "eremita_personalidade_1",
+    "AntecedenteId": "eremita",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu fiquei tanto tempo isolado que raramente falo, preferindo gestos e grunhidos ocasionais.",
+    "Tags": [ "isolado", "reservado", "comunicacao_nao-verbal" ]
+  },
+  {
+    "Id": "eremita_personalidade_2",
+    "AntecedenteId": "eremita",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu sou absurdamente sereno, mesmo em face do desespero.",
+    "Tags": [ "sereno", "calmo", "imperturbável" ]
+  },
+  {
+    "Id": "eremita_personalidade_3",
+    "AntecedenteId": "eremita",
+    "Tipo": "Personalidade",
+    "Descricao": "O líder da minha comunidade tem algo sábio a dizer sobre cada tópico, eu estou ansioso para partilhar dessa sabedoria.",
+    "Tags": [ "sábio", "respeitoso", "aprendiz" ]
+  },
+  {
+    "Id": "eremita_personalidade_4",
+    "AntecedenteId": "eremita",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu sinto uma empatia tremenda por todos que sofrem.",
+    "Tags": [ "empático", "compassivo", "solidário" ]
+  },
+  {
+    "Id": "eremita_personalidade_5",
+    "AntecedenteId": "eremita",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu estou alheio a etiqueta e expectativas sociais.",
+    "Tags": [ "independente", "não-conformista", "desligado" ]
+  },
+  {
+    "Id": "eremita_personalidade_6",
+    "AntecedenteId": "eremita",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu relaciono tudo que acontece comigo a um grande plano cósmico.",
+    "Tags": [ "filosófico", "místico", "espiritual" ]
+  },
+  {
+    "Id": "eremita_personalidade_7",
+    "AntecedenteId": "eremita",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu, muitas vezes, me perco em meus pensamentos e contemplação me tornando alheio ao meu redor.",
+    "Tags": [ "pensativo", "absorto", "desligado" ]
+  },
+  {
+    "Id": "eremita_personalidade_8",
+    "AntecedenteId": "eremita",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu estou trabalhando em uma grande teoria filosófica e adoro partilhar minhas ideias.",
+    "Tags": [ "filósofo", "compartilhador", "curioso" ]
+  },
+
+  {
+    "Id": "eremita_ideal_1",
+    "AntecedenteId": "eremita",
+    "Tipo": "Ideal",
+    "Descricao": "Bem Maior. Meus dons devem ser partilhados com todos, não usados em benefício próprio (Bom)",
+    "Tags": [ "altruísta", "generoso", "solidário" ]
+  },
+  {
+    "Id": "eremita_ideal_2",
+    "AntecedenteId": "eremita",
+    "Tipo": "Ideal",
+    "Descricao": "Lógica. Emoções não podem obscurecer meus sentidos do que é certo e verdade, ou meu pensamento lógico. (Leal)",
+    "Tags": [ "racional", "lógico", "justo" ]
+  },
+  {
+    "Id": "eremita_ideal_3",
+    "AntecedenteId": "eremita",
+    "Tipo": "Ideal",
+    "Descricao": "Pensamento Livre. Questionamentos e curiosidade são os pilares do progresso. (Caótico)",
+    "Tags": [ "curioso", "inovador", "livre" ]
+  },
+  {
+    "Id": "eremita_ideal_4",
+    "AntecedenteId": "eremita",
+    "Tipo": "Ideal",
+    "Descricao": "Poder. Isolamento e contemplação são caminhos para poderes místicos e mágicos. (Mau)",
+    "Tags": [ "ambicioso", "místico", "determinado" ]
+  },
+  {
+    "Id": "eremita_ideal_5",
+    "AntecedenteId": "eremita",
+    "Tipo": "Ideal",
+    "Descricao": "Viva e Deixe Viver. Se intrometer nos assuntos dos outros só traz problemas. (Neutro)",
+    "Tags": [ "pragmático", "pacifista", "independente" ]
+  },
+  {
+    "Id": "eremita_ideal_6",
+    "AntecedenteId": "eremita",
+    "Tipo": "Ideal",
+    "Descricao": "Autoconhecimento. Se você conhece a si mesmo, não a mais nada para saber. (Qualquer)",
+    "Tags": [ "autoconhecimento", "introspectivo", "sabedoria" ]
+  },
+
+  {
+    "Id": "eremita_vinculo_1",
+    "AntecedenteId": "eremita",
+    "Tipo": "Vinculo",
+    "Descricao": "Nada é mais importante que os outros membros do eremitério, ordem ou associação.",
+    "Tags": [ "lealdade", "comunidade", "dedicação" ]
+  },
+  {
+    "Id": "eremita_vinculo_2",
+    "AntecedenteId": "eremita",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu entrei em reclusão para me esconder daqueles que ainda devem estar me caçando. Algum dia irei confrontá-los.",
+    "Tags": [ "fuga", "perseguição", "conflito" ]
+  },
+  {
+    "Id": "eremita_vinculo_3",
+    "AntecedenteId": "eremita",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu ainda busco o esclarecimento que eu perseguia durante meu isolamento e continuo a me iludir.",
+    "Tags": [ "busca", "dúvida", "ilusão" ]
+  },
+  {
+    "Id": "eremita_vinculo_4",
+    "AntecedenteId": "eremita",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu entrei em reclusão porque eu amava alguém que eu não podia ter.",
+    "Tags": [ "amor", "sacrifício", "perda" ]
+  },
+  {
+    "Id": "eremita_vinculo_5",
+    "AntecedenteId": "eremita",
+    "Tipo": "Vinculo",
+    "Descricao": "Se minha descoberta vir à tona, ela poderá trazer destruição ao mundo.",
+    "Tags": [ "segredo", "medo", "proteção" ]
+  },
+  {
+    "Id": "eremita_vinculo_6",
+    "AntecedenteId": "eremita",
+    "Tipo": "Vinculo",
+    "Descricao": "Meu isolamento me deu grande discernimento sobre um grande mal que apenas eu posso destruir.",
+    "Tags": [ "discernimento", "destino", "responsabilidade" ]
+  },
+
+  {
+    "Id": "eremita_defeito_1",
+    "AntecedenteId": "eremita",
+    "Tipo": "Defeito",
+    "Descricao": "Agora que voltei ao mundo, eu desfruto de seus prazeres um pouco demais.",
+    "Tags": [ "excesso", "prazeres", "viciado" ]
+  },
+  {
+    "Id": "eremita_defeito_2",
+    "AntecedenteId": "eremita",
+    "Tipo": "Defeito",
+    "Descricao": "Eu escondo nas sombras, pensamentos sanguinários que meu isolamento e meditação não conseguiram apagar.",
+    "Tags": [ "sombrio", "obscuro", "sangrento" ]
+  },
+  {
+    "Id": "eremita_defeito_3",
+    "AntecedenteId": "eremita",
+    "Tipo": "Defeito",
+    "Descricao": "Eu sou dogmático em meus pensamentos e filosofia.",
+    "Tags": [ "dogmático", "rigido", "inflexível" ]
+  },
+  {
+    "Id": "eremita_defeito_4",
+    "AntecedenteId": "eremita",
+    "Tipo": "Defeito",
+    "Descricao": "Eu deixo meu desejo de vencer discussões ofuscar amizades e harmonia.",
+    "Tags": [ "competitivo", "ambicioso", "egoísta" ]
+  },
+  {
+    "Id": "eremita_defeito_5",
+    "AntecedenteId": "eremita",
+    "Tipo": "Defeito",
+    "Descricao": "Eu me arrisco muito para descobrir um pouco de conhecimento perdido.",
+    "Tags": [ "impulsivo", "curioso", "irresponsável" ]
+  },
+  {
+    "Id": "eremita_defeito_6",
+    "AntecedenteId": "eremita",
+    "Tipo": "Defeito",
+    "Descricao": "Eu gosto de guardar segredos e não os partilho com ninguém.",
+    "Tags": [ "reservado", "secreto", "isolado" ]
+  },
+  {
+    "Id": "forasteiro_personalidade_1",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu fui guiado por uma sede de viagens que me levou a abandonas meu lar.",
+    "Tags": [ "aventureiro", "viajante", "saudade" ]
+  },
+  {
+    "Id": "forasteiro_personalidade_2",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu cuido dos meus amigos como se eles fossem filhotes recém-nascidos.",
+    "Tags": [ "protetor", "leal", "cuidadoso" ]
+  },
+  {
+    "Id": "forasteiro_personalidade_3",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Certa vez, eu corri quarenta quilômetros sem parar alertar meu clã da aproximação de uma horda orc. Eu faria de novo se fosse necessário.",
+    "Tags": [ "resistente", "determinado", "corajoso" ]
+  },
+  {
+    "Id": "forasteiro_personalidade_4",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu tenho uma lição pra cada situação, aprendida observando a natureza.",
+    "Tags": [ "observador", "sábio", "atento" ]
+  },
+  {
+    "Id": "forasteiro_personalidade_5",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu não vejo lugar para o povo rico e educado. Dinheiro e modos não vão salvá-lo de um urso-coruja faminto.",
+    "Tags": [ "rude", "realista", "desconfiado" ]
+  },
+  {
+    "Id": "forasteiro_personalidade_6",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Estou sempre pegando coisas, distraidamente brincando com elas e, às vezes, quebrando-as.",
+    "Tags": [ "desatento", "curioso", "desastrado" ]
+  },
+  {
+    "Id": "forasteiro_personalidade_7",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu me sinto muito mais confortável entre animais que entre pessoas.",
+    "Tags": [ "introvertido", "animalista", "isolado" ]
+  },
+  {
+    "Id": "forasteiro_personalidade_8",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu fui, de fato, criado por lobos.",
+    "Tags": [ "selvagem", "resiliente", "único" ]
+  },
+
+  {
+    "Id": "forasteiro_ideal_1",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Ideal",
+    "Descricao": "Mudança. A vida é como as estações, em constante mudança, e nós devemos mudar com ela. (Caótico)",
+    "Tags": [ "flexível", "adaptável", "livre" ]
+  },
+  {
+    "Id": "forasteiro_ideal_2",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Ideal",
+    "Descricao": "Bem maior. É responsabilidade de todos trazer a maior felicidade para toda a tribo. (Bom)",
+    "Tags": [ "altruísta", "solidário", "comunitário" ]
+  },
+  {
+    "Id": "forasteiro_ideal_3",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Ideal",
+    "Descricao": "Honra. Se eu me desonrar, eu desonrarei todo o meu clã. (Leal)",
+    "Tags": [ "honrado", "leal", "orgulhoso" ]
+  },
+  {
+    "Id": "forasteiro_ideal_4",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Ideal",
+    "Descricao": "Força. O mais forte deve governar. (Mau)",
+    "Tags": [ "forte", "dominante", "ambicioso" ]
+  },
+  {
+    "Id": "forasteiro_ideal_5",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Ideal",
+    "Descricao": "Natureza. O mundo natural é mais importante que todas as construções da civilização. (Neutro)",
+    "Tags": [ "naturalista", "ecológico", "respeitoso" ]
+  },
+  {
+    "Id": "forasteiro_ideal_6",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Ideal",
+    "Descricao": "Gloria. Eu devo adquirir gloria em batalha, para mim e para meu clã. (Qualquer)",
+    "Tags": [ "orgulhoso", "guerreiro", "glorioso" ]
+  },
+
+  {
+    "Id": "forasteiro_vinculo_1",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Vinculo",
+    "Descricao": "Minha família, clã ou tribo é a coisa mais importante na minha vida, mesmo quando eles estão longe.",
+    "Tags": [ "família", "tribo", "lealdade" ]
+  },
+  {
+    "Id": "forasteiro_vinculo_2",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Vinculo",
+    "Descricao": "Uma ofensa a natureza intocada do meu lar é uma ofensa a mim.",
+    "Tags": [ "proteção", "natureza", "Vinculo" ]
+  },
+  {
+    "Id": "forasteiro_vinculo_3",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu trarei uma fúria terrível aos malfeitores que destruíram minha terra natal.",
+    "Tags": [ "vingança", "raiva", "proteção" ]
+  },
+  {
+    "Id": "forasteiro_vinculo_4",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu sou o último da minha tribo e cabe a mim garantir que seus nomes façam parte das lendas.",
+    "Tags": [ "legado", "responsabilidade", "tribo" ]
+  },
+  {
+    "Id": "forasteiro_vinculo_5",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu sofro de visões terríveis de um desastre vindouro, e farei qualquer coisa para impedi-lo.",
+    "Tags": [ "visões", "proteção", "urgência" ]
+  },
+  {
+    "Id": "forasteiro_vinculo_6",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Vinculo",
+    "Descricao": "É meu dever prover filhos para sustentar minha tribo.",
+    "Tags": [ "dever", "família", "tribo" ]
+  },
+
+  {
+    "Id": "forasteiro_defeito_1",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Defeito",
+    "Descricao": "Sou muito apaixonado por cerveja, vinho e outras bebidas.",
+    "Tags": [ "bebedeiro", "apaixonado", "viciado" ]
+  },
+  {
+    "Id": "forasteiro_defeito_2",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Defeito",
+    "Descricao": "Não existe lugar para precaução em uma vida vivida ao máximo.",
+    "Tags": [ "impulsivo", "aventureiro", "descuidado" ]
+  },
+  {
+    "Id": "forasteiro_defeito_3",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Defeito",
+    "Descricao": "Eu lembro de cada insulto que sofri e nutro um ressentimento silencioso contra qualquer um que já tenha me insultado",
+    "Tags": [ "ressentido", "vingativo", "sorrateiro" ]
+  },
+  {
+    "Id": "forasteiro_defeito_4",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Defeito",
+    "Descricao": "Eu tenho dificuldade em confiar em membros de outras raças, tribos ou sociedades.",
+    "Tags": [ "desconfiado", "preconceituoso", "isolado" ]
+  },
+  {
+    "Id": "forasteiro_defeito_5",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Defeito",
+    "Descricao": "A violência é minha resposta para quase todos os obstáculos.",
+    "Tags": [ "violento", "raivoso", "impulsivo" ]
+  },
+  {
+    "Id": "forasteiro_defeito_6",
+    "AntecedenteId": "forasteiro",
+    "Tipo": "Defeito",
+    "Descricao": "Não espere que eu salve aqueles que não conseguem se virar sozinhos. É a lei da natureza que os fortes prosperem e os fracos pereçam.",
+    "Tags": [ "individualista", "cruel", "realista" ]
+  },
+  {
+    "Id": "heroi_do_povo_personalidade_1",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu julgo as pessoas por suas ações, não por suas palavras.",
+    "Tags": [ "justo", "observador", "imparcial" ]
+  },
+  {
+    "Id": "heroi_do_povo_personalidade_2",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Personalidade",
+    "Descricao": "Se alguém está em apuros, eu estou sempre pronto para ajudar.",
+    "Tags": [ "prestativo", "solidário", "corajoso" ]
+  },
+  {
+    "Id": "heroi_do_povo_personalidade_3",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Personalidade",
+    "Descricao": "Quando eu fixo minha mente em algo, eu sigo esse caminho, não importa o que fique no caminho.",
+    "Tags": [ "determinado", "focado", "persistente" ]
+  },
+  {
+    "Id": "heroi_do_povo_personalidade_4",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu possuo um forte senso de justiça e sempre tento encontrar a solução mais equilibrada para as discussões.",
+    "Tags": [ "justo", "equilibrado", "racional" ]
+  },
+  {
+    "Id": "heroi_do_povo_personalidade_5",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu confio em minhas habilidades e farei o que for necessário para que os outros confiem também.",
+    "Tags": [ "confiante", "líder", "inspirador" ]
+  },
+  {
+    "Id": "heroi_do_povo_personalidade_6",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Personalidade",
+    "Descricao": "Pensar é para os outros, eu prefiro agir.",
+    "Tags": [ "impulsivo", "prático", "decidido" ]
+  },
+  {
+    "Id": "heroi_do_povo_personalidade_7",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu abuso de palavras longas na tentativa de soar inteligente.",
+    "Tags": [ "vaidoso", "eloquente", "inteligente" ]
+  },
+  {
+    "Id": "heroi_do_povo_personalidade_8",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu me entedio fácil. Para onde devo ir para me encontrar com meu destino?",
+    "Tags": [ "entediado", "inquieto", "destemido" ]
+  },
+
+  {
+    "Id": "heroi_do_povo_ideal_1",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Ideal",
+    "Descricao": "Respeito. As pessoas merecem ser tratadas com dignidade e respeito. (Bom)",
+    "Tags": [ "respeitador", "digno", "bondoso" ]
+  },
+  {
+    "Id": "heroi_do_povo_ideal_2",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Ideal",
+    "Descricao": "Justiça. Ninguém merece tratamento diferenciado perante a lei, muito menos estar acima dela. (Leal)",
+    "Tags": [ "justo", "leal", "rígido" ]
+  },
+  {
+    "Id": "heroi_do_povo_ideal_3",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Ideal",
+    "Descricao": "Liberdade. Não pode haver permissão para tiranos oprimirem o povo. (Caótico)",
+    "Tags": [ "livre", "revolucionário", "determinado" ]
+  },
+  {
+    "Id": "heroi_do_povo_ideal_4",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Ideal",
+    "Descricao": "Força. Se eu ficar forte, eu posso pegar tudo o que eu quiser – o que eu desejar. (Mal)",
+    "Tags": [ "ambicioso", "forte", "implacável" ]
+  },
+  {
+    "Id": "heroi_do_povo_ideal_5",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Ideal",
+    "Descricao": "Sinceridade. Não há nada de bom em fingir ser algo que não sou. (Neutro)",
+    "Tags": [ "sincero", "autêntico", "direto" ]
+  },
+  {
+    "Id": "heroi_do_povo_ideal_6",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Ideal",
+    "Descricao": "Destino. Nada, nem ninguém, pode me manter longe do meu chamado. (Qualquer)",
+    "Tags": [ "destinado", "focado", "determinado" ]
+  },
+
+  {
+    "Id": "heroi_do_povo_vinculo_1",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu tenho família, embora não faça a mínima ideia de onde eles estão, espero encontrá-los um dia.",
+    "Tags": [ "família", "esperança", "saudade" ]
+  },
+  {
+    "Id": "heroi_do_povo_vinculo_2",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu trabalho a terra, eu amo a terra e eu vou defender a terra.",
+    "Tags": [ "trabalho", "terra", "defesa" ]
+  },
+  {
+    "Id": "heroi_do_povo_vinculo_3",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Vinculo",
+    "Descricao": "Um nobre orgulhoso me deu uma bela surra, e eu vou ter minha vingança em qualquer valentão que encontrar.",
+    "Tags": [ "vingança", "orgulho", "força" ]
+  },
+  {
+    "Id": "heroi_do_povo_vinculo_4",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Vinculo",
+    "Descricao": "Minhas ferramentas são símbolo de minha vida passada, eu as carregarei para nunca me esquecer de minhas origens.",
+    "Tags": [ "origem", "ferramentas", "memória" ]
+  },
+  {
+    "Id": "heroi_do_povo_vinculo_5",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu devo proteger aqueles que não podem se defender.",
+    "Tags": [ "proteção", "justiça", "defesa" ]
+  },
+  {
+    "Id": "heroi_do_povo_vinculo_6",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Vinculo",
+    "Descricao": "Gostaria que meu amor viesse comigo para seguir meu destino.",
+    "Tags": [ "amor", "companheirismo", "destino" ]
+  },
+
+  {
+    "Id": "heroi_do_povo_defeito_1",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Defeito",
+    "Descricao": "O tirano que comanda minha terra não vai parar até ver meu cadáver.",
+    "Tags": [ "inimigo", "vingança", "ódio" ]
+  },
+  {
+    "Id": "heroi_do_povo_defeito_2",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Defeito",
+    "Descricao": "Eu estou convencido sobre o significado do meu destino, e cego aos riscos e falhas.",
+    "Tags": [ "teimoso", "cegueira", "focado" ]
+  },
+  {
+    "Id": "heroi_do_povo_defeito_3",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Defeito",
+    "Descricao": "As pessoas que me conhecem desde criança sabem de um vergonhoso segredo meu, eu não poderei voltar para casa nunca.",
+    "Tags": [ "segredo", "isolamento", "vergonha" ]
+  },
+  {
+    "Id": "heroi_do_povo_defeito_4",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Defeito",
+    "Descricao": "Eu tenho uma fraqueza pelos vícios da cidade, especialmente a bebedeira.",
+    "Tags": [ "vícios", "bebedeira", "fraqueza" ]
+  },
+  {
+    "Id": "heroi_do_povo_defeito_5",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Defeito",
+    "Descricao": "Secretamente, eu acredito que as coisas estariam melhores se algum tirano comandasse a região.",
+    "Tags": [ "segredo", "tirano", "dúvida" ]
+  },
+  {
+    "Id": "heroi_do_povo_defeito_6",
+    "AntecedenteId": "heroi_do_povo",
+    "Tipo": "Defeito",
+    "Descricao": "Eu tenho dificuldades em confiar em meus aliados.",
+    "Tags": [ "desconfiado", "isolado", "cauteloso" ]
+  },
+  {
+    "Id": "marinheiro_personalidade_1",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Meus amigos sabem que podem contar comigo pro que der e vier.",
+    "Tags": [ "leal", "confiável", "amigável" ]
+  },
+  {
+    "Id": "marinheiro_personalidade_2",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu trabalho duro para que possa me divertir muito quando o trabalho estiver pronto.",
+    "Tags": [ "trabalhador", "divertido", "determinado" ]
+  },
+  {
+    "Id": "marinheiro_personalidade_3",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu gosto de navegar para novos portos e fazer novas amizades acompanhado de uma jarra de cerveja.",
+    "Tags": [ "aventuroso", "social", "descontraído" ]
+  },
+  {
+    "Id": "marinheiro_personalidade_4",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu modifico alguns fatos para o bem de uma boa história.",
+    "Tags": [ "contador de histórias", "criativo", "exagerado" ]
+  },
+  {
+    "Id": "marinheiro_personalidade_5",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Pra mim, uma briga de taverna é uma ótima forma de conhecer uma nova cidade.",
+    "Tags": [ "bravo", "explorador", "impulsivo" ]
+  },
+  {
+    "Id": "marinheiro_personalidade_6",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu nunca deixo passar uma aposta amigável.",
+    "Tags": [ "competitivo", "audacioso", "divertido" ]
+  },
+  {
+    "Id": "marinheiro_personalidade_7",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Meu vocabulário é tão sujo quanto o covil de um otyugh.",
+    "Tags": [ "rude", "honesto", "expressivo" ]
+  },
+  {
+    "Id": "marinheiro_personalidade_8",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu gosto de trabalhos bem feitos, especialmente se eu puder convencer alguém a fazê-los.",
+    "Tags": [ "persuasivo", "dedicado", "prático" ]
+  },
+
+  {
+    "Id": "marinheiro_ideal_1",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Ideal",
+    "Descricao": "Respeito. A coisa que mantem um navio unido é o respeito mútuo entre o capitão e a tripulação. (Bem)",
+    "Tags": [ "respeito", "cooperação", "lealdade" ]
+  },
+  {
+    "Id": "marinheiro_ideal_2",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Ideal",
+    "Descricao": "Justiça. Todos nós fazemos o trabalho, portanto, todos partilhamos os espólios. (Leal)",
+    "Tags": [ "justiça", "igualdade", "compartilhamento" ]
+  },
+  {
+    "Id": "marinheiro_ideal_3",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Ideal",
+    "Descricao": "Liberdade. O mar é liberdade – a liberdade de ir aonde quiser. (Caótico)",
+    "Tags": [ "liberdade", "aventura", "independência" ]
+  },
+  {
+    "Id": "marinheiro_ideal_4",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Ideal",
+    "Descricao": "Domínio. Eu sou um predador e os outros navios no mar são minhas presas. (Mau)",
+    "Tags": [ "dominação", "agressivo", "competitivo" ]
+  },
+  {
+    "Id": "marinheiro_ideal_5",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Ideal",
+    "Descricao": "Povo. Eu sou apegado aos meus companheiros de tripulação, não a ideais. (Neutro)",
+    "Tags": [ "lealdade", "companheirismo", "prático" ]
+  },
+  {
+    "Id": "marinheiro_ideal_6",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Ideal",
+    "Descricao": "Aspiração. Algum dia eu serei dono do meu próprio navio e traçarei meu próprio destino. (Qualquer)",
+    "Tags": [ "aspiração", "determinação", "sonhador" ]
+  },
+
+  {
+    "Id": "marinheiro_vinculo_1",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu sou leal ao meu capitão, primeiramente, o resto vem em segundo.",
+    "Tags": [ "lealdade", "capitão", "disciplina" ]
+  },
+  {
+    "Id": "marinheiro_vinculo_2",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Vinculo",
+    "Descricao": "O navio é o mais importante – tripulantes e capitães vem e vão.",
+    "Tags": [ "navio", "prioridade", "tripulação" ]
+  },
+  {
+    "Id": "marinheiro_vinculo_3",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu sempre me lembrarei do meu primeiro navio.",
+    "Tags": [ "lembrança", "primeiro", "nostalgia" ]
+  },
+  {
+    "Id": "marinheiro_vinculo_4",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Vinculo",
+    "Descricao": "Em uma cidade portuária, eu tenho uma amante que quase me roubou do mar.",
+    "Tags": [ "amor", "tentação", "porto" ]
+  },
+  {
+    "Id": "marinheiro_vinculo_5",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu fui enganado na divisão dos espólios e eu quero o que me é devido.",
+    "Tags": [ "vingança", "injustiça", "espera" ]
+  },
+  {
+    "Id": "marinheiro_vinculo_6",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Vinculo",
+    "Descricao": "Cruéis piratas mataram meu capitão e companheiros de tripulação, saquearam nosso navio e me deixaram para morrer. A vingança será minha.",
+    "Tags": [ "piratas", "vingança", "dor" ]
+  },
+
+  {
+    "Id": "marinheiro_defeito_1",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Defeito",
+    "Descricao": "Eu sigo ordens, mesmo que eu ache que estão erradas.",
+    "Tags": [ "obediente", "teimoso", "disciplinado" ]
+  },
+  {
+    "Id": "marinheiro_defeito_2",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Defeito",
+    "Descricao": "Eu direi qualquer coisa para evitar trabalho extra.",
+    "Tags": [ "preguiçoso", "mentiroso", "evasivo" ]
+  },
+  {
+    "Id": "marinheiro_defeito_3",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Defeito",
+    "Descricao": "Certa vez, alguém duvidou da minha coragem, eu nunca recuo, não importa o quão perigosa seja a situação.",
+    "Tags": [ "corajoso", "teimoso", "orgulhoso" ]
+  },
+  {
+    "Id": "marinheiro_defeito_4",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Defeito",
+    "Descricao": "Quando começo a beber, é difícil pra mim parar.",
+    "Tags": [ "alcoolatra", "viciado", "problemas" ]
+  },
+  {
+    "Id": "marinheiro_defeito_5",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Defeito",
+    "Descricao": "Eu não resisto a uma sacolinha de moedas dando sopa ou outras bugigangas que encontro.",
+    "Tags": [ "ganancioso", "roubador", "curioso" ]
+  },
+  {
+    "Id": "marinheiro_defeito_6",
+    "AntecedenteId": "marinheiro",
+    "Tipo": "Defeito",
+    "Descricao": "Meu orgulho provavelmente levará a minha destruição",
+    "Tags": [ "orgulhoso", "teimoso", "cabeça-dura" ]
+  },
+  {
+    "Id": "nobre_personalidade_1",
+    "AntecedenteId": "nobre",
+    "Tipo": "Personalidade",
+    "Descricao": "Minha bajulação eloquente faz com que todos com quem eu converse se sintam a pessoa mais maravilhosa e importante do mundo.",
+    "Tags": [ "bajulador", "eloquente", "persuasivo" ]
+  },
+  {
+    "Id": "nobre_personalidade_2",
+    "AntecedenteId": "nobre",
+    "Tipo": "Personalidade",
+    "Descricao": "As pessoas comuns me amam por minha bondade e generosidade.",
+    "Tags": [ "generoso", "carismático", "popular" ]
+  },
+  {
+    "Id": "nobre_personalidade_3",
+    "AntecedenteId": "nobre",
+    "Tipo": "Personalidade",
+    "Descricao": "Ninguém pode duvidar, olhando para o meu porte real, que estou acima das massas plebeias.",
+    "Tags": [ "orgulhoso", "imponente", "arrogante" ]
+  },
+  {
+    "Id": "nobre_personalidade_4",
+    "AntecedenteId": "nobre",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu tenho grande cuidado de sempre estar no meu melhor e seguir as últimas modas.",
+    "Tags": [ "vaidoso", "estiloso", "cuidadoso" ]
+  },
+  {
+    "Id": "nobre_personalidade_5",
+    "AntecedenteId": "nobre",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu não gosto de sujar minhas mãos, e eu não vou ser pego em acomodações inadequadas.",
+    "Tags": [ "limpo", "cuidadoso", "evasivo" ]
+  },
+  {
+    "Id": "nobre_personalidade_6",
+    "AntecedenteId": "nobre",
+    "Tipo": "Personalidade",
+    "Descricao": "Apesar da minha origem nobre, eu não estou acima dos outros. O sangue é um só.",
+    "Tags": [ "humilde", "unificador", "leal" ]
+  },
+  {
+    "Id": "nobre_personalidade_7",
+    "AntecedenteId": "nobre",
+    "Tipo": "Personalidade",
+    "Descricao": "Meu apoio, uma vez perdido, não volta.",
+    "Tags": [ "firme", "decidido", "implacável" ]
+  },
+  {
+    "Id": "nobre_personalidade_8",
+    "AntecedenteId": "nobre",
+    "Tipo": "Personalidade",
+    "Descricao": "Se você me ferir, eu irei esmagá-lo, arruinar seu nome, e salgar seus campos.",
+    "Tags": [ "vingativo", "implacável", "perseguidor" ]
+  },
+
+  {
+    "Id": "nobre_ideal_1",
+    "AntecedenteId": "nobre",
+    "Tipo": "Ideal",
+    "Descricao": "Respeito. O respeito a mim é devido por causa da minha posição, mas todas as pessoas, independentemente da posição merecem ser tratados com dignidade. (Bom)",
+    "Tags": [ "respeito", "dignidade", "justiça" ]
+  },
+  {
+    "Id": "nobre_ideal_2",
+    "AntecedenteId": "nobre",
+    "Tipo": "Ideal",
+    "Descricao": "Responsabilidade. É o meu dever respeitar a autoridade daqueles acima de mim, assim como aqueles abaixo de mim devem me respeitar. (Leal)",
+    "Tags": [ "responsabilidade", "ordem", "hierarquia" ]
+  },
+  {
+    "Id": "nobre_ideal_3",
+    "AntecedenteId": "nobre",
+    "Tipo": "Ideal",
+    "Descricao": "Independência. Devo provar que posso me cuidar sem os mimos da minha família. (Caótico)",
+    "Tags": [ "independência", "autonomia", "rebelde" ]
+  },
+  {
+    "Id": "nobre_ideal_4",
+    "AntecedenteId": "nobre",
+    "Tipo": "Ideal",
+    "Descricao": "Poder. Se eu puder alcançar mais poder, ninguém vai me dizer o que fazer. (Mau)",
+    "Tags": [ "poder", "ambição", "dominação" ]
+  },
+  {
+    "Id": "nobre_ideal_5",
+    "AntecedenteId": "nobre",
+    "Tipo": "Ideal",
+    "Descricao": "Família. O sangue corre mais grosso que a água. (Qualquer)",
+    "Tags": [ "família", "lealdade", "Vinculo" ]
+  },
+  {
+    "Id": "nobre_ideal_6",
+    "AntecedenteId": "nobre",
+    "Tipo": "Ideal",
+    "Descricao": "Obrigação Nobre. É o meu dever proteger e cuidar das pessoas abaixo de mim. (Bom)",
+    "Tags": [ "proteção", "dever", "honra" ]
+  },
+
+  {
+    "Id": "nobre_vinculo_1",
+    "AntecedenteId": "nobre",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu vou encarar qualquer desafio para ganhar a aprovação da minha família.",
+    "Tags": [ "família", "aprovação", "determinação" ]
+  },
+  {
+    "Id": "nobre_vinculo_2",
+    "AntecedenteId": "nobre",
+    "Tipo": "Vinculo",
+    "Descricao": "A aliança da minha casa com outra família nobre deve ser mantida a todo custo.",
+    "Tags": [ "aliança", "família", "responsabilidade" ]
+  },
+  {
+    "Id": "nobre_vinculo_3",
+    "AntecedenteId": "nobre",
+    "Tipo": "Vinculo",
+    "Descricao": "Nada é mais importante do que os outros membros da minha família.",
+    "Tags": [ "família", "prioridade", "proteção" ]
+  },
+  {
+    "Id": "nobre_vinculo_4",
+    "AntecedenteId": "nobre",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu sou apaixonado pela herdeira de uma família que a minha família despreza.",
+    "Tags": [ "amor", "conflito", "paixão" ]
+  },
+  {
+    "Id": "nobre_vinculo_5",
+    "AntecedenteId": "nobre",
+    "Tipo": "Vinculo",
+    "Descricao": "Minha lealdade ao meu soberano é inabalável.",
+    "Tags": [ "lealdade", "soberano", "dever" ]
+  },
+  {
+    "Id": "nobre_vinculo_6",
+    "AntecedenteId": "nobre",
+    "Tipo": "Vinculo",
+    "Descricao": "As pessoas comuns devem me ver como um herói do povo.",
+    "Tags": [ "imagem", "herói", "povo" ]
+  },
+
+  {
+    "Id": "nobre_defeito_1",
+    "AntecedenteId": "nobre",
+    "Tipo": "Defeito",
+    "Descricao": "Eu secretamente acredito que todos estão abaixo de mim.",
+    "Tags": [ "arrogância", "orgulho", "superioridade" ]
+  },
+  {
+    "Id": "nobre_defeito_2",
+    "AntecedenteId": "nobre",
+    "Tipo": "Defeito",
+    "Descricao": "Eu escondo um segredo verdadeiramente escandaloso que poderia arruinar minha família para sempre.",
+    "Tags": [ "segredo", "vergonha", "medo" ]
+  },
+  {
+    "Id": "nobre_defeito_3",
+    "AntecedenteId": "nobre",
+    "Tipo": "Defeito",
+    "Descricao": "Muitas vezes eu ouço insultos e ameaças veladas em cada palavra dirigida a mim, e me irrito muito rápido.",
+    "Tags": [ "paranoia", "ira", "sensível" ]
+  },
+  {
+    "Id": "nobre_defeito_4",
+    "AntecedenteId": "nobre",
+    "Tipo": "Defeito",
+    "Descricao": "Eu tenho um desejo insaciável por prazeres carnais.",
+    "Tags": [ "luxúria", "vício", "impulso" ]
+  },
+  {
+    "Id": "nobre_defeito_5",
+    "AntecedenteId": "nobre",
+    "Tipo": "Defeito",
+    "Descricao": "Na verdade, o mundo gira ao meu redor.",
+    "Tags": [ "egocentrismo", "vaidade", "ego" ]
+  },
+  {
+    "Id": "nobre_defeito_6",
+    "AntecedenteId": "nobre",
+    "Tipo": "Defeito",
+    "Descricao": "Pelas minhas palavras e ações, muitas vezes, envergonho minha família.",
+    "Tags": [ "vergonha", "culpa", "conflito" ]
+  },
+  {
+    "Id": "orfao_personalidade_1",
+    "AntecedenteId": "orfao",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu escondo pedaços de comida e bugigangas em meus bolsos.",
+    "Tags": [ "desconfiado", "sobrevivente", "reservado" ]
+  },
+  {
+    "Id": "orfao_personalidade_2",
+    "AntecedenteId": "orfao",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu pergunto um monte e coisas.",
+    "Tags": [ "curioso", "questionador", "observador" ]
+  },
+  {
+    "Id": "orfao_personalidade_3",
+    "AntecedenteId": "orfao",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu gosto de me espremer em locais pequenos onde ninguém possa me alcançar.",
+    "Tags": [ "esquivo", "sobrevivente", "astuto" ]
+  },
+  {
+    "Id": "orfao_personalidade_4",
+    "AntecedenteId": "orfao",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu durmo encostado em um muro ou árvore, abraçado com todas as minhas posses.",
+    "Tags": [ "solitário", "resiliente", "pragmático" ]
+  },
+  {
+    "Id": "orfao_personalidade_5",
+    "AntecedenteId": "orfao",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu como feito um porco e tenho maus modos.",
+    "Tags": [ "bruto", "descuidado", "irritável" ]
+  },
+  {
+    "Id": "orfao_personalidade_6",
+    "AntecedenteId": "orfao",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu acho que todos que são gentis comigo tem segundas intenções.",
+    "Tags": [ "desconfiado", "cauteloso", "protetor" ]
+  },
+  {
+    "Id": "orfao_personalidade_7",
+    "AntecedenteId": "orfao",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu não gosto de tomar banho.",
+    "Tags": [ "desleixado", "indiferente", "realista" ]
+  },
+  {
+    "Id": "orfao_personalidade_8",
+    "AntecedenteId": "orfao",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu digo na cara o que as outras pessoas insinuam ou escondem.",
+    "Tags": [ "franco", "audacioso", "direto" ]
+  },
+
+  {
+    "Id": "orfao_ideal_1",
+    "AntecedenteId": "orfao",
+    "Tipo": "Ideal",
+    "Descricao": "Respeito. Todas as pessoas, ricas ou pobres, merecem respeito. (Bom)",
+    "Tags": [ "respeito", "igualdade", "justiça" ]
+  },
+  {
+    "Id": "orfao_ideal_2",
+    "AntecedenteId": "orfao",
+    "Tipo": "Ideal",
+    "Descricao": "Comunidade. Nós temos que tomar conta uns dos outros, porque ninguém mais o fará. (Leal)",
+    "Tags": [ "comunidade", "solidariedade", "apoio" ]
+  },
+  {
+    "Id": "orfao_ideal_3",
+    "AntecedenteId": "orfao",
+    "Tipo": "Ideal",
+    "Descricao": "Mudança. Os baixos se erguerão e os altos irão tombar. A mudança é a natureza das coisas. (Caótico)",
+    "Tags": [ "mudança", "revolução", "esperança" ]
+  },
+  {
+    "Id": "orfao_ideal_4",
+    "AntecedenteId": "orfao",
+    "Tipo": "Ideal",
+    "Descricao": "Retribuição. Os ricos precisam ver como a vida e morte é nas sarjetas. (Mau)",
+    "Tags": [ "vingança", "ódio", "justiça" ]
+  },
+  {
+    "Id": "orfao_ideal_5",
+    "AntecedenteId": "orfao",
+    "Tipo": "Ideal",
+    "Descricao": "Povo. Eu ajudo as pessoas que me ajudam – é isso que nos mantem vivos. (Neutro)",
+    "Tags": [ "reciprocidade", "sobrevivência", "lealdade" ]
+  },
+  {
+    "Id": "orfao_ideal_6",
+    "AntecedenteId": "orfao",
+    "Tipo": "Ideal",
+    "Descricao": "Aspiração. Eu vou provar que sou merecedor de uma vida melhor. (Qualquer)",
+    "Tags": [ "ambição", "esperança", "futuro" ]
+  },
+
+  {
+    "Id": "orfao_vinculo_1",
+    "AntecedenteId": "orfao",
+    "Tipo": "Vinculo",
+    "Descricao": "Minha cidade ou vila é meu lar, e eu vou lutar para defendê-lo.",
+    "Tags": [ "lar", "proteção", "lealdade" ]
+  },
+  {
+    "Id": "orfao_vinculo_2",
+    "AntecedenteId": "orfao",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu patrocino um orfanato para que outros não passem pelo que fui forçado a passar.",
+    "Tags": [ "generosidade", "proteção", "solidariedade" ]
+  },
+  {
+    "Id": "orfao_vinculo_3",
+    "AntecedenteId": "orfao",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu devo minha sobrevivência a outros órfãos que me ensinaram a vida nas ruas.",
+    "Tags": [ "gratidao", "sobrevivência", "companheirismo" ]
+  },
+  {
+    "Id": "orfao_vinculo_4",
+    "AntecedenteId": "orfao",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu tenho uma dívida que nunca poderei pagar com uma pessoa que teve pena de mim.",
+    "Tags": [ "dívida", "gratidão", "lealdade" ]
+  },
+  {
+    "Id": "orfao_vinculo_5",
+    "AntecedenteId": "orfao",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu saí da minha vida de pobreza roubando uma pessoa importante, eu sou procurado por isso.",
+    "Tags": [ "passado", "perigo", "fuga" ]
+  },
+  {
+    "Id": "orfao_vinculo_6",
+    "AntecedenteId": "orfao",
+    "Tipo": "Vinculo",
+    "Descricao": "Ninguém deveria ter suportar as dificuldades pelas quais passei.",
+    "Tags": [ "raiva", "injustiça", "dureza" ]
+  },
+
+  {
+    "Id": "orfao_defeito_1",
+    "AntecedenteId": "orfao",
+    "Tipo": "Defeito",
+    "Descricao": "Se eu estiver em desvantagem, eu vou fugir de uma briga.",
+    "Tags": [ "covardia", "medo", "evasivo" ]
+  },
+  {
+    "Id": "orfao_defeito_2",
+    "AntecedenteId": "orfao",
+    "Tipo": "Defeito",
+    "Descricao": "Ouro parece ser muito dinheiro pra mim, e eu faria praticamente qualquer coisa por mais dele.",
+    "Tags": [ "ganância", "ambição", "desespero" ]
+  },
+  {
+    "Id": "orfao_defeito_3",
+    "AntecedenteId": "orfao",
+    "Tipo": "Defeito",
+    "Descricao": "Eu nunca vou confiar em ninguém plenamente, além de mim mesmo.",
+    "Tags": [ "desconfiança", "isolamento", "autossuficiência" ]
+  },
+  {
+    "Id": "orfao_defeito_4",
+    "AntecedenteId": "orfao",
+    "Tipo": "Defeito",
+    "Descricao": "Eu prefiro matar alguém enquanto dorme que uma luta justa.",
+    "Tags": [ "crueldade", "impiedade", "frieza" ]
+  },
+  {
+    "Id": "orfao_defeito_5",
+    "AntecedenteId": "orfao",
+    "Tipo": "Defeito",
+    "Descricao": "Não é roubo se eu preciso mais que outra pessoa.",
+    "Tags": [ "justificação", "moralidade", "sobrevivência" ]
+  },
+  {
+    "Id": "orfao_defeito_6",
+    "AntecedenteId": "orfao",
+    "Tipo": "Defeito",
+    "Descricao": "As pessoas que não podem se virar sozinhas, tem o que merecem.",
+    "Tags": [ "crueldade", "desdém", "indiferença" ]
+  },
+  {
+    "Id": "sabio_personalidade_1",
+    "AntecedenteId": "sabio",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu uso palavras polissilábicas para endossar minha impressão de grande erudição.",
+    "Tags": [ "erudito", "preciso", "orgulhoso" ]
+  },
+  {
+    "Id": "sabio_personalidade_2",
+    "AntecedenteId": "sabio",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu já li todos os livros das grandes bibliotecas – ou gosto de me vangloriar e dizer que li.",
+    "Tags": [ "sábio", "vanglorioso", "curioso" ]
+  },
+  {
+    "Id": "sabio_personalidade_3",
+    "AntecedenteId": "sabio",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu costumo ajudar os outros que não são tão inteligentes quanto eu, e pacientemente explico tudo quantas vezes forem necessárias.",
+    "Tags": [ "paciente", "didático", "ajudante" ]
+  },
+  {
+    "Id": "sabio_personalidade_4",
+    "AntecedenteId": "sabio",
+    "Tipo": "Personalidade",
+    "Descricao": "Nada para mim é melhor que um bom mistério.",
+    "Tags": [ "curioso", "misterioso", "investigador" ]
+  },
+  {
+    "Id": "sabio_personalidade_5",
+    "AntecedenteId": "sabio",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu voluntariamente escuto cada lado, e seus argumentos, antes de tomar uma decisão final.",
+    "Tags": [ "justo", "ponderado", "equilibrado" ]
+  },
+  {
+    "Id": "sabio_personalidade_6",
+    "AntecedenteId": "sabio",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu...falo...lentamente...ao...conversar...com idiotas...que tentam...se comparar...comigo.",
+    "Tags": [ "irritante", "orgulhoso", "preciso" ]
+  },
+  {
+    "Id": "sabio_personalidade_7",
+    "AntecedenteId": "sabio",
+    "Tipo": "Personalidade",
+    "Descricao": "E sou horrível e estranho em situações sociais.",
+    "Tags": [ "desajeitado", "estranho", "isolado" ]
+  },
+  {
+    "Id": "sabio_personalidade_8",
+    "AntecedenteId": "sabio",
+    "Tipo": "Personalidade",
+    "Descricao": "Estou convencido de que todos tentam roubar os meus segredos de mim.",
+    "Tags": [ "paranoico", "protetor", "desconfiado" ]
+  },
+
+  {
+    "Id": "sabio_ideal_1",
+    "AntecedenteId": "sabio",
+    "Tipo": "Ideal",
+    "Descricao": "Conhecimento. O caminho para o poder e o auto aperfeiçoamento é através do conhecimento. (Neutro)",
+    "Tags": [ "conhecimento", "poder", "aperfeiçoamento" ]
+  },
+  {
+    "Id": "sabio_ideal_2",
+    "AntecedenteId": "sabio",
+    "Tipo": "Ideal",
+    "Descricao": "Beleza. O que é belo nos mostra o que está além disso perto do que é verdadeiro. (Bom)",
+    "Tags": [ "beleza", "verdade", "inspiração" ]
+  },
+  {
+    "Id": "sabio_ideal_3",
+    "AntecedenteId": "sabio",
+    "Tipo": "Ideal",
+    "Descricao": "Logica. Emoções não devem nublar seu pensamento lógico. (Leal)",
+    "Tags": [ "lógica", "racionalidade", "controle" ]
+  },
+  {
+    "Id": "sabio_ideal_4",
+    "AntecedenteId": "sabio",
+    "Tipo": "Ideal",
+    "Descricao": "Sem Limites. Nada pode apaziguar a possibilidade infinita de toda a existência. (Caótico)",
+    "Tags": [ "infinito", "curiosidade", "exploração" ]
+  },
+  {
+    "Id": "sabio_ideal_5",
+    "AntecedenteId": "sabio",
+    "Tipo": "Ideal",
+    "Descricao": "Poder. Conhecimento é o caminho para o poder e a dominação. (Mau)",
+    "Tags": [ "poder", "dominação", "ambição" ]
+  },
+  {
+    "Id": "sabio_ideal_6",
+    "AntecedenteId": "sabio",
+    "Tipo": "Ideal",
+    "Descricao": "Auto Aperfeiçoamento. O objetivo de uma vida de estudos é a melhoria de si mesmo. (Qualquer)",
+    "Tags": [ "aperfeiçoamento", "estudo", "disciplina" ]
+  },
+
+  {
+    "Id": "sabio_vinculo_1",
+    "AntecedenteId": "sabio",
+    "Tipo": "Vinculo",
+    "Descricao": "É meu dever proteger meus estudantes.",
+    "Tags": [ "proteção", "ensino", "responsabilidade" ]
+  },
+  {
+    "Id": "sabio_vinculo_2",
+    "AntecedenteId": "sabio",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu guardo um texto ancestral que contém terríveis segredos que não podem cair em mãos erradas.",
+    "Tags": [ "segredo", "proteção", "sabedoria" ]
+  },
+  {
+    "Id": "sabio_vinculo_3",
+    "AntecedenteId": "sabio",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu trabalho para preservar uma biblioteca, universidade, arquivo de escribas ou monastério.",
+    "Tags": [ "preservação", "conhecimento", "trabalho" ]
+  },
+  {
+    "Id": "sabio_vinculo_4",
+    "AntecedenteId": "sabio",
+    "Tipo": "Vinculo",
+    "Descricao": "O trabalho da minha vida é uma série de tomos relatando um campo de conhecimento específico.",
+    "Tags": [ "pesquisa", "conhecimento", "dedicação" ]
+  },
+  {
+    "Id": "sabio_vinculo_5",
+    "AntecedenteId": "sabio",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu venho procurando a minha vida inteira pela resposta de certa questão.",
+    "Tags": [ "busca", "perseverança", "foco" ]
+  },
+  {
+    "Id": "sabio_vinculo_6",
+    "AntecedenteId": "sabio",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu vendi minha alma por conhecimento. Espero realizar grandes feitos para ganhá-la de volta.",
+    "Tags": [ "sacrifício", "ambição", "conhecimento" ]
+  },
+
+  {
+    "Id": "sabio_defeito_1",
+    "AntecedenteId": "sabio",
+    "Tipo": "Defeito",
+    "Descricao": "Eu me distraio facilmente com a promessa de informação.",
+    "Tags": [ "distração", "curiosidade", "impulsivo" ]
+  },
+  {
+    "Id": "sabio_defeito_2",
+    "AntecedenteId": "sabio",
+    "Tipo": "Defeito",
+    "Descricao": "Muitas pessoas gritam e correm quando veem um corruptor. Eu paro e tomo notas de sua anatomia.",
+    "Tags": [ "estranho", "observador", "desconectado" ]
+  },
+  {
+    "Id": "sabio_defeito_3",
+    "AntecedenteId": "sabio",
+    "Tipo": "Defeito",
+    "Descricao": "Desvendar um mistério ancestral pode muito bem valer o preço e uma civilização.",
+    "Tags": [ "obsessivo", "determinado", "riscoso" ]
+  },
+  {
+    "Id": "sabio_defeito_4",
+    "AntecedenteId": "sabio",
+    "Tipo": "Defeito",
+    "Descricao": "E prefiro soluções óbvias a complicadas.",
+    "Tags": [ "pragmático", "simplista", "direto" ]
+  },
+  {
+    "Id": "sabio_defeito_5",
+    "AntecedenteId": "sabio",
+    "Tipo": "Defeito",
+    "Descricao": "Eu falo sem antes pensar em minhas palavras, invariavelmente insultando outros.",
+    "Tags": [ "impulsivo", "rude", "desatento" ]
+  },
+  {
+    "Id": "sabio_defeito_6",
+    "AntecedenteId": "sabio",
+    "Tipo": "Defeito",
+    "Descricao": "Eu não consigo guardar um segredo para salvar minha vida. Ou a vida de qualquer outra pessoa.",
+    "Tags": [ "desleal", "desatento", "impulsivo" ]
+  },
+  {
+    "Id": "soldado_personalidade_1",
+    "AntecedenteId": "soldado",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu sou sempre polido e respeitoso.",
+    "Tags": [ "respeitoso", "educado", "disciplinado" ]
+  },
+  {
+    "Id": "soldado_personalidade_2",
+    "AntecedenteId": "soldado",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu sou assombrado pelas memórias da guerra. Não consigo tirar aquelas imagens da minha cabeça.",
+    "Tags": [ "assombrado", "trauma", "lembranças" ]
+  },
+  {
+    "Id": "soldado_personalidade_3",
+    "AntecedenteId": "soldado",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu perdi muitos amigos, e sou muito devagar para fazer novos.",
+    "Tags": [ "saudade", "cauteloso", "solitário" ]
+  },
+  {
+    "Id": "soldado_personalidade_4",
+    "AntecedenteId": "soldado",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu tenho muitas histórias de inspiração e cautela da época de minha experiência militar que são relevantes em todas as situações de combate.",
+    "Tags": [ "experiente", "inspirador", "prudente" ]
+  },
+  {
+    "Id": "soldado_personalidade_5",
+    "AntecedenteId": "soldado",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu não consigo encarar um cão infernal sem vacilar.",
+    "Tags": [ "medroso", "humano", "vulnerável" ]
+  },
+  {
+    "Id": "soldado_personalidade_6",
+    "AntecedenteId": "soldado",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu gosto de ser forte e de quebrar coisas.",
+    "Tags": [ "forte", "agressivo", "quebrador" ]
+  },
+  {
+    "Id": "soldado_personalidade_7",
+    "AntecedenteId": "soldado",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu tenho um senso de humor grosseiro.",
+    "Tags": [ "grosseiro", "humorístico", "irônico" ]
+  },
+  {
+    "Id": "soldado_personalidade_8",
+    "AntecedenteId": "soldado",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu enfrento os problemas de frente. Uma solução direta é o melhor caminho para o sucesso.",
+    "Tags": [ "direto", "corajoso", "resoluto" ]
+  },
+
+  {
+    "Id": "soldado_ideal_1",
+    "AntecedenteId": "soldado",
+    "Tipo": "Ideal",
+    "Descricao": "Bem Maior. Nosso destino é dar nossas vidas em defesa de terceiros. (Bom)",
+    "Tags": [ "sacrifício", "nobre", "defesa" ]
+  },
+  {
+    "Id": "soldado_ideal_2",
+    "AntecedenteId": "soldado",
+    "Tipo": "Ideal",
+    "Descricao": "Responsabilidade. Eu faço o que tenho que fazer e obedeço apenas a autoridade. (Leal)",
+    "Tags": [ "disciplina", "obediente", "responsável" ]
+  },
+  {
+    "Id": "soldado_ideal_3",
+    "AntecedenteId": "soldado",
+    "Tipo": "Ideal",
+    "Descricao": "Independência. Quando pessoas seguem ordens cegas elas apoiam um tipo de tirania. (Caótico)",
+    "Tags": [ "independente", "crítico", "libertário" ]
+  },
+  {
+    "Id": "soldado_ideal_4",
+    "AntecedenteId": "soldado",
+    "Tipo": "Ideal",
+    "Descricao": "Força. A vida é como uma guerra, o mais forte vence. (Mau)",
+    "Tags": [ "força", "brutal", "dominador" ]
+  },
+  {
+    "Id": "soldado_ideal_5",
+    "AntecedenteId": "soldado",
+    "Tipo": "Ideal",
+    "Descricao": "Viva e Deixa Viver. Ideais não valem a pena se você matar, ou for à guerra por eles. (Neutro)",
+    "Tags": [ "pragmático", "realista", "indiferente" ]
+  },
+  {
+    "Id": "soldado_ideal_6",
+    "AntecedenteId": "soldado",
+    "Tipo": "Ideal",
+    "Descricao": "Aspiração. Minha cidade, nação ou meu povo, são tudo o que importa para mim. (Qualquer)",
+    "Tags": [ "leal", "patriota", "comprometido" ]
+  },
+
+  {
+    "Id": "soldado_vinculo_1",
+    "AntecedenteId": "soldado",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu ainda daria a minha vida pelas pessoas com quem servi.",
+    "Tags": [ "lealdade", "companheirismo", "sacrifício" ]
+  },
+  {
+    "Id": "soldado_vinculo_2",
+    "AntecedenteId": "soldado",
+    "Tipo": "Vinculo",
+    "Descricao": "Alguém salvou minha vida no campo de batalha. Desde aquele dia eu nunca deixo nenhum amigo para trás.",
+    "Tags": [ "gratidão", "lealdade", "proteção" ]
+  },
+  {
+    "Id": "soldado_vinculo_3",
+    "AntecedenteId": "soldado",
+    "Tipo": "Vinculo",
+    "Descricao": "Minha honra é minha vida.",
+    "Tags": [ "honra", "orgulho", "compromisso" ]
+  },
+  {
+    "Id": "soldado_vinculo_4",
+    "AntecedenteId": "soldado",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu nunca esquecerei a destruidora derrota que minha companhia sofreu ou os inimigos que a causaram.",
+    "Tags": [ "vingança", "memória", "lealdade" ]
+  },
+  {
+    "Id": "soldado_vinculo_5",
+    "AntecedenteId": "soldado",
+    "Tipo": "Vinculo",
+    "Descricao": "Aqueles que lutam ao meu lado são aqueles por quem vale a pena morrer.",
+    "Tags": [ "coragem", "lealdade", "amigos" ]
+  },
+  {
+    "Id": "soldado_vinculo_6",
+    "AntecedenteId": "soldado",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu luto por aqueles que não podem lutar por si mesmos.",
+    "Tags": [ "protetor", "justo", "defensor" ]
+  },
+
+  {
+    "Id": "soldado_defeito_1",
+    "AntecedenteId": "soldado",
+    "Tipo": "Defeito",
+    "Descricao": "O inimigo monstruoso que enfrentei em uma batalha ainda me deixa tremendo de medo.",
+    "Tags": [ "medo", "trauma", "vulnerável" ]
+  },
+  {
+    "Id": "soldado_defeito_2",
+    "AntecedenteId": "soldado",
+    "Tipo": "Defeito",
+    "Descricao": "Eu tenho pouco respeito por aqueles que não se provam bons combatentes.",
+    "Tags": [ "desdém", "seletivo", "orgulhoso" ]
+  },
+  {
+    "Id": "soldado_defeito_3",
+    "AntecedenteId": "soldado",
+    "Tipo": "Defeito",
+    "Descricao": "Eu cometi um terrível erro em batalha, o que custou muitas vidas – eu farei de tudo para manter esse erro em segredo.",
+    "Tags": [ "culpa", "segredo", "arrepender" ]
+  },
+  {
+    "Id": "soldado_defeito_4",
+    "AntecedenteId": "soldado",
+    "Tipo": "Defeito",
+    "Descricao": "Meu ódio por meus inimigos é cego e irracional.",
+    "Tags": [ "ódio", "cego", "irracional" ]
+  },
+  {
+    "Id": "soldado_defeito_5",
+    "AntecedenteId": "soldado",
+    "Tipo": "Defeito",
+    "Descricao": "Eu obedeço a lei, mesmo se a lei trouxer a angústia.",
+    "Tags": [ "obediente", "rigoroso", "dedicado" ]
+  },
+  {
+    "Id": "soldado_defeito_6",
+    "AntecedenteId": "soldado",
+    "Tipo": "Defeito",
+    "Descricao": "Eu prefiro comer minha armadura a admitir que estou errado.",
+    "Tags": [ "orgulhoso", "teimoso", "arrogante" ]
+  },
+  {
+    "Id": "assombrado_personalidade_1",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu não fujo do mal. O mal foge de mim.",
+    "Tags": [ "corajoso", "implacável", "determinado" ]
+  },
+  {
+    "Id": "assombrado_personalidade_2",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Personalidade",
+    "Descricao": "Gosto de ler e decorar poesia. Isso me mantém calmo e traz momentos fugazes de felicidade.",
+    "Tags": [ "calmo", "poético", "reflexivo" ]
+  },
+  {
+    "Id": "assombrado_personalidade_3",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu gasto dinheiro livremente e vivo a vida ao máximo, sabendo que posso morrer amanhã.",
+    "Tags": [ "despreocupado", "vivaz", "impulsivo" ]
+  },
+  {
+    "Id": "assombrado_personalidade_4",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu vivo pela emoção da caça.",
+    "Tags": [ "caçador", "apaixonado", "determinado" ]
+  },
+  {
+    "Id": "assombrado_personalidade_5",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Personalidade",
+    "Descricao": "Não falo sobre a coisa que me atormenta. Prefiro não sobrecarregar os outros com minha maldição.",
+    "Tags": [ "reservado", "secretivo", "sofrido" ]
+  },
+  {
+    "Id": "assombrado_personalidade_6",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Personalidade",
+    "Descricao": "Espero perigo em cada esquina.",
+    "Tags": [ "desconfiado", "cauteloso", "alerta" ]
+  },
+  {
+    "Id": "assombrado_personalidade_7",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Personalidade",
+    "Descricao": "Recuso-me a ser uma vítima, e não permitirei que outros sejam vítimas.",
+    "Tags": [ "forte", "protetor", "resistente" ]
+  },
+  {
+    "Id": "assombrado_personalidade_8",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Personalidade",
+    "Descricao": "Não confio em seres divinos.",
+    "Tags": [ "cético", "descrente", "desconfiado" ]
+  },
+
+  {
+    "Id": "assombrado_ideal_1",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Ideal",
+    "Descricao": "Altruísmo. Tento ajudar os necessitados, não importa o custo pessoal. (Bom)",
+    "Tags": [ "altruísta", "solidário", "generoso" ]
+  },
+  {
+    "Id": "assombrado_ideal_2",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Ideal",
+    "Descricao": "Determinação. Vou deter os espíritos que me assombram ou morrerei tentando. (Qualquer)",
+    "Tags": [ "determinado", "persistente", "focado" ]
+  },
+  {
+    "Id": "assombrado_ideal_3",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Ideal",
+    "Descricao": "Bem Maior. Eu mato monstros para tornar o mundo um lugar mais seguro e para exorcizar meus próprios demônios. (Bom)",
+    "Tags": [ "heroico", "protetor", "valente" ]
+  },
+  {
+    "Id": "assombrado_ideal_4",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Ideal",
+    "Descricao": "Liberdade. Tenho uma vocação sombria que me coloca acima da lei. (Caótico)",
+    "Tags": [ "libertário", "rebelde", "independente" ]
+  },
+  {
+    "Id": "assombrado_ideal_5",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Ideal",
+    "Descricao": "Lógica. Gosto de conhecer as capacidades e fraquezas do inimigo antes de me jogar na batalha. (Leal)",
+    "Tags": [ "lógico", "estrategista", "prudente" ]
+  },
+  {
+    "Id": "assombrado_ideal_6",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Ideal",
+    "Descricao": "Destruição. Sou um monstro que destrói outros monstros e qualquer coisa que atrapalhe meu caminho. (Mal)",
+    "Tags": [ "implacável", "destrutivo", "cruel" ]
+  },
+
+  {
+    "Id": "assombrado_vinculo_1",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Vinculo",
+    "Descricao": "Guardo meus pensamentos e descobertas em um diário. Meu diário é meu legado.",
+    "Tags": [ "reflexivo", "legado", "escritor" ]
+  },
+  {
+    "Id": "assombrado_vinculo_2",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Vinculo",
+    "Descricao": "Eu sacrificaria minha vida e minha alma para proteger os inocentes.",
+    "Tags": [ "sacrificial", "protetor", "corajoso" ]
+  },
+  {
+    "Id": "assombrado_vinculo_3",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Vinculo",
+    "Descricao": "Minha tormenta afugentou a pessoa que eu amo. Luto para reconquistar o amor perdido.",
+    "Tags": [ "arrependido", "amante", "determinado" ]
+  },
+  {
+    "Id": "assombrado_vinculo_4",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Vinculo",
+    "Descricao": "Uma culpa terrível me consome. Espero encontrar redenção através de minhas ações.",
+    "Tags": [ "culpado", "busca", "redenção" ]
+  },
+  {
+    "Id": "assombrado_vinculo_5",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Vinculo",
+    "Descricao": "Há um mal dentro de mim, eu o sinto. Nunca deve ser libertado.",
+    "Tags": [ "sombrio", "perigoso", "contido" ]
+  },
+  {
+    "Id": "assombrado_vinculo_6",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Vinculo",
+    "Descricao": "Tenho uma criança para proteger. Preciso tornar o mundo um lugar mais seguro para ela.",
+    "Tags": [ "protetor", "familiar", "determinado" ]
+  },
+
+  {
+    "Id": "assombrado_defeito_1",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Defeito",
+    "Descricao": "Tenho certos rituais que devo seguir todos os dias. Nunca posso quebrá-los.",
+    "Tags": [ "ritualístico", "compulsivo", "rigoroso" ]
+  },
+  {
+    "Id": "assombrado_defeito_2",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Defeito",
+    "Descricao": "Assumo sempre o pior das pessoas.",
+    "Tags": [ "desconfiado", "cínico", "pessimista" ]
+  },
+  {
+    "Id": "assombrado_defeito_3",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Defeito",
+    "Descricao": "Não sinto compaixão pelos mortos. Eles são os sortudos.",
+    "Tags": [ "insensível", "desumano", "cruel" ]
+  },
+  {
+    "Id": "assombrado_defeito_4",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Defeito",
+    "Descricao": "Tenho um vício.",
+    "Tags": [ "viciado", "dependente", "problemático" ]
+  },
+  {
+    "Id": "assombrado_defeito_5",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Defeito",
+    "Descricao": "Sou um arauto do desastre que vive num mundo sem esperança.",
+    "Tags": [ "pessimista", "melancólico", "fatalista" ]
+  },
+  {
+    "Id": "assombrado_defeito_6",
+    "AntecedenteId": "assombrado",
+    "Tipo": "Defeito",
+    "Descricao": "Eu falo com espíritos que ninguém mais pode ver.",
+    "Tags": [ "esotérico", "solitário", "místico" ]
+  },
+  {
+    "Id": "contrabandista_personalidade_1",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu adoro estar na água, mas odeio pescar.",
+    "Tags": [ "náutico", "avesso_a_pesca", "amante_do_mar" ]
+  },
+  {
+    "Id": "contrabandista_personalidade_2",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu penso em tudo em termos de valor monetário.",
+    "Tags": [ "materialista", "calculista", "pragmático" ]
+  },
+  {
+    "Id": "contrabandista_personalidade_3",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu nunca paro de sorrir.",
+    "Tags": [ "alegre", "otimista", "cativante" ]
+  },
+  {
+    "Id": "contrabandista_personalidade_4",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Personalidade",
+    "Descricao": "Nada me abala; eu tenho uma mentira para cada ocasião.",
+    "Tags": [ "imperturbável", "mentiroso", "rápido_no_raciocínio" ]
+  },
+  {
+    "Id": "contrabandista_personalidade_5",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu amo ouro, mas não trairia um amigo.",
+    "Tags": [ "leal", "ganancioso", "ético" ]
+  },
+  {
+    "Id": "contrabandista_personalidade_6",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu gosto de fazer coisas que outros acreditam ser impossíveis.",
+    "Tags": [ "ousado", "habilidoso", "determinado" ]
+  },
+  {
+    "Id": "contrabandista_personalidade_7",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Personalidade",
+    "Descricao": "Fico nostálgico ao ver o sol nascer sobre o oceano.",
+    "Tags": [ "saudoso", "romântico", "melancólico" ]
+  },
+  {
+    "Id": "contrabandista_personalidade_8",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Personalidade",
+    "Descricao": "Não sou um criminoso comum; sou um mestre do jogo.",
+    "Tags": [ "mestre", "criminoso", "inteligente" ]
+  },
+
+  {
+    "Id": "contrabandista_ideal_1",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Ideal",
+    "Descricao": "Riqueza. Montanhas de moedas em um cofre seguro são tudo que eu sonho. (Qualquer)",
+    "Tags": [ "ganância", "rico", "objetivo" ]
+  },
+  {
+    "Id": "contrabandista_ideal_2",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Ideal",
+    "Descricao": "Código dos Contrabandistas. Eu sigo as regras não escritas dos contrabandistas, que não trapaceiam uns aos outros nem prejudicam inocentes diretamente. (Leal)",
+    "Tags": [ "honra", "código", "lealdade" ]
+  },
+  {
+    "Id": "contrabandista_ideal_3",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Ideal",
+    "Descricao": "Tudo por uma moeda. Faço quase qualquer coisa se isso significar lucro. (Mal)",
+    "Tags": [ "ganancioso", "pragmático", "sem_escrúpulos" ]
+  },
+  {
+    "Id": "contrabandista_ideal_4",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Ideal",
+    "Descricao": "Paz e Prosperidade. Contrabandeio apenas para alcançar um objetivo maior que beneficie minha comunidade. (Bom)",
+    "Tags": [ "altruísta", "comunitário", "visionário" ]
+  },
+  {
+    "Id": "contrabandista_ideal_5",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Ideal",
+    "Descricao": "Pessoas. Apesar das muitas mentiras, valorizo muito a amizade. (Qualquer)",
+    "Tags": [ "amigável", "leal", "confiante" ]
+  },
+  {
+    "Id": "contrabandista_ideal_6",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Ideal",
+    "Descricao": "Audácia. Sou mais feliz quando arrisco tudo. (Qualquer)",
+    "Tags": [ "ousado", "aventureiro", "imprudente" ]
+  },
+
+  {
+    "Id": "contrabandista_vinculo_1",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Vinculo",
+    "Descricao": "Meu navio foi roubado de mim, e queimo de desejo para recuperá-lo.",
+    "Tags": [ "determinação", "ressentimento", "foco" ]
+  },
+  {
+    "Id": "contrabandista_vinculo_2",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Vinculo",
+    "Descricao": "Pretendo me tornar o líder da rede de contrabandistas a que pertenço.",
+    "Tags": [ "ambicioso", "líder", "visionário" ]
+  },
+  {
+    "Id": "contrabandista_vinculo_3",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Vinculo",
+    "Descricao": "Devo uma dívida que não pode ser paga em ouro.",
+    "Tags": [ "devedor", "comprometido", "sério" ]
+  },
+  {
+    "Id": "contrabandista_vinculo_4",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Vinculo",
+    "Descricao": "Depois de um último trabalho, me aposentarei do negócio.",
+    "Tags": [ "resoluto", "esperançoso", "futuro" ]
+  },
+  {
+    "Id": "contrabandista_vinculo_5",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Vinculo",
+    "Descricao": "Fui enganado por um colega contrabandista que roubou algo precioso de mim. Vou encontrar esse ladrão.",
+    "Tags": [ "vingativo", "determinador", "justo" ]
+  },
+  {
+    "Id": "contrabandista_vinculo_6",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Vinculo",
+    "Descricao": "Doa a maior parte dos meus lucros para uma causa beneficente, e não gosto de me gabar disso.",
+    "Tags": [ "generoso", "modesto", "solidário" ]
+  },
+
+  {
+    "Id": "contrabandista_defeito_1",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Defeito",
+    "Descricao": "Mentir é reflexo, e às vezes faço isso sem perceber.",
+    "Tags": [ "mentiroso", "impulsivo", "desonesto" ]
+  },
+  {
+    "Id": "contrabandista_defeito_2",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Defeito",
+    "Descricao": "Tendo a avaliar meus relacionamentos em termos de lucro e prejuízo.",
+    "Tags": [ "calculista", "frio", "interesseiro" ]
+  },
+  {
+    "Id": "contrabandista_defeito_3",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Defeito",
+    "Descricao": "Acredito que todos têm um preço e sou cínico em relação aos que se apresentam como virtuosos.",
+    "Tags": [ "cínico", "desconfiado", "realista" ]
+  },
+  {
+    "Id": "contrabandista_defeito_4",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Defeito",
+    "Descricao": "Tenho dificuldade em confiar nas palavras dos outros.",
+    "Tags": [ "desconfiado", "isolado", "cauteloso" ]
+  },
+  {
+    "Id": "contrabandista_defeito_5",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Defeito",
+    "Descricao": "Poucas pessoas conhecem o verdadeiro eu.",
+    "Tags": [ "secreto", "solitário", "reservado" ]
+  },
+  {
+    "Id": "contrabandista_defeito_6",
+    "AntecedenteId": "contrabandista",
+    "Tipo": "Defeito",
+    "Descricao": "Embora aja de forma charmosa, não sinto nada pelos outros e não sei o que é amizade.",
+    "Tags": [ "desapegado", "frio", "insensível" ]
+  },
+  {
+    "Id": "viajante_distante_personalidade_1",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Personalidade",
+    "Descricao": "Tenho suposições diferentes das pessoas ao meu redor sobre espaço pessoal, invadindo o espaço dos outros inocentemente ou reagindo a invasões ignorantes do meu próprio espaço.",
+    "Tags": [ "cultura", "comportamento", "costumes" ]
+  },
+  {
+    "Id": "viajante_distante_personalidade_2",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Personalidade",
+    "Descricao": "Tenho minhas próprias ideias sobre o que é comida e o que não é, e acho os hábitos alimentares das pessoas ao meu redor fascinantes, confusos ou repulsivos.",
+    "Tags": [ "cultura", "comida", "costumes" ]
+  },
+  {
+    "Id": "viajante_distante_personalidade_3",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Personalidade",
+    "Descricao": "Tenho um forte código de honra ou senso de decoro que os outros não compreendem.",
+    "Tags": [ "honra", "costumes", "valores" ]
+  },
+  {
+    "Id": "viajante_distante_personalidade_4",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Personalidade",
+    "Descricao": "Expresso afeto ou desprezo de maneiras que são desconhecidas para os outros.",
+    "Tags": [ "emoção", "cultura", "costumes" ]
+  },
+  {
+    "Id": "viajante_distante_personalidade_5",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Personalidade",
+    "Descricao": "Homenageio meus deuses através de práticas que são estranhas nesta terra.",
+    "Tags": [ "religião", "tradição", "cultura" ]
+  },
+  {
+    "Id": "viajante_distante_personalidade_6",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Personalidade",
+    "Descricao": "Começo ou termino meu dia com pequenos rituais tradicionais que são desconhecidos para as pessoas ao meu redor.",
+    "Tags": [ "tradição", "ritual", "cultura" ]
+  },
+  {
+    "Id": "viajante_distante_ideal_1",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Ideal",
+    "Descricao": "Aberto. Tenho muito a aprender com as pessoas bondosas que encontro pelo caminho. (Bom)",
+    "Tags": [ "bondade", "aprendizado", "aceitação" ]
+  },
+  {
+    "Id": "viajante_distante_ideal_2",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Ideal",
+    "Descricao": "Reservado. Como alguém novo nessas terras estranhas, sou cauteloso e respeitoso em minhas ações. (Leal)",
+    "Tags": [ "cautela", "respeito", "tradição" ]
+  },
+  {
+    "Id": "viajante_distante_ideal_3",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Ideal",
+    "Descricao": "Aventura. Estou longe de casa, e tudo aqui é estranho e maravilhoso! (Caótico)",
+    "Tags": [ "aventura", "descoberta", "liberdade" ]
+  },
+  {
+    "Id": "viajante_distante_ideal_4",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Ideal",
+    "Descricao": "Astúcia. Embora eu não conheça os costumes deles, eles também não conhecem os meus, o que pode ser vantajoso para mim. (Mal)",
+    "Tags": [ "astúcia", "manipulação", "estratégia" ]
+  },
+  {
+    "Id": "viajante_distante_ideal_5",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Ideal",
+    "Descricao": "Inquisitivo. Tudo é novo, mas tenho sede de aprender. (Neutro)",
+    "Tags": [ "curiosidade", "aprendizado", "descoberta" ]
+  },
+  {
+    "Id": "viajante_distante_ideal_6",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Ideal",
+    "Descricao": "Desconfiado. Preciso ser cuidadoso, pois não posso distinguir amigo de inimigo aqui. (Qualquer)",
+    "Tags": [ "desconfiança", "vigilância", "autoproteção" ]
+  },
+  {
+    "Id": "viajante_distante_vinculo_1",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Vinculo",
+    "Descricao": "Enquanto eu tiver este símbolo da minha terra natal, posso enfrentar qualquer adversidade nesta terra estranha.",
+    "Tags": [ "lembrança", "força", "identidade" ]
+  },
+  {
+    "Id": "viajante_distante_vinculo_2",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Vinculo",
+    "Descricao": "Os deuses do meu povo são um conforto para mim, mesmo longe de casa.",
+    "Tags": [ "fé", "tradição", "consolo" ]
+  },
+  {
+    "Id": "viajante_distante_vinculo_3",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Vinculo",
+    "Descricao": "Não tenho causa maior do que meu serviço ao meu povo.",
+    "Tags": [ "lealdade", "patriotismo", "dever" ]
+  },
+  {
+    "Id": "viajante_distante_vinculo_4",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Vinculo",
+    "Descricao": "Minha liberdade é minha posse mais preciosa. Nunca deixarei que alguém a tome de mim novamente.",
+    "Tags": [ "liberdade", "independência", "resiliência" ]
+  },
+  {
+    "Id": "viajante_distante_vinculo_5",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Vinculo",
+    "Descricao": "Estou fascinado pela beleza e maravilha desta nova terra.",
+    "Tags": [ "curiosidade", "exploração", "encantamento" ]
+  },
+  {
+    "Id": "viajante_distante_vinculo_6",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Vinculo",
+    "Descricao": "Embora não tenha tido escolha, lamento ter deixado meus entes queridos para trás. Espero vê-los novamente um dia.",
+    "Tags": [ "saudade", "esperança", "família" ]
+  },
+  {
+    "Id": "viajante_distante_defeito_1",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Defeito",
+    "Descricao": "Estou secretamente (ou não tão secretamente) convencido da superioridade da minha própria cultura em relação a esta terra estrangeira.",
+    "Tags": [ "arrogância", "cultura", "preconceito" ]
+  },
+  {
+    "Id": "viajante_distante_defeito_2",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Defeito",
+    "Descricao": "Finjo não entender o idioma local para evitar interações que preferiria não ter.",
+    "Tags": [ "evasão", "linguagem", "isolamento" ]
+  },
+  {
+    "Id": "viajante_distante_defeito_3",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Defeito",
+    "Descricao": "Tenho fraqueza pelas novas intoxicantes e outros prazeres desta terra.",
+    "Tags": [ "vício", "tentação", "novidade" ]
+  },
+  {
+    "Id": "viajante_distante_defeito_4",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Defeito",
+    "Descricao": "Não tolero algumas das ações e motivações das pessoas desta terra, porque são diferentes de mim.",
+    "Tags": [ "intolerância", "cultura", "conflito" ]
+  },
+  {
+    "Id": "viajante_distante_defeito_5",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Defeito",
+    "Descricao": "Considero os seguidores de outros deuses como inocentes iludidos na melhor das hipóteses, ou tolos ignorantes na pior.",
+    "Tags": [ "fanatismo", "fé", "arrogância" ]
+  },
+  {
+    "Id": "viajante_distante_defeito_6",
+    "AntecedenteId": "viajante_distante",
+    "Tipo": "Defeito",
+    "Descricao": "Tenho fraqueza pela beleza exótica do povo dessas terras.",
+    "Tags": [ "paixão", "curiosidade", "desejo" ]
+  },
+
+  {
+    "Id": "antropologo_personalidade_1",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Personalidade",
+    "Descricao": "Prefiro a companhia daqueles que não são como eu, incluindo pessoas de outras raças.",
+    "Tags": [ "traço", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_personalidade_2",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Personalidade",
+    "Descricao": "Sou rigoroso quando se trata de observar a etiqueta adequada e os costumes locais.",
+    "Tags": [ "traço", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_personalidade_3",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Personalidade",
+    "Descricao": "Prefiro observar do que me intrometer.",
+    "Tags": [ "traço", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_personalidade_4",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Personalidade",
+    "Descricao": "Ao viver entre pessoas violentas, tornei-me insensível à violência.",
+    "Tags": [ "traço", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_personalidade_5",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Personalidade",
+    "Descricao": "Arriscaria minha vida para descobrir uma nova cultura ou desvendar os segredos de uma cultura extinta.",
+    "Tags": [ "traço", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_personalidade_6",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Personalidade",
+    "Descricao": "Quando chego a um novo assentamento pela primeira vez, devo aprender todos os seus costumes.",
+    "Tags": [ "traço", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_ideal_1",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Ideal",
+    "Descricao": "Descoberta. Quero ser a primeira pessoa a descobrir uma cultura perdida. (Qualquer)",
+    "Tags": [ "ideal", "qualquer", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_ideal_2",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Ideal",
+    "Descricao": "Distância. Não se deve interferir nos assuntos de outra cultura – mesmo que ela precise de ajuda. (Leal)",
+    "Tags": [ "ideal", "leal", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_ideal_3",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Ideal",
+    "Descricao": "Conhecimento. Compreendendo outras raças e culturas, aprendemos a entender a nós mesmos. (Qualquer)",
+    "Tags": [ "ideal", "qualquer", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_ideal_4",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Ideal",
+    "Descricao": "Poder. O povo comum deseja uma liderança forte, e faço o máximo para fornecê-la. (Leal)",
+    "Tags": [ "ideal", "leal", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_ideal_5",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Ideal",
+    "Descricao": "Proteção. Devo fazer tudo o que puder para salvar uma sociedade que enfrenta a extinção. (Bom)",
+    "Tags": [ "ideal", "bom", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_ideal_6",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Ideal",
+    "Descricao": "Indiferença. A vida é cruel. Qual o sentido de salvar pessoas se elas vão morrer de qualquer forma? (Caótico)",
+    "Tags": [ "ideal", "caotico", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_vinculo_1",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Vinculo",
+    "Descricao": "Meu mentor me deu um diário cheio de saberes e sabedoria. Perdê-lo me devastaria.",
+    "Tags": [ "vinculo", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_vinculo_2",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Vinculo",
+    "Descricao": "Depois de viver entre o povo de uma tribo ou clã primitivo, desejo voltar e ver como eles estão.",
+    "Tags": [ "vinculo", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_vinculo_3",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Vinculo",
+    "Descricao": "Anos atrás, uma tragédia atingiu os membros de uma sociedade isolada que eu amava, e eu a honrarei.",
+    "Tags": [ "vinculo", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_vinculo_4",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Vinculo",
+    "Descricao": "Quero aprender mais sobre uma cultura humanoide que me fascina.",
+    "Tags": [ "vinculo", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_vinculo_5",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Vinculo",
+    "Descricao": "Procuro vingar um clã, tribo, reino ou império que foi exterminado.",
+    "Tags": [ "vinculo", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_vinculo_6",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Vinculo",
+    "Descricao": "Tenho um amuleto que acredito ser a chave para encontrar uma sociedade perdida há muito tempo.",
+    "Tags": [ "vinculo", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_defeito_1",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Defeito",
+    "Descricao": "Fico enjoado em barcos.",
+    "Tags": [ "defeito", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_defeito_2",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Defeito",
+    "Descricao": "Falo sozinho e não faço amizades facilmente.",
+    "Tags": [ "defeito", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_defeito_3",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Defeito",
+    "Descricao": "Acredito que sou intelectualmente superior a pessoas de outras culturas e tenho muito a ensinar a elas.",
+    "Tags": [ "defeito", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_defeito_4",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Defeito",
+    "Descricao": "Adquiri alguns hábitos desagradáveis vivendo entre raças como goblins, homens-lagarto ou orcs.",
+    "Tags": [ "defeito", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_defeito_5",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Defeito",
+    "Descricao": "Reclamo de tudo.",
+    "Tags": [ "defeito", "antropologo" ]
+  },
+  {
+    "Id": "antropologo_defeito_6",
+    "AntecedenteId": "antropologo",
+    "Tipo": "Defeito",
+    "Descricao": "Uso uma máscara tribal e nunca a tiro.",
+    "Tags": [ "defeito", "antropologo" ]
+  },
+
+
+  {
+    "Id": "arqueologo_personalidade_1",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu adoro um bom quebra-cabeça ou mistério.",
+    "Tags": [ "curioso", "intelectual" ]
+  },
+  {
+    "Id": "arqueologo_personalidade_2",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Personalidade",
+    "Descricao": "Sou acumulador e nunca jogo nada fora.",
+    "Tags": [ "acumulador", "desorganizado" ]
+  },
+  {
+    "Id": "arqueologo_personalidade_3",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Personalidade",
+    "Descricao": "A fama é mais importante para mim do que o dinheiro.",
+    "Tags": [ "ambicioso", "vaidoso" ]
+  },
+  {
+    "Id": "arqueologo_personalidade_4",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Personalidade",
+    "Descricao": "Não tenho problemas em roubar dos mortos.",
+    "Tags": [ "amoral", "pragmático" ]
+  },
+  {
+    "Id": "arqueologo_personalidade_5",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Personalidade",
+    "Descricao": "Sou mais feliz em uma tumba empoeirada do que nos centros da civilização.",
+    "Tags": [ "solitário", "recluso" ]
+  },
+  {
+    "Id": "arqueologo_personalidade_6",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Personalidade",
+    "Descricao": "Armadilhas não me deixam nervoso. Idiotas que as disparam é que me deixam nervoso.",
+    "Tags": [ "impaciente", "experiente" ]
+  },
+  {
+    "Id": "arqueologo_personalidade_7",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Personalidade",
+    "Descricao": "Posso falhar, mas nunca vou desistir.",
+    "Tags": [ "determinado", "persistente" ]
+  },
+  {
+    "Id": "arqueologo_personalidade_8",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Personalidade",
+    "Descricao": "Você pode pensar que sou um erudito, mas adoro uma boa briga. Esses punhos foram feitos para bater.",
+    "Tags": [ "violento", "imprevisível" ]
+  },
+
+  {
+    "Id": "arqueologo_ideal_1",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Ideal",
+    "Descricao": "Preservação. Aquele artefato pertence a um museu. (Bom)",
+    "Tags": [ "bom", "história", "respeito" ]
+  },
+  {
+    "Id": "arqueologo_ideal_2",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Ideal",
+    "Descricao": "Ganância. Não arriscarei minha vida por nada. Espero algum tipo de pagamento. (Qualquer)",
+    "Tags": [ "interesseiro", "realista" ]
+  },
+  {
+    "Id": "arqueologo_ideal_3",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Ideal",
+    "Descricao": "Desejo de Morte. Nada é mais emocionante do que escapar por pouco da morte. (Caótico)",
+    "Tags": [ "caótico", "adrenalina" ]
+  },
+  {
+    "Id": "arqueologo_ideal_4",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Ideal",
+    "Descricao": "Dignidade. Os mortos e seus pertences merecem ser tratados com respeito. (Leal)",
+    "Tags": [ "leal", "respeito", "moral" ]
+  },
+  {
+    "Id": "arqueologo_ideal_5",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Ideal",
+    "Descricao": "Imortalidade. Todas as minhas explorações fazem parte de um plano para encontrar o segredo da vida eterna. (Qualquer)",
+    "Tags": [ "ambicioso", "místico" ]
+  },
+  {
+    "Id": "arqueologo_ideal_6",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Ideal",
+    "Descricao": "Perigo. Toda grande descoberta vem acompanhada de grande perigo. Andam de mãos dadas. (Qualquer)",
+    "Tags": [ "ousado", "corajoso" ]
+  },
+
+  {
+    "Id": "arqueologo_vinculo_1",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Vinculo",
+    "Descricao": "Desde criança ouço histórias sobre uma cidade perdida. Quero encontrá-la, aprender seus segredos e ganhar meu lugar nos livros de história.",
+    "Tags": [ "determinação", "legado" ]
+  },
+  {
+    "Id": "arqueologo_vinculo_2",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Vinculo",
+    "Descricao": "Quero encontrar meu mentor, que desapareceu em uma expedição há algum tempo.",
+    "Tags": [ "lealdade", "busca" ]
+  },
+  {
+    "Id": "arqueologo_vinculo_3",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Vinculo",
+    "Descricao": "Tenho um rival amigável. Só um de nós pode ser o melhor, e eu pretendo provar que sou eu.",
+    "Tags": [ "competição", "motivação" ]
+  },
+  {
+    "Id": "arqueologo_vinculo_4",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Vinculo",
+    "Descricao": "Não vou vender um objeto de arte ou outro tesouro que tenha significado histórico ou seja único.",
+    "Tags": [ "valores", "respeito" ]
+  },
+  {
+    "Id": "arqueologo_vinculo_5",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Vinculo",
+    "Descricao": "Estou secretamente apaixonado pelo rico patrono que patrocina minhas explorações arqueológicas.",
+    "Tags": [ "romance", "segredo" ]
+  },
+  {
+    "Id": "arqueologo_vinculo_6",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Vinculo",
+    "Descricao": "Espero trazer prestígio a uma biblioteca, museu ou universidade.",
+    "Tags": [ "prestígio", "instituição" ]
+  },
+
+  {
+    "Id": "arqueologo_defeito_1",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Defeito",
+    "Descricao": "Tenho um medo secreto de algum animal selvagem comum – e no meu trabalho os vejo por toda parte.",
+    "Tags": [ "medo", "fobia" ]
+  },
+  {
+    "Id": "arqueologo_defeito_2",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Defeito",
+    "Descricao": "Não consigo sair de um cômodo sem procurá-lo por portas secretas.",
+    "Tags": [ "obsessivo", "paranoico" ]
+  },
+  {
+    "Id": "arqueologo_defeito_3",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Defeito",
+    "Descricao": "Quando não estou explorando masmorras ou ruínas, fico inquieto e impaciente.",
+    "Tags": [ "inquieto", "dependente" ]
+  },
+  {
+    "Id": "arqueologo_defeito_4",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Defeito",
+    "Descricao": "Não tenho tempo para amigos ou família. Passo todo momento acordado pensando e me preparando para a próxima expedição.",
+    "Tags": [ "obcecado", "isolado" ]
+  },
+  {
+    "Id": "arqueologo_defeito_5",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Defeito",
+    "Descricao": "Quando tenho a escolha de ir para a esquerda ou para a direita, sempre vou para a esquerda.",
+    "Tags": [ "supersticioso", "padrão" ]
+  },
+  {
+    "Id": "arqueologo_defeito_6",
+    "AntecedenteId": "arqueologo",
+    "Tipo": "Defeito",
+    "Descricao": "Só consigo dormir no escuro total.",
+    "Tags": [ "manias", "sono" ]
+  },
+
+
+  {
+    "Id": "apostador_personalidade_1",
+    "AntecedenteId": "apostador",
+    "Tipo": "Personalidade",
+    "Descricao": "Planejo para toda contingência. Não deixo nada ao acaso!",
+    "Tags": [ "planejador", "cauteloso", "estratégico" ]
+  },
+  {
+    "Id": "apostador_personalidade_2",
+    "AntecedenteId": "apostador",
+    "Tipo": "Personalidade",
+    "Descricao": "Cada cobre quer virar prata. Toda aposta é uma oportunidade.",
+    "Tags": [ "ambicioso", "oportunista", "apostador" ]
+  },
+  {
+    "Id": "apostador_personalidade_3",
+    "AntecedenteId": "apostador",
+    "Tipo": "Personalidade",
+    "Descricao": "Sou um dos favorecidos da Senhora da Sorte. Tudo o que tento está destinado ao sucesso.",
+    "Tags": [ "confiante", "sortudo", "arrogante" ]
+  },
+  {
+    "Id": "apostador_personalidade_4",
+    "AntecedenteId": "apostador",
+    "Tipo": "Personalidade",
+    "Descricao": "Já perdi tanto com jogos que me recuso a gastar dinheiro com qualquer outra coisa.",
+    "Tags": [ "miserável", "traumatizado", "financeiramente_controlado" ]
+  },
+  {
+    "Id": "apostador_personalidade_5",
+    "AntecedenteId": "apostador",
+    "Tipo": "Personalidade",
+    "Descricao": "Nada é certo. Planejar é um ato de covardia.",
+    "Tags": [ "impulsivo", "imprudente", "caótico" ]
+  },
+  {
+    "Id": "apostador_personalidade_6",
+    "AntecedenteId": "apostador",
+    "Tipo": "Personalidade",
+    "Descricao": "Não sei quem já enganei, trapaceei ou derrotei, então mantenho um perfil discreto em público.",
+    "Tags": [ "paranoico", "desconfiado", "furtivo" ]
+  },
+  {
+    "Id": "apostador_personalidade_7",
+    "AntecedenteId": "apostador",
+    "Tipo": "Personalidade",
+    "Descricao": "A aposta perfeita está por aí em algum lugar. Só preciso manter os olhos abertos.",
+    "Tags": [ "esperançoso", "determinado", "sonhador" ]
+  },
+  {
+    "Id": "apostador_personalidade_8",
+    "AntecedenteId": "apostador",
+    "Tipo": "Personalidade",
+    "Descricao": "Venci meu vício, mas tudo o que preciso é de um momento de fraqueza para voltar à mesa de cartas.",
+    "Tags": [ "ex-viciado", "resiliente", "tentado" ]
+  },
+
+  {
+    "Id": "apostador_ideal_1",
+    "AntecedenteId": "apostador",
+    "Tipo": "Ideal",
+    "Descricao": "Conhecimento. Conhecimento é poder, e saber em qual cavalo apostar é a chave para o sucesso. (Qualquer)",
+    "Tags": [ "conhecimento", "estratégia", "sabedoria" ]
+  },
+  {
+    "Id": "apostador_ideal_2",
+    "AntecedenteId": "apostador",
+    "Tipo": "Ideal",
+    "Descricao": "Destino. O que quer que aconteça já estava destinado, independente de qualquer planejamento ou esforço. (Leal)",
+    "Tags": [ "destino", "aceitação", "fé" ]
+  },
+  {
+    "Id": "apostador_ideal_3",
+    "AntecedenteId": "apostador",
+    "Tipo": "Ideal",
+    "Descricao": "Coragem. Se você quer vencer, precisa correr riscos. (Caótico)",
+    "Tags": [ "coragem", "risco", "ousadia" ]
+  },
+  {
+    "Id": "apostador_ideal_4",
+    "AntecedenteId": "apostador",
+    "Tipo": "Ideal",
+    "Descricao": "Sobrevivência. Você não pode vencer se estiver morto. Viva para lutar outro dia – quando as chances forem melhores. (Qualquer)",
+    "Tags": [ "sobrevivência", "pragmatismo", "cautela" ]
+  },
+  {
+    "Id": "apostador_ideal_5",
+    "AntecedenteId": "apostador",
+    "Tipo": "Ideal",
+    "Descricao": "Confiabilidade. Quando precisei, pude contar com outros. Agora quero ser alguém em quem os outros possam confiar. (Bom)",
+    "Tags": [ "lealdade", "bondade", "honestidade" ]
+  },
+  {
+    "Id": "apostador_ideal_6",
+    "AntecedenteId": "apostador",
+    "Tipo": "Ideal",
+    "Descricao": "Vitória. Vencer é a verdadeira medida de uma pessoa. No fim, o que importa é o placar. (Mal)",
+    "Tags": [ "ambição", "competição", "vitória" ]
+  },
+
+  {
+    "Id": "apostador_vinculo_1",
+    "AntecedenteId": "apostador",
+    "Tipo": "Vinculo",
+    "Descricao": "Uma pessoa em particular me deve muito dinheiro, e preciso mantê-la viva se quiser receber.",
+    "Tags": [ "dívida", "dinheiro", "ganância" ]
+  },
+  {
+    "Id": "apostador_vinculo_2",
+    "AntecedenteId": "apostador",
+    "Tipo": "Vinculo",
+    "Descricao": "Sou leal ao amigo ou familiar que me ensinou a jogar.",
+    "Tags": [ "amizade", "família", "gratidão" ]
+  },
+  {
+    "Id": "apostador_vinculo_3",
+    "AntecedenteId": "apostador",
+    "Tipo": "Vinculo",
+    "Descricao": "A pessoa que me salvou do vício em jogos é a única razão de eu ainda estar vivo.",
+    "Tags": [ "salvação", "vício", "reconhecimento" ]
+  },
+  {
+    "Id": "apostador_vinculo_4",
+    "AntecedenteId": "apostador",
+    "Tipo": "Vinculo",
+    "Descricao": "Um patrono uma vez me deu dinheiro em troca de uma porcentagem dos meus ganhos. Devo a ele gratidão. E muito ouro.",
+    "Tags": [ "patrono", "dívida", "negócio" ]
+  },
+  {
+    "Id": "apostador_vinculo_5",
+    "AntecedenteId": "apostador",
+    "Tipo": "Vinculo",
+    "Descricao": "Uma organização criminosa para quem eu já joguei não gostou de eu ter saído do jogo, e seus capangas estão atrás de mim.",
+    "Tags": [ "crime", "fuga", "perigo" ]
+  },
+  {
+    "Id": "apostador_vinculo_6",
+    "AntecedenteId": "apostador",
+    "Tipo": "Vinculo",
+    "Descricao": "Crianças de rua já me ajudaram a encontrar alvos para meus jogos. Agora, quero ajudá-las a sair das ruas.",
+    "Tags": [ "redenção", "crianças", "rua" ]
+  },
+
+  {
+    "Id": "apostador_defeito_1",
+    "AntecedenteId": "apostador",
+    "Tipo": "Defeito",
+    "Descricao": "Não sei a hora de parar. Especialmente quando todos dizem para eu parar.",
+    "Tags": [ "impulsivo", "vício", "teimosia" ]
+  },
+  {
+    "Id": "apostador_defeito_2",
+    "AntecedenteId": "apostador",
+    "Tipo": "Defeito",
+    "Descricao": "Guardo minha simpatia para meus amigos – e não tenho amigos.",
+    "Tags": [ "frieza", "solidão", "antissocial" ]
+  },
+  {
+    "Id": "apostador_defeito_3",
+    "AntecedenteId": "apostador",
+    "Tipo": "Defeito",
+    "Descricao": "Você acha que estamos em apuros agora? Deixe-me te contar como as coisas ainda podem piorar!",
+    "Tags": [ "pessimismo", "paranoia", "exagero" ]
+  },
+  {
+    "Id": "apostador_defeito_4",
+    "AntecedenteId": "apostador",
+    "Tipo": "Defeito",
+    "Descricao": "Pode me emprestar um pouco, né? Tenho uma aposta certa. Vou dobrar seu dinheiro, garantido.",
+    "Tags": [ "manipulador", "aproveitador", "desespero" ]
+  },
+  {
+    "Id": "apostador_defeito_5",
+    "AntecedenteId": "apostador",
+    "Tipo": "Defeito",
+    "Descricao": "Já fui uma pessoa terrivelmente falha, como você. Deixe-me te mostrar como pode se salvar.",
+    "Tags": [ "moralista", "arrogante", "ex-viciado" ]
+  },
+  {
+    "Id": "apostador_defeito_6",
+    "AntecedenteId": "apostador",
+    "Tipo": "Defeito",
+    "Descricao": "Sou um ótimo apostador. Só sou ruim em matemática e lógica.",
+    "Tags": [ "iludido", "incompetente", "arrogante" ]
+  },
+
+  {
+    "Id": "cacador_recompensas_urbano_personalidade_1",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Personalidade",
+    "Descricao": "Sempre tenho um plano para quando as coisas darem errado.",
+    "Tags": [ "planejamento", "precaução" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_personalidade_2",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Personalidade",
+    "Descricao": "Sou calmo em quase qualquer situação. Nunca levanto a voz nem deixo a raiva me dominar.",
+    "Tags": [ "calma", "autocontrole" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_personalidade_3",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Personalidade",
+    "Descricao": "A primeira coisa que faço em uma nova cidade é mapear seus becos, saídas e esconderijos.",
+    "Tags": [ "cidade", "exploração", "estratégia" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_personalidade_4",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Personalidade",
+    "Descricao": "Não consigo resistir em coletar informações — segredos valem tanto quanto moedas.",
+    "Tags": [ "informação", "curiosidade", "espionagem" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_personalidade_5",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Personalidade",
+    "Descricao": "Eu observo e escuto mais do que falo. O silêncio revela verdades que palavras escondem.",
+    "Tags": [ "observador", "silêncio", "sabedoria" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_personalidade_6",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Personalidade",
+    "Descricao": "Tenho contatos em toda cidade — poucos são amigos, mas muitos me devem favores.",
+    "Tags": [ "rede", "influência", "favores" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_personalidade_7",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Personalidade",
+    "Descricao": "Tenho uma resposta sarcástica para toda situação, e uma rede de ameaças sutis.",
+    "Tags": [ "sarcasmo", "ameaça", "humor" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_personalidade_8",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Personalidade",
+    "Descricao": "Confio apenas em mim mesmo — e até isso, às vezes, é arriscado.",
+    "Tags": [ "desconfiança", "autonomia" ]
+  },
+
+  {
+    "Id": "cacador_recompensas_urbano_ideal_1",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Ideal",
+    "Descricao": "Honra. O trabalho pode ser sujo, mas mantenho minha palavra. (Leal)",
+    "Tags": [ "honra", "lealdade" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_ideal_2",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Ideal",
+    "Descricao": "Liberdade. Não sigo leis ou patrões. Sigo o dinheiro e meu código. (Caótico)",
+    "Tags": [ "liberdade", "individualismo" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_ideal_3",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Ideal",
+    "Descricao": "Justiça. Alguém precisa tirar esses vermes das ruas — estou apenas cobrando por isso. (Bom)",
+    "Tags": [ "justiça", "heroísmo" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_ideal_4",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Ideal",
+    "Descricao": "Lucro. Cada rosto procurado é uma oportunidade. (Neutro)",
+    "Tags": [ "lucro", "neutralidade" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_ideal_5",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Ideal",
+    "Descricao": "Domínio. Um dia, a cidade vai me temer tanto quanto os criminosos que caço. (Mal)",
+    "Tags": [ "poder", "dominação" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_ideal_6",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Ideal",
+    "Descricao": "Autossuficiência. Se não fizer por mim, ninguém fará. (Qualquer)",
+    "Tags": [ "sobrevivência", "autossuficiência" ]
+  },
+
+  {
+    "Id": "cacador_recompensas_urbano_vinculo_1",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Vinculo",
+    "Descricao": "Alguém importante confiou em mim para caçar um alvo — e não posso falhar.",
+    "Tags": [ "missão", "responsabilidade" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_vinculo_2",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Vinculo",
+    "Descricao": "Tenho um antigo parceiro desaparecido durante uma caçada. Ainda procuro por ele.",
+    "Tags": [ "amizade", "desaparecimento" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_vinculo_3",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Vinculo",
+    "Descricao": "Fui traído por um alvo que deixei escapar. Um dia ele pagará essa dívida.",
+    "Tags": [ "vingança", "traição" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_vinculo_4",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Vinculo",
+    "Descricao": "Protejo uma pessoa ou comunidade inocente da cidade — ninguém encosta neles.",
+    "Tags": [ "proteção", "comunidade" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_vinculo_5",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Vinculo",
+    "Descricao": "Meu nome é conhecido em certas tavernas e guetos — e sempre há alguém com um trabalho novo.",
+    "Tags": [ "fama", "submundo" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_vinculo_6",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Vinculo",
+    "Descricao": "Carrego um item roubado do meu primeiro alvo. Ele me lembra de onde comecei.",
+    "Tags": [ "lembrança", "origem" ]
+  },
+
+  {
+    "Id": "cacador_recompensas_urbano_defeito_1",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Defeito",
+    "Descricao": "Confio em ninguém e traio fácil se for conveniente para o trabalho.",
+    "Tags": [ "traição", "desconfiança" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_defeito_2",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Defeito",
+    "Descricao": "Tenho um vício em apostas ou bebida — e gasto mais do que ganho.",
+    "Tags": [ "vício", "autodestruição" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_defeito_3",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Defeito",
+    "Descricao": "Se me desafiam ou desrespeitam, eu reajo — mesmo que isso estrague tudo.",
+    "Tags": [ "impulsividade", "orgulho" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_defeito_4",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Defeito",
+    "Descricao": "Guardo rancor como um caçador guarda seu mapa — sempre por perto.",
+    "Tags": [ "rancor", "vingança" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_defeito_5",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Defeito",
+    "Descricao": "Não tenho empatia por quem quebro durante a caçada. É só trabalho.",
+    "Tags": [ "frieza", "indiferença" ]
+  },
+  {
+    "Id": "cacador_recompensas_urbano_defeito_6",
+    "AntecedenteId": "cacador_recompensas_urbano",
+    "Tipo": "Defeito",
+    "Descricao": "Eu nunca recuso um contrato — mesmo quando sei que é uma armadilha.",
+    "Tags": [ "ganância", "imprudência" ]
+  }
+]

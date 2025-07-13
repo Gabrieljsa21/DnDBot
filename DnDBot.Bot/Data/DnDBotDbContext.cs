@@ -53,6 +53,7 @@ namespace DnDBot.Bot.Data
         public DbSet<AntecedenteItemOpcoes> AntecedenteItemOpcoes { get; set; }
         public DbSet<AntecedenteCaracteristica> AntecedenteCaracteristica { get; set; }
         public DbSet<AntecedenteNarrativa> AntecedenteNarrativa { get; set; }
+        public DbSet<AntecedenteNarrativaTag> AntecedenteNarrativaTag { get; set; }
         #endregion
 
         #region Classes
