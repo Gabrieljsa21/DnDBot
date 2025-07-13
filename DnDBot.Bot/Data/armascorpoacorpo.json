@@ -38,7 +38,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "azagaia",
@@ -79,7 +79,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "cajado",
@@ -120,7 +120,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "clava_grande",
@@ -161,7 +161,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "desarmado",
@@ -202,7 +202,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "foice_curta",
@@ -243,7 +243,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "lanca",
@@ -284,7 +284,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "maca",
@@ -325,7 +325,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "machadinha",
@@ -366,7 +366,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "martelo_leve",
@@ -407,7 +407,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "porrete",
@@ -448,7 +448,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "machado",
@@ -489,7 +489,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "mangual",
@@ -530,7 +530,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "glaive",
@@ -571,7 +571,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "machado_grande",
@@ -612,7 +612,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "espada_duas_maos",
@@ -653,7 +653,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "alabarda",
@@ -694,7 +694,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "lanca_de_montaria",
@@ -735,7 +735,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "espada_longa",
@@ -776,7 +776,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "marreta",
@@ -817,7 +817,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "maca_estrela",
@@ -858,7 +858,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "pique",
@@ -899,7 +899,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "florete",
@@ -940,7 +940,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "cimitarra",
@@ -981,7 +981,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "espada_curta",
@@ -1022,7 +1022,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "tridente",
@@ -1063,7 +1063,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "picareta_de_guerra",
@@ -1104,7 +1104,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "martelo_de_guerra",
@@ -1145,7 +1145,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   },
   {
     "Id": "chicote",
@@ -1186,7 +1186,7 @@
     "RequisitosAtributos": [],
     "ArmaTags": [],
     "Tags": [],
-    "AlcanceEmMetros": 0
+    "AlcanceMaximo": 0
   }
 
 ]

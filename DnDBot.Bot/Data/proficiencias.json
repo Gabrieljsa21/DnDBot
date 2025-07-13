@@ -299,5 +299,24 @@
     "Id": "prof_ferramentas_ladrao",
     "Nome": "Ferramentas de Ladrão",
     "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_kit_disfarce",
+    "Nome": "Kit de Disfarce",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_kit_falsificacao",
+    "Nome": "Kit de Falsificação",
+    "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_kit_herbalismo",
+    "Nome": "Kit de Herbalismo",
+    "Tipo": "Ferramenta"
   }
+
+
+
+
 ]

@@ -4,8 +4,6 @@ using DnDBot.Bot.Models.ItensInventario;
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -15,101 +13,45 @@ public static class ItemDatabaseHelper
 {
     private const string CaminhoJson = "Data/itens.json";
 
-    public static async Task CriarTabelaAsync(SqliteCommand cmd)
-    {
-        var definicoes = new Dictionary<string, string>
-        {
-            ["Item"] = @"
-                Id TEXT PRIMARY KEY,
-                Categoria TEXT NOT NULL,
-                SubCategoria TEXT NOT NULL,
-                Raridade TEXT NOT NULL,
-                PesoUnitario REAL NOT NULL,
-                Empilhavel INTEGER NOT NULL,
-                ValorCobre INTEGER NOT NULL,
-                Equipavel INTEGER NOT NULL,
-                Discriminator TEXT NOT NULL,
-                " + SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim()
-        };
-
-        foreach (var tabela in definicoes)
-            await SqliteHelper.CriarTabelaAsync(cmd, tabela.Key, tabela.Value);
-    }
-
     public static async Task PopularAsync(SqliteConnection connection, SqliteTransaction transaction)
     {
-        if (!File.Exists(CaminhoJson))
+        var itens = await JsonLoaderHelper.CarregarAsync<List<Item>>(CaminhoJson, "itens");
+
+        if (itens == null || itens.Count == 0)
         {
-            Console.WriteLine("❌ Arquivo itens.json não encontrado.");
+            Console.WriteLine("❌ Nenhum item encontrado no JSON.");
             return;
         }
 
-        Console.WriteLine("📥 Lendo itens do JSON...");
-
-        var textoJson = await File.ReadAllTextAsync(CaminhoJson, Encoding.UTF8);
-        var options = new JsonSerializerOptions
+        foreach (var item in itens)
         {
-            PropertyNameCaseInsensitive = true,
-            Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase, allowIntegerValues: false) }
-        };
-
-        var listaItens = JsonSerializer.Deserialize<List<Item>>(textoJson, options);
-        if (listaItens == null || listaItens.Count == 0)
-        {
-            Console.WriteLine("❌ Nenhum item encontrado.");
-            return;
-        }
-
-        foreach (var item in listaItens)
-        {
-            // valida categoria
             if (!Enum.IsDefined(typeof(CategoriaItem), item.Categoria))
             {
-                Console.WriteLine($"⚠ Item '{item.Nome}' tem Categoria inválida: '{item.Categoria}'");
+                Console.WriteLine($"⚠ Item '{item.Nome}' com Categoria inválida: {item.Categoria}");
                 continue;
             }
 
-            // insere na tabela base
-            await InserirItem(connection, transaction, item, item.Categoria.ToString());
+            await InserirItem(connection, transaction, item);
         }
 
-        Console.WriteLine("✅ Itens populados.");
+        Console.WriteLine("✅ Itens populados com sucesso.");
     }
 
-    /// <summary>
-    /// Insere um registro na tabela Item (somente colunas comuns).
-    /// </summary>
-    public static async Task InserirItem(
-        SqliteConnection connection,
-        SqliteTransaction transaction,
-        Item item,
-        string discriminator)
+    public static async Task InserirItem(SqliteConnection conn, SqliteTransaction tx, Item item)
     {
-        if (await RegistroExisteAsync(connection, transaction, "Item", item.Id))
+        if (await RegistroExisteAsync(conn, tx, "Item", item.Id))
             return;
 
         var parametros = GerarParametrosEntidadeBase(item);
-        parametros["categoria"] = item.Categoria.ToString();
-        parametros["subcategoria"] = item.SubCategoria.ToString();
-        parametros["raridade"] = item.Raridade.ToString();
-        parametros["pesoUnitario"] = item.PesoUnitario;
-        parametros["empilhavel"] = item.Empilhavel ? 1 : 0;
-        parametros["valorCobre"] = item.ValorCobre;
-        parametros["equipavel"] = item.Equipavel ? 1 : 0;
-        parametros["discriminator"] = discriminator;
+        parametros["Id"] = item.Id;
+        parametros["Categoria"] = item.Categoria.ToString();
+        parametros["SubCategoria"] = item.SubCategoria.ToString();
+        parametros["Raridade"] = item.Raridade.ToString();
+        parametros["PesoUnitario"] = item.PesoUnitario;
+        parametros["Empilhavel"] = item.Empilhavel ? 1 : 0;
+        parametros["ValorCobre"] = item.ValorCobre;
+        parametros["Equipavel"] = item.Equipavel ? 1 : 0;
 
-        var sql = $@"
-            INSERT INTO Item (
-                Id, Categoria, SubCategoria, Raridade,
-                PesoUnitario, Empilhavel, ValorCobre, Equipavel, Discriminator,
-                {SqliteEntidadeBaseHelper.CamposInsert.Replace("Id,", "").Trim()}
-            ) VALUES (
-                $id, $categoria, $subcategoria, $raridade,
-                $pesoUnitario, $empilhavel, $valorCobre, $equipavel, $discriminator,
-                {SqliteEntidadeBaseHelper.ValoresInsert.Replace("$id,", "").Trim()}
-            );";
-
-        await CriarInsertCommand(connection, transaction, sql, parametros)
-            .ExecuteNonQueryAsync();
+        await InserirEntidadeFilhaAsync(conn, tx, "Item", parametros);
     }
 }

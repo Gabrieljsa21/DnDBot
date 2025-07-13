@@ -24,6 +24,18 @@ namespace DnDBot.Bot.Data.Configurations
         }
     }
 
+    public class RacaTagConfiguration : IEntityTypeConfiguration<RacaTag>
+    {
+        public void Configure(EntityTypeBuilder<RacaTag> builder)
+        {
+            builder.HasKey(rt => new { rt.RacaId, rt.Tag });
+
+            builder.HasOne(rt => rt.Raca)
+                   .WithMany(r => r.RacaTags)
+                   .HasForeignKey(rt => rt.RacaId);
+        }
+    }
+
     public class SubRacaAlinhamentoConfiguration : IEntityTypeConfiguration<SubRacaAlinhamento>
     {
         /// <summary>
@@ -183,6 +195,17 @@ namespace DnDBot.Bot.Data.Configurations
             builder.HasOne(x => x.Resistencia)
                    .WithMany()
                    .HasForeignKey(x => x.ResistenciaId);
+        }
+    }
+    public class SubRacaTagConfiguration : IEntityTypeConfiguration<SubRacaTag>
+    {
+        public void Configure(EntityTypeBuilder<SubRacaTag> builder)
+        {
+            builder.HasKey(rt => new { rt.SubRacaId, rt.Tag });
+
+            builder.HasOne(rt => rt.SubRaca)
+                   .WithMany(r => r.SubRacaTags)
+                   .HasForeignKey(rt => rt.SubRacaId);
         }
     }
 

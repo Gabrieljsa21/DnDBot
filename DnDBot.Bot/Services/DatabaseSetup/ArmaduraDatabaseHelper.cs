@@ -11,7 +11,6 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using static DnDBot.Bot.Helpers.SqliteHelper;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace DnDBot.Bot.Services.DatabaseSetup
 {
@@ -19,70 +18,10 @@ namespace DnDBot.Bot.Services.DatabaseSetup
     {
         const string CaminhoJson = "Data/armaduras.json";
 
-        public static async Task CriarTabelaAsync(SqliteCommand cmd)
-        {
-            var definicoes = new Dictionary<string, string>
-            {
-                ["Armadura"] = string.Join(",\n", new[]
-                {
-                    "Id TEXT PRIMARY KEY",
-                    "ClasseArmadura INTEGER NOT NULL",
-                    "ImpedeFurtividade INTEGER NOT NULL",
-                    "RequisitoForca INTEGER",
-                    "DurabilidadeAtual INTEGER",
-                    "DurabilidadeMaxima INTEGER",
-                    "Fabricante TEXT",
-                    SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "").Trim().TrimEnd(',')
-                }),
-
-
-                ["ArmaduraTag"] = @"
-            ArmaduraId TEXT NOT NULL,
-            Tag TEXT NOT NULL,
-            PRIMARY KEY (ArmaduraId, Tag),
-            FOREIGN KEY (ArmaduraId) REFERENCES Armadura(Id) ON DELETE CASCADE",
-
-                ["ArmaduraPropriedadeEspecial"] = @"
-            ArmaduraId TEXT NOT NULL,
-            Propriedade TEXT NOT NULL,
-            PRIMARY KEY (ArmaduraId, Propriedade),
-            FOREIGN KEY (ArmaduraId) REFERENCES Armadura(Id) ON DELETE CASCADE",
-
-                ["ArmaduraResistenciaDano"] = @"
-            ArmaduraId TEXT NOT NULL,
-            TipoDano TEXT NOT NULL,
-            PRIMARY KEY (ArmaduraId, TipoDano),
-            FOREIGN KEY (ArmaduraId) REFERENCES Armadura(Id) ON DELETE CASCADE",
-
-                ["ArmaduraImunidadeDano"] = @"
-            ArmaduraId TEXT NOT NULL,
-            TipoDano TEXT NOT NULL,
-            PRIMARY KEY (ArmaduraId, TipoDano),
-            FOREIGN KEY (ArmaduraId) REFERENCES Armadura(Id) ON DELETE CASCADE"
-            };
-
-            foreach (var tabela in definicoes)
-                await SqliteHelper.CriarTabelaAsync(cmd, tabela.Key, tabela.Value);
-        }
-
-
         public static async Task PopularAsync(SqliteConnection connection, SqliteTransaction transaction)
         {
 
-            if (!File.Exists(CaminhoJson))
-            {
-                Console.WriteLine("❌ Arquivo armaduras.json não encontrado.");
-                return;
-            }
-
-            Console.WriteLine("📥 Lendo dados de armaduras.json...");
-
-            var json = await File.ReadAllTextAsync(CaminhoJson, Encoding.UTF8);
-            var armaduras = JsonSerializer.Deserialize<List<Armadura>>(json, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-                Converters = { new JsonStringEnumConverter() }
-            });
+            var armaduras = await JsonLoaderHelper.CarregarAsync<List<Armadura>>(CaminhoJson, "armaduras");
 
             if (armaduras == null || armaduras.Count == 0)
             {
@@ -92,77 +31,41 @@ namespace DnDBot.Bot.Services.DatabaseSetup
 
             foreach (var armadura in armaduras)
             {
-                await ItemDatabaseHelper.InserirItem(connection, transaction, armadura, discriminator: "Armadura");
-                await InserirArmadura(connection, transaction, armadura);
-                await InserirTagsAsync(connection, transaction, "ArmaduraTag", "ArmaduraId", armadura.Id, armadura.Tags);
-                await InserirPropriedades(connection, transaction, armadura.Id, armadura.PropriedadesEspeciais);
-                await InserirTiposDano(connection, transaction, "ArmaduraResistenciaDano", armadura.Id, armadura.ResistenciasDano.Select(x => x.ToString()).ToList());
-                await InserirTiposDano(connection, transaction, "ArmaduraImunidadeDano", armadura.Id, armadura.ImunidadesDano.Select(x => x.ToString()).ToList());
+                await ItemDatabaseHelper.InserirItem(connection, transaction, armadura);
+
+                // Insere os campos específicos da Armadura
+                var parametros = new Dictionary<string, object>
+                {
+                    ["Id"] = armadura.Id,
+                    ["ClasseArmadura"] = armadura.ClasseArmadura,
+                    ["ImpedeFurtividade"] = armadura.ImpedeFurtividade ? 1 : 0,
+                    ["BonusDestrezaMaximo"] = armadura.BonusDestrezaMaximo,
+                    ["RequisitoForca"] = armadura.RequisitoForca,
+                    ["DurabilidadeAtual"] = armadura.DurabilidadeAtual,
+                    ["DurabilidadeMaxima"] = armadura.DurabilidadeMaxima
+                };
+                await InserirEntidadeFilhaAsync(connection, transaction, "Armadura", parametros);
+
+                // Inserir tags
+                if (armadura.Tags?.Any() == true)
+                    await InserirTagsAsync(connection, transaction, "ArmaduraTag", "ArmaduraId", armadura.Id, armadura.Tags);
+
+                // Inserir propriedades especiais
+                if (armadura.PropriedadesEspeciais?.Any() == true)
+                    await InserirTagsAsync(connection, transaction, "ArmaduraPropriedadeEspecial", "ArmaduraId", armadura.Id, armadura.PropriedadesEspeciais.Select(p => p.PropriedadeEspecialId).ToList());
+
+                // Inserir resistências
+                if (armadura.Resistencias?.Any() == true)
+                    await InserirRelacionamentoSimplesAsync(connection, transaction,"ArmaduraResistencia",new[] { "ArmaduraId", "ResistenciaId" },armadura.Resistencias,r => new object[] { armadura.Id, r.ResistenciaId });
+
+                // Inserir imunidades
+                if (armadura.Imunidades?.Any() == true)
+                    await InserirRelacionamentoSimplesAsync(connection, transaction,"ArmaduraImunidade",new[] { "ArmaduraId", "ImunidadeId" },armadura.Imunidades,i => new object[] { armadura.Id, i.ImunidadeId });
             }
 
             Console.WriteLine("✅ Armaduras populadas.");
         }
 
-        private static async Task InserirArmadura(SqliteConnection conn, SqliteTransaction tx, Armadura armadura)
-        {
-            if (await RegistroExisteAsync(conn, tx, "Armadura", armadura.Id))
-                return;
-
-            var parametros = GerarParametrosEntidadeBase(armadura);
-            parametros["ca"] = armadura.ClasseArmadura;
-            parametros["impedeFurtividade"] = armadura.ImpedeFurtividade ? 1 : 0;
-            parametros["forca"] = armadura.RequisitoForca;
-            parametros["dAtual"] = armadura.DurabilidadeAtual;
-            parametros["dMax"] = armadura.DurabilidadeMaxima;
-            parametros["fabricante"] = armadura.Fabricante ?? "";
-
-            var sql = $@"
-            INSERT INTO Armadura (
-                ClasseArmadura, ImpedeFurtividade,
-                RequisitoForca, DurabilidadeAtual, DurabilidadeMaxima, Fabricante,
-                {SqliteEntidadeBaseHelper.CamposInsert}
-            ) VALUES (
-                $ca, $impedeFurtividade,
-                $forca, $dAtual, $dMax, $fabricante,
-                {SqliteEntidadeBaseHelper.ValoresInsert}
-            )";
-
-            var cmd = CriarInsertCommand(conn, tx, sql, parametros);
-            await cmd.ExecuteNonQueryAsync();
-        }
-
-
-        private static async Task InserirPropriedades(SqliteConnection conn, SqliteTransaction tx, string armaduraId, List<string> propriedades)
-        {
-            if (propriedades == null) return;
-
-            foreach (var prop in propriedades)
-            {
-                var cmd = conn.CreateCommand();
-                cmd.Transaction = tx;
-                cmd.CommandText = @"
-            INSERT OR IGNORE INTO ArmaduraPropriedadeEspecial (ArmaduraId, Propriedade)
-            VALUES ($id, $prop)";
-                cmd.Parameters.AddWithValue("$id", armaduraId);
-                cmd.Parameters.AddWithValue("$prop", prop);
-                await cmd.ExecuteNonQueryAsync();
-            }
-        }
-        private static async Task InserirTiposDano(SqliteConnection conn, SqliteTransaction tx, string tabela, string armaduraId, List<string> tiposDano)
-        {
-            if (tiposDano == null) return;
-            foreach (var tipo in tiposDano)
-            {
-                var cmd = conn.CreateCommand();
-                cmd.Transaction = tx;
-                cmd.CommandText = $@"
-            INSERT OR IGNORE INTO {tabela} (ArmaduraId, TipoDano)
-            VALUES ($id, $tipo)";
-                cmd.Parameters.AddWithValue("$id", armaduraId);
-                cmd.Parameters.AddWithValue("$tipo", tipo);
-                await cmd.ExecuteNonQueryAsync();
-            }
-        }
     }
 }
 

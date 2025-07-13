@@ -16,6 +16,13 @@ namespace DnDBot.Bot.Models.Enums
         Idiomas = 6
     }
 
+    public enum TipoNarrativa
+    {
+        Ideal,
+        Vinculo,
+        Defeito
+    }
+
     /// <summary>
     /// Enumeração para indicar o tipo de cura aplicada por uma poção.
     /// </summary>

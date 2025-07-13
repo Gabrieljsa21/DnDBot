@@ -37,7 +37,7 @@ namespace DnDBot.Bot.Data.Configurations
                   .WithOne(at => at.Antecedente)
                   .HasForeignKey(at => at.AntecedenteId);
 
-            entity.HasMany(a => a.Proficiencia)
+            entity.HasMany(a => a.Proficiencias)
                   .WithOne(p => p.Antecedente)
                   .HasForeignKey(p => p.AntecedenteId);
 
@@ -49,17 +49,9 @@ namespace DnDBot.Bot.Data.Configurations
                   .WithOne(c => c.Antecedente)
                   .HasForeignKey(c => c.AntecedenteId);
 
-            entity.HasMany(a => a.Ideais)
+            entity.HasMany(a => a.Narrativas)
                   .WithOne(i => i.Antecedente)
                   .HasForeignKey(i => i.AntecedenteId);
-
-            entity.HasMany(a => a.Vinculos)
-                  .WithOne(v => v.Antecedente)
-                  .HasForeignKey(v => v.AntecedenteId);
-
-            entity.HasMany(a => a.Defeitos)
-                  .WithOne(d => d.Antecedente)
-                  .HasForeignKey(d => d.AntecedenteId);
 
         }
     }
@@ -80,22 +72,6 @@ namespace DnDBot.Bot.Data.Configurations
         }
     }
 
-    public class AntecedenteDefeitoConfiguration : IEntityTypeConfiguration<AntecedenteDefeito>
-    {
-        public void Configure(EntityTypeBuilder<AntecedenteDefeito> builder)
-        {
-            builder.HasKey(x => new { x.AntecedenteId, x.DefeitoId });
-
-            builder.HasOne(x => x.Antecedente)
-                   .WithMany(a => a.Defeitos)
-                   .HasForeignKey(x => x.AntecedenteId);
-
-            builder.HasOne(x => x.Defeito)
-                   .WithMany()
-                   .HasForeignKey(x => x.DefeitoId);
-        }
-    }
-
     public class AntecedenteProficienciaConfiguration : IEntityTypeConfiguration<AntecedenteProficiencia>
     {
         public void Configure(EntityTypeBuilder<AntecedenteProficiencia> builder)
@@ -103,28 +79,12 @@ namespace DnDBot.Bot.Data.Configurations
             builder.HasKey(x => new { x.AntecedenteId, x.ProficienciaId });
 
             builder.HasOne(x => x.Antecedente)
-                   .WithMany(a => a.Proficiencia)
+                   .WithMany(a => a.Proficiencias)
                    .HasForeignKey(x => x.AntecedenteId);
 
             builder.HasOne(x => x.Proficiencia)
                    .WithMany()
                    .HasForeignKey(x => x.ProficienciaId);
-        }
-    }
-
-    public class AntecedenteIdealConfiguration : IEntityTypeConfiguration<AntecedenteIdeal>
-    {
-        public void Configure(EntityTypeBuilder<AntecedenteIdeal> builder)
-        {
-            builder.HasKey(x => new { x.AntecedenteId, x.IdealId });
-
-            builder.HasOne(x => x.Antecedente)
-                   .WithMany(a => a.Ideais)
-                   .HasForeignKey(x => x.AntecedenteId);
-
-            builder.HasOne(x => x.Ideal)
-                   .WithMany()
-                   .HasForeignKey(x => x.IdealId);
         }
     }
 
@@ -143,20 +103,22 @@ namespace DnDBot.Bot.Data.Configurations
                    .HasForeignKey(x => x.ItemId);
         }
     }
-
-    public class AntecedenteVinculoConfiguration : IEntityTypeConfiguration<AntecedenteVinculo>
+    public class AntecedenteNarrativaConfiguration : IEntityTypeConfiguration<AntecedenteNarrativa>
     {
-        public void Configure(EntityTypeBuilder<AntecedenteVinculo> builder)
+        public void Configure(EntityTypeBuilder<AntecedenteNarrativa> builder)
         {
-            builder.HasKey(x => new { x.AntecedenteId, x.VinculoId });
+            builder.HasKey(n => n.Id);
 
-            builder.HasOne(x => x.Antecedente)
-                   .WithMany(a => a.Vinculos)
-                   .HasForeignKey(x => x.AntecedenteId);
+            builder.Property(n => n.Descricao)
+                   .IsRequired()
+                   .HasMaxLength(1000);
 
-            builder.HasOne(x => x.Vinculo)
-                   .WithMany()
-                   .HasForeignKey(x => x.VinculoId);
+            builder.Property(n => n.Tipo)
+                   .IsRequired();
+
+            builder.HasOne(n => n.Antecedente)
+                   .WithMany(a => a.Narrativas)
+                   .HasForeignKey(n => n.AntecedenteId);
         }
     }
     public class AntecedenteItemOpcoesConfiguration : IEntityTypeConfiguration<AntecedenteItemOpcoes>
@@ -187,6 +149,17 @@ namespace DnDBot.Bot.Data.Configurations
             builder.HasOne(x => x.Proficiencia)
                    .WithMany()
                    .HasForeignKey(x => x.ProficienciaId);
+        }
+    }
+    public class AntecedenteTagConfiguration : IEntityTypeConfiguration<AntecedenteTag>
+    {
+        public void Configure(EntityTypeBuilder<AntecedenteTag> builder)
+        {
+            builder.HasKey(at => new { at.AntecedenteId, at.Tag });
+
+            builder.HasOne(at => at.Antecedente)
+                   .WithMany(a => a.AntecedenteTags)
+                   .HasForeignKey(at => at.AntecedenteId);
         }
     }
 }

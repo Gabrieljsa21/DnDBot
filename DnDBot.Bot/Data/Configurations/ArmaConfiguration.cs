@@ -1,4 +1,5 @@
-﻿using DnDBot.Bot.Models.ItensInventario;
+﻿using DnDBot.Bot.Models.Ficha.Auxiliares;
+using DnDBot.Bot.Models.ItensInventario;
 using DnDBot.Bot.Models.ItensInventario.Auxiliares;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -7,6 +8,9 @@ public class ArmaConfiguration : IEntityTypeConfiguration<Arma>
 {
     public void Configure(EntityTypeBuilder<Arma> builder)
     {
+
+        builder.ToTable("Arma");
+
         builder.Property(a => a.Nome)
                .IsRequired()
                .HasMaxLength(150);
@@ -44,17 +48,13 @@ public class ArmaConfiguration : IEntityTypeConfiguration<Arma>
         builder.Property(a => a.DurabilidadeMaxima)
                .IsRequired();
 
-        builder.HasDiscriminator<string>("Discriminator")
-                .HasValue<ArmaCorpoACorpo>("CorpoACorpo")
-                .HasValue<ArmaADistancia>("Distancia");
-
         // Campos específicos para armas à distância
         builder.Property<int?>("AlcanceMinimo");
-        builder.Property<int?>("AlcanceMaximo");
+        builder.Property<int>("AlcanceMaximo");
         builder.Property<string>("TipoMunicao").HasMaxLength(50);
-        builder.Property<int?>("MunicaoPorAtaque");
-        builder.Property<bool?>("RequerRecarga");
-        builder.Property<int?>("TempoRecargaTurnos");
+        builder.Property<int>("MunicaoPorAtaque");
+        builder.Property<bool>("RequerRecarga");
+        builder.Property<int>("TempoRecargaTurnos");
 
         // Relacionamentos (exemplo para tags, requisitos, etc)
         builder.Ignore(a => a.Tags); // se Tags for uma propriedade calculada
@@ -71,24 +71,38 @@ public class ArmaConfiguration : IEntityTypeConfiguration<Arma>
     }
 }
 
-public class ArmaCorpoACorpoConfiguration : IEntityTypeConfiguration<ArmaCorpoACorpo>
+public class ArmaTagConfiguration : IEntityTypeConfiguration<ArmaTag>
 {
-    public void Configure(EntityTypeBuilder<ArmaCorpoACorpo> builder)
+    public void Configure(EntityTypeBuilder<ArmaTag> builder)
     {
-        builder.Property(a => a.AlcanceEmMetros).IsRequired();
-        // outras propriedades específicas
+        builder.HasKey(at => new { at.ArmaId, at.Tag });
+
+        builder.HasOne(at => at.Arma)
+               .WithMany(a => a.ArmaTags)
+               .HasForeignKey(at => at.ArmaId);
     }
 }
-
-public class ArmaADistanciaConfiguration : IEntityTypeConfiguration<ArmaADistancia>
+public class ArmaRequisitoAtributoConfiguration : IEntityTypeConfiguration<ArmaRequisitoAtributo>
 {
-    public void Configure(EntityTypeBuilder<ArmaADistancia> builder)
+    /// <summary>
+    /// Configura a entidade ArmaRequisitoAtributo.
+    /// </summary>
+    /// <param name="entity">Construtor para configuração da entidade ArmaRequisitoAtributo.</param>
+    public void Configure(EntityTypeBuilder<ArmaRequisitoAtributo> entity)
     {
-        builder.Property(a => a.AlcanceMinimo);
-        builder.Property(a => a.AlcanceMaximo);
-        builder.Property(a => a.TipoMunicao).HasMaxLength(50);
-        builder.Property(a => a.MunicaoPorAtaque);
-        builder.Property(a => a.RequerRecarga);
-        builder.Property(a => a.TempoRecargaTurnos);
+        // Define a propriedade Id como chave primária da tabela ArmaRequisitoAtributo
+        entity.HasKey(e => e.Id);
+
+        // Configura a propriedade Atributo como obrigatória
+        entity.Property(e => e.Atributo).IsRequired();
+
+        // Configura a propriedade Valor como obrigatória
+        entity.Property(e => e.Valor).IsRequired();
+
+        // Configura o relacionamento muitos-para-um entre ArmaRequisitoAtributo e Arma
+        // Uma arma pode ter vários requisitos de atributo
+        entity.HasOne(e => e.Arma)
+              .WithMany(a => a.RequisitosAtributos)
+              .HasForeignKey(e => e.ArmaId);
     }
 }

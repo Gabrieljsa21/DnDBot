@@ -9,7 +9,7 @@
     "Proficiencias": [ "prof_intuicao", "prof_religiao" ],
     "Ouro": 15,
     "Caracteristicas": [ "abrigo_dos_fieis" ],
-    "Tags": [ "religião", "fé" ],
+    "Tags": [ "religiao", "fe" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "127",
     "Versao": "5e"
@@ -54,7 +54,7 @@
     "Proficiencias": [ "prof_historia", "prof_sobrevivencia" ],
     "Ouro": 25,
     "Caracteristicas": [ "escavador_empoeirado" ],
-    "Tags": [ "exploração", "conhecimento" ],
+    "Tags": [ "exploracao", "conhecimento" ],
     "Fonte": "Tomb of Annihilation",
     "Pagina": "34",
     "Versao": "5e"
@@ -69,7 +69,7 @@
     "Proficiencias": [ "prof_intuicao", "prof_persuasao" ],
     "Ouro": 15,
     "Caracteristicas": [ "associados_da_guilda" ],
-    "Tags": [ "profissão", "respeito" ],
+    "Tags": [ "profissao", "respeito" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "132",
     "Versao": "5e"
@@ -99,7 +99,7 @@
     "Proficiencias": [ "prof_arcanismo", "prof_sobrevivencia", "prof_kit_disfarce" ],
     "Ouro": 10,
     "Caracteristicas": [ "evento_assombrador" ],
-    "Tags": [ "terror", "mistério" ],
+    "Tags": [ "terror", "misterio" ],
     "Fonte": "Curse of Strahd",
     "Pagina": "210",
     "Versao": "5e"
@@ -114,7 +114,7 @@
     "Proficiencias": [ "prof_persuasao", "prof_furtividade" ],
     "Ouro": 20,
     "Caracteristicas": [ "ouvido_nas_ruas" ],
-    "Tags": [ "investigação", "justiça", "cidade" ],
+    "Tags": [ "investigacao", "justica", "cidade" ],
     "Fonte": "SCAG",
     "Pagina": "146",
     "Versao": "5e"
@@ -144,7 +144,7 @@
     "Proficiencias": [ "prof_atletismo", "prof_enganacao", "prof_veiculos_aquaticos" ],
     "Ouro": 15,
     "Caracteristicas": [ "rede_subterranea" ],
-    "Tags": [ "ilegais", "furtividade", "mercado negro" ],
+    "Tags": [ "ilegais", "furtividade", "mercado_negro" ],
     "Fonte": "Homebrew",
     "Pagina": "-",
     "Versao": "Custom"
@@ -159,7 +159,7 @@
     "Proficiencias": [ "prof_enganacao", "prof_furtividade", "prof_ferramentas_ladrao" ],
     "Ouro": 15,
     "Caracteristicas": [ "contato_criminal" ],
-    "Tags": [ "submundo", "furtividade", "sobrevivência" ],
+    "Tags": [ "submundo", "furtividade", "sobrevivencia" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "128",
     "Versao": "5e"
@@ -174,7 +174,7 @@
     "Proficiencias": [ "prof_medicina", "prof_religiao" ],
     "Ouro": 5,
     "Caracteristicas": [ "descoberta" ],
-    "Tags": [ "isolamento", "sabedoria", "mistério" ],
+    "Tags": [ "isolamento", "sabedoria", "misterio" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "128",
     "Versao": "5e"
@@ -189,7 +189,7 @@
     "Proficiencias": [ "prof_atletismo", "prof_sobrevivencia", "prof_kit_herbalismo" ],
     "Ouro": 10,
     "Caracteristicas": [ "andarilho" ],
-    "Tags": [ "natureza", "sobrevivência", "exploração" ],
+    "Tags": [ "natureza", "sobrevivencia", "exploracao" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "131",
     "Versao": "5e"
@@ -201,10 +201,10 @@
     "IdiomasAdicionais": 0,
     "QntOpcoesProficiencia": 1,
     "QntOpcoesItem": 0,
-    "Proficiencias": [ "prof_trata_com_animais", "prof_sobrevivencia", "prof_veiculos_terrestres" ],
+    "Proficiencias": [ "prof_trato_com_animais", "prof_sobrevivencia", "prof_veiculos_terrestres" ],
     "Ouro": 10,
     "Caracteristicas": [ "hospitalidade_rustica" ],
-    "Tags": [ "prestígio", "comunidade", "liderança" ],
+    "Tags": [ "prestigio", "comunidade", "lideranca" ],
     "Fonte": "Homebrew",
     "Pagina": "-",
     "Versao": "Custom"
@@ -219,7 +219,7 @@
     "Proficiencias": [ "prof_atletismo", "prof_percepcao", "prof_ferramentas_navegador", "prof_veiculos_aquaticos" ],
     "Ouro": 10,
     "Caracteristicas": [ "passagem_de_navio" ],
-    "Tags": [ "marítimo", "navegação", "sobrevivência" ],
+    "Tags": [ "maritimo", "navegacao", "sobrevivencia" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "131",
     "Versao": "5e"
@@ -234,7 +234,7 @@
     "Proficiencias": [ "prof_historia", "prof_persuasao" ],
     "Ouro": 25,
     "Caracteristicas": [ "posicao_privilegiada" ],
-    "Tags": [ "nobreza", "influência", "política" ],
+    "Tags": [ "nobreza", "influencia", "politica" ],
     "Fonte": "Livro do Jogador",
     "Pagina": "135",
     "Versao": "5e"
@@ -249,7 +249,7 @@
     "Proficiencias": [ "prof_furtividade", "prof_prestidigitacao", "prof_kit_disfarce", "prof_ferramentas_ladrao" ],
     "Ouro": 10,
     "Caracteristicas": [ "segredos_da_cidade" ],
-    "Tags": [ "sobrevivência", "resiliência", "independência" ],
+    "Tags": [ "sobrevivencia", "resiliencia", "independencia" ],
     "Fonte": "Homebrew",
     "Pagina": "-",
     "Versao": "Custom"
@@ -294,7 +294,7 @@
     "Proficiencias": [ "prof_intuicao", "prof_percepcao" ],
     "Ouro": 5,
     "Caracteristicas": [ "por_que_esta_aqui" ],
-    "Tags": [ "exploração", "cultura", "adaptação" ],
+    "Tags": [ "exploração", "cultura", "adaptacao" ],
     "Fonte": "Homebrew",
     "Pagina": "-",
     "Versao": "Custom"

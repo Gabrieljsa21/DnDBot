@@ -1,4 +1,5 @@
 ﻿using DnDBot.Bot.Models.AntecedenteModels;
+using DnDBot.Bot.Models.Enums;
 using DnDBot.Bot.Models.ItensInventario;
 using System;
 using System.Collections.Generic;
@@ -61,27 +62,14 @@ namespace DnDBot.Bot.Models.Ficha.Auxiliares
         public Antecedente Antecedente { get; set; }
         public Item Item { get; set; }
     }
+    public class AntecedenteNarrativa
+    {
+        public string Id { get; set; } = null!;
+        public string AntecedenteId { get; set; }
+        public string Descricao { get; set; } = null!;
+        public TipoNarrativa Tipo { get; set; }
 
-    public class AntecedenteIdeal
-    {
-        public string AntecedenteId { get; set; }
-        public string IdealId { get; set; }
         public Antecedente Antecedente { get; set; }
-        public Ideal Ideal { get; set; }
-    }
-    public class AntecedenteVinculo
-    {
-        public string AntecedenteId { get; set; }
-        public string VinculoId { get; set; }
-        public Antecedente Antecedente { get; set; }
-        public Vinculo Vinculo { get; set; }
-    }
-    public class AntecedenteDefeito
-    {
-        public string AntecedenteId { get; set; }
-        public string DefeitoId { get; set; }
-        public Antecedente Antecedente { get; set; }
-        public Defeito Defeito { get; set; }
     }
     public class AntecedenteMoeda
     {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DnDBot.Bot.Models.AntecedenteModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,11 +14,6 @@ namespace DnDBot.Bot.Models.Ficha
     public class CaracteristicaPorNivel
     {
         /// <summary>
-        /// Identificador da classe à qual a característica pertence.
-        /// </summary>
-        public string ClasseId { get; set; }
-
-        /// <summary>
         /// Nível no qual a característica é adquirida.
         /// </summary>
         public int Nivel { get; set; }
@@ -28,13 +24,26 @@ namespace DnDBot.Bot.Models.Ficha
         public string CaracteristicaId { get; set; }
 
         /// <summary>
+        /// Referência à entidade da característica associada.
+        /// </summary>
+        public Caracteristica Caracteristica { get; set; }
+
+        /// <summary>
+        /// Identificador da classe à qual a característica pertence.
+        /// </summary>
+        public string ClasseId { get; set; }
+
+        /// <summary>
         /// Referência à entidade da classe associada.
         /// </summary>
         public Classe Classe { get; set; }
 
-        /// <summary>
-        /// Referência à entidade da característica associada.
-        /// </summary>
-        public Caracteristica Caracteristica { get; set; }
+        public string AntecedenteId { get; set; }
+
+        public Antecedente Antecedente { get; set; }
+
+        public string RacaId { get; set; }
+
+        public Raca Raca { get; set; }
     }
 }

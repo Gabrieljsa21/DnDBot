@@ -159,4 +159,15 @@ namespace DnDBot.Bot.Data.Configurations
                    .HasForeignKey(x => x.ClasseId);
         }
     }
+    public class ClasseTagConfiguration : IEntityTypeConfiguration<ClasseTag>
+    {
+        public void Configure(EntityTypeBuilder<ClasseTag> builder)
+        {
+            builder.HasKey(ct => new { ct.ClasseId, ct.Tag });
+
+            builder.HasOne(ct => ct.Classe)
+                   .WithMany(c => c.ClasseTags)
+                   .HasForeignKey(ct => ct.ClasseId);
+        }
+    }
 }

@@ -15,11 +15,20 @@ namespace DnDBot.Bot.Models.ItensInventario
         /// <summary>
         /// Lista de perícias que a ferramenta pode auxiliar ou está associada.
         /// </summary>
-        [JsonIgnore] // Ignorar no JSON, pois você vai usar outra propriedade para desserializar as IDs
+        [JsonIgnore] 
         public List<FerramentaPericia> PericiasAssociadas { get; set; } = new();
 
+        [NotMapped]
         [JsonPropertyName("PericiasAssociadas")]
-        public List<string> PericiasIds { get; set; } = new();
+        public List<string> PericiasIds
+        {
+            get => PericiasAssociadas?.Select(p => p.PericiaId).ToList() ?? new();
+            set => PericiasAssociadas = value?.Select(pid => new FerramentaPericia
+            {
+                FerramentaId = Id,
+                PericiaId = pid
+            }).ToList() ?? new();
+        }
 
         /// <summary>
         /// Indica se a ferramenta requer proficiência para uso efetivo.
@@ -41,5 +50,26 @@ namespace DnDBot.Bot.Models.ItensInventario
             set => FerramentaTags = value?.Select(tag => new FerramentaTag { Tag = tag, FerramentaId = Id }).ToList() ?? new();
         }
 
+        /// <summary>
+        /// Garante que os relacionamentos tenham o FerramentaId preenchido corretamente após a desserialização.
+        /// </summary>
+        public void NormalizarRelacionamentos()
+        {
+            if (PericiasAssociadas != null)
+            {
+                foreach (var pericia in PericiasAssociadas)
+                {
+                    pericia.FerramentaId = Id;
+                }
+            }
+
+            if (FerramentaTags != null)
+            {
+                foreach (var tag in FerramentaTags)
+                {
+                    tag.FerramentaId = Id;
+                }
+            }
+        }
     }
 }

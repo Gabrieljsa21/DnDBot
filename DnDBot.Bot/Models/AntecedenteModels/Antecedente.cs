@@ -1,4 +1,5 @@
 ﻿using DnDBot.Bot.Models;
+using DnDBot.Bot.Models.Enums;
 using DnDBot.Bot.Models.Ficha;
 using DnDBot.Bot.Models.Ficha.Auxiliares;
 using DnDBot.Bot.Models.ItensInventario;
@@ -16,11 +17,24 @@ namespace DnDBot.Bot.Models.AntecedenteModels
     /// </summary>
     public class Antecedente : EntidadeBase
     {
+        [JsonIgnore]
+        public List<AntecedenteProficiencia> Proficiencias { get; set; } = new();
 
         /// <summary>
-        /// Lista das ferramentas concedidas por este antecedente.
+        /// Lista de IDs das proficiências, usada para facilitar a serialização.
         /// </summary>
-        public List<AntecedenteProficiencia> Proficiencia { get; set; } = new();
+        [NotMapped]
+        [JsonPropertyName("Proficiencias")]
+        public List<string> ProficienciaIds
+        {
+            get => Proficiencias?.Select(p => p.ProficienciaId).ToList() ?? new();
+            set => Proficiencias = value?.Select(id => new AntecedenteProficiencia
+            {
+                AntecedenteId = Id,
+                ProficienciaId = id
+            }).ToList() ?? new();
+        }
+
 
         /// <summary>
         /// Equipamentos detalhados que este antecedente concede ao personagem.
@@ -57,20 +71,18 @@ namespace DnDBot.Bot.Models.AntecedenteModels
         [JsonIgnore]
         public List<AntecedenteCaracteristica> Caracteristicas { get; set; } = new();
 
-        /// <summary>
-        /// Ideais associados ao antecedente, que ajudam a moldar a personalidade do personagem.
-        /// </summary>
-        public List<AntecedenteIdeal> Ideais { get; set; } = new();
+        public List<AntecedenteNarrativa> Narrativas { get; set; } = new();
 
-        /// <summary>
-        /// Vínculos do personagem com pessoas, lugares ou eventos ligados a este antecedente.
-        /// </summary>
-        public List<AntecedenteVinculo> Vinculos { get; set; } = new();
+        // Facilita acesso separado a cada tipo de narrativa (ideal, vínculo, defeito)
+        [NotMapped]
+        public List<AntecedenteNarrativa> Ideais => Narrativas?.Where(n => n.Tipo == TipoNarrativa.Ideal).ToList() ?? new();
 
-        /// <summary>
-        /// Defeitos ou fraquezas típicas associadas ao antecedente.
-        /// </summary>
-        public List<AntecedenteDefeito> Defeitos { get; set; } = new();
+        [NotMapped]
+        public List<AntecedenteNarrativa> Vinculos => Narrativas?.Where(n => n.Tipo == TipoNarrativa.Vinculo).ToList() ?? new();
+
+        [NotMapped]
+        public List<AntecedenteNarrativa> Defeitos => Narrativas?.Where(n => n.Tipo == TipoNarrativa.Defeito).ToList() ?? new();
+
 
         /// <summary>
         /// Relacionamento com as tags armazenadas na tabela Antecedente_Tag.
@@ -103,5 +115,6 @@ namespace DnDBot.Bot.Models.AntecedenteModels
                 }).ToList() ?? new List<AntecedenteCaracteristica>();
             }
         }
+
     }
 }

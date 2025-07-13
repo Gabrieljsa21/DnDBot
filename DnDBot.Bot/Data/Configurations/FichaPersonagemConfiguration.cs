@@ -92,6 +92,23 @@ namespace DnDBot.Bot.Data.Configurations
                    .HasForeignKey(f => f.ResistenciaId);
         }
     }
+
+    public class FichaPersonagemCaracteristicaConfiguration : IEntityTypeConfiguration<FichaPersonagemCaracteristica>
+    {
+        public void Configure(EntityTypeBuilder<FichaPersonagemCaracteristica> builder)
+        {
+            builder.HasKey(x => new { x.FichaPersonagemId, x.CaracteristicaId });
+        }
+    }
+
+    public class FichaPersonagemIdiomaConfiguration : IEntityTypeConfiguration<FichaPersonagemIdioma>
+    {
+        public void Configure(EntityTypeBuilder<FichaPersonagemIdioma> builder)
+        {
+            builder.HasKey(x => new { x.FichaPersonagemId, x.IdiomaId });
+        }
+    }
+
     public class FichaPersonagemTagConfiguration : IEntityTypeConfiguration<FichaPersonagemTag>
     {
         public void Configure(EntityTypeBuilder<FichaPersonagemTag> entity)

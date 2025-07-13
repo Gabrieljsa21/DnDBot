@@ -2,6 +2,7 @@
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace DnDBot.Bot.Helpers
@@ -39,11 +40,11 @@ namespace DnDBot.Bot.Helpers
             {
                 ["id"] = entidade.Id,
                 ["nome"] = entidade.Nome ?? "",
-                ["desc"] = entidade.Descricao ?? "",
+                ["descricao"] = entidade.Descricao ?? "",
                 ["fonte"] = entidade.Fonte ?? "",
                 ["pagina"] = entidade.Pagina ?? "",
                 ["versao"] = entidade.Versao ?? "",
-                ["imgUrl"] = entidade.ImagemUrl ?? "",
+                ["imagemUrl"] = entidade.ImagemUrl ?? "",
                 ["iconeUrl"] = entidade.IconeUrl ?? "",
                 ["criadoPor"] = entidade.CriadoPor ?? "",
                 ["criadoEm"] = entidade.CriadoEm ?? DateTime.UtcNow,
@@ -131,15 +132,57 @@ namespace DnDBot.Bot.Helpers
             var parametros = GerarParametrosEntidadeBase(entidade);
 
             var sql = $@"
-        INSERT INTO {tabela} (
-            {SqliteEntidadeBaseHelper.CamposInsert}
-        ) VALUES (
-            {SqliteEntidadeBaseHelper.ValoresInsert}
-        )";
+            INSERT INTO {tabela} (
+                {SqliteEntidadeBaseHelper.CamposInsert}
+            ) VALUES (
+                {SqliteEntidadeBaseHelper.ValoresInsert}
+            )";
 
             var cmd = CriarInsertCommand(conn, tx, sql, parametros);
             await cmd.ExecuteNonQueryAsync();
         }
+
+        public static async Task InserirEntidadeFilhaAsync(SqliteConnection connection, SqliteTransaction transaction, string tabela, Dictionary<string, object> parametros)
+        {
+            var colunas = string.Join(", ", parametros.Keys);
+            var valores = string.Join(", ", parametros.Keys.Select(k => "$" + k));
+
+            var sql = $@"
+        INSERT OR IGNORE INTO {tabela}
+            ({colunas})
+        VALUES
+            ({valores});";
+
+            using var cmd = CriarInsertCommand(connection, transaction, sql, parametros);
+            await cmd.ExecuteNonQueryAsync();
+        }
+
+        public static async Task InserirRelacionamentoSimplesAsync<T>(SqliteConnection conn,SqliteTransaction tx,string tabela,string[] colunas,IEnumerable<T> dados,Func<T, object[]> extratorValores)
+        {
+            if (dados == null || !dados.Any())
+                return;
+
+            var colunasSql = string.Join(", ", colunas);
+            var parametrosSql = string.Join(", ", colunas.Select(c => $"${c}"));
+
+            var sql = $"INSERT OR IGNORE INTO {tabela} ({colunasSql}) VALUES ({parametrosSql});";
+
+            foreach (var item in dados)
+            {
+                var valores = extratorValores(item);
+                using var cmd = conn.CreateCommand();
+                cmd.Transaction = tx;
+                cmd.CommandText = sql;
+
+                for (int i = 0; i < colunas.Length; i++)
+                {
+                    cmd.Parameters.AddWithValue($"${colunas[i]}", valores[i] ?? DBNull.Value);
+                }
+
+                await cmd.ExecuteNonQueryAsync();
+            }
+        }
+
 
 
     }

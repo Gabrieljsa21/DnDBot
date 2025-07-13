@@ -28,7 +28,7 @@ namespace DnDBot.Bot.Models.ItensInventario
 
         public bool PodeAdicionarItem(Item item, int quantidade)
         {
-            double pesoNovo = item.PesoUnitario * quantidade;
+            double? pesoNovo = item.PesoUnitario * quantidade;
             return PesoAtual + pesoNovo <= PesoMaximo;
         }
 

@@ -1,10 +1,9 @@
-﻿using DnDBot.Bot.Models;
+﻿using DnDBot.Bot.Helpers;
+using DnDBot.Bot.Models;
 using DnDBot.Bot.Models.Ficha;
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -14,42 +13,19 @@ public static class ProficienciaDatabaseHelper
 {
     private const string CaminhoJson = "Data/proficiencias.json";
 
-    public static async Task CriarTabelaAsync(SqliteCommand cmd)
-    {
-        var sql = $@"
-        CREATE TABLE IF NOT EXISTS Proficiencia (
-            Id TEXT PRIMARY KEY,
-            Tipo TEXT NOT NULL,
-            TemEspecializacao INTEGER NOT NULL,
-            BonusAdicional INTEGER NOT NULL,
-            {SqliteEntidadeBaseHelper.Campos.Replace("Id TEXT PRIMARY KEY,", "")}
-        );";
-
-        cmd.CommandText = sql;
-        await cmd.ExecuteNonQueryAsync();
-    }
-
-
     public static async Task PopularAsync(SqliteConnection connection, SqliteTransaction transaction)
     {
-        if (!File.Exists(CaminhoJson))
-        {
-            Console.WriteLine("❌ Arquivo proficiencias.json não encontrado.");
-            return;
-        }
-
-        Console.WriteLine("📥 Lendo dados de proficiencias.json...");
-
-        var json = await File.ReadAllTextAsync(CaminhoJson, Encoding.UTF8);
-        var proficiencias = JsonSerializer.Deserialize<List<Proficiencia>>(json, new JsonSerializerOptions
+        var options = new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true,
             Converters = { new JsonStringEnumConverter() }
-        });
+        };
 
-        if (proficiencias == null)
+        var proficiencias = await JsonLoaderHelper.CarregarAsync<List<Proficiencia>>(CaminhoJson, "proficiencias", options);
+
+        if (proficiencias == null || proficiencias.Count == 0)
         {
-            Console.WriteLine("❌ Falha ao desserializar proficiencias.json.");
+            Console.WriteLine("❌ Nenhuma proficiência encontrada no JSON.");
             return;
         }
 
@@ -59,23 +35,13 @@ public static class ProficienciaDatabaseHelper
                 continue;
 
             var parametros = GerarParametrosEntidadeBase(prof);
-            parametros["tipo"] = prof.Tipo.ToString();
-            parametros["temEspecializacao"] = prof.TemEspecializacao ? 1 : 0;
-            parametros["bonusAdicional"] = prof.BonusAdicional;
+            parametros["Id"] = prof.Id;
+            parametros["Tipo"] = prof.Tipo.ToString();
+            parametros["TemEspecializacao"] = prof.TemEspecializacao ? 1 : 0;
+            parametros["BonusAdicional"] = prof.BonusAdicional;
 
-            var sql = $@"
-                INSERT INTO Proficiencia (
-                    Id, Tipo, TemEspecializacao, BonusAdicional,
-                    {SqliteEntidadeBaseHelper.CamposInsert.Replace("Id,", "")}
-                ) VALUES (
-                    $id, $tipo, $temEspecializacao, $bonusAdicional,
-                    {SqliteEntidadeBaseHelper.ValoresInsert.Replace("$id,", "")}
-                );";
-
-            var cmd = CriarInsertCommand(connection, transaction, sql, parametros);
-            await cmd.ExecuteNonQueryAsync();
+            await InserirEntidadeFilhaAsync(connection, transaction, "Proficiencia", parametros);
         }
-
 
         Console.WriteLine("✅ Proficiências populadas.");
     }

@@ -44,6 +44,7 @@ namespace DnDBot.Bot.Data.Configurations
                    .HasForeignKey(x => x.MagiaId);
         }
     }
+
     public class MagiaCondicaoAplicadaConfiguration : IEntityTypeConfiguration<MagiaCondicaoAplicada>
     {
         public void Configure(EntityTypeBuilder<MagiaCondicaoAplicada> builder)

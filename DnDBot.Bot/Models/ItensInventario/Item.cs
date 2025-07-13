@@ -8,7 +8,7 @@ namespace DnDBot.Bot.Models.ItensInventario
 {
     public class Item : EntidadeBase
     {
-        public double PesoUnitario { get; set; }
+        public double PesoUnitario { get; set; } = 0.0;
         public CategoriaItem Categoria { get; set; }
         public SubcategoriaItem SubCategoria { get; set; }
         public bool Empilhavel { get; set; }

@@ -132,52 +132,6 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Defeito",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
-                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
-                    Versao = table.Column<string>(type: "TEXT", nullable: true),
-                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Defeito", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Ideal",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
-                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
-                    Versao = table.Column<string>(type: "TEXT", nullable: true),
-                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Ideal", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Idioma",
                 columns: table => new
                 {
@@ -198,6 +152,29 @@ namespace DnDBot.Bot.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Idioma", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Imunidade",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    TipoDano = table.Column<int>(type: "INTEGER", nullable: false),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Imunidade", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -308,6 +285,28 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PropriedadeEspecial",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
+                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
+                    Versao = table.Column<string>(type: "TEXT", nullable: true),
+                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
+                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
+                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PropriedadeEspecial", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "PropriedadesMagicas",
                 columns: table => new
                 {
@@ -386,29 +385,6 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Vinculo",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Fonte = table.Column<string>(type: "TEXT", nullable: true),
-                    Pagina = table.Column<string>(type: "TEXT", nullable: true),
-                    Versao = table.Column<string>(type: "TEXT", nullable: true),
-                    ImagemUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    IconeUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    CriadoEm = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    ModificadoPor = table.Column<string>(type: "TEXT", nullable: true),
-                    ModificadoEm = table.Column<DateTime>(type: "TEXT", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Vinculo", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AlinhamentoTag",
                 columns: table => new
                 {
@@ -424,6 +400,25 @@ namespace DnDBot.Bot.Migrations
                         principalTable: "Alinhamento",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AntecedenteNarrativa",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
+                    Descricao = table.Column<string>(type: "TEXT", maxLength: 1000, nullable: false),
+                    Tipo = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AntecedenteNarrativa", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AntecedenteNarrativa_Antecedente_AntecedenteId",
+                        column: x => x.AntecedenteId,
+                        principalTable: "Antecedente",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -601,54 +596,6 @@ namespace DnDBot.Bot.Migrations
                         column: x => x.ClasseId,
                         principalTable: "Classe",
                         principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AntecedenteDefeito",
-                columns: table => new
-                {
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: false),
-                    DefeitoId = table.Column<string>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AntecedenteDefeito", x => new { x.AntecedenteId, x.DefeitoId });
-                    table.ForeignKey(
-                        name: "FK_AntecedenteDefeito_Antecedente_AntecedenteId",
-                        column: x => x.AntecedenteId,
-                        principalTable: "Antecedente",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AntecedenteDefeito_Defeito_DefeitoId",
-                        column: x => x.DefeitoId,
-                        principalTable: "Defeito",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AntecedenteIdeal",
-                columns: table => new
-                {
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: false),
-                    IdealId = table.Column<string>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AntecedenteIdeal", x => new { x.AntecedenteId, x.IdealId });
-                    table.ForeignKey(
-                        name: "FK_AntecedenteIdeal_Antecedente_AntecedenteId",
-                        column: x => x.AntecedenteId,
-                        principalTable: "Antecedente",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AntecedenteIdeal_Ideal_IdealId",
-                        column: x => x.IdealId,
-                        principalTable: "Ideal",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -923,51 +870,6 @@ namespace DnDBot.Bot.Migrations
                     Raridade = table.Column<int>(type: "INTEGER", nullable: false),
                     Fabricante = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
                     MaterialId = table.Column<string>(type: "TEXT", nullable: true),
-                    Discriminator = table.Column<string>(type: "TEXT", maxLength: 13, nullable: false),
-                    Tipo = table.Column<int>(type: "INTEGER", nullable: true),
-                    CategoriaArma = table.Column<int>(type: "INTEGER", nullable: true),
-                    DadoDano = table.Column<string>(type: "TEXT", maxLength: 10, nullable: true),
-                    TipoDano = table.Column<int>(type: "INTEGER", nullable: true),
-                    TipoDanoSecundario = table.Column<int>(type: "INTEGER", nullable: true),
-                    EhDuasMaos = table.Column<bool>(type: "INTEGER", nullable: true),
-                    EhLeve = table.Column<bool>(type: "INTEGER", nullable: true),
-                    EhVersatil = table.Column<bool>(type: "INTEGER", nullable: true),
-                    EhAgil = table.Column<bool>(type: "INTEGER", nullable: true),
-                    EhPesada = table.Column<bool>(type: "INTEGER", nullable: true),
-                    DadoDanoVersatil = table.Column<string>(type: "TEXT", maxLength: 10, nullable: true),
-                    Requisitos = table.Column<string>(type: "TEXT", nullable: true),
-                    Arma_PropriedadesEspeciais = table.Column<string>(type: "TEXT", nullable: true),
-                    BonusContraTipos = table.Column<string>(type: "TEXT", nullable: true),
-                    MagiasAssociadas = table.Column<string>(type: "TEXT", nullable: true),
-                    Arma_DurabilidadeAtual = table.Column<int>(type: "INTEGER", nullable: true),
-                    Arma_DurabilidadeMaxima = table.Column<int>(type: "INTEGER", nullable: true),
-                    AreaAtaque = table.Column<int>(type: "INTEGER", nullable: true),
-                    TipoAcao = table.Column<int>(type: "INTEGER", nullable: true),
-                    RegraCritico = table.Column<string>(type: "TEXT", nullable: true),
-                    AtaquesEspeciais = table.Column<string>(type: "TEXT", nullable: true),
-                    AlcanceMaximo = table.Column<int>(type: "INTEGER", nullable: true),
-                    AlcanceMinimo = table.Column<int>(type: "INTEGER", nullable: true),
-                    MunicaoPorAtaque = table.Column<int>(type: "INTEGER", nullable: true),
-                    RequerRecarga = table.Column<bool>(type: "INTEGER", nullable: true),
-                    TempoRecargaTurnos = table.Column<int>(type: "INTEGER", nullable: true),
-                    TipoMunicao = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
-                    AlcanceEmMetros = table.Column<int>(type: "INTEGER", nullable: true),
-                    PodeSerArremessada = table.Column<bool>(type: "INTEGER", nullable: true),
-                    AlcanceArremesso = table.Column<int>(type: "INTEGER", nullable: true),
-                    ClasseArmadura = table.Column<int>(type: "INTEGER", nullable: true),
-                    ImpedeFurtividade = table.Column<bool>(type: "INTEGER", nullable: true),
-                    BonusDestrezaMaximo = table.Column<int>(type: "INTEGER", nullable: true),
-                    RequisitoForca = table.Column<int>(type: "INTEGER", nullable: true),
-                    PropriedadesEspeciais = table.Column<string>(type: "TEXT", nullable: true),
-                    Armadura_DurabilidadeAtual = table.Column<int>(type: "INTEGER", nullable: true),
-                    Armadura_DurabilidadeMaxima = table.Column<int>(type: "INTEGER", nullable: true),
-                    ResistenciasDano = table.Column<string>(type: "TEXT", nullable: true),
-                    ImunidadesDano = table.Column<string>(type: "TEXT", nullable: true),
-                    BonusCA = table.Column<int>(type: "INTEGER", nullable: true, defaultValue: 2),
-                    DurabilidadeAtual = table.Column<int>(type: "INTEGER", nullable: true),
-                    DurabilidadeMaxima = table.Column<int>(type: "INTEGER", nullable: true),
-                    PericiasIds = table.Column<string>(type: "TEXT", nullable: true),
-                    RequerProficiencia = table.Column<bool>(type: "INTEGER", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", maxLength: 150, nullable: false),
                     Descricao = table.Column<string>(type: "TEXT", maxLength: 1000, nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
@@ -1041,30 +943,6 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AntecedenteVinculo",
-                columns: table => new
-                {
-                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: false),
-                    VinculoId = table.Column<string>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AntecedenteVinculo", x => new { x.AntecedenteId, x.VinculoId });
-                    table.ForeignKey(
-                        name: "FK_AntecedenteVinculo_Antecedente_AntecedenteId",
-                        column: x => x.AntecedenteId,
-                        principalTable: "Antecedente",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AntecedenteVinculo_Vinculo_VinculoId",
-                        column: x => x.VinculoId,
-                        principalTable: "Vinculo",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ClasseMoeda",
                 columns: table => new
                 {
@@ -1092,15 +970,23 @@ namespace DnDBot.Bot.Migrations
                 name: "CaracteristicaPorNivel",
                 columns: table => new
                 {
-                    ClasseId = table.Column<string>(type: "TEXT", nullable: false),
                     Nivel = table.Column<int>(type: "INTEGER", nullable: false),
                     CaracteristicaId = table.Column<string>(type: "TEXT", nullable: false),
+                    ClasseId = table.Column<string>(type: "TEXT", nullable: false),
                     ClasseId1 = table.Column<string>(type: "TEXT", nullable: true),
+                    AntecedenteId = table.Column<string>(type: "TEXT", nullable: true),
+                    RacaId = table.Column<string>(type: "TEXT", nullable: true),
                     SubclasseId = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CaracteristicaPorNivel", x => new { x.ClasseId, x.Nivel, x.CaracteristicaId });
+                    table.ForeignKey(
+                        name: "FK_CaracteristicaPorNivel_Antecedente_AntecedenteId",
+                        column: x => x.AntecedenteId,
+                        principalTable: "Antecedente",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_CaracteristicaPorNivel_Caracteristica_CaracteristicaId",
                         column: x => x.CaracteristicaId,
@@ -1118,6 +1004,12 @@ namespace DnDBot.Bot.Migrations
                         column: x => x.ClasseId1,
                         principalTable: "Classe",
                         principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_CaracteristicaPorNivel_Raca_RacaId",
+                        column: x => x.RacaId,
+                        principalTable: "Raca",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_CaracteristicaPorNivel_Subclasse_SubclasseId",
                         column: x => x.SubclasseId,
@@ -1423,56 +1315,69 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ArmaduraTag",
+                name: "Arma",
                 columns: table => new
                 {
-                    ArmaduraId = table.Column<string>(type: "TEXT", nullable: false),
-                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Tipo = table.Column<int>(type: "INTEGER", nullable: false),
+                    CategoriaArma = table.Column<int>(type: "INTEGER", nullable: false),
+                    DadoDano = table.Column<string>(type: "TEXT", maxLength: 10, nullable: false),
+                    TipoDano = table.Column<int>(type: "INTEGER", nullable: false),
+                    TipoDanoSecundario = table.Column<int>(type: "INTEGER", nullable: true),
+                    EhDuasMaos = table.Column<bool>(type: "INTEGER", nullable: false),
+                    EhLeve = table.Column<bool>(type: "INTEGER", nullable: false),
+                    EhVersatil = table.Column<bool>(type: "INTEGER", nullable: false),
+                    EhAgil = table.Column<bool>(type: "INTEGER", nullable: false),
+                    EhPesada = table.Column<bool>(type: "INTEGER", nullable: false),
+                    DadoDanoVersatil = table.Column<string>(type: "TEXT", maxLength: 10, nullable: true),
+                    Requisitos = table.Column<string>(type: "TEXT", nullable: true),
+                    PropriedadesEspeciais = table.Column<string>(type: "TEXT", nullable: true),
+                    BonusContraTipos = table.Column<string>(type: "TEXT", nullable: true),
+                    MagiasAssociadas = table.Column<string>(type: "TEXT", nullable: true),
+                    DurabilidadeAtual = table.Column<int>(type: "INTEGER", nullable: false),
+                    DurabilidadeMaxima = table.Column<int>(type: "INTEGER", nullable: false),
+                    AreaAtaque = table.Column<int>(type: "INTEGER", nullable: false),
+                    TipoAcao = table.Column<int>(type: "INTEGER", nullable: false),
+                    RegraCritico = table.Column<string>(type: "TEXT", nullable: true),
+                    AtaquesEspeciais = table.Column<string>(type: "TEXT", nullable: true),
+                    AlcanceMinimo = table.Column<int>(type: "INTEGER", nullable: true),
+                    AlcanceMaximo = table.Column<int>(type: "INTEGER", nullable: false),
+                    TipoMunicao = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
+                    MunicaoPorAtaque = table.Column<int>(type: "INTEGER", nullable: false),
+                    RequerRecarga = table.Column<bool>(type: "INTEGER", nullable: false),
+                    TempoRecargaTurnos = table.Column<int>(type: "INTEGER", nullable: false),
+                    PodeSerArremessada = table.Column<bool>(type: "INTEGER", nullable: false),
+                    AlcanceArremesso = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ArmaduraTag", x => new { x.ArmaduraId, x.Tag });
+                    table.PrimaryKey("PK_Arma", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ArmaduraTag_Item_ArmaduraId",
-                        column: x => x.ArmaduraId,
+                        name: "FK_Arma_Item_Id",
+                        column: x => x.Id,
                         principalTable: "Item",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ArmaRequisitoAtributo",
+                name: "Armadura",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    ArmaId = table.Column<string>(type: "TEXT", nullable: true),
-                    Atributo = table.Column<int>(type: "INTEGER", nullable: false),
-                    Valor = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    ClasseArmadura = table.Column<int>(type: "INTEGER", nullable: false),
+                    ImpedeFurtividade = table.Column<bool>(type: "INTEGER", nullable: false),
+                    BonusDestrezaMaximo = table.Column<int>(type: "INTEGER", nullable: false),
+                    RequisitoForca = table.Column<int>(type: "INTEGER", nullable: false),
+                    DurabilidadeAtual = table.Column<int>(type: "INTEGER", nullable: false),
+                    DurabilidadeMaxima = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ArmaRequisitoAtributo", x => x.Id);
+                    table.PrimaryKey("PK_Armadura", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ArmaRequisitoAtributo_Item_ArmaId",
-                        column: x => x.ArmaId,
-                        principalTable: "Item",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ArmaTag",
-                columns: table => new
-                {
-                    ArmaId = table.Column<string>(type: "TEXT", nullable: false),
-                    Tag = table.Column<string>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ArmaTag", x => new { x.ArmaId, x.Tag });
-                    table.ForeignKey(
-                        name: "FK_ArmaTag_Item_ArmaId",
-                        column: x => x.ArmaId,
+                        name: "FK_Armadura_Item_Id",
+                        column: x => x.Id,
                         principalTable: "Item",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -1509,66 +1414,38 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "EscudoPropriedadeEspecial",
+                name: "Escudo",
                 columns: table => new
                 {
-                    EscudoId = table.Column<string>(type: "TEXT", nullable: false),
-                    Propriedade = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
-                    EscudoId1 = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    BonusCA = table.Column<int>(type: "INTEGER", nullable: false, defaultValue: 2),
+                    DurabilidadeAtual = table.Column<int>(type: "INTEGER", nullable: false),
+                    DurabilidadeMaxima = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EscudoPropriedadeEspecial", x => new { x.EscudoId, x.Propriedade });
+                    table.PrimaryKey("PK_Escudo", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_EscudoPropriedadeEspecial_Item_EscudoId",
-                        column: x => x.EscudoId,
+                        name: "FK_Escudo_Item_Id",
+                        column: x => x.Id,
                         principalTable: "Item",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_EscudoPropriedadeEspecial_Item_EscudoId1",
-                        column: x => x.EscudoId1,
-                        principalTable: "Item",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "FerramentaPericia",
-                columns: table => new
-                {
-                    FerramentaId = table.Column<string>(type: "TEXT", nullable: false),
-                    PericiaId = table.Column<string>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FerramentaPericia", x => new { x.FerramentaId, x.PericiaId });
-                    table.ForeignKey(
-                        name: "FK_FerramentaPericia_Item_FerramentaId",
-                        column: x => x.FerramentaId,
-                        principalTable: "Item",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_FerramentaPericia_Pericia_PericiaId",
-                        column: x => x.PericiaId,
-                        principalTable: "Pericia",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "FerramentaTag",
+                name: "Ferramenta",
                 columns: table => new
                 {
-                    FerramentaId = table.Column<string>(type: "TEXT", nullable: false),
-                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    RequerProficiencia = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FerramentaTag", x => new { x.FerramentaId, x.Tag });
+                    table.PrimaryKey("PK_Ferramenta", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_FerramentaTag_Item_FerramentaId",
-                        column: x => x.FerramentaId,
+                        name: "FK_Ferramenta_Item_Id",
+                        column: x => x.Id,
                         principalTable: "Item",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -1848,6 +1725,200 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ArmaRequisitoAtributo",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ArmaId = table.Column<string>(type: "TEXT", nullable: true),
+                    Atributo = table.Column<int>(type: "INTEGER", nullable: false),
+                    Valor = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ArmaRequisitoAtributo", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ArmaRequisitoAtributo_Arma_ArmaId",
+                        column: x => x.ArmaId,
+                        principalTable: "Arma",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ArmaTag",
+                columns: table => new
+                {
+                    ArmaId = table.Column<string>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ArmaTag", x => new { x.ArmaId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_ArmaTag_Arma_ArmaId",
+                        column: x => x.ArmaId,
+                        principalTable: "Arma",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ArmaduraImunidadeDano",
+                columns: table => new
+                {
+                    ArmaduraId = table.Column<string>(type: "TEXT", nullable: false),
+                    ImunidadeId = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ArmaduraImunidadeDano", x => new { x.ArmaduraId, x.ImunidadeId });
+                    table.ForeignKey(
+                        name: "FK_ArmaduraImunidadeDano_Armadura_ArmaduraId",
+                        column: x => x.ArmaduraId,
+                        principalTable: "Armadura",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ArmaduraImunidadeDano_Imunidade_ImunidadeId",
+                        column: x => x.ImunidadeId,
+                        principalTable: "Imunidade",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ArmaduraPropriedadeEspecial",
+                columns: table => new
+                {
+                    ArmaduraId = table.Column<string>(type: "TEXT", nullable: false),
+                    PropriedadeEspecialId = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ArmaduraPropriedadeEspecial", x => new { x.ArmaduraId, x.PropriedadeEspecialId });
+                    table.ForeignKey(
+                        name: "FK_ArmaduraPropriedadeEspecial_Armadura_ArmaduraId",
+                        column: x => x.ArmaduraId,
+                        principalTable: "Armadura",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ArmaduraPropriedadeEspecial_PropriedadeEspecial_PropriedadeEspecialId",
+                        column: x => x.PropriedadeEspecialId,
+                        principalTable: "PropriedadeEspecial",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ArmaduraResistencia",
+                columns: table => new
+                {
+                    ArmaduraId = table.Column<string>(type: "TEXT", nullable: false),
+                    ResistenciaId = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ArmaduraResistencia", x => new { x.ArmaduraId, x.ResistenciaId });
+                    table.ForeignKey(
+                        name: "FK_ArmaduraResistencia_Armadura_ArmaduraId",
+                        column: x => x.ArmaduraId,
+                        principalTable: "Armadura",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ArmaduraResistencia_Resistencia_ResistenciaId",
+                        column: x => x.ResistenciaId,
+                        principalTable: "Resistencia",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ArmaduraTag",
+                columns: table => new
+                {
+                    ArmaduraId = table.Column<string>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ArmaduraTag", x => new { x.ArmaduraId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_ArmaduraTag_Armadura_ArmaduraId",
+                        column: x => x.ArmaduraId,
+                        principalTable: "Armadura",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "EscudoPropriedadeEspecial",
+                columns: table => new
+                {
+                    EscudoId = table.Column<string>(type: "TEXT", nullable: false),
+                    Propriedade = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
+                    EscudoId1 = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EscudoPropriedadeEspecial", x => new { x.EscudoId, x.Propriedade });
+                    table.ForeignKey(
+                        name: "FK_EscudoPropriedadeEspecial_Escudo_EscudoId",
+                        column: x => x.EscudoId,
+                        principalTable: "Escudo",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_EscudoPropriedadeEspecial_Escudo_EscudoId1",
+                        column: x => x.EscudoId1,
+                        principalTable: "Escudo",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FerramentaPericia",
+                columns: table => new
+                {
+                    FerramentaId = table.Column<string>(type: "TEXT", nullable: false),
+                    PericiaId = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FerramentaPericia", x => new { x.FerramentaId, x.PericiaId });
+                    table.ForeignKey(
+                        name: "FK_FerramentaPericia_Ferramenta_FerramentaId",
+                        column: x => x.FerramentaId,
+                        principalTable: "Ferramenta",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_FerramentaPericia_Pericia_PericiaId",
+                        column: x => x.PericiaId,
+                        principalTable: "Pericia",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FerramentaTag",
+                columns: table => new
+                {
+                    FerramentaId = table.Column<string>(type: "TEXT", nullable: false),
+                    Tag = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FerramentaTag", x => new { x.FerramentaId, x.Tag });
+                    table.ForeignKey(
+                        name: "FK_FerramentaTag_Ferramenta_FerramentaId",
+                        column: x => x.FerramentaId,
+                        principalTable: "Ferramenta",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "EquipamentoItem",
                 columns: table => new
                 {
@@ -1877,16 +1948,6 @@ namespace DnDBot.Bot.Migrations
                 column: "CaracteristicaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AntecedenteDefeito_DefeitoId",
-                table: "AntecedenteDefeito",
-                column: "DefeitoId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AntecedenteIdeal_IdealId",
-                table: "AntecedenteIdeal",
-                column: "IdealId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_AntecedenteItem_ItemId",
                 table: "AntecedenteItem",
                 column: "ItemId");
@@ -1895,6 +1956,11 @@ namespace DnDBot.Bot.Migrations
                 name: "IX_AntecedenteItemOpcoes_ItemId",
                 table: "AntecedenteItemOpcoes",
                 column: "ItemId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AntecedenteNarrativa_AntecedenteId",
+                table: "AntecedenteNarrativa",
+                column: "AntecedenteId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AntecedenteProficiencia_ProficienciaId",
@@ -1907,9 +1973,19 @@ namespace DnDBot.Bot.Migrations
                 column: "ProficienciaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_AntecedenteVinculo_VinculoId",
-                table: "AntecedenteVinculo",
-                column: "VinculoId");
+                name: "IX_ArmaduraImunidadeDano_ImunidadeId",
+                table: "ArmaduraImunidadeDano",
+                column: "ImunidadeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ArmaduraPropriedadeEspecial_PropriedadeEspecialId",
+                table: "ArmaduraPropriedadeEspecial",
+                column: "PropriedadeEspecialId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ArmaduraResistencia_ResistenciaId",
+                table: "ArmaduraResistencia",
+                column: "ResistenciaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ArmaRequisitoAtributo_ArmaId",
@@ -1927,6 +2003,11 @@ namespace DnDBot.Bot.Migrations
                 column: "SubRacaId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_CaracteristicaPorNivel_AntecedenteId",
+                table: "CaracteristicaPorNivel",
+                column: "AntecedenteId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CaracteristicaPorNivel_CaracteristicaId",
                 table: "CaracteristicaPorNivel",
                 column: "CaracteristicaId");
@@ -1935,6 +2016,11 @@ namespace DnDBot.Bot.Migrations
                 name: "IX_CaracteristicaPorNivel_ClasseId1",
                 table: "CaracteristicaPorNivel",
                 column: "ClasseId1");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CaracteristicaPorNivel_RacaId",
+                table: "CaracteristicaPorNivel",
+                column: "RacaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CaracteristicaPorNivel_SubclasseId",
@@ -2184,16 +2270,13 @@ namespace DnDBot.Bot.Migrations
                 name: "AntecedenteCaracteristica");
 
             migrationBuilder.DropTable(
-                name: "AntecedenteDefeito");
-
-            migrationBuilder.DropTable(
-                name: "AntecedenteIdeal");
-
-            migrationBuilder.DropTable(
                 name: "AntecedenteItem");
 
             migrationBuilder.DropTable(
                 name: "AntecedenteItemOpcoes");
+
+            migrationBuilder.DropTable(
+                name: "AntecedenteNarrativa");
 
             migrationBuilder.DropTable(
                 name: "AntecedenteProficiencia");
@@ -2205,7 +2288,13 @@ namespace DnDBot.Bot.Migrations
                 name: "AntecedenteTag");
 
             migrationBuilder.DropTable(
-                name: "AntecedenteVinculo");
+                name: "ArmaduraImunidadeDano");
+
+            migrationBuilder.DropTable(
+                name: "ArmaduraPropriedadeEspecial");
+
+            migrationBuilder.DropTable(
+                name: "ArmaduraResistencia");
 
             migrationBuilder.DropTable(
                 name: "ArmaduraTag");
@@ -2325,16 +2414,19 @@ namespace DnDBot.Bot.Migrations
                 name: "SubRacaTag");
 
             migrationBuilder.DropTable(
-                name: "Defeito");
+                name: "Imunidade");
 
             migrationBuilder.DropTable(
-                name: "Ideal");
+                name: "PropriedadeEspecial");
+
+            migrationBuilder.DropTable(
+                name: "Armadura");
+
+            migrationBuilder.DropTable(
+                name: "Arma");
 
             migrationBuilder.DropTable(
                 name: "Antecedente");
-
-            migrationBuilder.DropTable(
-                name: "Vinculo");
 
             migrationBuilder.DropTable(
                 name: "Subclasse");
@@ -2344,6 +2436,12 @@ namespace DnDBot.Bot.Migrations
 
             migrationBuilder.DropTable(
                 name: "InventarioItem");
+
+            migrationBuilder.DropTable(
+                name: "Escudo");
+
+            migrationBuilder.DropTable(
+                name: "Ferramenta");
 
             migrationBuilder.DropTable(
                 name: "Material");

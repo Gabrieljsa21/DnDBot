@@ -3,6 +3,16 @@ using DnDBot.Bot.Models.ItensInventario;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
+public class ItemConfiguration : IEntityTypeConfiguration<Item>
+{
+    public void Configure(EntityTypeBuilder<Item> builder)
+    {
+        builder.ToTable("Item");
+        builder.HasKey(i => i.Id);
+    }
+}
+
+
 public class ItemRacaConfiguration : IEntityTypeConfiguration<ItemRaca>
 {
     public void Configure(EntityTypeBuilder<ItemRaca> builder)

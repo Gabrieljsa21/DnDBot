@@ -1,4 +1,5 @@
 ﻿using DnDBot.Bot.Models.Enums;
+using DnDBot.Bot.Models.Ficha;
 using DnDBot.Bot.Models.Ficha.Auxiliares;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -16,13 +17,13 @@ namespace DnDBot.Bot.Models.ItensInventario
         public int BonusDestrezaMaximo { get; set; } = -1; // -1 = sem limite
 
         public int RequisitoForca { get; set; } = 0;
-        public List<string> PropriedadesEspeciais { get; set; } = new();
+        public List<ArmaduraPropriedadeEspecial> PropriedadesEspeciais { get; set; } = new();
 
         public int DurabilidadeAtual { get; set; }
         public int DurabilidadeMaxima { get; set; }
 
-        public List<TipoDano> ResistenciasDano { get; set; } = new();
-        public List<TipoDano> ImunidadesDano { get; set; } = new();
+        public List<ArmaduraResistencia> Resistencias { get; set; } = new();
+        public List<ArmaduraImunidade> Imunidades { get; set; } = new();
 
         public List<ArmaduraTag> ArmaduraTags { get; set; } = new();
 

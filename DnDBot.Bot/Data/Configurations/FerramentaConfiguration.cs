@@ -22,6 +22,11 @@ public class FerramentaConfiguration : IEntityTypeConfiguration<Ferramenta>
                .HasForeignKey(fp => fp.FerramentaId);
 
         builder.Ignore(f => f.Tags);
+
+        // Relacionamento Ferramenta ↔ FerramentaTag
+        builder.HasMany(f => f.FerramentaTags)
+               .WithOne(ft => ft.Ferramenta)
+               .HasForeignKey(ft => ft.FerramentaId);
     }
 }
 
@@ -38,5 +43,17 @@ public class FerramentaPericiaConfiguration : IEntityTypeConfiguration<Ferrament
         builder.HasOne(fp => fp.Pericia)
                .WithMany()
                .HasForeignKey(fp => fp.PericiaId);
+    }
+}
+
+public class FerramentaTagConfiguration : IEntityTypeConfiguration<FerramentaTag>
+{
+    public void Configure(EntityTypeBuilder<FerramentaTag> builder)
+    {
+        builder.HasKey(ft => new { ft.FerramentaId, ft.Tag });
+
+        builder.HasOne(ft => ft.Ferramenta)
+               .WithMany(f => f.FerramentaTags)
+               .HasForeignKey(ft => ft.FerramentaId);
     }
 }

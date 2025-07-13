@@ -3,6 +3,7 @@ using DnDBot.Bot.Models.AntecedenteModels;
 using DnDBot.Bot.Models.Ficha;
 using DnDBot.Bot.Models.Ficha.Auxiliares;
 using DnDBot.Bot.Models.ItensInventario;
+using DnDBot.Bot.Models.ItensInventario.Auxiliares;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
@@ -25,32 +26,89 @@ namespace DnDBot.Bot.Data
         }
 
         // DbSets representam as tabelas do banco de dados para cada entidade.
-
+        #region Personagem e Ficha
         public DbSet<FichaPersonagem> FichaPersonagem { get; set; }
+        public DbSet<FichaPersonagemIdioma> FichaPersonagemIdioma { get; set; }
+        public DbSet<Inventario> Inventarios { get; set; }
+        #endregion
+
+        #region Raças e Sub-raças
         public DbSet<Raca> Raca { get; set; }
+        public DbSet<RacaTag> RacaTag { get; set; }
         public DbSet<SubRaca> SubRaca { get; set; }
+        public DbSet<SubRacaResistencia> SubRacaResistencia { get; set; }
+        public DbSet<SubRacaIdioma> SubRacaIdioma { get; set; }
+        public DbSet<SubRacaCaracteristica> SubRacaCaracteristica { get; set; }
+        public DbSet<SubRacaProficiencia> SubRacaProficiencia { get; set; }
+        public DbSet<SubRacaMagia> SubRacaMagia { get; set; }
         public DbSet<SubRacaAlinhamento> SubRacaAlinhamento { get; set; }
-        public DbSet<Alinhamento> Alinhamento { get; set; }
+        #endregion
+
+        #region Antecedentes
         public DbSet<Antecedente> Antecedente { get; set; }
-        public DbSet<Proficiencia> Proficiencia { get; set; }
-        public DbSet<Resistencia> Resistencia { get; set; }
-        public DbSet<Caracteristica> Caracteristica { get; set; }
-        public DbSet<Magia> Magia { get; set; }
-        public DbSet<BonusAtributo> BonusAtributo { get; set; }
+        public DbSet<AntecedenteTag> AntecedenteTag { get; set; }
+        public DbSet<AntecedenteProficiencia> AntecedenteProficiencia { get; set; }
+        public DbSet<AntecedenteProficienciaOpcoes> AntecedenteProficienciaOpcoes { get; set; }
+        public DbSet<AntecedenteItem> AntecedenteItem { get; set; }
+        public DbSet<AntecedenteItemOpcoes> AntecedenteItemOpcoes { get; set; }
+        public DbSet<AntecedenteCaracteristica> AntecedenteCaracteristica { get; set; }
+        public DbSet<AntecedenteNarrativa> AntecedenteNarrativa { get; set; }
+        #endregion
+
+        #region Classes
         public DbSet<Classe> Classe { get; set; }
+        public DbSet<ClasseTag> ClasseTag { get; set; }
         public DbSet<ClassePericia> ClassePericias { get; set; }
         public DbSet<ClasseProficiencia> ClasseProficienciasArmas { get; set; }
         public DbSet<ClasseSalvaguarda> ClasseSalvaguardas { get; set; }
         public DbSet<ClasseMagia> ClasseMagias { get; set; }
+        #endregion
+
+        #region Sistema de Regras
+        public DbSet<Proficiencia> Proficiencia { get; set; }
+        public DbSet<Resistencia> Resistencia { get; set; }
+        public DbSet<Caracteristica> Caracteristica { get; set; }
+        public DbSet<BonusAtributo> BonusAtributo { get; set; }
         public DbSet<Pericia> Pericia { get; set; }
-        public DbSet<Inventario> Inventarios { get; set; }
+        public DbSet<DificuldadePericia> DificuldadePericia { get; set; }
         public DbSet<Idioma> Idioma { get; set; }
-        public DbSet<AntecedenteItemOpcoes> AntecedenteItemOpcoes { get; set; }
-        public DbSet<AntecedenteProficienciaOpcoes> AntecedenteProficienciaOpcoes { get; set; }
+        public DbSet<Alinhamento> Alinhamento { get; set; }
+        public DbSet<AlinhamentoTag> AlinhamentoTag { get; set; }
+        #endregion
 
+        #region Magias
+        public DbSet<Magia> Magia { get; set; }
+        public DbSet<MagiaTag> MagiaTag { get; set; }
+        #endregion
 
-        // Lista normal (não DbSet) para requisitos de atributos de armas, talvez gerenciada separadamente
-        public List<ArmaRequisitoAtributo> RequisitosAtributos { get; set; }
+        #region Itens
+        public DbSet<Item> Item { get; set; }
+        #endregion
+
+        #region Armas
+        public DbSet<Arma> Arma { get; set; }
+        public DbSet<ArmaTag> ArmaTag { get; set; }
+        public DbSet<ArmaRequisitoAtributo> ArmaRequisitoAtributo { get; set; }
+        #endregion
+
+        #region Armaduras
+        public DbSet<Armadura> Armadura { get; set; }
+        public DbSet<ArmaduraTag> ArmaduraTag { get; set; }
+        public DbSet<ArmaduraPropriedadeEspecial> ArmaduraPropriedadeEspecial { get; set; }
+        public DbSet<ArmaduraResistencia> ArmaduraResistencia { get; set; }
+        public DbSet<ArmaduraImunidade> ArmaduraImunidadeDano { get; set; }
+        #endregion
+
+        #region Ferramentas
+        public DbSet<Ferramenta> Ferramenta { get; set; }
+        public DbSet<FerramentaTag> FerramentaTag { get; set; }
+        public DbSet<FerramentaPericia> FerramentaPericia { get; set; }
+        #endregion
+
+        #region Escudos
+        public DbSet<Escudo> Escudo { get; set; }
+        public DbSet<EscudoPropriedadeEspecial> EscudoPropriedadeEspecial { get; set; }
+        #endregion
 
         /// <summary>
         /// Configurações adicionais do modelo e aplicação das configurações automáticas
@@ -64,101 +122,6 @@ namespace DnDBot.Bot.Data
 
             // Aplica automaticamente todas as configurações de entidades presentes neste assembly
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(DnDBotDbContext).Assembly);
-
-            modelBuilder.Entity<RacaTag>()
-                .HasKey(rt => new { rt.RacaId, rt.Tag });
-
-            modelBuilder.Entity<RacaTag>()
-                .HasOne(rt => rt.Raca)
-                .WithMany(r => r.RacaTags)
-                .HasForeignKey(rt => rt.RacaId);
-
-            modelBuilder.Entity<SubRacaTag>()
-                .HasKey(rt => new { rt.SubRacaId, rt.Tag });
-
-            modelBuilder.Entity<SubRacaTag>()
-                .HasOne(rt => rt.SubRaca)
-                .WithMany(r => r.SubRacaTags)
-                .HasForeignKey(rt => rt.SubRacaId);
-
-            modelBuilder.Entity<MagiaTag>()
-    .HasKey(mt => new { mt.MagiaId, mt.Tag });
-
-            modelBuilder.Entity<MagiaTag>()
-                .HasOne(mt => mt.Magia)
-                .WithMany(m => m.MagiaTags)
-                .HasForeignKey(mt => mt.MagiaId);
-
-            modelBuilder.Entity<ClasseTag>()
-    .HasKey(ct => new { ct.ClasseId, ct.Tag });
-
-            modelBuilder.Entity<ClasseTag>()
-                .HasOne(ct => ct.Classe)
-                .WithMany(c => c.ClasseTags)
-                .HasForeignKey(ct => ct.ClasseId);
-
-            modelBuilder.Entity<ArmaduraTag>()
-    .HasKey(at => new { at.ArmaduraId, at.Tag });
-
-            modelBuilder.Entity<ArmaduraTag>()
-                .HasOne(at => at.Armadura)
-                .WithMany(a => a.ArmaduraTags)
-                .HasForeignKey(at => at.ArmaduraId);
-
-            modelBuilder.Entity<ArmaTag>()
-    .HasKey(at => new { at.ArmaId, at.Tag });
-
-            modelBuilder.Entity<ArmaTag>()
-                .HasOne(at => at.Arma)
-                .WithMany(a => a.ArmaTags)
-                .HasForeignKey(at => at.ArmaId);
-
-            modelBuilder.Entity<FichaPersonagemTag>()
-    .HasKey(ft => new { ft.FichaPersonagemId, ft.Tag });
-
-            modelBuilder.Entity<FichaPersonagemTag>()
-                .HasOne(ft => ft.FichaPersonagem)
-                .WithMany(fp => fp.FichaPersonagemTags)
-                .HasForeignKey(ft => ft.FichaPersonagemId);
-
-            modelBuilder.Entity<AlinhamentoTag>()
-    .HasKey(at => new { at.AlinhamentoId, at.Tag });
-
-            modelBuilder.Entity<AlinhamentoTag>()
-                .HasOne(at => at.Alinhamento)
-                .WithMany(a => a.AlinhamentoTags)
-                .HasForeignKey(at => at.AlinhamentoId);
-
-            modelBuilder.Entity<FerramentaTag>()
-                .HasKey(ft => new { ft.FerramentaId, ft.Tag });
-
-            modelBuilder.Entity<FerramentaTag>()
-                .HasOne(ft => ft.Ferramenta)
-                .WithMany(f => f.FerramentaTags)
-                .HasForeignKey(ft => ft.FerramentaId);
-
-            modelBuilder.Entity<AntecedenteTag>()
-    .HasKey(at => new { at.AntecedenteId, at.Tag });
-
-            modelBuilder.Entity<AntecedenteTag>()
-                .HasOne(at => at.Antecedente)
-                .WithMany(a => a.AntecedenteTags)
-                .HasForeignKey(at => at.AntecedenteId);
-
-            // FichaPersonagem ↔ Caracteristica
-            modelBuilder.Entity<FichaPersonagemCaracteristica>()
-                .HasKey(x => new { x.FichaPersonagemId, x.CaracteristicaId });
-
-            // FichaPersonagem ↔ Idioma
-            modelBuilder.Entity<FichaPersonagemIdioma>()
-                .HasKey(x => new { x.FichaPersonagemId, x.IdiomaId });
-
-            // SubRaca ↔ Proficiencia
-            modelBuilder.Entity<SubRacaProficiencia>()
-                .HasKey(x => new { x.SubRacaId, x.ProficienciaId });
-
-            modelBuilder.Entity<PropriedadesMagicas>()
-                .HasKey(p => p.Id);
 
         }
     }

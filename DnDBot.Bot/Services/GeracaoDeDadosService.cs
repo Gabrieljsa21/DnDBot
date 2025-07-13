@@ -43,28 +43,6 @@ namespace DnDBot.Bot.Services
             using var cmd = connection.CreateCommand();
 
             await ListarTabelasAsync();
-
-            await IdiomaDatabaseHelper.CriarTabelaAsync(cmd);
-            await MagiaDatabaseHelper.CriarTabelaAsync(cmd);
-            await ItemDatabaseHelper.CriarTabelaAsync(cmd);
-            await PericiaDatabaseHelper.CriarTabelaAsync(cmd);
-            await ProficienciaDatabaseHelper.CriarTabelaAsync(cmd);
-            await ArmaDatabaseHelper.CriarTabelaAsync(cmd);
-            await ArmaduraDatabaseHelper.CriarTabelaAsync(cmd);
-            await FerramentaDatabaseHelper.CriarTabelaAsync(cmd);
-            await EscudoDatabaseHelper.CriarTabelaAsync(cmd);
-            await AlinhamentoDatabaseHelper.CriarTabelaAsync(cmd);
-            await ResistenciaDatabaseHelper.CriarTabelaAsync(cmd);
-            await CaracteristicaDatabaseHelper.CriarTabelaAsync(cmd);
-            await RacaDatabaseHelper.CriarTabelaAsync(cmd);
-            await ClasseDatabaseHelper.CriarTabelaAsync(cmd);
-            await AntecedenteDatabaseHelper.CriarTabelaAsync(cmd);
-            await FichaDatabaseHelper.CriarTabelaAsync(cmd);
-            await SubRacaResistenciaDatabaseHelper.CriarTabelaAsync(cmd);
-            await SubRacaIdiomaDatabaseHelper.CriarTabelaAsync(cmd);
-            await SubRacaCaracteristicaDatabaseHelper.CriarTabelaAsync(cmd);
-            await SubRacaProficienciaDatabaseHelper.CriarTabelaAsync(cmd);
-            await SubRacaMagiaDatabaseHelper.CriarTabelaAsync(cmd);
         }
 
         /// <summary>
@@ -78,8 +56,8 @@ namespace DnDBot.Bot.Services
 
             await IdiomaDatabaseHelper.PopularAsync(connection, transaction);
             await MagiaDatabaseHelper.PopularAsync(connection, transaction);
-            await ItemDatabaseHelper.PopularAsync(connection, transaction);
             await PericiaDatabaseHelper.PopularAsync(connection, transaction);
+            await ItemDatabaseHelper.PopularAsync(connection, transaction);
             await ProficienciaDatabaseHelper.PopularAsync(connection, transaction);
             await ArmaDatabaseHelper.PopularAsync(connection, transaction);
             await ArmaduraDatabaseHelper.PopularAsync(connection, transaction);
@@ -91,11 +69,7 @@ namespace DnDBot.Bot.Services
             await RacaDatabaseHelper.PopularAsync(connection, transaction);
             await ClasseDatabaseHelper.PopularAsync(connection, transaction);
             await AntecedenteDatabaseHelper.PopularAsync(connection, transaction);
-            await SubRacaResistenciaDatabaseHelper.PopularAsync(connection, transaction);
-            await SubRacaIdiomaDatabaseHelper.PopularAsync(connection, transaction);
-            await SubRacaCaracteristicaDatabaseHelper.PopularAsync(connection, transaction);
-            await SubRacaProficienciaDatabaseHelper.PopularAsync(connection, transaction);
-            await SubRacaMagiaDatabaseHelper.PopularAsync(connection, transaction);
+            await SubRacaDatabaseHelper.PopularAsync(connection, transaction);
 
             transaction.Commit();
             Console.WriteLine("Commit feito!");

@@ -1,29 +1,13 @@
 ﻿using DnDBot.Bot.Data;
 using DnDBot.Bot.Helpers;
+using DnDBot.Bot.Models.Ficha;
 using Microsoft.Data.Sqlite;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using static DnDBot.Bot.Helpers.SqliteHelper;
 
 public static class AlinhamentoDatabaseHelper
 {
-    public static async Task CriarTabelaAsync(SqliteCommand cmd)
-    {
-        var definicoes = new Dictionary<string, string>
-        {
-            ["Alinhamento"] = SqliteEntidadeBaseHelper.Campos,
-            ["AlinhamentoTag"] = @"
-                AlinhamentoId TEXT NOT NULL,
-                Tag TEXT NOT NULL,
-                PRIMARY KEY (AlinhamentoId, Tag),
-                FOREIGN KEY (AlinhamentoId) REFERENCES Alinhamento(Id) ON DELETE CASCADE"
-        };
-
-        foreach (var tabela in definicoes)
-            await SqliteHelper.CriarTabelaAsync(cmd, tabela.Key, tabela.Value);
-    }
-
     public static async Task PopularAsync(SqliteConnection connection, SqliteTransaction transaction)
     {
         if (AlinhamentosData.Alinhamentos is not { Count: > 0 })
@@ -34,32 +18,22 @@ public static class AlinhamentoDatabaseHelper
 
         foreach (var alinhamento in AlinhamentosData.Alinhamentos)
         {
-            if (await SqliteHelper.RegistroExisteAsync(connection, transaction, "Alinhamento", alinhamento.Id))
+            if (await RegistroExisteAsync(connection, transaction, "Alinhamento", alinhamento.Id))
                 continue;
 
-            var parametros = SqliteHelper.GerarParametrosEntidadeBase(alinhamento);
-
-            var sql = $@"
-                INSERT INTO Alinhamento (
-                    {SqliteEntidadeBaseHelper.CamposInsert}
-                ) VALUES (
-                    {SqliteEntidadeBaseHelper.ValoresInsert}
-                )";
-
-            var cmd = SqliteHelper.CriarInsertCommand(connection, transaction, sql, parametros);
+            var parametros = GerarParametrosEntidadeBase(alinhamento);
 
             try
             {
-                await cmd.ExecuteNonQueryAsync();
+                await InserirEntidadeFilhaAsync(connection, transaction, "Alinhamento", parametros);
+
+                if (alinhamento.Tags?.Count > 0)
+                    await InserirTagsAsync(connection, transaction, "AlinhamentoTag", "AlinhamentoId", alinhamento.Id, alinhamento.Tags);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Erro inserindo alinhamento {alinhamento.Id}: {ex.Message}");
-                throw;
+                Console.WriteLine($"❌ Erro ao inserir alinhamento '{alinhamento.Id}': {ex.Message}");
             }
-
-
-            await SqliteHelper.InserirTagsAsync(connection, transaction, "AlinhamentoTag", "AlinhamentoId", alinhamento.Id, alinhamento.Tags);
         }
 
         Console.WriteLine("✅ Alinhamentos populados com sucesso.");

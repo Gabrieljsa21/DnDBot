@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DnDBot.Bot.Models.ItensInventario
 {
-    public abstract class Arma : Item
+    public class Arma : Item
     {
         public TipoArma Tipo { get; set; }
         public CategoriaArma CategoriaArma { get; set; }
@@ -47,5 +47,21 @@ namespace DnDBot.Bot.Models.ItensInventario
             get => ArmaTags?.Select(at => at.Tag).ToList() ?? new();
             set => ArmaTags = value?.Select(tag => new ArmaTag { Tag = tag, ArmaId = Id }).ToList() ?? new();
         }
+
+        //ArmaADistancia
+        public int? AlcanceMinimo { get; set; }
+        public int AlcanceMaximo { get; set; }
+
+        public string TipoMunicao { get; set; } = string.Empty;
+        public int MunicaoPorAtaque { get; set; } = 1;
+        public bool RequerRecarga { get; set; } = false;
+        public int TempoRecargaTurnos { get; set; } = 0;
+
+        [NotMapped]
+        public int? RecuperacaoMunicao => (int?)System.Math.Floor(MunicaoPorAtaque * 0.5);
+
+        //ArmaCorpoACorpo
+        public bool PodeSerArremessada { get; set; }
+        public int? AlcanceArremesso { get; set; }
     }
 }
