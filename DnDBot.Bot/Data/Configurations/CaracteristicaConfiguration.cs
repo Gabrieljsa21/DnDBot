@@ -1,4 +1,5 @@
 ﻿using DnDBot.Bot.Models.Ficha;
+using DnDBot.Bot.Models.Ficha.Auxiliares;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -51,37 +52,35 @@ namespace DnDBot.Bot.Data.Configurations
                    .HasConversion<string>()
                    .IsRequired();
 
-            builder.Property(c => c.AcaoRequerida)
-                   .HasConversion<string>()
-                   .IsRequired();
-
-            builder.Property(c => c.Alvo)
-                   .HasConversion<string>()
-                   .IsRequired();
-
-            builder.Property(c => c.CondicaoAtivacao)
-                   .HasConversion<string>()
-                   .IsRequired();
 
             builder.Property(c => c.Origem)
                    .HasConversion<string>()
                    .IsRequired();
 
-            // Níveis
-            builder.Property(c => c.NivelMinimo)
-                   .IsRequired();
 
-            builder.Property(c => c.NivelMaximo)
-                   .IsRequired(false);
+            builder
+                .HasMany(c => c.EscalasPorNivel)
+                .WithOne(e => e.Caracteristica)
+                .HasForeignKey(e => e.CaracteristicaId)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
+    }
 
-            builder.Property(c => c.DuracaoEmRodadas)
-                   .IsRequired(false);
+    public class EscalaCaracteristicaConfiguration : IEntityTypeConfiguration<CaracteristicaEscala>
+    {
+        public void Configure(EntityTypeBuilder<CaracteristicaEscala> builder)
+        {
+            builder.HasKey(e => e.Id);
 
-            builder.Property(c => c.UsosPorDescansoCurto)
-                   .IsRequired(false);
+            builder
+                .Property(e => e.NivelMinimo)
+                .IsRequired();
 
-            builder.Property(c => c.UsosPorDescansoLongo)
-                   .IsRequired(false);
+            builder
+                .HasOne(e => e.Caracteristica)
+                .WithMany(c => c.EscalasPorNivel)
+                .HasForeignKey(e => e.CaracteristicaId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

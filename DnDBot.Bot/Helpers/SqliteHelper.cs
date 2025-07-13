@@ -183,6 +183,21 @@ namespace DnDBot.Bot.Helpers
             }
         }
 
+        public static async Task<int> InserirEntidadeFilhaRetornandoIdAsync(SqliteConnection conn, SqliteTransaction tx, string tabela, Dictionary<string, object> parametros)
+        {
+            var colunas = string.Join(", ", parametros.Keys);
+            var valores = string.Join(", ", parametros.Keys.Select(k => "$" + k));
+
+            var sql = $@"
+        INSERT INTO {tabela} ({colunas})
+        VALUES ({valores});
+        SELECT last_insert_rowid();";
+
+            using var cmd = CriarInsertCommand(conn, tx, sql, parametros);
+            var resultado = await cmd.ExecuteScalarAsync();
+
+            return Convert.ToInt32(resultado);
+        }
 
 
     }

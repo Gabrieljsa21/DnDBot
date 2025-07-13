@@ -13,15 +13,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "agilidade_halfling": {
     "Id": "agilidade_halfling",
@@ -37,15 +42,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "agilidade_leonin": {
     "Id": "agilidade_leonin",
@@ -61,15 +71,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "alma_radiante": {
     "Id": "alma_radiante",
@@ -85,15 +100,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "amedrontar": {
     "Id": "amedrontar",
@@ -109,15 +129,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "PericiaExtra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "ancestral_fey": {
     "Id": "ancestral_fey",
@@ -133,15 +158,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "ancestralidade_draconica": {
     "Id": "ancestralidade_draconica",
@@ -157,15 +187,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Resistência",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "anfibio": {
     "Id": "anfibio",
@@ -181,15 +216,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "ataque_surpresa": {
     "Id": "ataque_surpresa",
@@ -205,15 +245,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "ataques_sangrentos": {
     "Id": "ataques_sangrentos",
@@ -229,15 +274,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "HabilidadeEspecial",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "atletismo_natural": {
     "Id": "atletismo_natural",
@@ -253,15 +303,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "PericiaExtra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "caminhada_na_terra": {
     "Id": "caminhada_na_terra",
@@ -277,15 +332,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "caminhada_pelo_vento": {
     "Id": "caminhada_pelo_vento",
@@ -301,15 +361,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "capa_necrotica": {
     "Id": "capa_necrotica",
@@ -325,15 +390,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "casco": {
     "Id": "casco",
@@ -349,15 +419,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "combate_com_duas_armas": {
     "Id": "combate_com_duas_armas",
@@ -373,15 +448,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "conjuracao_duergar": {
     "Id": "conjuracao_duergar",
@@ -404,8 +484,19 @@
     "UsosPorDescansoLongo": null,
     "CondicaoAtivacao": "AposMagia",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "conjuracao_inata": {
     "Id": "conjuracao_inata",
@@ -421,15 +512,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "constituicao_montanhosa": {
     "Id": "constituicao_montanhosa",
@@ -445,15 +541,21 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
+
   },
   "consumacao_radiante": {
     "Id": "consumacao_radiante",
@@ -469,15 +571,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "corajoso": {
     "Id": "corajoso",
@@ -493,15 +600,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "corpo_engenheirado": {
     "Id": "corpo_engenheirado",
@@ -517,15 +629,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "corrida_leve": {
     "Id": "corrida_leve",
@@ -541,15 +658,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "EmAmbienteNatural",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "EmAmbienteNatural",
+        "Danos": []
+      }
+    ]
   },
   "destaque": {
     "Id": "destaque",
@@ -565,15 +687,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "estrutura_equina": {
     "Id": "estrutura_equina",
@@ -589,15 +716,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "fala_com_animais": {
     "Id": "fala_com_animais",
@@ -613,15 +745,20 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "fala_com_pequenos": {
     "Id": "fala_com_pequenos",
@@ -637,15 +774,21 @@
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
     "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "EmAmbienteNatural",
     "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "EmAmbienteNatural",
+        "Danos": []
+      }
+    ]
+
   },
   "flama_criativa": {
     "Id": "flama_criativa",
@@ -656,20 +799,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "forca_bruta": {
     "Id": "forca_bruta",
@@ -680,20 +828,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "HabilidadeEspecial",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "HabilidadeEspecial",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "forca_construtiva": {
     "Id": "forca_construtiva",
@@ -704,20 +857,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "fuga_rapida": {
     "Id": "fuga_rapida",
@@ -728,20 +886,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Ativa",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Ativa",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "furia_do_pequeno": {
     "Id": "furia_do_pequeno",
@@ -752,20 +915,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "HabilidadeEspecial",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "HabilidadeEspecial",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "garras_de_gato": {
     "Id": "garras_de_gato",
@@ -776,20 +944,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "guardiao_das_profundezas": {
     "Id": "guardiao_das_profundezas",
@@ -800,20 +973,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "habilidade_extra": {
     "Id": "habilidade_extra",
@@ -824,20 +1002,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "habilidades_changeante": {
     "Id": "habilidades_changeante",
@@ -848,20 +1031,26 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
+
   },
   "idioma_extra": {
     "Id": "idioma_extra",
@@ -872,20 +1061,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "ilusionista_natural": {
     "Id": "ilusionista_natural",
@@ -896,20 +1090,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "imunidade_veneno": {
     "Id": "imunidade_veneno",
@@ -920,20 +1119,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "inventor": {
     "Id": "inventor",
@@ -944,20 +1148,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "inverno_perpetuo": {
     "Id": "inverno_perpetuo",
@@ -968,20 +1177,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "investida": {
     "Id": "investida",
@@ -992,20 +1206,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Ativa",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Ativa",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "investida_corporal": {
     "Id": "investida_corporal",
@@ -1016,20 +1235,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "legado_celestial": {
     "Id": "legado_celestial",
@@ -1040,20 +1264,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "legado_de_baalzebul": {
     "Id": "legado_de_baalzebul",
@@ -1064,20 +1293,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "legado_de_cacador": {
     "Id": "legado_de_cacador",
@@ -1088,20 +1322,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "legado_de_dispater": {
     "Id": "legado_de_dispater",
@@ -1112,20 +1351,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "legado_de_fierna": {
     "Id": "legado_de_fierna",
@@ -1136,20 +1380,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "legado_de_glasya": {
     "Id": "legado_de_glasya",
@@ -1160,20 +1409,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "legado_de_levistus": {
     "Id": "legado_de_levistus",
@@ -1184,20 +1438,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "legado_de_mammon": {
     "Id": "legado_de_mammon",
@@ -1208,20 +1467,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "legado_de_mephistopheles": {
     "Id": "legado_de_mephistopheles",
@@ -1232,20 +1496,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "legado_de_zariel": {
     "Id": "legado_de_zariel",
@@ -1256,20 +1525,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "legado_infernal": {
     "Id": "legado_infernal",
@@ -1280,44 +1554,54 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "magia_elfica_drow": {
     "Id": "magia_elfica_drow",
-    "Nome": "Magia elfica drow",
+    "Nome": "Magia élfica drow",
     "Descricao": "Você conhece magias como Luzes Dançantes, Fogo das Fadas e Escuridão.",
     "Fonte": "Livro do Jogador",
     "Pagina": "",
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "magia_fey": {
     "Id": "magia_fey",
@@ -1328,20 +1612,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "magia_firbolg": {
     "Id": "magia_firbolg",
@@ -1352,20 +1641,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "mascara_da_floresta": {
     "Id": "mascara_da_floresta",
@@ -1376,20 +1670,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "membros_longos": {
     "Id": "membros_longos",
@@ -1400,20 +1699,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "mente_gnomica": {
     "Id": "mente_gnomica",
@@ -1424,20 +1728,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "metamorfo": {
     "Id": "metamorfo",
@@ -1448,20 +1757,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "mimetismo": {
     "Id": "mimetismo",
@@ -1472,20 +1786,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "passar_sem_traco": {
     "Id": "passar_sem_traco",
@@ -1496,20 +1815,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "passo_fey": {
     "Id": "passo_fey",
@@ -1520,20 +1844,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Ativa",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Ativa",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "passo_oculto": {
     "Id": "passo_oculto",
@@ -1544,20 +1873,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "pericia_dupla": {
     "Id": "pericia_dupla",
@@ -1568,20 +1902,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "PericiaExtra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "PericiaExtra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "pericia_extra": {
     "Id": "pericia_extra",
@@ -1592,20 +1931,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "proficiencia_ferramentas": {
     "Id": "proficiencia_ferramentas",
@@ -1616,20 +1960,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "protecao_da_natureza": {
     "Id": "protecao_da_natureza",
@@ -1640,20 +1989,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "protecao_integrada": {
     "Id": "protecao_integrada",
@@ -1664,20 +2018,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "EmAmbienteNatural",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "EmAmbienteNatural",
+        "Danos": []
+      }
+    ]
   },
   "radiancia_curativa": {
     "Id": "radiancia_curativa",
@@ -1688,20 +2047,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "recursos_rapidos": {
     "Id": "recursos_rapidos",
@@ -1712,20 +2076,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "repouso_de_sentinela": {
     "Id": "repouso_de_sentinela",
@@ -1736,20 +2105,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "resistencia_acido": {
     "Id": "resistencia_acido",
@@ -1760,20 +2134,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "resistencia_ana": {
     "Id": "resistencia_ana",
@@ -1784,20 +2163,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Resistência",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Resistência",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "resistencia_construto": {
     "Id": "resistencia_construto",
@@ -1808,20 +2192,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Resistência",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Resistência",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "resistencia_de_facao": {
     "Id": "resistencia_de_facao",
@@ -1832,20 +2221,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "resistencia_duergar": {
     "Id": "resistencia_duergar",
@@ -1856,20 +2250,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "resistencia_fey": {
     "Id": "resistencia_fey",
@@ -1880,20 +2279,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "resistencia_fogo": {
     "Id": "resistencia_fogo",
@@ -1904,20 +2308,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Resistência",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Resistência",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "resistencia_frio": {
     "Id": "resistencia_frio",
@@ -1928,20 +2337,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Resistência",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Resistência",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "resistencia_halfling": {
     "Id": "resistencia_halfling",
@@ -1952,20 +2366,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "resistencia_inabalavel": {
     "Id": "resistencia_inabalavel",
@@ -1976,20 +2395,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "resistencia_infernal": {
     "Id": "resistencia_infernal",
@@ -2000,20 +2424,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Resistência",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Resistência",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "resistencia_magica": {
     "Id": "resistencia_magica",
@@ -2024,20 +2453,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "resistencia_pedra": {
     "Id": "resistencia_pedra",
@@ -2048,20 +2482,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "resistencia_relampago": {
     "Id": "resistencia_relampago",
@@ -2072,20 +2511,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Resistência",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Resistência",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "resistencia_veneno": {
     "Id": "resistencia_veneno",
@@ -2096,20 +2540,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Resistência",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Resistência",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "respiracao_infinita": {
     "Id": "respiracao_infinita",
@@ -2120,20 +2569,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "robustez_ana": {
     "Id": "robustez_ana",
@@ -2144,20 +2598,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "rugido_intimidante": {
     "Id": "rugido_intimidante",
@@ -2168,20 +2627,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "sabedoria_das_pedras": {
     "Id": "sabedoria_das_pedras",
@@ -2192,20 +2656,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "salto_sombroso": {
     "Id": "salto_sombroso",
@@ -2216,20 +2685,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Resistência",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Resistência",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "sensibilidade_ao_sol": {
     "Id": "sensibilidade_ao_sol",
@@ -2240,20 +2714,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "sentidos_agucados": {
     "Id": "sentidos_agucados",
@@ -2264,20 +2743,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "PericiaExtra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "PericiaExtra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "sopro_acido": {
     "Id": "sopro_acido",
@@ -2288,23 +2772,28 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "sopro_de_fogo": {
-    "Id": "sopro_de_fogo",
+    "Id": "sopro_fogo",
     "Nome": "Sopro de fogo",
     "Descricao": "Descrição não encontrada.",
     "Fonte": "Livro do Jogador",
@@ -2312,20 +2801,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "sopro_fogo": {
     "Id": "sopro_fogo",
@@ -2336,20 +2830,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "sopro_frio": {
     "Id": "sopro_frio",
@@ -2360,20 +2859,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "sopro_gas_venenoso": {
     "Id": "sopro_gas_venenoso",
@@ -2384,20 +2888,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "sopro_relampago": {
     "Id": "sopro_relampago",
@@ -2408,20 +2917,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "sortudo": {
     "Id": "sortudo",
@@ -2432,20 +2946,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Resistência",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Resistência",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "submissao_oracao": {
     "Id": "submissao_oracao",
@@ -2456,20 +2975,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "talentos_de_gato": {
     "Id": "talentos_de_gato",
@@ -2480,20 +3004,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "PericiaExtra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "PericiaExtra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "transe": {
     "Id": "transe",
@@ -2504,20 +3033,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "treinamento_com_armas_anao": {
     "Id": "treinamento_com_armas_anao",
@@ -2528,20 +3062,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "truque_arcano": {
     "Id": "truque_arcano",
@@ -2552,20 +3091,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Magia",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Magia",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "AposMagia",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "AposMagia",
+        "Danos": []
+      }
+    ]
   },
   "velocidade_natacao": {
     "Id": "velocidade_natacao",
@@ -2576,20 +3120,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "versatilidade_pericias": {
     "Id": "versatilidade_pericias",
@@ -2600,20 +3149,25 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "PericiaExtra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "PericiaExtra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "visao_no_escuro": {
     "Id": "visao_no_escuro",
@@ -2624,82 +3178,93 @@
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Racial",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-09T02:41:14.503401",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-09T02:41:14.503401",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Racial",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "abrigo_dos_fieis": {
     "Id": "abrigo_dos_fieis",
     "Nome": "Abrigo dos Fiéis",
-    "descricao": "Como um acólito, você detém o respeito daqueles que compartilham de sua fé, e você pode realizar cerimônias de sua divindade. Você e seus companheiros de aventura podem até receber cura e caridade de um templo, santuário ou outro posto de sua fé, embora devam fornecer quaisquer componentes materiais necessários para as magias. Aqueles que compartilham de sua religião vão garantir a você (mas apenas você), custeando um estilo de vida modesto. Você também pode possuir laços com um templo específico devotado à sua divindade ou panteão, e fixar residência nele. Pode ser o templo que você está acostumado a servir, se ainda tiver boas relações com ele, ou um templo no qual você encontrou um novo lar. Enquanto frequentar as redondezas desse templo, você pode solicitar os sacerdotes para assisti-lo, desde que essa assistência não seja de alguma forma perigosa e que você sempre esteja em uma boa relação com seu templo.",
+    "Descricao": "Como um acólito, você detém o respeito daqueles que compartilham de sua fé, e você pode realizar cerimônias de sua divindade. Você e seus companheiros de aventura podem até receber cura e caridade de um templo, santuário ou outro posto de sua fé, embora devam fornecer quaisquer componentes materiais necessários para as magias. Aqueles que compartilham de sua religião vão garantir a você (mas apenas você), custeando um estilo de vida modesto. Você também pode possuir laços com um templo específico devotado à sua divindade ou panteão, e fixar residência nele. Pode ser o templo que você está acostumado a servir, se ainda tiver boas relações com ele, ou um templo no qual você encontrou um novo lar. Enquanto frequentar as redondezas desse templo, você pode solicitar os sacerdotes para assisti-lo, desde que essa assistência não seja de alguma forma perigosa e que você sempre esteja em uma boa relação com seu templo.",
     "Fonte": "Livro do Jogador",
     "Pagina": "125",
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Antecedente",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-12T01:30:00.000000",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-12T01:30:00.000000",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Antecedente",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "camaleao_cultural": {
     "Id": "camaleao_cultural",
     "Nome": "Camaleão Cultural",
-    "descricao": "Antes de se tornar um aventureiro, você passou grande parte da sua vida adulta longe de sua terra natal, vivendo entre pessoas diferentes de seus parentes. Você aprendeu a entender essas culturas estrangeiras e os costumes de seu povo, que eventualmente passaram a tratá-lo como um deles. Uma cultura teve mais influência sobre você do que qualquer outra, moldando suas crenças e costumes. Escolha uma raça cuja cultura você adotou.",
+    "Descricao": "Antes de se tornar um aventureiro, você passou grande parte da sua vida adulta longe de sua terra natal, vivendo entre pessoas diferentes de seus parentes. Você aprendeu a entender essas culturas estrangeiras e os costumes de seu povo, que eventualmente passaram a tratá-lo como um deles. Uma cultura teve mais influência sobre você do que qualquer outra, moldando suas crenças e costumes. Escolha uma raça cuja cultura você adotou.",
     "Fonte": "Xanathar's Guide to Everything",
     "Pagina": "22",
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
+    "Tipo": "Outra",
+    "Origem": "Antecedente",
     "CriadoPor": "sistema",
     "CriadoEm": "2025-07-12T01:31:00.000000",
     "ModificadoPor": "sistema",
     "ModificadoEm": "2025-07-12T01:31:00.000000",
-    "Tipo": "Outra",
-    "AcaoRequerida": "Nenhuma",
-    "Alvo": "Self",
-    "DuracaoEmRodadas": null,
-    "UsosPorDescansoCurto": null,
-    "UsosPorDescansoLongo": null,
-    "CondicaoAtivacao": "Sempre",
-    "Origem": "Antecedente",
-    "NivelMinimo": 1,
-    "NivelMaximo": null
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "linguista_adepto": {
     "Id": "linguista_adepto",
     "Nome": "Linguista Adepto",
-    "descricao": "Você pode se comunicar com humanóides que não falam nenhum idioma que você conheça. Você deve observar os humanóides interagindo uns com os outros por pelo menos 1 dia, após o qual você aprende um punhado de palavras, expressões e gestos importantes – o suficiente para se comunicar em um nível rudimentar.",
+    "Descricao": "Você pode se comunicar com humanóides que não falam nenhum idioma que você conheça. Você deve observar os humanóides interagindo uns com os outros por pelo menos 1 dia, após o qual você aprende um punhado de palavras, expressões e gestos importantes – o suficiente para se comunicar em um nível rudimentar.",
     "Fonte": "Xanathar's Guide to Everything",
     "Pagina": "22",
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
-    "CriadoPor": "sistema",
-    "CriadoEm": "2025-07-12T01:31:00.000000",
-    "ModificadoPor": "sistema",
-    "ModificadoEm": "2025-07-12T01:31:00.000000",
     "Tipo": "Outra",
     "AcaoRequerida": "Nenhuma",
     "Alvo": "Self",
@@ -2709,21 +3274,34 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-12T01:31:00.000000",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-12T01:31:00.000000",
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "nunca_me_diga_as_chances": {
     "Id": "nunca_me_diga_as_chances",
     "Nome": "Never Tell Me the Odds",
-    "descricao": "Probabilidades e estatísticas são seu ponto forte. Durante atividades de tempo livre que envolvam jogos de azar ou calcular as chances do melhor plano, você pode ter uma boa noção de qual escolha é provavelmente a melhor e quais oportunidades parecem boas demais para ser verdade, a critério do Mestre.",
+    "Descricao": "Probabilidades e estatísticas são seu ponto forte. Durante atividades de tempo livre que envolvam jogos de azar ou calcular as chances do melhor plano, você pode ter uma boa noção de qual escolha é provavelmente a melhor e quais oportunidades parecem boas demais para ser verdade, a critério do Mestre.",
     "Fonte": "Acquisitions Incorporated",
     "Pagina": "",
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
-    "CriadoPor": "sistema",
-    "CriadoEm": "2025-07-12T01:32:00.000000",
-    "ModificadoPor": "sistema",
-    "ModificadoEm": "2025-07-12T01:32:00.000000",
     "Tipo": "Outra",
     "AcaoRequerida": "Nenhuma",
     "Alvo": "Self",
@@ -2733,21 +3311,34 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-12T01:32:00.000000",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-12T01:32:00.000000",
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "escavador_empoeirado": {
     "Id": "escavador_empoeirado",
     "Nome": "Conhecimento Histórico",
-    "descricao": "Quando você entra em uma ruína ou masmorra, pode identificar corretamente seu propósito original e determinar seus construtores, sejam anões, elfos, humanos, yuan-ti ou outra raça conhecida. Além disso, você pode determinar o valor monetário de objetos de arte com mais de um século.",
+    "Descricao": "Quando você entra em uma ruína ou masmorra, pode identificar corretamente seu propósito original e determinar seus construtores, sejam anões, elfos, humanos, yuan-ti ou outra raça conhecida. Além disso, você pode determinar o valor monetário de objetos de arte com mais de um século.",
     "Fonte": "Tomb of Annihilation",
     "Pagina": "191",
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
-    "CriadoPor": "sistema",
-    "CriadoEm": "2025-07-12T01:33:00.000000",
-    "ModificadoPor": "sistema",
-    "ModificadoEm": "2025-07-12T01:33:00.000000",
     "Tipo": "Outra",
     "AcaoRequerida": "Nenhuma",
     "Alvo": "Self",
@@ -2757,21 +3348,34 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-12T01:33:00.000000",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-12T01:33:00.000000",
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "associados_da_guilda": {
     "Id": "associados_da_guilda",
     "Nome": "Membro da Guilda",
-    "descricao": "Como um membro cativo e respeitado da guilda, você pode contar com certos benefícios que a sociedade garante. Seus camaradas, membros da guilda, irão provê-lo com hospedagem e comida, se necessário, e pagarão pelo seu funeral se preciso for. Em algumas cidades e vilas, um salão da guilda oferece um local central para conhecer outros membros de profissão, podendo ser um bom lugar para se conhecer patrões, aliados e empregados em potencial. Guildas, muitas vezes, detêm tremendos poderes políticos. Se você for acusado de um crime, sua guilda irá ampará-lo se uma boa defesa puder ser apresentada para provar sua inocência ou se o crime for justificável. Você pode, também, ter acesso a figuras políticas poderosas através da guilda, se você for um membro bem posicionado. Tais conexões devem exigir doações de dinheiro ou itens mágicos para os cofres da guilda. Você deve pagar cotas de 5 po por mês à guilda. Se você não pagar, você irá contrair uma dívida para permanecer nas boas graças da guilda.",
+    "Descricao": "Como um membro cativo e respeitado da guilda, você pode contar com certos benefícios que a sociedade garante. Seus camaradas, membros da guilda, irão provê-lo com hospedagem e comida, se necessário, e pagarão pelo seu funeral se preciso for. Em algumas cidades e vilas, um salão da guilda oferece um local central para conhecer outros membros de profissão, podendo ser um bom lugar para se conhecer patrões, aliados e empregados em potencial. Guildas, muitas vezes, detêm tremendos poderes políticos. Se você for acusado de um crime, sua guilda irá ampará-lo se uma boa defesa puder ser apresentada para provar sua inocência ou se o crime for justificável. Você pode, também, ter acesso a figuras políticas poderosas através da guilda, se você for um membro bem posicionado. Tais conexões devem exigir doações de dinheiro ou itens mágicos para os cofres da guilda. Você deve pagar cotas de 5 po por mês à guilda. Se você não pagar, você irá contrair uma dívida para permanecer nas boas graças da guilda.",
     "Fonte": "Livro do Jogador",
     "Pagina": "135",
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
-    "CriadoPor": "sistema",
-    "CriadoEm": "2025-07-12T01:34:00.000000",
-    "ModificadoPor": "sistema",
-    "ModificadoEm": "2025-07-12T01:34:00.000000",
     "Tipo": "Outra",
     "AcaoRequerida": "Nenhuma",
     "Alvo": "Self",
@@ -2781,21 +3385,34 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-12T01:34:00.000000",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-12T01:34:00.000000",
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "pela_demanda_popular": {
     "Id": "pela_demanda_popular",
     "Nome": "Por Demanda Popular",
-    "descricao": "Você sempre encontra um lugar para atuar, geralmente em tavernas ou estalagens mas, possivelmente em circos, teatros ou até em cortes nobres. Em tais lugares, você recebe alojamento e comida modesta ou de patrões confortáveis, de graça (dependendo da qualidade do estabelecimento), contanto que você atue a cada noite. Além disso, sua atuação torna você um tipo de figura local. Quando estranhos reconhecerem você em uma cidade em que você já tenha atuado, eles geralmente gostaram de você.",
+    "Descricao": "Você sempre encontra um lugar para atuar, geralmente em tavernas ou estalagens mas, possivelmente em circos, teatros ou até em cortes nobres. Em tais lugares, você recebe alojamento e comida modesta ou de patrões confortáveis, de graça (dependendo da qualidade do estabelecimento), contanto que você atue a cada noite. Além disso, sua atuação torna você um tipo de figura local. Quando estranhos reconhecerem você em uma cidade em que você já tenha atuado, eles geralmente gostaram de você.",
     "Fonte": "Livro do Jogador",
     "Pagina": "134",
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
-    "CriadoPor": "sistema",
-    "CriadoEm": "2025-07-12T01:35:00.000000",
-    "ModificadoPor": "sistema",
-    "ModificadoEm": "2025-07-12T01:35:00.000000",
     "Tipo": "Outra",
     "AcaoRequerida": "Nenhuma",
     "Alvo": "Self",
@@ -2805,21 +3422,34 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-12T01:35:00.000000",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-12T01:35:00.000000",
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "evento_assombrador": {
     "Id": "evento_assombrador",
     "Nome": "Coração das Trevas",
-    "descricao": "Quem olha em seus olhos pode ver que você enfrentou horrores inimagináveis e que a escuridão não é estranha para você. Embora possam temê-lo, os plebeus lhe oferecerão toda cortesia e farão o possível para ajudá-lo. A menos que você tenha se mostrado um perigo para eles, eles até pegarão em armas para lutar ao seu lado, caso você enfrente um inimigo sozinho.",
+    "Descricao": "Quem olha em seus olhos pode ver que você enfrentou horrores inimagináveis e que a escuridão não é estranha para você. Embora possam temê-lo, os plebeus lhe oferecerão toda cortesia e farão o possível para ajudá-lo. A menos que você tenha se mostrado um perigo para eles, eles até pegarão em armas para lutar ao seu lado, caso você enfrente um inimigo sozinho.",
     "Fonte": "Curse of Strahd",
     "Pagina": "11",
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
-    "CriadoPor": "sistema",
-    "CriadoEm": "2025-07-12T01:36:00.000000",
-    "ModificadoPor": "sistema",
-    "ModificadoEm": "2025-07-12T01:36:00.000000",
     "Tipo": "Outra",
     "AcaoRequerida": "Nenhuma",
     "Alvo": "Self",
@@ -2829,21 +3459,34 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-12T01:36:00.000000",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-12T01:36:00.000000",
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "ouvido_nas_ruas": {
     "Id": "ouvido_nas_ruas",
     "Nome": "Ouvido nas Ruas",
-    "descricao": "Você está em contato frequente com pessoas do segmento da sociedade por onde seus alvos escolhidos circulam. Essas pessoas podem estar associadas ao submundo criminoso, ao povo rude das ruas ou a membros da alta sociedade. Essa conexão se manifesta na forma de um contato em qualquer cidade que você visitar, uma pessoa que fornece informações sobre as pessoas e lugares da região local.",
+    "Descricao": "Você está em contato frequente com pessoas do segmento da sociedade por onde seus alvos escolhidos circulam. Essas pessoas podem estar associadas ao submundo criminoso, ao povo rude das ruas ou a membros da alta sociedade. Essa conexão se manifesta na forma de um contato em qualquer cidade que você visitar, uma pessoa que fornece informações sobre as pessoas e lugares da região local.",
     "Fonte": "Sword Coast Adventurer's Guide",
     "Pagina": "143",
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
-    "CriadoPor": "sistema",
-    "CriadoEm": "2025-07-12T01:37:00.000000",
-    "ModificadoPor": "sistema",
-    "ModificadoEm": "2025-07-12T01:37:00.000000",
     "Tipo": "Outra",
     "AcaoRequerida": "Nenhuma",
     "Alvo": "Self",
@@ -2853,21 +3496,34 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-12T01:37:00.000000",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-12T01:37:00.000000",
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "identidade_falsa": {
     "Id": "identidade_falsa",
     "Nome": "Identidade Falsa",
-    "descricao": "Você criou uma segunda identidade que inclui documentos, conhecidos estabelecidos e disfarces que possibilitam que você assuma essa persona. Além disso, você pode forjar documentos, incluindo papeis oficiais e cartas pessoais, contanto que você tenha visto um exemplo desse tipo de documento ou a caligrafia de quem você está tentando copiar.",
+    "Descricao": "Você criou uma segunda identidade que inclui documentos, conhecidos estabelecidos e disfarces que possibilitam que você assuma essa persona. Além disso, você pode forjar documentos, incluindo papeis oficiais e cartas pessoais, contanto que você tenha visto um exemplo desse tipo de documento ou a caligrafia de quem você está tentando copiar.",
     "Fonte": "Livro do Jogador",
     "Pagina": "125",
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
-    "CriadoPor": "sistema",
-    "CriadoEm": "2025-07-12T01:38:00.000000",
-    "ModificadoPor": "sistema",
-    "ModificadoEm": "2025-07-12T01:38:00.000000",
     "Tipo": "Outra",
     "AcaoRequerida": "Nenhuma",
     "Alvo": "Self",
@@ -2877,21 +3533,34 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-12T01:38:00.000000",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-12T01:38:00.000000",
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "rede_subterranea": {
     "Id": "rede_subterranea",
     "Nome": "Rede Subterrânea",
-    "descricao": "Você conhece uma rede de contrabandistas dispostos a ajudá-lo em situações difíceis. Enquanto estiver em uma determinada cidade, vila ou outra comunidade de tamanho semelhante (a critério do Mestre), você e seus companheiros podem ficar gratuitamente em casas seguras. Casas seguras oferecem um estilo de vida modesto. Enquanto estiver hospedado em uma casa segura, você pode optar por manter sua presença (e a de seus companheiros) em segredo.",
+    "Descricao": "Você conhece uma rede de contrabandistas dispostos a ajudá-lo em situações difíceis. Enquanto estiver em uma determinada cidade, vila ou outra comunidade de tamanho semelhante (a critério do Mestre), você e seus companheiros podem ficar gratuitamente em casas seguras. Casas seguras oferecem um estilo de vida modesto. Enquanto estiver hospedado em uma casa segura, você pode optar por manter sua presença (e a de seus companheiros) em segredo.",
     "Fonte": "Livro do Jogador",
     "Pagina": "129",
     "Versao": "1.0",
     "ImagemUrl": "",
     "IconeUrl": "",
-    "CriadoPor": "sistema",
-    "CriadoEm": "2025-07-12T01:39:00.000000",
-    "ModificadoPor": "sistema",
-    "ModificadoEm": "2025-07-12T01:39:00.000000",
     "Tipo": "Outra",
     "AcaoRequerida": "Nenhuma",
     "Alvo": "Self",
@@ -2901,12 +3570,29 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "CriadoPor": "sistema",
+    "CriadoEm": "2025-07-12T01:39:00.000000",
+    "ModificadoPor": "sistema",
+    "ModificadoEm": "2025-07-12T01:39:00.000000",
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "contato_criminal": {
     "Id": "contato_criminal",
     "Nome": "Contato Criminal",
-    "descricao": "Você possui contatos de confiança que agem como seus informantes em uma rede criminosa. Você sabe como se comunicar com eles mesmo em grandes distâncias. Você conhece em especial os mensageiros locais, mestres de caravana corruptos, e marinheiros escusos que podem transmitir seus recados.",
+    "Descricao": "Você possui contatos de confiança que agem como seus informantes em uma rede criminosa. Você sabe como se comunicar com eles mesmo em grandes distâncias. Você conhece em especial os mensageiros locais, mestres de caravana corruptos, e marinheiros escusos que podem transmitir seus recados.",
     "Fonte": "Livro do Jogador",
     "Pagina": "129",
     "Versao": "1.0",
@@ -2925,12 +3611,25 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "descoberta": {
     "Id": "descoberta",
     "Nome": "Descoberta",
-    "descricao": "A calma reclusão da seu eremitério prolongado lhe deu acesso a descobertas únicas e poderosas. A natureza exata dessas revelações depende da natureza da sua reclusão. Poderia ser uma grande verdade sobre o cosmos, os deuses, os poderosos seres de outros planos ou as forças da natureza. Poderia ser um local nunca visto por mais ninguém. Você pode ter descoberto um fato que a muito foi esquecido, ou desenterrado uma relíquia do passado que poderia reescrever a história. Poderia ser uma informação que seria prejudicial para as pessoas responsáveis pelo seu exílio, consequentemente, a razão que fez você voltar para a sociedade. Converse com o Mestre para determinar os detalhes da sua descoberta e o impacto na campanha.",
+    "Descricao": "A calma reclusão da seu eremitério prolongado lhe deu acesso a descobertas únicas e poderosas. A natureza exata dessas revelações depende da natureza da sua reclusão. Poderia ser uma grande verdade sobre o cosmos, os deuses, os poderosos seres de outros planos ou as forças da natureza. Poderia ser um local nunca visto por mais ninguém. Você pode ter descoberto um fato que a muito foi esquecido, ou desenterrado uma relíquia do passado que poderia reescrever a história. Poderia ser uma informação que seria prejudicial para as pessoas responsáveis pelo seu exílio, consequentemente, a razão que fez você voltar para a sociedade. Converse com o Mestre para determinar os detalhes da sua descoberta e o impacto na campanha.",
     "Fonte": "Livro do Jogador",
     "Pagina": "136",
     "Versao": "1.0",
@@ -2949,12 +3648,25 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "andarilho": {
     "Id": "andarilho",
     "Nome": "Viajante",
-    "descricao": "Você tem uma memória excelente para mapas e geografia, e você sempre pode recobrar o plano geral de terrenos, assentamentos ou outras características ao seu redor. Além disso, você pode encontrar comida e água fresca para você a até cinco outras pessoas a cada dia, considerando que a terra ofereça bagas, pequenas frutas, água e similares.",
+    "Descricao": "Você tem uma memória excelente para mapas e geografia, e você sempre pode recobrar o plano geral de terrenos, assentamentos ou outras características ao seu redor. Além disso, você pode encontrar comida e água fresca para você a até cinco outras pessoas a cada dia, considerando que a terra ofereça bagas, pequenas frutas, água e similares.",
     "Fonte": "Livro do Jogador",
     "Pagina": "136",
     "Versao": "1.0",
@@ -2973,12 +3685,25 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "hospitalidade_rustica": {
     "Id": "hospitalidade_rustica",
     "Nome": "Hospitalidade Rústica",
-    "descricao": "Já que você ascendeu da categoria de pessoas comuns até onde você está agora, é fácil se misturar a eles. Você pode encontrar lugar entre os camponeses para se esconder, descansar ou se recuperar, a menos que isso ofereça um risco direto a eles. Eles o esconderão da lei e de qualquer um que venha perguntando por você, desde que não tenham que arriscar suas vidas.",
+    "Descricao": "Já que você ascendeu da categoria de pessoas comuns até onde você está agora, é fácil se misturar a eles. Você pode encontrar lugar entre os camponeses para se esconder, descansar ou se recuperar, a menos que isso ofereça um risco direto a eles. Eles o esconderão da lei e de qualquer um que venha perguntando por você, desde que não tenham que arriscar suas vidas.",
     "Fonte": "Livro do Jogador",
     "Pagina": "131",
     "Versao": "1.0",
@@ -2997,12 +3722,25 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "passagem_de_navio": {
     "Id": "passagem_de_navio",
     "Nome": "Passagem de Navio",
-    "descricao": "Quando você precisar, você pode conseguir passagem de graça em um navio para você e seus companheiros de aventura. Você precisa viajar no navio em que você trabalhou ou em outro navio com o qual você teve boas relações (talvez um comandado por um ex-companheiro de tripulação). Por ser um favor, você não pode solicitar uma programação ou rota que atenda à todas as suas necessidades. Seu Mestre determina quanto tempo levará pra chegar aonde você quer ir. Em troca da passagem grátis, espera-se que você e seus companheiros ajudem a tripulação durante a viagem.",
+    "Descricao": "Quando você precisar, você pode conseguir passagem de graça em um navio para você e seus companheiros de aventura. Você precisa viajar no navio em que você trabalhou ou em outro navio com o qual você teve boas relações (talvez um comandado por um ex-companheiro de tripulação). Por ser um favor, você não pode solicitar uma programação ou rota que atenda à todas as suas necessidades. Seu Mestre determina quanto tempo levará pra chegar aonde você quer ir. Em troca da passagem grátis, espera-se que você e seus companheiros ajudem a tripulação durante a viagem.",
     "Fonte": "Livro do Jogador",
     "Pagina": "135",
     "Versao": "1.0",
@@ -3021,12 +3759,25 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "posicao_privilegiada": {
     "Id": "posicao_privilegiada",
     "Nome": "Posição Privilegiada",
-    "descricao": "Graças a sua origem nobre, as pessoas tendem a pensar o melhor de você. Você é bem-vindo na alta sociedade e as pessoas assumem que você tem o direito de estar onde está. As pessoas comuns fazem todos os esforços para acomodá-lo e evitar seu desprazer, e outros nobres o tratam como um membro da mesma classe social. Você pode conseguir uma audiência com um nobre local se precisar.",
+    "Descricao": "Graças a sua origem nobre, as pessoas tendem a pensar o melhor de você. Você é bem-vindo na alta sociedade e as pessoas assumem que você tem o direito de estar onde está. As pessoas comuns fazem todos os esforços para acomodá-lo e evitar seu desprazer, e outros nobres o tratam como um membro da mesma classe social. Você pode conseguir uma audiência com um nobre local se precisar.",
     "Fonte": "Livro do Jogador",
     "Pagina": "129",
     "Versao": "1.0",
@@ -3045,12 +3796,25 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "segredos_da_cidade": {
     "Id": "segredos_da_cidade",
     "Nome": "Segredos da Cidade",
-    "descricao": "Você conhece os padrões secretos e o fluxo das cidades e pode encontrar passagens através da expansão urbana que os outros deixariam passar. Quando você não estiver em combate, você (e os companheiros que você guiar) podem viajar entre dois locais quaisquer na cidade com o dobro da velocidade normalmente permitida.",
+    "Descricao": "Você conhece os padrões secretos e o fluxo das cidades e pode encontrar passagens através da expansão urbana que os outros deixariam passar. Quando você não estiver em combate, você (e os companheiros que você guiar) podem viajar entre dois locais quaisquer na cidade com o dobro da velocidade normalmente permitida.",
     "Fonte": "Livro do Jogador",
     "Pagina": "137",
     "Versao": "1.0",
@@ -3069,12 +3833,25 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "pesquisador": {
     "Id": "pesquisador",
     "Nome": "Pesquisador",
-    "descricao": "Quando tentar obter ou recuperar um fragmento de conhecimento que você não saiba, você descobre aonde e com quem pode obter essa informação. Normalmente ela será adquirida em bibliotecas, arquivos de escribas, universidade ou outros sábios e pessoas aptas. Seu Mestre pode decidir que o conhecimento que busca está escondido em algum lugar quase inacessível, ou é simplesmente impossível de se obter. Desvendar os segredos mais profundos do multiverso pode requerer uma campanha inteira.",
+    "Descricao": "Quando tentar obter ou recuperar um fragmento de conhecimento que você não saiba, você descobre aonde e com quem pode obter essa informação. Normalmente ela será adquirida em bibliotecas, arquivos de escribas, universidade ou outros sábios e pessoas aptas. Seu Mestre pode decidir que o conhecimento que busca está escondido em algum lugar quase inacessível, ou é simplesmente impossível de se obter. Desvendar os segredos mais profundos do multiverso pode requerer uma campanha inteira.",
     "Fonte": "Livro do Jogador",
     "Pagina": "138",
     "Versao": "1.0",
@@ -3093,12 +3870,25 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "patente_militar": {
     "Id": "patente_militar",
     "Nome": "Patente Militar",
-    "descricao": "Você possui uma patente militar da sua época como soldado. Soldados leais à sua antiga organização reconhecem sua autoridade e influência, e o prestam deferência se forem de uma patente mais baixa. Você pode invocar sua patente para exercer influência sobre soldados, e requisitar equipamentos simples ou cavalos para uso temporário. Você também pode ganhar acesso a acampamentos militares aliados, e fortalezas onde sua patente é reconhecida.",
+    "Descricao": "Você possui uma patente militar da sua época como soldado. Soldados leais à sua antiga organização reconhecem sua autoridade e influência, e o prestam deferência se forem de uma patente mais baixa. Você pode invocar sua patente para exercer influência sobre soldados, e requisitar equipamentos simples ou cavalos para uso temporário. Você também pode ganhar acesso a acampamentos militares aliados, e fortalezas onde sua patente é reconhecida.",
     "Fonte": "Livro do Jogador",
     "Pagina": "140",
     "Versao": "1.0",
@@ -3117,7 +3907,20 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   },
   "por_que_esta_aqui": {
     "Id": "por_que_esta_aqui",
@@ -3141,6 +3944,19 @@
     "CondicaoAtivacao": "Sempre",
     "Origem": "Antecedente",
     "NivelMinimo": 1,
-    "NivelMaximo": null
+    "NivelMaximo": null,
+    "EscalasPorNivel": [
+      {
+        "NivelMinimo": 1,
+        "NivelMaximo": null,
+        "AcaoRequerida": "Nenhuma",
+        "Alvo": "Self",
+        "DuracaoEmRodadas": null,
+        "UsosPorDescansoCurto": null,
+        "UsosPorDescansoLongo": null,
+        "CondicaoAtivacao": "Sempre",
+        "Danos": []
+      }
+    ]
   }
 }

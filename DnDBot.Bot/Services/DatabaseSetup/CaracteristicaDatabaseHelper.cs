@@ -1,5 +1,6 @@
 ﻿using DnDBot.Bot.Helpers;
 using DnDBot.Bot.Models.Ficha;
+using DnDBot.Bot.Models.Ficha.Auxiliares;
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
@@ -40,16 +41,50 @@ public static class CaracteristicaDatabaseHelper
 
         parametros["id"] = caracteristica.Id;
         parametros["tipo"] = caracteristica.Tipo.ToString();
-        parametros["acaoRequerida"] = caracteristica.AcaoRequerida.ToString();
-        parametros["alvo"] = caracteristica.Alvo.ToString();
-        parametros["duracaoEmRodadas"] = caracteristica.DuracaoEmRodadas ?? (object)DBNull.Value;
-        parametros["usosPorDescansoCurto"] = caracteristica.UsosPorDescansoCurto ?? (object)DBNull.Value;
-        parametros["usosPorDescansoLongo"] = caracteristica.UsosPorDescansoLongo ?? (object)DBNull.Value;
-        parametros["condicaoAtivacao"] = caracteristica.CondicaoAtivacao.ToString();
         parametros["origem"] = caracteristica.Origem.ToString();
-        parametros["nivelMinimo"] = caracteristica.NivelMinimo;
-        parametros["nivelMaximo"] = caracteristica.NivelMaximo ?? (object)DBNull.Value;
+        parametros["origemId"] = caracteristica.OrigemId ?? (object)DBNull.Value;
 
         await InserirEntidadeFilhaAsync(conn, tx, "Caracteristica", parametros);
+
+        // Agora insere as escalas que estão na lista EscalasPorNivel
+        foreach (var escala in caracteristica.EscalasPorNivel)
+        {
+            if (string.IsNullOrEmpty(escala.Id))
+                escala.Id = Guid.NewGuid().ToString();
+
+            await InserirCaracteristicaEscala(conn, tx, caracteristica.Id, escala);
+        }
     }
+
+    private static async Task InserirCaracteristicaEscala(SqliteConnection conn, SqliteTransaction tx, string caracteristicaId, CaracteristicaEscala escala)
+    {
+        var parametros = new Dictionary<string, object>
+        {
+            ["id"] = escala.Id,
+            ["nivelMinimo"] = escala.NivelMinimo,
+            ["nivelMaximo"] = escala.NivelMaximo ?? (object)DBNull.Value,
+            ["usosPorDescansoCurto"] = escala.UsosPorDescansoCurto ?? (object)DBNull.Value,
+            ["usosPorDescansoLongo"] = escala.UsosPorDescansoLongo ?? (object)DBNull.Value,
+            ["duracaoEmRodadas"] = escala.DuracaoEmRodadas ?? (object)DBNull.Value,
+            ["acaoRequerida"] = escala.AcaoRequerida.ToString(),
+            ["alvo"] = escala.Alvo.ToString(),
+            ["condicaoAtivacao"] = escala.CondicaoAtivacao.ToString(),
+            ["caracteristicaId"] = caracteristicaId
+        };
+
+        int escalaId = await SqliteHelper.InserirEntidadeFilhaRetornandoIdAsync(conn, tx, "CaracteristicaEscala", parametros);
+
+        foreach (var dano in escala.Danos)
+        {
+            var danoParams = new Dictionary<string, object>
+            {
+                ["dadoDano"] = dano.DadoDano,
+                ["tipoDano"] = dano.TipoDano.ToString(),
+                ["caracteristicaEscalaId"] = escalaId
+            };
+
+            await InserirEntidadeFilhaAsync(conn, tx, "CaracteristicaEscalaDano", danoParams);
+        }
+    }
+
 }

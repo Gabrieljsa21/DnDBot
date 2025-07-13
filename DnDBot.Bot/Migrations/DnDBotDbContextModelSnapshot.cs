@@ -357,6 +357,66 @@ namespace DnDBot.Bot.Migrations
                     b.ToTable("ArmaduraTag");
                 });
 
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.CaracteristicaEscala", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("AcaoRequerida")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Alvo")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CaracteristicaId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("CondicaoAtivacao")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("DuracaoEmRodadas")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("NivelMaximo")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("NivelMinimo")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("UsosPorDescansoCurto")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("UsosPorDescansoLongo")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CaracteristicaId");
+
+                    b.ToTable("CaracteristicaEscala");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.CaracteristicaEscalaDano", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CaracteristicaEscalaId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("DadoDano")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("TipoDano")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CaracteristicaEscalaId");
+
+                    b.ToTable("CaracteristicaEscalaDano");
+                });
+
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.ClasseItens", b =>
                 {
                     b.Property<string>("ClasseId")
@@ -881,18 +941,6 @@ namespace DnDBot.Bot.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("AcaoRequerida")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Alvo")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("CondicaoAtivacao")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<DateTime?>("CriadoEm")
                         .HasColumnType("TEXT");
 
@@ -903,9 +951,6 @@ namespace DnDBot.Bot.Migrations
                     b.Property<string>("Descricao")
                         .HasMaxLength(4000)
                         .HasColumnType("TEXT");
-
-                    b.Property<int?>("DuracaoEmRodadas")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Fonte")
                         .HasMaxLength(200)
@@ -926,12 +971,6 @@ namespace DnDBot.Bot.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("NivelMaximo")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("NivelMinimo")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -951,12 +990,6 @@ namespace DnDBot.Bot.Migrations
                     b.Property<string>("Tipo")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<int?>("UsosPorDescansoCurto")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("UsosPorDescansoLongo")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Versao")
                         .HasMaxLength(50)
@@ -2616,6 +2649,25 @@ namespace DnDBot.Bot.Migrations
                     b.Navigation("Armadura");
                 });
 
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.CaracteristicaEscala", b =>
+                {
+                    b.HasOne("DnDBot.Bot.Models.Ficha.Caracteristica", "Caracteristica")
+                        .WithMany("EscalasPorNivel")
+                        .HasForeignKey("CaracteristicaId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Caracteristica");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.CaracteristicaEscalaDano", b =>
+                {
+                    b.HasOne("DnDBot.Bot.Models.Ficha.Auxiliares.CaracteristicaEscala", "CaracteristicaEscala")
+                        .WithMany("Danos")
+                        .HasForeignKey("CaracteristicaEscalaId");
+
+                    b.Navigation("CaracteristicaEscala");
+                });
+
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.ClasseItens", b =>
                 {
                     b.HasOne("DnDBot.Bot.Models.Ficha.Classe", "Classe")
@@ -3376,6 +3428,16 @@ namespace DnDBot.Bot.Migrations
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.AntecedenteNarrativa", b =>
                 {
                     b.Navigation("AntecedenteNarrativaTags");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Auxiliares.CaracteristicaEscala", b =>
+                {
+                    b.Navigation("Danos");
+                });
+
+            modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Caracteristica", b =>
+                {
+                    b.Navigation("EscalasPorNivel");
                 });
 
             modelBuilder.Entity("DnDBot.Bot.Models.Ficha.Classe", b =>

@@ -77,16 +77,8 @@ namespace DnDBot.Bot.Migrations
                 {
                     Id = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
                     Tipo = table.Column<string>(type: "TEXT", nullable: false),
-                    AcaoRequerida = table.Column<string>(type: "TEXT", nullable: false),
-                    Alvo = table.Column<string>(type: "TEXT", nullable: false),
-                    DuracaoEmRodadas = table.Column<int>(type: "INTEGER", nullable: true),
-                    UsosPorDescansoCurto = table.Column<int>(type: "INTEGER", nullable: true),
-                    UsosPorDescansoLongo = table.Column<int>(type: "INTEGER", nullable: true),
-                    CondicaoAtivacao = table.Column<string>(type: "TEXT", nullable: false),
                     Origem = table.Column<string>(type: "TEXT", nullable: false),
                     OrigemId = table.Column<string>(type: "TEXT", nullable: true),
-                    NivelMinimo = table.Column<int>(type: "INTEGER", nullable: false),
-                    NivelMaximo = table.Column<int>(type: "INTEGER", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
                     Descricao = table.Column<string>(type: "TEXT", maxLength: 4000, nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true),
@@ -476,6 +468,32 @@ namespace DnDBot.Bot.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_AntecedenteCaracteristica_Caracteristica_CaracteristicaId",
+                        column: x => x.CaracteristicaId,
+                        principalTable: "Caracteristica",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CaracteristicaEscala",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    NivelMinimo = table.Column<int>(type: "INTEGER", nullable: false),
+                    NivelMaximo = table.Column<int>(type: "INTEGER", nullable: true),
+                    UsosPorDescansoCurto = table.Column<int>(type: "INTEGER", nullable: true),
+                    UsosPorDescansoLongo = table.Column<int>(type: "INTEGER", nullable: true),
+                    DuracaoEmRodadas = table.Column<int>(type: "INTEGER", nullable: true),
+                    AcaoRequerida = table.Column<int>(type: "INTEGER", nullable: false),
+                    Alvo = table.Column<int>(type: "INTEGER", nullable: false),
+                    CondicaoAtivacao = table.Column<int>(type: "INTEGER", nullable: false),
+                    CaracteristicaId = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CaracteristicaEscala", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CaracteristicaEscala_Caracteristica_CaracteristicaId",
                         column: x => x.CaracteristicaId,
                         principalTable: "Caracteristica",
                         principalColumn: "Id",
@@ -982,6 +1000,25 @@ namespace DnDBot.Bot.Migrations
                         principalTable: "Moeda",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CaracteristicaEscalaDano",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    DadoDano = table.Column<string>(type: "TEXT", nullable: true),
+                    TipoDano = table.Column<int>(type: "INTEGER", nullable: false),
+                    CaracteristicaEscalaId = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CaracteristicaEscalaDano", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CaracteristicaEscalaDano_CaracteristicaEscala_CaracteristicaEscalaId",
+                        column: x => x.CaracteristicaEscalaId,
+                        principalTable: "CaracteristicaEscala",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -2021,6 +2058,16 @@ namespace DnDBot.Bot.Migrations
                 column: "SubRacaId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_CaracteristicaEscala_CaracteristicaId",
+                table: "CaracteristicaEscala",
+                column: "CaracteristicaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CaracteristicaEscalaDano_CaracteristicaEscalaId",
+                table: "CaracteristicaEscalaDano",
+                column: "CaracteristicaEscalaId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CaracteristicaPorNivel_AntecedenteId",
                 table: "CaracteristicaPorNivel",
                 column: "AntecedenteId");
@@ -2327,6 +2374,9 @@ namespace DnDBot.Bot.Migrations
                 name: "BonusAtributos");
 
             migrationBuilder.DropTable(
+                name: "CaracteristicaEscalaDano");
+
+            migrationBuilder.DropTable(
                 name: "CaracteristicaPorNivel");
 
             migrationBuilder.DropTable(
@@ -2447,6 +2497,9 @@ namespace DnDBot.Bot.Migrations
                 name: "Arma");
 
             migrationBuilder.DropTable(
+                name: "CaracteristicaEscala");
+
+            migrationBuilder.DropTable(
                 name: "Subclasse");
 
             migrationBuilder.DropTable(
@@ -2468,9 +2521,6 @@ namespace DnDBot.Bot.Migrations
                 name: "Alinhamento");
 
             migrationBuilder.DropTable(
-                name: "Caracteristica");
-
-            migrationBuilder.DropTable(
                 name: "Magia");
 
             migrationBuilder.DropTable(
@@ -2484,6 +2534,9 @@ namespace DnDBot.Bot.Migrations
 
             migrationBuilder.DropTable(
                 name: "Antecedente");
+
+            migrationBuilder.DropTable(
+                name: "Caracteristica");
 
             migrationBuilder.DropTable(
                 name: "Classe");

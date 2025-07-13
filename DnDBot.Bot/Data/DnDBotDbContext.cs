@@ -69,6 +69,8 @@ namespace DnDBot.Bot.Data
         public DbSet<Proficiencia> Proficiencia { get; set; }
         public DbSet<Resistencia> Resistencia { get; set; }
         public DbSet<Caracteristica> Caracteristica { get; set; }
+        public DbSet<CaracteristicaEscala> CaracteristicaEscala { get; set; }
+        public DbSet<CaracteristicaEscalaDano> CaracteristicaEscalaDano { get; set; }
         public DbSet<BonusAtributo> BonusAtributo { get; set; }
         public DbSet<Pericia> Pericia { get; set; }
         public DbSet<DificuldadePericia> DificuldadePericia { get; set; }
