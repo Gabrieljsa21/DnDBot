@@ -201,7 +201,7 @@
     "IdiomasAdicionais": 0,
     "QntOpcoesProficiencia": 1,
     "QntOpcoesItem": 0,
-    "Proficiencias": [ "prof_trato_com_animais", "prof_sobrevivencia", "prof_veiculos_terrestres" ],
+    "Proficiencias": [ "prof_adestrar_animais", "prof_sobrevivencia", "prof_veiculos_terrestres" ],
     "Ouro": 10,
     "Caracteristicas": [ "hospitalidade_rustica" ],
     "Tags": [ "prestigio", "comunidade", "lideranca" ],

@@ -1757,6 +1757,78 @@
     "ValorCobre": 50,
     "Equipavel": false,
     "MaterialId": "papel"
+  },
+  {
+    "Id": "pacote_aventureiro",
+    "Nome": "Pacote de Aventureiro",
+    "PesoUnitario": 5.0,
+    "Categoria": "EquipamentoAventura",
+    "SubCategoria": "Kit",
+    "Empilhavel": false,
+    "ValorCobre": 1200,
+    "Equipavel": false
+  },
+  {
+    "Id": "pacote_explorador",
+    "Nome": "Pacote de Explorador",
+    "PesoUnitario": 5.0,
+    "Categoria": "EquipamentoAventura",
+    "SubCategoria": "Kit",
+    "Empilhavel": false,
+    "ValorCobre": 1000,
+    "Equipavel": false
+  },
+  {
+    "Id": "pacote_estudioso",
+    "Nome": "Pacote de Estudioso",
+    "PesoUnitario": 5.0,
+    "Categoria": "EquipamentoAventura",
+    "SubCategoria": "Kit",
+    "Empilhavel": false,
+    "ValorCobre": 4000,
+    "Equipavel": false
+  },
+  {
+    "Id": "pacote_sacerdote",
+    "Nome": "Pacote de Sacerdote",
+    "PesoUnitario": 5.0,
+    "Categoria": "EquipamentoAventura",
+    "SubCategoria": "Kit",
+    "Empilhavel": false,
+    "ValorCobre": 1900,
+    "Equipavel": false
+  },
+  {
+    "Id": "pacote_diplomata",
+    "Nome": "Pacote de Diplomata",
+    "PesoUnitario": 5.0,
+    "Categoria": "EquipamentoAventura",
+    "SubCategoria": "Kit",
+    "Empilhavel": false,
+    "ValorCobre": 3900,
+    "Equipavel": false
+  },
+  {
+    "Id": "pacote_assaltante",
+    "Nome": "Pacote de Assaltante",
+    "PesoUnitario": 5.0,
+    "Categoria": "EquipamentoAventura",
+    "SubCategoria": "Kit",
+    "Empilhavel": false,
+    "ValorCobre": 1600,
+    "Equipavel": false
+  },
+  {
+    "Id": "pacote_artista",
+    "Nome": "Pacote de Artista",
+    "PesoUnitario": 5.0,
+    "Categoria": "EquipamentoAventura",
+    "SubCategoria": "Kit",
+    "Empilhavel": false,
+    "ValorCobre": 4000,
+    "Equipavel": false
   }
+
+
 
 ]

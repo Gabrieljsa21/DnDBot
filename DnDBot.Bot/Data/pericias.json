@@ -104,12 +104,12 @@
     "Icone": "icone_sobrevivencia.png"
   },
   {
-    "Id": "trato_com_animais",
+    "Id": "adestrar_animais",
     "Nome": "Trato com Animais",
     "AtributoBase": "Sabedoria",
     "Tipo": "Habilidade",
     "Descricao": "Capacidade de interagir, acalmar ou treinar animais.",
-    "Icone": "icone_trato_com_animais.png"
+    "Icone": "icone_adestrar_animais.png"
   },
   {
     "Id": "atuacao",

@@ -28,11 +28,7 @@ namespace DnDBot.Bot.Data.Configurations
                    .WithOne(p => p.Classe)
                    .HasForeignKey(p => p.ClasseId);
 
-            builder.HasMany(c => c.PericiasRelacionadas)
-                   .WithOne(p => p.Classe)
-                   .HasForeignKey(p => p.ClasseId);
-
-            builder.HasMany(c => c.MagiasDisponiveis)
+            builder.HasMany(c => c.Magias)
                    .WithOne(m => m.Classe)
                    .HasForeignKey(m => m.ClasseId);
 
@@ -56,13 +52,13 @@ namespace DnDBot.Bot.Data.Configurations
                    .WithOne()
                    .HasForeignKey("ClasseId");
 
-            builder.HasMany(c => c.IdItensIniciais)
+            builder.HasMany(c => c.Itens)
                    .WithOne(i => i.Classe)
                    .HasForeignKey(i => i.ClasseId);
 
-            builder.HasMany(c => c.Moedas)
-                   .WithOne(m => m.Classe)
-                   .HasForeignKey(m => m.ClasseId);
+            builder.HasMany(c => c.ItensOpcoes)
+                   .WithOne(g => g.Classe)
+                   .HasForeignKey(g => g.ClasseId);
 
             builder.HasMany(c => c.ClasseTags)
                    .WithOne(t => t.Classe)
@@ -71,31 +67,25 @@ namespace DnDBot.Bot.Data.Configurations
             builder.Ignore(c => c.Tags);
             builder.Ignore(c => c.CaracteristicasPorNivel);
             builder.Ignore(c => c.ProgressaoPorNivel);
+
+            builder.Property(c => c.QntOpcoesProficiencias)
+                    .HasColumnName("QntOpcoesProficiencias");
+
+            builder.HasMany(c => c.OpcoesProficiencias)
+                   .WithOne(o => o.Classe)
+                   .HasForeignKey(o => o.ClasseId);
+
         }
     }
-    public class ClasseMagiaConfiguration : IEntityTypeConfiguration<ClasseMagia>
-    {
-        public void Configure(EntityTypeBuilder<ClasseMagia> builder)
-        {
-            builder.HasKey(x => new { x.ClasseId, x.MagiaId });
 
-            builder.HasOne(x => x.Classe)
-                   .WithMany()
-                   .HasForeignKey(x => x.ClasseId);
-
-            builder.HasOne(x => x.Magia)
-                   .WithMany()
-                   .HasForeignKey(x => x.MagiaId);
-        }
-    }
-    public class ClasseItensConfiguration : IEntityTypeConfiguration<ClasseItens>
+    public class ClasseItensFixosConfiguration : IEntityTypeConfiguration<ClasseItemFixo>
     {
-        public void Configure(EntityTypeBuilder<ClasseItens> builder)
+        public void Configure(EntityTypeBuilder<ClasseItemFixo> builder)
         {
             builder.HasKey(x => new { x.ClasseId, x.ItemId });
 
             builder.HasOne(x => x.Classe)
-                   .WithMany()
+                   .WithMany(c => c.Itens)
                    .HasForeignKey(x => x.ClasseId);
 
             builder.HasOne(x => x.Item)
@@ -103,49 +93,76 @@ namespace DnDBot.Bot.Data.Configurations
                    .HasForeignKey(x => x.ItemId);
         }
     }
-    public class ClasseMoedaConfiguration : IEntityTypeConfiguration<ClasseMoeda>
+
+    public class ClassesOpcoesItensGrupoConfiguration : IEntityTypeConfiguration<ClasseOpcaoItemGrupo>
     {
-        public void Configure(EntityTypeBuilder<ClasseMoeda> builder)
+        public void Configure(EntityTypeBuilder<ClasseOpcaoItemGrupo> builder)
         {
-            builder.HasKey(x => new { x.ClasseId, x.MoedaId });
+            builder.HasKey(x => x.Id);
+
+            builder.Property(x => x.Nome)
+                   .IsRequired()
+                   .HasMaxLength(100);
 
             builder.HasOne(x => x.Classe)
-                   .WithMany(c => c.Moedas)
+                   .WithMany(c => c.ItensOpcoes)
                    .HasForeignKey(x => x.ClasseId);
 
-            builder.HasOne(x => x.Moeda)
-                   .WithMany()
-                   .HasForeignKey(x => x.MoedaId);
+            builder.HasMany(x => x.Opcoes)
+                   .WithOne(o => o.Grupo)
+                   .HasForeignKey(o => o.GrupoId);
         }
     }
-    public class ClassePericiaConfiguration : IEntityTypeConfiguration<ClassePericia>
+
+    public class ClassesOpcoesItensOpcaoConfiguration : IEntityTypeConfiguration<ClasseOpcaoItemOpcao>
     {
-        public void Configure(EntityTypeBuilder<ClassePericia> builder)
+        public void Configure(EntityTypeBuilder<ClasseOpcaoItemOpcao> builder)
         {
-            builder.HasKey(x => new { x.ClasseId, x.PericiaId });
+            builder.HasKey(x => x.Id);
 
-            builder.HasOne(x => x.Classe)
-                   .WithMany()
-                   .HasForeignKey(x => x.ClasseId);
+            builder.Property(x => x.Nome)
+                   .IsRequired()
+                   .HasMaxLength(100);
 
-            builder.HasOne(x => x.Pericia)
-                   .WithMany()
-                   .HasForeignKey(x => x.PericiaId);
+            builder.HasOne(x => x.Grupo)
+                   .WithMany(g => g.Opcoes)
+                   .HasForeignKey(x => x.GrupoId);
+
+            builder.HasMany(x => x.Itens)
+                   .WithOne(i => i.Opcao)
+                   .HasForeignKey(i => i.OpcaoId);
         }
     }
-    public class ClasseProficienciaConfiguration : IEntityTypeConfiguration<ClasseProficiencia>
+
+    public class ClasseItensOpcaoItemConfiguration : IEntityTypeConfiguration<ClasseItemOpcaoItem>
     {
-        public void Configure(EntityTypeBuilder<ClasseProficiencia> builder)
+        public void Configure(EntityTypeBuilder<ClasseItemOpcaoItem> builder)
         {
-            builder.HasKey(x => new { x.ClasseId, x.ProficienciaId });
+            builder.HasKey(x => x.Id);
+
+            builder.HasOne(x => x.Opcao)
+                   .WithMany(o => o.Itens)
+                   .HasForeignKey(x => x.OpcaoId);
+
+            builder.HasOne(x => x.Item)
+                   .WithMany()
+                   .HasForeignKey(x => x.ItemId);
+        }
+    }
+
+    public class ClasseMagiaConfiguration : IEntityTypeConfiguration<ClasseMagia>
+    {
+        public void Configure(EntityTypeBuilder<ClasseMagia> builder)
+        {
+            builder.HasKey(x => new { x.ClasseId, x.MagiaId });
 
             builder.HasOne(x => x.Classe)
-                   .WithMany()
+                   .WithMany(x=>x.Magias)
                    .HasForeignKey(x => x.ClasseId);
 
-            builder.HasOne(x => x.Proficiencia)
+            builder.HasOne(x => x.Magia)
                    .WithMany()
-                   .HasForeignKey(x => x.ProficienciaId);
+                   .HasForeignKey(x => x.MagiaId);
         }
     }
     public class ClasseSalvaguardaConfiguration : IEntityTypeConfiguration<ClasseSalvaguarda>
@@ -170,4 +187,67 @@ namespace DnDBot.Bot.Data.Configurations
                    .HasForeignKey(ct => ct.ClasseId);
         }
     }
+
+    public class ClasseProficienciaConfiguration : IEntityTypeConfiguration<ClasseProficiencia>
+    {
+        public void Configure(EntityTypeBuilder<ClasseProficiencia> builder)
+        {
+            builder.HasKey(x => new { x.ClasseId, x.ProficienciaId });
+
+            builder.HasOne(x => x.Classe)
+                   .WithMany(x => x.Proficiencias)
+                   .HasForeignKey(x => x.ClasseId);
+
+            builder.HasOne(x => x.Proficiencia)
+                   .WithMany()
+                   .HasForeignKey(x => x.ProficienciaId);
+        }
+    }
+
+    public class ClasseOpcaoProficienciaConfiguration : IEntityTypeConfiguration<ClasseOpcaoProficiencia>
+    {
+        public void Configure(EntityTypeBuilder<ClasseOpcaoProficiencia> builder)
+        {
+            builder.HasKey(x => new { x.ClasseId, x.ProficienciaId });
+
+            builder.HasOne(x => x.Classe)
+                   .WithMany(c => c.OpcoesProficiencias)
+                   .HasForeignKey(x => x.ClasseId);
+
+            builder.HasOne(x => x.Proficiencia)
+                   .WithMany()
+                   .HasForeignKey(x => x.ProficienciaId);
+        }
+    }
+
+    public class ClasseOpcaoPericiaConfiguration : IEntityTypeConfiguration<ClasseOpcaoPericia>
+    {
+        public void Configure(EntityTypeBuilder<ClasseOpcaoPericia> builder)
+        {
+            // define a chave composta
+            builder.HasKey(x => new { x.ClasseId, x.PericiaId });
+
+            // relacionamentos
+            builder.HasOne(x => x.Classe)
+                   .WithMany(c => c.OpcoesPericias)
+                   .HasForeignKey(x => x.ClasseId);
+
+            builder.HasOne(x => x.Pericia)
+                   .WithMany()  // ou, se houver coleção inversa
+                   .HasForeignKey(x => x.PericiaId);
+        }
+    }
+    public class ClasseProgressaoConfiguration : IEntityTypeConfiguration<ClasseProgressao>
+    {
+        public void Configure(EntityTypeBuilder<ClasseProgressao> builder)
+        {
+            builder.HasKey(p => new { p.ClasseId, p.Nivel });
+
+            builder
+                .HasOne<Classe>(p => p.Classe)
+                .WithMany()
+                .HasForeignKey(p => p.ClasseId);
+        }
+    }
+
 }

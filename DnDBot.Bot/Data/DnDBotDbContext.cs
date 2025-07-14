@@ -59,10 +59,20 @@ namespace DnDBot.Bot.Data
         #region Classes
         public DbSet<Classe> Classe { get; set; }
         public DbSet<ClasseTag> ClasseTag { get; set; }
-        public DbSet<ClassePericia> ClassePericias { get; set; }
-        public DbSet<ClasseProficiencia> ClasseProficienciasArmas { get; set; }
-        public DbSet<ClasseSalvaguarda> ClasseSalvaguardas { get; set; }
-        public DbSet<ClasseMagia> ClasseMagias { get; set; }
+        public DbSet<ClasseProficiencia> ClasseProficiencia { get; set; }
+        public DbSet<ClasseSalvaguarda> ClasseSalvaguarda { get; set; }
+        public DbSet<ClasseMagia> ClasseMagia { get; set; }
+        public DbSet<ClasseOpcaoPericia> ClasseOpcaoPericia { get; set; }
+        public DbSet<ClasseOpcaoProficiencia> ClasseOpcaoProficiencia { get; set; }
+        public DbSet<ClasseHabilidade> ClasseHabilidade { get; set; }
+        public DbSet<ValorPorNivel> ValorPorNivel { get; set; }
+        public DbSet<ClasseProgressao> ClasseProgressao { get; set; }
+
+        public DbSet<ClasseItemFixo> ClasseItemFixo { get; set; }
+        public DbSet<ClasseOpcaoItemGrupo> ClasseOpcaoItemGrupo { get; set; }
+        public DbSet<ClasseOpcaoItemOpcao> ClasseOpcaoItemOpcao { get; set; }
+        public DbSet<ClasseItemOpcaoItem> ClasseItemOpcaoItem { get; set; }
+
         #endregion
 
         #region Sistema de Regras

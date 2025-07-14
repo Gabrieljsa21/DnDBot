@@ -78,10 +78,10 @@
     "PericiaId": "sobrevivencia"
   },
   {
-    "Id": "prof_trato_com_animais",
+    "Id": "prof_adestrar_animais",
     "Nome": "Proficiência em Trato com Animais",
     "Tipo": "Pericia",
-    "PericiaId": "trato_com_animais"
+    "PericiaId": "adestrar_animais"
   },
   {
     "Id": "prof_atuacao",
@@ -151,10 +151,26 @@
     "Tipo": "Arma"
   },
   {
+    "Id": "prof_armadura_leve",
+    "Nome": "Armadura Leve",
+    "Tipo": "Armadura"
+  },
+  {
     "Id": "prof_armadura_media",
     "Nome": "Armadura Média",
     "Tipo": "Armadura"
   },
+  {
+    "Id": "prof_armadura_pesada",
+    "Nome": "Armadura Pesada",
+    "Tipo": "Armadura"
+  },
+  {
+    "Id": "prof_escudo",
+    "Nome": "Escudo",
+    "Tipo": "Armadura"
+  },
+
   {
     "Id": "prof_veiculos_aquaticos",
     "Nome": "Veículos Aquáticos",
@@ -314,9 +330,90 @@
     "Id": "prof_kit_herbalismo",
     "Nome": "Kit de Herbalismo",
     "Tipo": "Ferramenta"
+  },
+  {
+    "Id": "prof_armas_simples",
+    "Nome": "Armas Simples",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_armas_marciais",
+    "Nome": "Armas Marciais",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_besta_mao",
+    "Nome": "Besta de Mão",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_espada_curta",
+    "Nome": "Espada Curta",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_clava",
+    "Nome": "Clava",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_adaga",
+    "Nome": "Adaga",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_dardo",
+    "Nome": "Dardo",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_azagaia",
+    "Nome": "Azagaia",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_maca",
+    "Nome": "Maça",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_bordao",
+    "Nome": "Bordão",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_cimitarra",
+    "Nome": "Cimitarra",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_foice",
+    "Nome": "Foice",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_funda",
+    "Nome": "Funda",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_lanca",
+    "Nome": "Lança",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_besta_leve",
+    "Nome": "Besta Leve",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_espada_longa",
+    "Nome": "Espada Longa",
+    "Tipo": "Arma"
+  },
+  {
+    "Id": "prof_rapieira",
+    "Nome": "Rapieira",
+    "Tipo": "Arma"
   }
-
-
-
-
 ]

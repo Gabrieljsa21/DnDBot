@@ -1,366 +1,841 @@
 [
   {
+    "Id": "artifice",
+    "Nome": "Artífice",
+    "Descricao": "Inventores mágicos que infundem objetos com poder arcano.",
+    "DadoVida": "1d8",
+    "IdSalvaguardas": [ "inteligencia", "constituicao" ],
+    "Proficiencias": [
+      { "ProficienciaId": "prof_armadura_leve" },
+      { "ProficienciaId": "prof_armadura_media" },
+      { "ProficienciaId": "prof_escudo" },
+      { "ProficienciaId": "prof_armas_simples" },
+      { "ProficienciaId": "prof_ferramentas_ladrao" }
+    ],
+    "QntOpcoesProficiencias": 1,
+    "OpcoesProficiencias": [
+      { "ProficienciaId": "prof_kit_artesao_alquimista" },
+      { "ProficienciaId": "prof_kit_artesao_carpinteiro" },
+      { "ProficienciaId": "prof_kit_artesao_ceramista" },
+      { "ProficienciaId": "prof_kit_artesao_coureiro" },
+      { "ProficienciaId": "prof_kit_artesao_ferreiro" },
+      { "ProficienciaId": "prof_kit_artesao_ferreiro" },
+      { "ProficienciaId": "prof_kit_artesao_vidraceiro" },
+      { "ProficienciaId": "prof_kit_artesao_joalheiro" },
+      { "ProficienciaId": "prof_kit_artesao_marceneiro" },
+      { "ProficienciaId": "prof_kit_artesao_papeleiro" },
+      { "ProficienciaId": "prof_kit_artesao_pintor" },
+      { "ProficienciaId": "prof_kit_artesao_tecelao" },
+      { "ProficienciaId": "prof_kit_artesao_tosquiador" }
+    ],
+    "QntOpcoesPericias": 2,
+    "OpcoesPericias": [
+      { "PericiaId": "arcanismo" },
+      { "PericiaId": "historia" },
+      { "PericiaId": "investigacao" },
+      { "PericiaId": "medicina" },
+      { "PericiaId": "natureza" },
+      { "PericiaId": "percepcao" },
+      { "PericiaId": "prestidigitacao" }
+    ],
+    "Itens": [
+      { "ItemId": "besta_leve" },
+      {
+        "ItemId": "municao_virotes",
+        "Quantidade": 20
+      },
+      { "ItemId": "ferramentas_ladrao" },
+      { "ItemId": "pacote_explorador" }
+    ],
+    "ItensOpcoes": [
+      {
+        "Nome": "Opção A",
+        "itens": [ "duas_armas_simples" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "armadura_couro_rebites" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "cota_escamas" ]
+      }
+    ]
+  },
+  {
     "Id": "barbaro",
     "Nome": "Bárbaro",
     "Descricao": "Guerreiros selvagens movidos pela fúria.",
     "DadoVida": "1d12",
-    "Fonte": "Livro do Jogador",
-    "ImagemUrl": "",
-    "IconeUrl": "",
-    "PapelTatico": "Tanque",
-    "IdHabilidadeConjuracao": null,
-    "UsaMagiaPreparada": false,
+    "PapelTatico": "tanque",
     "IdSalvaguardas": [ "forca", "constituicao" ],
-    "SubclassePorNivel": 3,
-    "ProficienciasArmadura": [],
-    "IdProficienciasArmas": [],
-    "IdProficienciasMulticlasse": [],
-    "RequisitosParaMulticlasseEntities": [],
-    "PericiasRelacionadas": [],
-    "IdMagiasDisponiveis": [],
-    "TruquesConhecidosPorNivelList": [],
-    "MagiasConhecidasPorNivelList": [],
-    "EspacosMagia": [],
-    "Subclasses": [],
-    "CaracteristicasPorNivelList": [],
-    "IdItensIniciais": [],
-    "RiquezaInicial": [],
-    "Notas": []
+    "QntOpcoesPericias": 2,
+    "OpcoesPericias": [
+      { "PericiaId": "adestrar_animais" },
+      { "PericiaId": "atletismo" },
+      { "PericiaId": "intimidacao" },
+      { "PericiaId": "natureza" },
+      { "PericiaId": "percepcao" },
+      { "PericiaId": "sobrevivencia" }
+    ],
+    "Proficiencias": [
+      { "ProficienciaId": "prof_armadura_leve" },
+      { "ProficienciaId": "prof_armadura_media" },
+      { "ProficienciaId": "prof_escudo" },
+      { "ProficienciaId": "prof_armas_simples" },
+      { "ProficienciaId": "prof_armas_marciais" }
+    ],
+    "nivel_de_subclasse": 3,
+    "subclasses": [],
+    "ouro": 0,
+    "Itens": [
+      { "ItemId": "pacote_aventureiro" },
+      {
+        "ItemId": "azagaia",
+        "Quantidade": 4
+      }
+    ],
+    "ItensOpcoes": [
+      {
+        "Nome": "Opção A",
+        "itens": [ "machado_grande" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "arma_marcial_corpo_a_corpo" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "machado_de_mao", "machado_de_mao" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "arma_simples" ]
+      }
+    ],
+    "tags": [ "marcial", "furia", "tanque" ]
   },
   {
     "Id": "bardo",
     "Nome": "Bardo",
     "Descricao": "Músicos mágicos e versáteis com poderes arcanos.",
     "DadoVida": "1d8",
-    "Fonte": "Livro do Jogador",
-    "ImagemUrl": "",
-    "IconeUrl": "",
-    "PapelTatico": "Suporte",
+    "PapelTatico": "suporte",
     "IdHabilidadeConjuracao": "carisma",
-    "UsaMagiaPreparada": false,
+    "usa_magia_preparada": true,
+    "QntOpcoesPericias": 3,
+    "OpcoesPericias": [
+      { "PericiaId": "atletismo" },
+      { "PericiaId": "acrobacia" },
+      { "PericiaId": "furtividade" },
+      { "PericiaId": "prestidigitacao" },
+      { "PericiaId": "arcanismo" },
+      { "PericiaId": "historia" },
+      { "PericiaId": "investigacao" },
+      { "PericiaId": "natureza" },
+      { "PericiaId": "religiao" },
+      { "PericiaId": "intuicao" },
+      { "PericiaId": "medicina" },
+      { "PericiaId": "percepcao" },
+      { "PericiaId": "sobrevivencia" },
+      { "PericiaId": "adestrar_animais" },
+      { "PericiaId": "atuacao" },
+      { "PericiaId": "enganacao" },
+      { "PericiaId": "intimidacao" },
+      { "PericiaId": "persuasao" }
+    ],
     "IdSalvaguardas": [ "destreza", "carisma" ],
-    "SubclassePorNivel": 3,
-    "ProficienciasArmadura": [],
-    "IdProficienciasArmas": [],
-    "IdProficienciasMulticlasse": [],
-    "RequisitosParaMulticlasseEntities": [],
-    "PericiasRelacionadas": [],
-    "IdMagiasDisponiveis": [],
-    "TruquesConhecidosPorNivelList": [],
-    "MagiasConhecidasPorNivelList": [],
-    "EspacosMagia": [],
-    "Subclasses": [],
-    "CaracteristicasPorNivelList": [],
-    "IdItensIniciais": [],
-    "RiquezaInicial": [],
-    "Notas": []
+    "Proficiencias": [
+      { "ProficienciaId": "prof_armadura_leve" },
+      { "ProficienciaId": "prof_armas_simples" },
+      { "ProficienciaId": "prof_besta_mao" },
+      { "ProficienciaId": "prof_espada_longa" },
+      { "ProficienciaId": "prof_rapieira" },
+      { "ProficienciaId": "prof_espada_curta" }
+    ],
+    "QntOpcoesProficiencias": 3,
+    "OpcoesProficiencias": [
+      { "ProficienciaId": "prof_alaude" },
+      { "ProficienciaId": "prof_flauta" },
+      { "ProficienciaId": "prof_flauta_doce" },
+      { "ProficienciaId": "prof_gaita_foles" },
+      { "ProficienciaId": "prof_lira" },
+      { "ProficienciaId": "prof_charamela" },
+      { "ProficienciaId": "prof_tambor" },
+      { "ProficienciaId": "prof_trombeta" },
+      { "ProficienciaId": "prof_viola" },
+      { "ProficienciaId": "prof_xilofone" }
+    ],
+    "nivel_de_subclasse": 3,
+    "subclasses": [],
+    "ouro": 0,
+    "Itens": [
+      { "ItemId": "armadura_couro" },
+      { "ItemId": "adaga" }
+    ],
+    "ItensOpcoes": [
+      {
+        "Nome": "Opção A",
+        "itens": [ "rapieira" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "espada_longa" ]
+      },
+      {
+        "Nome": "Opção C",
+        "itens": [ "arma_simples" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "pacote_diplomata" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "pacote_artista" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "lute" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "instrumento_musical" ]
+      }
+    ],
+
+    "tags": [ "conjurador", "suporte", "inspiracao" ],
+    "FocoConjuracao": "instrumento"
   },
   {
     "Id": "bruxo",
     "Nome": "Bruxo",
     "Descricao": "Fazem pactos com entidades sobrenaturais para obter poder.",
     "DadoVida": "1d8",
-    "Fonte": "Livro do Jogador",
-    "ImagemUrl": "",
-    "IconeUrl": "",
-    "PapelTatico": "Dano",
+    "PapelTatico": "conjurador",
     "IdHabilidadeConjuracao": "carisma",
-    "UsaMagiaPreparada": false,
+    "usa_magia_preparada": false,
+    "QntOpcoesPericias": 2,
+    "OpcoesPericias": [
+      { "PericiaId": "arcanismo" },
+      { "PericiaId": "enganacao" },
+      { "PericiaId": "historia" },
+      { "PericiaId": "intimidacao" },
+      { "PericiaId": "investigacao" },
+      { "PericiaId": "natureza" },
+      { "PericiaId": "religiao" }
+    ],
     "IdSalvaguardas": [ "sabedoria", "carisma" ],
-    "SubclassePorNivel": 1,
-    "ProficienciasArmadura": [],
-    "IdProficienciasArmas": [],
-    "IdProficienciasMulticlasse": [],
-    "RequisitosParaMulticlasseEntities": [],
-    "PericiasRelacionadas": [],
-    "IdMagiasDisponiveis": [],
-    "TruquesConhecidosPorNivelList": [],
-    "MagiasConhecidasPorNivelList": [],
-    "EspacosMagia": [],
-    "Subclasses": [],
-    "CaracteristicasPorNivelList": [],
-    "IdItensIniciais": [],
-    "RiquezaInicial": [],
-    "Notas": []
+    "Proficiencias": [
+      { "ProficienciaId": "prof_armadura_leve" },
+      { "ProficienciaId": "prof_armas_simples" }
+    ],
+    "nivel_de_subclasse": 1,
+    "subclasses": [],
+    "ouro": 0,
+    "Itens": [
+      { "ItemId": "armadura_couro" },
+      { "ItemId": "machadinha" },
+      { "ItemId": "adaga" },
+      { "ItemId": "adaga" }
+    ],
+    "ItensOpcoes": [
+      {
+        "Nome": "Opção A",
+        "itens": [ "besta_leve", "municao_virotes_20" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "arma_simples" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "bolsa_de_componentes" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "foco_arcano" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "pacote_estudioso" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "pacote_explorador" ]
+      }
+    ],
+
+    "tags": [ "conjurador", "invocador", "pacto" ],
+    "FocoConjuracao": "focoArcano"
   },
   {
     "Id": "clerigo",
     "Nome": "Clérigo",
     "Descricao": "Servos divinos que canalizam poder de deuses.",
     "DadoVida": "1d8",
-    "Fonte": "Livro do Jogador",
-    "ImagemUrl": "",
-    "IconeUrl": "",
-    "PapelTatico": "Suporte",
+    "PapelTatico": "conjurador",
     "IdHabilidadeConjuracao": "sabedoria",
-    "UsaMagiaPreparada": true,
+    "usa_magia_preparada": true,
+    "QntOpcoesPericias": 2,
+    "OpcoesPericias": [
+      { "PericiaId": "historia" },
+      { "PericiaId": "intuicao" },
+      { "PericiaId": "medicina" },
+      { "PericiaId": "persuasao" },
+      { "PericiaId": "religiao" }
+    ],
+
     "IdSalvaguardas": [ "sabedoria", "carisma" ],
-    "SubclassePorNivel": 1,
-    "ProficienciasArmadura": [],
-    "IdProficienciasArmas": [],
-    "IdProficienciasMulticlasse": [],
-    "RequisitosParaMulticlasseEntities": [],
-    "PericiasRelacionadas": [],
-    "IdMagiasDisponiveis": [],
-    "TruquesConhecidosPorNivelList": [],
-    "MagiasConhecidasPorNivelList": [],
-    "EspacosMagia": [],
-    "Subclasses": [],
-    "CaracteristicasPorNivelList": [],
-    "IdItensIniciais": [],
-    "RiquezaInicial": [],
-    "Notas": []
+    "Proficiencias": [
+      { "ProficienciaId": "prof_armadura_leve" },
+      { "ProficienciaId": "prof_armadura_media" },
+      { "ProficienciaId": "prof_escudo" },
+      { "ProficienciaId": "prof_armas_simples" }
+    ],
+    "Itens": [
+      { "ItemId": "escudo_comum" },
+      { "ItemId": "simbolo_sagrado" }
+    ],
+    "ItensOpcoes": [
+      {
+        "Nome": "Opção A",
+        "itens": [ "maca" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "martelo_de_guerra" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "brunea" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "armadura_couro" ]
+      },
+      {
+        "Nome": "Opção C",
+        "itens": [ "armadura_cota_malha" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "besta_leve", "municao_virotes_20" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "arma_simples" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "pacote_sacerdote" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "pacote_aventureiro" ]
+      }
+    ],
+
+    "FocoConjuracao": "símbolo_sagrado"
   },
   {
     "Id": "druida",
     "Nome": "Druida",
     "Descricao": "Guardião da natureza com habilidades de transformação.",
     "DadoVida": "1d8",
-    "Fonte": "Livro do Jogador",
-    "ImagemUrl": "",
-    "IconeUrl": "",
-    "PapelTatico": "Versátil",
+    "PapelTatico": "conjurador",
     "IdHabilidadeConjuracao": "sabedoria",
-    "UsaMagiaPreparada": true,
+    "usa_magia_preparada": true,
     "IdSalvaguardas": [ "inteligencia", "sabedoria" ],
-    "SubclassePorNivel": 2,
-    "ProficienciasArmadura": [],
-    "IdProficienciasArmas": [],
-    "IdProficienciasMulticlasse": [],
-    "RequisitosParaMulticlasseEntities": [],
-    "PericiasRelacionadas": [],
-    "IdMagiasDisponiveis": [],
-    "TruquesConhecidosPorNivelList": [],
-    "MagiasConhecidasPorNivelList": [],
-    "EspacosMagia": [],
-    "Subclasses": [],
-    "CaracteristicasPorNivelList": [],
-    "IdItensIniciais": [],
-    "RiquezaInicial": [],
-    "Notas": []
+    "Proficiencias": [
+      { "ProficienciaId": "prof_armadura_leve" },
+      { "ProficienciaId": "prof_armadura_media" },
+      { "ProficienciaId": "prof_escudo" },
+      { "ProficienciaId": "prof_clava" },
+      { "ProficienciaId": "prof_adaga" },
+      { "ProficienciaId": "prof_dardo" },
+      { "ProficienciaId": "prof_azagaia" },
+      { "ProficienciaId": "prof_maca" },
+      { "ProficienciaId": "prof_bordao" },
+      { "ProficienciaId": "prof_cimitarra" },
+      { "ProficienciaId": "prof_foice" },
+      { "ProficienciaId": "prof_funda" },
+      { "ProficienciaId": "prof_lanca" }
+    ],
+    "QntOpcoesPericias": 2,
+    "OpcoesPericias": [
+      { "PericiaId": "arcanismo" },
+      { "PericiaId": "adestrar_animais" },
+      { "PericiaId": "intuicao" },
+      { "PericiaId": "medicina" },
+      { "PericiaId": "natureza" },
+      { "PericiaId": "percepcao" },
+      { "PericiaId": "religiao" },
+      { "PericiaId": "sobrevivencia" }
+    ],
+    "Itens": [
+      { "ItemId": "armadura_couro" },
+      { "ItemId": "pacote_aventureiro" },
+      { "ItemId": "implemento_druidico_varinha" }
+    ],
+    "ItensOpcoes": [
+      {
+        "Nome": "Opção A",
+        "itens": [ "escudo_de_madeira" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "arma_simples" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "cimitara" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "arma_corpo_a_corpo_simples" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "pacote_estudioso" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "pacote_explorador" ]
+      }
+    ],
+
+    "FocoConjuracao": "foco_druidico"
   },
   {
     "Id": "feiticeiro",
     "Nome": "Feiticeiro",
     "Descricao": "Magia inata proveniente do sangue ou destino.",
     "DadoVida": "1d6",
-    "Fonte": "Livro do Jogador",
-    "ImagemUrl": "",
-    "IconeUrl": "",
-    "PapelTatico": "Dano",
+    "PapelTatico": "conjurador",
     "IdHabilidadeConjuracao": "carisma",
-    "UsaMagiaPreparada": false,
+    "usa_magia_preparada": false,
+    "Proficiencias": [
+      { "ProficienciaId": "prof_adaga" },
+      { "ProficienciaId": "prof_dardo" },
+      { "ProficienciaId": "prof_funda" },
+      { "ProficienciaId": "prof_bordao" },
+      { "ProficienciaId": "prof_besta_leve" }
+    ],
     "IdSalvaguardas": [ "constituicao", "carisma" ],
-    "SubclassePorNivel": 1,
-    "ProficienciasArmadura": [],
-    "IdProficienciasArmas": [],
-    "IdProficienciasMulticlasse": [],
-    "RequisitosParaMulticlasseEntities": [],
-    "PericiasRelacionadas": [],
-    "IdMagiasDisponiveis": [],
-    "TruquesConhecidosPorNivelList": [],
-    "MagiasConhecidasPorNivelList": [],
-    "EspacosMagia": [],
-    "Subclasses": [],
-    "CaracteristicasPorNivelList": [],
-    "IdItensIniciais": [],
-    "RiquezaInicial": [],
-    "Notas": []
+    "QntOpcoesPericias": 2,
+    "OpcoesPericias": [
+      { "PericiaId": "arcanismo" },
+      { "PericiaId": "enganacao" },
+      { "PericiaId": "intuicao" },
+      { "PericiaId": "intimidacao" },
+      { "PericiaId": "persuasao" },
+      { "PericiaId": "religiao" }
+    ],
+    "Itens": [],
+    "ItensOpcoes": [
+      {
+        "Nome": "Opção A",
+        "itens": [ "armadura_cota_malha" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "gibao_peles", "arco_longo", "flechas_20" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "arma_marcial", "escudo_comum" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "arma_marcial", "arma_marcial" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "besta_leve", "municao_virotes_20" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "machado_arremesso", "machado_arremesso" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "pacote_aventureiro" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "pacote_explorador" ]
+      }
+    ],
+    "FocoConjuracao": "foco_arcano"
   },
   {
     "Id": "guerreiro",
     "Nome": "Guerreiro",
     "Descricao": "Mestre das armas e da tática em combate.",
     "DadoVida": "1d10",
-    "Fonte": "Livro do Jogador",
-    "ImagemUrl": "",
-    "IconeUrl": "",
-    "PapelTatico": "Tanque / Dano",
-    "IdHabilidadeConjuracao": null,
-    "UsaMagiaPreparada": false,
+    "PapelTatico": "combate corpo a corpo / combate à distância",
+    "Proficiencias": [
+      { "ProficienciaId": "prof_armadura_leve" },
+      { "ProficienciaId": "prof_armadura_media" },
+      { "ProficienciaId": "prof_armadura_pesada" },
+      { "ProficienciaId": "prof_escudo" },
+      { "ProficienciaId": "prof_armas_simples" },
+      { "ProficienciaId": "prof_armas_marciais" }
+    ],
     "IdSalvaguardas": [ "forca", "constituicao" ],
-    "SubclassePorNivel": 3,
-    "ProficienciasArmadura": [],
-    "IdProficienciasArmas": [],
-    "IdProficienciasMulticlasse": [],
-    "RequisitosParaMulticlasseEntities": [],
-    "PericiasRelacionadas": [],
-    "IdMagiasDisponiveis": [],
-    "TruquesConhecidosPorNivelList": [],
-    "MagiasConhecidasPorNivelList": [],
-    "EspacosMagia": [],
-    "Subclasses": [],
-    "CaracteristicasPorNivelList": [],
-    "IdItensIniciais": [],
-    "RiquezaInicial": [],
-    "Notas": []
+    "QntOpcoesPericias": 2,
+    "OpcoesPericias": [
+      { "PericiaId": "acrobacia" },
+      { "PericiaId": "adestrar_animais" },
+      { "PericiaId": "atletismo" },
+      { "PericiaId": "historia" },
+      { "PericiaId": "intuicao" },
+      { "PericiaId": "intimidacao" },
+      { "PericiaId": "percepcao" },
+      { "PericiaId": "sobrevivencia" }
+    ],
+    "Itens": [],
+    "ItensOpcoes": [
+      {
+        "Nome": "Opção A",
+        "itens": [ "armadura_cota_malha" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "gibao_peles", "arco_longo", "flechas_20" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "arma_marcial", "escudo_comum" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "arma_marcial", "arma_marcial" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "besta_leve", "municao_virotes_20" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "machado_arremesso", "machado_arremesso" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "pacote_aventureiro" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "pacote_explorador" ]
+      }
+    ]
+
   },
   {
     "Id": "ladino",
     "Nome": "Ladino",
     "Descricao": "Especialista em furtividade, armadilhas e ataques precisos.",
     "DadoVida": "1d8",
-    "Fonte": "Livro do Jogador",
-    "ImagemUrl": "",
-    "IconeUrl": "",
-    "PapelTatico": "Dano / Infiltração",
-    "IdHabilidadeConjuracao": null,
-    "UsaMagiaPreparada": false,
+    "Proficiencias": [
+      { "ProficienciaId": "prof_armadura_leve" },
+      { "ProficienciaId": "prof_armas_simples" },
+      { "ProficienciaId": "prof_besta_mao" },
+      { "ProficienciaId": "prof_espada_longa" },
+      { "ProficienciaId": "prof_rapieira" },
+      { "ProficienciaId": "prof_espada_curta" },
+      { "ProficienciaId": "prof_ferramentas_ladrao" }
+    ],
     "IdSalvaguardas": [ "destreza", "inteligencia" ],
-    "SubclassePorNivel": 3,
-    "ProficienciasArmadura": [],
-    "IdProficienciasArmas": [],
-    "IdProficienciasMulticlasse": [],
-    "RequisitosParaMulticlasseEntities": [],
-    "PericiasRelacionadas": [],
-    "IdMagiasDisponiveis": [],
-    "TruquesConhecidosPorNivelList": [],
-    "MagiasConhecidasPorNivelList": [],
-    "EspacosMagia": [],
-    "Subclasses": [],
-    "CaracteristicasPorNivelList": [],
-    "IdItensIniciais": [],
-    "RiquezaInicial": [],
-    "Notas": []
+    "QntOpcoesPericias": 4,
+    "OpcoesPericias": [
+      { "PericiaId": "acrobacia" },
+      { "PericiaId": "atletismo" },
+      { "PericiaId": "atuacao" },
+      { "PericiaId": "enganacao" },
+      { "PericiaId": "furtividade" },
+      { "PericiaId": "intimidacao" },
+      { "PericiaId": "intuicao" },
+      { "PericiaId": "investigacao" },
+      { "PericiaId": "percepcao" },
+      { "PericiaId": "persuasao" },
+      { "PericiaId": "prestidigitacao" }
+    ],
+
+    "Itens": [
+      { "ItemId": "armadura_couro" },
+      { "ItemId": "adaga" },
+      { "ItemId": "adaga" },
+      { "ItemId": "ferramentas_ladrao" }
+    ],
+    "ItensOpcoes": [
+      {
+        "Nome": "Opção A",
+        "itens": [ "rapieira" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "espada_longa" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "arco_curto", "aljava_20_flechas" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "espada_curta" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "pacote_assaltante" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "pacote_aventureiro" ]
+      },
+      {
+        "Nome": "Opção C",
+        "itens": [ "pacote_explorador" ]
+      }
+    ]
+
   },
   {
     "Id": "mago",
     "Nome": "Mago",
     "Descricao": "Estudiosos da magia arcana com vasto repertório de feitiços.",
     "DadoVida": "1d6",
-    "Fonte": "Livro do Jogador",
-    "ImagemUrl": "",
-    "IconeUrl": "",
-    "PapelTatico": "Controle / Dano",
-    "IdHabilidadeConjuracao": "inteligencia",
-    "UsaMagiaPreparada": true,
+    "Proficiencias": [
+      { "ProficienciaId": "prof_adaga" },
+      { "ProficienciaId": "prof_dardo" },
+      { "ProficienciaId": "prof_funda" },
+      { "ProficienciaId": "prof_bordao" },
+      { "ProficienciaId": "prof_besta_leve" }
+    ],
     "IdSalvaguardas": [ "inteligencia", "sabedoria" ],
-    "SubclassePorNivel": 2,
-    "ProficienciasArmadura": [],
-    "IdProficienciasArmas": [],
-    "IdProficienciasMulticlasse": [],
-    "RequisitosParaMulticlasseEntities": [],
-    "PericiasRelacionadas": [],
-    "IdMagiasDisponiveis": [],
-    "TruquesConhecidosPorNivelList": [],
-    "MagiasConhecidasPorNivelList": [],
-    "EspacosMagia": [],
-    "Subclasses": [],
-    "CaracteristicasPorNivelList": [],
-    "IdItensIniciais": [],
-    "RiquezaInicial": [],
-    "Notas": []
+    "QntOpcoesPericias": 2,
+    "OpcoesPericias": [
+      { "PericiaId": "arcanismo" },
+      { "PericiaId": "historia" },
+      { "PericiaId": "intuicao" },
+      { "PericiaId": "investigacao" },
+      { "PericiaId": "medicina" },
+      { "PericiaId": "religiao" }
+    ],
+
+    "Itens": [
+      { "ItemId": "grimorio" }
+    ],
+    "ItensOpcoes": [
+      {
+        "Nome": "Opção A",
+        "itens": [ "bordao" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "adaga" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "bolsa_componentes" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "foco_arcano" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "pacote_estudioso" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "pacote_explorador" ]
+      }
+    ],
+
+    "foco_conjuracao": "foco arcano"
   },
   {
     "Id": "monge",
     "Nome": "Monge",
     "Descricao": "Guerreiros disciplinados que canalizam energia interior (ki).",
     "DadoVida": "1d8",
-    "Fonte": "Livro do Jogador",
-    "ImagemUrl": "",
-    "IconeUrl": "",
-    "PapelTatico": "Mobilidade / Controle",
-    "IdHabilidadeConjuracao": null,
-    "UsaMagiaPreparada": false,
+    "Proficiencias": [
+      { "ProficienciaId": "prof_armas_simples" },
+      { "ProficienciaId": "prof_espada_curta" }
+    ],
     "IdSalvaguardas": [ "forca", "destreza" ],
-    "SubclassePorNivel": 3,
-    "ProficienciasArmadura": [],
-    "IdProficienciasArmas": [],
-    "IdProficienciasMulticlasse": [],
-    "RequisitosParaMulticlasseEntities": [],
-    "PericiasRelacionadas": [],
-    "IdMagiasDisponiveis": [],
-    "TruquesConhecidosPorNivelList": [],
-    "MagiasConhecidasPorNivelList": [],
-    "EspacosMagia": [],
-    "Subclasses": [],
-    "CaracteristicasPorNivelList": [],
-    "IdItensIniciais": [],
-    "RiquezaInicial": [],
-    "Notas": []
+    "QntOpcoesPericias": 2,
+    "OpcoesPericias": [
+      { "PericiaId": "acrobacia" },
+      { "PericiaId": "atletismo" },
+      { "PericiaId": "furtividade" },
+      { "PericiaId": "historia" },
+      { "PericiaId": "intuicao" },
+      { "PericiaId": "religiao" }
+    ],
+    "quantidade_proficiencias_escolhidas": 1,
+    "proficiencias_possiveis": [
+      { "ProficienciaId": "prof_kit_artesao_alquimista" },
+      { "ProficienciaId": "prof_kit_artesao_carpinteiro" },
+      { "ProficienciaId": "prof_kit_artesao_ceramista" },
+      { "ProficienciaId": "prof_kit_artesao_coureiro" },
+      { "ProficienciaId": "prof_kit_artesao_ferreiro" },
+      { "ProficienciaId": "prof_kit_artesao_vidraceiro" },
+      { "ProficienciaId": "prof_kit_artesao_joalheiro" },
+      { "ProficienciaId": "prof_kit_artesao_marceneiro" },
+      { "ProficienciaId": "prof_kit_artesao_papeleiro" },
+      { "ProficienciaId": "prof_kit_artesao_pintor" },
+      { "ProficienciaId": "prof_kit_artesao_tecelao" },
+      { "ProficienciaId": "prof_kit_artesao_tosquiador" },
+      { "ProficienciaId": "prof_alaude" },
+      { "ProficienciaId": "prof_flauta" },
+      { "ProficienciaId": "prof_flauta_doce" },
+      { "ProficienciaId": "prof_gaita_foles" },
+      { "ProficienciaId": "prof_lira" },
+      { "ProficienciaId": "prof_charamela" },
+      { "ProficienciaId": "prof_tambor" },
+      { "ProficienciaId": "prof_trombeta" },
+      { "ProficienciaId": "prof_viola" },
+      { "ProficienciaId": "prof_xilofone" }
+    ],
+    "Itens": [
+      {
+        "ItemId": "dardo",
+        "Quantidade": 10
+      }
+    ],
+    "ItensOpcoes": [
+      {
+        "Nome": "Opção A",
+        "itens": [ "espada_curta" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "Machadinha" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "pacote_explorador" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "pacote_aventureiro" ]
+      }
+    ]
+
   },
   {
     "Id": "paladino",
     "Nome": "Paladino",
     "Descricao": "Campeões da justiça e fé, que conjuram magias divinas e protegem aliados.",
     "DadoVida": "1d10",
-    "Fonte": "Livro do Jogador",
-    "ImagemUrl": "",
-    "IconeUrl": "",
-    "PapelTatico": "Tanque / Suporte",
-    "IdHabilidadeConjuracao": "carisma",
-    "UsaMagiaPreparada": true,
+    "Proficiencias": [
+      { "ProficienciaId": "prof_armadura_leve" },
+      { "ProficienciaId": "prof_armadura_media" },
+      { "ProficienciaId": "prof_armadura_pesada" },
+      { "ProficienciaId": "prof_escudo" },
+      { "ProficienciaId": "prof_armas_simples" },
+      { "ProficienciaId": "prof_armas_marciais" }
+    ],
     "IdSalvaguardas": [ "sabedoria", "carisma" ],
-    "SubclassePorNivel": 3,
-    "ProficienciasArmadura": [],
-    "IdProficienciasArmas": [],
-    "IdProficienciasMulticlasse": [],
-    "RequisitosParaMulticlasseEntities": [],
-    "PericiasRelacionadas": [],
-    "IdMagiasDisponiveis": [],
-    "TruquesConhecidosPorNivelList": [],
-    "MagiasConhecidasPorNivelList": [],
-    "EspacosMagia": [],
-    "Subclasses": [],
-    "CaracteristicasPorNivelList": [],
-    "IdItensIniciais": [],
-    "RiquezaInicial": [],
-    "Notas": []
+    "QntOpcoesPericias": 2,
+    "OpcoesPericias": [
+      { "PericiaId": "atletismo" },
+      { "PericiaId": "intuicao" },
+      { "PericiaId": "intimidacao" },
+      { "PericiaId": "medicina" },
+      { "PericiaId": "persuasao" },
+      { "PericiaId": "religiao" }
+    ],
+    "Itens": [
+      { "ItemId": "armadura_cota_malha" },
+      { "ItemId": "simbolo_sagrado" }
+    ],
+    "ItensOpcoes": [
+      {
+        "Nome": "Opção A",
+        "itens": [ "arma_marcial", "escudo_comum" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "arma_marcial", "arma_marcial" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "azagaia_5" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "arma_simples_corpo_a_corpo" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "pacote_sacerdote" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "pacote_aventureiro" ]
+      }
+    ]
+
   },
   {
     "Id": "patrulheiro",
     "Nome": "Patrulheiro",
     "Descricao": "Exploradores e caçadores com habilidades de combate e sobrevivência.",
     "DadoVida": "1d10",
-    "Fonte": "Livro do Jogador",
-    "ImagemUrl": "",
-    "IconeUrl": "",
-    "PapelTatico": "Exploração / Dano",
-    "IdHabilidadeConjuracao": "sabedoria",
-    "UsaMagiaPreparada": true,
+    "Proficiencias": [
+      { "ProficienciaId": "prof_armadura_leve" },
+      { "ProficienciaId": "prof_armadura_media" },
+      { "ProficienciaId": "prof_escudo" },
+      { "ProficienciaId": "prof_armas_simples" },
+      { "ProficienciaId": "prof_armas_marciais" }
+    ],
     "IdSalvaguardas": [ "forca", "destreza" ],
-    "SubclassePorNivel": 3,
-    "ProficienciasArmadura": [],
-    "IdProficienciasArmas": [],
-    "IdProficienciasMulticlasse": [],
-    "RequisitosParaMulticlasseEntities": [],
-    "PericiasRelacionadas": [],
-    "IdMagiasDisponiveis": [],
-    "TruquesConhecidosPorNivelList": [],
-    "MagiasConhecidasPorNivelList": [],
-    "EspacosMagia": [],
-    "Subclasses": [],
-    "CaracteristicasPorNivelList": [],
-    "IdItensIniciais": [],
-    "RiquezaInicial": [],
-    "Notas": []
-  },
-  {
-    "Id": "artifice",
-    "Nome": "Artífice",
-    "Descricao": "Inventores mágicos que infundem objetos com poder arcano.",
-    "DadoVida": "1d8",
-    "Fonte": "Eberron: Rising from the Last War",
-    "ImagemUrl": "",
-    "IconeUrl": "",
-    "PapelTatico": "Suporte / Versátil",
-    "IdHabilidadeConjuracao": "inteligencia",
-    "UsaMagiaPreparada": true,
-    "IdSalvaguardas": [ "inteligencia", "constituição" ],
-    "SubclassePorNivel": 3,
-    "ProficienciasArmadura": [],
-    "IdProficienciasArmas": [],
-    "IdProficienciasMulticlasse": [],
-    "RequisitosParaMulticlasseEntities": [],
-    "PericiasRelacionadas": [],
-    "IdMagiasDisponiveis": [],
-    "TruquesConhecidosPorNivelList": [],
-    "MagiasConhecidasPorNivelList": [],
-    "EspacosMagia": [],
-    "Subclasses": [],
-    "CaracteristicasPorNivelList": [],
-    "IdItensIniciais": [],
-    "RiquezaInicial": [],
-    "Notas": []
+    "QntOpcoesPericias": 3,
+    "OpcoesPericias": [
+      { "PericiaId": "adestrar_animais" },
+      { "PericiaId": "atletismo" },
+      { "PericiaId": "furtividade" },
+      { "PericiaId": "intuicao" },
+      { "PericiaId": "investigacao" },
+      { "PericiaId": "natureza" },
+      { "PericiaId": "percepcao" },
+      { "PericiaId": "sobrevivencia" }
+    ],
+
+    "Itens": [
+      { "ItemId": "arco_longo" },
+      { "ItemId": "aljava" },
+      { "ItemId": "municao_flechas" }
+    ],
+    "ItensOpcoes": [
+      {
+        "Nome": "Opção A",
+        "itens": [ "brunea" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "armadura_couro" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "duas_espadas_curtas" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "duas_armas_simples_corpo_a_corpo" ]
+      },
+      {
+        "Nome": "Opção A",
+        "itens": [ "pacote_explorador" ]
+      },
+      {
+        "Nome": "Opção B",
+        "itens": [ "pacote_aventureiro" ]
+      }
+    ]
+
   }
 ]

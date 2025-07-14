@@ -1,0 +1,2271 @@
+[
+  {
+    "barbaro": [
+      {
+        "nivel": 1,
+        "BonusProficiencia": 2,
+        "PontosFuria": 2,
+        "habilidades": [ "furia", "defesa_sem_armadura" ]
+      },
+      {
+        "nivel": 2,
+        "BonusProficiencia": 2,
+        "PontosFuria": 2,
+        "habilidades": [ "ataque_descuidado", "sentido_de_perigo" ]
+      },
+      {
+        "nivel": 3,
+        "BonusProficiencia": 2,
+        "PontosFuria": 2,
+        "habilidades": [ "caminho_primitivo" ]
+      },
+      {
+        "nivel": 4,
+        "BonusProficiencia": 2,
+        "PontosFuria": 2,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 5,
+        "BonusProficiencia": 3,
+        "PontosFuria": 2,
+        "habilidades": [ "ataque_extra", "movimento_rapido" ]
+      },
+      {
+        "nivel": 6,
+        "BonusProficiencia": 3,
+        "PontosFuria": 2,
+        "habilidades": [ "caracteristica_caminho_primitivo" ]
+      },
+      {
+        "nivel": 7,
+        "BonusProficiencia": 3,
+        "PontosFuria": 2,
+        "habilidades": [ "instinto_selvagem" ]
+      },
+      {
+        "nivel": 8,
+        "BonusProficiencia": 3,
+        "PontosFuria": 2,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 9,
+        "BonusProficiencia": 4,
+        "PontosFuria": 3,
+        "habilidades": [ "critico_brutal_1" ]
+      },
+      {
+        "nivel": 10,
+        "BonusProficiencia": 4,
+        "PontosFuria": 3,
+        "habilidades": [ "caracteristica_caminho_primitivo" ]
+      },
+      {
+        "nivel": 11,
+        "BonusProficiencia": 4,
+        "PontosFuria": 3,
+        "habilidades": [ "furia_implacavel" ]
+      },
+      {
+        "nivel": 12,
+        "BonusProficiencia": 4,
+        "PontosFuria": 3,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 13,
+        "BonusProficiencia": 5,
+        "PontosFuria": 3,
+        "habilidades": [ "critico_brutal_2" ]
+      },
+      {
+        "nivel": 14,
+        "BonusProficiencia": 5,
+        "PontosFuria": 3,
+        "habilidades": [ "caracteristica_caminho_primitivo" ]
+      },
+      {
+        "nivel": 15,
+        "BonusProficiencia": 5,
+        "PontosFuria": 3,
+        "habilidades": [ "furia_persistente" ]
+      },
+      {
+        "nivel": 16,
+        "BonusProficiencia": 5,
+        "PontosFuria": 4,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 17,
+        "BonusProficiencia": 6,
+        "PontosFuria": 4,
+        "habilidades": [ "critico_brutal_3" ]
+      },
+      {
+        "nivel": 18,
+        "BonusProficiencia": 6,
+        "PontosFuria": 4,
+        "habilidades": [ "forca_indomavel" ]
+      },
+      {
+        "nivel": 19,
+        "BonusProficiencia": 6,
+        "PontosFuria": 4,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 20,
+        "BonusProficiencia": 6,
+        "PontosFuria": -1,
+        "habilidades": [ "campeao_primitivo" ]
+      }
+    ],
+    "bruxo": [
+      {
+        "nivel": 1,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 2,
+        "magiasConhecidas": 2,
+        "espaco1": 1,
+        "nivelMagia": 1,
+        "invocacoesConhecidas": 1,
+        "habilidades": [ "patrono_transcendental", "magia_de_pacto" ]
+      },
+      {
+        "nivel": 2,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 2,
+        "magiasConhecidas": 3,
+        "espaco1": 2,
+        "nivelMagia": 1,
+        "invocacoesConhecidas": 2,
+        "habilidades": [ "invocacoes_misticas" ]
+      },
+      {
+        "nivel": 3,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 2,
+        "magiasConhecidas": 4,
+        "espaco2": 2,
+        "nivelMagia": 2,
+        "invocacoesConhecidas": 2,
+        "habilidades": [ "d diva_do_pacto" ]
+      },
+      {
+        "nivel": 4,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 3,
+        "magiasConhecidas": 5,
+        "espaco2": 2,
+        "nivelMagia": 2,
+        "invocacoesConhecidas": 3,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 5,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 3,
+        "magiasConhecidas": 6,
+        "espaco3": 2,
+        "nivelMagia": 3,
+        "invocacoesConhecidas": 3,
+        "habilidades": []
+      },
+      {
+        "nivel": 6,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 3,
+        "magiasConhecidas": 7,
+        "espaco3": 2,
+        "nivelMagia": 3,
+        "invocacoesConhecidas": 4,
+        "habilidades": [ "caracteristica_de_patro_transcendental" ]
+      },
+      {
+        "nivel": 7,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 3,
+        "magiasConhecidas": 8,
+        "espaco4": 2,
+        "nivelMagia": 4,
+        "invocacoesConhecidas": 4,
+        "habilidades": []
+      },
+      {
+        "nivel": 8,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 3,
+        "magiasConhecidas": 9,
+        "espaco4": 2,
+        "nivelMagia": 4,
+        "invocacoesConhecidas": 4,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 9,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 3,
+        "magiasConhecidas": 10,
+        "espaco5": 2,
+        "nivelMagia": 5,
+        "invocacoesConhecidas": 5,
+        "habilidades": []
+      },
+      {
+        "nivel": 10,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 4,
+        "magiasConhecidas": 10,
+        "espaco5": 2,
+        "nivelMagia": 5,
+        "invocacoesConhecidas": 5,
+        "habilidades": [ "caracteristica_de_patro_transcendental" ]
+      },
+      {
+        "nivel": 11,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 4,
+        "magiasConhecidas": 11,
+        "espaco5": 3,
+        "nivelMagia": 5,
+        "invocacoesConhecidas": 5,
+        "habilidades": [ "arcana_mistica_6" ]
+      },
+      {
+        "nivel": 12,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 4,
+        "magiasConhecidas": 11,
+        "espaco5": 3,
+        "nivelMagia": 5,
+        "invocacoesConhecidas": 6,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 13,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 4,
+        "magiasConhecidas": 12,
+        "espaco5": 3,
+        "nivelMagia": 5,
+        "invocacoesConhecidas": 6,
+        "habilidades": [ "arcana_mistica_7" ]
+      },
+      {
+        "nivel": 14,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 4,
+        "magiasConhecidas": 12,
+        "espaco5": 3,
+        "nivelMagia": 5,
+        "invocacoesConhecidas": 6,
+        "habilidades": [ "caracteristica_de_patro_transcendental" ]
+      },
+      {
+        "nivel": 15,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 4,
+        "magiasConhecidas": 13,
+        "espaco5": 3,
+        "nivelMagia": 5,
+        "invocacoesConhecidas": 7,
+        "habilidades": [ "arcana_mistica_8" ]
+      },
+      {
+        "nivel": 16,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 4,
+        "magiasConhecidas": 13,
+        "espaco5": 3,
+        "nivelMagia": 5,
+        "invocacoesConhecidas": 7,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 17,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 4,
+        "magiasConhecidas": 14,
+        "espaco5": 4,
+        "nivelMagia": 5,
+        "invocacoesConhecidas": 7,
+        "habilidades": [ "arcana_mistica_9" ]
+      },
+      {
+        "nivel": 18,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 4,
+        "magiasConhecidas": 14,
+        "espaco5": 4,
+        "nivelMagia": 5,
+        "invocacoesConhecidas": 8,
+        "habilidades": []
+      },
+      {
+        "nivel": 19,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 4,
+        "magiasConhecidas": 15,
+        "espaco5": 4,
+        "nivelMagia": 5,
+        "invocacoesConhecidas": 8,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 20,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 4,
+        "magiasConhecidas": 15,
+        "espaco5": 4,
+        "nivelMagia": 5,
+        "invocacoesConhecidas": 8,
+        "habilidades": [ "mestre_mistico" ]
+      }
+    ],
+    "clerigo": [
+      {
+        "nivel": 1,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 3,
+        "espaco1": 2,
+        "habilidades": [ "conjuracao", "dominio_divino" ]
+      },
+      {
+        "nivel": 2,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 3,
+        "espaco1": 3,
+        "habilidades": [ "canalizar_divindade_1_descanso", "caracteristica_dominio_divino" ]
+      },
+      {
+        "nivel": 3,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 3,
+        "espaco1": 4,
+        "espaco2": 2,
+        "habilidades": []
+      },
+      {
+        "nivel": 4,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 5,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 2,
+        "habilidades": [ "destruir_mortos_vivos_nd_1_2" ]
+      },
+      {
+        "nivel": 6,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "habilidades": [ "canalizar_divindade_2_descanso", "caracteristica_dominio_divino" ]
+      },
+      {
+        "nivel": 7,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 4,
+        "espaco3": 3,
+        "espaco4": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 8,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 4,
+        "espaco3": 3,
+        "espaco4": 3,
+        "habilidades": [ "incremento_valor_habilidade", "destruir_mortos_vivos_nd_1", "caracteristica_dominio_divino" ]
+      },
+      {
+        "nivel": 9,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 4,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 10,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "habilidades": [ "intervencao_divina" ]
+      },
+      {
+        "nivel": 11,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "habilidades": [ "destruir_mortos_vivos_nd_2" ]
+      },
+      {
+        "nivel": 12,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 13,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 14,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "habilidades": [ "destruir_mortos_vivos_nd_3" ]
+      },
+      {
+        "nivel": 15,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 16,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 17,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": [ "destruir_mortos_vivos_nd_4", "caracteristica_dominio_divino" ]
+      },
+      {
+        "nivel": 18,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 3,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": [ "canalizar_divindade_3_descanso" ]
+      },
+      {
+        "nivel": 19,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 3,
+        "espaco6": 2,
+        "espaco7": 1,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 20,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 3,
+        "espaco6": 2,
+        "espaco7": 2,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": [ "aprimoramento_intervencao_divina" ]
+      }
+    ],
+    "druida": [
+      {
+        "nivel": 1,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 2,
+        "espaco1": 2,
+        "habilidades": [ "druidico", "conjuracao" ]
+      },
+      {
+        "nivel": 2,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 2,
+        "espaco1": 3,
+        "habilidades": [ "circulo_druidico", "forma_selvagem" ]
+      },
+      {
+        "nivel": 3,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 2,
+        "espaco1": 4,
+        "espaco2": 2,
+        "habilidades": []
+      },
+      {
+        "nivel": 4,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 3,
+        "espaco1": 4,
+        "espaco2": 3,
+        "habilidades": [ "aprimoramento_forma_selvagem", "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 5,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 3,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 2,
+        "habilidades": []
+      },
+      {
+        "nivel": 6,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 3,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "habilidades": [ "caracteristica_circulo_druidico" ]
+      },
+      {
+        "nivel": 7,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 3,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 8,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 3,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 2,
+        "habilidades": [ "aprimoramento_forma_selvagem", "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 9,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 3,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 10,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "habilidades": [ "caracteristica_circulo_druidico" ]
+      },
+      {
+        "nivel": 11,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 12,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 13,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 14,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "habilidades": [ "caracteristica_circulo_druidico" ]
+      },
+      {
+        "nivel": 15,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 16,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 17,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 18,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 3,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": [ "corpo_atemporal", "magias_da_besta" ]
+      },
+      {
+        "nivel": 19,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 3,
+        "espaco6": 2,
+        "espaco7": 1,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 20,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 3,
+        "espaco6": 2,
+        "espaco7": 2,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": [ "arquidruida" ]
+      }
+    ]
+    "feiticeiro": [
+      {
+        "nivel": 1,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 4,
+        "magiasConhecidas": 2,
+        "espaco1": 2,
+        "habilidades": [ "conjuracao", "origem_de_feiticaria" ]
+      },
+      {
+        "nivel": 2,
+        "bonusProficiencia": 2,
+        "pontosFeiticaria": 2,
+        "truquesConhecidos": 4,
+        "magiasConhecidas": 3,
+        "espaco1": 3,
+        "habilidades": [ "fonte_de_magia" ]
+      },
+      {
+        "nivel": 3,
+        "bonusProficiencia": 2,
+        "pontosFeiticaria": 3,
+        "truquesConhecidos": 4,
+        "magiasConhecidas": 4,
+        "espaco1": 4,
+        "espaco2": 2,
+        "habilidades": [ "metamagica" ]
+      },
+      {
+        "nivel": 4,
+        "bonusProficiencia": 2,
+        "pontosFeiticaria": 4,
+        "truquesConhecidos": 5,
+        "magiasConhecidas": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 5,
+        "bonusProficiencia": 3,
+        "pontosFeiticaria": 5,
+        "truquesConhecidos": 5,
+        "magiasConhecidas": 6,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 2,
+        "habilidades": []
+      },
+      {
+        "nivel": 6,
+        "bonusProficiencia": 3,
+        "pontosFeiticaria": 6,
+        "truquesConhecidos": 5,
+        "magiasConhecidas": 7,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "habilidades": [ "caracteristica_origem_feiticaria" ]
+      },
+      {
+        "nivel": 7,
+        "bonusProficiencia": 3,
+        "pontosFeiticaria": 7,
+        "truquesConhecidos": 5,
+        "magiasConhecidas": 8,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 8,
+        "bonusProficiencia": 3,
+        "pontosFeiticaria": 8,
+        "truquesConhecidos": 5,
+        "magiasConhecidas": 9,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 2,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 9,
+        "bonusProficiencia": 4,
+        "pontosFeiticaria": 9,
+        "truquesConhecidos": 5,
+        "magiasConhecidas": 10,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 10,
+        "bonusProficiencia": 4,
+        "pontosFeiticaria": 10,
+        "truquesConhecidos": 6,
+        "magiasConhecidas": 11,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "habilidades": [ "metamagica" ]
+      },
+      {
+        "nivel": 11,
+        "bonusProficiencia": 4,
+        "pontosFeiticaria": 11,
+        "truquesConhecidos": 6,
+        "magiasConhecidas": 12,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 12,
+        "bonusProficiencia": 4,
+        "pontosFeiticaria": 12,
+        "truquesConhecidos": 6,
+        "magiasConhecidas": 12,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 13,
+        "bonusProficiencia": 5,
+        "pontosFeiticaria": 13,
+        "truquesConhecidos": 6,
+        "magiasConhecidas": 13,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 14,
+        "bonusProficiencia": 5,
+        "pontosFeiticaria": 14,
+        "truquesConhecidos": 6,
+        "magiasConhecidas": 13,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "habilidades": [ "caracteristica_origem_feiticaria" ]
+      },
+      {
+        "nivel": 15,
+        "bonusProficiencia": 5,
+        "pontosFeiticaria": 15,
+        "truquesConhecidos": 6,
+        "magiasConhecidas": 14,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 16,
+        "bonusProficiencia": 5,
+        "pontosFeiticaria": 16,
+        "truquesConhecidos": 6,
+        "magiasConhecidas": 14,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 17,
+        "bonusProficiencia": 6,
+        "pontosFeiticaria": 17,
+        "truquesConhecidos": 6,
+        "magiasConhecidas": 15,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": [ "metamagica" ]
+      },
+      {
+        "nivel": 18,
+        "bonusProficiencia": 6,
+        "pontosFeiticaria": 18,
+        "truquesConhecidos": 6,
+        "magiasConhecidas": 15,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 3,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": [ "caracteristica_origem_feiticaria" ]
+      },
+      {
+        "nivel": 19,
+        "bonusProficiencia": 6,
+        "pontosFeiticaria": 19,
+        "truquesConhecidos": 6,
+        "magiasConhecidas": 15,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 3,
+        "espaco6": 2,
+        "espaco7": 1,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 20,
+        "bonusProficiencia": 6,
+        "pontosFeiticaria": 20,
+        "truquesConhecidos": 6,
+        "magiasConhecidas": 15,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 3,
+        "espaco6": 2,
+        "espaco7": 2,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": [ "restauracao_mistica" ]
+      }
+    ],
+    "guerreiro": [
+      {
+        "nivel": 1,
+        "bonusProficiencia": 2,
+        "habilidades": [ "estilo_de_luta", "retomar_o_folego" ]
+      },
+      {
+        "nivel": 2,
+        "bonusProficiencia": 2,
+        "habilidades": [],
+        "surtoAcao": 1
+      },
+      {
+        "nivel": 3,
+        "bonusProficiencia": 2,
+        "habilidades": [ "arquetipo_marcial" ],
+        "surtoAcao": 1
+      },
+      {
+        "nivel": 4,
+        "bonusProficiencia": 2,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "surtoAcao": 1
+      },
+      {
+        "nivel": 5,
+        "bonusProficiencia": 3,
+        "habilidades": [],
+        "surtoAcao": 1,
+        "ataqueExtra": 1
+      },
+      {
+        "nivel": 6,
+        "bonusProficiencia": 3,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "surtoAcao": 1,
+        "ataqueExtra": 1
+      },
+      {
+        "nivel": 7,
+        "bonusProficiencia": 3,
+        "habilidades": [ "caracteristica_arquetipo_marcial" ],
+        "surtoAcao": 1,
+        "ataqueExtra": 1
+      },
+      {
+        "nivel": 8,
+        "bonusProficiencia": 3,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "surtoAcao": 1,
+        "ataqueExtra": 1
+      },
+      {
+        "nivel": 9,
+        "bonusProficiencia": 4,
+        "habilidades": [],
+        "surtoAcao": 1,
+        "ataqueExtra": 1,
+        "indomavel": 1
+      },
+      {
+        "nivel": 10,
+        "bonusProficiencia": 4,
+        "habilidades": [ "caracteristica_arquetipo_marcial" ],
+        "surtoAcao": 1,
+        "ataqueExtra": 1,
+        "indomavel": 1
+      },
+      {
+        "nivel": 11,
+        "bonusProficiencia": 4,
+        "habilidades": [],
+        "surtoAcao": 1,
+        "ataqueExtra": 2,
+        "indomavel": 1
+      },
+      {
+        "nivel": 12,
+        "bonusProficiencia": 4,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "surtoAcao": 1,
+        "ataqueExtra": 2,
+        "indomavel": 1
+      },
+      {
+        "nivel": 13,
+        "bonusProficiencia": 5,
+        "habilidades": [],
+        "surtoAcao": 1,
+        "ataqueExtra": 2,
+        "indomavel": 2
+      },
+      {
+        "nivel": 14,
+        "bonusProficiencia": 5,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "surtoAcao": 1,
+        "ataqueExtra": 2,
+        "indomavel": 2
+      },
+      {
+        "nivel": 15,
+        "bonusProficiencia": 5,
+        "habilidades": [ "caracteristica_arquetipo_marcial" ],
+        "surtoAcao": 1,
+        "ataqueExtra": 2,
+        "indomavel": 2
+      },
+      {
+        "nivel": 16,
+        "bonusProficiencia": 5,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "surtoAcao": 1,
+        "ataqueExtra": 2,
+        "indomavel": 2
+      },
+      {
+        "nivel": 17,
+        "bonusProficiencia": 6,
+        "habilidades": [],
+        "surtoAcao": 2,
+        "ataqueExtra": 2,
+        "indomavel": 3
+      },
+      {
+        "nivel": 18,
+        "bonusProficiencia": 6,
+        "habilidades": [ "caracteristica_arquetipo_marcial" ],
+        "surtoAcao": 2,
+        "ataqueExtra": 2,
+        "indomavel": 3
+      },
+      {
+        "nivel": 19,
+        "bonusProficiencia": 6,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "surtoAcao": 2,
+        "ataqueExtra": 2,
+        "indomavel": 3
+      },
+      {
+        "nivel": 20,
+        "bonusProficiencia": 6,
+        "habilidades": [],
+        "surtoAcao": 2,
+        "ataqueExtra": 3,
+        "indomavel": 3
+      }
+    ],
+    "ladino": [
+      {
+        "nivel": 1,
+        "bonusProficiencia": 2,
+        "ataqueFurtivo": 1,
+        "habilidades": [ "especializacao", "ataque_furtivo", "giria_de_ladrao" ]
+      },
+      {
+        "nivel": 2,
+        "bonusProficiencia": 2,
+        "ataqueFurtivo": 1,
+        "habilidades": [ "acao_ardilosa" ]
+      },
+      {
+        "nivel": 3,
+        "bonusProficiencia": 2,
+        "ataqueFurtivo": 2,
+        "habilidades": [ "arquetipo_ladino" ]
+      },
+      {
+        "nivel": 4,
+        "bonusProficiencia": 2,
+        "ataqueFurtivo": 2,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 5,
+        "bonusProficiencia": 3,
+        "ataqueFurtivo": 3,
+        "habilidades": [ "esquiva_sobrenatural" ]
+      },
+      {
+        "nivel": 6,
+        "bonusProficiencia": 3,
+        "ataqueFurtivo": 3,
+        "habilidades": [ "especializacao" ]
+      },
+      {
+        "nivel": 7,
+        "bonusProficiencia": 3,
+        "ataqueFurtivo": 4,
+        "habilidades": []
+      },
+      {
+        "nivel": 8,
+        "bonusProficiencia": 3,
+        "ataqueFurtivo": 4,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 9,
+        "bonusProficiencia": 4,
+        "ataqueFurtivo": 5,
+        "habilidades": [ "evasao" ]
+      },
+      {
+        "nivel": 10,
+        "bonusProficiencia": 4,
+        "ataqueFurtivo": 5,
+        "habilidades": []
+      },
+      {
+        "nivel": 11,
+        "bonusProficiencia": 4,
+        "ataqueFurtivo": 6,
+        "habilidades": [ "incremento_valor_habilidade", "caracteristica_arquetipo_ladino" ]
+      },
+      {
+        "nivel": 12,
+        "bonusProficiencia": 4,
+        "ataqueFurtivo": 6,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 13,
+        "bonusProficiencia": 5,
+        "ataqueFurtivo": 7,
+        "habilidades": [ "talento_confiavel" ]
+      },
+      {
+        "nivel": 14,
+        "bonusProficiencia": 5,
+        "ataqueFurtivo": 7,
+        "habilidades": [ "sentido_cego" ]
+      },
+      {
+        "nivel": 15,
+        "bonusProficiencia": 5,
+        "ataqueFurtivo": 8,
+        "habilidades": []
+      },
+      {
+        "nivel": 16,
+        "bonusProficiencia": 5,
+        "ataqueFurtivo": 8,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 17,
+        "bonusProficiencia": 6,
+        "ataqueFurtivo": 9,
+        "habilidades": [ "caracteristica_arquetipo_ladino" ]
+      },
+      {
+        "nivel": 18,
+        "bonusProficiencia": 6,
+        "ataqueFurtivo": 9,
+        "habilidades": [ "mente_escorregadia" ]
+      },
+      {
+        "nivel": 19,
+        "bonusProficiencia": 6,
+        "ataqueFurtivo": 10,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 20,
+        "bonusProficiencia": 6,
+        "ataqueFurtivo": 10,
+        "habilidades": [ "elusivo", "golpe_de_sorte" ]
+      }
+    ],
+    "mago": [
+      {
+        "nivel": 1,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 3,
+        "espaco1": 2,
+        "habilidades": [ "conjuracao", "recuperacao_arcana" ]
+      },
+      {
+        "nivel": 2,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 3,
+        "espaco1": 3,
+        "habilidades": [ "tradicao_arcana" ]
+      },
+      {
+        "nivel": 3,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 3,
+        "espaco1": 4,
+        "espaco2": 2,
+        "habilidades": []
+      },
+      {
+        "nivel": 4,
+        "bonusProficiencia": 2,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 5,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 2,
+        "habilidades": []
+      },
+      {
+        "nivel": 6,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "habilidades": [ "caracteristica_tradicao_arcana" ]
+      },
+      {
+        "nivel": 7,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 8,
+        "bonusProficiencia": 3,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 2,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 9,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 10,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "habilidades": [ "caracteristica_tradicao_arcana" ]
+      },
+      {
+        "nivel": 11,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 12,
+        "bonusProficiencia": 4,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 13,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 14,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "habilidades": [ "caracteristica_tradicao_arcana" ]
+      },
+      {
+        "nivel": 15,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 16,
+        "bonusProficiencia": 5,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 17,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": []
+      },
+      {
+        "nivel": 18,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": [ "dominar_magia" ]
+      },
+      {
+        "nivel": 19,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 20,
+        "bonusProficiencia": 6,
+        "truquesConhecidos": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2,
+        "espaco6": 1,
+        "espaco7": 1,
+        "espaco8": 1,
+        "espaco9": 1,
+        "habilidades": [ "assinatura_magica" ]
+      }
+    ],
+    "monge": [
+      {
+        "nivel": 1,
+        "bonusProficiencia": 2,
+        "artesMarciais": 4,
+        "deslocamento": 3.0,
+        "habilidades": [ "defesa_sem_armadura", "artes_marciais" ]
+      },
+      {
+        "nivel": 2,
+        "bonusProficiencia": 2,
+        "artesMarciais": 4,
+        "pontosChi": 2,
+        "deslocamento": 3.0,
+        "habilidades": [ "chi", "movimento_sem_armadura" ]
+      },
+      {
+        "nivel": 3,
+        "bonusProficiencia": 2,
+        "artesMarciais": 4,
+        "pontosChi": 3,
+        "deslocamento": 3.0,
+        "habilidades": [ "tradicao_monastica", "defletir_projeteis" ]
+      },
+      {
+        "nivel": 4,
+        "bonusProficiencia": 2,
+        "artesMarciais": 4,
+        "pontosChi": 4,
+        "deslocamento": 3.0,
+        "habilidades": [ "incremento_valor_habilidade", "queda_lenta" ]
+      },
+      {
+        "nivel": 5,
+        "bonusProficiencia": 3,
+        "artesMarciais": 6,
+        "pontosChi": 5,
+        "deslocamento": 3.0,
+        "habilidades": [ "ataque_extra", "ataque_atordoador" ]
+      },
+      {
+        "nivel": 6,
+        "bonusProficiencia": 3,
+        "artesMarciais": 6,
+        "pontosChi": 6,
+        "deslocamento": 4.5,
+        "habilidades": [ "golpes_de_chi", "caracteristica_tradicao_monastica" ]
+      },
+      {
+        "nivel": 7,
+        "bonusProficiencia": 3,
+        "artesMarciais": 6,
+        "pontosChi": 7,
+        "deslocamento": 4.5,
+        "habilidades": [ "evasao", "mente_tranquila" ]
+      },
+      {
+        "nivel": 8,
+        "bonusProficiencia": 3,
+        "artesMarciais": 6,
+        "pontosChi": 8,
+        "deslocamento": 4.5,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 9,
+        "bonusProficiencia": 4,
+        "artesMarciais": 6,
+        "pontosChi": 9,
+        "deslocamento": 4.5,
+        "habilidades": [ "aprimoramento_movimento_sem_armadura" ]
+      },
+      {
+        "nivel": 10,
+        "bonusProficiencia": 4,
+        "artesMarciais": 6,
+        "pontosChi": 10,
+        "deslocamento": 6.0,
+        "habilidades": [ "pureza_corporal" ]
+      },
+      {
+        "nivel": 11,
+        "bonusProficiencia": 4,
+        "artesMarciais": 8,
+        "pontosChi": 11,
+        "deslocamento": 6.0,
+        "habilidades": [ "caracteristica_tradicao_monastica" ]
+      },
+      {
+        "nivel": 12,
+        "bonusProficiencia": 4,
+        "artesMarciais": 8,
+        "pontosChi": 12,
+        "deslocamento": 6.0,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 13,
+        "bonusProficiencia": 5,
+        "artesMarciais": 8,
+        "pontosChi": 13,
+        "deslocamento": 6.0,
+        "habilidades": [ "idiomas_do_sol_e_da_lua" ]
+      },
+      {
+        "nivel": 14,
+        "bonusProficiencia": 5,
+        "artesMarciais": 8,
+        "pontosChi": 14,
+        "deslocamento": 7.5,
+        "habilidades": [ "alma_de_diamante" ]
+      },
+      {
+        "nivel": 15,
+        "bonusProficiencia": 5,
+        "artesMarciais": 8,
+        "pontosChi": 15,
+        "deslocamento": 7.5,
+        "habilidades": [ "corpo_atemporal" ]
+      },
+      {
+        "nivel": 16,
+        "bonusProficiencia": 5,
+        "artesMarciais": 8,
+        "pontosChi": 16,
+        "deslocamento": 7.5,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 17,
+        "bonusProficiencia": 6,
+        "artesMarciais": 10,
+        "pontosChi": 17,
+        "deslocamento": 7.5,
+        "habilidades": [ "caracteristica_tradicao_monastica" ]
+      },
+      {
+        "nivel": 18,
+        "bonusProficiencia": 6,
+        "artesMarciais": 10,
+        "pontosChi": 18,
+        "deslocamento": 9.0,
+        "habilidades": [ "corpo_vazio" ]
+      },
+      {
+        "nivel": 19,
+        "bonusProficiencia": 6,
+        "artesMarciais": 10,
+        "pontosChi": 19,
+        "deslocamento": 9.0,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 20,
+        "bonusProficiencia": 6,
+        "artesMarciais": 10,
+        "pontosChi": 20,
+        "deslocamento": 9.0,
+        "habilidades": [ "auto_aperfeicoamento" ]
+      }
+    ],
+    "paladino": [
+      {
+        "nivel": 1,
+        "bonusProficiencia": 2,
+        "habilidades": [ "sentido_divino", "cura_pelas_maos" ]
+      },
+      {
+        "nivel": 2,
+        "bonusProficiencia": 2,
+        "habilidades": [ "estilo_de_luta", "conjuracao", "destrui  o_divina" ]
+      },
+      {
+        "nivel": 3,
+        "bonusProficiencia": 2,
+        "habilidades": [ "saude_divina", "juramento_sagrado" ]
+      },
+      {
+        "nivel": 4,
+        "bonusProficiencia": 2,
+        "habilidades": [ "incremento_valor_habilidade" ]
+      },
+      {
+        "nivel": 5,
+        "bonusProficiencia": 3,
+        "habilidades": [ "ataque_extra" ],
+        "espaco1": 4,
+        "espaco2": 2
+      },
+      {
+        "nivel": 6,
+        "bonusProficiencia": 3,
+        "habilidades": [ "aura_de_protecao" ],
+        "espaco1": 4,
+        "espaco2": 2
+      },
+      {
+        "nivel": 7,
+        "bonusProficiencia": 3,
+        "habilidades": [ "caracteristica_juramento_sagrado" ],
+        "espaco1": 4,
+        "espaco2": 3
+      },
+      {
+        "nivel": 8,
+        "bonusProficiencia": 3,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "espaco1": 4,
+        "espaco2": 3
+      },
+      {
+        "nivel": 9,
+        "bonusProficiencia": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 2
+      },
+      {
+        "nivel": 10,
+        "bonusProficiencia": 4,
+        "habilidades": [ "aura_da_coragem" ],
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 2
+      },
+      {
+        "nivel": 11,
+        "bonusProficiencia": 4,
+        "habilidades": [ "destrui  o_divina_aprimorada" ],
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3
+      },
+      {
+        "nivel": 12,
+        "bonusProficiencia": 4,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3
+      },
+      {
+        "nivel": 13,
+        "bonusProficiencia": 5,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 1
+      },
+      {
+        "nivel": 14,
+        "bonusProficiencia": 5,
+        "habilidades": [ "toque_purificador" ],
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 1
+      },
+      {
+        "nivel": 15,
+        "bonusProficiencia": 5,
+        "habilidades": [ "caracteristica_juramento_sagrado" ],
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 2
+      },
+      {
+        "nivel": 16,
+        "bonusProficiencia": 5,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 2
+      },
+      {
+        "nivel": 17,
+        "bonusProficiencia": 6,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 1
+      },
+      {
+        "nivel": 18,
+        "bonusProficiencia": 6,
+        "habilidades": [ "aprimoramentos_de_aura" ],
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 1
+      },
+      {
+        "nivel": 19,
+        "bonusProficiencia": 6,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2
+      },
+      {
+        "nivel": 20,
+        "bonusProficiencia": 6,
+        "habilidades": [ "caracteristica_juramento_sagrado" ],
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2
+      }
+    ],
+    "patrulheiro": [
+      {
+        "nivel": 1,
+        "bonusProficiencia": 2,
+        "habilidades": [ "inimigo_favorito", "explorador_natural" ]
+      },
+      {
+        "nivel": 2,
+        "bonusProficiencia": 2,
+        "habilidades": [ "estilo_de_luta", "conjuracao" ],
+        "espaco1": 2,
+        "espaco2": 2
+      },
+      {
+        "nivel": 3,
+        "bonusProficiencia": 2,
+        "habilidades": [ "conclave_de_patrulheiro", "consciencia_primitiva" ],
+        "espaco1": 3,
+        "espaco2": 3
+      },
+      {
+        "nivel": 4,
+        "bonusProficiencia": 2,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "espaco1": 3,
+        "espaco2": 3
+      },
+      {
+        "nivel": 5,
+        "bonusProficiencia": 3,
+        "habilidades": [ "caracteristica_de_conclave_de_patrulheiro" ],
+        "espaco1": 4,
+        "espaco2": 4,
+        "espaco3": 2
+      },
+      {
+        "nivel": 6,
+        "bonusProficiencia": 3,
+        "habilidades": [ "inimigo_favorito_maior" ],
+        "espaco1": 4,
+        "espaco2": 4,
+        "espaco3": 2
+      },
+      {
+        "nivel": 7,
+        "bonusProficiencia": 3,
+        "habilidades": [ "caracteristica_de_conclave_de_patrulheiro" ],
+        "espaco1": 5,
+        "espaco2": 4,
+        "espaco3": 3
+      },
+      {
+        "nivel": 8,
+        "bonusProficiencia": 3,
+        "habilidades": [ "incremento_valor_habilidade", "pes_rapidos" ],
+        "espaco1": 5,
+        "espaco2": 4,
+        "espaco3": 3
+      },
+      {
+        "nivel": 9,
+        "bonusProficiencia": 4,
+        "espaco1": 6,
+        "espaco2": 4,
+        "espaco3": 3,
+        "espaco4": 2
+      },
+      {
+        "nivel": 10,
+        "bonusProficiencia": 4,
+        "habilidades": [ "mimetismo" ],
+        "espaco1": 6,
+        "espaco2": 4,
+        "espaco3": 3,
+        "espaco4": 2
+      },
+      {
+        "nivel": 11,
+        "bonusProficiencia": 4,
+        "habilidades": [ "caracteristica_de_conclave_de_patrulheiro" ],
+        "espaco1": 7,
+        "espaco2": 4,
+        "espaco3": 3,
+        "espaco4": 3
+      },
+      {
+        "nivel": 12,
+        "bonusProficiencia": 4,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "espaco1": 7,
+        "espaco2": 4,
+        "espaco3": 3,
+        "espaco4": 3
+      },
+      {
+        "nivel": 13,
+        "bonusProficiencia": 5,
+        "espaco1": 8,
+        "espaco2": 4,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 1
+      },
+      {
+        "nivel": 14,
+        "bonusProficiencia": 5,
+        "habilidades": [ "desaparecer" ],
+        "espaco1": 8,
+        "espaco2": 4,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 1
+      },
+      {
+        "nivel": 15,
+        "bonusProficiencia": 5,
+        "habilidades": [ "caracteristica_de_conclave_de_patrulheiro" ],
+        "espaco1": 9,
+        "espaco2": 4,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2
+      },
+      {
+        "nivel": 16,
+        "bonusProficiencia": 5,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "espaco1": 9,
+        "espaco2": 4,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2
+      },
+      {
+        "nivel": 17,
+        "bonusProficiencia": 6,
+        "espaco1": 10,
+        "espaco2": 4,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 3,
+        "espaco6": 1
+      },
+      {
+        "nivel": 18,
+        "bonusProficiencia": 6,
+        "habilidades": [ "sentidos_selvagens" ],
+        "espaco1": 10,
+        "espaco2": 4,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 3,
+        "espaco6": 1
+      },
+      {
+        "nivel": 19,
+        "bonusProficiencia": 6,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "espaco1": 11,
+        "espaco2": 4,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 3,
+        "espaco6": 2
+      },
+      {
+        "nivel": 20,
+        "bonusProficiencia": 6,
+        "habilidades": [ "matador_de_inimigos" ],
+        "espaco1": 11,
+        "espaco2": 4,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 3,
+        "espaco6": 2
+      }
+    ],
+    "artifice": [
+      {
+        "nivel": 1,
+        "bonusProficiencia": 2,
+        "habilidades": [ "mecanica_magica", "conjuracao" ],
+        "infusoesConhecidas": 0,
+        "itensInfundidos": 0,
+        "truquesConhecidos": 2,
+        "espaco1": 2
+      },
+      {
+        "nivel": 2,
+        "bonusProficiencia": 2,
+        "habilidades": [ "infundir_item" ],
+        "infusoesConhecidas": 4,
+        "itensInfundidos": 2,
+        "truquesConhecidos": 2,
+        "espaco1": 2
+      },
+      {
+        "nivel": 3,
+        "bonusProficiencia": 2,
+        "habilidades": [ "especialista_artifice", "a_ferramenta_certa_para_o_trabalho" ],
+        "infusoesConhecidas": 4,
+        "itensInfundidos": 2,
+        "truquesConhecidos": 2,
+        "espaco1": 3
+      },
+      {
+        "nivel": 4,
+        "bonusProficiencia": 2,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "infusoesConhecidas": 4,
+        "itensInfundidos": 2,
+        "truquesConhecidos": 2,
+        "espaco1": 3
+      },
+      {
+        "nivel": 5,
+        "bonusProficiencia": 3,
+        "habilidades": [ "caracteristica_especialista_artifice" ],
+        "infusoesConhecidas": 4,
+        "itensInfundidos": 2,
+        "truquesConhecidos": 2,
+        "espaco1": 4,
+        "espaco2": 2
+      },
+      {
+        "nivel": 6,
+        "bonusProficiencia": 3,
+        "habilidades": [ "expertise_em_ferramentas" ],
+        "infusoesConhecidas": 6,
+        "itensInfundidos": 3,
+        "truquesConhecidos": 2,
+        "espaco1": 4,
+        "espaco2": 2
+      },
+      {
+        "nivel": 7,
+        "bonusProficiencia": 3,
+        "habilidades": [ "fa sca_de_genio" ],
+        "infusoesConhecidas": 6,
+        "itensInfundidos": 3,
+        "truquesConhecidos": 2,
+        "espaco1": 4,
+        "espaco2": 3
+      },
+      {
+        "nivel": 8,
+        "bonusProficiencia": 3,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "infusoesConhecidas": 6,
+        "itensInfundidos": 3,
+        "truquesConhecidos": 2,
+        "espaco1": 4,
+        "espaco2": 3
+      },
+      {
+        "nivel": 9,
+        "bonusProficiencia": 4,
+        "habilidades": [ "caracteristica_especialista_artifice" ],
+        "infusoesConhecidas": 6,
+        "itensInfundidos": 3,
+        "truquesConhecidos": 2,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 2
+      },
+      {
+        "nivel": 10,
+        "bonusProficiencia": 4,
+        "habilidades": [ "adepto_de_itens_magicos" ],
+        "infusoesConhecidas": 8,
+        "itensInfundidos": 4,
+        "truquesConhecidos": 3,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 2
+      },
+      {
+        "nivel": 11,
+        "bonusProficiencia": 4,
+        "habilidades": [ "item_armazenador_de_magia" ],
+        "infusoesConhecidas": 8,
+        "itensInfundidos": 4,
+        "truquesConhecidos": 3,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3
+      },
+      {
+        "nivel": 12,
+        "bonusProficiencia": 4,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "infusoesConhecidas": 8,
+        "itensInfundidos": 4,
+        "truquesConhecidos": 3,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3
+      },
+      {
+        "nivel": 13,
+        "bonusProficiencia": 5,
+        "infusoesConhecidas": 8,
+        "itensInfundidos": 4,
+        "truquesConhecidos": 3,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 1
+      },
+      {
+        "nivel": 14,
+        "bonusProficiencia": 5,
+        "habilidades": [ "savant_de_itens_magicos" ],
+        "infusoesConhecidas": 10,
+        "itensInfundidos": 5,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 1
+      },
+      {
+        "nivel": 15,
+        "bonusProficiencia": 5,
+        "habilidades": [ "caracteristica_especialista_artifice" ],
+        "infusoesConhecidas": 10,
+        "itensInfundidos": 5,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 2
+      },
+      {
+        "nivel": 16,
+        "bonusProficiencia": 5,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "infusoesConhecidas": 10,
+        "itensInfundidos": 5,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 2
+      },
+      {
+        "nivel": 17,
+        "bonusProficiencia": 6,
+        "infusoesConhecidas": 10,
+        "itensInfundidos": 5,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 1
+      },
+      {
+        "nivel": 18,
+        "bonusProficiencia": 6,
+        "habilidades": [ "mestre_de_itens_magicos" ],
+        "infusoesConhecidas": 12,
+        "itensInfundidos": 6,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 1
+      },
+      {
+        "nivel": 19,
+        "bonusProficiencia": 6,
+        "habilidades": [ "incremento_valor_habilidade" ],
+        "infusoesConhecidas": 12,
+        "itensInfundidos": 6,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2
+      },
+      {
+        "nivel": 20,
+        "bonusProficiencia": 6,
+        "habilidades": [ "alma_do_artifice" ],
+        "infusoesConhecidas": 12,
+        "itensInfundidos": 6,
+        "truquesConhecidos": 4,
+        "espaco1": 4,
+        "espaco2": 3,
+        "espaco3": 3,
+        "espaco4": 3,
+        "espaco5": 2
+      }
+    ]
+  }
+]

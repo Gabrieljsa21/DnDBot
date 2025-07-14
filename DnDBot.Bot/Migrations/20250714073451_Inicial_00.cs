@@ -102,10 +102,14 @@ namespace DnDBot.Bot.Migrations
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
                     DadoVida = table.Column<string>(type: "TEXT", maxLength: 10, nullable: false),
+                    QntOpcoesProficiencias = table.Column<int>(type: "INTEGER", nullable: false),
+                    QntOpcoesPericias = table.Column<int>(type: "INTEGER", nullable: false),
                     IdSalvaguardas = table.Column<string>(type: "TEXT", nullable: true),
                     PapelTatico = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
                     IdHabilidadeConjuracao = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
                     UsaMagiaPreparada = table.Column<bool>(type: "INTEGER", nullable: false),
+                    Ouro = table.Column<int>(type: "INTEGER", nullable: false),
+                    FocoConjuracao = table.Column<string>(type: "TEXT", nullable: true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Descricao = table.Column<string>(type: "TEXT", nullable: true),
                     Fonte = table.Column<string>(type: "TEXT", nullable: true),
@@ -453,7 +457,69 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClasseSalvaguardas",
+                name: "ClasseOpcaoItemGrupo",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    ClasseId = table.Column<string>(type: "TEXT", nullable: true),
+                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClasseOpcaoItemGrupo", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ClasseOpcaoItemGrupo_Classe_ClasseId",
+                        column: x => x.ClasseId,
+                        principalTable: "Classe",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ClasseProgressao",
+                columns: table => new
+                {
+                    ClasseId = table.Column<string>(type: "TEXT", nullable: false),
+                    Nivel = table.Column<int>(type: "INTEGER", nullable: false),
+                    SubclasseId = table.Column<string>(type: "TEXT", nullable: true),
+                    BonusProficiencia = table.Column<int>(type: "INTEGER", nullable: false),
+                    TruquesConhecidos = table.Column<int>(type: "INTEGER", nullable: false),
+                    MagiasConhecidas = table.Column<int>(type: "INTEGER", nullable: false),
+                    InvocacoesConhecidas = table.Column<int>(type: "INTEGER", nullable: false),
+                    EspacosMagia = table.Column<int>(type: "INTEGER", nullable: false),
+                    NivelMagia = table.Column<int>(type: "INTEGER", nullable: false),
+                    PontosFeiticaria = table.Column<int>(type: "INTEGER", nullable: false),
+                    PontosFuria = table.Column<int>(type: "INTEGER", nullable: false),
+                    PontosChi = table.Column<int>(type: "INTEGER", nullable: false),
+                    InfusoesConhecidas = table.Column<int>(type: "INTEGER", nullable: false),
+                    ItensInfundidos = table.Column<int>(type: "INTEGER", nullable: false),
+                    SurtoAcao = table.Column<int>(type: "INTEGER", nullable: false),
+                    Indomavel = table.Column<int>(type: "INTEGER", nullable: false),
+                    AtaqueExtra = table.Column<int>(type: "INTEGER", nullable: false),
+                    AtaqueFurtivo = table.Column<int>(type: "INTEGER", nullable: false),
+                    Espaco1 = table.Column<int>(type: "INTEGER", nullable: false),
+                    Espaco2 = table.Column<int>(type: "INTEGER", nullable: false),
+                    Espaco3 = table.Column<int>(type: "INTEGER", nullable: false),
+                    Espaco4 = table.Column<int>(type: "INTEGER", nullable: false),
+                    Espaco5 = table.Column<int>(type: "INTEGER", nullable: false),
+                    Espaco6 = table.Column<int>(type: "INTEGER", nullable: false),
+                    Espaco7 = table.Column<int>(type: "INTEGER", nullable: false),
+                    Espaco8 = table.Column<int>(type: "INTEGER", nullable: false),
+                    Espaco9 = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClasseProgressao", x => new { x.ClasseId, x.Nivel });
+                    table.ForeignKey(
+                        name: "FK_ClasseProgressao_Classe_ClasseId",
+                        column: x => x.ClasseId,
+                        principalTable: "Classe",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ClasseSalvaguarda",
                 columns: table => new
                 {
                     ClasseId = table.Column<string>(type: "TEXT", nullable: false),
@@ -461,9 +527,9 @@ namespace DnDBot.Bot.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ClasseSalvaguardas", x => new { x.ClasseId, x.IdSalvaguarda });
+                    table.PrimaryKey("PK_ClasseSalvaguarda", x => new { x.ClasseId, x.IdSalvaguarda });
                     table.ForeignKey(
-                        name: "FK_ClasseSalvaguardas_Classe_ClasseId",
+                        name: "FK_ClasseSalvaguarda_Classe_ClasseId",
                         column: x => x.ClasseId,
                         principalTable: "Classe",
                         principalColumn: "Id",
@@ -617,29 +683,23 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClasseMagias",
+                name: "ClasseMagia",
                 columns: table => new
                 {
                     ClasseId = table.Column<string>(type: "TEXT", nullable: false),
-                    MagiaId = table.Column<string>(type: "TEXT", nullable: false),
-                    ClasseId1 = table.Column<string>(type: "TEXT", nullable: true)
+                    MagiaId = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ClasseMagias", x => new { x.ClasseId, x.MagiaId });
+                    table.PrimaryKey("PK_ClasseMagia", x => new { x.ClasseId, x.MagiaId });
                     table.ForeignKey(
-                        name: "FK_ClasseMagias_Classe_ClasseId",
+                        name: "FK_ClasseMagia_Classe_ClasseId",
                         column: x => x.ClasseId,
                         principalTable: "Classe",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ClasseMagias_Classe_ClasseId1",
-                        column: x => x.ClasseId1,
-                        principalTable: "Classe",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ClasseMagias_Magia_MagiaId",
+                        name: "FK_ClasseMagia_Magia_MagiaId",
                         column: x => x.MagiaId,
                         principalTable: "Magia",
                         principalColumn: "Id",
@@ -651,6 +711,8 @@ namespace DnDBot.Bot.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    MagiaId = table.Column<string>(type: "TEXT", nullable: true),
+                    CaracteristicaId = table.Column<string>(type: "TEXT", nullable: true),
                     NivelMinimo = table.Column<int>(type: "INTEGER", nullable: false),
                     NivelMaximo = table.Column<int>(type: "INTEGER", nullable: true),
                     UsosPorDescansoCurto = table.Column<int>(type: "INTEGER", nullable: true),
@@ -659,8 +721,6 @@ namespace DnDBot.Bot.Migrations
                     AcaoRequerida = table.Column<string>(type: "TEXT", nullable: false),
                     CondicaoAtivacao = table.Column<string>(type: "TEXT", nullable: false),
                     DescricaoEfeito = table.Column<string>(type: "TEXT", maxLength: 4000, nullable: true),
-                    CaracteristicaId = table.Column<string>(type: "TEXT", nullable: true),
-                    MagiaId = table.Column<string>(type: "TEXT", nullable: true),
                     FormaAreaEfeito = table.Column<string>(type: "TEXT", nullable: true),
                     Alcance = table.Column<string>(type: "TEXT", nullable: false),
                     Alvo = table.Column<string>(type: "TEXT", nullable: false),
@@ -699,8 +759,7 @@ namespace DnDBot.Bot.Migrations
                 columns: table => new
                 {
                     MagiaId = table.Column<string>(type: "TEXT", nullable: false),
-                    Classe = table.Column<int>(type: "INTEGER", nullable: false),
-                    MagiaId1 = table.Column<string>(type: "TEXT", nullable: true)
+                    Classe = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -711,11 +770,6 @@ namespace DnDBot.Bot.Migrations
                         principalTable: "Magia",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_MagiaClassePermitida_Magia_MagiaId1",
-                        column: x => x.MagiaId1,
-                        principalTable: "Magia",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -737,29 +791,23 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClassePericias",
+                name: "ClasseOpcaoPericia",
                 columns: table => new
                 {
                     ClasseId = table.Column<string>(type: "TEXT", nullable: false),
-                    PericiaId = table.Column<string>(type: "TEXT", nullable: false),
-                    ClasseId1 = table.Column<string>(type: "TEXT", nullable: true)
+                    PericiaId = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ClassePericias", x => new { x.ClasseId, x.PericiaId });
+                    table.PrimaryKey("PK_ClasseOpcaoPericia", x => new { x.ClasseId, x.PericiaId });
                     table.ForeignKey(
-                        name: "FK_ClassePericias_Classe_ClasseId",
+                        name: "FK_ClasseOpcaoPericia_Classe_ClasseId",
                         column: x => x.ClasseId,
                         principalTable: "Classe",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ClassePericias_Classe_ClasseId1",
-                        column: x => x.ClasseId1,
-                        principalTable: "Classe",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ClassePericias_Pericia_PericiaId",
+                        name: "FK_ClasseOpcaoPericia_Pericia_PericiaId",
                         column: x => x.PericiaId,
                         principalTable: "Pericia",
                         principalColumn: "Id",
@@ -931,27 +979,51 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClasseMoeda",
+                name: "ClasseOpcaoItemOpcao",
                 columns: table => new
                 {
-                    ClasseId = table.Column<string>(type: "TEXT", nullable: false),
-                    MoedaId = table.Column<string>(type: "TEXT", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    GrupoId = table.Column<int>(type: "INTEGER", nullable: false),
+                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ClasseMoeda", x => new { x.ClasseId, x.MoedaId });
+                    table.PrimaryKey("PK_ClasseOpcaoItemOpcao", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ClasseMoeda_Classe_ClasseId",
+                        name: "FK_ClasseOpcaoItemOpcao_ClasseOpcaoItemGrupo_GrupoId",
+                        column: x => x.GrupoId,
+                        principalTable: "ClasseOpcaoItemGrupo",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ClasseHabilidade",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Nome = table.Column<string>(type: "TEXT", nullable: true),
+                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
+                    ClasseId = table.Column<string>(type: "TEXT", nullable: true),
+                    Escalavel = table.Column<bool>(type: "INTEGER", nullable: false),
+                    ClasseProgressaoClasseId = table.Column<string>(type: "TEXT", nullable: true),
+                    ClasseProgressaoNivel = table.Column<int>(type: "INTEGER", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClasseHabilidade", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ClasseHabilidade_ClasseProgressao_ClasseProgressaoClasseId_ClasseProgressaoNivel",
+                        columns: x => new { x.ClasseProgressaoClasseId, x.ClasseProgressaoNivel },
+                        principalTable: "ClasseProgressao",
+                        principalColumns: new[] { "ClasseId", "Nivel" });
+                    table.ForeignKey(
+                        name: "FK_ClasseHabilidade_Classe_ClasseId",
                         column: x => x.ClasseId,
                         principalTable: "Classe",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ClasseMoeda_Moeda_MoedaId",
-                        column: x => x.MoedaId,
-                        principalTable: "Moeda",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -1267,29 +1339,47 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClasseProficienciasArmas",
+                name: "ClasseOpcaoProficiencia",
                 columns: table => new
                 {
                     ClasseId = table.Column<string>(type: "TEXT", nullable: false),
-                    ProficienciaId = table.Column<string>(type: "TEXT", nullable: false),
-                    ClasseId1 = table.Column<string>(type: "TEXT", nullable: true)
+                    ProficienciaId = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ClasseProficienciasArmas", x => new { x.ClasseId, x.ProficienciaId });
+                    table.PrimaryKey("PK_ClasseOpcaoProficiencia", x => new { x.ClasseId, x.ProficienciaId });
                     table.ForeignKey(
-                        name: "FK_ClasseProficienciasArmas_Classe_ClasseId",
+                        name: "FK_ClasseOpcaoProficiencia_Classe_ClasseId",
                         column: x => x.ClasseId,
                         principalTable: "Classe",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ClasseProficienciasArmas_Classe_ClasseId1",
-                        column: x => x.ClasseId1,
-                        principalTable: "Classe",
-                        principalColumn: "Id");
+                        name: "FK_ClasseOpcaoProficiencia_Proficiencia_ProficienciaId",
+                        column: x => x.ProficienciaId,
+                        principalTable: "Proficiencia",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ClasseProficiencia",
+                columns: table => new
+                {
+                    ClasseId = table.Column<string>(type: "TEXT", nullable: false),
+                    ProficienciaId = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClasseProficiencia", x => new { x.ClasseId, x.ProficienciaId });
                     table.ForeignKey(
-                        name: "FK_ClasseProficienciasArmas_Proficiencia_ProficienciaId",
+                        name: "FK_ClasseProficiencia_Classe_ClasseId",
+                        column: x => x.ClasseId,
+                        principalTable: "Classe",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ClasseProficiencia_Proficiencia_ProficienciaId",
                         column: x => x.ProficienciaId,
                         principalTable: "Proficiencia",
                         principalColumn: "Id",
@@ -1440,29 +1530,24 @@ namespace DnDBot.Bot.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ClasseItens",
+                name: "ClasseItemFixo",
                 columns: table => new
                 {
                     ClasseId = table.Column<string>(type: "TEXT", nullable: false),
                     ItemId = table.Column<string>(type: "TEXT", nullable: false),
-                    ClasseId1 = table.Column<string>(type: "TEXT", nullable: true)
+                    Quantidade = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ClasseItens", x => new { x.ClasseId, x.ItemId });
+                    table.PrimaryKey("PK_ClasseItemFixo", x => new { x.ClasseId, x.ItemId });
                     table.ForeignKey(
-                        name: "FK_ClasseItens_Classe_ClasseId",
+                        name: "FK_ClasseItemFixo_Classe_ClasseId",
                         column: x => x.ClasseId,
                         principalTable: "Classe",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ClasseItens_Classe_ClasseId1",
-                        column: x => x.ClasseId1,
-                        principalTable: "Classe",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ClasseItens_Item_ItemId",
+                        name: "FK_ClasseItemFixo_Item_ItemId",
                         column: x => x.ItemId,
                         principalTable: "Item",
                         principalColumn: "Id",
@@ -1741,6 +1826,52 @@ namespace DnDBot.Bot.Migrations
                         name: "FK_SubRacaTag_SubRaca_SubRacaId",
                         column: x => x.SubRacaId,
                         principalTable: "SubRaca",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ClasseItemOpcaoItem",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    OpcaoId = table.Column<int>(type: "INTEGER", nullable: false),
+                    ItemId = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ClasseItemOpcaoItem", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ClasseItemOpcaoItem_ClasseOpcaoItemOpcao_OpcaoId",
+                        column: x => x.OpcaoId,
+                        principalTable: "ClasseOpcaoItemOpcao",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ClasseItemOpcaoItem_Item_ItemId",
+                        column: x => x.ItemId,
+                        principalTable: "Item",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ValorPorNivel",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Nivel = table.Column<int>(type: "INTEGER", nullable: false),
+                    Valor = table.Column<int>(type: "INTEGER", nullable: false),
+                    ClasseHabilidadeId = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ValorPorNivel", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ValorPorNivel_ClasseHabilidade_ClasseHabilidadeId",
+                        column: x => x.ClasseHabilidadeId,
+                        principalTable: "ClasseHabilidade",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -2084,48 +2215,58 @@ namespace DnDBot.Bot.Migrations
                 column: "SubclasseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClasseItens_ClasseId1",
-                table: "ClasseItens",
-                column: "ClasseId1");
+                name: "IX_ClasseHabilidade_ClasseId",
+                table: "ClasseHabilidade",
+                column: "ClasseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClasseItens_ItemId",
-                table: "ClasseItens",
+                name: "IX_ClasseHabilidade_ClasseProgressaoClasseId_ClasseProgressaoNivel",
+                table: "ClasseHabilidade",
+                columns: new[] { "ClasseProgressaoClasseId", "ClasseProgressaoNivel" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ClasseItemFixo_ItemId",
+                table: "ClasseItemFixo",
                 column: "ItemId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClasseMagias_ClasseId1",
-                table: "ClasseMagias",
-                column: "ClasseId1");
+                name: "IX_ClasseItemOpcaoItem_ItemId",
+                table: "ClasseItemOpcaoItem",
+                column: "ItemId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClasseMagias_MagiaId",
-                table: "ClasseMagias",
+                name: "IX_ClasseItemOpcaoItem_OpcaoId",
+                table: "ClasseItemOpcaoItem",
+                column: "OpcaoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ClasseMagia_MagiaId",
+                table: "ClasseMagia",
                 column: "MagiaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClasseMoeda_MoedaId",
-                table: "ClasseMoeda",
-                column: "MoedaId");
+                name: "IX_ClasseOpcaoItemGrupo_ClasseId",
+                table: "ClasseOpcaoItemGrupo",
+                column: "ClasseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClassePericias_ClasseId1",
-                table: "ClassePericias",
-                column: "ClasseId1");
+                name: "IX_ClasseOpcaoItemOpcao_GrupoId",
+                table: "ClasseOpcaoItemOpcao",
+                column: "GrupoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClassePericias_PericiaId",
-                table: "ClassePericias",
+                name: "IX_ClasseOpcaoPericia_PericiaId",
+                table: "ClasseOpcaoPericia",
                 column: "PericiaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClasseProficienciasArmas_ClasseId1",
-                table: "ClasseProficienciasArmas",
-                column: "ClasseId1");
+                name: "IX_ClasseOpcaoProficiencia_ProficienciaId",
+                table: "ClasseOpcaoProficiencia",
+                column: "ProficienciaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ClasseProficienciasArmas_ProficienciaId",
-                table: "ClasseProficienciasArmas",
+                name: "IX_ClasseProficiencia_ProficienciaId",
+                table: "ClasseProficiencia",
                 column: "ProficienciaId");
 
             migrationBuilder.CreateIndex(
@@ -2256,11 +2397,6 @@ namespace DnDBot.Bot.Migrations
                 column: "RacaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MagiaClassePermitida_MagiaId1",
-                table: "MagiaClassePermitida",
-                column: "MagiaId1");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_MagiaCondicaoAplicada_EfeitoEscalonadoId",
                 table: "MagiaCondicaoAplicada",
                 column: "EfeitoEscalonadoId");
@@ -2329,6 +2465,11 @@ namespace DnDBot.Bot.Migrations
                 name: "IX_SubRacaResistencia_ResistenciaId",
                 table: "SubRacaResistencia",
                 column: "ResistenciaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ValorPorNivel_ClasseHabilidadeId",
+                table: "ValorPorNivel",
+                column: "ClasseHabilidadeId");
         }
 
         /// <inheritdoc />
@@ -2383,22 +2524,25 @@ namespace DnDBot.Bot.Migrations
                 name: "CaracteristicaPorNivel");
 
             migrationBuilder.DropTable(
-                name: "ClasseItens");
+                name: "ClasseItemFixo");
 
             migrationBuilder.DropTable(
-                name: "ClasseMagias");
+                name: "ClasseItemOpcaoItem");
 
             migrationBuilder.DropTable(
-                name: "ClasseMoeda");
+                name: "ClasseMagia");
 
             migrationBuilder.DropTable(
-                name: "ClassePericias");
+                name: "ClasseOpcaoPericia");
 
             migrationBuilder.DropTable(
-                name: "ClasseProficienciasArmas");
+                name: "ClasseOpcaoProficiencia");
 
             migrationBuilder.DropTable(
-                name: "ClasseSalvaguardas");
+                name: "ClasseProficiencia");
+
+            migrationBuilder.DropTable(
+                name: "ClasseSalvaguarda");
 
             migrationBuilder.DropTable(
                 name: "ClasseTag");
@@ -2461,6 +2605,9 @@ namespace DnDBot.Bot.Migrations
                 name: "MagiaTag");
 
             migrationBuilder.DropTable(
+                name: "Moeda");
+
+            migrationBuilder.DropTable(
                 name: "QuantidadePorNivel");
 
             migrationBuilder.DropTable(
@@ -2488,6 +2635,9 @@ namespace DnDBot.Bot.Migrations
                 name: "SubRacaTag");
 
             migrationBuilder.DropTable(
+                name: "ValorPorNivel");
+
+            migrationBuilder.DropTable(
                 name: "AntecedenteNarrativa");
 
             migrationBuilder.DropTable(
@@ -2506,7 +2656,7 @@ namespace DnDBot.Bot.Migrations
                 name: "Subclasse");
 
             migrationBuilder.DropTable(
-                name: "Moeda");
+                name: "ClasseOpcaoItemOpcao");
 
             migrationBuilder.DropTable(
                 name: "InventarioItem");
@@ -2536,10 +2686,13 @@ namespace DnDBot.Bot.Migrations
                 name: "SubRaca");
 
             migrationBuilder.DropTable(
+                name: "ClasseHabilidade");
+
+            migrationBuilder.DropTable(
                 name: "Antecedente");
 
             migrationBuilder.DropTable(
-                name: "Classe");
+                name: "ClasseOpcaoItemGrupo");
 
             migrationBuilder.DropTable(
                 name: "Inventarios");
@@ -2560,10 +2713,16 @@ namespace DnDBot.Bot.Migrations
                 name: "Raca");
 
             migrationBuilder.DropTable(
+                name: "ClasseProgressao");
+
+            migrationBuilder.DropTable(
                 name: "FichaPersonagem");
 
             migrationBuilder.DropTable(
                 name: "PropriedadesMagicas");
+
+            migrationBuilder.DropTable(
+                name: "Classe");
 
             migrationBuilder.DropTable(
                 name: "BolsaDeMoedas");

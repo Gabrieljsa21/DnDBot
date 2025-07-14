@@ -1,6 +1,6 @@
 [
   {
-    "Id": "arm_acolchoada",
+    "Id": "armadura_acolchoada",
     "Nome": "Armadura Acolchoada",
     "Categoria": "Armadura",
     "SubCategoria": "ArmaduraLeve",
@@ -11,7 +11,7 @@
     "Equipavel": true
   },
   {
-    "Id": "arm_couro",
+    "Id": "armadura_couro",
     "Nome": "Armadura de Couro",
     "Categoria": "Armadura",
     "SubCategoria": "ArmaduraLeve",
@@ -22,7 +22,7 @@
     "Equipavel": true
   },
   {
-    "Id": "arm_couro_batido",
+    "Id": "armadura_couro_batido",
     "Nome": "Armadura de Couro Batido",
     "Categoria": "Armadura",
     "SubCategoria": "ArmaduraLeve",
@@ -33,7 +33,7 @@
     "Equipavel": true
   },
   {
-    "Id": "arm_gibao_peles",
+    "Id": "armadura_gibao_peles",
     "Nome": "Gibão de Peles",
     "Categoria": "Armadura",
     "SubCategoria": "ArmaduraMedia",
@@ -44,7 +44,7 @@
     "Equipavel": true
   },
   {
-    "Id": "arm_camisa_malha",
+    "Id": "armadura_camisa_malha",
     "Nome": "Camisão de Malha",
     "Categoria": "Armadura",
     "SubCategoria": "ArmaduraMedia",
@@ -55,7 +55,7 @@
     "Equipavel": true
   },
   {
-    "Id": "arm_brunea",
+    "Id": "armadura_brunea",
     "Nome": "Brunea",
     "Categoria": "Armadura",
     "SubCategoria": "ArmaduraMedia",
@@ -66,7 +66,7 @@
     "Equipavel": true
   },
   {
-    "Id": "arm_peitoral_acero",
+    "Id": "armadura_peitoral_aco",
     "Nome": "Peitoral de Aço",
     "Categoria": "Armadura",
     "SubCategoria": "ArmaduraMedia",
@@ -77,7 +77,7 @@
     "Equipavel": true
   },
   {
-    "Id": "arm_meia_armadura",
+    "Id": "armadura_meia_armadura",
     "Nome": "Meia-Armadura",
     "Categoria": "Armadura",
     "SubCategoria": "ArmaduraMedia",
@@ -88,7 +88,7 @@
     "Equipavel": true
   },
   {
-    "Id": "arm_cota_aneis",
+    "Id": "armadura_cota_aneis",
     "Nome": "Cota de Anéis",
     "Categoria": "Armadura",
     "SubCategoria": "ArmaduraPesada",
@@ -99,7 +99,7 @@
     "Equipavel": true
   },
   {
-    "Id": "arm_cota_malha",
+    "Id": "armadura_cota_malha",
     "Nome": "Cota de Malha",
     "Categoria": "Armadura",
     "SubCategoria": "ArmaduraPesada",
@@ -111,7 +111,7 @@
     "RequisitoForca": 13
   },
   {
-    "Id": "arm_cota_talas",
+    "Id": "armadura_cota_talas",
     "Nome": "Cota de Talas",
     "Categoria": "Armadura",
     "SubCategoria": "ArmaduraPesada",
@@ -123,7 +123,7 @@
     "RequisitoForca": 15
   },
   {
-    "Id": "arm_armadura_placas",
+    "Id": "armadura_armadura_placas",
     "Nome": "Armadura de Placas",
     "Categoria": "Armadura",
     "SubCategoria": "ArmaduraPesada",
